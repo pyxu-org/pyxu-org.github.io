@@ -1,0 +1,972 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pyxu.opt.stop &#8212; Pyxu Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=1031a718" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../../../_static/documentation_options.js?v=29481255"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=30646c52"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pyxu/opt/stop';</script>
+    <link rel="icon" href="../../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../intro/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../fair/index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><strong> v0.0.1 </strong></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../intro/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../fair/index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><strong> v0.0.1 </strong></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">pyxu.opt.stop</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for pyxu.opt.stop</h1><div class="highlight"><pre>
+<span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">collections.abc</span> <span class="k">as</span> <span class="nn">cabc</span>
+<span class="linenos">  2</span><span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="linenos">  3</span><span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">typ</span>
+<span class="linenos">  4</span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="linenos">  5</span>
+<span class="linenos">  6</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos">  7</span>
+<span class="linenos">  8</span><span class="kn">import</span> <span class="nn">pyxu.abc</span> <span class="k">as</span> <span class="nn">pxa</span>
+<span class="linenos">  9</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
+<span class="linenos"> 10</span><span class="kn">import</span> <span class="nn">pyxu.util</span> <span class="k">as</span> <span class="nn">pxu</span>
+<span class="linenos"> 11</span>
+<span class="linenos"> 12</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos"> 13</span>    <span class="s2">&quot;AbsError&quot;</span><span class="p">,</span>
+<span class="linenos"> 14</span>    <span class="s2">&quot;ManualStop&quot;</span><span class="p">,</span>
+<span class="linenos"> 15</span>    <span class="s2">&quot;MaxDuration&quot;</span><span class="p">,</span>
+<span class="linenos"> 16</span>    <span class="s2">&quot;MaxIter&quot;</span><span class="p">,</span>
+<span class="linenos"> 17</span>    <span class="s2">&quot;MaxCarbon&quot;</span><span class="p">,</span>
+<span class="linenos"> 18</span>    <span class="s2">&quot;Memorize&quot;</span><span class="p">,</span>
+<span class="linenos"> 19</span>    <span class="s2">&quot;RelError&quot;</span><span class="p">,</span>
+<span class="linenos"> 20</span><span class="p">]</span>
+<span class="linenos"> 21</span>
+<span class="linenos"> 22</span>
+<span class="linenos"> 23</span><span class="n">SVFunction</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span>
+<span class="linenos"> 24</span>    <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">[[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">],</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">],</span>
+<span class="linenos"> 25</span>    <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">[[</span><span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">],</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">],</span>
+<span class="linenos"> 26</span><span class="p">]</span>
+<span class="linenos"> 27</span>
+<span class="linenos"> 28</span>
+<div class="viewcode-block" id="MaxIter">
+<a class="viewcode-back" href="../../../api/opt.html#pyxu.opt.stop.MaxIter">[docs]</a>
+<span class="linenos"> 29</span><span class="k">class</span> <span class="nc">MaxIter</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">StoppingCriterion</span><span class="p">):</span>
+<span class="linenos"> 30</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 31</span><span class="sd">    Stop iterative solver after a fixed number of iterations.</span>
+<span class="linenos"> 32</span>
+<span class="linenos"> 33</span><span class="sd">    .. note::</span>
+<span class="linenos"> 34</span>
+<span class="linenos"> 35</span><span class="sd">        If you want to add a grace period to a solver, i.e. for it to do *at least* N iterations before</span>
+<span class="linenos"> 36</span><span class="sd">        stopping based on the value of another criteria, you can AND :py:class:`~pyxu.opt.stop.MaxIter`</span>
+<span class="linenos"> 37</span><span class="sd">        with the other criteria.</span>
+<span class="linenos"> 38</span>
+<span class="linenos"> 39</span><span class="sd">        .. code-block:: python3</span>
+<span class="linenos"> 40</span>
+<span class="linenos"> 41</span><span class="sd">           sc = MaxIter(n=5) &amp; AbsError(eps=0.1)</span>
+<span class="linenos"> 42</span><span class="sd">           # If N_iter &lt; 5  -&gt; never stop.</span>
+<span class="linenos"> 43</span><span class="sd">           # If N_iter &gt;= 5 -&gt; stop if AbsError() decides to.</span>
+<span class="linenos"> 44</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos"> 45</span>
+<div class="viewcode-block" id="MaxIter.__init__">
+<a class="viewcode-back" href="../../../api/opt.html#pyxu.opt.stop.MaxIter.__init__">[docs]</a>
+<span class="linenos"> 46</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">):</span>
+<span class="linenos"> 47</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 48</span><span class="sd">        Parameters</span>
+<span class="linenos"> 49</span><span class="sd">        ----------</span>
+<span class="linenos"> 50</span><span class="sd">        n: Integer</span>
+<span class="linenos"> 51</span><span class="sd">            Max number of iterations allowed.</span>
+<span class="linenos"> 52</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos"> 53</span>        <span class="k">try</span><span class="p">:</span>
+<span class="linenos"> 54</span>            <span class="k">assert</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="linenos"> 55</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="linenos"> 56</span>        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="linenos"> 57</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n: expected positive integer, got </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="linenos"> 58</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_i</span> <span class="o">=</span> <span class="mi">0</span></div>
+
+<span class="linenos"> 59</span>
+<span class="linenos"> 60</span>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="linenos"> 61</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="linenos"> 62</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_i</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_n</span>
+<span class="linenos"> 63</span>
+<span class="linenos"> 64</span>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="linenos"> 65</span>        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">N_iter</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_i</span><span class="p">)</span>
+<span class="linenos"> 66</span>
+<span class="linenos"> 67</span>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 68</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_i</span> <span class="o">=</span> <span class="mi">0</span></div>
+
+<span class="linenos"> 69</span>
+<span class="linenos"> 70</span>
+<div class="viewcode-block" id="ManualStop">
+<a class="viewcode-back" href="../../../api/opt.html#pyxu.opt.stop.ManualStop">[docs]</a>
+<span class="linenos"> 71</span><span class="k">class</span> <span class="nc">ManualStop</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">StoppingCriterion</span><span class="p">):</span>
+<span class="linenos"> 72</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 73</span><span class="sd">    Continue-forever criterion.</span>
+<span class="linenos"> 74</span>
+<span class="linenos"> 75</span><span class="sd">    This class is useful when calling</span>
+<span class="linenos"> 76</span><span class="sd">    :py:meth:`~pyxu.abc.solver.Solver.fit`</span>
+<span class="linenos"> 77</span><span class="sd">    with mode=MANUAL/ASYNC to defer the stopping decision to an explicit call by the user, i.e.:</span>
+<span class="linenos"> 78</span>
+<span class="linenos"> 79</span><span class="sd">    * mode=MANUAL: user must stop calling ``next(solver.steps())``;</span>
+<span class="linenos"> 80</span><span class="sd">    * mode=ASYNC: user must call :py:meth:`~pyxu.abc.solver.Solver.stop`.</span>
+<span class="linenos"> 81</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos"> 82</span>
+<span class="linenos"> 83</span>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="linenos"> 84</span>        <span class="k">return</span> <span class="kc">False</span>
+<span class="linenos"> 85</span>
+<span class="linenos"> 86</span>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="linenos"> 87</span>        <span class="k">return</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="linenos"> 88</span>
+<span class="linenos"> 89</span>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 90</span>        <span class="k">pass</span></div>
+
+<span class="linenos"> 91</span>
+<span class="linenos"> 92</span>
+<div class="viewcode-block" id="MaxDuration">
+<a class="viewcode-back" href="../../../api/opt.html#pyxu.opt.stop.MaxDuration">[docs]</a>
+<span class="linenos"> 93</span><span class="k">class</span> <span class="nc">MaxDuration</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">StoppingCriterion</span><span class="p">):</span>
+<span class="linenos"> 94</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 95</span><span class="sd">    Stop iterative solver after a specified duration has elapsed.</span>
+<span class="linenos"> 96</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos"> 97</span>
+<div class="viewcode-block" id="MaxDuration.__init__">
+<a class="viewcode-back" href="../../../api/opt.html#pyxu.opt.stop.MaxDuration.__init__">[docs]</a>
+<span class="linenos"> 98</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="n">dt</span><span class="o">.</span><span class="n">timedelta</span><span class="p">):</span>
+<span class="linenos"> 99</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">100</span><span class="sd">        Parameters</span>
+<span class="linenos">101</span><span class="sd">        ----------</span>
+<span class="linenos">102</span><span class="sd">        t: ~datetime.timedelta</span>
+<span class="linenos">103</span><span class="sd">            Max runtime allowed.</span>
+<span class="linenos">104</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">105</span>        <span class="k">try</span><span class="p">:</span>
+<span class="linenos">106</span>            <span class="k">assert</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="n">dt</span><span class="o">.</span><span class="n">timedelta</span><span class="p">()</span>
+<span class="linenos">107</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_t_max</span> <span class="o">=</span> <span class="n">t</span>
+<span class="linenos">108</span>        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="linenos">109</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;t: expected positive duration, got </span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="linenos">110</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_t_start</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="linenos">111</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_t_now</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_t_start</span></div>
+
+<span class="linenos">112</span>
+<span class="linenos">113</span>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="linenos">114</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_t_now</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="linenos">115</span>        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_t_now</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_t_start</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_t_max</span>
+<span class="linenos">116</span>
+<span class="linenos">117</span>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="linenos">118</span>        <span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_t_now</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_t_start</span><span class="p">)</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+<span class="linenos">119</span>        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">duration</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
+<span class="linenos">120</span>
+<span class="linenos">121</span>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">122</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_t_start</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="linenos">123</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_t_now</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_t_start</span></div>
+
+<span class="linenos">124</span>
+<span class="linenos">125</span>
+<div class="viewcode-block" id="MaxCarbon">
+<a class="viewcode-back" href="../../../api/opt.html#pyxu.opt.stop.MaxCarbon">[docs]</a>
+<span class="linenos">126</span><span class="k">class</span> <span class="nc">MaxCarbon</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">StoppingCriterion</span><span class="p">):</span>
+<span class="linenos">127</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">128</span><span class="sd">    Stop iterative solver after a threshold amount of carbon dioxide (CO2) was produced by computing</span>
+<span class="linenos">129</span><span class="sd">    resources used to execute the optimization.</span>
+<span class="linenos">130</span>
+<span class="linenos">131</span><span class="sd">    .. note::</span>
+<span class="linenos">132</span>
+<span class="linenos">133</span><span class="sd">       Codecarbon is not a core dependency of Pyxu and must be installed separately.</span>
+<span class="linenos">134</span>
+<span class="linenos">135</span><span class="sd">       On Windows and MacOS, `codecarbon &lt;https://pypi.org/project/codecarbon/&gt;`_ tracks power consumption of</span>
+<span class="linenos">136</span><span class="sd">       Intel processors using the</span>
+<span class="linenos">137</span><span class="sd">       `Intel Power Gadget (IPG) &lt;https://www.intel.com/content/www/us/en/developer/articles/tool/power-gadget.html&gt;`_.</span>
+<span class="linenos">138</span><span class="sd">       IPG must be installed independently.</span>
+<span class="linenos">139</span><span class="sd">       (MacOS-specific: IPG must also have correct security permissions.)</span>
+<span class="linenos">140</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">141</span>
+<div class="viewcode-block" id="MaxCarbon.__init__">
+<a class="viewcode-back" href="../../../api/opt.html#pyxu.opt.stop.MaxCarbon.__init__">[docs]</a>
+<span class="linenos">142</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">co2</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">):</span>
+<span class="linenos">143</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">144</span><span class="sd">        Parameters</span>
+<span class="linenos">145</span><span class="sd">        ----------</span>
+<span class="linenos">146</span><span class="sd">        co2: Real</span>
+<span class="linenos">147</span><span class="sd">            Max allowed CO2 emissions [Kg].</span>
+<span class="linenos">148</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">149</span>        <span class="k">try</span><span class="p">:</span>
+<span class="linenos">150</span>            <span class="k">assert</span> <span class="nb">float</span><span class="p">(</span><span class="n">co2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="linenos">151</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_co2_max</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">co2</span><span class="p">)</span>
+<span class="linenos">152</span>        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="linenos">153</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;co2: expected positive carbon quantity, got </span><span class="si">{</span><span class="n">co2</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="linenos">154</span>
+<span class="linenos">155</span>        <span class="n">codecarbon</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s2">&quot;codecarbon&quot;</span><span class="p">)</span>
+<span class="linenos">156</span>        <span class="bp">self</span><span class="o">.</span><span class="n">tracker</span> <span class="o">=</span> <span class="n">codecarbon</span><span class="o">.</span><span class="n">EmissionsTracker</span><span class="p">(</span>
+<span class="linenos">157</span>            <span class="n">api_call_interval</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">158</span>            <span class="n">save_to_file</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="linenos">159</span>            <span class="n">log_level</span><span class="o">=</span><span class="s2">&quot;warning&quot;</span><span class="p">,</span>
+<span class="linenos">160</span>        <span class="p">)</span>
+<span class="linenos">161</span>        <span class="bp">self</span><span class="o">.</span><span class="n">tracker</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="linenos">162</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_co2_start</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tracker</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+<span class="linenos">163</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_co2_now</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_co2_start</span></div>
+
+<span class="linenos">164</span>
+<span class="linenos">165</span>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="linenos">166</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_co2_now</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tracker</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+<span class="linenos">167</span>        <span class="n">decision</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_co2_now</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_co2_start</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_co2_max</span>
+<span class="linenos">168</span>        <span class="k">if</span> <span class="n">decision</span><span class="p">:</span>
+<span class="linenos">169</span>            <span class="bp">self</span><span class="o">.</span><span class="n">tracker</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+<span class="linenos">170</span>        <span class="k">return</span> <span class="n">decision</span>
+<span class="linenos">171</span>
+<span class="linenos">172</span>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="linenos">173</span>        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">co2</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_co2_now</span><span class="p">)</span>
+<span class="linenos">174</span>
+<span class="linenos">175</span>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">176</span>        <span class="bp">self</span><span class="o">.</span><span class="n">tracker</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="linenos">177</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_co2_start</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tracker</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+<span class="linenos">178</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_co2_now</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_co2_start</span></div>
+
+<span class="linenos">179</span>
+<span class="linenos">180</span>
+<div class="viewcode-block" id="Memorize">
+<a class="viewcode-back" href="../../../api/opt.html#pyxu.opt.stop.Memorize">[docs]</a>
+<span class="linenos">181</span><span class="k">class</span> <span class="nc">Memorize</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">StoppingCriterion</span><span class="p">):</span>
+<span class="linenos">182</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">183</span><span class="sd">    Memorize a variable.</span>
+<span class="linenos">184</span><span class="sd">    (Special :py:class:`~pyxu.abc.solver.StoppingCriterion` mostly useful for tracking objective functions in</span>
+<span class="linenos">185</span><span class="sd">    :py:class:`~pyxu.abc.solver.Solver`.)</span>
+<span class="linenos">186</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">187</span>
+<div class="viewcode-block" id="Memorize.__init__">
+<a class="viewcode-back" href="../../../api/opt.html#pyxu.opt.stop.Memorize.__init__">[docs]</a>
+<span class="linenos">188</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">var</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">VarName</span><span class="p">):</span>
+<span class="linenos">189</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">190</span><span class="sd">        Parameters</span>
+<span class="linenos">191</span><span class="sd">        ----------</span>
+<span class="linenos">192</span><span class="sd">        var: VarName</span>
+<span class="linenos">193</span><span class="sd">            Variable in :py:attr:`pyxu.abc.solver.Solver._mstate` to query.</span>
+<span class="linenos">194</span><span class="sd">            Must be a scalar or NDArray (1D).</span>
+<span class="linenos">195</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">196</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_var</span> <span class="o">=</span> <span class="n">var</span>
+<span class="linenos">197</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># last memorized value in stop().</span></div>
+
+<span class="linenos">198</span>
+<span class="linenos">199</span>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="linenos">200</span>        <span class="n">x</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_var</span><span class="p">]</span>
+<span class="linenos">201</span>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">):</span>
+<span class="linenos">202</span>            <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+<span class="linenos">203</span>        <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="linenos">204</span>
+<span class="linenos">205</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_val</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">206</span>        <span class="k">return</span> <span class="kc">False</span>
+<span class="linenos">207</span>
+<span class="linenos">208</span>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="linenos">209</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_val</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="linenos">210</span>            <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="sa">f</span><span class="s2">&quot;Memorize[</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_var</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_val</span><span class="o">.</span><span class="n">max</span><span class="p">())}</span>  <span class="c1"># takes the only element available.</span>
+<span class="linenos">211</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">212</span>            <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos">213</span>                <span class="sa">f</span><span class="s2">&quot;Memorize[</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_var</span><span class="si">}</span><span class="s2">]_min&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_val</span><span class="o">.</span><span class="n">min</span><span class="p">()),</span>
+<span class="linenos">214</span>                <span class="sa">f</span><span class="s2">&quot;Memorize[</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_var</span><span class="si">}</span><span class="s2">]_max&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_val</span><span class="o">.</span><span class="n">max</span><span class="p">()),</span>
+<span class="linenos">215</span>            <span class="p">}</span>
+<span class="linenos">216</span>        <span class="k">return</span> <span class="n">data</span>
+<span class="linenos">217</span>
+<span class="linenos">218</span>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">219</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
+
+<span class="linenos">220</span>
+<span class="linenos">221</span>
+<div class="viewcode-block" id="AbsError">
+<a class="viewcode-back" href="../../../api/opt.html#pyxu.opt.stop.AbsError">[docs]</a>
+<span class="linenos">222</span><span class="k">class</span> <span class="nc">AbsError</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">StoppingCriterion</span><span class="p">):</span>
+<span class="linenos">223</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">224</span><span class="sd">    Stop iterative solver after absolute norm of a variable (or function thereof) reaches threshold.</span>
+<span class="linenos">225</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">226</span>
+<div class="viewcode-block" id="AbsError.__init__">
+<a class="viewcode-back" href="../../../api/opt.html#pyxu.opt.stop.AbsError.__init__">[docs]</a>
+<span class="linenos">227</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="linenos">228</span>        <span class="bp">self</span><span class="p">,</span>
+<span class="linenos">229</span>        <span class="n">eps</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span>
+<span class="linenos">230</span>        <span class="n">var</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">VarName</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="linenos">231</span>        <span class="n">f</span><span class="p">:</span> <span class="n">SVFunction</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="linenos">232</span>        <span class="n">norm</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+<span class="linenos">233</span>        <span class="n">satisfy_all</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="linenos">234</span>    <span class="p">):</span>
+<span class="linenos">235</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">236</span><span class="sd">        Parameters</span>
+<span class="linenos">237</span><span class="sd">        ----------</span>
+<span class="linenos">238</span><span class="sd">        eps: Real</span>
+<span class="linenos">239</span><span class="sd">            Positive threshold.</span>
+<span class="linenos">240</span><span class="sd">        var: VarName</span>
+<span class="linenos">241</span><span class="sd">            Variable in :py:attr:`pyxu.abc.solver.Solver._mstate` to query.</span>
+<span class="linenos">242</span><span class="sd">        f: ~collections.abc.Callable</span>
+<span class="linenos">243</span><span class="sd">            Optional function to pre-apply to ``_mstate[var]`` before applying the norm.</span>
+<span class="linenos">244</span><span class="sd">            Defaults to the identity function. The callable should either:</span>
+<span class="linenos">245</span>
+<span class="linenos">246</span><span class="sd">            * accept a scalar input -&gt; output a scalar, or</span>
+<span class="linenos">247</span><span class="sd">            * accept an NDArray input -&gt; output an NDArray, i.e same semantics as</span>
+<span class="linenos">248</span><span class="sd">              :py:meth:`~pyxu.abc.operator.Map.apply`.</span>
+<span class="linenos">249</span><span class="sd">        norm: Integer, Real</span>
+<span class="linenos">250</span><span class="sd">            Ln norm to use &gt;= 0. (Default: L2.)</span>
+<span class="linenos">251</span><span class="sd">        satisfy_all: bool</span>
+<span class="linenos">252</span><span class="sd">            If True (default) and ``_mstate[var]`` is multi-dimensional, stop if all evaluation</span>
+<span class="linenos">253</span><span class="sd">            points lie below threshold.</span>
+<span class="linenos">254</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">255</span>        <span class="k">try</span><span class="p">:</span>
+<span class="linenos">256</span>            <span class="k">assert</span> <span class="n">eps</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="linenos">257</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_eps</span> <span class="o">=</span> <span class="n">eps</span>
+<span class="linenos">258</span>        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="linenos">259</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;eps: expected positive threshold, got </span><span class="si">{</span><span class="n">eps</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="linenos">260</span>
+<span class="linenos">261</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_var</span> <span class="o">=</span> <span class="n">var</span>
+<span class="linenos">262</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_f</span> <span class="o">=</span> <span class="n">f</span> <span class="k">if</span> <span class="p">(</span><span class="n">f</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">_</span><span class="p">:</span> <span class="n">_</span><span class="p">)</span>
+<span class="linenos">263</span>
+<span class="linenos">264</span>        <span class="k">try</span><span class="p">:</span>
+<span class="linenos">265</span>            <span class="k">assert</span> <span class="n">norm</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+<span class="linenos">266</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_norm</span> <span class="o">=</span> <span class="n">norm</span>
+<span class="linenos">267</span>        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="linenos">268</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;norm: expected non-negative, got </span><span class="si">{</span><span class="n">norm</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="linenos">269</span>
+<span class="linenos">270</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_satisfy_all</span> <span class="o">=</span> <span class="n">satisfy_all</span>
+<span class="linenos">271</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># last computed Ln norm(s) in stop().</span></div>
+
+<span class="linenos">272</span>
+<span class="linenos">273</span>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="linenos">274</span>        <span class="n">fx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_f</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_var</span><span class="p">])</span>
+<span class="linenos">275</span>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">):</span>
+<span class="linenos">276</span>            <span class="n">fx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="n">fx</span><span class="p">]</span>
+<span class="linenos">277</span>        <span class="n">xp</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">get_array_module</span><span class="p">(</span><span class="n">fx</span><span class="p">)</span>
+<span class="linenos">278</span>
+<span class="linenos">279</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_val</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_norm</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">280</span>        <span class="n">rule</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">all</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_satisfy_all</span> <span class="k">else</span> <span class="n">xp</span><span class="o">.</span><span class="n">any</span>
+<span class="linenos">281</span>        <span class="n">decision</span> <span class="o">=</span> <span class="n">rule</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_val</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eps</span><span class="p">)</span>
+<span class="linenos">282</span>
+<span class="linenos">283</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_val</span><span class="p">,</span> <span class="n">decision</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_val</span><span class="p">,</span> <span class="n">decision</span><span class="p">)</span>
+<span class="linenos">284</span>        <span class="k">return</span> <span class="n">decision</span>
+<span class="linenos">285</span>
+<span class="linenos">286</span>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="linenos">287</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_val</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="linenos">288</span>            <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="sa">f</span><span class="s2">&quot;AbsError[</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_var</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_val</span><span class="o">.</span><span class="n">max</span><span class="p">())}</span>  <span class="c1"># takes the only element available.</span>
+<span class="linenos">289</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">290</span>            <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos">291</span>                <span class="sa">f</span><span class="s2">&quot;AbsError[</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_var</span><span class="si">}</span><span class="s2">]_min&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_val</span><span class="o">.</span><span class="n">min</span><span class="p">()),</span>
+<span class="linenos">292</span>                <span class="sa">f</span><span class="s2">&quot;AbsError[</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_var</span><span class="si">}</span><span class="s2">]_max&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_val</span><span class="o">.</span><span class="n">max</span><span class="p">()),</span>
+<span class="linenos">293</span>            <span class="p">}</span>
+<span class="linenos">294</span>        <span class="k">return</span> <span class="n">data</span>
+<span class="linenos">295</span>
+<span class="linenos">296</span>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">297</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
+
+<span class="linenos">298</span>
+<span class="linenos">299</span>
+<div class="viewcode-block" id="RelError">
+<a class="viewcode-back" href="../../../api/opt.html#pyxu.opt.stop.RelError">[docs]</a>
+<span class="linenos">300</span><span class="k">class</span> <span class="nc">RelError</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">StoppingCriterion</span><span class="p">):</span>
+<span class="linenos">301</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">302</span><span class="sd">    Stop iterative solver after relative norm change of a variable (or function thereof) reaches</span>
+<span class="linenos">303</span><span class="sd">    threshold.</span>
+<span class="linenos">304</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">305</span>
+<div class="viewcode-block" id="RelError.__init__">
+<a class="viewcode-back" href="../../../api/opt.html#pyxu.opt.stop.RelError.__init__">[docs]</a>
+<span class="linenos">306</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="linenos">307</span>        <span class="bp">self</span><span class="p">,</span>
+<span class="linenos">308</span>        <span class="n">eps</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span>
+<span class="linenos">309</span>        <span class="n">var</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">VarName</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="linenos">310</span>        <span class="n">f</span><span class="p">:</span> <span class="n">SVFunction</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="linenos">311</span>        <span class="n">norm</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+<span class="linenos">312</span>        <span class="n">satisfy_all</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="linenos">313</span>    <span class="p">):</span>
+<span class="linenos">314</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">315</span><span class="sd">        Parameters</span>
+<span class="linenos">316</span><span class="sd">        ----------</span>
+<span class="linenos">317</span><span class="sd">        eps: Real</span>
+<span class="linenos">318</span><span class="sd">            Positive threshold.</span>
+<span class="linenos">319</span><span class="sd">        var: VarName</span>
+<span class="linenos">320</span><span class="sd">            Variable in :py:attr:`pyxu.abc.solver.Solver._mstate` to query.</span>
+<span class="linenos">321</span><span class="sd">        f: ~collections.abc.Callable</span>
+<span class="linenos">322</span><span class="sd">            Optional function to pre-apply to ``_mstate[var]`` before applying the norm.</span>
+<span class="linenos">323</span><span class="sd">            Defaults to the identity function. The callable should either:</span>
+<span class="linenos">324</span>
+<span class="linenos">325</span><span class="sd">            * accept a scalar input -&gt; output a scalar, or</span>
+<span class="linenos">326</span><span class="sd">            * accept an NDArray input -&gt; output an NDArray, i.e same semantics as</span>
+<span class="linenos">327</span><span class="sd">              :py:meth:`~pyxu.abc.operator.Map.apply`.</span>
+<span class="linenos">328</span><span class="sd">        norm: Integer, Real</span>
+<span class="linenos">329</span><span class="sd">            Ln norm to use &gt;= 0. (Default: L2.)</span>
+<span class="linenos">330</span><span class="sd">        satisfy_all: bool</span>
+<span class="linenos">331</span><span class="sd">            If True (default) and ``_mstate[var]`` is multi-dimensional, stop if all evaluation</span>
+<span class="linenos">332</span><span class="sd">            points lie below threshold.</span>
+<span class="linenos">333</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">334</span>        <span class="k">try</span><span class="p">:</span>
+<span class="linenos">335</span>            <span class="k">assert</span> <span class="n">eps</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="linenos">336</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_eps</span> <span class="o">=</span> <span class="n">eps</span>
+<span class="linenos">337</span>        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="linenos">338</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;eps: expected positive threshold, got </span><span class="si">{</span><span class="n">eps</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="linenos">339</span>
+<span class="linenos">340</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_var</span> <span class="o">=</span> <span class="n">var</span>
+<span class="linenos">341</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_f</span> <span class="o">=</span> <span class="n">f</span> <span class="k">if</span> <span class="p">(</span><span class="n">f</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">_</span><span class="p">:</span> <span class="n">_</span><span class="p">)</span>
+<span class="linenos">342</span>
+<span class="linenos">343</span>        <span class="k">try</span><span class="p">:</span>
+<span class="linenos">344</span>            <span class="k">assert</span> <span class="n">norm</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+<span class="linenos">345</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_norm</span> <span class="o">=</span> <span class="n">norm</span>
+<span class="linenos">346</span>        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="linenos">347</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;norm: expected non-negative, got </span><span class="si">{</span><span class="n">norm</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="linenos">348</span>
+<span class="linenos">349</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_satisfy_all</span> <span class="o">=</span> <span class="n">satisfy_all</span>
+<span class="linenos">350</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># last computed Ln rel-norm(s) in stop().</span>
+<span class="linenos">351</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_x_prev</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># buffered var from last query.</span></div>
+
+<span class="linenos">352</span>
+<span class="linenos">353</span>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="linenos">354</span>        <span class="n">x</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_var</span><span class="p">]</span>
+<span class="linenos">355</span>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">):</span>
+<span class="linenos">356</span>            <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+<span class="linenos">357</span>        <span class="n">xp</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">get_array_module</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">358</span>
+<span class="linenos">359</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_x_prev</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">360</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_x_prev</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="linenos">361</span>            <span class="c1"># force 1st .info() call to have same format as further calls.</span>
+<span class="linenos">362</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,)</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">else</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos">363</span>            <span class="k">return</span> <span class="kc">False</span>  <span class="c1"># decision deferred: insufficient history to evaluate rel-err.</span>
+<span class="linenos">364</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">365</span>            <span class="n">norm</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">_</span><span class="p">:</span> <span class="n">xp</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_norm</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">366</span>            <span class="n">rule</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">all</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_satisfy_all</span> <span class="k">else</span> <span class="n">xp</span><span class="o">.</span><span class="n">any</span>
+<span class="linenos">367</span>
+<span class="linenos">368</span>            <span class="n">fx_prev</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_f</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_x_prev</span><span class="p">)</span>
+<span class="linenos">369</span>            <span class="n">numerator</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">fx_prev</span><span class="p">)</span>
+<span class="linenos">370</span>            <span class="n">denominator</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="n">fx_prev</span><span class="p">)</span>
+<span class="linenos">371</span>            <span class="n">decision</span> <span class="o">=</span> <span class="n">rule</span><span class="p">(</span><span class="n">numerator</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eps</span> <span class="o">*</span> <span class="n">denominator</span><span class="p">)</span>
+<span class="linenos">372</span>
+<span class="linenos">373</span>            <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
+<span class="linenos">374</span>                <span class="c1"># Store relative improvement values for info(). Special care must be taken for the</span>
+<span class="linenos">375</span>                <span class="c1"># problematic case 0/0 -&gt; NaN.</span>
+<span class="linenos">376</span>                <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+<span class="linenos">377</span>                <span class="bp">self</span><span class="o">.</span><span class="n">_val</span> <span class="o">=</span> <span class="n">numerator</span> <span class="o">/</span> <span class="n">denominator</span>
+<span class="linenos">378</span>                <span class="bp">self</span><span class="o">.</span><span class="n">_val</span><span class="p">[</span><span class="n">xp</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_val</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># no relative improvement.</span>
+<span class="linenos">379</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_x_prev</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="linenos">380</span>
+<span class="linenos">381</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_x_prev</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_val</span><span class="p">,</span> <span class="n">decision</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_x_prev</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_val</span><span class="p">,</span> <span class="n">decision</span><span class="p">)</span>
+<span class="linenos">382</span>            <span class="k">return</span> <span class="n">decision</span>
+<span class="linenos">383</span>
+<span class="linenos">384</span>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="linenos">385</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_val</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="linenos">386</span>            <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="sa">f</span><span class="s2">&quot;RelError[</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_var</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_val</span><span class="o">.</span><span class="n">max</span><span class="p">())}</span>  <span class="c1"># takes the only element available.</span>
+<span class="linenos">387</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">388</span>            <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos">389</span>                <span class="sa">f</span><span class="s2">&quot;RelError[</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_var</span><span class="si">}</span><span class="s2">]_min&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_val</span><span class="o">.</span><span class="n">min</span><span class="p">()),</span>
+<span class="linenos">390</span>                <span class="sa">f</span><span class="s2">&quot;RelError[</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_var</span><span class="si">}</span><span class="s2">]_max&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_val</span><span class="o">.</span><span class="n">max</span><span class="p">()),</span>
+<span class="linenos">391</span>            <span class="p">}</span>
+<span class="linenos">392</span>        <span class="k">return</span> <span class="n">data</span>
+<span class="linenos">393</span>
+<span class="linenos">394</span>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">395</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="linenos">396</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_x_prev</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+<div id="searchbox"></div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

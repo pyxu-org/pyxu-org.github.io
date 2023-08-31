@@ -1,0 +1,1040 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pyxu.experimental.sampler._sampler &#8212; Pyxu Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=1031a718" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../../../../_static/documentation_options.js?v=29481255"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=30646c52"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../../_static/design-tabs.js?v=36754332"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pyxu/experimental/sampler/_sampler';</script>
+    <link rel="icon" href="../../../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../intro/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../api/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../fair/index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><strong> v0.0.1 </strong></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../../_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../intro/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../api/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../fair/index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><strong> v0.0.1 </strong></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../../_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">pyxu.experimental.sampler._sampler</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for pyxu.experimental.sampler._sampler</h1><div class="highlight"><pre>
+<span></span><span class="linenos">  1</span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">  2</span><span class="sd">This sampler module implements state-of-the-art algorithms that generate samples from probability distributions.</span>
+<span class="linenos">  3</span><span class="sd">These algorithms are particularly well-suited for high-dimensional distributions such as posterior distributions of inverse</span>
+<span class="linenos">  4</span><span class="sd">problems in imaging, which is a notoriously difficult task.</span>
+<span class="linenos">  5</span><span class="sd">The ability to sample from the posterior distribution is extremely valuable, as it allows to explore the landscape of the</span>
+<span class="linenos">  6</span><span class="sd">objective function instead of having a single point estimate (the maximum a posteriori solution, i.e. the mode of the posterior).</span>
+<span class="linenos">  7</span><span class="sd">This is useful for uncertainty quantification (UQ) purposes [UQ_MCMC]_, and it allows compute Monte Carlo estimates of expected</span>
+<span class="linenos">  8</span><span class="sd">values with respect to the posterior.</span>
+<span class="linenos">  9</span><span class="sd">For example, the mean of samples from the posterior is an approximation of the minimum mean-square error (MMSE) estimator that</span>
+<span class="linenos"> 10</span><span class="sd">can be used for image reconstruction.</span>
+<span class="linenos"> 11</span><span class="sd">Higher-order pixel-wise statistics (e.g., the variance) can also be computed in an online fashion</span>
+<span class="linenos"> 12</span><span class="sd">(see :py:mod:`~pyxu.experimental.sampler.statistics`) and provide useful diagnostic tools for uncertainty quantification.</span>
+<span class="linenos"> 13</span>
+<span class="linenos"> 14</span><span class="sd">In the following example, we showcase the unajusted Langevin algorithm (:py:class:`~pyxu.experimental.sampler._sampler.ULA`)</span>
+<span class="linenos"> 15</span><span class="sd">applied to a total-variation denoising problem.</span>
+<span class="linenos"> 16</span><span class="sd">We show the MMSE estimator as well as the pixelwise variance of the samples.</span>
+<span class="linenos"> 17</span><span class="sd">As expected, the variance is higher around edges than in the smooth regions, indicating that there is higher uncertainty</span>
+<span class="linenos"> 18</span><span class="sd">in these regions.</span>
+<span class="linenos"> 19</span>
+<span class="linenos"> 20</span><span class="sd">.. code-block:: python3</span>
+<span class="linenos"> 21</span>
+<span class="linenos"> 22</span><span class="sd">   import matplotlib.pyplot as plt</span>
+<span class="linenos"> 23</span><span class="sd">   import numpy as np</span>
+<span class="linenos"> 24</span><span class="sd">   import pyxu.experimental.sampler as pxes</span>
+<span class="linenos"> 25</span><span class="sd">   import pyxu.operator as pxo</span>
+<span class="linenos"> 26</span><span class="sd">   import pyxu.opt.solver as pxs</span>
+<span class="linenos"> 27</span><span class="sd">   import skimage as skim</span>
+<span class="linenos"> 28</span>
+<span class="linenos"> 29</span><span class="sd">   sh_im = (128,) * 2</span>
+<span class="linenos"> 30</span><span class="sd">   gt = skim.transform.resize(skim.data.shepp_logan_phantom(), sh_im)  # Ground-truth image</span>
+<span class="linenos"> 31</span><span class="sd">   N = np.prod(sh_im)  # Number of pixels</span>
+<span class="linenos"> 32</span>
+<span class="linenos"> 33</span><span class="sd">   # Noisy data</span>
+<span class="linenos"> 34</span><span class="sd">   rng = np.random.default_rng(seed=0)</span>
+<span class="linenos"> 35</span><span class="sd">   sigma = 1e-1  # Noise standard deviation</span>
+<span class="linenos"> 36</span><span class="sd">   y = gt + sigma * rng.standard_normal(sh_im)  # Noisy image</span>
+<span class="linenos"> 37</span><span class="sd">   f = 1 / 2 * pxo.SquaredL2Norm(dim=N).argshift(-y.ravel()) / sigma**2  # Data fidelity loss</span>
+<span class="linenos"> 38</span>
+<span class="linenos"> 39</span><span class="sd">   # Smoothed TV regularization</span>
+<span class="linenos"> 40</span><span class="sd">   g = pxo.L21Norm(arg_shape=(2, *sh_im)).moreau_envelope(1e-2) * pxo.Gradient(arg_shape=sh_im)</span>
+<span class="linenos"> 41</span><span class="sd">   theta = 10  # Regularization parameter</span>
+<span class="linenos"> 42</span>
+<span class="linenos"> 43</span><span class="sd">   # Compute MAP estimator</span>
+<span class="linenos"> 44</span><span class="sd">   pgd = pxs.PGD(f=f + theta * g)</span>
+<span class="linenos"> 45</span><span class="sd">   pgd.fit(x0=y.ravel())</span>
+<span class="linenos"> 46</span><span class="sd">   im_MAP = pgd.solution().reshape(sh_im)</span>
+<span class="linenos"> 47</span>
+<span class="linenos"> 48</span><span class="sd">   fig, ax = plt.subplots(1, 3)</span>
+<span class="linenos"> 49</span><span class="sd">   ax[0].imshow(gt)</span>
+<span class="linenos"> 50</span><span class="sd">   ax[0].set_title(&quot;Ground truth&quot;)</span>
+<span class="linenos"> 51</span><span class="sd">   ax[0].axis(&quot;off&quot;)</span>
+<span class="linenos"> 52</span><span class="sd">   ax[1].imshow(y, vmin=0, vmax=1)</span>
+<span class="linenos"> 53</span><span class="sd">   ax[1].set_title(&quot;Noisy image&quot;)</span>
+<span class="linenos"> 54</span><span class="sd">   ax[1].axis(&quot;off&quot;)</span>
+<span class="linenos"> 55</span><span class="sd">   ax[2].imshow(im_MAP, vmin=0, vmax=1)</span>
+<span class="linenos"> 56</span><span class="sd">   ax[2].set_title(&quot;MAP reconstruction&quot;)</span>
+<span class="linenos"> 57</span><span class="sd">   ax[2].axis(&quot;off&quot;)</span>
+<span class="linenos"> 58</span>
+<span class="linenos"> 59</span><span class="sd">   ula = pxes.ULA(f=f + theta * g)  # ULA sampler</span>
+<span class="linenos"> 60</span>
+<span class="linenos"> 61</span><span class="sd">   n = int(1e4)  # Number of samples</span>
+<span class="linenos"> 62</span><span class="sd">   burn_in = int(1e3)  # Number of burn-in iterations</span>
+<span class="linenos"> 63</span><span class="sd">   gen = ula.samples(x0=np.zeros(N), rng=rng)  # Generator for ULA samples</span>
+<span class="linenos"> 64</span><span class="sd">   # Objects for computing online statistics based on samples</span>
+<span class="linenos"> 65</span><span class="sd">   online_mean = pxes.OnlineMoment(order=1)</span>
+<span class="linenos"> 66</span><span class="sd">   online_var = pxes.OnlineVariance()</span>
+<span class="linenos"> 67</span>
+<span class="linenos"> 68</span><span class="sd">   i = 0  # Number of samples</span>
+<span class="linenos"> 69</span><span class="sd">   for sample in gen:  # Draw ULA sample</span>
+<span class="linenos"> 70</span><span class="sd">       i += 1</span>
+<span class="linenos"> 71</span><span class="sd">       if i &gt; burn_in + n:</span>
+<span class="linenos"> 72</span><span class="sd">           break</span>
+<span class="linenos"> 73</span><span class="sd">       if i &gt; burn_in:</span>
+<span class="linenos"> 74</span><span class="sd">           mean = online_mean.update(sample)  # Update online mean</span>
+<span class="linenos"> 75</span><span class="sd">           var = online_var.update(sample)  # Update online variance</span>
+<span class="linenos"> 76</span>
+<span class="linenos"> 77</span><span class="sd">   fig, ax = plt.subplots(1, 2)</span>
+<span class="linenos"> 78</span><span class="sd">   mean_im = ax[0].imshow(mean.reshape(sh_im), vmin=0, vmax=1)</span>
+<span class="linenos"> 79</span><span class="sd">   fig.colorbar(mean_im, fraction=0.05, ax=ax[0])</span>
+<span class="linenos"> 80</span><span class="sd">   ax[0].set_title(&quot;Mean (MMSE estimator)&quot;)</span>
+<span class="linenos"> 81</span><span class="sd">   ax[0].axis(&quot;off&quot;)</span>
+<span class="linenos"> 82</span><span class="sd">   var_im = ax[1].imshow(var.reshape(sh_im))</span>
+<span class="linenos"> 83</span><span class="sd">   fig.colorbar(var_im, fraction=0.05, ax=ax[1])</span>
+<span class="linenos"> 84</span><span class="sd">   ax[1].set_title(&quot;Variance&quot;)</span>
+<span class="linenos"> 85</span><span class="sd">   ax[1].axis(&quot;off&quot;)</span>
+<span class="linenos"> 86</span><span class="sd">   fig.suptitle(&quot;Pixel-wise statistics of ULA samples&quot;)</span>
+<span class="linenos"> 87</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 88</span>
+<span class="linenos"> 89</span><span class="kn">import</span> <span class="nn">collections.abc</span> <span class="k">as</span> <span class="nn">cabc</span>
+<span class="linenos"> 90</span><span class="kn">import</span> <span class="nn">math</span>
+<span class="linenos"> 91</span>
+<span class="linenos"> 92</span><span class="kn">import</span> <span class="nn">pyxu.abc</span> <span class="k">as</span> <span class="nn">pxa</span>
+<span class="linenos"> 93</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
+<span class="linenos"> 94</span><span class="kn">import</span> <span class="nn">pyxu.operator</span> <span class="k">as</span> <span class="nn">pxo</span>
+<span class="linenos"> 95</span><span class="kn">import</span> <span class="nn">pyxu.runtime</span> <span class="k">as</span> <span class="nn">pxrt</span>
+<span class="linenos"> 96</span><span class="kn">import</span> <span class="nn">pyxu.util</span> <span class="k">as</span> <span class="nn">pxu</span>
+<span class="linenos"> 97</span>
+<span class="linenos"> 98</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos"> 99</span>    <span class="s2">&quot;_Sampler&quot;</span><span class="p">,</span>
+<span class="linenos">100</span>    <span class="s2">&quot;ULA&quot;</span><span class="p">,</span>
+<span class="linenos">101</span>    <span class="s2">&quot;MYULA&quot;</span><span class="p">,</span>
+<span class="linenos">102</span><span class="p">]</span>
+<span class="linenos">103</span>
+<span class="linenos">104</span>
+<span class="linenos">105</span><span class="k">class</span> <span class="nc">_Sampler</span><span class="p">:</span>
+<span class="linenos">106</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Abstract base class for samplers.&quot;&quot;&quot;</span>
+<span class="linenos">107</span>
+<span class="linenos">108</span>    <span class="k">def</span> <span class="nf">samples</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rng</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Generator</span><span class="p">:</span>
+<span class="linenos">109</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns a generator; samples are drawn by calling next(generator).&quot;&quot;&quot;</span>
+<span class="linenos">110</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_sample_init</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="linenos">111</span>
+<span class="linenos">112</span>        <span class="k">def</span> <span class="nf">_generator</span><span class="p">():</span>
+<span class="linenos">113</span>            <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="linenos">114</span>                <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sample</span><span class="p">()</span>
+<span class="linenos">115</span>
+<span class="linenos">116</span>        <span class="k">return</span> <span class="n">_generator</span><span class="p">()</span>
+<span class="linenos">117</span>
+<span class="linenos">118</span>    <span class="k">def</span> <span class="nf">_sample_init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rng</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="linenos">119</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Optional method to set initial state of the sampler (e.g., a starting point).&quot;&quot;&quot;</span>
+<span class="linenos">120</span>        <span class="k">pass</span>
+<span class="linenos">121</span>
+<span class="linenos">122</span>    <span class="k">def</span> <span class="nf">_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">123</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Method to be implemented by subclasses that returns the next sample.&quot;&quot;&quot;</span>
+<span class="linenos">124</span>        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+<span class="linenos">125</span>
+<span class="linenos">126</span>
+<div class="viewcode-block" id="ULA">
+<a class="viewcode-back" href="../../../../api/experimental.html#pyxu.experimental.sampler.ULA">[docs]</a>
+<span class="linenos">127</span><span class="k">class</span> <span class="nc">ULA</span><span class="p">(</span><span class="n">_Sampler</span><span class="p">):</span>
+<span class="linenos">128</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">129</span><span class="sd">    Unajusted Langevin algorithm (ULA).</span>
+<span class="linenos">130</span>
+<span class="linenos">131</span><span class="sd">    Generates samples from the distribution</span>
+<span class="linenos">132</span>
+<span class="linenos">133</span><span class="sd">    .. math::</span>
+<span class="linenos">134</span>
+<span class="linenos">135</span><span class="sd">       p(\mathbf{x})</span>
+<span class="linenos">136</span><span class="sd">       =</span>
+<span class="linenos">137</span><span class="sd">       \frac{\exp(-\mathcal{F}(\mathbf{x}))}{\int_{\mathbb{R}^N} \exp(-\mathcal{F}(\tilde{\mathbf{x}}))</span>
+<span class="linenos">138</span><span class="sd">       \mathrm{d} \tilde{\mathbf{x}} },</span>
+<span class="linenos">139</span>
+<span class="linenos">140</span><span class="sd">    where :math:`\mathcal{F}: \mathbb{R}^N \to \mathbb{R}` is *differentiable* with :math:`\beta`-*Lipschitz continuous*</span>
+<span class="linenos">141</span><span class="sd">    gradient.</span>
+<span class="linenos">142</span>
+<span class="linenos">143</span><span class="sd">    Notes</span>
+<span class="linenos">144</span><span class="sd">    -----</span>
+<span class="linenos">145</span><span class="sd">    ULA is a Monte-Carlo Markov chain (MCMC) method that derives from the discretization of overdamped Langevin diffusions.</span>
+<span class="linenos">146</span><span class="sd">    More specifically, it relies on the Langevin stochastic differential equation (SDE):</span>
+<span class="linenos">147</span>
+<span class="linenos">148</span><span class="sd">    .. math::</span>
+<span class="linenos">149</span>
+<span class="linenos">150</span><span class="sd">       \mathrm{d} \mathbf{X}_t</span>
+<span class="linenos">151</span><span class="sd">       =</span>
+<span class="linenos">152</span><span class="sd">       - \nabla \mathcal{F}(\mathbf{X}_t) \mathrm{d}t + \sqrt{2} \mathrm{d} \mathbf{B}_t,</span>
+<span class="linenos">153</span>
+<span class="linenos">154</span><span class="sd">    where :math:`(\mathbf{B}_t)_{t \geq 0}` is a :math:`N`-dimensional Brownian motion.</span>
+<span class="linenos">155</span><span class="sd">    It is well known that under mild technical assumptions, this SDE has a unique strong solution whose invariant distribution</span>
+<span class="linenos">156</span><span class="sd">    is :math:`p(\mathbf{x}) \propto \exp(-\mathcal{F}(\mathbf{x}))`.</span>
+<span class="linenos">157</span><span class="sd">    The discrete-time Euler-Maruyama discretization of this SDE then yields the ULA Markov chain</span>
+<span class="linenos">158</span>
+<span class="linenos">159</span><span class="sd">    .. math::</span>
+<span class="linenos">160</span>
+<span class="linenos">161</span><span class="sd">       \mathbf{X}_{k+1} = \mathbf{X}_{k} - \gamma \nabla \mathcal{F}(\mathbf{X}_k) + \sqrt{2 \gamma} \mathbf{Z}_{k+1}</span>
+<span class="linenos">162</span>
+<span class="linenos">163</span><span class="sd">    for all :math:`k \in \mathbb{Z}`, where :math:`\gamma` is the discretization step size and :math:`(\mathbf{Z}_k)_{k</span>
+<span class="linenos">164</span><span class="sd">    \in \mathbb{Z}}` is a sequence of independant and identically distributed :math:`N`-dimensional standard Gaussian</span>
+<span class="linenos">165</span><span class="sd">    distributions.</span>
+<span class="linenos">166</span><span class="sd">    When :math:`\mathcal{F}` is differentiable with :math:`\beta`-Lipschitz continuous gradient and :math:`\gamma \leq \frac{1}{\beta}`,</span>
+<span class="linenos">167</span><span class="sd">    the ULA Markov chain converges (see [ULA]_) to a unique stationary distribution :math:`p_\gamma` such that</span>
+<span class="linenos">168</span>
+<span class="linenos">169</span><span class="sd">    .. math::</span>
+<span class="linenos">170</span>
+<span class="linenos">171</span><span class="sd">       \lim_{\gamma \to 0} \Vert p_\gamma - p \Vert_{\mathrm{TV}} = 0.</span>
+<span class="linenos">172</span>
+<span class="linenos">173</span><span class="sd">    The discretization step :math:`\gamma` is subject to the bias-variance tradeoff:</span>
+<span class="linenos">174</span><span class="sd">    a larger step will lead to faster convergence of the Markov chain at the expense of a larger bias in the</span>
+<span class="linenos">175</span><span class="sd">    approximation of the distribution :math:`p`.</span>
+<span class="linenos">176</span><span class="sd">    Setting :math:`\gamma` as large as possible (default behavior) is recommended for large-scale problems, since</span>
+<span class="linenos">177</span><span class="sd">    convergence speed (rather than approximation bias) is then typically the main bottelneck.</span>
+<span class="linenos">178</span><span class="sd">    See `Example` section below for a concrete illustration of this tradeoff.</span>
+<span class="linenos">179</span>
+<span class="linenos">180</span><span class="sd">    Remarks</span>
+<span class="linenos">181</span><span class="sd">    -------</span>
+<span class="linenos">182</span><span class="sd">    Like all MCMC sampling methods, ULA comes with the following challenges:</span>
+<span class="linenos">183</span>
+<span class="linenos">184</span><span class="sd">    * The first few samples of the chain may not be adequate for computing statistics, as they might be located in low</span>
+<span class="linenos">185</span><span class="sd">      probability regions.</span>
+<span class="linenos">186</span><span class="sd">      This challenge can either be alleviated by selecting a representative starting point to the chain, or by having a</span>
+<span class="linenos">187</span><span class="sd">      `burn-in` phase where the first few samples are discarded.</span>
+<span class="linenos">188</span>
+<span class="linenos">189</span><span class="sd">    * Consecutive samples are typically correlated, which can deteriorate the Monte-Carlo estimation of quantities of</span>
+<span class="linenos">190</span><span class="sd">      interest.</span>
+<span class="linenos">191</span><span class="sd">      This issue can be alleviated by `thinning` the chain, i.e., selecting only every :math:`k` samples, at the expense</span>
+<span class="linenos">192</span><span class="sd">      of an increased computational cost.</span>
+<span class="linenos">193</span><span class="sd">      Useful diagnostic tools to quantify this correlation between samples include the pixel-wise autocorrelation function</span>
+<span class="linenos">194</span><span class="sd">      and the `effective sample size &lt;https://mc-stan.org/docs/reference-manual/effective-sample-size.html&gt;`_.</span>
+<span class="linenos">195</span>
+<span class="linenos">196</span><span class="sd">    Example</span>
+<span class="linenos">197</span><span class="sd">    -------</span>
+<span class="linenos">198</span><span class="sd">    We illustrate ULA on a 1D example (:math:`N = 1`) where :math:`\mathcal{F}(x) = \frac{x^2}{2}`; the target</span>
+<span class="linenos">199</span><span class="sd">    distribution :math:`p(x)` is thus the 1D standard Gaussian.</span>
+<span class="linenos">200</span><span class="sd">    In this toy example, the biased distribution :math:`p_\gamma(x)` can be computed in closed form.</span>
+<span class="linenos">201</span><span class="sd">    The ULA Markov chain is given by</span>
+<span class="linenos">202</span>
+<span class="linenos">203</span><span class="sd">    .. math::</span>
+<span class="linenos">204</span>
+<span class="linenos">205</span><span class="sd">       \mathbf{X}_{k+1} &amp;= \mathbf{X}_{k} - \gamma \nabla\mathcal{F}(\mathbf{X}_k) + \sqrt{2\gamma}\mathbf{Z}_{k+1} \\</span>
+<span class="linenos">206</span><span class="sd">       &amp;= \mathbf{X}_{k} (1 - \gamma) + \sqrt{2 \gamma} \mathbf{Z}_{k+1}.</span>
+<span class="linenos">207</span>
+<span class="linenos">208</span><span class="sd">    Assuming for simplicity that :math:`\mathbf{X}_0` is Gaussian with mean :math:`\mu_0` and variance</span>
+<span class="linenos">209</span><span class="sd">    :math:`\sigma_0^2`, :math:`\mathbf{X}_k` is Gaussian for any :math:`k \in \mathbb{Z}` as a linear combination of</span>
+<span class="linenos">210</span><span class="sd">    Gaussians.</span>
+<span class="linenos">211</span><span class="sd">    Taking the expected value of the recurrence relation yields</span>
+<span class="linenos">212</span>
+<span class="linenos">213</span><span class="sd">    .. math::</span>
+<span class="linenos">214</span>
+<span class="linenos">215</span><span class="sd">       \mu_k := \mathbb{E}(\mathbf{X}_{k}) = \mathbb{E}(\mathbf{X}_{k-1}) (1 - \gamma) = \mu_0 (1 - \gamma)^k</span>
+<span class="linenos">216</span>
+<span class="linenos">217</span><span class="sd">    (geometric sequence).</span>
+<span class="linenos">218</span><span class="sd">    Taking the expected value of the square of the recurrence relation yields</span>
+<span class="linenos">219</span>
+<span class="linenos">220</span><span class="sd">    .. math::</span>
+<span class="linenos">221</span>
+<span class="linenos">222</span><span class="sd">       \mu^{(2)}_k := \mathbb{E}(\mathbf{X}_{k}^2) = \mathbb{E}(\mathbf{X}_{k-1}^2) (1 - \gamma)^2 + 2 \gamma =</span>
+<span class="linenos">223</span><span class="sd">       (1 - \gamma)^{2k} (\sigma_0^2 - b) + b</span>
+<span class="linenos">224</span>
+<span class="linenos">225</span><span class="sd">    with :math:`b = \frac{2 \gamma}{1 - (1 - \gamma)^{2}} = \frac{1}{1-\frac{\gamma}{2}}` (arithmetico-geometric</span>
+<span class="linenos">226</span><span class="sd">    sequence) due to the independence of :math:`\mathbf{X}_{k-1}` and :math:`\mathbf{Z}_{k}`.</span>
+<span class="linenos">227</span><span class="sd">    Hence, :math:`p_\gamma(x)` is a Gaussian with mean :math:`\mu_\gamma= \lim_{k \to \infty} \mu_k = 0` and</span>
+<span class="linenos">228</span><span class="sd">    variance :math:`\sigma_\gamma^2 = \lim_{k \to \infty} \mu^{(2)}_k - \mu_k^2 = \frac{1}{1-\frac{\gamma}{2}}`.</span>
+<span class="linenos">229</span><span class="sd">    As expected, we have :math:`\lim_{\gamma \to 0} \sigma_\gamma^2 = 1`, which is the variance of the target</span>
+<span class="linenos">230</span><span class="sd">    distribution :math:`p(x)`.</span>
+<span class="linenos">231</span>
+<span class="linenos">232</span><span class="sd">    We plot the distribution of the samples of ULA for one large (:math:`\gamma_1 \approx 1`, i.e.</span>
+<span class="linenos">233</span><span class="sd">    :math:`\sigma_{\gamma_1}^2 \approx 2`) and one small (:math:`\gamma_2 = 0.1`, i.e. :math:`\sigma_{\gamma_2}^2</span>
+<span class="linenos">234</span><span class="sd">    \approx 1.05`) step size.</span>
+<span class="linenos">235</span><span class="sd">    As expected, the larger step size :math:`\gamma_1` leads to a larger bias in the approximation of :math:`p(x)`.</span>
+<span class="linenos">236</span><span class="sd">    To quantify the speed of convergence of the Markov chains, we compute the `Cramér-von Mises</span>
+<span class="linenos">237</span><span class="sd">    &lt;https://en.wikipedia.org/wiki/Cram%C3%A9r%E2%80%93von_Mises_criterion&gt;`_ tests of goodness of fit of the</span>
+<span class="linenos">238</span><span class="sd">    empirical distributions to the stationary distributions of ULA :math:`p_{\gamma_1}(x)` and :math:`p_{\gamma_2}(x)`.</span>
+<span class="linenos">239</span><span class="sd">    We observe that the larger step :math:`\gamma_1` leads to a better fit (lower Cramér-von Mises criterion), which</span>
+<span class="linenos">240</span><span class="sd">    illustrates the aforementioned bias-variance tradeoff for the choice of the step size.</span>
+<span class="linenos">241</span>
+<span class="linenos">242</span><span class="sd">    .. plot::</span>
+<span class="linenos">243</span>
+<span class="linenos">244</span><span class="sd">       import matplotlib.pyplot as plt</span>
+<span class="linenos">245</span><span class="sd">       import numpy as np</span>
+<span class="linenos">246</span><span class="sd">       import pyxu.experimental.sampler as pxes</span>
+<span class="linenos">247</span><span class="sd">       import pyxu.operator as pxo</span>
+<span class="linenos">248</span><span class="sd">       import scipy as sp</span>
+<span class="linenos">249</span>
+<span class="linenos">250</span><span class="sd">       f = pxo.SquaredL2Norm(dim=1) / 2  # To sample 1D normal distribution (mean 0, variance 1)</span>
+<span class="linenos">251</span><span class="sd">       ula = pxes.ULA(f=f)  # Sampler with maximum step size</span>
+<span class="linenos">252</span><span class="sd">       ula_lb = pxes.ULA(f=f, gamma=1e-1)  # Sampler with small step size</span>
+<span class="linenos">253</span>
+<span class="linenos">254</span><span class="sd">       gen_ula = ula.samples(x0=np.zeros(1))</span>
+<span class="linenos">255</span><span class="sd">       gen_ula_lb = ula_lb.samples(x0=np.zeros(1))</span>
+<span class="linenos">256</span><span class="sd">       n_burn_in = int(1e3)  # Number of burn-in iterations</span>
+<span class="linenos">257</span><span class="sd">       for i in range(n_burn_in):</span>
+<span class="linenos">258</span><span class="sd">           next(gen_ula)</span>
+<span class="linenos">259</span><span class="sd">           next(gen_ula_lb)</span>
+<span class="linenos">260</span>
+<span class="linenos">261</span><span class="sd">       # Online statistics objects</span>
+<span class="linenos">262</span><span class="sd">       mean_ula = pxes.OnlineMoment(order=1)</span>
+<span class="linenos">263</span><span class="sd">       mean_ula_lb = pxes.OnlineMoment(order=1)</span>
+<span class="linenos">264</span><span class="sd">       var_ula = pxes.OnlineVariance()</span>
+<span class="linenos">265</span><span class="sd">       var_ula_lb = pxes.OnlineVariance()</span>
+<span class="linenos">266</span>
+<span class="linenos">267</span><span class="sd">       n = int(1e4)  # Number of samples</span>
+<span class="linenos">268</span><span class="sd">       samples_ula = np.zeros(n)</span>
+<span class="linenos">269</span><span class="sd">       samples_ula_lb = np.zeros(n)</span>
+<span class="linenos">270</span><span class="sd">       for i in range(n):</span>
+<span class="linenos">271</span><span class="sd">           sample = next(gen_ula)</span>
+<span class="linenos">272</span><span class="sd">           sample_lb = next(gen_ula_lb)</span>
+<span class="linenos">273</span><span class="sd">           samples_ula[i] = sample</span>
+<span class="linenos">274</span><span class="sd">           samples_ula_lb[i] = sample_lb</span>
+<span class="linenos">275</span><span class="sd">           mean = float(mean_ula.update(sample))</span>
+<span class="linenos">276</span><span class="sd">           var = float(var_ula.update(sample))</span>
+<span class="linenos">277</span><span class="sd">           mean_lb = float(mean_ula_lb.update(sample_lb))</span>
+<span class="linenos">278</span><span class="sd">           var_lb = float(var_ula_lb.update(sample_lb))</span>
+<span class="linenos">279</span>
+<span class="linenos">280</span><span class="sd">       # Theoretical variances of biased stationary distributions of ULA</span>
+<span class="linenos">281</span><span class="sd">       biased_var = 1 / (1 - ula._gamma / 2)</span>
+<span class="linenos">282</span><span class="sd">       biased_var_lb = 1 / (1 - ula_lb._gamma / 2)</span>
+<span class="linenos">283</span>
+<span class="linenos">284</span><span class="sd">       # Quantify goodness of fit of empirical distribution with theoretical distribution (Cramér-von Mises test)</span>
+<span class="linenos">285</span><span class="sd">       cvm = sp.stats.cramervonmises(samples_ula, &quot;norm&quot;, args=(0, np.sqrt(biased_var)))</span>
+<span class="linenos">286</span><span class="sd">       cvm_lb = sp.stats.cramervonmises(samples_ula_lb, &quot;norm&quot;, args=(0, np.sqrt(biased_var_lb)))</span>
+<span class="linenos">287</span>
+<span class="linenos">288</span><span class="sd">       # Plots</span>
+<span class="linenos">289</span><span class="sd">       grid = np.linspace(-4, 4, 1000)</span>
+<span class="linenos">290</span>
+<span class="linenos">291</span><span class="sd">       plt.figure()</span>
+<span class="linenos">292</span><span class="sd">       plt.title(</span>
+<span class="linenos">293</span><span class="sd">           f&quot;ULA samples (large step size) \n Empirical mean: {mean:.3f} (theoretical: 0) \n &quot;</span>
+<span class="linenos">294</span><span class="sd">           f&quot;Empirical variance: {var:.3f} (theoretical: {biased_var:.3f}) \n&quot;</span>
+<span class="linenos">295</span><span class="sd">           f&quot;Cramér-von Mises goodness of fit: {cvm.statistic:.3f}&quot;</span>
+<span class="linenos">296</span><span class="sd">       )</span>
+<span class="linenos">297</span><span class="sd">       plt.hist(samples_ula, range=(min(grid), max(grid)), bins=100, density=True)</span>
+<span class="linenos">298</span><span class="sd">       plt.plot(grid, sp.stats.norm.pdf(grid), label=r&quot;$p(x)$&quot;)</span>
+<span class="linenos">299</span><span class="sd">       plt.plot(grid, sp.stats.norm.pdf(grid, scale=np.sqrt(biased_var)), label=r&quot;$p_{\gamma_1}(x)$&quot;)</span>
+<span class="linenos">300</span><span class="sd">       plt.legend()</span>
+<span class="linenos">301</span><span class="sd">       plt.show()</span>
+<span class="linenos">302</span>
+<span class="linenos">303</span><span class="sd">       plt.figure()</span>
+<span class="linenos">304</span><span class="sd">       plt.title(</span>
+<span class="linenos">305</span><span class="sd">           f&quot;ULA samples (small step size) \n Empirical mean: {mean_lb:.3f} (theoretical: 0) \n &quot;</span>
+<span class="linenos">306</span><span class="sd">           f&quot;Empirical variance: {var_lb:.3f} (theoretical: {biased_var_lb:.3f}) \n&quot;</span>
+<span class="linenos">307</span><span class="sd">           f&quot;Cramér-von Mises goodness of fit: {cvm_lb.statistic:.3f}&quot;</span>
+<span class="linenos">308</span><span class="sd">       )</span>
+<span class="linenos">309</span><span class="sd">       plt.hist(samples_ula_lb, range=(min(grid), max(grid)), bins=100, density=True)</span>
+<span class="linenos">310</span><span class="sd">       plt.plot(grid, sp.stats.norm.pdf(grid), label=r&quot;$p(x)$&quot;)</span>
+<span class="linenos">311</span><span class="sd">       plt.plot(grid, sp.stats.norm.pdf(grid, scale=np.sqrt(biased_var_lb)), label=r&quot;$p_{\gamma_2}(x)$&quot;)</span>
+<span class="linenos">312</span><span class="sd">       plt.legend()</span>
+<span class="linenos">313</span><span class="sd">       plt.show()</span>
+<span class="linenos">314</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">315</span>
+<div class="viewcode-block" id="ULA.__init__">
+<a class="viewcode-back" href="../../../../api/experimental.html#pyxu.experimental.sampler.ULA.__init__">[docs]</a>
+<span class="linenos">316</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">:</span> <span class="n">pxa</span><span class="o">.</span><span class="n">DiffFunc</span><span class="p">,</span> <span class="n">gamma</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="linenos">317</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">318</span><span class="sd">        Parameters</span>
+<span class="linenos">319</span><span class="sd">        ----------</span>
+<span class="linenos">320</span><span class="sd">        f: :py:class:`~pyxu.abc.operator.DiffFunc`</span>
+<span class="linenos">321</span><span class="sd">            Differentiable functional.</span>
+<span class="linenos">322</span><span class="sd">        gamma: Real</span>
+<span class="linenos">323</span><span class="sd">            Euler-Maruyama discretization step of the Langevin equation (see `Notes`).</span>
+<span class="linenos">324</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">325</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_f</span> <span class="o">=</span> <span class="n">f</span>
+<span class="linenos">326</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_beta</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">diff_lipschitz</span>
+<span class="linenos">327</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_gamma</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set_gamma</span><span class="p">(</span><span class="n">gamma</span><span class="p">)</span>
+<span class="linenos">328</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_rng</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="linenos">329</span>        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+<span class="linenos">330</span>
+<span class="linenos">331</span>    <span class="k">def</span> <span class="nf">_sample_init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rng</span><span class="p">,</span> <span class="n">x0</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">):</span>
+<span class="linenos">332</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">333</span><span class="sd">        Parameters</span>
+<span class="linenos">334</span><span class="sd">        ----------</span>
+<span class="linenos">335</span><span class="sd">        rng:</span>
+<span class="linenos">336</span><span class="sd">            Internal random generator.</span>
+<span class="linenos">337</span><span class="sd">        x0: NDArray</span>
+<span class="linenos">338</span><span class="sd">            Starting point of the Markov chain.</span>
+<span class="linenos">339</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">340</span>        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x0</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="linenos">341</span>        <span class="k">if</span> <span class="n">rng</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">342</span>            <span class="n">xp</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">get_array_module</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
+<span class="linenos">343</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_rng</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="linenos">344</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">345</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_rng</span> <span class="o">=</span> <span class="n">rng</span>
+<span class="linenos">346</span>
+<span class="linenos">347</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">()</span>
+<span class="linenos">348</span>    <span class="k">def</span> <span class="nf">_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">349</span>        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="linenos">350</span>        <span class="n">x</span> <span class="o">-=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gamma</span> <span class="o">*</span> <span class="n">pxu</span><span class="o">.</span><span class="n">copy_if_unsafe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_f</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">))</span>
+<span class="linenos">351</span>        <span class="n">x</span> <span class="o">+=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gamma</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rng</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<span class="linenos">352</span>        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+<span class="linenos">353</span>        <span class="k">return</span> <span class="n">x</span>
+<span class="linenos">354</span>
+<div class="viewcode-block" id="ULA.objective_func">
+<a class="viewcode-back" href="../../../../api/experimental.html#pyxu.experimental.sampler.ULA.objective_func">[docs]</a>
+<span class="linenos">355</span>    <span class="k">def</span> <span class="nf">objective_func</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">:</span>
+<span class="linenos">356</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">357</span><span class="sd">        Negative logarithm of the target ditribution (up to the a constant) evaluated at the current state of the</span>
+<span class="linenos">358</span><span class="sd">        Markov chain.</span>
+<span class="linenos">359</span>
+<span class="linenos">360</span><span class="sd">        Useful for diagnostics purposes to monitor whether the Markov chain is sufficiently warm-started.</span>
+<span class="linenos">361</span><span class="sd">        If so, the samples should accumulate around the modes of the target distribution, i.e., toward the minimum of</span>
+<span class="linenos">362</span><span class="sd">        :math:`\mathcal{F}`.</span>
+<span class="linenos">363</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">364</span>        <span class="k">return</span> <span class="n">pxu</span><span class="o">.</span><span class="n">copy_if_unsafe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_f</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">))</span></div>
+
+<span class="linenos">365</span>
+<span class="linenos">366</span>    <span class="k">def</span> <span class="nf">_set_gamma</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gamma</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">:</span>
+<span class="linenos">367</span>        <span class="k">if</span> <span class="n">gamma</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">368</span>            <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_beta</span><span class="p">):</span>
+<span class="linenos">369</span>                <span class="k">return</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">coerce</span><span class="p">(</span><span class="mf">0.98</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_beta</span><span class="p">)</span>
+<span class="linenos">370</span>            <span class="k">else</span><span class="p">:</span>
+<span class="linenos">371</span>                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;If f has unbounded Lipschitz gradient, the gamma parameter must be provided.&quot;</span>
+<span class="linenos">372</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="linenos">373</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">374</span>            <span class="k">try</span><span class="p">:</span>
+<span class="linenos">375</span>                <span class="k">assert</span> <span class="n">gamma</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="linenos">376</span>            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="linenos">377</span>                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;gamma must be positive, got </span><span class="si">{</span><span class="n">gamma</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="linenos">378</span>            <span class="k">return</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">coerce</span><span class="p">(</span><span class="n">gamma</span><span class="p">)</span></div>
+
+<span class="linenos">379</span>
+<span class="linenos">380</span>
+<div class="viewcode-block" id="MYULA">
+<a class="viewcode-back" href="../../../../api/experimental.html#pyxu.experimental.sampler.MYULA">[docs]</a>
+<span class="linenos">381</span><span class="k">class</span> <span class="nc">MYULA</span><span class="p">(</span><span class="n">ULA</span><span class="p">):</span>
+<span class="linenos">382</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">383</span><span class="sd">    Moreau-Yosida unajusted Langevin algorithm (MYULA).</span>
+<span class="linenos">384</span>
+<span class="linenos">385</span><span class="sd">    Generates samples from the distribution</span>
+<span class="linenos">386</span>
+<span class="linenos">387</span><span class="sd">    .. math::</span>
+<span class="linenos">388</span>
+<span class="linenos">389</span><span class="sd">       p(\mathbf{x}) = \frac{\exp(-\mathcal{F}(\mathbf{x}) - \mathcal{G}(\mathbf{x}))}{\int_{\mathbb{R}^N}</span>
+<span class="linenos">390</span><span class="sd">       \exp(-\mathcal{F}(\tilde{\mathbf{x}}) - \mathcal{G}(\tilde{\mathbf{x}})) \mathrm{d} \tilde{\mathbf{x}} },</span>
+<span class="linenos">391</span>
+<span class="linenos">392</span><span class="sd">    where :math:`\mathcal{F}: \mathbb{R}^N \to \mathbb{R}` is *convex* and *differentiable* with :math:`\beta`-</span>
+<span class="linenos">393</span><span class="sd">    *Lipschitz continuous* gradient, and :math:`\mathcal{G}: \mathbb{R}^N \to \mathbb{R}` is *proper*, *lower semi-</span>
+<span class="linenos">394</span><span class="sd">    continuous* and *convex* with *simple proximal operator*.</span>
+<span class="linenos">395</span>
+<span class="linenos">396</span><span class="sd">    Notes</span>
+<span class="linenos">397</span><span class="sd">    -----</span>
+<span class="linenos">398</span><span class="sd">    MYULA is an extension of :py:class:`~pyxu.experimental.sampler._sampler.ULA` to sample from distributions whose</span>
+<span class="linenos">399</span><span class="sd">    logarithm is nonsmooth.</span>
+<span class="linenos">400</span><span class="sd">    It consists in applying ULA to the differentiable functional :math:`\mathcal{U}^\lambda = \mathcal{F} + \mathcal{G}^\lambda`</span>
+<span class="linenos">401</span><span class="sd">    for some :math:`\lambda &gt; 0`, where</span>
+<span class="linenos">402</span>
+<span class="linenos">403</span><span class="sd">     .. math::</span>
+<span class="linenos">404</span>
+<span class="linenos">405</span><span class="sd">        \mathcal{G}^\lambda (\mathbf{x}) = \inf_{\tilde{\mathbf{x}} \in \mathbb{R}^N} \frac{1}{2 \lambda} \Vert</span>
+<span class="linenos">406</span><span class="sd">        \tilde{\mathbf{x}} - \mathbf{x} \Vert_2^2 + \mathcal{G}(\tilde{\mathbf{x}})</span>
+<span class="linenos">407</span>
+<span class="linenos">408</span><span class="sd">    is the Moreau-Yosida envelope of :math:`\mathcal{G}` with parameter :math:`\lambda`.</span>
+<span class="linenos">409</span><span class="sd">    We then have</span>
+<span class="linenos">410</span>
+<span class="linenos">411</span><span class="sd">    .. math::</span>
+<span class="linenos">412</span>
+<span class="linenos">413</span><span class="sd">       \nabla \mathcal{U}^\lambda (\mathbf{x}) = \nabla \mathcal{F}(\mathbf{x}) + \frac{1}{\lambda} (\mathbf{x} -</span>
+<span class="linenos">414</span><span class="sd">       \mathrm{prox}_{\lambda \mathcal{G}}(\mathbf{x})),</span>
+<span class="linenos">415</span>
+<span class="linenos">416</span><span class="sd">    hence :math:`\nabla \mathcal{U}^\lambda` is :math:`(\beta + \frac{1}{\lambda})`-Lipschitz continuous, where</span>
+<span class="linenos">417</span><span class="sd">    :math:`\beta` is the Lipschitz constant of :math:`\nabla \mathcal{F}`.</span>
+<span class="linenos">418</span><span class="sd">    Note that the target distribution of the underlying ULA Markov chain is not exactly :math:`p(\mathbf{x})`, but the distribution</span>
+<span class="linenos">419</span>
+<span class="linenos">420</span><span class="sd">    .. math::</span>
+<span class="linenos">421</span>
+<span class="linenos">422</span><span class="sd">       p^\lambda(\mathbf{x}) \propto \exp(-\mathcal{F}(\mathbf{x})-\mathcal{G}^\lambda(\mathbf{x})),</span>
+<span class="linenos">423</span>
+<span class="linenos">424</span><span class="sd">    which introduces some additional bias on top of the bias of ULA related to the step size :math:`\gamma` (see `Notes`</span>
+<span class="linenos">425</span><span class="sd">    of :py:class:`~pyxu.experimental.sampler._sampler.ULA` documentation).</span>
+<span class="linenos">426</span><span class="sd">    MYULA is guaranteed to converges when :math:`\gamma \leq \frac{1}{\beta + \frac{1}{\lambda}}`, in which case it converges</span>
+<span class="linenos">427</span><span class="sd">    toward the stationary distribution :math:`p^\lambda_\gamma(\mathbf{x})` that satisfies</span>
+<span class="linenos">428</span>
+<span class="linenos">429</span><span class="sd">    .. math::</span>
+<span class="linenos">430</span>
+<span class="linenos">431</span><span class="sd">       \lim_{\gamma, \lambda \to 0} \Vert p^\lambda_\gamma - p \Vert_{\mathrm{TV}} = 0</span>
+<span class="linenos">432</span>
+<span class="linenos">433</span><span class="sd">    (see [MYULA]_).</span>
+<span class="linenos">434</span><span class="sd">    The parameter :math:`\lambda` parameter is subject to a similar bias-variance tradeoff as :math:`\gamma`.</span>
+<span class="linenos">435</span><span class="sd">    It is recommended to set it in the order of :math:`\frac{1}{\beta}`, so that the contributions of :math:`\mathcal{F}`</span>
+<span class="linenos">436</span><span class="sd">    and :math:`\mathcal{G}^\lambda` to the Lipschitz constant of :math:`\nabla \mathcal{U}^\lambda` is well balanced.</span>
+<span class="linenos">437</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">438</span>
+<div class="viewcode-block" id="MYULA.__init__">
+<a class="viewcode-back" href="../../../../api/experimental.html#pyxu.experimental.sampler.MYULA.__init__">[docs]</a>
+<span class="linenos">439</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="linenos">440</span>        <span class="bp">self</span><span class="p">,</span>
+<span class="linenos">441</span>        <span class="n">f</span><span class="p">:</span> <span class="n">pxa</span><span class="o">.</span><span class="n">DiffFunc</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="linenos">442</span>        <span class="n">g</span><span class="p">:</span> <span class="n">pxa</span><span class="o">.</span><span class="n">ProxFunc</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="linenos">443</span>        <span class="n">gamma</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="linenos">444</span>        <span class="n">lamb</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="linenos">445</span>    <span class="p">):</span>
+<span class="linenos">446</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">447</span><span class="sd">        Parameters</span>
+<span class="linenos">448</span><span class="sd">        ----------</span>
+<span class="linenos">449</span><span class="sd">        f: :py:class:`~pyxu.abc.operator.DiffFunc` | None</span>
+<span class="linenos">450</span><span class="sd">            Differentiable functional.</span>
+<span class="linenos">451</span><span class="sd">        g: :py:class:`~pyxu.abc.operator.ProxFunc` | None</span>
+<span class="linenos">452</span><span class="sd">            Proximable functional.</span>
+<span class="linenos">453</span><span class="sd">        gamma: Real</span>
+<span class="linenos">454</span><span class="sd">            Euler-Maruyama discretization step of the Langevin equation (see `Notes` of</span>
+<span class="linenos">455</span><span class="sd">            :py:class:`~pyxu.experimental.sampler._sampler.ULA` documentation).</span>
+<span class="linenos">456</span><span class="sd">        lamb: Real</span>
+<span class="linenos">457</span><span class="sd">            Moreau-Yosida envelope parameter for `g`.</span>
+<span class="linenos">458</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">459</span>        <span class="n">dim</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="linenos">460</span>        <span class="k">if</span> <span class="n">f</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">461</span>            <span class="n">dim</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">dim</span>
+<span class="linenos">462</span>        <span class="k">if</span> <span class="n">g</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">463</span>            <span class="k">if</span> <span class="n">dim</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">464</span>                <span class="n">dim</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">dim</span>
+<span class="linenos">465</span>            <span class="k">else</span><span class="p">:</span>
+<span class="linenos">466</span>                <span class="k">assert</span> <span class="n">g</span><span class="o">.</span><span class="n">dim</span> <span class="o">==</span> <span class="n">dim</span>
+<span class="linenos">467</span>        <span class="k">if</span> <span class="n">dim</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">468</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;One of f or g must be nonzero.&quot;</span><span class="p">)</span>
+<span class="linenos">469</span>
+<span class="linenos">470</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_f_diff</span> <span class="o">=</span> <span class="n">pxo</span><span class="o">.</span><span class="n">NullFunc</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">f</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="k">else</span> <span class="n">f</span>
+<span class="linenos">471</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_g</span> <span class="o">=</span> <span class="n">pxo</span><span class="o">.</span><span class="n">NullFunc</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">g</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="k">else</span> <span class="n">g</span>
+<span class="linenos">472</span>
+<span class="linenos">473</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_lambda</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set_lambda</span><span class="p">(</span><span class="n">lamb</span><span class="p">)</span>
+<span class="linenos">474</span>        <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_f_diff</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_g</span><span class="o">.</span><span class="n">moreau_envelope</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_lambda</span><span class="p">)</span>
+<span class="linenos">475</span>        <span class="n">f</span><span class="o">.</span><span class="n">diff_lipschitz</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">estimate_diff_lipschitz</span><span class="p">()</span>
+<span class="linenos">476</span>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">gamma</span><span class="p">)</span></div>
+
+<span class="linenos">477</span>
+<span class="linenos">478</span>    <span class="k">def</span> <span class="nf">_set_lambda</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lamb</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">:</span>
+<span class="linenos">479</span>        <span class="k">if</span> <span class="n">lamb</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">480</span>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_g</span><span class="o">.</span><span class="n">_name</span> <span class="o">==</span> <span class="s2">&quot;NullFunc&quot;</span><span class="p">:</span>
+<span class="linenos">481</span>                <span class="k">return</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">coerce</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Lambda is irrelevant if g is a NullFunc, but it must be positive</span>
+<span class="linenos">482</span>            <span class="k">elif</span> <span class="n">math</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">dl</span> <span class="o">:=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_f_diff</span><span class="o">.</span><span class="n">diff_lipschitz</span><span class="p">):</span>
+<span class="linenos">483</span>                <span class="k">return</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">coerce</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">if</span> <span class="n">dl</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">coerce</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">dl</span><span class="p">))</span>
+<span class="linenos">484</span>            <span class="k">else</span><span class="p">:</span>
+<span class="linenos">485</span>                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;If f has unbounded Lipschitz gradient, the lambda parameter must be provided.&quot;</span>
+<span class="linenos">486</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="linenos">487</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">488</span>            <span class="k">return</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">coerce</span><span class="p">(</span><span class="n">lamb</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+<div id="searchbox"></div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

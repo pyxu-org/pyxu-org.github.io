@@ -1,0 +1,490 @@
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/guide/fwdops.ipynb:35: WARNING: expected an indented block after class definition on line 7 (<unknown>, line 7) in document 'guide/fwdops'
+Parsed source in `python` block:
+concatenations: class Sum(LinOp):
+    def apply(self, arr):
+        return arr.sum()
+
+    def adjoint(self, arr):
+        return arr * np.ones(self.shape[1])
+block source:   class Sum(LinOp):[39;49;00m
+[31m/Users/mmjasime/Documents/Github/pyxu/doc/examples/DifferentialOperators.ipynb:640: ERROR: Unexpected indentation.[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/examples/DifferentialOperators.ipynb:638: WARNING: Inline interpreted text or phrase reference start-string without end-string.[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/examples/DifferentialOperators.ipynb:644: WARNING: Block quote ends without a blank line; unexpected unindent.[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/examples/DifferentialOperators.ipynb:653: WARNING: Inline interpreted text or phrase reference start-string without end-string.[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/examples/DifferentialOperators.ipynb:655: WARNING: Definition list ends without a blank line; unexpected unindent.[39;49;00m
+[31m/Users/mmjasime/Documents/Github/pyxu/doc/examples/DifferentialOperators.ipynb:765: ERROR: Unexpected indentation.[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/examples/DifferentialOperators.ipynb:763: WARNING: Inline interpreted text or phrase reference start-string without end-string.[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/examples/DifferentialOperators.ipynb:768: WARNING: Block quote ends without a blank line; unexpected unindent.[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/examples/DifferentialOperators.ipynb:109: WARNING: File not found: 'examples/TODO'[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/examples/DifferentialOperators.ipynb:156: WARNING: expected ':' (<unknown>, line 29) in document 'examples/DifferentialOperators'
+Parsed source in `python` block:
+concatenations: def D(f):
+    """
+    Computes the partial derivative via forward finite differences.
+
+    Input
+    -----
+    f: vector
+        Input signal
+
+    Output
+    ------
+    y: vector
+        Derivative
+    """
+
+    y = np.zeros_like(f)
+    for n in range(len(f) - 1):
+        y[n] = f[n + 1] - f[n]
+    return y
+block source:   def finite_difference(
+                        arg_shape: pyct.NDArrayShape,
+                        order: cabc.Sequence[pyct.Integer, ...],
+                        scheme: typ.Union[str, cabc.Sequence[str, ...]] = "forward",
+                        accuracy: typ.Union[pyct.Integer, cabc.Sequence[pyct.Integer, ...]] = 1,
+                        mode: ModeSpec = "constant",
+                        gpu: bool = False,
+                        dtype: typ.Optional[pyct.DType] = None,
+                        sampling: typ.Union[pyct.Real, cabc.Sequence[pyct.Real, ...]] = 1,
+                    ) -> pyct.OpT[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/examples/DifferentialOperators.ipynb:171: WARNING: expected ':' (<unknown>, line 29) in document 'examples/DifferentialOperators'
+Parsed source in `python` block:
+concatenations: def D(f):
+    """
+    Computes the partial derivative via forward finite differences.
+
+    Input
+    -----
+    f: vector
+        Input signal
+
+    Output
+    ------
+    y: vector
+        Derivative
+    """
+
+    y = np.zeros_like(f)
+    for n in range(len(f) - 1):
+        y[n] = f[n + 1] - f[n]
+    return y
+block source:   def gaussian_derivative(
+                        arg_shape: pyct.NDArrayShape,
+                        order: cabc.Sequence[pyct.Integer, ...],
+                        sigma: typ.Union[pyct.Real, cabc.Sequence[pyct.Real, ...]] = 1.0,
+                        truncate: typ.Union[pyct.Real, cabc.Sequence[pyct.Real, ...]] = 3.0,
+                        mode: ModeSpec = "constant",
+                        gpu: bool = False,
+                        dtype: typ.Optional[pyct.DType] = None,
+                        sampling: typ.Union[pyct.Real, cabc.Sequence[pyct.Real, ...]] = 1,
+                    ) -> pyct.OpT[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/examples/DifferentialOperators.ipynb:680: WARNING: expected an indented block after function definition on line 139 (<unknown>, line 148) in document 'examples/DifferentialOperators'
+Parsed source in `python` block:
+concatenations: def D(f):
+    """
+    Computes the partial derivative via forward finite differences.
+
+    Input
+    -----
+    f: vector
+        Input signal
+
+    Output
+    ------
+    y: vector
+        Derivative
+    """
+
+    y = np.zeros_like(f)
+    for n in range(len(f) - 1):
+        y[n] = f[n + 1] - f[n]
+    return y
+                import matplotlib.pyplot as plt
+import numpy as np
+
+rng = np.random.default_rng(0)
+
+from pyxu.operator import PartialDerivative
+
+                # 1) Define ground truth signal
+
+N = 500  # number of points
+x_ax = np.linspace(0, 2 * np.pi, N)  # coordinates
+dx = x_ax[1] - x_ax[0]  # sampling or pixel size
+
+arr = np.sin(x_ax)  # ground truth signal
+derivative = np.cos(x_ax)  # ground truth derivative
+
+
+# 2) Define noisy measurements
+noise = rng.normal(scale=0.01, size=N)
+arr_noisy = arr + noise
+
+
+# 3) Instantiate partial derivative operator via finite differences
+finite_difference = PartialDerivative.finite_difference(
+    arg_shape=(N,),
+    order=(1,),
+    scheme="forward",
+    accuracy=1,
+    sampling=dx,  # we should include the pixel size for accurate approximation
+)
+
+# 4) Estimate derivative
+derivative_fd = finite_difference(arr)
+derivative_fd_noisy = finite_difference(arr_noisy)
+
+# 5) Plot results
+
+fig, axs = plt.subplots(1, 2, figsize=(10, 5))
+
+axs[0].plot(x_ax, arr, label="Signal", c="k")
+axs[0].plot(x_ax, arr_noisy, label="Noisy signal", zorder=0, c="C1")
+
+axs[1].plot(x_ax, derivative, label="Derivative of non-noisy signal", c="k")
+axs[1].plot(
+    x_ax, derivative_fd, ls="--", label="Finite difference (non-noisy signal)", c="C2"
+)
+axs[1].plot(
+    x_ax,
+    derivative_fd_noisy,
+    label="Finite difference (noisy signal)",
+    zorder=0,
+    c="C3",
+)
+
+for ax in axs.ravel():
+    ax.set_xlabel("Time [s]")
+    ax.set_ylabel("Amplitude")
+    ax.legend();
+
+                gaussian_derivative = PartialDerivative.gaussian_derivative(
+    arg_shape=(N,), order=(1,), sigma=dx, truncate=1, sampling=(dx,)
+)
+gaussian_derivative.visualize()
+
+                derviative_gd = gaussian_derivative(arr_noisy)
+derviative_fd = finite_difference(arr_noisy)
+
+
+fig, axs = plt.subplots(1, 2, figsize=(10, 5))
+
+axs[0].plot(x_ax, arr, label="Signal", c="k")
+axs[0].plot(x_ax, arr_noisy, label="Noisy signal", zorder=0, c="C1")
+
+axs[1].plot(x_ax, derivative, label="Derivative of non-noisy signal", c="k")
+axs[1].plot(
+    x_ax,
+    derivative_fd_noisy,
+    label="Finite difference (noisy signal)",
+    zorder=0,
+    c="C3",
+)
+axs[1].plot(
+    x_ax, derviative_gd, label="Gaussian derivative (noisy signal)", c="C4", zorder=1
+)
+
+for ax in axs.ravel():
+    ax.set_xlabel("Time [s]")
+    ax.set_ylabel("Amplitude")
+    ax.legend();
+
+                gaussian_derivative_accurate = PartialDerivative.gaussian_derivative(
+    arg_shape=(N,), order=(1,), sigma=dx, truncate=4, sampling=(dx,)
+)
+
+
+derviative_gd_accurate = gaussian_derivative_accurate(arr_noisy)
+
+fig, axs = plt.subplots(1, 2, figsize=(10, 5))
+
+axs[0].plot(x_ax, arr, label="Signal", c="k")
+axs[0].plot(x_ax, arr_noisy, label="Noisy signal", zorder=0, c="C1")
+
+axs[1].plot(x_ax, derivative, label="Derivative of non-noisy signal", c="k")
+axs[1].plot(
+    x_ax, derviative_gd, label="Gaussian derivative (1x$\sigma$)", c="C4", zorder=0
+)
+axs[1].plot(
+    x_ax,
+    derviative_gd_accurate,
+    label="Gaussian derivative (4x$\sigma$)",
+    c="C6",
+    zorder=1,
+)
+
+for ax in axs.ravel():
+    ax.set_xlabel("Time [s]")
+    ax.set_ylabel("Amplitude")
+    ax.legend();
+
+block source:   def Gradient(
+                    arg_shape: pyct.NDArrayShape,
+                    directions: typ.Optional[pyct.NDArrayAxis] = None,
+                    diff_method: str = "fd",
+                    mode: ModeSpec = "constant",
+                    gpu: bool = False,
+                    dtype: typ.Optional[pyct.DType] = None,
+                    parallel: bool = False,
+                    **diff_kwargs,
+                ) -> pyct.OpT:[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/examples/DifferentialOperators.ipynb:694: WARNING: expected an indented block after function definition on line 139 (<unknown>, line 152) in document 'examples/DifferentialOperators'
+Parsed source in `python` block:
+concatenations: def D(f):
+    """
+    Computes the partial derivative via forward finite differences.
+
+    Input
+    -----
+    f: vector
+        Input signal
+
+    Output
+    ------
+    y: vector
+        Derivative
+    """
+
+    y = np.zeros_like(f)
+    for n in range(len(f) - 1):
+        y[n] = f[n + 1] - f[n]
+    return y
+                import matplotlib.pyplot as plt
+import numpy as np
+
+rng = np.random.default_rng(0)
+
+from pyxu.operator import PartialDerivative
+
+                # 1) Define ground truth signal
+
+N = 500  # number of points
+x_ax = np.linspace(0, 2 * np.pi, N)  # coordinates
+dx = x_ax[1] - x_ax[0]  # sampling or pixel size
+
+arr = np.sin(x_ax)  # ground truth signal
+derivative = np.cos(x_ax)  # ground truth derivative
+
+
+# 2) Define noisy measurements
+noise = rng.normal(scale=0.01, size=N)
+arr_noisy = arr + noise
+
+
+# 3) Instantiate partial derivative operator via finite differences
+finite_difference = PartialDerivative.finite_difference(
+    arg_shape=(N,),
+    order=(1,),
+    scheme="forward",
+    accuracy=1,
+    sampling=dx,  # we should include the pixel size for accurate approximation
+)
+
+# 4) Estimate derivative
+derivative_fd = finite_difference(arr)
+derivative_fd_noisy = finite_difference(arr_noisy)
+
+# 5) Plot results
+
+fig, axs = plt.subplots(1, 2, figsize=(10, 5))
+
+axs[0].plot(x_ax, arr, label="Signal", c="k")
+axs[0].plot(x_ax, arr_noisy, label="Noisy signal", zorder=0, c="C1")
+
+axs[1].plot(x_ax, derivative, label="Derivative of non-noisy signal", c="k")
+axs[1].plot(
+    x_ax, derivative_fd, ls="--", label="Finite difference (non-noisy signal)", c="C2"
+)
+axs[1].plot(
+    x_ax,
+    derivative_fd_noisy,
+    label="Finite difference (noisy signal)",
+    zorder=0,
+    c="C3",
+)
+
+for ax in axs.ravel():
+    ax.set_xlabel("Time [s]")
+    ax.set_ylabel("Amplitude")
+    ax.legend();
+
+                gaussian_derivative = PartialDerivative.gaussian_derivative(
+    arg_shape=(N,), order=(1,), sigma=dx, truncate=1, sampling=(dx,)
+)
+gaussian_derivative.visualize()
+
+                derviative_gd = gaussian_derivative(arr_noisy)
+derviative_fd = finite_difference(arr_noisy)
+
+
+fig, axs = plt.subplots(1, 2, figsize=(10, 5))
+
+axs[0].plot(x_ax, arr, label="Signal", c="k")
+axs[0].plot(x_ax, arr_noisy, label="Noisy signal", zorder=0, c="C1")
+
+axs[1].plot(x_ax, derivative, label="Derivative of non-noisy signal", c="k")
+axs[1].plot(
+    x_ax,
+    derivative_fd_noisy,
+    label="Finite difference (noisy signal)",
+    zorder=0,
+    c="C3",
+)
+axs[1].plot(
+    x_ax, derviative_gd, label="Gaussian derivative (noisy signal)", c="C4", zorder=1
+)
+
+for ax in axs.ravel():
+    ax.set_xlabel("Time [s]")
+    ax.set_ylabel("Amplitude")
+    ax.legend();
+
+                gaussian_derivative_accurate = PartialDerivative.gaussian_derivative(
+    arg_shape=(N,), order=(1,), sigma=dx, truncate=4, sampling=(dx,)
+)
+
+
+derviative_gd_accurate = gaussian_derivative_accurate(arr_noisy)
+
+fig, axs = plt.subplots(1, 2, figsize=(10, 5))
+
+axs[0].plot(x_ax, arr, label="Signal", c="k")
+axs[0].plot(x_ax, arr_noisy, label="Noisy signal", zorder=0, c="C1")
+
+axs[1].plot(x_ax, derivative, label="Derivative of non-noisy signal", c="k")
+axs[1].plot(
+    x_ax, derviative_gd, label="Gaussian derivative (1x$\sigma$)", c="C4", zorder=0
+)
+axs[1].plot(
+    x_ax,
+    derviative_gd_accurate,
+    label="Gaussian derivative (4x$\sigma$)",
+    c="C6",
+    zorder=1,
+)
+
+for ax in axs.ravel():
+    ax.set_xlabel("Time [s]")
+    ax.set_ylabel("Amplitude")
+    ax.legend();
+
+block source:   def Hessian(
+                    arg_shape: pyct.NDArrayShape,
+                    directions: typ.Union[
+                        str,
+                        cabc.Sequence[pyct.Integer, pyct.Integer],
+                        cabc.Sequence[cabc.Sequence[pyct.Integer, pyct.Integer], ...],
+                    ] = "all",
+                    diff_method: str = "fd",
+                    mode: ModeSpec = "constant",
+                    gpu: bool = False,
+                    dtype: typ.Optional[pyct.DType] = None,
+                    parallel: bool = False,
+                    **diff_kwargs,
+                ) -> pyct.OpT:[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/experimental/sampler/statistics.py:docstring of pyxu.experimental.sampler.statistics.OnlineCenteredMoment:1: WARNING: py:class reference target not found: pyxu.experimental.sampler.statistics._OnlineStat[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/experimental/sampler/statistics.py:docstring of pyxu.experimental.sampler.statistics.OnlineMoment:1: WARNING: py:class reference target not found: pyxu.experimental.sampler.statistics._OnlineStat[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/experimental/sampler/_sampler.py:docstring of pyxu.experimental.sampler._sampler.ULA:1: WARNING: py:class reference target not found: pyxu.experimental.sampler._sampler._Sampler[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/api/index.rst:130:<autosummary>:1: WARNING: py:obj reference target not found: pyxu.experimental.sampler.statistics.OnlineVariance[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/api/index.rst:130:<autosummary>:1: WARNING: py:obj reference target not found: pyxu.experimental.sampler.statistics.OnlineStd[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/api/index.rst:130:<autosummary>:1: WARNING: py:obj reference target not found: pyxu.experimental.sampler.statistics.OnlineSkewness[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/api/index.rst:130:<autosummary>:1: WARNING: py:obj reference target not found: pyxu.experimental.sampler.statistics.OnlineKurtosis[39;49;00m
+[91m<unknown>:1: WARNING: py:class reference target not found: pxs.Solver[39;49;00m
+[91m<unknown>:1: WARNING: py:class reference target not found: pxs.Mode[39;49;00m
+[91m<unknown>:1: WARNING: py:class reference target not found: numpy._typing._dtype_like._SupportsDType[39;49;00m
+[91m<unknown>:1: WARNING: py:class reference target not found: numpy._typing._dtype_like._DTypeDict[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/info/deps.py:docstring of pyxu.info.deps.NDArrayInfo.module:1: WARNING: py:class reference target not found: module[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/info/deps.py:docstring of pyxu.info.deps.SparseArrayInfo.module:1: WARNING: py:class reference target not found: module[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/info/deps.py:docstring of pyxu.info.deps.supported_array_modules:: WARNING: py:class reference target not found: module[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/info/deps.py:docstring of pyxu.info.deps.supported_sparse_modules:: WARNING: py:class reference target not found: module[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/blocks.py:docstring of pyxu.operator.blocks.stack:16: WARNING: py:class reference target not found: pyxu.operator.blocks._COOBlock[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/blocks.py:docstring of pyxu.operator.blocks.vstack:21: WARNING: py:class reference target not found: pyxu.operator.blocks._COOBlock[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/blocks.py:docstring of pyxu.operator.blocks.hstack:19: WARNING: py:class reference target not found: pyxu.operator.blocks._COOBlock[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/blocks.py:docstring of pyxu.operator.blocks.block_diag:21: WARNING: py:class reference target not found: pyxu.operator.blocks._COOBlock[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/blocks.py:docstring of pyxu.operator.blocks.block:13: WARNING: py:class reference target not found: pyxu.operator.blocks._COOBlock[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/func/norm.py:docstring of pyxu.operator.func.norm.L1Norm:1: WARNING: py:class reference target not found: pyxu.operator.func.norm._ShiftLossMixin[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/func/norm.py:docstring of pyxu.operator.func.norm.L2Norm:1: WARNING: py:class reference target not found: pyxu.operator.func.norm._ShiftLossMixin[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/func/norm.py:docstring of pyxu.operator.func.norm.SquaredL1Norm:1: WARNING: py:class reference target not found: pyxu.operator.func.norm._ShiftLossMixin[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/func/norm.py:docstring of pyxu.operator.func.norm.LInfinityNorm:1: WARNING: py:class reference target not found: pyxu.operator.func.norm._ShiftLossMixin[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/func/norm.py:docstring of pyxu.operator.func.norm.L21Norm:1: WARNING: py:class reference target not found: pyxu.operator.func.norm._ShiftLossMixin[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/func/norm.py:docstring of pyxu.operator.func.norm.PositiveL1Norm:1: WARNING: py:class reference target not found: pyxu.operator.func.norm._ShiftLossMixin[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/func/indicator.py:docstring of pyxu.operator.func.indicator.PositiveOrthant:1: WARNING: py:class reference target not found: pyxu.operator.func.indicator._IndicatorFunction[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/func/indicator.py:docstring of pyxu.operator.func.indicator.HyperSlab:1: WARNING: py:class reference target not found: pyxu.operator.func.indicator._IndicatorFunction[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/func/indicator.py:docstring of pyxu.operator.func.indicator.RangeSet:1: WARNING: py:class reference target not found: pyxu.operator.func.indicator._IndicatorFunction[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/func/indicator.py:docstring of pyxu.operator.func.indicator.AffineSet:1: WARNING: py:class reference target not found: pyxu.operator.func.indicator._IndicatorFunction[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/func/indicator.py:docstring of pyxu.operator.func.indicator.ConvexSetIntersection:1: WARNING: py:class reference target not found: pyxu.operator.func.indicator._IndicatorFunction[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/interop/jax.py:docstring of pyxu.operator.interop.jax._from_jax:: WARNING: py:class reference target not found: pyxu.operator.interop.jax.JaxArray[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/interop/jax.py:docstring of pyxu.operator.interop.jax._to_jax:: WARNING: py:class reference target not found: pyxu.operator.interop.jax.JaxArray[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:14: WARNING: py:class reference target not found: pxt.VarName[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:29: WARNING: py:class reference target not found: pyxu.abc.operator.Operator._expr[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/fft/nufft.py:docstring of pyxu.operator.linop.fft.nufft.NUFFT.auto_chunk:15: WARNING: py:class reference target not found: list[NDArray[int]][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/fft/nufft.py:docstring of pyxu.operator.linop.fft.nufft.NUFFT.auto_chunk:17: WARNING: py:class reference target not found: list[NDArray[int]][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/fft/nufft.py:docstring of pyxu.operator.linop.fft.nufft.NUFFT.allocate:7: WARNING: py:class reference target not found: list[NDArray[int] | slice][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/fft/nufft.py:docstring of pyxu.operator.linop.fft.nufft.NUFFT.allocate:10: WARNING: py:class reference target not found: list[NDArray[int] | slice][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.PartialDerivative.finite_difference:8: WARNING: py:class reference target not found: list[Integer][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.PartialDerivative.finite_difference:13: WARNING: py:class reference target not found: list[str][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.PartialDerivative.finite_difference:18: WARNING: py:class reference target not found: list[Integer][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.PartialDerivative.finite_difference:33: WARNING: py:class reference target not found: list[str][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.PartialDerivative.finite_difference:41: WARNING: py:class reference target not found: list[Real][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.PartialDerivative.gaussian_derivative:8: WARNING: py:class reference target not found: list[Integer][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.PartialDerivative.gaussian_derivative:13: WARNING: py:class reference target not found: list[Real][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.PartialDerivative.gaussian_derivative:18: WARNING: py:class reference target not found: list[Real][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.PartialDerivative.gaussian_derivative:33: WARNING: py:class reference target not found: list[str][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.PartialDerivative.gaussian_derivative:41: WARNING: py:class reference target not found: list[Real][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Gradient:24: WARNING: py:meth reference target not found: pyxu.operator.linop.diff.Gradient.unravel[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Gradient:31: WARNING: py:class reference target not found: list[Integer][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Gradient:52: WARNING: py:class reference target not found: list[str][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Jacobian:27: WARNING: py:meth reference target not found: pyxu.operator.linop.diff.Jacobian.unravel[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Jacobian:44: WARNING: py:class reference target not found: list[Integer][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Jacobian:65: WARNING: py:class reference target not found: list[str][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Divergence:35: WARNING: py:meth reference target not found: pyxu.operator.linop.diff.Divergence.unravel[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Divergence:43: WARNING: py:class reference target not found: list[Integer][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Divergence:64: WARNING: py:class reference target not found: list[str][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:58: WARNING: py:meth reference target not found: pyxu.operator.linop.diff.Hessian.unravel[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:65: WARNING: py:class reference target not found: (Integer[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:65: WARNING: py:class reference target not found: Integer)[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:65: WARNING: py:class reference target not found: ((Integer[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:65: WARNING: py:class reference target not found: Integer)[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:65: WARNING: py:class reference target not found: (Integer[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:65: WARNING: py:class reference target not found: Integer))[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:86: WARNING: py:class reference target not found: list[str][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Laplacian:22: WARNING: py:meth reference target not found: pyxu.operator.linop.diff.Laplacian.unravel[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Laplacian:28: WARNING: py:class reference target not found: list[Integer][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Laplacian:49: WARNING: py:class reference target not found: list[str][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.DirectionalDerivative:48: WARNING: py:meth reference target not found: pyxu.operator.linop.diff.DirectionalDerivative.unravel[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.DirectionalDerivative:97: WARNING: py:class reference target not found: list[str][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.DirectionalGradient:25: WARNING: py:meth reference target not found: pyxu.operator.linop.diff.DirectionalGradient.unravel[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.DirectionalGradient:32: WARNING: py:class reference target not found: list[NDArray][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.DirectionalGradient:52: WARNING: py:class reference target not found: list[str][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.DirectionalLaplacian:23: WARNING: py:meth reference target not found: pyxu.operator.linop.diff.DirectionalLaplacian.unravel[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.DirectionalLaplacian:30: WARNING: py:class reference target not found: list[NDArray][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.DirectionalLaplacian:32: WARNING: py:class reference target not found: list[Real][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.DirectionalLaplacian:52: WARNING: py:class reference target not found: list[str][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.DirectionalHessian:34: WARNING: py:meth reference target not found: pyxu.operator.linop.diff.DirectionalHessian.unravel[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.DirectionalHessian:41: WARNING: py:class reference target not found: list[NDArray][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.DirectionalHessian:61: WARNING: py:class reference target not found: list[str][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.MovingAverage:31: WARNING: py:class reference target not found: IndexSpec[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.MovingAverage:46: WARNING: py:class reference target not found: list[str][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.Gaussian:47: WARNING: py:class reference target not found: list[str][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.Gaussian:50: WARNING: py:class reference target not found: list[Real][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.DifferenceOfGaussians:44: WARNING: py:class reference target not found: list[str][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.DifferenceOfGaussians:47: WARNING: py:class reference target not found: list[Real][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.DifferenceOfGaussians:77: WARNING: py:class reference target not found: pyxu.operator.linop.filter.StructureTensor[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.DifferenceOfGaussians:44: WARNING: py:class reference target not found: list[str][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.DifferenceOfGaussians:47: WARNING: py:class reference target not found: list[Real][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.DifferenceOfGaussians:77: WARNING: py:class reference target not found: pyxu.operator.linop.filter.StructureTensor[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.Laplace:27: WARNING: py:class reference target not found: list[str][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.Laplace:30: WARNING: py:class reference target not found: list[Real][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.Sobel:34: WARNING: py:class reference target not found: list[str][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.Sobel:37: WARNING: py:class reference target not found: list[Real][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.Prewitt:33: WARNING: py:class reference target not found: list[str][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.Prewitt:36: WARNING: py:class reference target not found: list[Real][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.Scharr:33: WARNING: py:class reference target not found: list[str][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.Scharr:36: WARNING: py:class reference target not found: list[Real][39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.CondatVu:1: WARNING: py:class reference target not found: pyxu.opt.solver.pds._PrimalDualSplitting[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.PD3O:1: WARNING: py:class reference target not found: pyxu.opt.solver.pds._PrimalDualSplitting[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ChambollePock:: WARNING: py:class reference target not found: pyxu.opt.solver.pds._PrimalDualSplitting[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.DouglasRachford:: WARNING: py:class reference target not found: pyxu.opt.solver.pds._PrimalDualSplitting[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ProximalPoint:: WARNING: py:class reference target not found: pyxu.opt.solver.pds._PrimalDualSplitting[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ADMM:1: WARNING: py:class reference target not found: pyxu.opt.solver.pds._PrimalDualSplitting[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/src/pyxu/util/inspect.py:docstring of pyxu.util.inspect.import_module:: WARNING: py:class reference target not found: module[39;49;00m

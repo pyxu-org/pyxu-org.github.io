@@ -1,0 +1,1130 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pyxu.operator.interop.torch &#8212; Pyxu Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=1031a718" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../../../../_static/documentation_options.js?v=29481255"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=30646c52"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../../_static/design-tabs.js?v=36754332"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pyxu/operator/interop/torch';</script>
+    <link rel="icon" href="../../../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../intro/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../api/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../fair/index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><strong> v0.0.1 </strong></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../../_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../intro/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../api/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../fair/index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><strong> v0.0.1 </strong></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../../_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">pyxu.operator.interop.torch</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for pyxu.operator.interop.torch</h1><div class="highlight"><pre>
+<span></span><span class="linenos">  1</span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">  2</span><span class="sd">.. Warning::</span>
+<span class="linenos">  3</span>
+<span class="linenos">  4</span><span class="sd">   This package requires the optional dependency `PyTorch &lt;https://pytorch.org/&gt;`_. See installation instructions.</span>
+<span class="linenos">  5</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">  6</span>
+<span class="linenos">  7</span><span class="kn">import</span> <span class="nn">collections.abc</span> <span class="k">as</span> <span class="nn">cabc</span>
+<span class="linenos">  8</span><span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">typ</span>
+<span class="linenos">  9</span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="linenos"> 10</span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+<span class="linenos"> 11</span>
+<span class="linenos"> 12</span><span class="kn">import</span> <span class="nn">packaging.version</span> <span class="k">as</span> <span class="nn">pkgv</span>
+<span class="linenos"> 13</span>
+<span class="linenos"> 14</span><span class="kn">import</span> <span class="nn">pyxu.abc.operator</span> <span class="k">as</span> <span class="nn">pxo</span>
+<span class="linenos"> 15</span><span class="kn">import</span> <span class="nn">pyxu.info.deps</span> <span class="k">as</span> <span class="nn">pxd</span>
+<span class="linenos"> 16</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
+<span class="linenos"> 17</span><span class="kn">import</span> <span class="nn">pyxu.info.warning</span> <span class="k">as</span> <span class="nn">pxw</span>
+<span class="linenos"> 18</span><span class="kn">import</span> <span class="nn">pyxu.operator.interop.source</span> <span class="k">as</span> <span class="nn">pxsrc</span>
+<span class="linenos"> 19</span><span class="kn">import</span> <span class="nn">pyxu.runtime</span> <span class="k">as</span> <span class="nn">pxrt</span>
+<span class="linenos"> 20</span><span class="kn">from</span> <span class="nn">pyxu.util.inspect</span> <span class="kn">import</span> <span class="n">import_module</span>
+<span class="linenos"> 21</span>
+<span class="linenos"> 22</span><span class="n">torch</span> <span class="o">=</span> <span class="n">import_module</span><span class="p">(</span><span class="s2">&quot;torch&quot;</span><span class="p">,</span> <span class="n">fail_on_error</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="linenos"> 23</span><span class="k">if</span> <span class="n">torch</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos"> 24</span>    <span class="n">version</span> <span class="o">=</span> <span class="n">pkgv</span><span class="o">.</span><span class="n">Version</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="linenos"> 25</span>    <span class="n">supported</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">PYTORCH_SUPPORT</span>
+<span class="linenos"> 26</span>    <span class="k">assert</span> <span class="n">supported</span><span class="p">[</span><span class="s2">&quot;min&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">version</span> <span class="o">&lt;</span> <span class="n">supported</span><span class="p">[</span><span class="s2">&quot;max&quot;</span><span class="p">]</span>
+<span class="linenos"> 27</span>
+<span class="linenos"> 28</span>    <span class="kn">import</span> <span class="nn">torch._dynamo</span> <span class="k">as</span> <span class="nn">dynamo</span>
+<span class="linenos"> 29</span>    <span class="kn">import</span> <span class="nn">torch.func</span> <span class="k">as</span> <span class="nn">functorch</span>
+<span class="linenos"> 30</span>
+<span class="linenos"> 31</span>    <span class="n">TorchTensor</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span>
+<span class="linenos"> 32</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 33</span>    <span class="n">TorchTensor</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;torch.Tensor&quot;</span><span class="p">)</span>
+<span class="linenos"> 34</span>
+<span class="linenos"> 35</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos"> 36</span>    <span class="s2">&quot;from_torch&quot;</span><span class="p">,</span>
+<span class="linenos"> 37</span>    <span class="s2">&quot;astensor&quot;</span><span class="p">,</span>
+<span class="linenos"> 38</span>    <span class="s2">&quot;asarray&quot;</span><span class="p">,</span>
+<span class="linenos"> 39</span><span class="p">]</span>
+<span class="linenos"> 40</span>
+<span class="linenos"> 41</span>
+<span class="linenos"> 42</span><span class="k">def</span> <span class="nf">_traceable</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+<span class="linenos"> 43</span>    <span class="c1"># Needed to compile functorch transforms. See this issue: https://github.com/pytorch/pytorch/issues/98822</span>
+<span class="linenos"> 44</span>    <span class="n">f</span> <span class="o">=</span> <span class="n">dynamo</span><span class="o">.</span><span class="n">allow_in_graph</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="linenos"> 45</span>
+<span class="linenos"> 46</span>    <span class="nd">@wraps</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="linenos"> 47</span>    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="linenos"> 48</span>        <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="linenos"> 49</span>
+<span class="linenos"> 50</span>    <span class="k">return</span> <span class="n">wrapper</span>
+<span class="linenos"> 51</span>
+<span class="linenos"> 52</span>
+<div class="viewcode-block" id="astensor">
+<a class="viewcode-back" href="../../../../api/operator/interop.html#pyxu.operator.interop.torch.astensor">[docs]</a>
+<span class="linenos"> 53</span><span class="k">def</span> <span class="nf">astensor</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">requires_grad</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TorchTensor</span><span class="p">:</span>
+<span class="linenos"> 54</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 55</span><span class="sd">    Convert a Numpy-like array into a PyTorch tensor, sharing data, dtype and device.</span>
+<span class="linenos"> 56</span>
+<span class="linenos"> 57</span><span class="sd">    Parameters</span>
+<span class="linenos"> 58</span><span class="sd">    ----------</span>
+<span class="linenos"> 59</span><span class="sd">    arr: NDArray</span>
+<span class="linenos"> 60</span><span class="sd">        Input array.</span>
+<span class="linenos"> 61</span><span class="sd">    requires_grad: bool</span>
+<span class="linenos"> 62</span><span class="sd">        If autograd should record operations on the returned tensor.</span>
+<span class="linenos"> 63</span>
+<span class="linenos"> 64</span><span class="sd">    Returns</span>
+<span class="linenos"> 65</span><span class="sd">    -------</span>
+<span class="linenos"> 66</span><span class="sd">    tensor: torch.Tensor</span>
+<span class="linenos"> 67</span><span class="sd">        Output tensor.</span>
+<span class="linenos"> 68</span>
+<span class="linenos"> 69</span><span class="sd">    Notes</span>
+<span class="linenos"> 70</span><span class="sd">    -----</span>
+<span class="linenos"> 71</span><span class="sd">    The returned tensor and input array share the same memory.</span>
+<span class="linenos"> 72</span><span class="sd">    Modifications to the tensor will be reflected in the ndarray and vice versa.</span>
+<span class="linenos"> 73</span><span class="sd">    The returned tensor is not resizable.</span>
+<span class="linenos"> 74</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos"> 75</span>    <span class="k">if</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">==</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">CUPY</span><span class="p">:</span>
+<span class="linenos"> 76</span>        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span><span class="p">,</span> <span class="n">arr</span><span class="o">.</span><span class="n">device</span><span class="o">.</span><span class="n">id</span><span class="p">):</span>
+<span class="linenos"> 77</span>            <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">as_tensor</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span><span class="o">.</span><span class="n">requires_grad_</span><span class="p">(</span><span class="n">requires_grad</span><span class="p">)</span>
+<span class="linenos"> 78</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 79</span>        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span><span class="o">.</span><span class="n">requires_grad_</span><span class="p">(</span><span class="n">requires_grad</span><span class="p">)</span></div>
+
+<span class="linenos"> 80</span>
+<span class="linenos"> 81</span>
+<div class="viewcode-block" id="asarray">
+<a class="viewcode-back" href="../../../../api/operator/interop.html#pyxu.operator.interop.torch.asarray">[docs]</a>
+<span class="linenos"> 82</span><span class="k">def</span> <span class="nf">asarray</span><span class="p">(</span><span class="n">tensor</span><span class="p">:</span> <span class="n">TorchTensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos"> 83</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 84</span><span class="sd">    Convert a PyTorch tensor into a Numpy-like array, sharing data, dtype and device.</span>
+<span class="linenos"> 85</span>
+<span class="linenos"> 86</span><span class="sd">    Parameters</span>
+<span class="linenos"> 87</span><span class="sd">    ----------</span>
+<span class="linenos"> 88</span><span class="sd">    tensor: torch.Tensor</span>
+<span class="linenos"> 89</span><span class="sd">        Input tensor.</span>
+<span class="linenos"> 90</span>
+<span class="linenos"> 91</span><span class="sd">    Returns</span>
+<span class="linenos"> 92</span><span class="sd">    -------</span>
+<span class="linenos"> 93</span><span class="sd">    arr: NDArray</span>
+<span class="linenos"> 94</span><span class="sd">        Output array.</span>
+<span class="linenos"> 95</span>
+<span class="linenos"> 96</span><span class="sd">    Notes</span>
+<span class="linenos"> 97</span><span class="sd">    -----</span>
+<span class="linenos"> 98</span><span class="sd">    The returned array and input tensor share the same memory.</span>
+<span class="linenos"> 99</span><span class="sd">    Modifications to the tensor will be reflected in the ndarray and vice versa.</span>
+<span class="linenos">100</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">101</span>    <span class="k">if</span> <span class="n">tensor</span><span class="o">.</span><span class="n">get_device</span><span class="p">()</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+<span class="linenos">102</span>        <span class="k">return</span> <span class="n">tensor</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="linenos">103</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">104</span>        <span class="n">cp</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">CUPY</span><span class="o">.</span><span class="n">module</span><span class="p">()</span>
+<span class="linenos">105</span>        <span class="k">with</span> <span class="n">cp</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">Device</span><span class="p">(</span><span class="n">tensor</span><span class="o">.</span><span class="n">get_device</span><span class="p">()):</span>
+<span class="linenos">106</span>            <span class="k">return</span> <span class="n">cp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">tensor</span><span class="o">.</span><span class="n">detach</span><span class="p">())</span></div>
+
+<span class="linenos">107</span>
+<span class="linenos">108</span>
+<span class="linenos">109</span><span class="k">class</span> <span class="nc">_FromTorch</span><span class="p">(</span><span class="n">pxsrc</span><span class="o">.</span><span class="n">_FromSource</span><span class="p">):</span>
+<span class="linenos">110</span>    <span class="c1"># supported methods in __init__(**kwargs)</span>
+<span class="linenos">111</span>    <span class="n">_meth</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">({</span><span class="s2">&quot;apply&quot;</span><span class="p">,</span> <span class="s2">&quot;grad&quot;</span><span class="p">,</span> <span class="s2">&quot;prox&quot;</span><span class="p">,</span> <span class="s2">&quot;pinv&quot;</span><span class="p">,</span> <span class="s2">&quot;adjoint&quot;</span><span class="p">})</span>
+<span class="linenos">112</span>
+<span class="linenos">113</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>  <span class="c1"># See from_torch() for a detailed description.</span>
+<span class="linenos">114</span>        <span class="bp">self</span><span class="p">,</span>
+<span class="linenos">115</span>        <span class="n">apply</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">,</span>
+<span class="linenos">116</span>        <span class="n">shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpShape</span><span class="p">,</span>
+<span class="linenos">117</span>        <span class="bp">cls</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpC</span> <span class="o">=</span> <span class="n">pxo</span><span class="o">.</span><span class="n">Map</span><span class="p">,</span>
+<span class="linenos">118</span>        <span class="n">vectorize</span><span class="p">:</span> <span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(),</span>
+<span class="linenos">119</span>        <span class="n">batch_size</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="linenos">120</span>        <span class="n">jit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>  <span class="c1"># Unused for now</span>
+<span class="linenos">121</span>        <span class="n">dtype</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">DType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="linenos">122</span>        <span class="n">enable_warnings</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="linenos">123</span>        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;TorchOp&quot;</span><span class="p">,</span>
+<span class="linenos">124</span>        <span class="n">meta</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="linenos">125</span>        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="linenos">126</span>    <span class="p">):</span>
+<span class="linenos">127</span>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+<span class="linenos">128</span>            <span class="bp">cls</span><span class="o">=</span><span class="bp">cls</span><span class="p">,</span>
+<span class="linenos">129</span>            <span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">,</span>
+<span class="linenos">130</span>            <span class="n">embed</span><span class="o">=</span><span class="nb">dict</span><span class="p">(),</span>
+<span class="linenos">131</span>            <span class="n">vectorize</span><span class="o">=</span><span class="n">vectorize</span><span class="p">,</span>
+<span class="linenos">132</span>            <span class="n">vmethod</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># pyxu.util.vectorize() not used for torch-funcs</span>
+<span class="linenos">133</span>            <span class="n">apply</span><span class="o">=</span><span class="n">apply</span><span class="p">,</span>
+<span class="linenos">134</span>            <span class="n">enforce_precision</span><span class="o">=</span><span class="nb">frozenset</span><span class="p">(),</span>  <span class="c1"># will be applied manually</span>
+<span class="linenos">135</span>            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="linenos">136</span>        <span class="p">)</span>
+<span class="linenos">137</span>
+<span class="linenos">138</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_batch_size</span> <span class="o">=</span> <span class="n">batch_size</span>
+<span class="linenos">139</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_dtype</span> <span class="o">=</span> <span class="n">dtype</span>
+<span class="linenos">140</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_jit</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># JIT-compilation is currently deactivated until torch.func goes out of beta.</span>
+<span class="linenos">141</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_enable_warnings</span> <span class="o">=</span> <span class="n">enable_warnings</span>
+<span class="linenos">142</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
+<span class="linenos">143</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_meta</span> <span class="o">=</span> <span class="n">meta</span>
+<span class="linenos">144</span>
+<span class="linenos">145</span>        <span class="c1"># Only a subset of arithmetic methods allowed from from_torch().</span>
+<span class="linenos">146</span>        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_meth</span><span class="p">):</span>
+<span class="linenos">147</span>            <span class="n">msg_head</span> <span class="o">=</span> <span class="s2">&quot;Unsupported arithmetic methods:&quot;</span>
+<span class="linenos">148</span>            <span class="n">unsupported</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_meth</span>
+<span class="linenos">149</span>            <span class="n">msg_tail</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">()&quot;</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">unsupported</span><span class="p">])</span>
+<span class="linenos">150</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg_head</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">msg_tail</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">151</span>
+<span class="linenos">152</span>    <span class="k">def</span> <span class="nf">op</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
+<span class="linenos">153</span>        <span class="c1"># Idea: modify `**kwargs` from constructor to [when required]:</span>
+<span class="linenos">154</span>        <span class="c1">#   1. auto-define omitted methods.            [_infer_missing()]</span>
+<span class="linenos">155</span>        <span class="c1">#   2. auto-vectorize via vmap().              [_auto_vectorize()]</span>
+<span class="linenos">156</span>        <span class="c1">#   3. JIT-compile via compile().              [_compile()]</span>
+<span class="linenos">157</span>        <span class="c1">#   4. TORCH&lt;&gt;NUMPY/CUPY conversions.          [_interface()]</span>
+<span class="linenos">158</span>        <span class="c1">#   Note: JIT-compilation is currently deactivated due to the undocumented interaction of torch.func transforms and</span>
+<span class="linenos">159</span>        <span class="c1">#   torch.compile. Will be reactivated once torch.func goes out of beta.</span>
+<span class="linenos">160</span>
+<span class="linenos">161</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_infer_missing</span><span class="p">()</span>
+<span class="linenos">162</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_compile</span><span class="p">()</span>
+<span class="linenos">163</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_auto_vectorize</span><span class="p">()</span>
+<span class="linenos">164</span>        <span class="n">t_state</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interface</span><span class="p">()</span>
+<span class="linenos">165</span>
+<span class="linenos">166</span>        <span class="n">_op</span> <span class="o">=</span> <span class="n">pxsrc</span><span class="o">.</span><span class="n">from_source</span><span class="p">(</span>
+<span class="linenos">167</span>            <span class="bp">cls</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span>
+<span class="linenos">168</span>            <span class="n">shape</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
+<span class="linenos">169</span>            <span class="n">embed</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+<span class="linenos">170</span>                <span class="n">_batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_batch_size</span><span class="p">,</span>
+<span class="linenos">171</span>                <span class="n">_dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dtype</span><span class="p">,</span>
+<span class="linenos">172</span>                <span class="n">_jit</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_jit</span><span class="p">,</span>
+<span class="linenos">173</span>                <span class="n">_enable_warnings</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_enable_warnings</span><span class="p">,</span>
+<span class="linenos">174</span>                <span class="n">_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span>
+<span class="linenos">175</span>                <span class="n">_meta</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_meta</span><span class="p">,</span>
+<span class="linenos">176</span>                <span class="n">_coerce</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_coerce</span><span class="p">,</span>
+<span class="linenos">177</span>                <span class="n">_torch</span><span class="o">=</span><span class="n">t_state</span><span class="p">,</span>
+<span class="linenos">178</span>            <span class="p">),</span>
+<span class="linenos">179</span>            <span class="c1"># vectorize=None,  # see top-level comment.</span>
+<span class="linenos">180</span>            <span class="c1"># vmethod=None,    #</span>
+<span class="linenos">181</span>            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="linenos">182</span>        <span class="p">)</span>
+<span class="linenos">183</span>        <span class="k">return</span> <span class="n">_op</span>
+<span class="linenos">184</span>
+<span class="linenos">185</span>    <span class="k">def</span> <span class="nf">_infer_missing</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">186</span>        <span class="c1"># The following methods must be auto-inferred if missing from `kwargs`:</span>
+<span class="linenos">187</span>        <span class="c1">#</span>
+<span class="linenos">188</span>        <span class="c1">#     grad(), adjoint()</span>
+<span class="linenos">189</span>        <span class="c1">#</span>
+<span class="linenos">190</span>        <span class="c1"># Missing methods are auto-inferred via auto-diff rules and added to `_kwargs`.</span>
+<span class="linenos">191</span>        <span class="c1"># At the end of _infer_missing(), all torch-funcs required for _interface() have been added to</span>
+<span class="linenos">192</span>        <span class="c1"># `_kwargs`.</span>
+<span class="linenos">193</span>        <span class="c1">#</span>
+<span class="linenos">194</span>        <span class="c1"># Notes</span>
+<span class="linenos">195</span>        <span class="c1"># -----</span>
+<span class="linenos">196</span>        <span class="c1"># This method does NOT produce vectorized implementations: _auto_vectorize() is responsible</span>
+<span class="linenos">197</span>        <span class="c1"># for this.</span>
+<span class="linenos">198</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_vectorize</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_vectorize</span><span class="p">)</span>  <span class="c1"># to allow updates below</span>
+<span class="linenos">199</span>
+<span class="linenos">200</span>        <span class="n">nl_difffunc</span> <span class="o">=</span> <span class="nb">all</span><span class="p">(</span>  <span class="c1"># non-linear diff-func</span>
+<span class="linenos">201</span>            <span class="p">[</span>
+<span class="linenos">202</span>                <span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="n">pxo</span><span class="o">.</span><span class="n">Property</span><span class="o">.</span><span class="n">DIFFERENTIABLE_FUNCTION</span><span class="p">),</span>
+<span class="linenos">203</span>                <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="n">pxo</span><span class="o">.</span><span class="n">Property</span><span class="o">.</span><span class="n">LINEAR</span><span class="p">),</span>
+<span class="linenos">204</span>            <span class="p">]</span>
+<span class="linenos">205</span>        <span class="p">)</span>
+<span class="linenos">206</span>        <span class="k">if</span> <span class="n">nl_difffunc</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;grad&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">):</span>
+<span class="linenos">207</span>
+<span class="linenos">208</span>            <span class="k">def</span> <span class="nf">f_grad</span><span class="p">(</span><span class="n">tensor</span><span class="p">:</span> <span class="n">TorchTensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TorchTensor</span><span class="p">:</span>
+<span class="linenos">209</span>                <span class="n">grad</span> <span class="o">=</span> <span class="n">functorch</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">[</span><span class="s2">&quot;apply&quot;</span><span class="p">])</span>
+<span class="linenos">210</span>                <span class="k">return</span> <span class="n">grad</span><span class="p">(</span><span class="n">tensor</span><span class="p">)</span>
+<span class="linenos">211</span>
+<span class="linenos">212</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_vectorize</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;grad&quot;</span><span class="p">)</span>
+<span class="linenos">213</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">[</span><span class="s2">&quot;grad&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">f_grad</span>
+<span class="linenos">214</span>
+<span class="linenos">215</span>        <span class="n">non_selfadj</span> <span class="o">=</span> <span class="nb">all</span><span class="p">(</span>  <span class="c1"># linear, but not self-adjoint</span>
+<span class="linenos">216</span>            <span class="p">[</span>
+<span class="linenos">217</span>                <span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="n">pxo</span><span class="o">.</span><span class="n">Property</span><span class="o">.</span><span class="n">LINEAR</span><span class="p">),</span>
+<span class="linenos">218</span>                <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="n">pxo</span><span class="o">.</span><span class="n">Property</span><span class="o">.</span><span class="n">LINEAR_SELF_ADJOINT</span><span class="p">),</span>
+<span class="linenos">219</span>            <span class="p">]</span>
+<span class="linenos">220</span>        <span class="p">)</span>
+<span class="linenos">221</span>        <span class="k">if</span> <span class="n">non_selfadj</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;adjoint&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">):</span>
+<span class="linenos">222</span>
+<span class="linenos">223</span>            <span class="k">def</span> <span class="nf">f_adjoint</span><span class="p">(</span><span class="n">tensor</span><span class="p">:</span> <span class="n">TorchTensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TorchTensor</span><span class="p">:</span>
+<span class="linenos">224</span>                <span class="c1"># codim -&gt; dim</span>
+<span class="linenos">225</span>                <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">[</span><span class="s2">&quot;apply&quot;</span><span class="p">]</span>
+<span class="linenos">226</span>                <span class="n">primal</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">tensor</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">dim</span><span class="p">,))</span>
+<span class="linenos">227</span>                <span class="n">_</span><span class="p">,</span> <span class="n">f_vjp</span> <span class="o">=</span> <span class="n">functorch</span><span class="o">.</span><span class="n">vjp</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">primal</span><span class="p">)</span>
+<span class="linenos">228</span>                <span class="n">out</span> <span class="o">=</span> <span class="n">f_vjp</span><span class="p">(</span><span class="n">tensor</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># f_vjp returns a tuple</span>
+<span class="linenos">229</span>                <span class="k">return</span> <span class="n">out</span>  <span class="c1"># size dim</span>
+<span class="linenos">230</span>
+<span class="linenos">231</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_vectorize</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;adjoint&quot;</span><span class="p">)</span>
+<span class="linenos">232</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">[</span><span class="s2">&quot;adjoint&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">f_adjoint</span>
+<span class="linenos">233</span>
+<span class="linenos">234</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_vectorize</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_vectorize</span><span class="p">)</span>
+<span class="linenos">235</span>
+<span class="linenos">236</span>    <span class="k">def</span> <span class="nf">_compile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">237</span>        <span class="c1"># JIT-compile user-specified [or _infer_missing()-added] arithmetic methods via torch.compile().</span>
+<span class="linenos">238</span>        <span class="c1">#</span>
+<span class="linenos">239</span>        <span class="c1"># Modifies `_kwargs` to hold compiled torch-funcs.</span>
+<span class="linenos">240</span>        <span class="c1"># Note: Currently deactivated until torch.func goes out of beta.</span>
+<span class="linenos">241</span>
+<span class="linenos">242</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jit</span><span class="p">:</span>
+<span class="linenos">243</span>            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">:</span>
+<span class="linenos">244</span>                <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_meth</span><span class="p">:</span>
+<span class="linenos">245</span>                    <span class="n">func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>  <span class="c1"># necessarily torch_func</span>
+<span class="linenos">246</span>                    <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="linenos">247</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">248</span>            <span class="k">pass</span>
+<span class="linenos">249</span>
+<span class="linenos">250</span>    <span class="k">def</span> <span class="nf">_auto_vectorize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">251</span>        <span class="c1"># Vectorize user-specified [or _infer_missing()-added] arithmetic methods via torch.vmap().</span>
+<span class="linenos">252</span>        <span class="c1">#</span>
+<span class="linenos">253</span>        <span class="c1"># Modifies `_kwargs` to hold vectorized torch-funcs.</span>
+<span class="linenos">254</span>
+<span class="linenos">255</span>        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">:</span>
+<span class="linenos">256</span>            <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vectorize</span><span class="p">:</span>
+<span class="linenos">257</span>                <span class="n">func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>  <span class="c1"># necessarily torch_func</span>
+<span class="linenos">258</span>                <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span>
+<span class="linenos">259</span>                    <span class="s2">&quot;prox&quot;</span><span class="p">,</span>
+<span class="linenos">260</span>                    <span class="s2">&quot;pinv&quot;</span><span class="p">,</span>
+<span class="linenos">261</span>                <span class="p">]:</span>  <span class="c1"># These methods have two arguments, but vectorization should be for the first argument only.</span>
+<span class="linenos">262</span>                    <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">_traceable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">vmap</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">in_dims</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">chunk_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_batch_size</span><span class="p">))</span>
+<span class="linenos">263</span>                <span class="k">else</span><span class="p">:</span>
+<span class="linenos">264</span>                    <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">_traceable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">vmap</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_batch_size</span><span class="p">))</span>
+<span class="linenos">265</span>
+<span class="linenos">266</span>    <span class="k">def</span> <span class="nf">_interface</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">267</span>        <span class="c1"># Arithmetic methods supplied in `kwargs`:</span>
+<span class="linenos">268</span>        <span class="c1">#</span>
+<span class="linenos">269</span>        <span class="c1">#     * take `torch.Tensor` inputs</span>
+<span class="linenos">270</span>        <span class="c1">#     * do not have the `self` parameter. (Reason: to be JIT-compatible.)</span>
+<span class="linenos">271</span>        <span class="c1">#</span>
+<span class="linenos">272</span>        <span class="c1"># This method creates modified arithmetic functions to match Pyxu&#39;s API, and `state`</span>
+<span class="linenos">273</span>        <span class="c1"># required for them to work.</span>
+<span class="linenos">274</span>        <span class="c1">#</span>
+<span class="linenos">275</span>        <span class="c1"># Returns</span>
+<span class="linenos">276</span>        <span class="c1"># -------</span>
+<span class="linenos">277</span>        <span class="c1"># t_state: dict</span>
+<span class="linenos">278</span>        <span class="c1">#     Torch functions referenced by wrapper arithmetic methods. (See below.)</span>
+<span class="linenos">279</span>        <span class="c1"># kwargs: dict</span>
+<span class="linenos">280</span>        <span class="c1">#     Pyxu-compatible functions which can be submitted to interop.from_source().</span>
+<span class="linenos">281</span>
+<span class="linenos">282</span>        <span class="n">t_state</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="linenos">283</span>        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="linenos">284</span>            <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_meth</span><span class="p">:</span>
+<span class="linenos">285</span>                <span class="n">t_state</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span>  <span class="c1"># necessarily torch_func (potentially auto_vec/jitted at this stage)</span>
+<span class="linenos">286</span>
+<span class="linenos">287</span>        <span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="linenos">288</span>        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="linenos">289</span>            <span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="linenos">290</span>            <span class="n">kwargs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span>  <span class="c1"># necessarily a pyxu_func</span>
+<span class="linenos">291</span>
+<span class="linenos">292</span>        <span class="c1"># Special cases.</span>
+<span class="linenos">293</span>        <span class="c1"># (Reason: not in `_kwargs` [c.f. from_torch() docstring], but need to be inferred.)</span>
+<span class="linenos">294</span>        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span>
+<span class="linenos">295</span>            <span class="s2">&quot;jacobian&quot;</span><span class="p">,</span>
+<span class="linenos">296</span>            <span class="s2">&quot;_quad_spec&quot;</span><span class="p">,</span>
+<span class="linenos">297</span>            <span class="s2">&quot;_expr&quot;</span><span class="p">,</span>
+<span class="linenos">298</span>        <span class="p">):</span>  <span class="c1"># &quot;asarray&quot;):</span>
+<span class="linenos">299</span>            <span class="n">kwargs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="linenos">300</span>
+<span class="linenos">301</span>        <span class="k">return</span> <span class="n">t_state</span><span class="p">,</span> <span class="n">kwargs</span>
+<span class="linenos">302</span>
+<span class="linenos">303</span>    <span class="k">def</span> <span class="nf">_coerce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">304</span>        <span class="c1"># Coerce inputs (and raise a warning) in case of precision mis-matches.</span>
+<span class="linenos">305</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dtype</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">dtype</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dtype</span><span class="p">):</span>
+<span class="linenos">306</span>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_enable_warnings</span><span class="p">:</span>
+<span class="linenos">307</span>                <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Precision mis-match! Input array was coerced to </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_dtype</span><span class="si">}</span><span class="s2"> precision automatically.&quot;</span>
+<span class="linenos">308</span>                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">pxw</span><span class="o">.</span><span class="n">PrecisionWarning</span><span class="p">)</span>
+<span class="linenos">309</span>            <span class="n">arr</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="linenos">310</span>        <span class="k">return</span> <span class="n">arr</span>
+<span class="linenos">311</span>
+<span class="linenos">312</span>    <span class="c1"># Wrapper arithmetic methods ----------------------------------------------</span>
+<span class="linenos">313</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">)</span>
+<span class="linenos">314</span>    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">315</span>        <span class="n">arr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coerce</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="linenos">316</span>        <span class="n">tensor</span> <span class="o">=</span> <span class="n">astensor</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">))</span>
+<span class="linenos">317</span>        <span class="n">func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_torch</span><span class="p">[</span><span class="s2">&quot;apply&quot;</span><span class="p">]</span>
+<span class="linenos">318</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">asarray</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">tensor</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,))</span>
+<span class="linenos">319</span>        <span class="k">return</span> <span class="n">out</span>
+<span class="linenos">320</span>
+<span class="linenos">321</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">)</span>
+<span class="linenos">322</span>    <span class="k">def</span> <span class="nf">grad</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">323</span>        <span class="n">arr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coerce</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="linenos">324</span>        <span class="n">tensor</span> <span class="o">=</span> <span class="n">astensor</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">))</span>
+<span class="linenos">325</span>        <span class="n">func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_torch</span><span class="p">[</span><span class="s2">&quot;grad&quot;</span><span class="p">]</span>
+<span class="linenos">326</span>        <span class="k">return</span> <span class="n">asarray</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">tensor</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,))</span>
+<span class="linenos">327</span>
+<span class="linenos">328</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">)</span>
+<span class="linenos">329</span>    <span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">330</span>        <span class="n">arr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coerce</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="linenos">331</span>        <span class="n">tensor</span> <span class="o">=</span> <span class="n">astensor</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">codim</span><span class="p">))</span>
+<span class="linenos">332</span>        <span class="n">func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_torch</span><span class="p">[</span><span class="s2">&quot;adjoint&quot;</span><span class="p">]</span>
+<span class="linenos">333</span>        <span class="k">return</span> <span class="n">asarray</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">tensor</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,))</span>
+<span class="linenos">334</span>
+<span class="linenos">335</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;arr&quot;</span><span class="p">,</span> <span class="s2">&quot;tau&quot;</span><span class="p">])</span>
+<span class="linenos">336</span>    <span class="k">def</span> <span class="nf">prox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">tau</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">337</span>        <span class="n">arr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coerce</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="linenos">338</span>        <span class="n">tensor</span> <span class="o">=</span> <span class="n">astensor</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">))</span>
+<span class="linenos">339</span>        <span class="n">func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_torch</span><span class="p">[</span><span class="s2">&quot;prox&quot;</span><span class="p">]</span>
+<span class="linenos">340</span>        <span class="k">return</span> <span class="n">asarray</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">tensor</span><span class="p">,</span> <span class="n">tau</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,))</span>
+<span class="linenos">341</span>
+<span class="linenos">342</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;arr&quot;</span><span class="p">,</span> <span class="s2">&quot;damp&quot;</span><span class="p">))</span>
+<span class="linenos">343</span>    <span class="k">def</span> <span class="nf">pinv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">damp</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">344</span>        <span class="n">arr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coerce</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="linenos">345</span>        <span class="n">tensor</span> <span class="o">=</span> <span class="n">astensor</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">codim</span><span class="p">))</span>
+<span class="linenos">346</span>        <span class="n">func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_torch</span><span class="p">[</span><span class="s2">&quot;pinv&quot;</span><span class="p">]</span>
+<span class="linenos">347</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">tensor</span><span class="p">,</span> <span class="n">damp</span><span class="p">)</span>  <span class="c1"># positional args only if auto-vectorized.</span>
+<span class="linenos">348</span>        <span class="k">return</span> <span class="n">asarray</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,))</span>
+<span class="linenos">349</span>
+<span class="linenos">350</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">,</span> <span class="n">o</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="linenos">351</span>    <span class="k">def</span> <span class="nf">jacobian</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
+<span class="linenos">352</span>        <span class="k">try</span><span class="p">:</span>
+<span class="linenos">353</span>            <span class="c1"># Use the class&#39; method if available ...</span>
+<span class="linenos">354</span>            <span class="n">klass</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span>
+<span class="linenos">355</span>            <span class="n">op</span> <span class="o">=</span> <span class="n">klass</span><span class="o">.</span><span class="n">jacobian</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span>
+<span class="linenos">356</span>        <span class="k">except</span> <span class="ne">NotImplementedError</span><span class="p">:</span>
+<span class="linenos">357</span>            <span class="c1"># ... and fallback to auto-inference if undefined.</span>
+<span class="linenos">358</span>            <span class="n">arr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coerce</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="linenos">359</span>            <span class="n">primal</span> <span class="o">=</span> <span class="n">astensor</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">))</span>
+<span class="linenos">360</span>            <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_torch</span><span class="p">[</span><span class="s2">&quot;apply&quot;</span><span class="p">]</span>
+<span class="linenos">361</span>
+<span class="linenos">362</span>            <span class="k">def</span> <span class="nf">jf_apply</span><span class="p">(</span><span class="n">tan</span><span class="p">:</span> <span class="n">TorchTensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TorchTensor</span><span class="p">:</span>
+<span class="linenos">363</span>                <span class="k">return</span> <span class="n">functorch</span><span class="o">.</span><span class="n">jvp</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">primals</span><span class="o">=</span><span class="p">(</span><span class="n">primal</span><span class="p">,),</span> <span class="n">tangents</span><span class="o">=</span><span class="p">(</span><span class="n">tan</span><span class="p">,))[</span><span class="mi">1</span><span class="p">]</span>
+<span class="linenos">364</span>
+<span class="linenos">365</span>            <span class="k">def</span> <span class="nf">jf_adjoint</span><span class="p">(</span><span class="n">cotan</span><span class="p">:</span> <span class="n">TorchTensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TorchTensor</span><span class="p">:</span>
+<span class="linenos">366</span>                <span class="n">_</span><span class="p">,</span> <span class="n">f_vjp</span> <span class="o">=</span> <span class="n">functorch</span><span class="o">.</span><span class="n">vjp</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">primal</span><span class="p">)</span>
+<span class="linenos">367</span>                <span class="n">out</span> <span class="o">=</span> <span class="n">f_vjp</span><span class="p">(</span><span class="n">cotan</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># f_vjp returns a tuple</span>
+<span class="linenos">368</span>                <span class="k">return</span> <span class="n">out</span>
+<span class="linenos">369</span>
+<span class="linenos">370</span>            <span class="n">klass</span> <span class="o">=</span> <span class="n">pxo</span><span class="o">.</span><span class="n">LinFunc</span> <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">codim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">else</span> <span class="n">pxo</span><span class="o">.</span><span class="n">LinOp</span>
+<span class="linenos">371</span>            <span class="n">op</span> <span class="o">=</span> <span class="n">from_torch</span><span class="p">(</span>
+<span class="linenos">372</span>                <span class="n">apply</span><span class="o">=</span><span class="n">jf_apply</span><span class="p">,</span>
+<span class="linenos">373</span>                <span class="n">shape</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
+<span class="linenos">374</span>                <span class="bp">cls</span><span class="o">=</span><span class="n">klass</span><span class="p">,</span>
+<span class="linenos">375</span>                <span class="n">vectorize</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;apply&quot;</span><span class="p">,</span> <span class="s2">&quot;adjoint&quot;</span><span class="p">),</span>
+<span class="linenos">376</span>                <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_batch_size</span><span class="p">,</span>
+<span class="linenos">377</span>                <span class="n">jit</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_jit</span><span class="p">,</span>
+<span class="linenos">378</span>                <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dtype</span><span class="p">,</span>
+<span class="linenos">379</span>                <span class="n">enable_warnings</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_enable_warnings</span><span class="p">,</span>
+<span class="linenos">380</span>                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;TorchJacobian&quot;</span><span class="p">,</span>
+<span class="linenos">381</span>                <span class="n">meta</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+<span class="linenos">382</span>                <span class="n">adjoint</span><span class="o">=</span><span class="n">jf_adjoint</span><span class="p">,</span>
+<span class="linenos">383</span>            <span class="p">)</span>
+<span class="linenos">384</span>        <span class="k">return</span> <span class="n">op</span>
+<span class="linenos">385</span>
+<span class="linenos">386</span>    <span class="k">def</span> <span class="nf">_quad_spec</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">387</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="n">pxo</span><span class="o">.</span><span class="n">Property</span><span class="o">.</span><span class="n">QUADRATIC</span><span class="p">):</span>
+<span class="linenos">388</span>            <span class="c1"># auto-infer (Q, c, t)</span>
+<span class="linenos">389</span>            <span class="n">_grad</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_torch</span><span class="p">[</span><span class="s2">&quot;grad&quot;</span><span class="p">]</span>
+<span class="linenos">390</span>
+<span class="linenos">391</span>            <span class="k">def</span> <span class="nf">Q_apply</span><span class="p">(</span><span class="n">tensor</span><span class="p">:</span> <span class="n">TorchTensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TorchTensor</span><span class="p">:</span>
+<span class="linenos">392</span>                <span class="c1"># \grad_{f}(x) = Q x + c = Q x + \grad_{f}(0)</span>
+<span class="linenos">393</span>                <span class="c1"># ==&gt; Q x = \grad_{f}(x) - \grad_{f}(0)</span>
+<span class="linenos">394</span>                <span class="n">z</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">tensor</span><span class="p">)</span>
+<span class="linenos">395</span>                <span class="n">out</span> <span class="o">=</span> <span class="n">_grad</span><span class="p">(</span><span class="n">tensor</span><span class="p">)</span> <span class="o">-</span> <span class="n">_grad</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="linenos">396</span>                <span class="k">return</span> <span class="n">out</span>
+<span class="linenos">397</span>
+<span class="linenos">398</span>            <span class="k">def</span> <span class="nf">c_apply</span><span class="p">(</span><span class="n">tensor</span><span class="p">:</span> <span class="n">TorchTensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TorchTensor</span><span class="p">:</span>
+<span class="linenos">399</span>                <span class="n">z</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">tensor</span><span class="p">)</span>
+<span class="linenos">400</span>                <span class="n">c</span> <span class="o">=</span> <span class="n">_grad</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="linenos">401</span>                <span class="n">out</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">c</span> <span class="o">*</span> <span class="n">tensor</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tensor</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">402</span>                <span class="k">return</span> <span class="n">out</span>
+<span class="linenos">403</span>
+<span class="linenos">404</span>            <span class="n">Q</span> <span class="o">=</span> <span class="n">from_torch</span><span class="p">(</span>
+<span class="linenos">405</span>                <span class="n">apply</span><span class="o">=</span><span class="n">Q_apply</span><span class="p">,</span>
+<span class="linenos">406</span>                <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">),</span>
+<span class="linenos">407</span>                <span class="bp">cls</span><span class="o">=</span><span class="n">pxo</span><span class="o">.</span><span class="n">PosDefOp</span><span class="p">,</span>
+<span class="linenos">408</span>                <span class="n">vectorize</span><span class="o">=</span><span class="s2">&quot;apply&quot;</span><span class="p">,</span>
+<span class="linenos">409</span>                <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_batch_size</span><span class="p">,</span>
+<span class="linenos">410</span>                <span class="n">jit</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_jit</span><span class="p">,</span>
+<span class="linenos">411</span>                <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dtype</span><span class="p">,</span>
+<span class="linenos">412</span>                <span class="n">enable_warnings</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_enable_warnings</span><span class="p">,</span>
+<span class="linenos">413</span>                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;TorchQuadSpec_Q&quot;</span><span class="p">,</span>
+<span class="linenos">414</span>                <span class="n">meta</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+<span class="linenos">415</span>            <span class="p">)</span>
+<span class="linenos">416</span>
+<span class="linenos">417</span>            <span class="n">c</span> <span class="o">=</span> <span class="n">from_torch</span><span class="p">(</span>
+<span class="linenos">418</span>                <span class="n">apply</span><span class="o">=</span><span class="n">c_apply</span><span class="p">,</span>
+<span class="linenos">419</span>                <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">),</span>
+<span class="linenos">420</span>                <span class="bp">cls</span><span class="o">=</span><span class="n">pxo</span><span class="o">.</span><span class="n">LinFunc</span><span class="p">,</span>
+<span class="linenos">421</span>                <span class="n">vectorize</span><span class="o">=</span><span class="s2">&quot;apply&quot;</span><span class="p">,</span>
+<span class="linenos">422</span>                <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_batch_size</span><span class="p">,</span>
+<span class="linenos">423</span>                <span class="n">jit</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_jit</span><span class="p">,</span>
+<span class="linenos">424</span>                <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dtype</span><span class="p">,</span>
+<span class="linenos">425</span>                <span class="n">enable_warnings</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_enable_warnings</span><span class="p">,</span>
+<span class="linenos">426</span>                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;TorchQuadSpec_c&quot;</span><span class="p">,</span>
+<span class="linenos">427</span>                <span class="n">meta</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+<span class="linenos">428</span>            <span class="p">)</span>
+<span class="linenos">429</span>
+<span class="linenos">430</span>            <span class="c1"># We cannot know a-priori which backend the supplied torch-apply() function works with.</span>
+<span class="linenos">431</span>            <span class="c1"># Consequence: to compute `t`, we must try different backends until one works.</span>
+<span class="linenos">432</span>            <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_torch</span><span class="p">[</span><span class="s2">&quot;apply&quot;</span><span class="p">]</span>
+<span class="linenos">433</span>            <span class="k">try</span><span class="p">:</span>  <span class="c1"># test a CPU implementation ...</span>
+<span class="linenos">434</span>                <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cpu&quot;</span><span class="p">):</span>
+<span class="linenos">435</span>                    <span class="n">t</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)))</span>
+<span class="linenos">436</span>            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>  <span class="c1"># ... and use GPU(s) if it doesn&#39;t work.</span>
+<span class="linenos">437</span>                <span class="k">for</span> <span class="nb">id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">device_count</span><span class="p">()):</span>
+<span class="linenos">438</span>                    <span class="k">try</span><span class="p">:</span>
+<span class="linenos">439</span>                        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;gpu&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<span class="linenos">440</span>                            <span class="n">t</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)))</span>
+<span class="linenos">441</span>                    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="linenos">442</span>                        <span class="k">continue</span>
+<span class="linenos">443</span>
+<span class="linenos">444</span>            <span class="k">return</span> <span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+<span class="linenos">445</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">446</span>            <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+<span class="linenos">447</span>
+<span class="linenos">448</span>    <span class="k">def</span> <span class="nf">_expr</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">449</span>        <span class="n">torch_funcs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_torch</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="linenos">450</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_meta</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">451</span>            <span class="n">torch_funcs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_meta</span><span class="p">)</span>
+<span class="linenos">452</span>        <span class="k">return</span> <span class="p">(</span><span class="s2">&quot;from_torch&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">torch_funcs</span><span class="p">)</span>
+<span class="linenos">453</span>
+<span class="linenos">454</span>
+<div class="viewcode-block" id="from_torch">
+<a class="viewcode-back" href="../../../../api/operator/interop.html#pyxu.operator.interop.torch.from_torch">[docs]</a>
+<span class="linenos">455</span><span class="k">def</span> <span class="nf">from_torch</span><span class="p">(</span>
+<span class="linenos">456</span>    <span class="n">apply</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">,</span>
+<span class="linenos">457</span>    <span class="n">shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpShape</span><span class="p">,</span>
+<span class="linenos">458</span>    <span class="bp">cls</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpC</span> <span class="o">=</span> <span class="n">pxo</span><span class="o">.</span><span class="n">Map</span><span class="p">,</span>
+<span class="linenos">459</span>    <span class="n">vectorize</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">VarName</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(),</span>
+<span class="linenos">460</span>    <span class="n">batch_size</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="linenos">461</span>    <span class="n">jit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="linenos">462</span>    <span class="n">dtype</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">DType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="linenos">463</span>    <span class="n">enable_warnings</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="linenos">464</span>    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;TorchOp&quot;</span><span class="p">,</span>
+<span class="linenos">465</span>    <span class="n">meta</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="linenos">466</span>    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="linenos">467</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
+<span class="linenos">468</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">469</span><span class="sd">    Define an :py:class:`~pyxu.abc.operator.Operator` from Torch-based callables.</span>
+<span class="linenos">470</span>
+<span class="linenos">471</span><span class="sd">    Parameters</span>
+<span class="linenos">472</span><span class="sd">    ----------</span>
+<span class="linenos">473</span><span class="sd">    apply: ~collections.abc.Callable</span>
+<span class="linenos">474</span><span class="sd">        A Python function with single-element Tensor input/output. Defines the :py:meth:`~pyxu.abc.operator.Map.apply`</span>
+<span class="linenos">475</span><span class="sd">        method of the operator: ``apply(x)==op.apply(x)``.</span>
+<span class="linenos">476</span><span class="sd">    shape: OpShape</span>
+<span class="linenos">477</span><span class="sd">        (N,M) shape of the operator, where N and M are the sizes of the output and input Tensors of ``apply`` respectively.</span>
+<span class="linenos">478</span><span class="sd">    cls: OpT</span>
+<span class="linenos">479</span><span class="sd">        Pyxu abstract base class to instantiate from.</span>
+<span class="linenos">480</span><span class="sd">    vectorize: pxt.VarName</span>
+<span class="linenos">481</span><span class="sd">        Arithmetic methods to vectorize.</span>
+<span class="linenos">482</span>
+<span class="linenos">483</span><span class="sd">        `vectorize` is useful if an arithmetic method provided to `kwargs` does not support stacking</span>
+<span class="linenos">484</span><span class="sd">        dimensions.</span>
+<span class="linenos">485</span><span class="sd">    batch_size: int</span>
+<span class="linenos">486</span><span class="sd">        If None (default), vectorized methods are applied as a single map over all inputs.</span>
+<span class="linenos">487</span><span class="sd">        If not None, then compute the vectorized methods `batch_size` samples at a time.</span>
+<span class="linenos">488</span><span class="sd">        Note that ``batch_size=1`` is equivalent to computing the vectorization with a for-loop.</span>
+<span class="linenos">489</span><span class="sd">        If you run into memory issues applying your vectorized methods over stacked inputs, try a non-None `batch_size`.</span>
+<span class="linenos">490</span><span class="sd">    jit: bool</span>
+<span class="linenos">491</span><span class="sd">        Currently has no effect (for future-compatibility only). In the future, if ``True``, then Torch-backed arithmetic methods</span>
+<span class="linenos">492</span><span class="sd">        will be JIT-compiled for better performance.</span>
+<span class="linenos">493</span><span class="sd">    dtype: DType</span>
+<span class="linenos">494</span><span class="sd">        Assumed `dtype` of the Torch-defined arithmetic methods. If `None` the arithmetic methods are assumed precision-agnostic.</span>
+<span class="linenos">495</span><span class="sd">    enable_warnings: bool</span>
+<span class="linenos">496</span><span class="sd">        If ``True``, emit warnings in case of precision/zero-copy issues.</span>
+<span class="linenos">497</span><span class="sd">    name: str</span>
+<span class="linenos">498</span><span class="sd">        Name of the operator.</span>
+<span class="linenos">499</span><span class="sd">    meta: Any</span>
+<span class="linenos">500</span><span class="sd">        Meta information to be provided as tail to :py:class:`~pyxu.abc.operator.Operator._expr`.</span>
+<span class="linenos">501</span><span class="sd">    kwargs: dict</span>
+<span class="linenos">502</span><span class="sd">        Optional   (k[str], v[value | callable]) pairs to use as arithmetic methods.</span>
+<span class="linenos">503</span>
+<span class="linenos">504</span><span class="sd">        Keys are restricted to the following arithmetic methods:</span>
+<span class="linenos">505</span>
+<span class="linenos">506</span><span class="sd">        .. code-block:: python3</span>
+<span class="linenos">507</span>
+<span class="linenos">508</span><span class="sd">           grad(), prox(), pinv(), adjoint()  # methods</span>
+<span class="linenos">509</span>
+<span class="linenos">510</span><span class="sd">        Omitted arithmetic methods default to those provided by `cls`, or are</span>
+<span class="linenos">511</span><span class="sd">        auto-inferred via auto-diff rules.</span>
+<span class="linenos">512</span>
+<span class="linenos">513</span><span class="sd">    Returns</span>
+<span class="linenos">514</span><span class="sd">    -------</span>
+<span class="linenos">515</span><span class="sd">    op: OpT</span>
+<span class="linenos">516</span><span class="sd">        (N, M) Pyxu-compliant operator.</span>
+<span class="linenos">517</span>
+<span class="linenos">518</span><span class="sd">    Notes</span>
+<span class="linenos">519</span><span class="sd">    -----</span>
+<span class="linenos">520</span><span class="sd">    * If provided, arithmetic methods must abide exactly to the interface below:</span>
+<span class="linenos">521</span>
+<span class="linenos">522</span><span class="sd">      .. code-block:: python3</span>
+<span class="linenos">523</span>
+<span class="linenos">524</span><span class="sd">         def apply(tensor: torch.Tensor) -&gt; torch.Tensor</span>
+<span class="linenos">525</span><span class="sd">         def grad(tensor: torch.Tensor) -&gt; torch.Tensor</span>
+<span class="linenos">526</span><span class="sd">         def adjoint(tensor: torch.Tensor) -&gt; torch.Tensor</span>
+<span class="linenos">527</span><span class="sd">         def prox(tensor: torch.Tensor, tau: pxt.Real) -&gt; torch.Tensor</span>
+<span class="linenos">528</span><span class="sd">         def pinv(tensor: torch.Tensor, damp: pxt.Real) -&gt; torch.Tensor</span>
+<span class="linenos">529</span>
+<span class="linenos">530</span><span class="sd">      The arithmetic methods `apply`, `grad`, `prox` **must** accept ``(-1, M)``-shaped inputs for ``tensor``, that is a</span>
+<span class="linenos">531</span><span class="sd">      core dimension of size `M` and an optional stacking/batching dimension of arbitrary size.</span>
+<span class="linenos">532</span><span class="sd">      The arithmetic methods `adjoint`, `pinv` **must** accept ``(-1, N)``-shaped inputs for ``tensor``, that is a core</span>
+<span class="linenos">533</span><span class="sd">      dimension of size `N` and an optional stacking/batching dimension of arbitrary size.</span>
+<span class="linenos">534</span><span class="sd">      If stacking/batching dimensions are not supported for some methods, consider populating `vectorize` accordingly.</span>
+<span class="linenos">535</span>
+<span class="linenos">536</span><span class="sd">    * Auto-vectorization consists in decorating `kwargs`-specified arithmetic methods with :py:func:`torch.vmap`.</span>
+<span class="linenos">537</span><span class="sd">      See the `PyTorch documentation &lt;https://pytorch.org/docs/stable/func.ux_limitations.html#vmap-limitations&gt;`_ for</span>
+<span class="linenos">538</span><span class="sd">      known limitations.</span>
+<span class="linenos">539</span>
+<span class="linenos">540</span><span class="sd">    * All arithmetic methods provided in `kwargs` are decorated using :py:func:`~pyxu.runtime.enforce_precision` to</span>
+<span class="linenos">541</span><span class="sd">      abide by Pyxu&#39;s FP-runtime semantics.</span>
+<span class="linenos">542</span><span class="sd">      Note however that Torch does not allow mixed-precision computation, so this wrapper will coerce the input if its</span>
+<span class="linenos">543</span><span class="sd">      precision does not comply with the specified `dtype`.</span>
+<span class="linenos">544</span><span class="sd">      This triggers a warning by default, which can be silenced via the `enable_warnings`.</span>
+<span class="linenos">545</span>
+<span class="linenos">546</span><span class="sd">    * Arithmetic methods are **not currently JIT-ed** even if `jit` is set to ``True``.</span>
+<span class="linenos">547</span><span class="sd">      This is because of the undocumented and currently poor interaction between :py:mod:`torch.func` transforms and</span>
+<span class="linenos">548</span><span class="sd">      :py:func:`torch.compile`.</span>
+<span class="linenos">549</span><span class="sd">      See `this issue &lt;https://github.com/pytorch/pytorch/issues/98822&gt;`_ for additional details.</span>
+<span class="linenos">550</span>
+<span class="linenos">551</span><span class="sd">    * For :py:class:`~pyxu.abc.operator.DiffMap` (or subclasses thereof), the methods</span>
+<span class="linenos">552</span><span class="sd">      :py:meth:`~pyxu.abc.operator.DiffMap.jacobian`, :py:meth:`~pyxu.abc.operator.DiffFunc.grad` and</span>
+<span class="linenos">553</span><span class="sd">      :py:meth:`~pyxu.abc.operator.LinOp.adjoint` are defined implicitly if not provided using the</span>
+<span class="linenos">554</span><span class="sd">      auto-differentiation transforms from :py:mod:`torch.func`.</span>
+<span class="linenos">555</span><span class="sd">      As detailed `on this page &lt;https://pytorch.org/docs/stable/func.ux_limitations.html&gt;`_, such transforms work well</span>
+<span class="linenos">556</span><span class="sd">      on pure functions (that is, functions where the output is completely determined by the input and that do not</span>
+<span class="linenos">557</span><span class="sd">      involve side effects like mutation), but may fail on more complex functions.</span>
+<span class="linenos">558</span><span class="sd">      Moreover, :py:mod:`torch.func` does not yet have full coverage over PyTorch operations.</span>
+<span class="linenos">559</span><span class="sd">      For functions that call a :py:class:`torch.nn.Module`, see `here</span>
+<span class="linenos">560</span><span class="sd">      &lt;https://pytorch.org/docs/stable/func.api.html#utilities-for-working-with-torch-nn-modules&gt;`_ for some utilities.</span>
+<span class="linenos">561</span>
+<span class="linenos">562</span><span class="sd">    .. Warning::</span>
+<span class="linenos">563</span>
+<span class="linenos">564</span><span class="sd">       Operators created with this wrapper do not support Dask inputs for now.</span>
+<span class="linenos">565</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">566</span>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">vectorize</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="linenos">567</span>        <span class="n">vectorize</span> <span class="o">=</span> <span class="p">(</span><span class="n">vectorize</span><span class="p">,)</span>
+<span class="linenos">568</span>    <span class="n">vectorize</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span><span class="n">vectorize</span><span class="p">)</span>
+<span class="linenos">569</span>
+<span class="linenos">570</span>    <span class="n">src</span> <span class="o">=</span> <span class="n">_FromTorch</span><span class="p">(</span>
+<span class="linenos">571</span>        <span class="n">apply</span><span class="o">=</span><span class="n">apply</span><span class="p">,</span>
+<span class="linenos">572</span>        <span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">,</span>
+<span class="linenos">573</span>        <span class="bp">cls</span><span class="o">=</span><span class="bp">cls</span><span class="p">,</span>
+<span class="linenos">574</span>        <span class="n">vectorize</span><span class="o">=</span><span class="n">vectorize</span><span class="p">,</span>
+<span class="linenos">575</span>        <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
+<span class="linenos">576</span>        <span class="n">jit</span><span class="o">=</span><span class="n">jit</span><span class="p">,</span>
+<span class="linenos">577</span>        <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span>
+<span class="linenos">578</span>        <span class="n">enable_warnings</span><span class="o">=</span><span class="n">enable_warnings</span><span class="p">,</span>
+<span class="linenos">579</span>        <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+<span class="linenos">580</span>        <span class="n">meta</span><span class="o">=</span><span class="n">meta</span><span class="p">,</span>
+<span class="linenos">581</span>        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="linenos">582</span>    <span class="p">)</span>
+<span class="linenos">583</span>    <span class="n">op</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">op</span><span class="p">()</span>
+<span class="linenos">584</span>    <span class="k">return</span> <span class="n">op</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+<div id="searchbox"></div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

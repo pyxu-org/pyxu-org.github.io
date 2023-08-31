@@ -1,0 +1,1098 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pyxu.info &#8212; Pyxu Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-codeautolink.css?v=125d5c1c" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=1031a718" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../_static/documentation_options.js?v=e02fc88f"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=30646c52"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/info';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pyxu.experimental" href="experimental.html" />
+    <link rel="prev" title="pyxu.math" href="math.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../intro/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fair/index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><strong> v1.0.x </strong></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../intro/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fair/index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><strong> v1.0.x </strong></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="abc.html">pyxu.abc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opt.html">pyxu.opt</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="operator/index.html">pyxu.operator</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="operator/map.html">pyxu.operator.map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operator/func.html">pyxu.operator.func</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operator/linop.html">pyxu.operator.linop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operator/blocks.html">pyxu.operator.blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operator/interop.html">pyxu.operator.interop</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="runtime.html">pyxu.runtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="util.html">pyxu.util</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math.html">pyxu.math</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">pyxu.info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="experimental.html">pyxu.experimental</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">pyxu.info</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="pyxu-info">
+<h1>pyxu.info<a class="headerlink" href="#pyxu-info" title="Link to this heading">#</a></h1>
+<nav class="contents local" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#module-pyxu.info.ptype" id="id1">pyxu.info.ptype</a></p></li>
+<li><p><a class="reference internal" href="#module-pyxu.info.deps" id="id2">pyxu.info.deps</a></p></li>
+<li><p><a class="reference internal" href="#module-pyxu.info.warning" id="id3">pyxu.info.warning</a></p></li>
+</ul>
+</nav>
+<section id="module-pyxu.info.ptype">
+<span id="pyxu-info-ptype"></span><h2><a class="toc-backref" href="#id1" role="doc-backlink">pyxu.info.ptype</a><a class="headerlink" href="#module-pyxu.info.ptype" title="Link to this heading">#</a></h2>
+<p>The purpose of this module is to group all abstract types and helpers useful to Python’s static type-checker.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.info.ptype.NDArray">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NDArray</span></span><a class="headerlink" href="#pyxu.info.ptype.NDArray" title="Link to this definition">#</a></dt>
+<dd><p>Supported dense array types.</p>
+<p>alias of TypeVar(‘NDArray’, ~dask.array.core.Array, ~numpy.ndarray)</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.info.ptype.ArrayModule">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ArrayModule</span></span><a class="headerlink" href="#pyxu.info.ptype.ArrayModule" title="Link to this definition">#</a></dt>
+<dd><p>Supported dense array modules.</p>
+<p>alias of TypeVar(‘ArrayModule’, ~typing.Literal[&lt;module ‘dask.array’ from ‘/Users/mmjasime/miniconda3/envs/pyxu/lib/python3.11/site-packages/dask/array/__init__.py’&gt;], ~typing.Literal[&lt;module ‘numpy’ from ‘/Users/mmjasime/miniconda3/envs/pyxu/lib/python3.11/site-packages/numpy/__init__.py’&gt;])</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.info.ptype.SparseArray">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SparseArray</span></span><a class="headerlink" href="#pyxu.info.ptype.SparseArray" title="Link to this definition">#</a></dt>
+<dd><p>Supported sparse array types.</p>
+<p>alias of TypeVar(‘SparseArray’, ~scipy.sparse._matrix.spmatrix, ~sparse._sparse_array.SparseArray)</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.info.ptype.SparseModule">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SparseModule</span></span><a class="headerlink" href="#pyxu.info.ptype.SparseModule" title="Link to this definition">#</a></dt>
+<dd><p>Supported sparse array modules.</p>
+<p>alias of TypeVar(‘SparseModule’, ~typing.Literal[&lt;module ‘sparse’ from ‘/Users/mmjasime/miniconda3/envs/pyxu/lib/python3.11/site-packages/sparse/__init__.py’&gt;], ~typing.Literal[&lt;module ‘scipy.sparse’ from ‘/Users/mmjasime/miniconda3/envs/pyxu/lib/python3.11/site-packages/scipy/sparse/__init__.py’&gt;])</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.info.ptype.OpT">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OpT</span></span><a class="headerlink" href="#pyxu.info.ptype.OpT" title="Link to this definition">#</a></dt>
+<dd><p>Top-level abstract <a class="reference internal" href="abc.html#pyxu.abc.operator.Operator" title="pyxu.abc.operator.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> interface exposed to users.</p>
+<p>alias of TypeVar(‘OpT’, pxo.Operator, pxo.DiffFunc, pxo.ProxDiffFunc, pxo.NormalOp, pxo.ProxFunc, pxo.SquareOp, pxo.QuadraticFunc, pxo.ProjOp, pxo.LinFunc, pxo.PosDefOp, pxo.Map, pxo.Func, pxo.OrthProjOp, pxo.DiffMap, pxo.UnitOp, pxo.SelfAdjointOp, pxo.LinOp)</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pyxu.info.ptype.OpC">
+<span class="sig-name descname"><span class="pre">OpC</span></span><a class="headerlink" href="#pyxu.info.ptype.OpC" title="Link to this definition">#</a></dt>
+<dd><p><a class="reference internal" href="abc.html#pyxu.abc.operator.Operator" title="pyxu.abc.operator.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> hierarchy class type.</p>
+<p>alias of <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code></a>[<a class="reference internal" href="#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OpT</span></code></a>]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pyxu.info.ptype.Property">
+<span class="sig-name descname"><span class="pre">Property</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'pxo.Property'</span></em><a class="headerlink" href="#pyxu.info.ptype.Property" title="Link to this definition">#</a></dt>
+<dd><p>Mathematical properties attached to <a class="reference internal" href="abc.html#pyxu.abc.operator.Operator" title="pyxu.abc.operator.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> objects.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.info.ptype.SolverT">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SolverT</span></span><a class="headerlink" href="#pyxu.info.ptype.SolverT" title="Link to this definition">#</a></dt>
+<dd><p>Top-level abstract <a class="reference internal" href="abc.html#pyxu.abc.solver.Solver" title="pyxu.abc.solver.Solver"><code class="xref py py-class docutils literal notranslate"><span class="pre">Solver</span></code></a> interface exposed to users.</p>
+<p>alias of TypeVar(‘SolverT’, bound=<code class="xref py py-class docutils literal notranslate"><span class="pre">pxs.Solver</span></code>)</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pyxu.info.ptype.SolverC">
+<span class="sig-name descname"><span class="pre">SolverC</span></span><a class="headerlink" href="#pyxu.info.ptype.SolverC" title="Link to this definition">#</a></dt>
+<dd><p><a class="reference internal" href="abc.html#pyxu.abc.solver.Solver" title="pyxu.abc.solver.Solver"><code class="xref py py-class docutils literal notranslate"><span class="pre">Solver</span></code></a> hierarchy class type.</p>
+<p>alias of <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code></a>[<a class="reference internal" href="#pyxu.info.ptype.SolverT" title="pyxu.info.ptype.SolverT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SolverT</span></code></a>]</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.info.ptype.SolverM">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SolverM</span></span><a class="headerlink" href="#pyxu.info.ptype.SolverM" title="Link to this definition">#</a></dt>
+<dd><p>Solver run-modes.</p>
+<p>alias of TypeVar(‘SolverM’, bound=<code class="xref py py-class docutils literal notranslate"><span class="pre">pxs.Mode</span></code>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyxu.info.ptype.Integer">
+<span class="sig-name descname"><span class="pre">Integer</span></span><a class="headerlink" href="#pyxu.info.ptype.Integer" title="Link to this definition">#</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integral</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.info.ptype.Real">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Real</span></span><a class="reference internal" href="../_modules/numbers.html#Real"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.ptype.Real" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Complex" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Complex</span></code></a></p>
+<p>To Complex, Real adds the operations that work on real numbers.</p>
+<p>In short, those are: a conversion to float, trunc(), divmod,
+%, &lt;, &lt;=, &gt;, and &gt;=.</p>
+<p>Real also provides defaults for the derived operations.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pyxu.info.ptype.Real.real">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">real</span></span><a class="headerlink" href="#pyxu.info.ptype.Real.real" title="Link to this definition">#</a></dt>
+<dd><p>Real numbers are their real component.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyxu.info.ptype.Real.imag">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">imag</span></span><a class="headerlink" href="#pyxu.info.ptype.Real.imag" title="Link to this definition">#</a></dt>
+<dd><p>Real numbers have no imaginary component.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.info.ptype.Real.conjugate">
+<span class="sig-name descname"><span class="pre">conjugate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/numbers.html#Real.conjugate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.ptype.Real.conjugate" title="Link to this definition">#</a></dt>
+<dd><p>Conjugate is a no-op for Reals.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pyxu.info.ptype.DType">
+<span class="sig-name descname"><span class="pre">DType</span></span><a class="headerlink" href="#pyxu.info.ptype.DType" title="Link to this definition">#</a></dt>
+<dd><p>NDArray dtype specifier.</p>
+<p>alias of <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v1.25)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code></a>], <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code></a>], <code class="xref py py-class docutils literal notranslate"><span class="pre">_SupportsDType</span></code>[<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v1.25)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code></a>]], <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Tuple</span></code>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>], <code class="xref py py-class docutils literal notranslate"><span class="pre">Tuple</span></code>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">SupportsIndex</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">SupportsIndex</span></code></a>]]], <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code></a>], <code class="xref py py-class docutils literal notranslate"><span class="pre">_DTypeDict</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Tuple</span></code>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code></a>]]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pyxu.info.ptype.OpShape">
+<span class="sig-name descname"><span class="pre">OpShape</span></span><a class="headerlink" href="#pyxu.info.ptype.OpShape" title="Link to this definition">#</a></dt>
+<dd><p>Operator shape specifier.</p>
+<p>alias of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integral</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integral</span></code></a>]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pyxu.info.ptype.NDArrayAxis">
+<span class="sig-name descname"><span class="pre">NDArrayAxis</span></span><a class="headerlink" href="#pyxu.info.ptype.NDArrayAxis" title="Link to this definition">#</a></dt>
+<dd><p>Axis/Axes specifier.</p>
+<p>alias of <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integral</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integral</span></code></a>, …]]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pyxu.info.ptype.NDArrayShape">
+<span class="sig-name descname"><span class="pre">NDArrayShape</span></span><a class="headerlink" href="#pyxu.info.ptype.NDArrayShape" title="Link to this definition">#</a></dt>
+<dd><p>NDArray shape specifier.</p>
+<p>alias of <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integral</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integral</span></code></a>, …]]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pyxu.info.ptype.Path">
+<span class="sig-name descname"><span class="pre">Path</span></span><a class="headerlink" href="#pyxu.info.ptype.Path" title="Link to this definition">#</a></dt>
+<dd><p>Path-like object.</p>
+<p>alias of <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></a>]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pyxu.info.ptype.VarName">
+<span class="sig-name descname"><span class="pre">VarName</span></span><a class="headerlink" href="#pyxu.info.ptype.VarName" title="Link to this definition">#</a></dt>
+<dd><p>Variable name(s).</p>
+<p>alias of <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Collection" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Collection</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]]</p>
+</dd></dl>
+
+</section>
+<section id="module-pyxu.info.deps">
+<span id="pyxu-info-deps"></span><h2><a class="toc-backref" href="#id2" role="doc-backlink">pyxu.info.deps</a><a class="headerlink" href="#module-pyxu.info.deps" title="Link to this heading">#</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="pyxu.info.deps.CUPY_ENABLED">
+<span class="sig-name descname"><span class="pre">CUPY_ENABLED</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#pyxu.info.deps.CUPY_ENABLED" title="Link to this definition">#</a></dt>
+<dd><p>Show if CuPy-based backends are available.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.info.deps.NDArrayInfo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NDArrayInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/info/deps.html#NDArrayInfo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.deps.NDArrayInfo" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></a></p>
+<p>Supported dense array backends.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyxu.info.deps.NDArrayInfo.NUMPY">
+<span class="sig-name descname"><span class="pre">NUMPY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#pyxu.info.deps.NDArrayInfo.NUMPY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyxu.info.deps.NDArrayInfo.DASK">
+<span class="sig-name descname"><span class="pre">DASK</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#pyxu.info.deps.NDArrayInfo.DASK" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyxu.info.deps.NDArrayInfo.CUPY">
+<span class="sig-name descname"><span class="pre">CUPY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#pyxu.info.deps.NDArrayInfo.CUPY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.info.deps.NDArrayInfo.default">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/info/deps.html#NDArrayInfo.default"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.deps.NDArrayInfo.default" title="Link to this definition">#</a></dt>
+<dd><p>Default array backend to use.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pyxu.info.deps.NDArrayInfo" title="pyxu.info.deps.NDArrayInfo"><em>NDArrayInfo</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.info.deps.NDArrayInfo.type">
+<span class="sig-name descname"><span class="pre">type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/info/deps.html#NDArrayInfo.type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.deps.NDArrayInfo.type" title="Link to this definition">#</a></dt>
+<dd><p>Array type associated to a backend.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.11)">type</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.info.deps.NDArrayInfo.from_obj">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_obj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/info/deps.html#NDArrayInfo.from_obj"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.deps.NDArrayInfo.from_obj" title="Link to this definition">#</a></dt>
+<dd><p>Find array backend associated to <code class="code docutils literal notranslate"><span class="pre">obj</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pyxu.info.deps.NDArrayInfo" title="pyxu.info.deps.NDArrayInfo"><em>NDArrayInfo</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.info.deps.NDArrayInfo.from_flag">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_flag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gpu</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/info/deps.html#NDArrayInfo.from_flag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.deps.NDArrayInfo.from_flag" title="Link to this definition">#</a></dt>
+<dd><p>Find array backend suitable for in-memory CPU/GPU computing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#pyxu.info.deps.NDArrayInfo" title="pyxu.info.deps.NDArrayInfo"><em>NDArrayInfo</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.info.deps.NDArrayInfo.module">
+<span class="sig-name descname"><span class="pre">module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">linalg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/info/deps.html#NDArrayInfo.module"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.deps.NDArrayInfo.module" title="Link to this definition">#</a></dt>
+<dd><p>Python module associated to an array backend.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>linalg</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Return the linear-algebra submodule with identical API to <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.linalg.html#module-numpy.linalg" title="(in NumPy v1.25)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.linalg</span></code></a>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>module</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.info.deps.SparseArrayInfo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SparseArrayInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/info/deps.html#SparseArrayInfo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.deps.SparseArrayInfo" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></a></p>
+<p>Supported sparse array backends.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyxu.info.deps.SparseArrayInfo.SCIPY_SPARSE">
+<span class="sig-name descname"><span class="pre">SCIPY_SPARSE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#pyxu.info.deps.SparseArrayInfo.SCIPY_SPARSE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyxu.info.deps.SparseArrayInfo.PYDATA_SPARSE">
+<span class="sig-name descname"><span class="pre">PYDATA_SPARSE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#pyxu.info.deps.SparseArrayInfo.PYDATA_SPARSE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyxu.info.deps.SparseArrayInfo.CUPY_SPARSE">
+<span class="sig-name descname"><span class="pre">CUPY_SPARSE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#pyxu.info.deps.SparseArrayInfo.CUPY_SPARSE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.info.deps.SparseArrayInfo.default">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/info/deps.html#SparseArrayInfo.default"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.deps.SparseArrayInfo.default" title="Link to this definition">#</a></dt>
+<dd><p>Default array backend to use.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pyxu.info.deps.SparseArrayInfo" title="pyxu.info.deps.SparseArrayInfo"><em>SparseArrayInfo</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.info.deps.SparseArrayInfo.type">
+<span class="sig-name descname"><span class="pre">type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/info/deps.html#SparseArrayInfo.type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.deps.SparseArrayInfo.type" title="Link to this definition">#</a></dt>
+<dd><p>Array type associated to a backend.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.11)">type</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.info.deps.SparseArrayInfo.from_obj">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_obj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/info/deps.html#SparseArrayInfo.from_obj"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.deps.SparseArrayInfo.from_obj" title="Link to this definition">#</a></dt>
+<dd><p>Find array backend associated to <code class="code docutils literal notranslate"><span class="pre">obj</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pyxu.info.deps.SparseArrayInfo" title="pyxu.info.deps.SparseArrayInfo"><em>SparseArrayInfo</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.info.deps.SparseArrayInfo.module">
+<span class="sig-name descname"><span class="pre">module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">linalg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/info/deps.html#SparseArrayInfo.module"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.deps.SparseArrayInfo.module" title="Link to this definition">#</a></dt>
+<dd><p>Python module associated to an array backend.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>linalg</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Return the linear-algebra submodule with identical API to <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/sparse.linalg.html#module-scipy.sparse.linalg" title="(in SciPy v1.11.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.sparse.linalg</span></code></a>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>module</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.info.deps.supported_array_types">
+<span class="sig-name descname"><span class="pre">supported_array_types</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/info/deps.html#supported_array_types"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.deps.supported_array_types" title="Link to this definition">#</a></dt>
+<dd><p>List of all supported dense array types in current Pyxu install.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Collection" title="(in Python v3.11)"><em>Collection</em></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.11)">type</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.info.deps.supported_array_modules">
+<span class="sig-name descname"><span class="pre">supported_array_modules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/info/deps.html#supported_array_modules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.deps.supported_array_modules" title="Link to this definition">#</a></dt>
+<dd><p>List of all supported dense array modules in current Pyxu install.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Collection" title="(in Python v3.11)"><em>Collection</em></a>[module]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.info.deps.supported_sparse_types">
+<span class="sig-name descname"><span class="pre">supported_sparse_types</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/info/deps.html#supported_sparse_types"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.deps.supported_sparse_types" title="Link to this definition">#</a></dt>
+<dd><p>List of all supported sparse array types in current Pyxu install.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Collection" title="(in Python v3.11)"><em>Collection</em></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.11)">type</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.info.deps.supported_sparse_modules">
+<span class="sig-name descname"><span class="pre">supported_sparse_modules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/info/deps.html#supported_sparse_modules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.deps.supported_sparse_modules" title="Link to this definition">#</a></dt>
+<dd><p>List of all supported sparse array modules in current Pyxu install.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Collection" title="(in Python v3.11)"><em>Collection</em></a>[module]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pyxu.info.warning">
+<span id="pyxu-info-warning"></span><h2><a class="toc-backref" href="#id3" role="doc-backlink">pyxu.info.warning</a><a class="headerlink" href="#module-pyxu.info.warning" title="Link to this heading">#</a></h2>
+<p>Custom warnings used inside Pyxu.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="pyxu.info.warning.PyxuWarning">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PyxuWarning</span></span><a class="reference internal" href="../_modules/pyxu/info/warning.html#PyxuWarning"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.warning.PyxuWarning" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#UserWarning" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">UserWarning</span></code></a></p>
+<p>Parent class of all warnings raised in Pyxu.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pyxu.info.warning.AutoInferenceWarning">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AutoInferenceWarning</span></span><a class="reference internal" href="../_modules/pyxu/info/warning.html#AutoInferenceWarning"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.warning.AutoInferenceWarning" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.info.warning.PyxuWarning" title="pyxu.info.warning.PyxuWarning"><code class="xref py py-class docutils literal notranslate"><span class="pre">PyxuWarning</span></code></a></p>
+<p>Use when a quantity was auto-inferenced with possible caveats.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pyxu.info.warning.PerformanceWarning">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PerformanceWarning</span></span><a class="reference internal" href="../_modules/pyxu/info/warning.html#PerformanceWarning"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.warning.PerformanceWarning" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.info.warning.PyxuWarning" title="pyxu.info.warning.PyxuWarning"><code class="xref py py-class docutils literal notranslate"><span class="pre">PyxuWarning</span></code></a></p>
+<p>Use for performance-related warnings.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pyxu.info.warning.PrecisionWarning">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PrecisionWarning</span></span><a class="reference internal" href="../_modules/pyxu/info/warning.html#PrecisionWarning"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.warning.PrecisionWarning" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.info.warning.PyxuWarning" title="pyxu.info.warning.PyxuWarning"><code class="xref py py-class docutils literal notranslate"><span class="pre">PyxuWarning</span></code></a></p>
+<p>Use for precision-related warnings.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pyxu.info.warning.DenseWarning">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DenseWarning</span></span><a class="reference internal" href="../_modules/pyxu/info/warning.html#DenseWarning"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.warning.DenseWarning" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.info.warning.PyxuWarning" title="pyxu.info.warning.PyxuWarning"><code class="xref py py-class docutils literal notranslate"><span class="pre">PyxuWarning</span></code></a></p>
+<p>Use for sparse-based algos which revert to dense arrays.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pyxu.info.warning.NonTransparentWarning">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NonTransparentWarning</span></span><a class="reference internal" href="../_modules/pyxu/info/warning.html#NonTransparentWarning"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.warning.NonTransparentWarning" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.info.warning.PyxuWarning" title="pyxu.info.warning.PyxuWarning"><code class="xref py py-class docutils literal notranslate"><span class="pre">PyxuWarning</span></code></a></p>
+<p>Inform test suite runner of (safe) non-transparent function call.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pyxu.info.warning.BackendWarning">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BackendWarning</span></span><a class="reference internal" href="../_modules/pyxu/info/warning.html#BackendWarning"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.warning.BackendWarning" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.info.warning.PyxuWarning" title="pyxu.info.warning.PyxuWarning"><code class="xref py py-class docutils literal notranslate"><span class="pre">PyxuWarning</span></code></a></p>
+<p>Inform user of a backend-specific problem to be aware of.</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="math.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">pyxu.math</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="experimental.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">pyxu.experimental</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyxu.info.ptype">pyxu.info.ptype</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.ptype.NDArray"><code class="docutils literal notranslate"><span class="pre">NDArray</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.ptype.ArrayModule"><code class="docutils literal notranslate"><span class="pre">ArrayModule</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.ptype.SparseArray"><code class="docutils literal notranslate"><span class="pre">SparseArray</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.ptype.SparseModule"><code class="docutils literal notranslate"><span class="pre">SparseModule</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.ptype.OpT"><code class="docutils literal notranslate"><span class="pre">OpT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.ptype.OpC"><code class="docutils literal notranslate"><span class="pre">OpC</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.ptype.Property"><code class="docutils literal notranslate"><span class="pre">Property</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.ptype.SolverT"><code class="docutils literal notranslate"><span class="pre">SolverT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.ptype.SolverC"><code class="docutils literal notranslate"><span class="pre">SolverC</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.ptype.SolverM"><code class="docutils literal notranslate"><span class="pre">SolverM</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.ptype.Integer"><code class="docutils literal notranslate"><span class="pre">Integer</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.ptype.Real"><code class="docutils literal notranslate"><span class="pre">Real</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.ptype.Real.real"><code class="docutils literal notranslate"><span class="pre">Real.real</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.ptype.Real.imag"><code class="docutils literal notranslate"><span class="pre">Real.imag</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.ptype.Real.conjugate"><code class="docutils literal notranslate"><span class="pre">Real.conjugate()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.ptype.DType"><code class="docutils literal notranslate"><span class="pre">DType</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.ptype.OpShape"><code class="docutils literal notranslate"><span class="pre">OpShape</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.ptype.NDArrayAxis"><code class="docutils literal notranslate"><span class="pre">NDArrayAxis</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.ptype.NDArrayShape"><code class="docutils literal notranslate"><span class="pre">NDArrayShape</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.ptype.Path"><code class="docutils literal notranslate"><span class="pre">Path</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.ptype.VarName"><code class="docutils literal notranslate"><span class="pre">VarName</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyxu.info.deps">pyxu.info.deps</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.deps.CUPY_ENABLED"><code class="docutils literal notranslate"><span class="pre">CUPY_ENABLED</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.deps.NDArrayInfo"><code class="docutils literal notranslate"><span class="pre">NDArrayInfo</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.deps.NDArrayInfo.NUMPY"><code class="docutils literal notranslate"><span class="pre">NDArrayInfo.NUMPY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.deps.NDArrayInfo.DASK"><code class="docutils literal notranslate"><span class="pre">NDArrayInfo.DASK</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.deps.NDArrayInfo.CUPY"><code class="docutils literal notranslate"><span class="pre">NDArrayInfo.CUPY</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.deps.NDArrayInfo.default"><code class="docutils literal notranslate"><span class="pre">NDArrayInfo.default()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.deps.NDArrayInfo.type"><code class="docutils literal notranslate"><span class="pre">NDArrayInfo.type()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.deps.NDArrayInfo.from_obj"><code class="docutils literal notranslate"><span class="pre">NDArrayInfo.from_obj()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.deps.NDArrayInfo.from_flag"><code class="docutils literal notranslate"><span class="pre">NDArrayInfo.from_flag()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.deps.NDArrayInfo.module"><code class="docutils literal notranslate"><span class="pre">NDArrayInfo.module()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.deps.SparseArrayInfo"><code class="docutils literal notranslate"><span class="pre">SparseArrayInfo</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.deps.SparseArrayInfo.SCIPY_SPARSE"><code class="docutils literal notranslate"><span class="pre">SparseArrayInfo.SCIPY_SPARSE</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.deps.SparseArrayInfo.PYDATA_SPARSE"><code class="docutils literal notranslate"><span class="pre">SparseArrayInfo.PYDATA_SPARSE</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.deps.SparseArrayInfo.CUPY_SPARSE"><code class="docutils literal notranslate"><span class="pre">SparseArrayInfo.CUPY_SPARSE</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.deps.SparseArrayInfo.default"><code class="docutils literal notranslate"><span class="pre">SparseArrayInfo.default()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.deps.SparseArrayInfo.type"><code class="docutils literal notranslate"><span class="pre">SparseArrayInfo.type()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.deps.SparseArrayInfo.from_obj"><code class="docutils literal notranslate"><span class="pre">SparseArrayInfo.from_obj()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.deps.SparseArrayInfo.module"><code class="docutils literal notranslate"><span class="pre">SparseArrayInfo.module()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.deps.supported_array_types"><code class="docutils literal notranslate"><span class="pre">supported_array_types()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.deps.supported_array_modules"><code class="docutils literal notranslate"><span class="pre">supported_array_modules()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.deps.supported_sparse_types"><code class="docutils literal notranslate"><span class="pre">supported_sparse_types()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.deps.supported_sparse_modules"><code class="docutils literal notranslate"><span class="pre">supported_sparse_modules()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyxu.info.warning">pyxu.info.warning</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.warning.PyxuWarning"><code class="docutils literal notranslate"><span class="pre">PyxuWarning</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.warning.AutoInferenceWarning"><code class="docutils literal notranslate"><span class="pre">AutoInferenceWarning</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.warning.PerformanceWarning"><code class="docutils literal notranslate"><span class="pre">PerformanceWarning</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.warning.PrecisionWarning"><code class="docutils literal notranslate"><span class="pre">PrecisionWarning</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.warning.DenseWarning"><code class="docutils literal notranslate"><span class="pre">DenseWarning</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.warning.NonTransparentWarning"><code class="docutils literal notranslate"><span class="pre">NonTransparentWarning</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.info.warning.BackendWarning"><code class="docutils literal notranslate"><span class="pre">BackendWarning</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+<div id="searchbox"></div></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/matthieumeo/pyxu/edit/main/doc/api/info.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/info.rst">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

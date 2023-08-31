@@ -1,0 +1,869 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Contributing to the Pyxu-FAIR &#8212; Pyxu Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-codeautolink.css?v=125d5c1c" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=1031a718" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../_static/documentation_options.js?v=e02fc88f"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=30646c52"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'fair/contribute';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Pyxu Score Explained" href="score.html" />
+    <link rel="prev" title="How to use plugins in Pyxu?" href="howto.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../intro/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../api/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><strong> v1.0.x </strong></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../intro/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../api/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><strong> v1.0.x </strong></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="howto.html">How to use plugins in Pyxu?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Contributing to the Pyxu-FAIR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="score.html">Pyxu Score Explained</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="plugins/index.html">Plugin Catalog</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="plugins/CSEEG.html">CSEEG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins/DSP-Notebooks.html">DSP-Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins/EnvironTracker.html">EnvironTracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins/HoughDetector.html">HoughDetector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins/HVOX.html">HVOX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins/OrientationPy.html">OrientationPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins/Palentologist.html">Palentologist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins/PhaseRet.html">PhaseRet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins/PycGSP.html">PycGSP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins/pycNUFFT.html">pycNUFFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins/PycSphere.html">PycSphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins/pycWavelet.html">pycWavelet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins/PYFW.html">PYFW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins/TokemakRec.html">TokemakRec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins/TVDenoiser.html">TVDenoiser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins/UncertaintyQuant.html">UncertaintyQuant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins/WaveProp.html">WaveProp</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Extending Pyxu</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Contributing to the Pyxu-FAIR</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="contributing-to-the-pyxu-fair">
+<h1>Contributing to the Pyxu-FAIR<a class="headerlink" href="#contributing-to-the-pyxu-fair" title="Link to this heading">#</a></h1>
+<p><strong>Want to contribute</strong> your own Pyxu-based plugin and making it available in the <a class="reference external" href="../plugins/index.html">Pyxu FAIR</a>,
+we recommend using the <a class="reference external" href="https://github.com/matthieumeo/cookiecutter-pyxu-plugin">Pyxu cookiecutter</a>.</p>
+<p>This tutorial will guide you through the process of creating a new plugin using the cookiecutter.</p>
+<section id="create-your-plugin-package">
+<h2>Create your plugin package<a class="headerlink" href="#create-your-plugin-package" title="Link to this heading">#</a></h2>
+<p>Install <a class="reference external" href="https://pypi.org/project/cookiecutter/">Cookiecutter</a> if not installed:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>cookiecutter
+</pre></div>
+</div>
+<p>Generate a new Pyxu plugin project (a new folder will be created in your current working directory):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cookiecutter<span class="w"> </span>https://github.com/matthieumeo/cookiecutter-pyxu-plugin
+</pre></div>
+</div>
+<p>The Cookiecutter prompts you for information regarding your plugin. Defaults are shown in brackets.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>full_name<span class="w"> </span><span class="o">[</span>Pyxu<span class="w"> </span>Developer<span class="o">]</span>:<span class="w"> </span>Isaac<span class="w"> </span>Newton
+email<span class="w"> </span><span class="o">[</span>yourname@example.com<span class="o">]</span>:<span class="w"> </span>inewton@trinity.uk
+github_username_or_organization<span class="w"> </span><span class="o">[</span>githubuser<span class="o">]</span>:<span class="w"> </span>sirisaac
+</pre></div>
+</div>
+<p>Note that for packages whose primary purpose is to be a Pyxu plugin, we recommend using the ‘pyxu-’ prefix in the
+package name. If your package provides functionality outside of Pyxu, you may choose to leave Pyxu out of the name.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>plugin_name<span class="w"> </span><span class="o">[</span>pyxu-foobar<span class="o">]</span>:<span class="w"> </span>pyxu-gradient-descent
+
+Select<span class="w"> </span>github_repository_url:
+<span class="m">1</span><span class="w"> </span>-<span class="w"> </span>https://github.com/sirisaac/pyxu-gradient-descent
+<span class="m">2</span><span class="w"> </span>-<span class="w"> </span>provide<span class="w"> </span>later
+Choose<span class="w"> </span>from<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">[</span><span class="m">1</span><span class="o">]</span>:
+
+module_name<span class="w"> </span><span class="o">[</span>pyxu_gradient_descent<span class="o">]</span>:
+display_name<span class="w"> </span><span class="o">[</span>Pyxu<span class="w"> </span>FooBar<span class="w"> </span>Collection<span class="o">]</span>:<span class="w"> </span>Gradient<span class="w"> </span>Descent
+short_description<span class="w"> </span><span class="o">[</span>A<span class="w"> </span>simple<span class="w"> </span>plugin<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span>the<span class="w"> </span>FooBar<span class="w"> </span>collection<span class="w"> </span>within<span class="w"> </span>Pyxu<span class="o">]</span>:<span class="w"> </span>A<span class="w"> </span>simple<span class="w"> </span>gradient<span class="w"> </span>descent<span class="w"> </span>solver<span class="w"> </span><span class="k">for</span><span class="w"> </span>Pyxu
+</pre></div>
+</div>
+<p>You can choose from a variety of plugin template examples. These provide the foundational structure for a Pyxu plugin,
+aiding in the development of your own plugin.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>include_math_plugin<span class="w"> </span><span class="o">[</span>y<span class="o">]</span>:<span class="w"> </span>n
+include_operator_plugin<span class="w"> </span><span class="o">[</span>n<span class="o">]</span>:
+include_solver_plugin<span class="w"> </span><span class="o">[</span>n<span class="o">]</span>:y
+include_stop_plugin<span class="w"> </span><span class="o">[</span>n<span class="o">]</span>:<span class="w"> </span>n
+include_contrib_plugin<span class="w"> </span><span class="o">[</span>n<span class="o">]</span>:<span class="w"> </span>n
+</pre></div>
+</div>
+<p>Next, you’ll be prompted to decide between using git tags for versioning or managing package version numbers manually.
+Using git tags offers a more straightforward approach and reduces potential errors.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>use_git_tags_for_versioning<span class="w"> </span><span class="o">[</span>n<span class="o">]</span>:
+</pre></div>
+</div>
+<p>Next, you’ll be prompted to determine if you wish to install <a class="reference external" href="https://pre-commit.com/">pre-commit</a>. This tool automates
+tasks before each commit, ensuring code quality and consistency, reducing the likelihood of errors and oversights in
+your codebase.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>install_precommit<span class="w"> </span><span class="o">[</span>n<span class="o">]</span>:
+</pre></div>
+</div>
+<p>Finally, you’ll be prompted to select a license for your plugin. The default is the BSD-3 license.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Select<span class="w"> </span>license:
+<span class="m">1</span><span class="w"> </span>-<span class="w"> </span>BSD-3
+<span class="m">2</span><span class="w"> </span>-<span class="w"> </span>MIT
+<span class="m">3</span><span class="w"> </span>-<span class="w"> </span>Mozilla<span class="w"> </span>Public<span class="w"> </span>License<span class="w"> </span><span class="m">2</span>.0
+<span class="m">4</span><span class="w"> </span>-<span class="w"> </span>Apache<span class="w"> </span>Software<span class="w"> </span>License<span class="w"> </span><span class="m">2</span>.0
+<span class="m">5</span><span class="w"> </span>-<span class="w"> </span>GNU<span class="w"> </span>LGPL<span class="w"> </span>v3.0
+<span class="m">6</span><span class="w"> </span>-<span class="w"> </span>GNU<span class="w"> </span>GPL<span class="w"> </span>v3.0
+Choose<span class="w"> </span>from<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">4</span>,<span class="w"> </span><span class="m">5</span>,<span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="o">[</span><span class="m">1</span><span class="o">]</span>:
+</pre></div>
+</div>
+<p>You just created the necessary structure for a funcitonal Pyxu plugin, completed with tests and ready for automatic
+deployment!</p>
+<p>For more detailed information on each prompt see the <a class="reference external" href="https://github.com/matthieumeo/cookiecutter-pyxu-plugin/PROMPTS.md">prompts reference</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pyxu-gradient-descent
+├──<span class="w"> </span>.git
+├──<span class="w"> </span>.github
+│<span class="w">         </span>└──<span class="w"> </span>workflows
+│<span class="w">             </span>└──<span class="w"> </span>test_and_deploy.yml
+├──<span class="w"> </span>.gitignore
+├──<span class="w"> </span>__init__.py
+├──<span class="w"> </span>LICENSE
+├──<span class="w"> </span>MANIFEST.in
+├──<span class="w"> </span>.pre-commit-config.yaml
+├──<span class="w"> </span>.pyxu-gradient-descent
+│<span class="w">         </span>├──<span class="w"> </span>config.yml
+│<span class="w">         </span>└──<span class="w"> </span>DESCRIPTION.md
+├──<span class="w"> </span>pyproject.toml
+├──<span class="w"> </span>README.md
+├──<span class="w"> </span>setup.cfg
+├──<span class="w"> </span>src
+│<span class="w">         </span>├──<span class="w"> </span>__init__.py
+│<span class="w">         </span>├──<span class="w"> </span>pyxu_gradient_descent
+│<span class="w">         </span>│<span class="w">       </span>├──<span class="w"> </span>__init__.py
+│<span class="w">         </span>│<span class="w">       </span>└──<span class="w"> </span>opt
+│<span class="w">         </span>│<span class="w">           </span>├──<span class="w"> </span>__init__.py
+│<span class="w">         </span>│<span class="w">           </span>└──<span class="w"> </span>solver
+│<span class="w">         </span>│<span class="w">               </span>└──<span class="w"> </span>__init__.py
+│<span class="w">         </span>└──<span class="w"> </span>pyxu_gradient_descent_tests
+│<span class="w">             </span>├──<span class="w"> </span>__init__.py
+│<span class="w">             </span>└──<span class="w"> </span>test_opt
+│<span class="w">                 </span>├──<span class="w"> </span>__init__.py
+│<span class="w">                 </span>└──<span class="w"> </span>test_solver.py
+└──<span class="w"> </span>tox.ini
+</pre></div>
+</div>
+</section>
+<section id="initialize-a-git-repository-in-your-package">
+<h2>Initialize a git repository in your package<a class="headerlink" href="#initialize-a-git-repository-in-your-package" title="Link to this heading">#</a></h2>
+<p>This is important for version management.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>pyxu-gradient-descent
+git<span class="w"> </span>init
+git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;initial commit&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="upload-it-to-github">
+<h2>Upload it to GitHub<a class="headerlink" href="#upload-it-to-github" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Create a [new github repository] with the name <code class="docutils literal notranslate"><span class="pre">github_repository_url</span></code> you indicated.</p></li>
+<li><p>Add your newly created GitHub repo as a remote and push:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/sirisaac/pyxu-gradient-descent.git
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</pre></div>
+</div>
+</section>
+<section id="setup-a-local-environment">
+<h2>Setup a local environment<a class="headerlink" href="#setup-a-local-environment" title="Link to this heading">#</a></h2>
+<p>It is recommended to set up a local Python environment to develop and test your plugin. With <a class="reference external" href="https://docs.conda.io/">Conda</a>, you can use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">my_env</span><span class="o">=</span>&lt;CONDA<span class="w"> </span>ENVIRONMENT<span class="w"> </span>NAME&gt;
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">my_env</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
+conda<span class="w"> </span>activate<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">my_env</span><span class="si">}</span><span class="s2">&quot;</span>
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+</pre></div>
+</div>
+<p>You will probably want to install your new package into this environment. <code class="docutils literal notranslate"><span class="pre">Pyxu</span></code> is already set as a dependency,
+simply add the other required dependencies in the <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> file and run the following commands.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>&lt;your-repo-name&gt;
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">-e</span> <span class="pre">.</span></code> arguments install the package in editable mode, meaning that any changes you make to the source code, will
+be reflected in the installed package.</p>
+</section>
+<section id="develop-new-features">
+<h2>Develop new features<a class="headerlink" href="#develop-new-features" title="Link to this heading">#</a></h2>
+<p>The cookiecutter offers a predefined hierarchy of classes and functions to aid novice Pyxu developers in creating
+novel features. At this point, the developer can create new functionalities following the <a class="reference external" href="https://github.com/matthieumeo/pycsou/blob/v2-dev/doc/dev_notes.rst">Pyxu developer notes</a> and
+structure predefined by the cookiecutter.</p>
+</section>
+<section id="continuous-integration">
+<h2>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Link to this heading">#</a></h2>
+<p>This Pyxu-plugin generator repository provides you with already-parametrized continuous integration tools.</p>
+<section id="id1">
+<h3>Pre-commit<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>This template includes a default yaml configuration for <a class="reference external" href="https://pre-commit.com/">pre-commit</a>.</p>
+<p>Among other things, it includes checks for best practices in Pyxu plugins.</p>
+<p>You may edit the config at <code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code></p>
+<p>To use it run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pre-commit
+pre-commit<span class="w"> </span>install
+</pre></div>
+</div>
+<p>You can also have these checks run automatically for you when you push to GitHub
+by installing <a class="reference external" href="https://pre-commit.ci/">pre-commit ci</a> on your repository.</p>
+</section>
+<section id="running-tests-locally">
+<h3>Running tests locally<a class="headerlink" href="#running-tests-locally" title="Link to this heading">#</a></h3>
+<p>You can run your tests locally with <a class="reference external" href="https://docs.pytest.org/en/7.1.x/">pytest</a>.
+You’ll need to make sure that your package is installed in your environment,
+along with testing requirements (specified in the setup.cfg <code class="code docutils literal notranslate"><span class="pre">extras_require</span></code> section):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[testing]&quot;</span>
+pytest
+</pre></div>
+</div>
+</section>
+<section id="monitor-testing-and-coverage">
+<h3>Monitor testing and coverage<a class="headerlink" href="#monitor-testing-and-coverage" title="Link to this heading">#</a></h3>
+<p>The repository is already setup to run your tests automatically each time you push an
+update (configuration is in <code class="code docutils literal notranslate"><span class="pre">.github/workflows/test_and_deploy.yml</span></code>). You can
+monitor them in the “Actions” tab of your GitHub repository. If you’re
+following along, go have a look… they should be running right now!</p>
+<p>When the tests are done, test coverage will be viewable at
+<a class="reference external" href="https://codecov.io/">codecov.io</a>) (assuming your repository is public):
+<code class="code docutils literal notranslate"><span class="pre">https://codecov.io/gh/&lt;your-github-username&gt;/&lt;your-package-name&gt;</span></code></p>
+</section>
+<section id="set-up-automatic-deployments">
+<h3>Set up automatic deployments<a class="headerlink" href="#set-up-automatic-deployments" title="Link to this heading">#</a></h3>
+<p>Your new package is also nearly ready to automatically deploy to <a class="reference external" href="https://pypi.org/">PyPI</a>.
+(whenever you create a tagged release), so that your users can simply <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> your package. To do so, you just
+need to create an <a class="reference external" href="https://pypi.org/help/#apitoken">API token to authenticate with PyPi</a>, and then add it to your GitHub
+repository:</p>
+<ol class="arabic simple">
+<li><p>If you don’t already have one, <a class="reference external" href="https://pypi.org/account/register/">create an account</a> at PyPI.</p></li>
+<li><p>Verify your email address with PyPI, (if you haven’t already)</p></li>
+<li><p>Generate an <a class="reference external" href="https://pypi.org/help/#apitoken">API token</a> at PyPI: In your
+<a class="reference external" href="https://pypi.org/manage/account/">account settings</a> go to the API tokens
+section and select “Add API token”. Make sure to copy it somewhere safe!</p></li>
+<li><p><a class="reference external" href="https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#creating-encrypted-secrets">Create a new encrypted
+secret</a>
+in your GitHub repository with the name “TWINE_API_KEY”, and paste in your
+API token.</p></li>
+</ol>
+<p>You are now setup for automatic deployment!</p>
+</section>
+<section id="automatic-deployment-and-version-management">
+<h3>Automatic deployment and version management<a class="headerlink" href="#automatic-deployment-and-version-management" title="Link to this heading">#</a></h3>
+<p>Each time you want to deploy a new version, you just need to create a tagged
+commit, and push it to your main branch on GitHub. Your package is set up to
+use <a class="reference external" href="https://github.com/pypa/setuptools_scm">setuptools_scm</a> for version
+management, meaning you don’t need to hard-code your version anywhere in your
+package. It will be inferred from the tag each time you release. The deployment
+is also handled with the [github actions] using the same workflow file <code class="code docutils literal notranslate"><span class="pre">.github/workflows/test_and_deploy.yml</span></code>.</p>
+<p>The tag will be used as the version string for your package make it meaningful: <a class="reference external" href="https://semver.org/">https://semver.org/</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>v0.1.0<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;v0.1.0&quot;</span>
+</pre></div>
+</div>
+<p>Make sure to use follow-tags so that the tag also gets pushed to github</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>--follow-tags
+</pre></div>
+</div>
+<p>Monitor the “actions” tab on your GitHub repo for progress… and when the
+“deploy” step is finished, your new version should be visible on PyPI:</p>
+<p><code class="code docutils literal notranslate"><span class="pre">https://pypi.org/project/&lt;your-package-name&gt;/</span></code></p>
+<p>and available for pip install with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pyxu-gradient-descent
+</pre></div>
+</div>
+</section>
+</section>
+<section id="create-your-documentation">
+<h2>Create your documentation<a class="headerlink" href="#create-your-documentation" title="Link to this heading">#</a></h2>
+<p>Documentation generation is not included in this template.
+We recommend following the getting started guides for <a class="reference external" href="https://www.sphinx-doc.org/">https://www.sphinx-doc.org/</a>.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="howto.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">How to use plugins in Pyxu?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="score.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Pyxu Score Explained</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-your-plugin-package">Create your plugin package</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-a-git-repository-in-your-package">Initialize a git repository in your package</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-it-to-github">Upload it to GitHub</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-a-local-environment">Setup a local environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#develop-new-features">Develop new features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration">Continuous Integration</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Pre-commit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-tests-locally">Running tests locally</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monitor-testing-and-coverage">Monitor testing and coverage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-automatic-deployments">Set up automatic deployments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-deployment-and-version-management">Automatic deployment and version management</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-your-documentation">Create your documentation</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+<div id="searchbox"></div></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/matthieumeo/pyxu/edit/main/doc/fair/contribute.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/fair/contribute.rst">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

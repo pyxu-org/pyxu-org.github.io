@@ -1,0 +1,1309 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pyxu.abc.solver &#8212; Pyxu Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=1031a718" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../../../_static/documentation_options.js?v=29481255"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=30646c52"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pyxu/abc/solver';</script>
+    <link rel="icon" href="../../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../intro/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../fair/index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><strong> v0.0.1 </strong></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../intro/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../fair/index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><strong> v0.0.1 </strong></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">pyxu.abc.solver</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for pyxu.abc.solver</h1><div class="highlight"><pre>
+<span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">collections.abc</span> <span class="k">as</span> <span class="nn">cabc</span>
+<span class="linenos">  2</span><span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="linenos">  3</span><span class="kn">import</span> <span class="nn">enum</span>
+<span class="linenos">  4</span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="linenos">  5</span><span class="kn">import</span> <span class="nn">operator</span>
+<span class="linenos">  6</span><span class="kn">import</span> <span class="nn">pathlib</span> <span class="k">as</span> <span class="nn">plib</span>
+<span class="linenos">  7</span><span class="kn">import</span> <span class="nn">shutil</span>
+<span class="linenos">  8</span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="linenos">  9</span><span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="linenos"> 10</span><span class="kn">import</span> <span class="nn">threading</span>
+<span class="linenos"> 11</span><span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">typ</span>
+<span class="linenos"> 12</span>
+<span class="linenos"> 13</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos"> 14</span>
+<span class="linenos"> 15</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
+<span class="linenos"> 16</span><span class="kn">import</span> <span class="nn">pyxu.runtime</span> <span class="k">as</span> <span class="nn">pxrt</span>
+<span class="linenos"> 17</span><span class="kn">import</span> <span class="nn">pyxu.util</span> <span class="k">as</span> <span class="nn">pxu</span>
+<span class="linenos"> 18</span>
+<span class="linenos"> 19</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos"> 20</span>    <span class="s2">&quot;Mode&quot;</span><span class="p">,</span>
+<span class="linenos"> 21</span>    <span class="s2">&quot;Solver&quot;</span><span class="p">,</span>
+<span class="linenos"> 22</span>    <span class="s2">&quot;StoppingCriterion&quot;</span><span class="p">,</span>
+<span class="linenos"> 23</span><span class="p">]</span>
+<span class="linenos"> 24</span>
+<span class="linenos"> 25</span>
+<div class="viewcode-block" id="Mode">
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.solver.Mode">[docs]</a>
+<span class="linenos"> 26</span><span class="nd">@enum</span><span class="o">.</span><span class="n">unique</span>
+<span class="linenos"> 27</span><span class="k">class</span> <span class="nc">Mode</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">Enum</span><span class="p">):</span>
+<span class="linenos"> 28</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 29</span><span class="sd">    Solver execution mode.</span>
+<span class="linenos"> 30</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos"> 31</span>
+<span class="linenos"> 32</span>    <span class="n">BLOCK</span> <span class="o">=</span> <span class="n">enum</span><span class="o">.</span><span class="n">auto</span><span class="p">()</span>
+<span class="linenos"> 33</span>    <span class="n">MANUAL</span> <span class="o">=</span> <span class="n">enum</span><span class="o">.</span><span class="n">auto</span><span class="p">()</span>
+<span class="linenos"> 34</span>    <span class="n">ASYNC</span> <span class="o">=</span> <span class="n">enum</span><span class="o">.</span><span class="n">auto</span><span class="p">()</span></div>
+
+<span class="linenos"> 35</span>
+<span class="linenos"> 36</span>
+<div class="viewcode-block" id="StoppingCriterion">
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.solver.StoppingCriterion">[docs]</a>
+<span class="linenos"> 37</span><span class="k">class</span> <span class="nc">StoppingCriterion</span><span class="p">:</span>
+<span class="linenos"> 38</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 39</span><span class="sd">    State machines (SM) which decide when to stop iterative solvers by examining their mathematical</span>
+<span class="linenos"> 40</span><span class="sd">    state.</span>
+<span class="linenos"> 41</span>
+<span class="linenos"> 42</span><span class="sd">    SM decisions are always accompanied by at least one numerical statistic. These stats may be</span>
+<span class="linenos"> 43</span><span class="sd">    queried by solvers via</span>
+<span class="linenos"> 44</span><span class="sd">    :py:meth:`~pyxu.abc.solver.StoppingCriterion.info`</span>
+<span class="linenos"> 45</span><span class="sd">    to provide diagnostic information to users.</span>
+<span class="linenos"> 46</span>
+<span class="linenos"> 47</span><span class="sd">    Composite stopping criteria can be implemented via the overloaded (and[``&amp;``], or[``|``]) operators.</span>
+<span class="linenos"> 48</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos"> 49</span>
+<div class="viewcode-block" id="StoppingCriterion.stop">
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.solver.StoppingCriterion.stop">[docs]</a>
+<span class="linenos"> 50</span>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="linenos"> 51</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 52</span><span class="sd">        Compute a stop signal based on the current mathematical state.</span>
+<span class="linenos"> 53</span>
+<span class="linenos"> 54</span><span class="sd">        Parameters</span>
+<span class="linenos"> 55</span><span class="sd">        ----------</span>
+<span class="linenos"> 56</span><span class="sd">        state: ~collections.abc.Mapping</span>
+<span class="linenos"> 57</span><span class="sd">            Full mathematical state of solver at some iteration, i.e. :py:attr:`~pyxu.abc.solver.Solver._mstate`.</span>
+<span class="linenos"> 58</span>
+<span class="linenos"> 59</span><span class="sd">            Values from `state` may be cached inside the instance to form complex stopping</span>
+<span class="linenos"> 60</span><span class="sd">            conditions.</span>
+<span class="linenos"> 61</span>
+<span class="linenos"> 62</span><span class="sd">        Returns</span>
+<span class="linenos"> 63</span><span class="sd">        -------</span>
+<span class="linenos"> 64</span><span class="sd">        s: bool</span>
+<span class="linenos"> 65</span><span class="sd">            True if no further iterations should be performed, False otherwise.</span>
+<span class="linenos"> 66</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos"> 67</span>        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<span class="linenos"> 68</span>
+<div class="viewcode-block" id="StoppingCriterion.info">
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.solver.StoppingCriterion.info">[docs]</a>
+<span class="linenos"> 69</span>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="linenos"> 70</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 71</span><span class="sd">        Get statistics associated with the last call to :py:meth:`~pyxu.abc.solver.StoppingCriterion.stop`.</span>
+<span class="linenos"> 72</span>
+<span class="linenos"> 73</span><span class="sd">        Returns</span>
+<span class="linenos"> 74</span><span class="sd">        -------</span>
+<span class="linenos"> 75</span><span class="sd">        data: ~collections.abc.Mapping</span>
+<span class="linenos"> 76</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos"> 77</span>        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<span class="linenos"> 78</span>
+<div class="viewcode-block" id="StoppingCriterion.clear">
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.solver.StoppingCriterion.clear">[docs]</a>
+<span class="linenos"> 79</span>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 80</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 81</span><span class="sd">        Clear SM state (if any).</span>
+<span class="linenos"> 82</span>
+<span class="linenos"> 83</span><span class="sd">        This method is useful when a</span>
+<span class="linenos"> 84</span><span class="sd">        :py:class:`~pyxu.abc.solver.StoppingCriterion`</span>
+<span class="linenos"> 85</span><span class="sd">        instance must be reused in another call</span>
+<span class="linenos"> 86</span><span class="sd">        to :py:meth:`~pyxu.abc.solver.Solver.fit`.</span>
+<span class="linenos"> 87</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos"> 88</span>        <span class="k">pass</span></div>
+
+<span class="linenos"> 89</span>
+<span class="linenos"> 90</span>    <span class="k">def</span> <span class="fm">__or__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;StoppingCriterion&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;StoppingCriterion&quot;</span><span class="p">:</span>
+<span class="linenos"> 91</span>        <span class="k">return</span> <span class="n">_StoppingCriteriaComposition</span><span class="p">(</span><span class="n">lhs</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">rhs</span><span class="o">=</span><span class="n">other</span><span class="p">,</span> <span class="n">op</span><span class="o">=</span><span class="n">operator</span><span class="o">.</span><span class="n">or_</span><span class="p">)</span>
+<span class="linenos"> 92</span>
+<span class="linenos"> 93</span>    <span class="k">def</span> <span class="fm">__and__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;StoppingCriterion&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;StoppingCriterion&quot;</span><span class="p">:</span>
+<span class="linenos"> 94</span>        <span class="k">return</span> <span class="n">_StoppingCriteriaComposition</span><span class="p">(</span><span class="n">lhs</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">rhs</span><span class="o">=</span><span class="n">other</span><span class="p">,</span> <span class="n">op</span><span class="o">=</span><span class="n">operator</span><span class="o">.</span><span class="n">and_</span><span class="p">)</span></div>
+
+<span class="linenos"> 95</span>
+<span class="linenos"> 96</span>
+<span class="linenos"> 97</span><span class="k">class</span> <span class="nc">_StoppingCriteriaComposition</span><span class="p">(</span><span class="n">StoppingCriterion</span><span class="p">):</span>
+<span class="linenos"> 98</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="linenos"> 99</span>        <span class="bp">self</span><span class="p">,</span>
+<span class="linenos">100</span>        <span class="n">lhs</span><span class="p">:</span> <span class="s2">&quot;StoppingCriterion&quot;</span><span class="p">,</span>
+<span class="linenos">101</span>        <span class="n">rhs</span><span class="p">:</span> <span class="s2">&quot;StoppingCriterion&quot;</span><span class="p">,</span>
+<span class="linenos">102</span>        <span class="n">op</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">[[</span><span class="nb">bool</span><span class="p">,</span> <span class="nb">bool</span><span class="p">],</span> <span class="nb">bool</span><span class="p">],</span>
+<span class="linenos">103</span>    <span class="p">):</span>
+<span class="linenos">104</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_lhs</span> <span class="o">=</span> <span class="n">lhs</span>
+<span class="linenos">105</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_rhs</span> <span class="o">=</span> <span class="n">rhs</span>
+<span class="linenos">106</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_op</span> <span class="o">=</span> <span class="n">op</span>
+<span class="linenos">107</span>
+<span class="linenos">108</span>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="linenos">109</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_lhs</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span><span class="n">state</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rhs</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span><span class="n">state</span><span class="p">))</span>
+<span class="linenos">110</span>
+<span class="linenos">111</span>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="linenos">112</span>        <span class="k">return</span> <span class="p">{</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_lhs</span><span class="o">.</span><span class="n">info</span><span class="p">(),</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_rhs</span><span class="o">.</span><span class="n">info</span><span class="p">()}</span>
+<span class="linenos">113</span>
+<span class="linenos">114</span>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">115</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_lhs</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="linenos">116</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_rhs</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="linenos">117</span>
+<span class="linenos">118</span>
+<div class="viewcode-block" id="Solver">
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.solver.Solver">[docs]</a>
+<span class="linenos">119</span><span class="k">class</span> <span class="nc">Solver</span><span class="p">:</span>
+<span class="linenos">120</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">121</span><span class="sd">    Iterative solver for minimization problems of the form</span>
+<span class="linenos">122</span>
+<span class="linenos">123</span><span class="sd">    .. math::</span>
+<span class="linenos">124</span>
+<span class="linenos">125</span><span class="sd">       \hat{x} = \arg\min_{x \in \mathbb{R}^{N}} \mathcal{F}(x),</span>
+<span class="linenos">126</span>
+<span class="linenos">127</span><span class="sd">    where the form of :math:`\mathcal{F}` is solver-dependent.</span>
+<span class="linenos">128</span>
+<span class="linenos">129</span><span class="sd">    Solver provides a versatile API for solving optimisation problems, with the following features:</span>
+<span class="linenos">130</span>
+<span class="linenos">131</span><span class="sd">    * manual/automatic/background execution of solver iterations via parameters provided to</span>
+<span class="linenos">132</span><span class="sd">      :py:meth:`~pyxu.abc.solver.Solver.fit`. (See below.)</span>
+<span class="linenos">133</span><span class="sd">    * automatic checkpointing of solver progress, providing a safe restore point in case of</span>
+<span class="linenos">134</span><span class="sd">      faulty numerical code.</span>
+<span class="linenos">135</span><span class="sd">      Each solver instance backs its state and final output to a folder on disk for</span>
+<span class="linenos">136</span><span class="sd">      post-analysis.</span>
+<span class="linenos">137</span><span class="sd">      In particular :py:meth:`~pyxu.abc.solver.Solver.fit` will never crash: detailed exception information will always</span>
+<span class="linenos">138</span><span class="sd">      be available in a logfile for post-analysis.</span>
+<span class="linenos">139</span><span class="sd">    * arbitrary specification of complex stopping criteria via the</span>
+<span class="linenos">140</span><span class="sd">      :py:class:`~pyxu.abc.solver.StoppingCriterion` class.</span>
+<span class="linenos">141</span><span class="sd">    * solve for multiple initial points in parallel.</span>
+<span class="linenos">142</span>
+<span class="linenos">143</span><span class="sd">    To implement a new iterative solver, users need to sub-class</span>
+<span class="linenos">144</span><span class="sd">    :py:class:`~pyxu.abc.solver.Solver`</span>
+<span class="linenos">145</span><span class="sd">    and overwrite the methods below:</span>
+<span class="linenos">146</span>
+<span class="linenos">147</span><span class="sd">    * :py:meth:`~pyxu.abc.solver.Solver.__init__`</span>
+<span class="linenos">148</span><span class="sd">    * :py:meth:`~pyxu.abc.solver.Solver.m_init`  [i.e. math-init()]</span>
+<span class="linenos">149</span><span class="sd">    * :py:meth:`~pyxu.abc.solver.Solver.m_step`  [i.e. math-step()]</span>
+<span class="linenos">150</span><span class="sd">    * :py:meth:`~pyxu.abc.solver.Solver.default_stop_crit`  [optional; see method definition for details]</span>
+<span class="linenos">151</span><span class="sd">    * :py:meth:`~pyxu.abc.solver.Solver.objective_func`  [optional; see method definition for details]</span>
+<span class="linenos">152</span>
+<span class="linenos">153</span><span class="sd">    Advanced functionalities of</span>
+<span class="linenos">154</span><span class="sd">    :py:class:`~pyxu.abc.solver.Solver`</span>
+<span class="linenos">155</span><span class="sd">    are automatically inherited by sub-classes.</span>
+<span class="linenos">156</span>
+<span class="linenos">157</span>
+<span class="linenos">158</span><span class="sd">    Examples</span>
+<span class="linenos">159</span><span class="sd">    --------</span>
+<span class="linenos">160</span><span class="sd">    Here are examples on how to solve minimization problems with this class:</span>
+<span class="linenos">161</span>
+<span class="linenos">162</span><span class="sd">    .. code-block:: python3</span>
+<span class="linenos">163</span>
+<span class="linenos">164</span><span class="sd">       slvr = Solver()</span>
+<span class="linenos">165</span>
+<span class="linenos">166</span><span class="sd">       ### 1. Blocking Mode: .fit() does not return until solver has stopped.</span>
+<span class="linenos">167</span><span class="sd">       &gt;&gt;&gt; slvr.fit(mode=Mode.BLOCK, ...)</span>
+<span class="linenos">168</span><span class="sd">       &gt;&gt;&gt; data, hist = slvr.stats()  # final output of solver.</span>
+<span class="linenos">169</span>
+<span class="linenos">170</span><span class="sd">       ### 2. Async Mode: solver iterations run in the background.</span>
+<span class="linenos">171</span><span class="sd">       &gt;&gt;&gt; slvr.fit(mode=Mode.ASYNC, ...)</span>
+<span class="linenos">172</span><span class="sd">       &gt;&gt;&gt; print(&#39;test&#39;)  # you can do something in between.</span>
+<span class="linenos">173</span><span class="sd">       &gt;&gt;&gt; slvr.busy()  # or check whether the solver already stopped.</span>
+<span class="linenos">174</span><span class="sd">       &gt;&gt;&gt; slvr.stop()  # and preemptively force it to stop.</span>
+<span class="linenos">175</span><span class="sd">       &gt;&gt;&gt; data, hist = slvr.stats()  # then query the result after a (potential) force-stop.</span>
+<span class="linenos">176</span>
+<span class="linenos">177</span><span class="sd">       ### 3. Manual Mode: fine-grain control of solver data per iteration.</span>
+<span class="linenos">178</span><span class="sd">       &gt;&gt;&gt; slvr.fit(mode=Mode.MANUAL, ...)</span>
+<span class="linenos">179</span><span class="sd">       &gt;&gt;&gt; for data in slvr.steps():</span>
+<span class="linenos">180</span><span class="sd">       ...     # Do something with the logged variables after each iteration.</span>
+<span class="linenos">181</span><span class="sd">       ...     pass  # solver has stopped after the loop.</span>
+<span class="linenos">182</span><span class="sd">       &gt;&gt;&gt; data, hist = slvr.stats()  # final output of solver.</span>
+<span class="linenos">183</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">184</span>
+<span class="linenos">185</span>    <span class="n">_mstate</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">typ</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span>  <span class="c1">#: Mathematical state.</span>
+<span class="linenos">186</span>    <span class="n">_astate</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">typ</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span>  <span class="c1">#: Book-keeping (non-math) state.</span>
+<span class="linenos">187</span>
+<div class="viewcode-block" id="Solver.__init__">
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.solver.Solver.__init__">[docs]</a>
+<span class="linenos">188</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="linenos">189</span>        <span class="bp">self</span><span class="p">,</span>
+<span class="linenos">190</span>        <span class="o">*</span><span class="p">,</span>
+<span class="linenos">191</span>        <span class="n">folder</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Path</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="linenos">192</span>        <span class="n">exist_ok</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="linenos">193</span>        <span class="n">stop_rate</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<span class="linenos">194</span>        <span class="n">writeback_rate</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="linenos">195</span>        <span class="n">verbosity</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="linenos">196</span>        <span class="n">show_progress</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="linenos">197</span>        <span class="n">log_var</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">VarName</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(),</span>
+<span class="linenos">198</span>    <span class="p">):</span>
+<span class="linenos">199</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">200</span><span class="sd">        Parameters</span>
+<span class="linenos">201</span><span class="sd">        ----------</span>
+<span class="linenos">202</span><span class="sd">        folder: Path</span>
+<span class="linenos">203</span><span class="sd">            Directory on disk where instance data should be stored.</span>
+<span class="linenos">204</span><span class="sd">            A location will be automatically chosen if unspecified. (Default: OS-dependent tempdir.)</span>
+<span class="linenos">205</span><span class="sd">        exist_ok: bool</span>
+<span class="linenos">206</span><span class="sd">            If `folder` is specified and `exist_ok` is false (default),</span>
+<span class="linenos">207</span><span class="sd">            :py:class:`FileExistsError`</span>
+<span class="linenos">208</span><span class="sd">            is raised if the target directory already exists.</span>
+<span class="linenos">209</span><span class="sd">        stop_rate: Integer</span>
+<span class="linenos">210</span><span class="sd">            Rate at which solver evaluates stopping criteria.</span>
+<span class="linenos">211</span><span class="sd">        writeback_rate: Integer</span>
+<span class="linenos">212</span><span class="sd">            Rate at which solver checkpoints are written to disk.</span>
+<span class="linenos">213</span><span class="sd">            No checkpointing is done if unspecified: only the final solver output will be written</span>
+<span class="linenos">214</span><span class="sd">            back to disk.</span>
+<span class="linenos">215</span><span class="sd">            Must be a multiple of `stop_rate` if specified.</span>
+<span class="linenos">216</span><span class="sd">        verbosity: Integer</span>
+<span class="linenos">217</span><span class="sd">            Rate at which stopping criteria statistics are logged.</span>
+<span class="linenos">218</span><span class="sd">            Must be a multiple of `stop_rate`.</span>
+<span class="linenos">219</span><span class="sd">            Defaults to `stop_rate` if unspecified.</span>
+<span class="linenos">220</span><span class="sd">        show_progress: bool</span>
+<span class="linenos">221</span><span class="sd">            If True (default) and :py:meth:`~pyxu.abc.solver.Solver.fit` is run with mode=BLOCK,</span>
+<span class="linenos">222</span><span class="sd">            then statistics are also logged to stdout.</span>
+<span class="linenos">223</span><span class="sd">        log_var: VarName</span>
+<span class="linenos">224</span><span class="sd">            Variables from the solver&#39;s math-state (:py:attr:`~pyxu.abc.solver.Solver._mstate`)</span>
+<span class="linenos">225</span><span class="sd">            to be logged per iteration.</span>
+<span class="linenos">226</span><span class="sd">            These are the variables made available when calling</span>
+<span class="linenos">227</span><span class="sd">            :py:meth:`~pyxu.abc.solver.Solver.stats`.</span>
+<span class="linenos">228</span>
+<span class="linenos">229</span><span class="sd">        Notes</span>
+<span class="linenos">230</span><span class="sd">        -----</span>
+<span class="linenos">231</span><span class="sd">        * Partial device&lt;&gt;CPU synchronization takes place when stopping-criteria are evaluated.</span>
+<span class="linenos">232</span><span class="sd">          Increasing `stop_rate` is advised to reduce the effect of such transfers when applicable.</span>
+<span class="linenos">233</span><span class="sd">        * Full device&lt;&gt;CPU synchronization takes place at checkpoint-time.</span>
+<span class="linenos">234</span><span class="sd">          Increasing `writeback_rate` is advised to reduce the effect of such transfers when</span>
+<span class="linenos">235</span><span class="sd">          applicable.</span>
+<span class="linenos">236</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">237</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_mstate</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="linenos">238</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+<span class="linenos">239</span>            <span class="n">history</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># stopping criteria values per iteration</span>
+<span class="linenos">240</span>            <span class="n">idx</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>  <span class="c1"># iteration index</span>
+<span class="linenos">241</span>            <span class="n">log_rate</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="linenos">242</span>            <span class="n">log_var</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="linenos">243</span>            <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="linenos">244</span>            <span class="n">stdout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="linenos">245</span>            <span class="n">stop_crit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="linenos">246</span>            <span class="n">stop_rate</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="linenos">247</span>            <span class="n">track_objective</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="linenos">248</span>            <span class="n">wb_rate</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="linenos">249</span>            <span class="n">workdir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="linenos">250</span>            <span class="c1"># Execution-mode related -----------</span>
+<span class="linenos">251</span>            <span class="n">mode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="linenos">252</span>            <span class="n">active</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="linenos">253</span>            <span class="n">worker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="linenos">254</span>        <span class="p">)</span>
+<span class="linenos">255</span>
+<span class="linenos">256</span>        <span class="k">try</span><span class="p">:</span>
+<span class="linenos">257</span>            <span class="k">if</span> <span class="n">folder</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">258</span>                <span class="n">folder</span> <span class="o">=</span> <span class="n">plib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">mkdtemp</span><span class="p">(</span><span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;pyxu_&quot;</span><span class="p">))</span>
+<span class="linenos">259</span>            <span class="k">elif</span> <span class="p">(</span><span class="n">folder</span> <span class="o">:=</span> <span class="n">plib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span><span class="o">.</span><span class="n">expanduser</span><span class="p">()</span><span class="o">.</span><span class="n">resolve</span><span class="p">())</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">exist_ok</span><span class="p">):</span>
+<span class="linenos">260</span>                <span class="k">raise</span> <span class="ne">FileExistsError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s2"> already exists.&quot;</span><span class="p">)</span>
+<span class="linenos">261</span>            <span class="k">else</span><span class="p">:</span>
+<span class="linenos">262</span>                <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">263</span>                <span class="n">folder</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">264</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="p">[</span><span class="s2">&quot;workdir&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">folder</span>
+<span class="linenos">265</span>        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="linenos">266</span>            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;folder: expected path-like, got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="linenos">267</span>
+<span class="linenos">268</span>        <span class="k">try</span><span class="p">:</span>
+<span class="linenos">269</span>            <span class="k">assert</span> <span class="n">stop_rate</span> <span class="o">&gt;=</span> <span class="mi">1</span>
+<span class="linenos">270</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="p">[</span><span class="s2">&quot;stop_rate&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">stop_rate</span><span class="p">)</span>
+<span class="linenos">271</span>        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="linenos">272</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;stop_rate must be positive, got </span><span class="si">{</span><span class="n">stop_rate</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="linenos">273</span>
+<span class="linenos">274</span>        <span class="k">try</span><span class="p">:</span>
+<span class="linenos">275</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="p">[</span><span class="s2">&quot;wb_rate&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">writeback_rate</span>
+<span class="linenos">276</span>            <span class="k">if</span> <span class="n">writeback_rate</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">277</span>                <span class="k">assert</span> <span class="n">writeback_rate</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="p">[</span><span class="s2">&quot;stop_rate&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="linenos">278</span>                <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="p">[</span><span class="s2">&quot;wb_rate&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">writeback_rate</span><span class="p">)</span>
+<span class="linenos">279</span>        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="linenos">280</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;writeback_rate must be a multiple of stop_rate(</span><span class="si">{</span><span class="n">stop_rate</span><span class="si">}</span><span class="s2">), got </span><span class="si">{</span><span class="n">writeback_rate</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="linenos">281</span>
+<span class="linenos">282</span>        <span class="k">try</span><span class="p">:</span>
+<span class="linenos">283</span>            <span class="k">if</span> <span class="n">verbosity</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">284</span>                <span class="n">verbosity</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="p">[</span><span class="s2">&quot;stop_rate&quot;</span><span class="p">]</span>
+<span class="linenos">285</span>            <span class="k">assert</span> <span class="n">verbosity</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="p">[</span><span class="s2">&quot;stop_rate&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="linenos">286</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="p">[</span><span class="s2">&quot;log_rate&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">verbosity</span><span class="p">)</span>
+<span class="linenos">287</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="p">[</span><span class="s2">&quot;stdout&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">show_progress</span><span class="p">)</span>
+<span class="linenos">288</span>        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="linenos">289</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;verbosity must be a multiple of stop_rate(</span><span class="si">{</span><span class="n">stop_rate</span><span class="si">}</span><span class="s2">), got </span><span class="si">{</span><span class="n">verbosity</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="linenos">290</span>
+<span class="linenos">291</span>        <span class="k">try</span><span class="p">:</span>
+<span class="linenos">292</span>            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">log_var</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="linenos">293</span>                <span class="n">log_var</span> <span class="o">=</span> <span class="p">(</span><span class="n">log_var</span><span class="p">,)</span>
+<span class="linenos">294</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="p">[</span><span class="s2">&quot;log_var&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span><span class="n">log_var</span><span class="p">)</span>
+<span class="linenos">295</span>        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="linenos">296</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;log_var: expected collection, got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">log_var</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span></div>
+
+<span class="linenos">297</span>
+<div class="viewcode-block" id="Solver.fit">
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.solver.Solver.fit">[docs]</a>
+<span class="linenos">298</span>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="linenos">299</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">300</span><span class="sd">        Solve minimization problem(s) defined in</span>
+<span class="linenos">301</span><span class="sd">        :py:meth:`~pyxu.abc.solver.Solver.__init__`,</span>
+<span class="linenos">302</span><span class="sd">        with the provided run-specifc parameters.</span>
+<span class="linenos">303</span>
+<span class="linenos">304</span><span class="sd">        Parameters</span>
+<span class="linenos">305</span><span class="sd">        ----------</span>
+<span class="linenos">306</span><span class="sd">        kwargs</span>
+<span class="linenos">307</span><span class="sd">            See class-level docstring for class-specific keyword parameters.</span>
+<span class="linenos">308</span><span class="sd">        stop_crit: StoppingCriterion</span>
+<span class="linenos">309</span><span class="sd">            Stopping criterion to end solver iterations.</span>
+<span class="linenos">310</span><span class="sd">            If unspecified, defaults to :py:meth:`~pyxu.abc.solver.Solver.default_stop_crit`.</span>
+<span class="linenos">311</span><span class="sd">        mode: Mode</span>
+<span class="linenos">312</span><span class="sd">            Execution mode.</span>
+<span class="linenos">313</span><span class="sd">            See :py:class:`~pyxu.abc.solver.Solver` for usage examples.</span>
+<span class="linenos">314</span>
+<span class="linenos">315</span><span class="sd">            Useful method pairs depending on the execution mode:</span>
+<span class="linenos">316</span>
+<span class="linenos">317</span><span class="sd">            * BLOCK: :py:meth:`~pyxu.abc.solver.Solver.fit`</span>
+<span class="linenos">318</span><span class="sd">            * ASYNC: :py:meth:`~pyxu.abc.solver.Solver.fit`, :py:meth:`~pyxu.abc.solver.Solver.busy`, :py:meth:`~pyxu.abc.solver.Solver.stop`</span>
+<span class="linenos">319</span><span class="sd">            * MANUAL: :py:meth:`~pyxu.abc.solver.Solver.fit`, :py:meth:`~pyxu.abc.solver.Solver.steps`</span>
+<span class="linenos">320</span><span class="sd">        track_objective: bool</span>
+<span class="linenos">321</span><span class="sd">            Auto-compute objective function every time stopping criterion is evaluated.</span>
+<span class="linenos">322</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">323</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_fit_init</span><span class="p">(</span>
+<span class="linenos">324</span>            <span class="n">mode</span><span class="o">=</span><span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;mode&quot;</span><span class="p">,</span> <span class="n">Mode</span><span class="o">.</span><span class="n">BLOCK</span><span class="p">),</span>
+<span class="linenos">325</span>            <span class="n">stop_crit</span><span class="o">=</span><span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;stop_crit&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="linenos">326</span>            <span class="n">track_objective</span><span class="o">=</span><span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;track_objective&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="linenos">327</span>        <span class="p">)</span>
+<span class="linenos">328</span>        <span class="bp">self</span><span class="o">.</span><span class="n">m_init</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="linenos">329</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_fit_run</span><span class="p">()</span></div>
+
+<span class="linenos">330</span>
+<div class="viewcode-block" id="Solver.m_init">
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.solver.Solver.m_init">[docs]</a>
+<span class="linenos">331</span>    <span class="k">def</span> <span class="nf">m_init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="linenos">332</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">333</span><span class="sd">        Set solver&#39;s initial mathematical state based on kwargs provided to :py:meth:`~pyxu.abc.solver.Solver.fit`.</span>
+<span class="linenos">334</span>
+<span class="linenos">335</span><span class="sd">        This method must only manipulate :py:attr:`~pyxu.abc.solver.Solver._mstate`.</span>
+<span class="linenos">336</span>
+<span class="linenos">337</span><span class="sd">        After calling this method, the solver must be able to complete its 1st iteration via a call</span>
+<span class="linenos">338</span><span class="sd">        to :py:meth:`~pyxu.abc.solver.Solver.m_step`.</span>
+<span class="linenos">339</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">340</span>        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<span class="linenos">341</span>
+<div class="viewcode-block" id="Solver.m_step">
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.solver.Solver.m_step">[docs]</a>
+<span class="linenos">342</span>    <span class="k">def</span> <span class="nf">m_step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">343</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">344</span><span class="sd">        Perform one (mathematical) step.</span>
+<span class="linenos">345</span>
+<span class="linenos">346</span><span class="sd">        This method must only manipulate :py:attr:`~pyxu.abc.solver.Solver._mstate`.</span>
+<span class="linenos">347</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">348</span>        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<span class="linenos">349</span>
+<div class="viewcode-block" id="Solver.steps">
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.solver.Solver.steps">[docs]</a>
+<span class="linenos">350</span>    <span class="k">def</span> <span class="nf">steps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Generator</span><span class="p">:</span>
+<span class="linenos">351</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">352</span><span class="sd">        Generator of logged variables after each iteration.</span>
+<span class="linenos">353</span>
+<span class="linenos">354</span><span class="sd">        The i-th call to</span>
+<span class="linenos">355</span><span class="sd">        :py:func:`next`</span>
+<span class="linenos">356</span><span class="sd">        on this object returns the logged variables after the i-th solver iteration.</span>
+<span class="linenos">357</span>
+<span class="linenos">358</span><span class="sd">        This method is only usable after calling :py:meth:`~pyxu.abc.solver.Solver.fit` with mode=MANUAL.</span>
+<span class="linenos">359</span><span class="sd">        See :py:class:`~pyxu.abc.solver.Solver` for usage examples.</span>
+<span class="linenos">360</span>
+<span class="linenos">361</span><span class="sd">        There is no guarantee that a checkpoint on disk exists when the generator is exhausted.</span>
+<span class="linenos">362</span><span class="sd">        (Reason: potential exceptions raised during solver&#39;s progress.)</span>
+<span class="linenos">363</span><span class="sd">        Users should invoke :py:meth:`~pyxu.abc.solver.Solver.writeback` afterwards if needed.</span>
+<span class="linenos">364</span>
+<span class="linenos">365</span><span class="sd">        Parameters</span>
+<span class="linenos">366</span><span class="sd">        ----------</span>
+<span class="linenos">367</span><span class="sd">        n: Integer</span>
+<span class="linenos">368</span><span class="sd">            Maximum number of :py:func:`next` calls allowed before exhausting the generator.</span>
+<span class="linenos">369</span><span class="sd">            Defaults to infinity if unspecified.</span>
+<span class="linenos">370</span>
+<span class="linenos">371</span><span class="sd">            The generator will terminate prematurely if the solver naturally stops before `n` calls to</span>
+<span class="linenos">372</span><span class="sd">            :py:func:`next` are made.</span>
+<span class="linenos">373</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">374</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_check_mode</span><span class="p">(</span><span class="n">Mode</span><span class="o">.</span><span class="n">MANUAL</span><span class="p">)</span>
+<span class="linenos">375</span>        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">376</span>        <span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">):</span>
+<span class="linenos">377</span>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_step</span><span class="p">():</span>
+<span class="linenos">378</span>                <span class="n">data</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">()</span>
+<span class="linenos">379</span>                <span class="k">yield</span> <span class="n">data</span>
+<span class="linenos">380</span>                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="linenos">381</span>            <span class="k">else</span><span class="p">:</span>
+<span class="linenos">382</span>                <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="p">[</span><span class="s2">&quot;mode&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># force steps() to be call-once when exhausted.</span>
+<span class="linenos">383</span>                <span class="bp">self</span><span class="o">.</span><span class="n">_cleanup_logger</span><span class="p">()</span>
+<span class="linenos">384</span>                <span class="k">return</span></div>
+
+<span class="linenos">385</span>
+<span class="linenos">386</span>    <span class="n">_stats_data_spec</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="kc">None</span><span class="p">]]</span>
+<span class="linenos">387</span>    <span class="n">_stats_history_spec</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+<span class="linenos">388</span>
+<div class="viewcode-block" id="Solver.stats">
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.solver.Solver.stats">[docs]</a>
+<span class="linenos">389</span>    <span class="k">def</span> <span class="nf">stats</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">_stats_data_spec</span><span class="p">,</span> <span class="n">_stats_history_spec</span><span class="p">]:</span>
+<span class="linenos">390</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">391</span><span class="sd">        Query solver state.</span>
+<span class="linenos">392</span>
+<span class="linenos">393</span><span class="sd">        Returns</span>
+<span class="linenos">394</span><span class="sd">        -------</span>
+<span class="linenos">395</span><span class="sd">        data: ~collections.abc.Mapping</span>
+<span class="linenos">396</span><span class="sd">            Value(s) of ``log_var`` (s) after last iteration.</span>
+<span class="linenos">397</span><span class="sd">        history: numpy.ndarray, :py:obj:`None`</span>
+<span class="linenos">398</span><span class="sd">            (N_iter,) records of stopping-criteria values per iteration.</span>
+<span class="linenos">399</span>
+<span class="linenos">400</span><span class="sd">        Notes</span>
+<span class="linenos">401</span><span class="sd">        -----</span>
+<span class="linenos">402</span><span class="sd">        If any of the ``log_var`` (s) and/or ``history`` are not (yet) known at query time, ``None`` is</span>
+<span class="linenos">403</span><span class="sd">        returned.</span>
+<span class="linenos">404</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">405</span>        <span class="n">history</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="p">[</span><span class="s2">&quot;history&quot;</span><span class="p">]</span>
+<span class="linenos">406</span>        <span class="k">if</span> <span class="n">history</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">407</span>            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">history</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos">408</span>                <span class="n">history</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">history</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">history</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">409</span>            <span class="k">else</span><span class="p">:</span>
+<span class="linenos">410</span>                <span class="n">history</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="linenos">411</span>        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mstate</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="p">[</span><span class="s2">&quot;log_var&quot;</span><span class="p">]}</span>
+<span class="linenos">412</span>        <span class="k">return</span> <span class="n">data</span><span class="p">,</span> <span class="n">history</span></div>
+
+<span class="linenos">413</span>
+<span class="linenos">414</span>    <span class="nd">@property</span>
+<span class="linenos">415</span>    <span class="k">def</span> <span class="nf">workdir</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Path</span><span class="p">:</span>
+<span class="linenos">416</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">417</span><span class="sd">        Returns</span>
+<span class="linenos">418</span><span class="sd">        -------</span>
+<span class="linenos">419</span><span class="sd">        wd: Path</span>
+<span class="linenos">420</span><span class="sd">            Absolute path to the directory on disk where instance data is stored.</span>
+<span class="linenos">421</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">422</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="p">[</span><span class="s2">&quot;workdir&quot;</span><span class="p">]</span>
+<span class="linenos">423</span>
+<span class="linenos">424</span>    <span class="nd">@property</span>
+<span class="linenos">425</span>    <span class="k">def</span> <span class="nf">logfile</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Path</span><span class="p">:</span>
+<span class="linenos">426</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">427</span><span class="sd">        Returns</span>
+<span class="linenos">428</span><span class="sd">        -------</span>
+<span class="linenos">429</span><span class="sd">        lf: Path</span>
+<span class="linenos">430</span><span class="sd">            Absolute path to the log file on disk where stopping criteria statistics are logged.</span>
+<span class="linenos">431</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">432</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">workdir</span> <span class="o">/</span> <span class="s2">&quot;solver.log&quot;</span>
+<span class="linenos">433</span>
+<span class="linenos">434</span>    <span class="nd">@property</span>
+<span class="linenos">435</span>    <span class="k">def</span> <span class="nf">datafile</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Path</span><span class="p">:</span>
+<span class="linenos">436</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">437</span><span class="sd">        Returns</span>
+<span class="linenos">438</span><span class="sd">        -------</span>
+<span class="linenos">439</span><span class="sd">        df: Path</span>
+<span class="linenos">440</span><span class="sd">            Absolute path to the file on disk where ``log_var`` (s) are stored during checkpointing</span>
+<span class="linenos">441</span><span class="sd">            or after solver has stopped.</span>
+<span class="linenos">442</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">443</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">workdir</span> <span class="o">/</span> <span class="s2">&quot;data.npz&quot;</span>
+<span class="linenos">444</span>
+<div class="viewcode-block" id="Solver.busy">
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.solver.Solver.busy">[docs]</a>
+<span class="linenos">445</span>    <span class="k">def</span> <span class="nf">busy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="linenos">446</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">447</span><span class="sd">        Test if an async-running solver has stopped.</span>
+<span class="linenos">448</span>
+<span class="linenos">449</span><span class="sd">        This method is only usable after calling :py:meth:`~pyxu.abc.solver.Solver.fit` with mode=ASYNC.</span>
+<span class="linenos">450</span><span class="sd">        See :py:class:`~pyxu.abc.solver.Solver` for usage examples.</span>
+<span class="linenos">451</span>
+<span class="linenos">452</span><span class="sd">        Returns</span>
+<span class="linenos">453</span><span class="sd">        -------</span>
+<span class="linenos">454</span><span class="sd">        b: bool</span>
+<span class="linenos">455</span><span class="sd">            True if solver has stopped, False otherwise.</span>
+<span class="linenos">456</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">457</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_check_mode</span><span class="p">(</span><span class="n">Mode</span><span class="o">.</span><span class="n">ASYNC</span><span class="p">,</span> <span class="n">Mode</span><span class="o">.</span><span class="n">BLOCK</span><span class="p">)</span>
+<span class="linenos">458</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="p">[</span><span class="s2">&quot;active&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">is_set</span><span class="p">()</span></div>
+
+<span class="linenos">459</span>
+<div class="viewcode-block" id="Solver.solution">
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.solver.Solver.solution">[docs]</a>
+<span class="linenos">460</span>    <span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">461</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">462</span><span class="sd">        Output the &quot;solution&quot; of the optimization problem.</span>
+<span class="linenos">463</span>
+<span class="linenos">464</span><span class="sd">        This is a helper method intended for novice users.</span>
+<span class="linenos">465</span><span class="sd">        The return type is sub-class dependent, so don&#39;t write an API using this:</span>
+<span class="linenos">466</span><span class="sd">        use :py:meth:`~pyxu.abc.solver.Solver.stats` instead.</span>
+<span class="linenos">467</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">468</span>        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<span class="linenos">469</span>
+<div class="viewcode-block" id="Solver.stop">
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.solver.Solver.stop">[docs]</a>
+<span class="linenos">470</span>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">471</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">472</span><span class="sd">        Stop an async-running solver.</span>
+<span class="linenos">473</span>
+<span class="linenos">474</span><span class="sd">        This method is only usable after calling :py:meth:`~pyxu.abc.solver.Solver.fit` with mode=ASYNC.</span>
+<span class="linenos">475</span><span class="sd">        See :py:class:`~pyxu.abc.solver.Solver` for usage examples.</span>
+<span class="linenos">476</span>
+<span class="linenos">477</span><span class="sd">        This method will block until the solver has stopped.</span>
+<span class="linenos">478</span>
+<span class="linenos">479</span><span class="sd">        There is no guarantee that a checkpoint on disk exists once halted.</span>
+<span class="linenos">480</span><span class="sd">        (Reason: potential exceptions raised during solver&#39;s progress.)</span>
+<span class="linenos">481</span><span class="sd">        Users should invoke :py:meth:`~pyxu.abc.solver.Solver.writeback` afterwards if needed.</span>
+<span class="linenos">482</span>
+<span class="linenos">483</span><span class="sd">        Users must call this method to terminate an async-solver, even if</span>
+<span class="linenos">484</span><span class="sd">        :py:meth:`~pyxu.abc.solver.Solver.busy` is False.</span>
+<span class="linenos">485</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">486</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_check_mode</span><span class="p">(</span><span class="n">Mode</span><span class="o">.</span><span class="n">ASYNC</span><span class="p">,</span> <span class="n">Mode</span><span class="o">.</span><span class="n">BLOCK</span><span class="p">)</span>
+<span class="linenos">487</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="p">[</span><span class="s2">&quot;active&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="linenos">488</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="p">[</span><span class="s2">&quot;worker&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+<span class="linenos">489</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+<span class="linenos">490</span>            <span class="n">mode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># forces stop() to be call-once.</span>
+<span class="linenos">491</span>            <span class="n">active</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="linenos">492</span>            <span class="n">worker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="linenos">493</span>        <span class="p">)</span>
+<span class="linenos">494</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_cleanup_logger</span><span class="p">()</span></div>
+
+<span class="linenos">495</span>
+<span class="linenos">496</span>    <span class="k">def</span> <span class="nf">_fit_init</span><span class="p">(</span>
+<span class="linenos">497</span>        <span class="bp">self</span><span class="p">,</span>
+<span class="linenos">498</span>        <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span><span class="p">,</span>
+<span class="linenos">499</span>        <span class="n">stop_crit</span><span class="p">:</span> <span class="n">StoppingCriterion</span><span class="p">,</span>
+<span class="linenos">500</span>        <span class="n">track_objective</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+<span class="linenos">501</span>    <span class="p">):</span>
+<span class="linenos">502</span>        <span class="k">def</span> <span class="nf">_init_logger</span><span class="p">():</span>
+<span class="linenos">503</span>            <span class="n">log_name</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">workdir</span><span class="p">)</span>
+<span class="linenos">504</span>            <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">log_name</span><span class="p">)</span>
+<span class="linenos">505</span>            <span class="n">logger</span><span class="o">.</span><span class="n">handlers</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="linenos">506</span>            <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="s2">&quot;DEBUG&quot;</span><span class="p">)</span>
+<span class="linenos">507</span>
+<span class="linenos">508</span>            <span class="n">fmt</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">{levelname}</span><span class="s2"> -- </span><span class="si">{message}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;{&quot;</span><span class="p">)</span>
+<span class="linenos">509</span>            <span class="n">handler</span> <span class="o">=</span> <span class="p">[</span><span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">logfile</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)]</span>
+<span class="linenos">510</span>            <span class="k">if</span> <span class="p">(</span><span class="n">mode</span> <span class="ow">is</span> <span class="n">Mode</span><span class="o">.</span><span class="n">BLOCK</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="p">[</span><span class="s2">&quot;stdout&quot;</span><span class="p">]:</span>
+<span class="linenos">511</span>                <span class="n">handler</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">))</span>
+<span class="linenos">512</span>            <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">handler</span><span class="p">:</span>
+<span class="linenos">513</span>                <span class="n">h</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="s2">&quot;DEBUG&quot;</span><span class="p">)</span>
+<span class="linenos">514</span>                <span class="n">h</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">fmt</span><span class="p">)</span>
+<span class="linenos">515</span>                <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="linenos">516</span>
+<span class="linenos">517</span>            <span class="k">return</span> <span class="n">logger</span>
+<span class="linenos">518</span>
+<span class="linenos">519</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_mstate</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="linenos">520</span>
+<span class="linenos">521</span>        <span class="k">if</span> <span class="n">stop_crit</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">522</span>            <span class="n">stop_crit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">default_stop_crit</span><span class="p">()</span>
+<span class="linenos">523</span>        <span class="n">stop_crit</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="linenos">524</span>
+<span class="linenos">525</span>        <span class="k">if</span> <span class="n">track_objective</span><span class="p">:</span>
+<span class="linenos">526</span>            <span class="kn">from</span> <span class="nn">pyxu.opt.stop</span> <span class="kn">import</span> <span class="n">Memorize</span>
+<span class="linenos">527</span>
+<span class="linenos">528</span>            <span class="n">stop_crit</span> <span class="o">|=</span> <span class="n">Memorize</span><span class="p">(</span><span class="n">var</span><span class="o">=</span><span class="s2">&quot;objective_func&quot;</span><span class="p">)</span>
+<span class="linenos">529</span>
+<span class="linenos">530</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>  <span class="c1"># suitable state for a new call to fit().</span>
+<span class="linenos">531</span>            <span class="n">history</span><span class="o">=</span><span class="p">[],</span>
+<span class="linenos">532</span>            <span class="n">idx</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">533</span>            <span class="n">logger</span><span class="o">=</span><span class="n">_init_logger</span><span class="p">(),</span>
+<span class="linenos">534</span>            <span class="n">stop_crit</span><span class="o">=</span><span class="n">stop_crit</span><span class="p">,</span>
+<span class="linenos">535</span>            <span class="n">track_objective</span><span class="o">=</span><span class="n">track_objective</span><span class="p">,</span>
+<span class="linenos">536</span>            <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
+<span class="linenos">537</span>            <span class="n">active</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="linenos">538</span>            <span class="n">worker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="linenos">539</span>        <span class="p">)</span>
+<span class="linenos">540</span>
+<span class="linenos">541</span>    <span class="k">def</span> <span class="nf">_fit_run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">542</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_m_persist</span><span class="p">()</span>
+<span class="linenos">543</span>
+<span class="linenos">544</span>        <span class="n">mode</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="p">[</span><span class="s2">&quot;mode&quot;</span><span class="p">]</span>
+<span class="linenos">545</span>        <span class="k">if</span> <span class="n">mode</span> <span class="ow">is</span> <span class="n">Mode</span><span class="o">.</span><span class="n">MANUAL</span><span class="p">:</span>
+<span class="linenos">546</span>            <span class="c1"># User controls execution via steps().</span>
+<span class="linenos">547</span>            <span class="k">pass</span>
+<span class="linenos">548</span>        <span class="k">else</span><span class="p">:</span>  <span class="c1"># BLOCK / ASYNC</span>
+<span class="linenos">549</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+<span class="linenos">550</span>                <span class="n">active</span><span class="o">=</span><span class="n">threading</span><span class="o">.</span><span class="n">Event</span><span class="p">(),</span>
+<span class="linenos">551</span>                <span class="n">worker</span><span class="o">=</span><span class="n">Solver</span><span class="o">.</span><span class="n">_Worker</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span>
+<span class="linenos">552</span>            <span class="p">)</span>
+<span class="linenos">553</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="p">[</span><span class="s2">&quot;active&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+<span class="linenos">554</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="p">[</span><span class="s2">&quot;worker&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="linenos">555</span>            <span class="k">if</span> <span class="n">mode</span> <span class="ow">is</span> <span class="n">Mode</span><span class="o">.</span><span class="n">BLOCK</span><span class="p">:</span>
+<span class="linenos">556</span>                <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="p">[</span><span class="s2">&quot;worker&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+<span class="linenos">557</span>                <span class="bp">self</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>  <span class="c1"># state clean-up</span>
+<span class="linenos">558</span>            <span class="k">else</span><span class="p">:</span>
+<span class="linenos">559</span>                <span class="c1"># User controls execution via busy() + stop().</span>
+<span class="linenos">560</span>                <span class="k">pass</span>
+<span class="linenos">561</span>
+<div class="viewcode-block" id="Solver.writeback">
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.solver.Solver.writeback">[docs]</a>
+<span class="linenos">562</span>    <span class="k">def</span> <span class="nf">writeback</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">563</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">564</span><span class="sd">        Checkpoint state to disk.</span>
+<span class="linenos">565</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">566</span>        <span class="n">data</span><span class="p">,</span> <span class="n">history</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">()</span>
+<span class="linenos">567</span>        <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">(</span><span class="n">history</span><span class="o">=</span><span class="n">history</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)}</span>
+<span class="linenos">568</span>        <span class="n">np</span><span class="o">.</span><span class="n">savez</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datafile</span><span class="p">,</span> <span class="o">**</span><span class="n">pxu</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="n">kwargs</span><span class="p">))</span>  <span class="c1"># savez() requires NumPy arrays as input.</span></div>
+
+<span class="linenos">569</span>        <span class="c1"># [TODO][Feature Request] Allow user to choose writeback format. Useful for large-scale</span>
+<span class="linenos">570</span>        <span class="c1"># outputs which cannot be stored on one machine.</span>
+<span class="linenos">571</span>
+<span class="linenos">572</span>    <span class="k">def</span> <span class="nf">_check_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">modes</span><span class="p">:</span> <span class="n">Mode</span><span class="p">):</span>
+<span class="linenos">573</span>        <span class="n">m</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span><span class="p">[</span><span class="s2">&quot;mode&quot;</span><span class="p">]</span>
+<span class="linenos">574</span>        <span class="k">if</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">modes</span><span class="p">:</span>
+<span class="linenos">575</span>            <span class="k">pass</span>  <span class="c1"># ok</span>
+<span class="linenos">576</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">577</span>            <span class="k">if</span> <span class="n">m</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">578</span>                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Illegal method call: invoke Solver.fit() first.&quot;</span>
+<span class="linenos">579</span>            <span class="k">else</span><span class="p">:</span>
+<span class="linenos">580</span>                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+<span class="linenos">581</span>                    <span class="p">[</span>
+<span class="linenos">582</span>                        <span class="s2">&quot;Illegal method call: can only be used if Solver.fit() invoked with&quot;</span><span class="p">,</span>
+<span class="linenos">583</span>                        <span class="s2">&quot;mode=Any[&quot;</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">_</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">_</span><span class="o">.</span><span class="n">name</span><span class="p">),</span> <span class="n">modes</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;]&quot;</span><span class="p">,</span>
+<span class="linenos">584</span>                    <span class="p">]</span>
+<span class="linenos">585</span>                <span class="p">)</span>
+<span class="linenos">586</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="linenos">587</span>
+<span class="linenos">588</span>    <span class="k">def</span> <span class="nf">_step</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="linenos">589</span>        <span class="n">ast</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_astate</span>  <span class="c1"># shorthand</span>
+<span class="linenos">590</span>
+<span class="linenos">591</span>        <span class="n">must_stop</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">ast</span><span class="p">[</span><span class="s2">&quot;idx&quot;</span><span class="p">]</span> <span class="o">%</span> <span class="n">ast</span><span class="p">[</span><span class="s2">&quot;stop_rate&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="linenos">592</span>        <span class="n">must_log</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">ast</span><span class="p">[</span><span class="s2">&quot;idx&quot;</span><span class="p">]</span> <span class="o">%</span> <span class="n">ast</span><span class="p">[</span><span class="s2">&quot;log_rate&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="linenos">593</span>        <span class="n">must_writeback</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="p">(</span><span class="n">ast</span><span class="p">[</span><span class="s2">&quot;wb_rate&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">ast</span><span class="p">[</span><span class="s2">&quot;idx&quot;</span><span class="p">]</span> <span class="o">%</span> <span class="n">ast</span><span class="p">[</span><span class="s2">&quot;wb_rate&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos">594</span>
+<span class="linenos">595</span>        <span class="k">def</span> <span class="nf">_log</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="linenos">596</span>            <span class="k">if</span> <span class="n">msg</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># report stopping-criterion values</span>
+<span class="linenos">597</span>                <span class="n">h</span> <span class="o">=</span> <span class="n">ast</span><span class="p">[</span><span class="s2">&quot;history&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="linenos">598</span>                <span class="n">msg</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="si">}</span><span class="s2">] Iteration </span><span class="si">{</span><span class="n">ast</span><span class="p">[</span><span class="s1">&#39;idx&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">&gt;_d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span>
+<span class="linenos">599</span>                <span class="k">for</span> <span class="n">field</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">names</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+<span class="linenos">600</span>                    <span class="n">msg</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="si">{</span><span class="n">field</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">601</span>                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="linenos">602</span>            <span class="n">ast</span><span class="p">[</span><span class="s2">&quot;logger&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="linenos">603</span>
+<span class="linenos">604</span>        <span class="k">def</span> <span class="nf">_update_history</span><span class="p">():</span>
+<span class="linenos">605</span>            <span class="k">def</span> <span class="nf">_as_struct</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="linenos">606</span>                <span class="n">ftype</span> <span class="o">=</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">getPrecision</span><span class="p">()</span><span class="o">.</span><span class="n">value</span>
+<span class="linenos">607</span>                <span class="n">spec_data</span> <span class="o">=</span> <span class="p">[(</span><span class="n">k</span><span class="p">,</span> <span class="n">ftype</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+<span class="linenos">608</span>
+<span class="linenos">609</span>                <span class="n">itype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">int64</span>
+<span class="linenos">610</span>                <span class="n">spec_iter</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;iteration&quot;</span><span class="p">,</span> <span class="n">itype</span><span class="p">)]</span>
+<span class="linenos">611</span>
+<span class="linenos">612</span>                <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">spec_iter</span> <span class="o">+</span> <span class="n">spec_data</span><span class="p">)</span>
+<span class="linenos">613</span>
+<span class="linenos">614</span>                <span class="n">utype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span>
+<span class="linenos">615</span>                <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>  <span class="c1"># to allow mixed int/float fields:</span>
+<span class="linenos">616</span>                    <span class="p">[</span>  <span class="c1"># (1) cast to uint, then (2) to compound dtype.</span>
+<span class="linenos">617</span>                        <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ast</span><span class="p">[</span><span class="s2">&quot;idx&quot;</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">itype</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">utype</span><span class="p">),</span>
+<span class="linenos">618</span>                        <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">ftype</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">utype</span><span class="p">),</span>
+<span class="linenos">619</span>                    <span class="p">]</span>
+<span class="linenos">620</span>                <span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+<span class="linenos">621</span>                <span class="k">return</span> <span class="n">s</span>
+<span class="linenos">622</span>
+<span class="linenos">623</span>            <span class="n">h</span> <span class="o">=</span> <span class="n">_as_struct</span><span class="p">(</span><span class="n">ast</span><span class="p">[</span><span class="s2">&quot;stop_crit&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+<span class="linenos">624</span>            <span class="n">ast</span><span class="p">[</span><span class="s2">&quot;history&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="linenos">625</span>
+<span class="linenos">626</span>        <span class="c1"># [Sepand] Important</span>
+<span class="linenos">627</span>        <span class="c1"># stop_crit.stop(), _update_history(), _log() must always be called in this order.</span>
+<span class="linenos">628</span>
+<span class="linenos">629</span>        <span class="k">try</span><span class="p">:</span>
+<span class="linenos">630</span>            <span class="n">_ms</span><span class="p">,</span> <span class="n">_ml</span><span class="p">,</span> <span class="n">_mw</span> <span class="o">=</span> <span class="n">must_stop</span><span class="p">(),</span> <span class="n">must_log</span><span class="p">(),</span> <span class="n">must_writeback</span><span class="p">()</span>
+<span class="linenos">631</span>
+<span class="linenos">632</span>            <span class="k">if</span> <span class="n">_ms</span> <span class="ow">and</span> <span class="n">ast</span><span class="p">[</span><span class="s2">&quot;track_objective&quot;</span><span class="p">]:</span>
+<span class="linenos">633</span>                <span class="bp">self</span><span class="o">.</span><span class="n">_mstate</span><span class="p">[</span><span class="s2">&quot;objective_func&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">objective_func</span><span class="p">()</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">634</span>
+<span class="linenos">635</span>            <span class="k">if</span> <span class="n">_ms</span> <span class="ow">and</span> <span class="n">ast</span><span class="p">[</span><span class="s2">&quot;stop_crit&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mstate</span><span class="p">):</span>
+<span class="linenos">636</span>                <span class="n">_update_history</span><span class="p">()</span>
+<span class="linenos">637</span>                <span class="n">_log</span><span class="p">()</span>
+<span class="linenos">638</span>                <span class="n">_log</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="si">}</span><span class="s2">] Stopping Criterion satisfied -&gt; END&quot;</span><span class="p">)</span>
+<span class="linenos">639</span>                <span class="bp">self</span><span class="o">.</span><span class="n">writeback</span><span class="p">()</span>
+<span class="linenos">640</span>                <span class="k">return</span> <span class="kc">False</span>
+<span class="linenos">641</span>            <span class="k">else</span><span class="p">:</span>
+<span class="linenos">642</span>                <span class="k">if</span> <span class="n">_ms</span><span class="p">:</span>
+<span class="linenos">643</span>                    <span class="n">_update_history</span><span class="p">()</span>
+<span class="linenos">644</span>                <span class="k">if</span> <span class="n">_ml</span><span class="p">:</span>
+<span class="linenos">645</span>                    <span class="n">_log</span><span class="p">()</span>
+<span class="linenos">646</span>                <span class="k">if</span> <span class="n">_mw</span><span class="p">:</span>
+<span class="linenos">647</span>                    <span class="bp">self</span><span class="o">.</span><span class="n">writeback</span><span class="p">()</span>
+<span class="linenos">648</span>                <span class="n">ast</span><span class="p">[</span><span class="s2">&quot;idx&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="linenos">649</span>                <span class="bp">self</span><span class="o">.</span><span class="n">m_step</span><span class="p">()</span>
+<span class="linenos">650</span>                <span class="k">if</span> <span class="n">_ms</span><span class="p">:</span>
+<span class="linenos">651</span>                    <span class="bp">self</span><span class="o">.</span><span class="n">_m_persist</span><span class="p">()</span>
+<span class="linenos">652</span>                <span class="k">return</span> <span class="kc">True</span>
+<span class="linenos">653</span>        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="linenos">654</span>            <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="si">}</span><span class="s2">] Something went wrong -&gt; EXCEPTION RAISED&quot;</span>
+<span class="linenos">655</span>            <span class="n">msg_xtra</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;More information: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">logfile</span><span class="si">}</span><span class="s2">.&quot;</span>
+<span class="linenos">656</span>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">msg</span><span class="p">,</span> <span class="n">msg_xtra</span><span class="p">]),</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+<span class="linenos">657</span>            <span class="k">if</span> <span class="n">ast</span><span class="p">[</span><span class="s2">&quot;wb_rate&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># checkpointing enabled</span>
+<span class="linenos">658</span>                <span class="n">_</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">ast</span><span class="p">[</span><span class="s2">&quot;idx&quot;</span><span class="p">],</span> <span class="n">ast</span><span class="p">[</span><span class="s2">&quot;wb_rate&quot;</span><span class="p">])</span>
+<span class="linenos">659</span>                <span class="n">idx_valid</span> <span class="o">=</span> <span class="n">ast</span><span class="p">[</span><span class="s2">&quot;idx&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">r</span>
+<span class="linenos">660</span>                <span class="n">msg_idx</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Last valid checkpoint done at iteration=</span><span class="si">{</span><span class="n">idx_valid</span><span class="si">}</span><span class="s2">.&quot;</span>
+<span class="linenos">661</span>                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">msg</span><span class="p">,</span> <span class="n">msg_idx</span><span class="p">])</span>
+<span class="linenos">662</span>            <span class="n">ast</span><span class="p">[</span><span class="s2">&quot;logger&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="n">e</span><span class="p">)</span>
+<span class="linenos">663</span>            <span class="k">return</span> <span class="kc">False</span>
+<span class="linenos">664</span>
+<span class="linenos">665</span>    <span class="k">def</span> <span class="nf">_m_persist</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">666</span>        <span class="c1"># Persist math state to avoid re-eval overhead.</span>
+<span class="linenos">667</span>        <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_mstate</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+<span class="linenos">668</span>        <span class="n">v</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="o">*</span><span class="n">v</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;persist&quot;</span><span class="p">,</span> <span class="n">traverse</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="linenos">669</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_mstate</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
+<span class="linenos">670</span>        <span class="c1"># [Sepand] Note:</span>
+<span class="linenos">671</span>        <span class="c1"># The above evaluation strategy with `traverse=False` chosen since _mstate can hold any type</span>
+<span class="linenos">672</span>        <span class="c1"># of object.</span>
+<span class="linenos">673</span>
+<span class="linenos">674</span>    <span class="k">def</span> <span class="nf">_cleanup_logger</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">675</span>        <span class="c1"># Close file-handlers</span>
+<span class="linenos">676</span>        <span class="n">log_name</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">workdir</span><span class="p">)</span>
+<span class="linenos">677</span>        <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">log_name</span><span class="p">)</span>
+<span class="linenos">678</span>        <span class="k">for</span> <span class="n">handler</span> <span class="ow">in</span> <span class="n">logger</span><span class="o">.</span><span class="n">handlers</span><span class="p">:</span>
+<span class="linenos">679</span>            <span class="n">handler</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos">680</span>
+<div class="viewcode-block" id="Solver.default_stop_crit">
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.solver.Solver.default_stop_crit">[docs]</a>
+<span class="linenos">681</span>    <span class="k">def</span> <span class="nf">default_stop_crit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StoppingCriterion</span><span class="p">:</span>
+<span class="linenos">682</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">683</span><span class="sd">        Default stopping criterion for solver if unspecified in</span>
+<span class="linenos">684</span><span class="sd">        :py:meth:`~pyxu.abc.solver.Solver.fit`</span>
+<span class="linenos">685</span><span class="sd">        calls.</span>
+<span class="linenos">686</span>
+<span class="linenos">687</span><span class="sd">        Sub-classes are expected to overwrite this method.</span>
+<span class="linenos">688</span><span class="sd">        If not overridden, then omitting the `stop_crit` parameter in</span>
+<span class="linenos">689</span><span class="sd">        :py:meth:`~pyxu.abc.solver.Solver.fit`</span>
+<span class="linenos">690</span><span class="sd">        is forbidden.</span>
+<span class="linenos">691</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">692</span>        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;No default stopping criterion defined.&quot;</span><span class="p">)</span></div>
+
+<span class="linenos">693</span>
+<div class="viewcode-block" id="Solver.objective_func">
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.solver.Solver.objective_func">[docs]</a>
+<span class="linenos">694</span>    <span class="k">def</span> <span class="nf">objective_func</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">695</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">696</span><span class="sd">        Evaluate objective function given current math state.</span>
+<span class="linenos">697</span>
+<span class="linenos">698</span><span class="sd">        The output array must have shape:</span>
+<span class="linenos">699</span>
+<span class="linenos">700</span><span class="sd">        * (1,) if evaluated at 1 point,</span>
+<span class="linenos">701</span><span class="sd">        * (N, 1) if evaluated at N different points.</span>
+<span class="linenos">702</span>
+<span class="linenos">703</span><span class="sd">        Sub-classes are expected to overwrite this method.</span>
+<span class="linenos">704</span><span class="sd">        If not overridden, then enabling `track_objective` in</span>
+<span class="linenos">705</span><span class="sd">        :py:meth:`~pyxu.abc.solver.Solver.fit`</span>
+<span class="linenos">706</span><span class="sd">        is forbidden.</span>
+<span class="linenos">707</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">708</span>        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;No objective function defined.&quot;</span><span class="p">)</span></div>
+
+<span class="linenos">709</span>
+<span class="linenos">710</span>    <span class="k">class</span> <span class="nc">_Worker</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
+<span class="linenos">711</span>        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solver</span><span class="p">:</span> <span class="s2">&quot;Solver&quot;</span><span class="p">):</span>
+<span class="linenos">712</span>            <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<span class="linenos">713</span>            <span class="bp">self</span><span class="o">.</span><span class="n">slvr</span> <span class="o">=</span> <span class="n">solver</span>
+<span class="linenos">714</span>
+<span class="linenos">715</span>        <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">716</span>            <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">slvr</span><span class="o">.</span><span class="n">busy</span><span class="p">()</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">slvr</span><span class="o">.</span><span class="n">_step</span><span class="p">():</span>
+<span class="linenos">717</span>                <span class="k">pass</span>
+<span class="linenos">718</span>            <span class="bp">self</span><span class="o">.</span><span class="n">slvr</span><span class="o">.</span><span class="n">_astate</span><span class="p">[</span><span class="s2">&quot;active&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+<div id="searchbox"></div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

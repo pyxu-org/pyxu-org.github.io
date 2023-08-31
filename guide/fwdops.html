@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Forward Operators — Pyxu Documentation</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../_static/plot_directive.css?v=7f9a90b1" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
+<link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
+<link href="../_static/sg_gallery.css?v=61a4c737" rel="stylesheet" type="text/css"/>
+<link href="../_static/sg_gallery-binder.css?v=f4aeca0c" rel="stylesheet" type="text/css"/>
+<link href="../_static/sg_gallery-dataframe.css?v=2082cf3c" rel="stylesheet" type="text/css"/>
+<link href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" rel="stylesheet" type="text/css"/>
+<link href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css?v=1031a718" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
+<link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
+<script src="../_static/documentation_options.js?v=e02fc88f"></script>
+<script src="../_static/doctools.js?v=888ff710"></script>
+<script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="../_static/copybutton.js?v=30646c52"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+<script src="../_static/design-tabs.js?v=36754332"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+<script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'guide/fwdops';</script>
+<link href="../_static/favicon.png" rel="icon"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="../examples/index.html" rel="next" title="Example Gallery"/>
+<link href="index.html" rel="prev" title="User Guide"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="light" data-offset="180">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search the docs ..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+<label class="sidebar-toggle primary-toggle" for="__primary">
+<span class="fa-solid fa-bars"></span>
+</label>
+<div class="navbar-header-items__start">
+<div class="navbar-item">
+<a class="navbar-brand logo" href="../index.html">
+<img alt="Logo image" class="logo__image only-light" src="../_static/logo.png"/>
+<script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+</a></div>
+</div>
+<div class="col-lg-9 navbar-header-items">
+<div class="me-auto navbar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../intro/index.html">
+                        Getting Started
+                      </a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link nav-internal" href="index.html">
+                        User Guide
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../examples/index.html">
+                        Example Gallery
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../api/index.html">
+                        API Reference
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../fair/index.html">
+                        Extending Pyxu
+                      </a>
+</li>
+</ul>
+</nav></div>
+</div>
+<div class="navbar-header-items__end">
+<div class="navbar-item navbar-persistent--container">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<div class="navbar-item"><strong> v1.0.x </strong></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://pypi.org/project/pyxu/" rel="noopener" target="_blank" title="PyPI"><span><i class="fa-brands fa-python"></i></span>
+<label class="sr-only">PyPI</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="mailto: matthieu.simeoni@gmail.com" rel="noopener" target="_blank" title="Contact"><span><i class="fa-brands fa-telegram"></i></span>
+<label class="sr-only">Contact</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://imaging.epfl.ch/" rel="noopener" target="_blank" title="EPFL Center for Imaging"><img alt="EPFL Center for Imaging" class="icon-link-image" src="../_static/imaging.png"/></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<label class="sidebar-toggle secondary-toggle" for="__secondary">
+<span class="fa-solid fa-outdent"></span>
+</label>
+</div>
+</nav>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+<div class="sidebar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../intro/index.html">
+                        Getting Started
+                      </a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link nav-internal" href="index.html">
+                        User Guide
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../examples/index.html">
+                        Example Gallery
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../api/index.html">
+                        API Reference
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../fair/index.html">
+                        Extending Pyxu
+                      </a>
+</li>
+</ul>
+</nav></div>
+</div>
+<div class="sidebar-header-items__end">
+<div class="navbar-item"><strong> v1.0.x </strong></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://pypi.org/project/pyxu/" rel="noopener" target="_blank" title="PyPI"><span><i class="fa-brands fa-python"></i></span>
+<label class="sr-only">PyPI</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="mailto: matthieu.simeoni@gmail.com" rel="noopener" target="_blank" title="Contact"><span><i class="fa-brands fa-telegram"></i></span>
+<label class="sr-only">Contact</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://imaging.epfl.ch/" rel="noopener" target="_blank" title="EPFL Center for Imaging"><img alt="EPFL Center for Imaging" class="icon-link-image" src="../_static/imaging.png"/></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item"><nav aria-label="Section Navigation" class="bd-docs-nav bd-links">
+<p aria-level="1" class="bd-links__title" role="heading">Section Navigation</p>
+<div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Forward Operators</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content">
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item">
+<nav aria-label="Breadcrumbs">
+<ul aria-label="Breadcrumb" class="bd-breadcrumbs" role="navigation">
+<li class="breadcrumb-item breadcrumb-home">
+<a aria-label="Home" class="nav-link" href="../index.html">
+<i class="fa-solid fa-home"></i>
+</a>
+</li>
+<li class="breadcrumb-item"><a class="nav-link" href="index.html">User Guide</a></li>
+<li aria-current="page" class="breadcrumb-item active">Forward Operators</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article" role="main">
+<section id="Forward-Operators">
+<h1>Forward Operators<a class="headerlink" href="#Forward-Operators" title="Link to this heading">#</a></h1>
+<p>In computational imaging, the ability to model the acquisition system accurately is a cornerstone for solving inverse problems. The <code class="docutils literal notranslate"><span class="pre">LinOp</span></code> class in Pyxu serves as a foundational abstraction for defining linear forward operators, essentially mapping the original signal or image to the data we observe. This guide is designed to equip you with the knowledge needed to implement custom forward operators using the <code class="docutils literal notranslate"><span class="pre">LinOp</span></code> class, as well as related classes in the Pyxu library.</p>
+<blockquote>
+<div><p><strong>Note</strong>: The <code class="docutils literal notranslate"><span class="pre">LinOp</span></code> class and others discussed here are abstract classes. They are not intended to be instantiated directly but should be subclassed to suit your specific needs. Alternatively, you can use the generic constructor routine <code class="docutils literal notranslate"><span class="pre">from_source</span></code> to define new operators based on their core methods.</p>
+</div></blockquote>
+<section id="The-Importance-of-Matrix-Free-Operators">
+<h2>The Importance of Matrix-Free Operators<a class="headerlink" href="#The-Importance-of-Matrix-Free-Operators" title="Link to this heading">#</a></h2>
+<p>Computational imaging often involves working with (very) large data sets, which poses challenges in terms of scalability. In Pyxu, the strategy for addressing such challenges is to employ <strong>matrix-free operators</strong>. These operators are defined implicitly via methods rather than explicitly through matrices. This strategy saves memory and improves computational efficiency.</p>
+<p>For example, the following code snippet implements a matrix-free sum operator operating over 1D inputs:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Sum</span><span class="p">(</span><span class="n">LinOp</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">arr</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>This code snippet demonstrates how to define a simple matrix-free linear operator that computes the sum of elements in an array. Let’s break down the components:</p>
+<ul>
+<li><p><strong>Class Definition:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Sum</span><span class="p">(</span><span class="n">LinOp</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>Here, a new class called <code class="docutils literal notranslate"><span class="pre">Sum</span></code> is defined, inheriting from Pyxu’s <code class="docutils literal notranslate"><span class="pre">LinOp</span></code> base class, the primary abstraction for designing real-valued linear forward operators. This inheritance means that Sum is expected to implement certain core methods, namely <code class="docutils literal notranslate"><span class="pre">apply</span></code> and <code class="docutils literal notranslate"><span class="pre">adjoint</span></code>.</p>
+</li>
+<li><p><strong>The ``apply`` Method:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">apply</span></code> method takes an array <code class="docutils literal notranslate"><span class="pre">arr</span></code> as input and returns the sum of its elements. This is the core functionality of the operator. Instead of representing the sum operation as a matrix and performing matrix-vector multiplication, the method directly computes the sum, making it “matrix-free.”</p>
+</li>
+<li><p><strong>The ``adjoint`` Method:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">arr</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">adjoint</span></code> method also takes an array <code class="docutils literal notranslate"><span class="pre">arr</span></code> as input. The adjoint operation for this sum operator is effectively a “broadcast” operation, mapping a scalar to a vector with the same dimension of the original array space.</p>
+</li>
+</ul>
+</section>
+<section id="Demistifying-the-Adjoint">
+<h2>Demistifying the Adjoint<a class="headerlink" href="#Demistifying-the-Adjoint" title="Link to this heading">#</a></h2>
+<p>The concept of an “adjoint” operator can initially be a bit elusive, so let’s use some intuition to understand it. When we talk about a forward operator in computational imaging or signal processing, we’re usually describing a transformation that takes an input (often some form of data or signal) and produces an output (often some form of measurement or transformed data).</p>
+<p>Now, what if you wanted to go in the opposite direction? What if you had a blurry image and wanted to reconstruct the original, clear image? This “reverse” operation is what the adjoint operator aims to approximate.</p>
+<p>In mathematical terms, the adjoint operator is formally defined to be the dual of the forward operator with respect to a particular inner product space. It’s often considered as a kind of “inverse” to the forward operator. However, it’s important to note that it’s not necessarily the true inverse; rather, you can think of it as a linear approximation to reverse the forward operator’s action.</p>
+<p>In computational imaging and inverse problems, the adjoint operator is frequently used in iterative algorithms to reconstruct the original data from measurements. The forward operator models the measurement process, and the adjoint helps in the reconstruction process.</p>
+<p>So, when you see the term “adjoint,” you can think of it as the backward counterpart to your forward operator, designed to undo or approximate the undoing of whatever your forward operator did.</p>
+<p>Computing the adjoint of a complex forward operator can be a challenging task, especially in fields like tomography where even well-established implementations can have mismatched adjoints for the Radon transform. The mismatch often arises due to approximations or discretizations that make the adjoint non-trivial to compute directly.</p>
+<section id="Divide-and-Conquer-Strategy">
+<h3>Divide and Conquer Strategy<a class="headerlink" href="#Divide-and-Conquer-Strategy" title="Link to this heading">#</a></h3>
+<p>A useful approach to tackle this issue is to divide and conquer: break down the complex operator into a chain of simpler, well-understood operators for which the adjoints are known or easily computed. Once you have this chain, you can leverage the properties of adjoint operators to calculate the adjoint of the entire composition. Mathematically, if you have operators <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, the adjoint of <span class="math notranslate nohighlight">\(AB\)</span> is <span class="math notranslate nohighlight">\(B^* A^*\)</span>, where <span class="math notranslate nohighlight">\(^*\)</span> denotes the adjoint.</p>
+<p>Pyxu excels in this context, thanks to its operator algebra logic. It allows you to compose operators easily, and when you ask for the adjoint, Pyxu will automatically compute it for you by leveraging the adjoint properties and the chain of simpler operators you’ve defined. In effect, Pyxu performs the heavy lifting, letting you focus on defining the core aspects of your operators.</p>
+<p>So, instead of getting bogged down with the mathematical intricacies of calculating a complex adjoint operator, you can use Pyxu to implement your forward operator as a chain of simpler ones. Pyxu takes care of the rest, giving you a powerful, yet computationally efficient, way to tackle challenging problems in computational imaging. Divide and conquer! 🛠️🔍</p>
+</section>
+<section id="Quality-Assurance-for-Adjoint-Operators-in-Pyxu">
+<h3>Quality Assurance for Adjoint Operators in Pyxu<a class="headerlink" href="#Quality-Assurance-for-Adjoint-Operators-in-Pyxu" title="Link to this heading">#</a></h3>
+<p>Pyxu goes the extra mile to ensure the accuracy and integrity of the adjoint operators within its library. Our comprehensive test suite rigorously validates the correctness of adjoint implementations for every operator. This gives you the confidence that you are indeed working with mathematically valid adjoints, offering you a robust foundation for your computational imaging projects. 🛡️🔍</p>
+</section>
+</section>
+<section id="Additional-Features-of-LinOp:-Batteries-Included">
+<h2>Additional Features of LinOp: Batteries Included<a class="headerlink" href="#Additional-Features-of-LinOp:-Batteries-Included" title="Link to this heading">#</a></h2>
+<p>Pyxu’s <code class="docutils literal notranslate"><span class="pre">LinOp</span></code> is designed to be as versatile and useful as possible for computational imaging. Here are some of the extra capabilities baked right into the class to facilitate both simple and complex tasks:</p>
+<ul class="simple">
+<li><p><strong>Lipschitz Constant</strong>: Knowing the Lipschitz constant of an operator is invaluable for optimization routines. If you know it, you can directly store it in the <code class="docutils literal notranslate"><span class="pre">lipschitz</span></code> property. Don’t know it? No problem! The <code class="docutils literal notranslate"><span class="pre">estimate_lipschitz()</span></code> method will compute it for you, offering various methods to balance accuracy and execution time.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_operator</span><span class="o">.</span><span class="n">lipschitz</span> <span class="o">=</span> <span class="n">my_operator</span><span class="o">.</span><span class="n">estimate_lipschitz</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Singular Value Decomposition</strong>: Ever needed to compute the singular values of your operator? Use the <code class="docutils literal notranslate"><span class="pre">svdvals()</span></code> method which employs the Arnoldi method to get the job done without breaking the matrix-free paradigm.</p></li>
+<li><p><strong>Trace of Operator</strong>: Sometimes you may need to compute the trace of an operator. The <code class="docutils literal notranslate"><span class="pre">trace()</span></code> method uses a stochastic approximation with the Hutch++ algorithm to efficiently estimate the trace.</p></li>
+<li><p><strong>Pseudo-Inverse</strong>: If you’re looking to solve an inverse problem, the <code class="docutils literal notranslate"><span class="pre">pinv()</span></code> method helps you evaluate the pseudo-inverse by solving the (dampened) normal equations, making it the most straightforward way to reverse your operations.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pseudo_inv_result</span> <span class="o">=</span> <span class="n">my_operator</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">my_array</span><span class="p">,</span> <span class="n">damp</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Support for Explicit Matrices</strong>: Though <code class="docutils literal notranslate"><span class="pre">LinOp</span></code> is primarily built for matrix-free operations, you are not restricted to them. If you prefer, you can work with explicit matrices using the <code class="docutils literal notranslate"><span class="pre">from_array()</span></code> method, supporting a variety of array formats including <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">cupy</span></code>, <code class="docutils literal notranslate"><span class="pre">sparse</span></code>, and <code class="docutils literal notranslate"><span class="pre">dask</span></code>.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">op</span> <span class="o">=</span> <span class="n">LinOp</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>With all these tools and methods at your disposal, <code class="docutils literal notranslate"><span class="pre">LinOp</span></code> aims to be your go-to solution for implementing linear operators in computational imaging tasks.</p>
+</section>
+<section id="DiffMap-for-Non-linear-Forward-Operators">
+<h2>DiffMap for Non-linear Forward Operators<a class="headerlink" href="#DiffMap-for-Non-linear-Forward-Operators" title="Link to this heading">#</a></h2>
+<p>Linear models are often an idealized representation, and in some situations, the forward operators are inherently non-linear. Take phase retrieval or some forms of tomography as examples; these are scenarios where the relationship between the object and its measurements isn’t just a linear transformation. For such cases, Pyxu provides the <code class="docutils literal notranslate"><span class="pre">DiffMap</span></code> class to implement these non-linear forward operators.</p>
+<section id="Core-Methods">
+<h3>Core Methods<a class="headerlink" href="#Core-Methods" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>``apply``</strong>: This method is where you’ll implement your forward model. Just like in <code class="docutils literal notranslate"><span class="pre">LinOp</span></code>, you override this function to define how your specific forward model operates on an input array.</p></li>
+<li><p><strong>``jacobian``</strong>: In calculus, the Jacobian matrix represents the best linear approximation to a function at a given point. For a function <span class="math notranslate nohighlight">\(\mathbf{f}: \mathbb{R}^{M} \to \mathbb{R}^{N}\)</span>, the Jacobian <span class="math notranslate nohighlight">\(\mathbf{J}_{\mathbf{f}}(\mathbf{x})\)</span> at a point <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is an <span class="math notranslate nohighlight">\(N \times M\)</span> matrix where the entry <span class="math notranslate nohighlight">\((i, j)\)</span> is <span class="math notranslate nohighlight">\(\frac{\partial f_{i}}{\partial x_{j}}\)</span>. When the forward operator is non-linear, knowing the Jacobian is crucial for optimization algorithms.</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">jacobian()</span></code> method allows you to evaluate this matrix, giving you the flexibility to implement the best way to approximate your non-linear operator linearly at a specific point.</p>
+</section>
+<section id="A-Nod-to-Deep-Learning-🚀">
+<h3>A Nod to Deep Learning 🚀<a class="headerlink" href="#A-Nod-to-Deep-Learning-🚀" title="Link to this heading">#</a></h3>
+<p>When the Jacobian is unknown or too complex to derive analytically, techniques from deep learning come in handy. Libraries like JAX or PyTorch offer automatic differentiation techniques (autograd) to compute derivatives, which you can use to obtain the Jacobian efficiently in a matrix-free fashion.</p>
+<p>In Pyxu, methods <code class="docutils literal notranslate"><span class="pre">from_torch</span></code> and <code class="docutils literal notranslate"><span class="pre">from_jax</span></code> allow you to define operators whose Jacobians are computed via autograd. This means you can utilize the power of these deep learning libraries to implement non-linear operators seamlessly.</p>
+<p>With <code class="docutils literal notranslate"><span class="pre">DiffMap</span></code>, you’re well-equipped to tackle the challenges posed by non-linear forward operators in computational imaging.</p>
+</section>
+</section>
+<section id="Wrapping-Up">
+<h2>Wrapping Up<a class="headerlink" href="#Wrapping-Up" title="Link to this heading">#</a></h2>
+<p>Pyxu offers a robust and scalable framework for computational imaging professionals dealing with both linear and non-linear forward operators. With the abstraction provided by classes like <code class="docutils literal notranslate"><span class="pre">LinOp</span></code> and <code class="docutils literal notranslate"><span class="pre">DiffMap</span></code>, you can focus on the problem you’re solving rather than the computational limitations. These classes are meant to be subclassed to tailor to your specific problem domain. Happy coding! 🚀</p>
+</section>
+</section>
+</article>
+<footer class="bd-footer-article">
+<div class="footer-article-items footer-article__inner">
+<div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="index.html" title="previous page">
+<i class="fa-solid fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">User Guide</p>
+</div>
+</a>
+<a class="right-next" href="../examples/index.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Example Gallery</p>
+</div>
+<i class="fa-solid fa-angle-right"></i>
+</a>
+</div></div>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> On this page
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#The-Importance-of-Matrix-Free-Operators">The Importance of Matrix-Free Operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Demistifying-the-Adjoint">Demistifying the Adjoint</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Divide-and-Conquer-Strategy">Divide and Conquer Strategy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Quality-Assurance-for-Adjoint-Operators-in-Pyxu">Quality Assurance for Adjoint Operators in Pyxu</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Additional-Features-of-LinOp:-Batteries-Included">Additional Features of LinOp: Batteries Included</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#DiffMap-for-Non-linear-Forward-Operators">DiffMap for Non-linear Forward Operators</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Core-Methods">Core Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#A-Nod-to-Deep-Learning-🚀">A Nod to Deep Learning 🚀</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Wrapping-Up">Wrapping Up</a></li>
+</ul>
+</nav></div>
+<div class="sidebar-secondary-item">
+<div id="searchbox"></div></div>
+<div class="sidebar-secondary-item">
+<div class="tocsection editthispage">
+<a href="https://github.com/matthieumeo/pyxu/edit/main/doc/guide/fwdops.ipynb">
+<i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+</div>
+</div>
+<div class="sidebar-secondary-item">
+<div class="tocsection sourcelink">
+<a href="../_sources/guide/fwdops.ipynb">
+<i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+</div>
+</div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+<footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+<div class="footer-items__start">
+<div class="footer-item">
+<p class="copyright">
+    
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      <br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    <br/>
+</p>
+</div>
+<div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+</div>
+<div class="footer-items__end">
+<div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+</div>
+</div>
+</footer>
+</body>
+</html>

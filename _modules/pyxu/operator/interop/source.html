@@ -1,0 +1,802 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pyxu.operator.interop.source &#8212; Pyxu Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=1031a718" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../../../../_static/documentation_options.js?v=29481255"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=30646c52"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../../_static/design-tabs.js?v=36754332"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pyxu/operator/interop/source';</script>
+    <link rel="icon" href="../../../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../intro/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../api/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../fair/index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><strong> v0.0.1 </strong></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../../_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../intro/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../api/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../fair/index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><strong> v0.0.1 </strong></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../../_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">pyxu.operator.interop.source</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for pyxu.operator.interop.source</h1><div class="highlight"><pre>
+<span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">collections.abc</span> <span class="k">as</span> <span class="nn">cabc</span>
+<span class="linenos">  2</span><span class="kn">import</span> <span class="nn">types</span>
+<span class="linenos">  3</span><span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">typ</span>
+<span class="linenos">  4</span>
+<span class="linenos">  5</span><span class="kn">import</span> <span class="nn">pyxu.abc.operator</span> <span class="k">as</span> <span class="nn">pxo</span>
+<span class="linenos">  6</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
+<span class="linenos">  7</span><span class="kn">import</span> <span class="nn">pyxu.runtime</span> <span class="k">as</span> <span class="nn">pxrt</span>
+<span class="linenos">  8</span><span class="kn">import</span> <span class="nn">pyxu.util</span> <span class="k">as</span> <span class="nn">pxu</span>
+<span class="linenos">  9</span>
+<span class="linenos"> 10</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos"> 11</span>    <span class="s2">&quot;from_source&quot;</span><span class="p">,</span>
+<span class="linenos"> 12</span><span class="p">]</span>
+<span class="linenos"> 13</span>
+<span class="linenos"> 14</span>
+<div class="viewcode-block" id="from_source">
+<a class="viewcode-back" href="../../../../api/operator/interop.html#pyxu.operator.interop.source.from_source">[docs]</a>
+<span class="linenos"> 15</span><span class="k">def</span> <span class="nf">from_source</span><span class="p">(</span>
+<span class="linenos"> 16</span>    <span class="bp">cls</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpC</span><span class="p">,</span>
+<span class="linenos"> 17</span>    <span class="n">shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpShape</span><span class="p">,</span>
+<span class="linenos"> 18</span>    <span class="n">embed</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="linenos"> 19</span>    <span class="n">vectorize</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">VarName</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(),</span>
+<span class="linenos"> 20</span>    <span class="n">vmethod</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="linenos"> 21</span>    <span class="n">enforce_precision</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">VarName</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(),</span>
+<span class="linenos"> 22</span>    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="linenos"> 23</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
+<span class="linenos"> 24</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 25</span><span class="sd">    Define an :py:class:`~pyxu.abc.operator.Operator` from low-level constructs.</span>
+<span class="linenos"> 26</span>
+<span class="linenos"> 27</span><span class="sd">    Parameters</span>
+<span class="linenos"> 28</span><span class="sd">    ----------</span>
+<span class="linenos"> 29</span><span class="sd">    cls: OpC</span>
+<span class="linenos"> 30</span><span class="sd">        Operator sub-class to instantiate.</span>
+<span class="linenos"> 31</span><span class="sd">    shape: OpShape</span>
+<span class="linenos"> 32</span><span class="sd">        (N, M) operator shape.</span>
+<span class="linenos"> 33</span><span class="sd">    embed: dict</span>
+<span class="linenos"> 34</span><span class="sd">        (k[str], v[value]) pairs to embed into the created operator.</span>
+<span class="linenos"> 35</span>
+<span class="linenos"> 36</span><span class="sd">        `embed` is useful to attach extra information to synthesized</span>
+<span class="linenos"> 37</span><span class="sd">        :py:class:`~pyxu.abc.operator.Operator` used by arithmetic methods.</span>
+<span class="linenos"> 38</span><span class="sd">    kwargs: dict</span>
+<span class="linenos"> 39</span><span class="sd">        (k[str], v[callable]) pairs to use as arithmetic methods.</span>
+<span class="linenos"> 40</span>
+<span class="linenos"> 41</span><span class="sd">        Keys must be entries from :py:meth:`~pyxu.abc.operator.Property.arithmetic_methods`.</span>
+<span class="linenos"> 42</span>
+<span class="linenos"> 43</span><span class="sd">        Omitted arithmetic attributes/methods default to those provided by `cls`.</span>
+<span class="linenos"> 44</span><span class="sd">    vectorize: VarName</span>
+<span class="linenos"> 45</span><span class="sd">        Arithmetic methods to vectorize.</span>
+<span class="linenos"> 46</span>
+<span class="linenos"> 47</span><span class="sd">        `vectorize` is useful if an arithmetic method provided to `kwargs` (ex:</span>
+<span class="linenos"> 48</span><span class="sd">        :py:meth:`~pyxu.abc.operator.Map.apply`):</span>
+<span class="linenos"> 49</span>
+<span class="linenos"> 50</span><span class="sd">        * does not support stacking dimensions; OR</span>
+<span class="linenos"> 51</span><span class="sd">        * does not support DASK inputs.</span>
+<span class="linenos"> 52</span><span class="sd">    vmethod: str, dict</span>
+<span class="linenos"> 53</span><span class="sd">        Vectorization strategy. (See :py:class:`~pyxu.util.operator.vectorize`.)</span>
+<span class="linenos"> 54</span>
+<span class="linenos"> 55</span><span class="sd">        Different strategies can be applied per arithmetic method via a dictionary.</span>
+<span class="linenos"> 56</span><span class="sd">    enforce_precision: VarName</span>
+<span class="linenos"> 57</span><span class="sd">        Arithmetic methods to make compliant with Pyxu&#39;s runtime FP-precision.</span>
+<span class="linenos"> 58</span>
+<span class="linenos"> 59</span><span class="sd">        `enforce_precision` is useful if an arithmetic method provided to `kwargs` (ex:</span>
+<span class="linenos"> 60</span><span class="sd">        :py:meth:`~pyxu.abc.operator.Map.apply`) is unaware of Pyxu&#39;s runtime FP context.</span>
+<span class="linenos"> 61</span>
+<span class="linenos"> 62</span><span class="sd">    Returns</span>
+<span class="linenos"> 63</span><span class="sd">    -------</span>
+<span class="linenos"> 64</span><span class="sd">    op: OpT</span>
+<span class="linenos"> 65</span><span class="sd">        (N, M) Pyxu-compliant operator.</span>
+<span class="linenos"> 66</span>
+<span class="linenos"> 67</span><span class="sd">    Notes</span>
+<span class="linenos"> 68</span><span class="sd">    -----</span>
+<span class="linenos"> 69</span><span class="sd">    * If provided, arithmetic methods must abide exactly to the Pyxu interface.</span>
+<span class="linenos"> 70</span><span class="sd">      In particular, the following arithmetic methods, if supplied, **must** have</span>
+<span class="linenos"> 71</span><span class="sd">      the following interface:</span>
+<span class="linenos"> 72</span>
+<span class="linenos"> 73</span><span class="sd">      .. code-block:: python3</span>
+<span class="linenos"> 74</span>
+<span class="linenos"> 75</span><span class="sd">         def apply(self, arr: pxt.NDArray) -&gt; pxt.NDArray</span>
+<span class="linenos"> 76</span><span class="sd">         def grad(self, arr: pxt.NDArray) -&gt; pxt.NDArray</span>
+<span class="linenos"> 77</span><span class="sd">         def adjoint(self, arr: pxt.NDArray) -&gt; pxt.NDArray</span>
+<span class="linenos"> 78</span><span class="sd">         def prox(self, arr: pxt.NDArray, tau: pxt.Real) -&gt; pxt.NDArray</span>
+<span class="linenos"> 79</span><span class="sd">         def pinv(self, arr: pxt.NDArray, damp: pxt.Real) -&gt; pxt.NDArray</span>
+<span class="linenos"> 80</span>
+<span class="linenos"> 81</span><span class="sd">      Moreover, the methods above **must** accept ``(..., M)``-shaped inputs for ``arr``.</span>
+<span class="linenos"> 82</span><span class="sd">      If this does not hold, consider populating `vectorize`.</span>
+<span class="linenos"> 83</span>
+<span class="linenos"> 84</span><span class="sd">    * Auto-vectorization consists in decorating `kwargs`-specified arithmetic methods with</span>
+<span class="linenos"> 85</span><span class="sd">      :py:func:`~pyxu.util.operator.vectorize`.</span>
+<span class="linenos"> 86</span><span class="sd">      Auto-vectorization may be less efficient than explicitly providing a vectorized implementation.</span>
+<span class="linenos"> 87</span>
+<span class="linenos"> 88</span><span class="sd">    * Enforcing precision consists in decorating `kwargs`-specified arithmetic methods with</span>
+<span class="linenos"> 89</span><span class="sd">      :py:func:`~pyxu.runtime.enforce_precision`.</span>
+<span class="linenos"> 90</span><span class="sd">      Not all arithmetic methods can be made runtime FP-precision compliant.</span>
+<span class="linenos"> 91</span><span class="sd">      It is thus recommended to make arithmetic methods precision-compliant manually.</span>
+<span class="linenos"> 92</span>
+<span class="linenos"> 93</span><span class="sd">    Examples</span>
+<span class="linenos"> 94</span><span class="sd">    --------</span>
+<span class="linenos"> 95</span><span class="sd">    Creation of the custom element-wise differential operator :math:`f(\mathbf{x}) = \mathbf{x}^{2}`.</span>
+<span class="linenos"> 96</span>
+<span class="linenos"> 97</span><span class="sd">    .. code-block:: python3</span>
+<span class="linenos"> 98</span>
+<span class="linenos"> 99</span><span class="sd">       N = 5</span>
+<span class="linenos">100</span><span class="sd">       f = from_source(</span>
+<span class="linenos">101</span><span class="sd">           cls=pyxu.abc.DiffMap,</span>
+<span class="linenos">102</span><span class="sd">           shape=(N, N),</span>
+<span class="linenos">103</span><span class="sd">           apply=lambda _, arr: arr**2,</span>
+<span class="linenos">104</span><span class="sd">       )</span>
+<span class="linenos">105</span><span class="sd">       x = np.arange(N)</span>
+<span class="linenos">106</span><span class="sd">       y = f(x)  # [0, 1, 4, 9, 16]</span>
+<span class="linenos">107</span><span class="sd">       dL = f.diff_lipschitz  # inf (default value provided by DiffMap class.)</span>
+<span class="linenos">108</span>
+<span class="linenos">109</span><span class="sd">    In practice we know that :math:`f` has a finite-valued diff-Lipschitz constant.</span>
+<span class="linenos">110</span><span class="sd">    It is thus recommended to set it too when instantiating via ``from_source``:</span>
+<span class="linenos">111</span>
+<span class="linenos">112</span><span class="sd">    .. code-block:: python3</span>
+<span class="linenos">113</span>
+<span class="linenos">114</span><span class="sd">       N = 5</span>
+<span class="linenos">115</span><span class="sd">       f = from_source(</span>
+<span class="linenos">116</span><span class="sd">           cls=pyxu.abc.DiffMap,</span>
+<span class="linenos">117</span><span class="sd">           shape=(N, N),</span>
+<span class="linenos">118</span><span class="sd">           embed=dict(  # special form to set (diff-)Lipschitz attributes via from_source()</span>
+<span class="linenos">119</span><span class="sd">               _diff_lipschitz=2,</span>
+<span class="linenos">120</span><span class="sd">           ),</span>
+<span class="linenos">121</span><span class="sd">           apply=lambda _, arr: arr**2,</span>
+<span class="linenos">122</span><span class="sd">       )</span>
+<span class="linenos">123</span><span class="sd">       x = np.arange(N)</span>
+<span class="linenos">124</span><span class="sd">       y = f(x)  # [0, 1, 4, 9, 16]</span>
+<span class="linenos">125</span><span class="sd">       dL = f.diff_lipschitz  # 2  &lt;- instead of inf</span>
+<span class="linenos">126</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">127</span>    <span class="k">if</span> <span class="n">embed</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">128</span>        <span class="n">embed</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="linenos">129</span>
+<span class="linenos">130</span>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">vectorize</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="linenos">131</span>        <span class="n">vectorize</span> <span class="o">=</span> <span class="p">(</span><span class="n">vectorize</span><span class="p">,)</span>
+<span class="linenos">132</span>    <span class="n">vectorize</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span><span class="n">vectorize</span><span class="p">)</span>
+<span class="linenos">133</span>
+<span class="linenos">134</span>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">enforce_precision</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="linenos">135</span>        <span class="n">enforce_precision</span> <span class="o">=</span> <span class="p">(</span><span class="n">enforce_precision</span><span class="p">,)</span>
+<span class="linenos">136</span>    <span class="n">enforce_precision</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span><span class="n">enforce_precision</span><span class="p">)</span>
+<span class="linenos">137</span>
+<span class="linenos">138</span>    <span class="n">src</span> <span class="o">=</span> <span class="n">_FromSource</span><span class="p">(</span>
+<span class="linenos">139</span>        <span class="bp">cls</span><span class="o">=</span><span class="bp">cls</span><span class="p">,</span>
+<span class="linenos">140</span>        <span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">,</span>
+<span class="linenos">141</span>        <span class="n">embed</span><span class="o">=</span><span class="n">embed</span><span class="p">,</span>
+<span class="linenos">142</span>        <span class="n">vectorize</span><span class="o">=</span><span class="n">vectorize</span><span class="p">,</span>
+<span class="linenos">143</span>        <span class="n">vmethod</span><span class="o">=</span><span class="n">vmethod</span><span class="p">,</span>
+<span class="linenos">144</span>        <span class="n">enforce_precision</span><span class="o">=</span><span class="n">enforce_precision</span><span class="p">,</span>
+<span class="linenos">145</span>        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="linenos">146</span>    <span class="p">)</span>
+<span class="linenos">147</span>    <span class="n">op</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">op</span><span class="p">()</span>
+<span class="linenos">148</span>    <span class="k">return</span> <span class="n">op</span></div>
+
+<span class="linenos">149</span>
+<span class="linenos">150</span>
+<span class="linenos">151</span><span class="k">class</span> <span class="nc">_FromSource</span><span class="p">:</span>  <span class="c1"># See from_source() for a detailed description.</span>
+<span class="linenos">152</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="linenos">153</span>        <span class="bp">self</span><span class="p">,</span>
+<span class="linenos">154</span>        <span class="bp">cls</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpC</span><span class="p">,</span>
+<span class="linenos">155</span>        <span class="n">shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpShape</span><span class="p">,</span>
+<span class="linenos">156</span>        <span class="n">embed</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
+<span class="linenos">157</span>        <span class="n">vectorize</span><span class="p">:</span> <span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+<span class="linenos">158</span>        <span class="n">vmethod</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">],</span>
+<span class="linenos">159</span>        <span class="n">enforce_precision</span><span class="p">:</span> <span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+<span class="linenos">160</span>        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="linenos">161</span>    <span class="p">):</span>
+<span class="linenos">162</span>        <span class="k">assert</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="n">pxo</span><span class="o">.</span><span class="n">_core_operators</span><span class="p">(),</span> <span class="sa">f</span><span class="s2">&quot;Unknown Operator type: </span><span class="si">{</span><span class="bp">cls</span><span class="si">}</span><span class="s2">.&quot;</span>
+<span class="linenos">163</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_op</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># ensure shape well-formed</span>
+<span class="linenos">164</span>
+<span class="linenos">165</span>        <span class="c1"># Arithmetic methods to attach to `_op`.</span>
+<span class="linenos">166</span>        <span class="n">meth</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">arithmetic_methods</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pxo</span><span class="o">.</span><span class="n">Property</span><span class="p">])</span>
+<span class="linenos">167</span>        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">meth</span><span class="p">):</span>
+<span class="linenos">168</span>            <span class="n">msg_head</span> <span class="o">=</span> <span class="s2">&quot;Unknown arithmetic methods:&quot;</span>
+<span class="linenos">169</span>            <span class="n">unknown</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-</span> <span class="n">meth</span>
+<span class="linenos">170</span>            <span class="n">msg_tail</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">()&quot;</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">unknown</span><span class="p">])</span>
+<span class="linenos">171</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg_head</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">msg_tail</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">172</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span> <span class="o">=</span> <span class="n">kwargs</span>
+<span class="linenos">173</span>
+<span class="linenos">174</span>        <span class="c1"># Extra attributes to attach to `_op`.</span>
+<span class="linenos">175</span>        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">embed</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">)</span>
+<span class="linenos">176</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_embed</span> <span class="o">=</span> <span class="n">embed</span>
+<span class="linenos">177</span>
+<span class="linenos">178</span>        <span class="c1"># Add-on functionality to enable.</span>
+<span class="linenos">179</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_vkwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_vectorize</span><span class="p">(</span><span class="n">vectorize</span><span class="p">,</span> <span class="n">vmethod</span><span class="p">)</span>
+<span class="linenos">180</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_vectorize</span> <span class="o">=</span> <span class="n">vectorize</span>
+<span class="linenos">181</span>
+<span class="linenos">182</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_ekwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_precision</span><span class="p">(</span><span class="n">enforce_precision</span><span class="p">)</span>
+<span class="linenos">183</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_enforce_fp</span> <span class="o">=</span> <span class="n">enforce_precision</span>
+<span class="linenos">184</span>
+<span class="linenos">185</span>    <span class="k">def</span> <span class="nf">op</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
+<span class="linenos">186</span>        <span class="n">_op</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_op</span>  <span class="c1"># shorthand</span>
+<span class="linenos">187</span>        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">_op</span><span class="o">.</span><span class="n">properties</span><span class="p">():</span>
+<span class="linenos">188</span>            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">arithmetic_methods</span><span class="p">():</span>
+<span class="linenos">189</span>                <span class="k">if</span> <span class="n">func</span> <span class="o">:=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+<span class="linenos">190</span>                    <span class="c1"># vectorize() &amp; enforce_precision() do NOT kick in for default-provided methods.</span>
+<span class="linenos">191</span>                    <span class="c1"># (We assume they are Pyxu-compliant from the start.)</span>
+<span class="linenos">192</span>
+<span class="linenos">193</span>                    <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vectorize</span><span class="p">:</span>
+<span class="linenos">194</span>                        <span class="n">decorate</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_vkwargs</span><span class="p">[</span><span class="n">name</span><span class="p">])</span>
+<span class="linenos">195</span>                        <span class="n">func</span> <span class="o">=</span> <span class="n">decorate</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="linenos">196</span>
+<span class="linenos">197</span>                    <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_enforce_fp</span><span class="p">:</span>
+<span class="linenos">198</span>                        <span class="n">decorate</span> <span class="o">=</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_ekwargs</span><span class="p">[</span><span class="n">name</span><span class="p">])</span>
+<span class="linenos">199</span>                        <span class="n">func</span> <span class="o">=</span> <span class="n">decorate</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="linenos">200</span>
+<span class="linenos">201</span>                    <span class="nb">setattr</span><span class="p">(</span><span class="n">_op</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">types</span><span class="o">.</span><span class="n">MethodType</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">_op</span><span class="p">))</span>
+<span class="linenos">202</span>
+<span class="linenos">203</span>        <span class="c1"># Embed extra attributes</span>
+<span class="linenos">204</span>        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">attr</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_embed</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="linenos">205</span>            <span class="nb">setattr</span><span class="p">(</span><span class="n">_op</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
+<span class="linenos">206</span>
+<span class="linenos">207</span>        <span class="k">return</span> <span class="n">_op</span>
+<span class="linenos">208</span>
+<span class="linenos">209</span>    <span class="k">def</span> <span class="nf">_parse_vectorize</span><span class="p">(</span>
+<span class="linenos">210</span>        <span class="bp">self</span><span class="p">,</span>
+<span class="linenos">211</span>        <span class="n">vectorize</span><span class="p">:</span> <span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+<span class="linenos">212</span>        <span class="n">vmethod</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">],</span>
+<span class="linenos">213</span>    <span class="p">):</span>
+<span class="linenos">214</span>        <span class="n">vsize</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>  <span class="c1"># `codim` hint for vectorize()</span>
+<span class="linenos">215</span>            <span class="n">apply</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">codim</span><span class="p">,</span>
+<span class="linenos">216</span>            <span class="n">prox</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">dim</span><span class="p">,</span>
+<span class="linenos">217</span>            <span class="n">grad</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">dim</span><span class="p">,</span>
+<span class="linenos">218</span>            <span class="n">adjoint</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">dim</span><span class="p">,</span>
+<span class="linenos">219</span>            <span class="n">pinv</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">dim</span><span class="p">,</span>
+<span class="linenos">220</span>        <span class="p">)</span>
+<span class="linenos">221</span>
+<span class="linenos">222</span>        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">vectorize</span> <span class="o">&lt;=</span> <span class="nb">set</span><span class="p">(</span><span class="n">vsize</span><span class="p">)):</span>  <span class="c1"># un-recognized arithmetic method</span>
+<span class="linenos">223</span>            <span class="n">msg_head</span> <span class="o">=</span> <span class="s2">&quot;Can only vectorize arithmetic methods&quot;</span>
+<span class="linenos">224</span>            <span class="n">msg_tail</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">()&quot;</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">vsize</span><span class="p">])</span>
+<span class="linenos">225</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg_head</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">msg_tail</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">226</span>
+<span class="linenos">227</span>        <span class="n">vmethod_default</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">parse_params</span><span class="p">(</span>
+<span class="linenos">228</span>            <span class="n">pxu</span><span class="o">.</span><span class="n">vectorize</span><span class="p">,</span>
+<span class="linenos">229</span>            <span class="n">i</span><span class="o">=</span><span class="s2">&quot;bogus&quot;</span><span class="p">,</span>  <span class="c1"># doesn&#39;t matter</span>
+<span class="linenos">230</span>        <span class="p">)[</span><span class="s2">&quot;method&quot;</span><span class="p">]</span>
+<span class="linenos">231</span>        <span class="k">if</span> <span class="n">vmethod</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">232</span>            <span class="n">vmethod</span> <span class="o">=</span> <span class="n">vmethod_default</span>
+<span class="linenos">233</span>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">vmethod</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="linenos">234</span>            <span class="n">vmethod</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">vmethod</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">vsize</span><span class="p">}</span>
+<span class="linenos">235</span>
+<span class="linenos">236</span>        <span class="n">vkwargs</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos">237</span>            <span class="n">name</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span>
+<span class="linenos">238</span>                <span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">,</span>  <span class="c1"># Pyxu arithmetic methods broadcast along parameter `arr`.</span>
+<span class="linenos">239</span>                <span class="n">method</span><span class="o">=</span><span class="n">vmethod</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">vmethod_default</span><span class="p">),</span>
+<span class="linenos">240</span>                <span class="n">codim</span><span class="o">=</span><span class="n">vsize</span><span class="p">[</span><span class="n">name</span><span class="p">],</span>
+<span class="linenos">241</span>            <span class="p">)</span>
+<span class="linenos">242</span>            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">vsize</span>
+<span class="linenos">243</span>        <span class="p">}</span>
+<span class="linenos">244</span>        <span class="k">return</span> <span class="n">vkwargs</span>
+<span class="linenos">245</span>
+<span class="linenos">246</span>    <span class="k">def</span> <span class="nf">_parse_precision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enforce_precision</span><span class="p">:</span> <span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span>
+<span class="linenos">247</span>        <span class="n">ekwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+<span class="linenos">248</span>            <span class="c1"># Pyxu arithmetic methods enforce FP-precision along these parameters.</span>
+<span class="linenos">249</span>            <span class="n">apply</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">),</span>
+<span class="linenos">250</span>            <span class="n">prox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;arr&quot;</span><span class="p">,</span> <span class="s2">&quot;tau&quot;</span><span class="p">)),</span>
+<span class="linenos">251</span>            <span class="n">grad</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">),</span>
+<span class="linenos">252</span>            <span class="n">adjoint</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">),</span>
+<span class="linenos">253</span>            <span class="n">pinv</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;arr&quot;</span><span class="p">,</span> <span class="s2">&quot;damp&quot;</span><span class="p">)),</span>
+<span class="linenos">254</span>            <span class="n">svdvals</span><span class="o">=</span><span class="nb">dict</span><span class="p">(),</span>
+<span class="linenos">255</span>            <span class="n">trace</span><span class="o">=</span><span class="nb">dict</span><span class="p">(),</span>
+<span class="linenos">256</span>        <span class="p">)</span>
+<span class="linenos">257</span>
+<span class="linenos">258</span>        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">enforce_precision</span> <span class="o">&lt;=</span> <span class="nb">set</span><span class="p">(</span><span class="n">ekwargs</span><span class="p">)):</span>
+<span class="linenos">259</span>            <span class="n">msg_head</span> <span class="o">=</span> <span class="s2">&quot;Can only enforce precision on arithmetic methods&quot;</span>
+<span class="linenos">260</span>            <span class="n">msg_tail</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">()&quot;</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">ekwargs</span><span class="p">])</span>
+<span class="linenos">261</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg_head</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">msg_tail</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">262</span>        <span class="k">return</span> <span class="n">ekwargs</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+<div id="searchbox"></div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

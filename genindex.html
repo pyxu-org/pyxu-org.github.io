@@ -1,0 +1,1679 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; Pyxu Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-codeautolink.css?v=125d5c1c" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=1031a718" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="_static/documentation_options.js?v=e02fc88f"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=30646c52"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
+    <link rel="icon" href="_static/favicon.png"/>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="intro/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="api/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="fair/index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><strong> v1.0.x </strong></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="intro/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="api/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="fair/index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><strong> v1.0.x </strong></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#_"><strong>_</strong></a>
+ | <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#H"><strong>H</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#J"><strong>J</strong></a>
+ | <a href="#K"><strong>K</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#Q"><strong>Q</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ 
+</div>
+<h2 id="_">_</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/abc.html#pyxu.abc.operator.Operator.__add__">__add__() (Operator method)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Map.__call__">__call__() (Map method)</a>
+</li>
+      <li><a href="api/opt.html#pyxu.opt.stop.AbsError.__init__">__init__() (AbsError method)</a>
+
+      <ul>
+        <li><a href="api/operator/func.html#pyxu.operator.func.indicator.AffineSet.__init__">(AffineSet method)</a>
+</li>
+        <li><a href="api/operator/func.html#pyxu.operator.func.indicator.ConvexSetIntersection.__init__">(ConvexSetIntersection method)</a>
+</li>
+        <li><a href="api/operator/linop.html#pyxu.operator.linop.fft.fft.FFT.__init__">(FFT method)</a>
+</li>
+        <li><a href="api/operator/func.html#pyxu.operator.func.indicator.HyperSlab.__init__">(HyperSlab method)</a>
+</li>
+        <li><a href="api/operator/func.html#pyxu.operator.func.norm.L21Norm.__init__">(L21Norm method)</a>
+</li>
+        <li><a href="api/opt.html#pyxu.opt.stop.ManualStop.__init__">(ManualStop method)</a>
+</li>
+        <li><a href="api/opt.html#pyxu.opt.stop.MaxCarbon.__init__">(MaxCarbon method)</a>
+</li>
+        <li><a href="api/opt.html#pyxu.opt.stop.MaxDuration.__init__">(MaxDuration method)</a>
+</li>
+        <li><a href="api/opt.html#pyxu.opt.stop.MaxIter.__init__">(MaxIter method)</a>
+</li>
+        <li><a href="api/opt.html#pyxu.opt.stop.Memorize.__init__">(Memorize method)</a>
+</li>
+        <li><a href="api/experimental.html#pyxu.experimental.sampler.MYULA.__init__">(MYULA method)</a>
+</li>
+        <li><a href="api/abc.html#pyxu.abc.operator.Operator.__init__">(Operator method)</a>
+</li>
+        <li><a href="api/operator/linop.html#pyxu.operator.linop.pad.Pad.__init__">(Pad method)</a>
+</li>
+        <li><a href="api/abc.html#pyxu.abc.operator.QuadraticFunc.__init__">(QuadraticFunc method)</a>
+</li>
+        <li><a href="api/operator/func.html#pyxu.operator.func.indicator.RangeSet.__init__">(RangeSet method)</a>
+</li>
+        <li><a href="api/opt.html#pyxu.opt.stop.RelError.__init__">(RelError method)</a>
+</li>
+        <li><a href="api/abc.html#pyxu.abc.solver.Solver.__init__">(Solver method)</a>
+</li>
+        <li><a href="api/operator/func.html#pyxu.operator.func.norm.SquaredL1Norm.__init__">(SquaredL1Norm method)</a>
+</li>
+        <li><a href="api/operator/linop.html#pyxu.operator.linop.stencil.stencil.Stencil.__init__">(Stencil method)</a>
+</li>
+        <li><a href="api/operator/linop.html#pyxu.operator.linop.select.SubSample.__init__">(SubSample method)</a>
+</li>
+        <li><a href="api/experimental.html#pyxu.experimental.sampler.ULA.__init__">(ULA method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/abc.html#pyxu.abc.operator.Operator.__mul__">__mul__() (Operator method)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Operator.__neg__">__neg__() (Operator method)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Operator.__pow__">__pow__() (Operator method)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Operator.__sub__">__sub__() (Operator method)</a>
+</li>
+      <li><a href="api/util.html#pyxu.util.operator._array_ize">_array_ize() (in module pyxu.util.operator)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.solver.Solver._astate">_astate (Solver attribute)</a>
+</li>
+      <li><a href="api/util.html#pyxu.util.operator._dask_zip">_dask_zip() (in module pyxu.util.operator)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.base._ExplicitLinOp">_ExplicitLinOp() (in module pyxu.operator.linop.base)</a>
+</li>
+      <li><a href="api/operator/interop.html#pyxu.operator.interop.jax._from_jax">_from_jax() (in module pyxu.operator.interop.jax)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.solver.Solver._mstate">_mstate (Solver attribute)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.QuadraticFunc._quad_spec">_quad_spec() (QuadraticFunc method)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.stencil._stencil._Stencil">_Stencil (class in pyxu.operator.linop.stencil._stencil)</a>
+</li>
+      <li><a href="api/operator/interop.html#pyxu.operator.interop.jax._to_jax">_to_jax() (in module pyxu.operator.interop.jax)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.abs">abs() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/opt.html#pyxu.opt.stop.AbsError">AbsError (class in pyxu.opt.stop)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.arithmetic.AddRule">AddRule (class in pyxu.abc.arithmetic)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.fft.fft.FFT.adjoint">adjoint() (FFT method)</a>
+
+      <ul>
+        <li><a href="api/abc.html#pyxu.abc.operator.LinOp.adjoint">(LinOp method)</a>
+</li>
+        <li><a href="api/operator/linop.html#pyxu.operator.linop.fft.nufft.NUFFT.adjoint">(NUFFT method)</a>
+</li>
+        <li><a href="api/operator/linop.html#pyxu.operator.linop.select.SubSample.adjoint">(SubSample method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/opt.html#pyxu.opt.solver.pds.ADMM">ADMM (class in pyxu.opt.solver.pds)</a>
+</li>
+      <li><a href="api/operator/func.html#pyxu.operator.func.indicator.AffineSet">AffineSet (class in pyxu.operator.func.indicator)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.fft.nufft.NUFFT.allocate">allocate() (NUFFT method)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.stencil._stencil._Stencil.apply">apply() (_Stencil method)</a>
+
+      <ul>
+        <li><a href="api/operator/linop.html#pyxu.operator.linop.fft.fft.FFT.apply">(FFT method)</a>
+</li>
+        <li><a href="api/abc.html#pyxu.abc.operator.Map.apply">(Map method)</a>
+</li>
+        <li><a href="api/operator/linop.html#pyxu.operator.linop.fft.nufft.NUFFT.apply">(NUFFT method)</a>
+</li>
+        <li><a href="api/operator/linop.html#pyxu.operator.linop.select.SubSample.apply">(SubSample method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.arccos">arccos() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.arccosh">arccosh() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.arcsin">arcsin() (in module pyxu.operator.map.ufunc)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.arcsinh">arcsinh() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.arctan">arctan() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.arctanh">arctanh() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Operator.argscale">argscale() (Operator method)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.arithmetic.ArgScaleRule">ArgScaleRule (class in pyxu.abc.arithmetic)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Operator.argshift">argshift() (Operator method)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.arithmetic.ArgShiftRule">ArgShiftRule (class in pyxu.abc.arithmetic)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Property.arithmetic_methods">arithmetic_methods() (Property method)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.ptype.ArrayModule">ArrayModule (class in pyxu.info.ptype)</a>
+</li>
+      <li><a href="api/util.html#pyxu.util.misc.as_canonical_shape">as_canonical_shape() (in module pyxu.util.misc)</a>
+</li>
+      <li><a href="api/operator/interop.html#pyxu.operator.interop.torch.asarray">asarray() (in module pyxu.operator.interop.torch)</a>
+
+      <ul>
+        <li><a href="api/abc.html#pyxu.abc.operator.LinOp.asarray">(LinOp method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.fft.nufft.NUFFT.ascomplexarray">ascomplexarray() (NUFFT method)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Func.asloss">asloss() (Func method)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Operator.asop">asop() (Operator method)</a>
+</li>
+      <li><a href="api/operator/interop.html#pyxu.operator.interop.torch.astensor">astensor() (in module pyxu.operator.interop.torch)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.solver.Mode.ASYNC">ASYNC (Mode attribute)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.fft.nufft.NUFFT.auto_chunk">auto_chunk() (NUFFT method)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.warning.AutoInferenceWarning">AutoInferenceWarning</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/info.html#pyxu.info.warning.BackendWarning">BackendWarning</a>
+</li>
+      <li><a href="api/math.html#pyxu.math.linesearch.backtracking_linesearch">backtracking_linesearch() (in module pyxu.math.linesearch)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.solver.Mode.BLOCK">BLOCK (Mode attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/operator/blocks.html#pyxu.operator.blocks.block">block() (in module pyxu.operator.blocks)</a>
+</li>
+      <li><a href="api/operator/blocks.html#pyxu.operator.blocks.block_diag">block_diag() (in module pyxu.operator.blocks)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.solver.Solver.busy">busy() (Solver method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/abc.html#pyxu.abc.operator.Property.CAN_EVAL">CAN_EVAL (Property attribute)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.cbrt">cbrt() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.stencil.stencil.Stencil.center">center (Stencil property)</a>
+</li>
+      <li><a href="api/opt.html#pyxu.opt.solver.cg.CG">CG (class in pyxu.opt.solver.cg)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.arithmetic.ChainRule">ChainRule (class in pyxu.abc.arithmetic)</a>
+</li>
+      <li><a href="api/opt.html#pyxu.opt.solver.pds.ChambollePock">ChambollePock() (in module pyxu.opt.solver.pds)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.solver.StoppingCriterion.clear">clear() (StoppingCriterion method)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.clip">clip() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Operator.codim">codim (Operator property)</a>
+</li>
+      <li><a href="api/runtime.html#pyxu.runtime.coerce">coerce() (in module pyxu.runtime)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.LinOp.cogram">cogram() (LinOp method)</a>
+</li>
+      <li><a href="api/runtime.html#pyxu.runtime.Width.complex">complex (Width property)</a>
+</li>
+      <li><a href="api/util.html#pyxu.util.array_module.compute">compute() (in module pyxu.util.array_module)</a>
+</li>
+      <li><a href="api/opt.html#pyxu.opt.solver.pds.CondatVu">CondatVu (class in pyxu.opt.solver.pds)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.stencil.stencil.Stencil.configure_dispatcher">configure_dispatcher() (Stencil method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/info.html#pyxu.info.ptype.Real.conjugate">conjugate() (Real method)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.base.ConstantValued">ConstantValued() (in module pyxu.operator.map.base)</a>
+</li>
+      <li><a href="api/operator/func.html#pyxu.operator.func.indicator.ConvexSetIntersection">ConvexSetIntersection (class in pyxu.operator.func.indicator)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.stencil.stencil.Convolve">Convolve() (in module pyxu.operator.linop.stencil.stencil)</a>
+</li>
+      <li><a href="api/operator/blocks.html#pyxu.operator.blocks.coo_block">coo_block() (in module pyxu.operator.blocks)</a>
+</li>
+      <li><a href="api/util.html#pyxu.util.array_module.copy_if_unsafe">copy_if_unsafe() (in module pyxu.util.array_module)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.stencil.stencil.Correlate">Correlate (in module pyxu.operator.linop.stencil.stencil)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.cos">cos() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.cosh">cosh() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/opt.html#pyxu.opt.solver.pds.CP">CP() (in module pyxu.opt.solver.pds)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.deps.NDArrayInfo.CUPY">CUPY (NDArrayInfo attribute)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.deps.CUPY_ENABLED">CUPY_ENABLED (in module pyxu.info.deps)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.deps.SparseArrayInfo.CUPY_SPARSE">CUPY_SPARSE (SparseArrayInfo attribute)</a>
+</li>
+      <li><a href="api/opt.html#pyxu.opt.solver.pds.CV">CV (in module pyxu.opt.solver.pds)</a>
+</li>
+      <li><a href="api/runtime.html#pyxu.runtime.CWidth">CWidth (class in pyxu.runtime)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/abc.html#pyxu.abc.operator.LinOp.dagger">dagger() (LinOp method)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.deps.NDArrayInfo.DASK">DASK (NDArrayInfo attribute)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.solver.Solver.datafile">datafile (Solver property)</a>
+</li>
+      <li><a href="api/opt.html#pyxu.opt.solver.pds.DavisYin">DavisYin (class in pyxu.opt.solver.pds)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.deps.NDArrayInfo.default">default() (NDArrayInfo class method)</a>
+
+      <ul>
+        <li><a href="api/info.html#pyxu.info.deps.SparseArrayInfo.default">(SparseArrayInfo class method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/abc.html#pyxu.abc.solver.Solver.default_stop_crit">default_stop_crit() (Solver method)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.warning.DenseWarning">DenseWarning</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.fft.nufft.NUFFT.diagnostic_plot">diagnostic_plot() (NUFFT method)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.base.DiagonalOp">DiagonalOp() (in module pyxu.operator.linop.base)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.DiffMap.diff_lipschitz">diff_lipschitz (DiffMap property)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.filter.DifferenceOfGaussians">DifferenceOfGaussians() (in module pyxu.operator.linop.filter)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Property.DIFFERENTIABLE">DIFFERENTIABLE (Property attribute)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Property.DIFFERENTIABLE_FUNCTION">DIFFERENTIABLE_FUNCTION (Property attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/abc.html#pyxu.abc.operator.DiffFunc">DiffFunc (class in pyxu.abc.operator)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.DiffMap">DiffMap (class in pyxu.abc.operator)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Operator.dim">dim (Operator property)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.diff.DirectionalDerivative">DirectionalDerivative() (in module pyxu.operator.linop.diff)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.diff.DirectionalGradient">DirectionalGradient() (in module pyxu.operator.linop.diff)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.diff.DirectionalHessian">DirectionalHessian() (in module pyxu.operator.linop.diff)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.diff.DirectionalLaplacian">DirectionalLaplacian() (in module pyxu.operator.linop.diff)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.diff.Divergence">Divergence() (in module pyxu.operator.linop.diff)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.filter.DoG">DoG() (in module pyxu.operator.linop.filter)</a>
+</li>
+      <li><a href="api/runtime.html#pyxu.runtime.CWidth.DOUBLE">DOUBLE (CWidth attribute)</a>
+
+      <ul>
+        <li><a href="api/runtime.html#pyxu.runtime.Width.DOUBLE">(Width attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/opt.html#pyxu.opt.solver.pds.DouglasRachford">DouglasRachford() (in module pyxu.opt.solver.pds)</a>
+</li>
+      <li><a href="api/opt.html#pyxu.opt.solver.pds.DR">DR() (in module pyxu.opt.solver.pds)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.ptype.DType">DType (in module pyxu.info.ptype)</a>
+</li>
+      <li><a href="api/opt.html#pyxu.opt.solver.pds.DY">DY (in module pyxu.opt.solver.pds)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/runtime.html#pyxu.runtime.enforce_precision">enforce_precision() (in module pyxu.runtime)</a>
+</li>
+      <li><a href="api/runtime.html#pyxu.runtime.EnforcePrecision">EnforcePrecision (class in pyxu.runtime)</a>
+</li>
+      <li><a href="api/runtime.html#pyxu.runtime.Width.eps">eps() (Width method)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.DiffMap.estimate_diff_lipschitz">estimate_diff_lipschitz() (DiffMap method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/abc.html#pyxu.abc.operator.LinOp.estimate_lipschitz">estimate_lipschitz() (LinOp method)</a>
+
+      <ul>
+        <li><a href="api/abc.html#pyxu.abc.operator.Map.estimate_lipschitz">(Map method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.exp">exp() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Operator.expr">expr() (Operator method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/opt.html#pyxu.opt.solver.pds.FB">FB (in module pyxu.opt.solver.pds)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.ProxFunc.fenchel_prox">fenchel_prox() (ProxFunc method)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.fft.fft.FFT">FFT (class in pyxu.operator.linop.fft.fft)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.diff.PartialDerivative.finite_difference">finite_difference() (PartialDerivative static method)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.solver.Solver.fit">fit() (Solver method)</a>
+</li>
+      <li><a href="api/opt.html#pyxu.opt.solver.pds.ForwardBackward">ForwardBackward (class in pyxu.opt.solver.pds)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.LinOp.from_array">from_array() (LinOp class method)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.deps.NDArrayInfo.from_flag">from_flag() (NDArrayInfo class method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/operator/interop.html#pyxu.operator.interop.jax.from_jax">from_jax() (in module pyxu.operator.interop.jax)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.deps.NDArrayInfo.from_obj">from_obj() (NDArrayInfo class method)</a>
+
+      <ul>
+        <li><a href="api/info.html#pyxu.info.deps.SparseArrayInfo.from_obj">(SparseArrayInfo class method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/operator/interop.html#pyxu.operator.interop.sciop.from_sciop">from_sciop() (in module pyxu.operator.interop.sciop)</a>
+</li>
+      <li><a href="api/operator/interop.html#pyxu.operator.interop.source.from_source">from_source() (in module pyxu.operator.interop.source)</a>
+</li>
+      <li><a href="api/operator/interop.html#pyxu.operator.interop.torch.from_torch">from_torch() (in module pyxu.operator.interop.torch)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Func">Func (class in pyxu.abc.operator)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Property.FUNCTIONAL">FUNCTIONAL (Property attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.filter.Gaussian">Gaussian() (in module pyxu.operator.linop.filter)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.gaussian">gaussian() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.diff.PartialDerivative.gaussian_derivative">gaussian_derivative() (PartialDerivative static method)</a>
+</li>
+      <li><a href="api/util.html#pyxu.util.array_module.get_array_module">get_array_module() (in module pyxu.util.array_module)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/runtime.html#pyxu.runtime.getCoerceState">getCoerceState() (in module pyxu.runtime)</a>
+</li>
+      <li><a href="api/runtime.html#pyxu.runtime.getPrecision">getPrecision() (in module pyxu.runtime)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.DiffFunc.grad">grad() (DiffFunc method)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.diff.Gradient">Gradient() (in module pyxu.operator.linop.diff)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.LinOp.gram">gram() (LinOp method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/abc.html#pyxu.abc.operator.Operator.has">has() (Operator class method)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.diff.Hessian">Hessian() (in module pyxu.operator.linop.diff)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.base.HomothetyOp">HomothetyOp() (in module pyxu.operator.linop.base)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/operator/blocks.html#pyxu.operator.blocks.hstack">hstack() (in module pyxu.operator.blocks)</a>
+</li>
+      <li><a href="api/math.html#pyxu.math.linalg.hutchpp">hutchpp() (in module pyxu.math.linalg)</a>
+</li>
+      <li><a href="api/operator/func.html#pyxu.operator.func.indicator.HyperSlab">HyperSlab (class in pyxu.operator.func.indicator)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.base.IdentityOp">IdentityOp (class in pyxu.operator.linop.base)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.ptype.Real.imag">imag (Real property)</a>
+</li>
+      <li><a href="api/util.html#pyxu.util.inspect.import_module">import_module() (in module pyxu.util.inspect)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.stencil._stencil._Stencil.IndexSpec">IndexSpec (_Stencil attribute)</a>
+
+      <ul>
+        <li><a href="api/operator/linop.html#pyxu.operator.linop.select.SubSample.IndexSpec">(SubSample attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/util.html#pyxu.util.operator.infer_composition_shape">infer_composition_shape() (in module pyxu.util.operator)</a>
+</li>
+      <li><a href="api/util.html#pyxu.util.operator.infer_sum_shape">infer_sum_shape() (in module pyxu.util.operator)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.solver.StoppingCriterion.info">info() (StoppingCriterion method)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.stencil._stencil._Stencil.init">init() (_Stencil static method)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.ptype.Integer">Integer (in module pyxu.info.ptype)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="J">J</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/abc.html#pyxu.abc.operator.DiffMap.jacobian">jacobian() (DiffMap method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.diff.Jacobian">Jacobian() (in module pyxu.operator.linop.diff)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="K">K</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.stencil.stencil.Stencil.kernel">kernel (Stencil property)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.stencil.stencil.Stencil.KernelSpec">KernelSpec (Stencil attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.kron.khatri_rao">khatri_rao() (in module pyxu.operator.linop.kron)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.kron.kron">kron() (in module pyxu.operator.linop.kron)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/operator/func.html#pyxu.operator.func.indicator.L1Ball">L1Ball() (in module pyxu.operator.func.indicator)</a>
+</li>
+      <li><a href="api/operator/func.html#pyxu.operator.func.norm.L1Norm">L1Norm (class in pyxu.operator.func.norm)</a>
+</li>
+      <li><a href="api/operator/func.html#pyxu.operator.func.norm.L21Norm">L21Norm (class in pyxu.operator.func.norm)</a>
+</li>
+      <li><a href="api/operator/func.html#pyxu.operator.func.indicator.L2Ball">L2Ball() (in module pyxu.operator.func.indicator)</a>
+</li>
+      <li><a href="api/operator/func.html#pyxu.operator.func.norm.L2Norm">L2Norm (class in pyxu.operator.func.norm)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.filter.Laplace">Laplace() (in module pyxu.operator.linop.filter)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.diff.Laplacian">Laplacian() (in module pyxu.operator.linop.diff)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.leakyrelu">leakyrelu() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Property.LINEAR">LINEAR (Property attribute)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Property.LINEAR_IDEMPOTENT">LINEAR_IDEMPOTENT (Property attribute)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Property.LINEAR_NORMAL">LINEAR_NORMAL (Property attribute)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Property.LINEAR_POSITIVE_DEFINITE">LINEAR_POSITIVE_DEFINITE (Property attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/abc.html#pyxu.abc.operator.Property.LINEAR_SELF_ADJOINT">LINEAR_SELF_ADJOINT (Property attribute)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Property.LINEAR_SQUARE">LINEAR_SQUARE (Property attribute)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Property.LINEAR_UNITARY">LINEAR_UNITARY (Property attribute)</a>
+</li>
+      <li><a href="api/operator/func.html#pyxu.operator.func.indicator.LInfinityBall">LInfinityBall() (in module pyxu.operator.func.indicator)</a>
+</li>
+      <li><a href="api/operator/func.html#pyxu.operator.func.norm.LInfinityNorm">LInfinityNorm (class in pyxu.operator.func.norm)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.LinFunc">LinFunc (class in pyxu.abc.operator)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.LinOp">LinOp (class in pyxu.abc.operator)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Map.lipschitz">lipschitz (Map property)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.log">log() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.solver.Solver.logfile">logfile (Solver property)</a>
+</li>
+      <li><a href="api/opt.html#pyxu.opt.solver.pds.LorisVerhoeven">LorisVerhoeven (class in pyxu.opt.solver.pds)</a>
+</li>
+      <li><a href="api/opt.html#pyxu.opt.solver.pds.LV">LV (in module pyxu.opt.solver.pds)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/abc.html#pyxu.abc.solver.Solver.m_init">m_init() (Solver method)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.solver.Solver.m_step">m_step() (Solver method)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.solver.Mode.MANUAL">MANUAL (Mode attribute)</a>
+</li>
+      <li><a href="api/opt.html#pyxu.opt.stop.ManualStop">ManualStop (class in pyxu.opt.stop)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Map">Map (class in pyxu.abc.operator)</a>
+</li>
+      <li><a href="api/opt.html#pyxu.opt.stop.MaxCarbon">MaxCarbon (class in pyxu.opt.stop)</a>
+</li>
+      <li><a href="api/opt.html#pyxu.opt.stop.MaxDuration">MaxDuration (class in pyxu.opt.stop)</a>
+</li>
+      <li><a href="api/opt.html#pyxu.opt.stop.MaxIter">MaxIter (class in pyxu.opt.stop)</a>
+</li>
+      <li><a href="api/opt.html#pyxu.opt.stop.Memorize">Memorize (class in pyxu.opt.stop)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.fft.nufft.NUFFT.mesh">mesh() (NUFFT method)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.solver.Mode">Mode (class in pyxu.abc.solver)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.pad.Pad.ModeSpec">ModeSpec (Pad attribute)</a>
+</li>
+      <li>
+    module
+
+      <ul>
+        <li><a href="api/abc.html#module-pyxu.abc.solver">pyxu.abc.solver</a>
+</li>
+        <li><a href="api/experimental.html#module-pyxu.experimental.sampler">pyxu.experimental.sampler</a>
+</li>
+        <li><a href="api/info.html#module-pyxu.info.deps">pyxu.info.deps</a>
+</li>
+        <li><a href="api/info.html#module-pyxu.info.ptype">pyxu.info.ptype</a>
+</li>
+        <li><a href="api/info.html#module-pyxu.info.warning">pyxu.info.warning</a>
+</li>
+        <li><a href="api/math.html#module-pyxu.math.linalg">pyxu.math.linalg</a>
+</li>
+        <li><a href="api/math.html#module-pyxu.math.linesearch">pyxu.math.linesearch</a>
+</li>
+        <li><a href="api/operator/blocks.html#module-pyxu.operator.blocks">pyxu.operator.blocks</a>
+</li>
+        <li><a href="api/operator/map.html#module-pyxu.operator.map.ufunc">pyxu.operator.map.ufunc</a>
+</li>
+        <li><a href="api/runtime.html#module-pyxu.runtime">pyxu.runtime</a>
+</li>
+        <li><a href="api/util.html#module-pyxu.util.array_module">pyxu.util.array_module</a>
+</li>
+        <li><a href="api/util.html#module-pyxu.util.complex">pyxu.util.complex</a>
+</li>
+        <li><a href="api/util.html#module-pyxu.util.inspect">pyxu.util.inspect</a>
+</li>
+        <li><a href="api/util.html#module-pyxu.util.misc">pyxu.util.misc</a>
+</li>
+        <li><a href="api/util.html#module-pyxu.util.operator">pyxu.util.operator</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/info.html#pyxu.info.deps.NDArrayInfo.module">module() (NDArrayInfo method)</a>
+
+      <ul>
+        <li><a href="api/info.html#pyxu.info.deps.SparseArrayInfo.module">(SparseArrayInfo method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/abc.html#pyxu.abc.operator.ProxFunc.moreau_envelope">moreau_envelope() (ProxFunc method)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.filter.MovingAverage">MovingAverage() (in module pyxu.operator.linop.filter)</a>
+</li>
+      <li><a href="api/experimental.html#pyxu.experimental.sampler.MYULA">MYULA (class in pyxu.experimental.sampler)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/info.html#pyxu.info.ptype.NDArray">NDArray (class in pyxu.info.ptype)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.ptype.NDArrayAxis">NDArrayAxis (in module pyxu.info.ptype)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.deps.NDArrayInfo">NDArrayInfo (class in pyxu.info.deps)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.ptype.NDArrayShape">NDArrayShape (in module pyxu.info.ptype)</a>
+</li>
+      <li><a href="api/util.html#pyxu.util.misc.next_fast_len">next_fast_len() (in module pyxu.util.misc)</a>
+</li>
+      <li><a href="api/opt.html#pyxu.opt.solver.nlcg.NLCG">NLCG (class in pyxu.opt.solver.nlcg)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/info.html#pyxu.info.warning.NonTransparentWarning">NonTransparentWarning</a>
+</li>
+      <li><a href="api/math.html#pyxu.math.linalg.norm">norm() (in module pyxu.math.linalg)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.NormalOp">NormalOp (class in pyxu.abc.operator)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.fft.nufft.NUFFT">NUFFT (class in pyxu.operator.linop.fft.nufft)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.base.NullFunc">NullFunc() (in module pyxu.operator.linop.base)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.base.NullOp">NullOp (class in pyxu.operator.linop.base)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.deps.NDArrayInfo.NUMPY">NUMPY (NDArrayInfo attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/abc.html#pyxu.abc.solver.Solver.objective_func">objective_func() (Solver method)</a>
+
+      <ul>
+        <li><a href="api/experimental.html#pyxu.experimental.sampler.ULA.objective_func">(ULA method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/experimental.html#pyxu.experimental.sampler.OnlineCenteredMoment">OnlineCenteredMoment (class in pyxu.experimental.sampler)</a>
+</li>
+      <li><a href="api/experimental.html#pyxu.experimental.sampler.OnlineKurtosis">OnlineKurtosis() (in module pyxu.experimental.sampler)</a>
+</li>
+      <li><a href="api/experimental.html#pyxu.experimental.sampler.OnlineMoment">OnlineMoment (class in pyxu.experimental.sampler)</a>
+</li>
+      <li><a href="api/experimental.html#pyxu.experimental.sampler.OnlineSkewness">OnlineSkewness() (in module pyxu.experimental.sampler)</a>
+</li>
+      <li><a href="api/experimental.html#pyxu.experimental.sampler.OnlineStd">OnlineStd() (in module pyxu.experimental.sampler)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/experimental.html#pyxu.experimental.sampler.OnlineVariance">OnlineVariance() (in module pyxu.experimental.sampler)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.arithmetic.Rule.op">op() (Rule method)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.ptype.OpC">OpC (in module pyxu.info.ptype)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Operator">Operator (class in pyxu.abc.operator)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.ptype.OpShape">OpShape (in module pyxu.info.ptype)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.ptype.OpT">OpT (class in pyxu.info.ptype)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.OrthProjOp">OrthProjOp (class in pyxu.abc.operator)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.pad.Pad">Pad (class in pyxu.operator.linop.pad)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.fft.nufft.NUFFT.params">params() (NUFFT method)</a>
+</li>
+      <li><a href="api/util.html#pyxu.util.inspect.parse_params">parse_params() (in module pyxu.util.inspect)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.diff.PartialDerivative">PartialDerivative (class in pyxu.operator.linop.diff)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.ptype.Path">Path (in module pyxu.info.ptype)</a>
+</li>
+      <li><a href="api/opt.html#pyxu.opt.solver.pds.PD3O">PD3O (class in pyxu.opt.solver.pds)</a>
+</li>
+      <li><a href="api/util.html#pyxu.util.misc.peaks">peaks() (in module pyxu.util.misc)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.warning.PerformanceWarning">PerformanceWarning</a>
+</li>
+      <li><a href="api/opt.html#pyxu.opt.solver.pgd.PGD">PGD (class in pyxu.opt.solver.pgd)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.LinOp.pinv">pinv() (LinOp method)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.fft.nufft.NUFFT.plot_kernel">plot_kernel() (NUFFT method)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.PosDefOp">PosDefOp (class in pyxu.abc.operator)</a>
+</li>
+      <li><a href="api/operator/func.html#pyxu.operator.func.norm.PositiveL1Norm">PositiveL1Norm (class in pyxu.operator.func.norm)</a>
+</li>
+      <li><a href="api/operator/func.html#pyxu.operator.func.indicator.PositiveOrthant">PositiveOrthant (class in pyxu.operator.func.indicator)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.arithmetic.PowerRule">PowerRule (class in pyxu.abc.arithmetic)</a>
+</li>
+      <li><a href="api/opt.html#pyxu.opt.solver.pds.PP">PP() (in module pyxu.opt.solver.pds)</a>
+</li>
+      <li><a href="api/runtime.html#pyxu.runtime.Precision">Precision (class in pyxu.runtime)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.warning.PrecisionWarning">PrecisionWarning</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.filter.Prewitt">Prewitt() (in module pyxu.operator.linop.filter)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.ProjOp">ProjOp (class in pyxu.abc.operator)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Map.properties">properties() (Map class method)</a>
+
+      <ul>
+        <li><a href="api/abc.html#pyxu.abc.operator.Operator.properties">(Operator class method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Property">Property (class in pyxu.abc.operator)</a>
+
+      <ul>
+        <li><a href="api/info.html#pyxu.info.ptype.Property">(in module pyxu.info.ptype)</a>
+</li>
+      </ul></li>
+      <li><a href="api/operator/func.html#pyxu.operator.func.indicator.ConvexSetIntersection.prox">prox() (ConvexSetIntersection method)</a>
+
+      <ul>
+        <li><a href="api/abc.html#pyxu.abc.operator.ProxFunc.prox">(ProxFunc method)</a>
+</li>
+        <li><a href="api/operator/func.html#pyxu.operator.func.norm.SquaredL1Norm.prox">(SquaredL1Norm method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/opt.html#pyxu.opt.solver.prox_adam.ProxAdam">ProxAdam (class in pyxu.opt.solver.prox_adam)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.ProxDiffFunc">ProxDiffFunc (class in pyxu.abc.operator)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.ProxFunc">ProxFunc (class in pyxu.abc.operator)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Property.PROXIMABLE">PROXIMABLE (Property attribute)</a>
+</li>
+      <li><a href="api/opt.html#pyxu.opt.solver.pds.ProximalPoint">ProximalPoint() (in module pyxu.opt.solver.pds)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/info.html#pyxu.info.deps.SparseArrayInfo.PYDATA_SPARSE">PYDATA_SPARSE (SparseArrayInfo attribute)</a>
+</li>
+      <li>
+    pyxu.abc.solver
+
+      <ul>
+        <li><a href="api/abc.html#module-pyxu.abc.solver">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyxu.experimental.sampler
+
+      <ul>
+        <li><a href="api/experimental.html#module-pyxu.experimental.sampler">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyxu.info.deps
+
+      <ul>
+        <li><a href="api/info.html#module-pyxu.info.deps">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyxu.info.ptype
+
+      <ul>
+        <li><a href="api/info.html#module-pyxu.info.ptype">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyxu.info.warning
+
+      <ul>
+        <li><a href="api/info.html#module-pyxu.info.warning">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyxu.math.linalg
+
+      <ul>
+        <li><a href="api/math.html#module-pyxu.math.linalg">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyxu.math.linesearch
+
+      <ul>
+        <li><a href="api/math.html#module-pyxu.math.linesearch">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyxu.operator.blocks
+
+      <ul>
+        <li><a href="api/operator/blocks.html#module-pyxu.operator.blocks">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyxu.operator.map.ufunc
+
+      <ul>
+        <li><a href="api/operator/map.html#module-pyxu.operator.map.ufunc">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyxu.runtime
+
+      <ul>
+        <li><a href="api/runtime.html#module-pyxu.runtime">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyxu.util.array_module
+
+      <ul>
+        <li><a href="api/util.html#module-pyxu.util.array_module">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyxu.util.complex
+
+      <ul>
+        <li><a href="api/util.html#module-pyxu.util.complex">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyxu.util.inspect
+
+      <ul>
+        <li><a href="api/util.html#module-pyxu.util.inspect">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyxu.util.misc
+
+      <ul>
+        <li><a href="api/util.html#module-pyxu.util.misc">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyxu.util.operator
+
+      <ul>
+        <li><a href="api/util.html#module-pyxu.util.operator">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/info.html#pyxu.info.warning.PyxuWarning">PyxuWarning</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Q">Q</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/abc.html#pyxu.abc.operator.Property.QUADRATIC">QUADRATIC (Property attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/abc.html#pyxu.abc.operator.QuadraticFunc">QuadraticFunc (class in pyxu.abc.operator)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/operator/func.html#pyxu.operator.func.indicator.RangeSet">RangeSet (class in pyxu.operator.func.indicator)</a>
+</li>
+      <li><a href="api/util.html#pyxu.util.array_module.read_only">read_only() (in module pyxu.util.array_module)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.ptype.Real">Real (class in pyxu.info.ptype)</a>
+</li>
+      <li><a href="api/runtime.html#pyxu.runtime.CWidth.real">real (CWidth property)</a>
+
+      <ul>
+        <li><a href="api/info.html#pyxu.info.ptype.Real.real">(Real property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/util.html#pyxu.util.array_module.redirect">redirect() (in module pyxu.util.array_module)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.stencil.stencil.Stencil.relative_indices">relative_indices (Stencil property)</a>
+</li>
+      <li><a href="api/opt.html#pyxu.opt.stop.RelError">RelError (class in pyxu.opt.stop)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.relu">relu() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.arithmetic.Rule">Rule (class in pyxu.abc.arithmetic)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/abc.html#pyxu.abc.arithmetic.ScaleRule">ScaleRule (class in pyxu.abc.arithmetic)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.filter.Scharr">Scharr() (in module pyxu.operator.linop.filter)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.deps.SparseArrayInfo.SCIPY_SPARSE">SCIPY_SPARSE (SparseArrayInfo attribute)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.SelfAdjointOp">SelfAdjointOp (class in pyxu.abc.operator)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Operator.shape">shape (Operator property)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.sigmoid">sigmoid() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.sign">sign() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.silu">silu() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.sin">sin() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/runtime.html#pyxu.runtime.CWidth.SINGLE">SINGLE (CWidth attribute)</a>
+
+      <ul>
+        <li><a href="api/runtime.html#pyxu.runtime.Width.SINGLE">(Width attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.sinh">sinh() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.filter.Sobel">Sobel() (in module pyxu.operator.linop.filter)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.softmax">softmax() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.softplus">softplus() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.solver.Solver.solution">solution() (Solver method)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.solver.Solver">Solver (class in pyxu.abc.solver)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.ptype.SolverC">SolverC (in module pyxu.info.ptype)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.ptype.SolverM">SolverM (class in pyxu.info.ptype)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.ptype.SolverT">SolverT (class in pyxu.info.ptype)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.ptype.SparseArray">SparseArray (class in pyxu.info.ptype)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.deps.SparseArrayInfo">SparseArrayInfo (class in pyxu.info.deps)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/info.html#pyxu.info.ptype.SparseModule">SparseModule (class in pyxu.info.ptype)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.sqrt">sqrt() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.square">square() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/operator/func.html#pyxu.operator.func.norm.SquaredL1Norm">SquaredL1Norm (class in pyxu.operator.func.norm)</a>
+</li>
+      <li><a href="api/operator/func.html#pyxu.operator.func.norm.SquaredL2Norm">SquaredL2Norm (class in pyxu.operator.func.norm)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.SquareOp">SquareOp (class in pyxu.abc.operator)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.Operator.squeeze">squeeze() (Operator method)</a>
+</li>
+      <li><a href="api/operator/blocks.html#pyxu.operator.blocks.stack">stack() (in module pyxu.operator.blocks)</a>
+</li>
+      <li><a href="api/util.html#pyxu.util.misc.star_like_sample">star_like_sample() (in module pyxu.util.misc)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.fft.nufft.NUFFT.stats">stats() (NUFFT method)</a>
+
+      <ul>
+        <li><a href="api/abc.html#pyxu.abc.solver.Solver.stats">(Solver method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.stencil.stencil.Stencil">Stencil (class in pyxu.operator.linop.stencil.stencil)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.solver.Solver.steps">steps() (Solver method)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.solver.Solver.stop">stop() (Solver method)</a>
+
+      <ul>
+        <li><a href="api/abc.html#pyxu.abc.solver.StoppingCriterion.stop">(StoppingCriterion method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/abc.html#pyxu.abc.solver.StoppingCriterion">StoppingCriterion (class in pyxu.abc.solver)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.select.SubSample">SubSample (class in pyxu.operator.linop.select)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.reduce.Sum">Sum() (in module pyxu.operator.linop.reduce)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.deps.supported_array_modules">supported_array_modules() (in module pyxu.info.deps)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.deps.supported_array_types">supported_array_types() (in module pyxu.info.deps)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.deps.supported_sparse_modules">supported_sparse_modules() (in module pyxu.info.deps)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.deps.supported_sparse_types">supported_sparse_types() (in module pyxu.info.deps)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.LinOp.svdvals">svdvals() (LinOp method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/abc.html#pyxu.abc.operator.LinOp.T">T (LinOp property)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.tan">tan() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.map.ufunc.tanh">tanh() (in module pyxu.operator.map.ufunc)</a>
+</li>
+      <li><a href="api/util.html#pyxu.util.array_module.to_NUMPY">to_NUMPY() (in module pyxu.util.array_module)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.LinOp.to_sciop">to_sciop() (LinOp method)</a>
+</li>
+      <li><a href="api/math.html#pyxu.math.linalg.trace">trace() (in module pyxu.math.linalg)</a>
+
+      <ul>
+        <li><a href="api/abc.html#pyxu.abc.operator.SquareOp.trace">(SquareOp method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/abc.html#pyxu.abc.arithmetic.TransposeRule">TransposeRule (class in pyxu.abc.arithmetic)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.select.Trim">Trim() (in module pyxu.operator.linop.select)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.select.SubSample.TrimSpec">TrimSpec (SubSample attribute)</a>
+</li>
+      <li><a href="api/info.html#pyxu.info.deps.NDArrayInfo.type">type() (NDArrayInfo method)</a>
+
+      <ul>
+        <li><a href="api/info.html#pyxu.info.deps.SparseArrayInfo.type">(SparseArrayInfo method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.fft.nufft.NUFFT.type1">type1() (NUFFT static method)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.fft.nufft.NUFFT.type2">type2() (NUFFT static method)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.fft.nufft.NUFFT.type3">type3() (NUFFT static method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/experimental.html#pyxu.experimental.sampler.ULA">ULA (class in pyxu.experimental.sampler)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.operator.UnitOp">UnitOp (class in pyxu.abc.operator)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/experimental.html#pyxu.experimental.sampler.OnlineCenteredMoment.update">update() (OnlineCenteredMoment method)</a>
+
+      <ul>
+        <li><a href="api/experimental.html#pyxu.experimental.sampler.OnlineMoment.update">(OnlineMoment method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/info.html#pyxu.info.ptype.VarName">VarName (in module pyxu.info.ptype)</a>
+</li>
+      <li><a href="api/util.html#pyxu.util.operator.vectorize">vectorize() (in module pyxu.util.operator)</a>
+</li>
+      <li><a href="api/util.html#pyxu.util.complex.view_as_complex">view_as_complex() (in module pyxu.util.complex)</a>
+</li>
+      <li><a href="api/util.html#pyxu.util.complex.view_as_complex_mat">view_as_complex_mat() (in module pyxu.util.complex)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/util.html#pyxu.util.complex.view_as_real">view_as_real() (in module pyxu.util.complex)</a>
+</li>
+      <li><a href="api/util.html#pyxu.util.complex.view_as_real_mat">view_as_real_mat() (in module pyxu.util.complex)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.stencil.stencil.Stencil.visualize">visualize() (Stencil method)</a>
+</li>
+      <li><a href="api/operator/blocks.html#pyxu.operator.blocks.vstack">vstack() (in module pyxu.operator.blocks)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/runtime.html#pyxu.runtime.Width">Width (class in pyxu.runtime)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.linop.pad.Pad.WidthSpec">WidthSpec (Pad attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/abc.html#pyxu.abc.solver.Solver.workdir">workdir (Solver property)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.solver.Solver.writeback">writeback() (Solver method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+<div id="searchbox"></div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

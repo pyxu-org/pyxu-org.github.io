@@ -1,0 +1,1370 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pyxu.operator.map &#8212; Pyxu Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-codeautolink.css?v=125d5c1c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=1031a718" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../../_static/documentation_options.js?v=e02fc88f"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=30646c52"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/operator/map';</script>
+    <link rel="icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="pyxu.operator.func" href="func.html" />
+    <link rel="prev" title="pyxu.operator" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../intro/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../fair/index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><strong> v1.0.x </strong></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../intro/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../fair/index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><strong> v1.0.x </strong></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../abc.html">pyxu.abc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opt.html">pyxu.opt</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">pyxu.operator</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">pyxu.operator.map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="func.html">pyxu.operator.func</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linop.html">pyxu.operator.linop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blocks.html">pyxu.operator.blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interop.html">pyxu.operator.interop</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../runtime.html">pyxu.runtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../util.html">pyxu.util</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math.html">pyxu.math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info.html">pyxu.info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../experimental.html">pyxu.experimental</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">pyxu.operator</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">pyxu.operator.map</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="pyxu-operator-map">
+<h1>pyxu.operator.map<a class="headerlink" href="#pyxu-operator-map" title="Link to this heading">#</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.base.ConstantValued">
+<span class="sig-name descname"><span class="pre">ConstantValued</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cst</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/base.html#ConstantValued"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.base.ConstantValued" title="Link to this definition">#</a></dt>
+<dd><p>Constant-valued operator <span class="math notranslate nohighlight">\(C: \mathbb{R}^{M} \to \mathbb{R}^{N}\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em>) – </p></li>
+<li><p><strong>cst</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.Real" title="numbers.Real"><em>Real</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p id="module-pyxu.operator.map.ufunc">Universal functions.</p>
+<p>Ufuncs have class-oriented and function-oriented interfaces.
+Only the functional interface is exposed due to its common use.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.operator.map</span> <span class="kn">import</span> <span class="n">Sin</span><span class="p">,</span> <span class="n">sin</span>
+<span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <span class="n">LinOp</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">LinOp</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">))</span>
+
+<span class="n">op1</span> <span class="o">=</span> <span class="n">_Sin</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">)</span> <span class="o">*</span> <span class="n">A</span>  <span class="c1"># class interface</span>
+<span class="n">op2</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>           <span class="c1"># function interface</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">op1</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>  <span class="c1"># True</span>
+<span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">op2</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>  <span class="c1"># True</span>
+</pre></div>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.sin">
+<span class="sig-name descname"><span class="pre">sin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#sin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.sin" title="Link to this definition">#</a></dt>
+<dd><p>Trigonometric sine, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f'(x) = \cos(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = 1\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(\vert f'(x) \vert\)</span> is bounded by <span class="math notranslate nohighlight">\(L\)</span> at <span class="math notranslate nohighlight">\(x = k \pi, \, k \in \mathbb{Z}\)</span>.)</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\vert f'(x) - f'(y) \vert \le \partial L \vert x - y \vert\)</span>, with diff-Lipschitz
+constant <span class="math notranslate nohighlight">\(\partial L = 1\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(\vert f''(x) \vert\)</span> is bounded by <span class="math notranslate nohighlight">\(\partial L\)</span> at <span class="math notranslate nohighlight">\(x = (2k + 1)
+\frac{\pi}{2}, \, k \in \mathbb{Z}\)</span>.)</p>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.cos">
+<span class="sig-name descname"><span class="pre">cos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#cos"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.cos" title="Link to this definition">#</a></dt>
+<dd><p>Trigonometric cosine, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(f(x) = \cos(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f'(x) = -\sin(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = 1\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(\vert f'(x) \vert\)</span> is bounded by <span class="math notranslate nohighlight">\(L\)</span> at <span class="math notranslate nohighlight">\(x = (2k + 1)
+\frac{\pi}{2}, \, k \in \mathbb{Z}\)</span>.)</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\vert f'(x) - f'(y) \vert \le \partial L \vert x - y \vert\)</span>, with diff-Lipschitz
+constant <span class="math notranslate nohighlight">\(\partial L = 1\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(\vert f''(x) \vert\)</span> is bounded by <span class="math notranslate nohighlight">\(\partial L\)</span> at <span class="math notranslate nohighlight">\(x = k \pi, \, k
+\in \mathbb{Z}\)</span>.)</p>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.tan">
+<span class="sig-name descname"><span class="pre">tan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#tan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.tan" title="Link to this definition">#</a></dt>
+<dd><p>Trigonometric tangent, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(f(x) = \tan(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f'(x) = \cos^{-2}(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = \infty\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(f'(x)\)</span> is unbounded on <span class="math notranslate nohighlight">\(\text{dom}(f) = [-\pi, \pi]\)</span>.)</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\vert f'(x) - f'(y) \vert \le \partial L \vert x - y \vert\)</span>, with diff-Lipschitz
+constant <span class="math notranslate nohighlight">\(\partial L = \infty\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(f''(x)\)</span> is unbounded on <span class="math notranslate nohighlight">\(\text{dom}(f) = [-\pi, \pi]\)</span>.)</p>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.arcsin">
+<span class="sig-name descname"><span class="pre">arcsin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#arcsin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.arcsin" title="Link to this definition">#</a></dt>
+<dd><p>Inverse sine, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(f(x) = \arcsin(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f'(x) = (1 - x^{2})^{-\frac{1}{2}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = \infty\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(f'(x)\)</span> is unbounded on <span class="math notranslate nohighlight">\(\text{dom}(f) = [-1, 1]\)</span>.)</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\vert f'(x) - f'(y) \vert \le \partial L \vert x - y \vert\)</span>, with diff-Lipschitz
+constant <span class="math notranslate nohighlight">\(\partial L = \infty\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(f''(x)\)</span> is unbounded on <span class="math notranslate nohighlight">\(\text{dom}(f) = [-1, 1]\)</span>.)</p>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.arccos">
+<span class="sig-name descname"><span class="pre">arccos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#arccos"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.arccos" title="Link to this definition">#</a></dt>
+<dd><p>Inverse cosine, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(f(x) = \arccos(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f'(x) = -(1 - x^{2})^{-\frac{1}{2}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = \infty\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(f'(x)\)</span> is unbounded on <span class="math notranslate nohighlight">\(\text{dom}(f) = [-1, 1]\)</span>.)</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\vert f'(x) - f'(y) \vert \le \partial L \vert x - y \vert\)</span>, with diff-Lipschitz
+constant <span class="math notranslate nohighlight">\(\partial L = \infty\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(f''(x)\)</span> is unbounded on <span class="math notranslate nohighlight">\(\text{dom}(f) = [-1, 1]\)</span>.)</p>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.arctan">
+<span class="sig-name descname"><span class="pre">arctan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#arctan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.arctan" title="Link to this definition">#</a></dt>
+<dd><p>Inverse tangent, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(f(x) = \arctan(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f'(x) = (1 + x^{2})^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = 1\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(\vert f'(x) \vert\)</span> is bounded by <span class="math notranslate nohighlight">\(L\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span>.)</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\vert f'(x) - f'(y) \vert \le \partial L \vert x - y \vert\)</span>, with diff-Lipschitz
+constant <span class="math notranslate nohighlight">\(\partial L = 3 \sqrt{3} / 8\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(\vert f''(x) \vert\)</span> is bounded by <span class="math notranslate nohighlight">\(\partial L\)</span> at <span class="math notranslate nohighlight">\(x = \pm \frac{1}{\sqrt{3}}\)</span>.)</p>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.sinh">
+<span class="sig-name descname"><span class="pre">sinh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#sinh"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.sinh" title="Link to this definition">#</a></dt>
+<dd><p>Hyperbolic sine, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(f(x) = \sinh(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f'(x) = \cosh(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = \infty\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(f'(x)\)</span> is unbounded on <span class="math notranslate nohighlight">\(\text{dom}(f) = \mathbb{R}\)</span>.)</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\vert f'(x) - f'(y) \vert \le \partial L \vert x - y \vert\)</span>, with diff-Lipschitz
+constant <span class="math notranslate nohighlight">\(\partial L = \infty\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(f''(x)\)</span> is unbounded on <span class="math notranslate nohighlight">\(\text{dom}(f) = \mathbb{R}\)</span>.)</p>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.cosh">
+<span class="sig-name descname"><span class="pre">cosh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#cosh"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.cosh" title="Link to this definition">#</a></dt>
+<dd><p>Hyperbolic cosine, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(f(x) = \cosh(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f'(x) = \sinh(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = \infty\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(f'(x)\)</span> is unbounded on <span class="math notranslate nohighlight">\(\text{dom}(f) = \mathbb{R}\)</span>.)</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\vert f'(x) - f'(y) \vert \le \partial L \vert x - y \vert\)</span>, with diff-Lipschitz
+constant <span class="math notranslate nohighlight">\(\partial L = \infty\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(f''(x)\)</span> is unbounded on <span class="math notranslate nohighlight">\(\text{dom}(f) = \mathbb{R}\)</span>.)</p>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.tanh">
+<span class="sig-name descname"><span class="pre">tanh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#tanh"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.tanh" title="Link to this definition">#</a></dt>
+<dd><p>Hyperbolic tangent, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(f(x) = \tanh(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f'(x) = 1 - \tanh^{2}(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = 1\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(\vert f'(x) \vert\)</span> is bounded by <span class="math notranslate nohighlight">\(L\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span>.)</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\vert f'(x) - f'(y) \vert \le \partial L \vert x - y \vert\)</span>, with diff-Lipschitz
+constant <span class="math notranslate nohighlight">\(\partial L = 4 / 3 \sqrt{3}\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(\vert f''(x) \vert\)</span> is bounded by <span class="math notranslate nohighlight">\(\partial L\)</span> at <span class="math notranslate nohighlight">\(x = \frac{1}{2}
+\ln(2 \pm \sqrt{3})\)</span>.</p>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.arcsinh">
+<span class="sig-name descname"><span class="pre">arcsinh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#arcsinh"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.arcsinh" title="Link to this definition">#</a></dt>
+<dd><p>Inverse hyperbolic sine, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(f(x) = \sinh^{-1}(x) = \ln(x + \sqrt{x^{2} + 1})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f'(x) = (x^{2} + 1)^{-\frac{1}{2}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = 1\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(\vert f'(x) \vert\)</span> is bounded by <span class="math notranslate nohighlight">\(L\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span>.)</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\vert f'(x) - f'(y) \vert \le \partial L \vert x - y \vert\)</span>, with diff-Lipschitz
+constant <span class="math notranslate nohighlight">\(\partial L = \frac{2}{3 \sqrt{3}}\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(\vert f''(x) \vert\)</span> is bounded by <span class="math notranslate nohighlight">\(\partial L\)</span> at <span class="math notranslate nohighlight">\(x = \pm \frac{1}{\sqrt{2}}\)</span>.)</p>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.arccosh">
+<span class="sig-name descname"><span class="pre">arccosh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#arccosh"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.arccosh" title="Link to this definition">#</a></dt>
+<dd><p>Inverse hyperbolic cosine, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(f(x) = \cosh^{-1}(x) = \ln(x + \sqrt{x^{2} - 1})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f'(x) = (x^{2} - 1)^{-\frac{1}{2}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = \infty\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(f'(x)\)</span> is unbounded on <span class="math notranslate nohighlight">\(\text{dom}(f) = [1, \infty[\)</span>.)</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\vert f'(x) - f'(y) \vert \le \partial L \vert x - y \vert\)</span>, with diff-Lipschitz
+constant <span class="math notranslate nohighlight">\(\partial L = \infty\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(f''(x)\)</span> is unbounded on <span class="math notranslate nohighlight">\(\text{dom}(f) = [1, \infty[\)</span>.)</p>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.arctanh">
+<span class="sig-name descname"><span class="pre">arctanh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#arctanh"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.arctanh" title="Link to this definition">#</a></dt>
+<dd><p>Inverse hyperbolic tangent, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(f(x) = \tanh^{-1}(x) = \frac{1}{2}\ln\left(\frac{1+x}{1-x}\right)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f'(x) = (1 - x^{2})^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = \infty\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(f'(x)\)</span> is unbounded on <span class="math notranslate nohighlight">\(\text{dom}(f) = [-1, 1]\)</span>.)</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\vert f'(x) - f'(y) \vert \le \partial L \vert x - y \vert\)</span>, with diff-Lipschitz
+constant <span class="math notranslate nohighlight">\(\partial L = \infty\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(f''(x)\)</span> is unbounded on <span class="math notranslate nohighlight">\(\text{dom}(f) = [-1, 1]\)</span>.)</p>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.exp">
+<span class="sig-name descname"><span class="pre">exp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#exp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.exp" title="Link to this definition">#</a></dt>
+<dd><p>Exponential, element-wise. (Default: base-E exponential.)</p>
+<p class="rubric">Notes</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(f_{b}(x) = b^{x}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f_{b}'(x) = b^{x} \ln(b)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f_{b}(x) - f_{b}(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = \infty\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(f_{b}'(x)\)</span> is unbounded on <span class="math notranslate nohighlight">\(\text{dom}(f_{b}) = \mathbb{R}\)</span>.)</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\vert f_{b}'(x) - f_{b}'(y) \vert \le \partial L \vert x - y \vert\)</span>, with
+diff-Lipschitz constant <span class="math notranslate nohighlight">\(\partial L = \infty\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(f_{b}''(x)\)</span> is unbounded on <span class="math notranslate nohighlight">\(\text{dom}(f_{b}) = \mathbb{R}\)</span>.)</p>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p></li>
+<li><p><strong>base</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.Real" title="numbers.Real"><em>Real</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.log">
+<span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#log"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.log" title="Link to this definition">#</a></dt>
+<dd><p>Logarithm, element-wise. (Default: base-E logarithm.)</p>
+<p class="rubric">Notes</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(f_{b}(x) = \log_{b}(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f_{b}'(x) = x^{-1} / \ln(b)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f_{b}(x) - f_{b}(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = \infty\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(f_{b}'(x)\)</span> is unbounded on <span class="math notranslate nohighlight">\(\text{dom}(f_{b}) = \mathbb{R}_{+}\)</span>.)</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\vert f_{b}'(x) - f_{b}'(y) \vert \le \partial L \vert x - y \vert\)</span>, with
+diff-Lipschitz constant <span class="math notranslate nohighlight">\(\partial L = \infty\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(f_{b}''(x)\)</span> is unbounded on <span class="math notranslate nohighlight">\(\text{dom}(f_{b}) = \mathbb{R}_{+}\)</span>.)</p>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p></li>
+<li><p><strong>base</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.Real" title="numbers.Real"><em>Real</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.clip">
+<span class="sig-name descname"><span class="pre">clip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#clip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.clip" title="Link to this definition">#</a></dt>
+<dd><p>Clip (limit) values in an array, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul>
+<li><div class="math notranslate nohighlight">
+\[\begin{split}f_{[a,b]}(x) =
+\begin{cases}
+    a, &amp; \text{if} \ x \leq a, \\
+    x, &amp; a &lt; x &lt; b, \\
+    b, &amp; \text{if} \ x \geq b.
+\end{cases}\end{split}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = 1\)</span>.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p></li>
+<li><p><strong>a_min</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.Real" title="numbers.Real"><em>Real</em></a>) – </p></li>
+<li><p><strong>a_max</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.Real" title="numbers.Real"><em>Real</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.sqrt">
+<span class="sig-name descname"><span class="pre">sqrt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#sqrt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.sqrt" title="Link to this definition">#</a></dt>
+<dd><p>Non-negative square-root, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(f(x) = \sqrt{x}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f'(x) = 1 / 2 \sqrt{x}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = \infty\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(f'(x)\)</span> is unbounded on <span class="math notranslate nohighlight">\(\text{dom}(f) = \mathbb{R}_{+}\)</span>.)</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\vert f'(x) - f'(y) \vert \le \partial L \vert x - y \vert\)</span>, with diff-Lipschitz
+constant <span class="math notranslate nohighlight">\(\partial L = \infty\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(f''(x)\)</span> is unbounded on <span class="math notranslate nohighlight">\(\text{dom}(f) = \mathbb{R}_{+}\)</span>.)</p>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.cbrt">
+<span class="sig-name descname"><span class="pre">cbrt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#cbrt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.cbrt" title="Link to this definition">#</a></dt>
+<dd><p>Cube-root, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(f(x) = \sqrt[3]{x}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f'(x) = 1 / 3 \sqrt[3]{x^{2}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = \infty\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(f'(x)\)</span> is unbounded on <span class="math notranslate nohighlight">\(\text{dom}(f) = \mathbb{R}\)</span>.)</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\vert f'(x) - f'(y) \vert \le \partial L \vert x - y \vert\)</span>, with diff-Lipschitz
+constant <span class="math notranslate nohighlight">\(\partial L = \infty\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(f''(x)\)</span> is unbounded on <span class="math notranslate nohighlight">\(\text{dom}(f) = \mathbb{R}\)</span>.)</p>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.square">
+<span class="sig-name descname"><span class="pre">square</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#square"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.square" title="Link to this definition">#</a></dt>
+<dd><p>Square, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(f(x) = x^{2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f'(x) = 2 x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = \infty\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(f'(x)\)</span> is unbounded on <span class="math notranslate nohighlight">\(\text{dom}(f) = \mathbb{R}\)</span>.)</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\vert f'(x) - f'(y) \vert \le \partial L \vert x - y \vert\)</span>, with diff-Lipschitz
+constant <span class="math notranslate nohighlight">\(\partial L = 2\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(\vert f''(x) \vert\)</span> is bounded by <span class="math notranslate nohighlight">\(\partial L\)</span> everywhere.)</p>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.abs">
+<span class="sig-name descname"><span class="pre">abs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#abs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.abs" title="Link to this definition">#</a></dt>
+<dd><p>Absolute value, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x) = \vert x \vert\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = 1\)</span>.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.sign">
+<span class="sig-name descname"><span class="pre">sign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#sign"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.sign" title="Link to this definition">#</a></dt>
+<dd><p>Number sign indicator, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x) = x / \vert x \vert\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = 2\)</span>.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.gaussian">
+<span class="sig-name descname"><span class="pre">gaussian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#gaussian"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.gaussian" title="Link to this definition">#</a></dt>
+<dd><p>Gaussian, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(f(x) = \exp(-x^{2})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f'(x) = -2 x \exp(-x^{2})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = \sqrt{2 / e}\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(\vert f'(x) \vert\)</span> is bounded by <span class="math notranslate nohighlight">\(L\)</span> at <span class="math notranslate nohighlight">\(x = \pm 1 / \sqrt{2}\)</span>.)</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\vert f'(x) - f'(y) \vert \le \partial L \vert x - y \vert\)</span>, with diff-Lipschitz
+constant <span class="math notranslate nohighlight">\(\partial L = 2\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(\vert f''(x) \vert\)</span> is bounded by <span class="math notranslate nohighlight">\(\partial L\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span>.)</p>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.sigmoid">
+<span class="sig-name descname"><span class="pre">sigmoid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#sigmoid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.sigmoid" title="Link to this definition">#</a></dt>
+<dd><p>Sigmoid, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(f(x) = (1 + e^{-x})^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f'(x) = f(x) [ f(x) - 1 ]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = 1 / 4\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(\vert f'(x) \vert\)</span> is bounded by <span class="math notranslate nohighlight">\(L\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span>.)</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\vert f'(x) - f'(y) \vert \le \partial L \vert x - y \vert\)</span>, with diff-Lipschitz
+constant <span class="math notranslate nohighlight">\(\partial L = 1 / 6 \sqrt{3}\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(\vert f''(x) \vert\)</span> is bounded by <span class="math notranslate nohighlight">\(\partial L\)</span> at <span class="math notranslate nohighlight">\(x = \ln(2 \pm \sqrt{3})\)</span>.)</p>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.softplus">
+<span class="sig-name descname"><span class="pre">softplus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#softplus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.softplus" title="Link to this definition">#</a></dt>
+<dd><p>Softplus, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(f(x) = \ln(1 + e^{x})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f'(x) = (1 + e^{-x})^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = 1\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(\vert f'(x) \vert\)</span> is bounded by <span class="math notranslate nohighlight">\(L\)</span> on <span class="math notranslate nohighlight">\(\text{dom}(f) = \mathbb{R}\)</span>.)</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\vert f'(x) - f'(y) \vert \le \partial L \vert x - y \vert\)</span>, with diff-Lipschitz
+constant <span class="math notranslate nohighlight">\(\partial L = 1 / 4\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(\vert f''(x) \vert\)</span> is bounded by <span class="math notranslate nohighlight">\(\partial L\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span>.)</p>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.leakyrelu">
+<span class="sig-name descname"><span class="pre">leakyrelu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#leakyrelu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.leakyrelu" title="Link to this definition">#</a></dt>
+<dd><p>Leaky rectified linear unit, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x) = x \left[\mathbb{1}_{\ge 0}(x) + \alpha \mathbb{1}_{&lt; 0}(x)\right], \quad \alpha \ge 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = \max(1, \alpha)\)</span>.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p></li>
+<li><p><strong>alpha</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.Real" title="numbers.Real"><em>Real</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.relu">
+<span class="sig-name descname"><span class="pre">relu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#relu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.relu" title="Link to this definition">#</a></dt>
+<dd><p>Rectified linear unit, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x) = \lfloor x \rfloor_{+}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = 1\)</span>.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.silu">
+<span class="sig-name descname"><span class="pre">silu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#silu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.silu" title="Link to this definition">#</a></dt>
+<dd><p>Sigmoid linear unit, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(f(x) = x / (1 + e^{-x})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f'(x) = (1 + e^{-x} + x e^{-x}) / (1 + e^{-x})^{2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = 1.1\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(\vert f'(x) \vert\)</span> is bounded by <span class="math notranslate nohighlight">\(L\)</span> at <span class="math notranslate nohighlight">\(x \approx 2.4\)</span>.)</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\vert f'(x) - f'(y) \vert \le \partial L \vert x - y \vert\)</span>, with diff-Lipschitz
+constant <span class="math notranslate nohighlight">\(\partial L = 1 / 2\)</span>.</p>
+<p>(Reason: <span class="math notranslate nohighlight">\(\vert f''(x) \vert\)</span> is bounded by <span class="math notranslate nohighlight">\(\partial L\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span>.)</p>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.map.ufunc.softmax">
+<span class="sig-name descname"><span class="pre">softmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/ufunc.html#softmax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.map.ufunc.softmax" title="Link to this definition">#</a></dt>
+<dd><p>Softmax, element-wise.</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\([f(x_{1},\ldots,x_{N})]_{i} = e^{x_{i}} / \sum_{k=1}^{N} e^{x_{k}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(J_{f}(\mathbf{x}) = \text{diag}(f(\mathbf{x})) - f(\mathbf{x}) f(\mathbf{x})^{T}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f(x) - f(y) \vert \le L \vert x - y \vert\)</span>, with Lipschitz constant <span class="math notranslate nohighlight">\(L = 1\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\vert f'(x) - f'(y) \vert \le \partial L \vert x - y \vert\)</span>, with diff-Lipschitz
+constant <span class="math notranslate nohighlight">\(\partial L = 1\)</span>.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">pyxu.operator</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="func.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">pyxu.operator.func</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.base.ConstantValued"><code class="docutils literal notranslate"><span class="pre">ConstantValued()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.sin"><code class="docutils literal notranslate"><span class="pre">sin()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.cos"><code class="docutils literal notranslate"><span class="pre">cos()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.tan"><code class="docutils literal notranslate"><span class="pre">tan()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.arcsin"><code class="docutils literal notranslate"><span class="pre">arcsin()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.arccos"><code class="docutils literal notranslate"><span class="pre">arccos()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.arctan"><code class="docutils literal notranslate"><span class="pre">arctan()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.sinh"><code class="docutils literal notranslate"><span class="pre">sinh()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.cosh"><code class="docutils literal notranslate"><span class="pre">cosh()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.tanh"><code class="docutils literal notranslate"><span class="pre">tanh()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.arcsinh"><code class="docutils literal notranslate"><span class="pre">arcsinh()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.arccosh"><code class="docutils literal notranslate"><span class="pre">arccosh()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.arctanh"><code class="docutils literal notranslate"><span class="pre">arctanh()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.exp"><code class="docutils literal notranslate"><span class="pre">exp()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.log"><code class="docutils literal notranslate"><span class="pre">log()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.clip"><code class="docutils literal notranslate"><span class="pre">clip()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.sqrt"><code class="docutils literal notranslate"><span class="pre">sqrt()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.cbrt"><code class="docutils literal notranslate"><span class="pre">cbrt()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.square"><code class="docutils literal notranslate"><span class="pre">square()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.abs"><code class="docutils literal notranslate"><span class="pre">abs()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.sign"><code class="docutils literal notranslate"><span class="pre">sign()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.gaussian"><code class="docutils literal notranslate"><span class="pre">gaussian()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.sigmoid"><code class="docutils literal notranslate"><span class="pre">sigmoid()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.softplus"><code class="docutils literal notranslate"><span class="pre">softplus()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.leakyrelu"><code class="docutils literal notranslate"><span class="pre">leakyrelu()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.relu"><code class="docutils literal notranslate"><span class="pre">relu()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.silu"><code class="docutils literal notranslate"><span class="pre">silu()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.map.ufunc.softmax"><code class="docutils literal notranslate"><span class="pre">softmax()</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+<div id="searchbox"></div></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/matthieumeo/pyxu/edit/main/doc/api/operator/map.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/api/operator/map.rst">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

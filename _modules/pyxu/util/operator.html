@@ -1,0 +1,821 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pyxu.util.operator &#8212; Pyxu Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=1031a718" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../../../_static/documentation_options.js?v=29481255"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=30646c52"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pyxu/util/operator';</script>
+    <link rel="icon" href="../../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../intro/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../fair/index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><strong> v0.0.1 </strong></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../intro/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../api/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../fair/index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><strong> v0.0.1 </strong></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">pyxu.util.operator</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for pyxu.util.operator</h1><div class="highlight"><pre>
+<span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">collections.abc</span> <span class="k">as</span> <span class="nn">cabc</span>
+<span class="linenos">  2</span><span class="kn">import</span> <span class="nn">functools</span>
+<span class="linenos">  3</span><span class="kn">import</span> <span class="nn">inspect</span>
+<span class="linenos">  4</span>
+<span class="linenos">  5</span><span class="kn">import</span> <span class="nn">dask</span>
+<span class="linenos">  6</span><span class="kn">import</span> <span class="nn">dask.graph_manipulation</span> <span class="k">as</span> <span class="nn">dgm</span>
+<span class="linenos">  7</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos">  8</span>
+<span class="linenos">  9</span><span class="kn">import</span> <span class="nn">pyxu.info.deps</span> <span class="k">as</span> <span class="nn">pxd</span>
+<span class="linenos"> 10</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
+<span class="linenos"> 11</span><span class="kn">import</span> <span class="nn">pyxu.util.array_module</span> <span class="k">as</span> <span class="nn">pxa</span>
+<span class="linenos"> 12</span><span class="kn">import</span> <span class="nn">pyxu.util.inspect</span> <span class="k">as</span> <span class="nn">pxi</span>
+<span class="linenos"> 13</span>
+<span class="linenos"> 14</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos"> 15</span>    <span class="s2">&quot;infer_composition_shape&quot;</span><span class="p">,</span>
+<span class="linenos"> 16</span>    <span class="s2">&quot;infer_sum_shape&quot;</span><span class="p">,</span>
+<span class="linenos"> 17</span>    <span class="s2">&quot;vectorize&quot;</span><span class="p">,</span>
+<span class="linenos"> 18</span><span class="p">]</span>
+<span class="linenos"> 19</span>
+<span class="linenos"> 20</span>
+<div class="viewcode-block" id="infer_sum_shape">
+<a class="viewcode-back" href="../../../api/util.html#pyxu.util.operator.infer_sum_shape">[docs]</a>
+<span class="linenos"> 21</span><span class="k">def</span> <span class="nf">infer_sum_shape</span><span class="p">(</span><span class="n">sh1</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpShape</span><span class="p">,</span> <span class="n">sh2</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpShape</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpShape</span><span class="p">:</span>
+<span class="linenos"> 22</span>    <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="o">*</span><span class="n">sh1</span><span class="p">,</span> <span class="o">*</span><span class="n">sh2</span>
+<span class="linenos"> 23</span>    <span class="k">if</span> <span class="n">B</span> <span class="o">==</span> <span class="n">D</span><span class="p">:</span>
+<span class="linenos"> 24</span>        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast_shapes</span><span class="p">((</span><span class="n">A</span><span class="p">,),</span> <span class="p">(</span><span class="n">C</span><span class="p">,))</span> <span class="o">+</span> <span class="p">(</span><span class="n">B</span><span class="p">,)</span>
+<span class="linenos"> 25</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 26</span>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Addition of </span><span class="si">{</span><span class="n">sh1</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">sh2</span><span class="si">}</span><span class="s2"> operators forbidden.&quot;</span><span class="p">)</span></div>
+
+<span class="linenos"> 27</span>
+<span class="linenos"> 28</span>
+<div class="viewcode-block" id="infer_composition_shape">
+<a class="viewcode-back" href="../../../api/util.html#pyxu.util.operator.infer_composition_shape">[docs]</a>
+<span class="linenos"> 29</span><span class="k">def</span> <span class="nf">infer_composition_shape</span><span class="p">(</span><span class="n">sh1</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpShape</span><span class="p">,</span> <span class="n">sh2</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpShape</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpShape</span><span class="p">:</span>
+<span class="linenos"> 30</span>    <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="o">*</span><span class="n">sh1</span><span class="p">,</span> <span class="o">*</span><span class="n">sh2</span>
+<span class="linenos"> 31</span>    <span class="k">if</span> <span class="n">B</span> <span class="o">==</span> <span class="n">C</span><span class="p">:</span>
+<span class="linenos"> 32</span>        <span class="k">return</span> <span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
+<span class="linenos"> 33</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 34</span>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Composition of </span><span class="si">{</span><span class="n">sh1</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">sh2</span><span class="si">}</span><span class="s2"> operators forbidden.&quot;</span><span class="p">)</span></div>
+
+<span class="linenos"> 35</span>
+<span class="linenos"> 36</span>
+<div class="viewcode-block" id="vectorize">
+<a class="viewcode-back" href="../../../api/util.html#pyxu.util.operator.vectorize">[docs]</a>
+<span class="linenos"> 37</span><span class="k">def</span> <span class="nf">vectorize</span><span class="p">(</span>
+<span class="linenos"> 38</span>    <span class="n">i</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">VarName</span><span class="p">,</span>
+<span class="linenos"> 39</span>    <span class="n">method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;scan&quot;</span><span class="p">,</span>
+<span class="linenos"> 40</span>    <span class="n">codim</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="linenos"> 41</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">:</span>
+<span class="linenos"> 42</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 43</span><span class="sd">    Decorator to auto-vectorize an array function to abide by</span>
+<span class="linenos"> 44</span><span class="sd">    :py:class:`~pyxu.abc.operator.Property` API rules.</span>
+<span class="linenos"> 45</span>
+<span class="linenos"> 46</span><span class="sd">    Parameters</span>
+<span class="linenos"> 47</span><span class="sd">    ----------</span>
+<span class="linenos"> 48</span><span class="sd">    i: VarName</span>
+<span class="linenos"> 49</span><span class="sd">        Function parameter to vectorize. This variable must hold an object with a NumPy API.</span>
+<span class="linenos"> 50</span><span class="sd">    method: str</span>
+<span class="linenos"> 51</span><span class="sd">        Vectorization strategy:</span>
+<span class="linenos"> 52</span>
+<span class="linenos"> 53</span><span class="sd">        * `scan` computes outputs using a for-loop.</span>
+<span class="linenos"> 54</span><span class="sd">        * `parallel` passes inputs to DASK and evaluates them in parallel.</span>
+<span class="linenos"> 55</span><span class="sd">        * `scan_dask` passes inputs to DASK but evaluates inputs in sequence.</span>
+<span class="linenos"> 56</span><span class="sd">          This is useful if the function being vectorized has a shared resource, i.e. is not</span>
+<span class="linenos"> 57</span><span class="sd">          thread-safe.</span>
+<span class="linenos"> 58</span><span class="sd">          It effectively gives a DASK-unaware function the ability to work with DASK inputs.</span>
+<span class="linenos"> 59</span><span class="sd">    codim: Integer</span>
+<span class="linenos"> 60</span><span class="sd">        Size of the function&#39;s core dimension output.</span>
+<span class="linenos"> 61</span>
+<span class="linenos"> 62</span><span class="sd">        This parameter is only required in &quot;parallel&quot; and &quot;scan_dask&quot; modes.</span>
+<span class="linenos"> 63</span>
+<span class="linenos"> 64</span><span class="sd">    Example</span>
+<span class="linenos"> 65</span><span class="sd">    -------</span>
+<span class="linenos"> 66</span><span class="sd">    .. code-block:: python3</span>
+<span class="linenos"> 67</span>
+<span class="linenos"> 68</span><span class="sd">       import pyxu.util as pxu</span>
+<span class="linenos"> 69</span>
+<span class="linenos"> 70</span><span class="sd">       @pxu.vectorize(&#39;x&#39;)</span>
+<span class="linenos"> 71</span><span class="sd">       def f(x):</span>
+<span class="linenos"> 72</span><span class="sd">           return x.sum(keepdims=True)</span>
+<span class="linenos"> 73</span>
+<span class="linenos"> 74</span><span class="sd">       x = np.arange(10).reshape((2, 5))</span>
+<span class="linenos"> 75</span><span class="sd">       f(x[0]), f(x[1])  #  [10], [35]</span>
+<span class="linenos"> 76</span><span class="sd">       f(x)              #  [10, 35] -&gt; would have retured [45] if not decorated.</span>
+<span class="linenos"> 77</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos"> 78</span>    <span class="n">method</span> <span class="o">=</span> <span class="n">method</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="linenos"> 79</span>    <span class="k">assert</span> <span class="n">method</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;scan&quot;</span><span class="p">,</span> <span class="s2">&quot;scan_dask&quot;</span><span class="p">,</span> <span class="s2">&quot;parallel&quot;</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;Unknown vectorization method &#39;</span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2">&#39;.&quot;</span>
+<span class="linenos"> 80</span>    <span class="k">if</span> <span class="n">using_dask</span> <span class="o">:=</span> <span class="p">(</span><span class="n">method</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;scan_dask&quot;</span><span class="p">,</span> <span class="s2">&quot;parallel&quot;</span><span class="p">)):</span>
+<span class="linenos"> 81</span>        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">codim</span><span class="p">,</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;Parameter[codim] must be specified for DASK-backed &#39;</span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2">&#39;.&quot;</span>
+<span class="linenos"> 82</span>
+<span class="linenos"> 83</span>    <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">:</span>
+<span class="linenos"> 84</span>        <span class="n">sig</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">Signature</span><span class="o">.</span><span class="n">from_callable</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="linenos"> 85</span>        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sig</span><span class="o">.</span><span class="n">parameters</span><span class="p">:</span>
+<span class="linenos"> 86</span>            <span class="n">error_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Parameter[</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">] not part of </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__qualname__</span><span class="si">}</span><span class="s2">() parameter list.&quot;</span>
+<span class="linenos"> 87</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">error_msg</span><span class="p">)</span>
+<span class="linenos"> 88</span>
+<span class="linenos"> 89</span>        <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="linenos"> 90</span>        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">ARGS</span><span class="p">,</span> <span class="o">**</span><span class="n">KWARGS</span><span class="p">):</span>
+<span class="linenos"> 91</span>            <span class="n">func_args</span> <span class="o">=</span> <span class="n">pxi</span><span class="o">.</span><span class="n">parse_params</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">ARGS</span><span class="p">,</span> <span class="o">**</span><span class="n">KWARGS</span><span class="p">)</span>
+<span class="linenos"> 92</span>
+<span class="linenos"> 93</span>            <span class="n">x</span> <span class="o">=</span> <span class="n">func_args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="linenos"> 94</span>            <span class="o">*</span><span class="n">sh</span><span class="p">,</span> <span class="n">dim</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>
+<span class="linenos"> 95</span>            <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
+<span class="linenos"> 96</span>            <span class="n">N</span><span class="p">,</span> <span class="n">xp</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">pxa</span><span class="o">.</span><span class="n">get_array_module</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos"> 97</span>
+<span class="linenos"> 98</span>            <span class="k">if</span> <span class="n">using_dask</span><span class="p">:</span>
+<span class="linenos"> 99</span>                <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">_</span><span class="p">:</span> <span class="n">func</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">_</span><span class="p">,</span> <span class="o">**</span><span class="n">func_args</span><span class="p">})</span>
+<span class="linenos">100</span>                <span class="n">blks</span> <span class="o">=</span> <span class="n">_dask_zip</span><span class="p">(</span>
+<span class="linenos">101</span>                    <span class="n">func</span><span class="o">=</span><span class="p">(</span><span class="n">f</span><span class="p">,)</span> <span class="o">*</span> <span class="n">N</span><span class="p">,</span>
+<span class="linenos">102</span>                    <span class="n">data</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
+<span class="linenos">103</span>                    <span class="n">out_shape</span><span class="o">=</span><span class="p">[(</span><span class="n">codim</span><span class="p">,)]</span> <span class="o">*</span> <span class="n">N</span><span class="p">,</span>  <span class="c1"># can&#39;t infer codim -&gt; user-specified</span>
+<span class="linenos">104</span>                    <span class="n">out_dtype</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">,)</span> <span class="o">*</span> <span class="n">N</span><span class="p">,</span>
+<span class="linenos">105</span>                    <span class="n">parallel</span><span class="o">=</span><span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;parallel&quot;</span><span class="p">,</span>
+<span class="linenos">106</span>                <span class="p">)</span>
+<span class="linenos">107</span>                <span class="n">y</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">blks</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># (N, codim)</span>
+<span class="linenos">108</span>            <span class="k">else</span><span class="p">:</span>  <span class="c1"># method = &quot;scan&quot;</span>
+<span class="linenos">109</span>                <span class="c1"># infer output dimensions + allocate</span>
+<span class="linenos">110</span>                <span class="n">func_args</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="linenos">111</span>                <span class="n">y0</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">**</span><span class="n">func_args</span><span class="p">)</span>
+<span class="linenos">112</span>                <span class="n">y</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="n">y0</span><span class="o">.</span><span class="n">size</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">y0</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>  <span class="c1"># (N, codim)</span>
+<span class="linenos">113</span>
+<span class="linenos">114</span>                <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">y0</span>
+<span class="linenos">115</span>                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+<span class="linenos">116</span>                    <span class="n">func_args</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+<span class="linenos">117</span>                    <span class="n">y</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">**</span><span class="n">func_args</span><span class="p">)</span>
+<span class="linenos">118</span>
+<span class="linenos">119</span>            <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">*</span><span class="n">sh</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">120</span>            <span class="k">return</span> <span class="n">y</span>
+<span class="linenos">121</span>
+<span class="linenos">122</span>        <span class="k">return</span> <span class="n">wrapper</span>
+<span class="linenos">123</span>
+<span class="linenos">124</span>    <span class="k">return</span> <span class="n">decorator</span></div>
+
+<span class="linenos">125</span>
+<span class="linenos">126</span>
+<div class="viewcode-block" id="_dask_zip">
+<a class="viewcode-back" href="../../../api/util.html#pyxu.util.operator._dask_zip">[docs]</a>
+<span class="linenos">127</span><span class="k">def</span> <span class="nf">_dask_zip</span><span class="p">(</span>
+<span class="linenos">128</span>    <span class="n">func</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">],</span>
+<span class="linenos">129</span>    <span class="n">data</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">],</span>
+<span class="linenos">130</span>    <span class="n">out_shape</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">],</span>
+<span class="linenos">131</span>    <span class="n">out_dtype</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">DType</span><span class="p">],</span>
+<span class="linenos">132</span>    <span class="n">parallel</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+<span class="linenos">133</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">]:</span>
+<span class="linenos">134</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">135</span><span class="sd">    (This is a Low-Level function.)</span>
+<span class="linenos">136</span>
+<span class="linenos">137</span><span class="sd">    Computes the equivalent of ``out = [f(x) for (f, x) in zip(func, data)]``, with the following semantics:</span>
+<span class="linenos">138</span>
+<span class="linenos">139</span><span class="sd">    * If `data` contains only NUMPY/CUPY arrays, then ``out`` is computed as above.</span>
+<span class="linenos">140</span><span class="sd">    * If `data` contains only DASK arrays, then entries of ``out`` are computed:</span>
+<span class="linenos">141</span>
+<span class="linenos">142</span><span class="sd">      * if `parallel` enabled  -&gt; dask-delay each `func`, then evaluate in parallel.</span>
+<span class="linenos">143</span><span class="sd">      * if `parallel` disabled -&gt; dask-delay each `func`, then evaluate in sequence.</span>
+<span class="linenos">144</span><span class="sd">        (This is useful if `func` s share a common resource, thus not thread-safe.)</span>
+<span class="linenos">145</span>
+<span class="linenos">146</span><span class="sd">    For Dask-array inputs, this amounts to creating a task graph with virtual dependencies</span>
+<span class="linenos">147</span><span class="sd">    between successive `func` calls. In other words, the task graph looks like::</span>
+<span class="linenos">148</span>
+<span class="linenos">149</span><span class="sd">        _dask_zip(func, data, parallel=True) -&gt; out</span>
+<span class="linenos">150</span>
+<span class="linenos">151</span><span class="sd">                      +----+              +----+</span>
+<span class="linenos">152</span><span class="sd">            data[0]--&gt;|func|--&gt;blk[0]-+--&gt;|list|--&gt;out</span>
+<span class="linenos">153</span><span class="sd">                .     +----+          |   +----+</span>
+<span class="linenos">154</span><span class="sd">                .                     |</span>
+<span class="linenos">155</span><span class="sd">                .     +----+          |</span>
+<span class="linenos">156</span><span class="sd">            data[n]--&gt;|func|--&gt;blk[n]-+</span>
+<span class="linenos">157</span><span class="sd">                      +----+</span>
+<span class="linenos">158</span>
+<span class="linenos">159</span><span class="sd">        ==========================================================================================================</span>
+<span class="linenos">160</span><span class="sd">        _dask_zip(func, data, parallel=False) -&gt; out</span>
+<span class="linenos">161</span><span class="sd">                                                                                               +----+</span>
+<span class="linenos">162</span><span class="sd">                                +-------------------+----------------+--------------------+----+list|--&gt;out</span>
+<span class="linenos">163</span><span class="sd">                                |                   |                |                    |    +----+</span>
+<span class="linenos">164</span><span class="sd">                                |                   |                |                    |</span>
+<span class="linenos">165</span><span class="sd">                      +----+    |        +----+     |      +---+     |         +----+     |</span>
+<span class="linenos">166</span><span class="sd">            data[0]--&gt;|func|--&gt;out[0]-+-&gt;|func|--&gt;out[1]--&gt;|...|--&gt;out[n-1]-+-&gt;|func|--&gt;out[n]</span>
+<span class="linenos">167</span><span class="sd">                      +----+          |  +----+            +---+            |  +----+</span>
+<span class="linenos">168</span><span class="sd">                                      |                                     |</span>
+<span class="linenos">169</span><span class="sd">            data[1]-------------------+                                     |</span>
+<span class="linenos">170</span><span class="sd">                .                                                           |</span>
+<span class="linenos">171</span><span class="sd">                .                                                           |</span>
+<span class="linenos">172</span><span class="sd">                .                                                           |</span>
+<span class="linenos">173</span><span class="sd">            data[n]---------------------------------------------------------+</span>
+<span class="linenos">174</span>
+<span class="linenos">175</span><span class="sd">    Parameters</span>
+<span class="linenos">176</span><span class="sd">    ----------</span>
+<span class="linenos">177</span><span class="sd">    func: list</span>
+<span class="linenos">178</span><span class="sd">        Functions to apply to each element of `data`.</span>
+<span class="linenos">179</span>
+<span class="linenos">180</span><span class="sd">        Function signatures are ``Callable[[NDArray], NDArray]``.</span>
+<span class="linenos">181</span><span class="sd">    data: list</span>
+<span class="linenos">182</span><span class="sd">        (N_data,) arrays to act on.</span>
+<span class="linenos">183</span><span class="sd">    out_shape: list</span>
+<span class="linenos">184</span><span class="sd">        Shapes of ``func[i](data[i])``.</span>
+<span class="linenos">185</span>
+<span class="linenos">186</span><span class="sd">        This parameter is only used if inputs are DASK arrays.</span>
+<span class="linenos">187</span><span class="sd">        Its goal is to transform :py:class:`~dask.delayed.Delayed` objects back to array form.</span>
+<span class="linenos">188</span><span class="sd">    out_dtype: list</span>
+<span class="linenos">189</span><span class="sd">        Dtypes of ``func[i](data[i])``.</span>
+<span class="linenos">190</span>
+<span class="linenos">191</span><span class="sd">        This parameter is only used if inputs are DASK arrays.</span>
+<span class="linenos">192</span><span class="sd">        Its goal is to transform :py:class:`~dask.delayed.Delayed` objects back to array form.</span>
+<span class="linenos">193</span>
+<span class="linenos">194</span><span class="sd">    Returns</span>
+<span class="linenos">195</span><span class="sd">    -------</span>
+<span class="linenos">196</span><span class="sd">    out: list</span>
+<span class="linenos">197</span><span class="sd">        (N_data,) objects acted upon.</span>
+<span class="linenos">198</span>
+<span class="linenos">199</span><span class="sd">        Outputs have the same backend/dtype as inputs, or as specified by `out_[shape,dtype]`.</span>
+<span class="linenos">200</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">201</span>    <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">func</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="p">[</span><span class="n">data</span><span class="p">,</span> <span class="n">out_shape</span><span class="p">,</span> <span class="n">out_dtype</span><span class="p">])</span>
+<span class="linenos">202</span>
+<span class="linenos">203</span>    <span class="n">NDI</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span>
+<span class="linenos">204</span>    <span class="n">dask_input</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">obj</span><span class="p">:</span> <span class="n">NDI</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="o">==</span> <span class="n">NDI</span><span class="o">.</span><span class="n">DASK</span>
+<span class="linenos">205</span>    <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">dask_input</span><span class="p">,</span> <span class="n">data</span><span class="p">)):</span>
+<span class="linenos">206</span>        <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos">207</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span>
+<span class="linenos">208</span>            <span class="k">if</span> <span class="n">parallel</span><span class="p">:</span>
+<span class="linenos">209</span>                <span class="c1"># If parallel=True, the user guarantees that functions CAN be executed in parallel,</span>
+<span class="linenos">210</span>                <span class="c1"># i.e. no side-effects induced by calling the func[k] if arbitrary order.</span>
+<span class="linenos">211</span>                <span class="c1"># The functions are hence PURE.</span>
+<span class="linenos">212</span>                <span class="n">_func</span> <span class="o">=</span> <span class="n">dask</span><span class="o">.</span><span class="n">delayed</span><span class="p">(</span><span class="n">func</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pure</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">213</span>            <span class="k">else</span><span class="p">:</span>
+<span class="linenos">214</span>                <span class="c1"># If parallel=False, side-effects MAY influence func[k] outputs.</span>
+<span class="linenos">215</span>                <span class="c1"># The functions are hence IMPURE.</span>
+<span class="linenos">216</span>                <span class="n">_func</span> <span class="o">=</span> <span class="n">dgm</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span>
+<span class="linenos">217</span>                    <span class="n">children</span><span class="o">=</span><span class="n">dask</span><span class="o">.</span><span class="n">delayed</span><span class="p">(</span><span class="n">func</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pure</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+<span class="linenos">218</span>                    <span class="n">parents</span><span class="o">=</span><span class="n">out</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">else</span> <span class="p">[],</span>
+<span class="linenos">219</span>                <span class="p">)</span>
+<span class="linenos">220</span>            <span class="n">blk</span> <span class="o">=</span> <span class="n">_array_ize</span><span class="p">(</span><span class="n">_func</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">out_shape</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">out_dtype</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="linenos">221</span>            <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">blk</span><span class="p">)</span>
+<span class="linenos">222</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">223</span>        <span class="n">out</span> <span class="o">=</span> <span class="p">[</span><span class="n">_func</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">_func</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">data</span><span class="p">)]</span>
+<span class="linenos">224</span>    <span class="k">return</span> <span class="n">out</span></div>
+
+<span class="linenos">225</span>
+<span class="linenos">226</span>
+<div class="viewcode-block" id="_array_ize">
+<a class="viewcode-back" href="../../../api/util.html#pyxu.util.operator._array_ize">[docs]</a>
+<span class="linenos">227</span><span class="k">def</span> <span class="nf">_array_ize</span><span class="p">(</span>
+<span class="linenos">228</span>    <span class="n">data</span><span class="p">,</span>
+<span class="linenos">229</span>    <span class="n">shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
+<span class="linenos">230</span>    <span class="n">dtype</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">DType</span><span class="p">,</span>
+<span class="linenos">231</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">232</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">233</span><span class="sd">    (This is a Low-Level function.)</span>
+<span class="linenos">234</span>
+<span class="linenos">235</span><span class="sd">    Transform a Dask-delayed object into its Dask-array counterpart.</span>
+<span class="linenos">236</span><span class="sd">    This function is a no-op if `data` is not a :py:class:`~dask.delayed.Delayed` object.</span>
+<span class="linenos">237</span>
+<span class="linenos">238</span><span class="sd">    Parameters</span>
+<span class="linenos">239</span><span class="sd">    ----------</span>
+<span class="linenos">240</span><span class="sd">    data: NDArray, :py:class:`~dask.delayed.Delayed`</span>
+<span class="linenos">241</span><span class="sd">        Object to act upon.</span>
+<span class="linenos">242</span><span class="sd">    shape: NDArrayShape</span>
+<span class="linenos">243</span><span class="sd">        Shape of `data`.</span>
+<span class="linenos">244</span>
+<span class="linenos">245</span><span class="sd">        This parameter is only used if `data` is a :py:class:`~dask.delayed.Delayed` object.</span>
+<span class="linenos">246</span><span class="sd">        Its goal is to transform the former back to array form.</span>
+<span class="linenos">247</span><span class="sd">    dtype: DType</span>
+<span class="linenos">248</span><span class="sd">        Dtype of `data`.</span>
+<span class="linenos">249</span>
+<span class="linenos">250</span><span class="sd">        This parameter is only used if `data` is a :py:class:`~dask.delayed.Delayed` object.</span>
+<span class="linenos">251</span><span class="sd">        Its goal is to transform the former back to array form.</span>
+<span class="linenos">252</span>
+<span class="linenos">253</span><span class="sd">    Returns</span>
+<span class="linenos">254</span><span class="sd">    -------</span>
+<span class="linenos">255</span><span class="sd">    arr: NDArray</span>
+<span class="linenos">256</span><span class="sd">        Dask-backed NDArray if `data` was a :py:class:`~dask.delayed.Delayed` object; no-op otherwise.</span>
+<span class="linenos">257</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">258</span>    <span class="kn">from</span> <span class="nn">dask.delayed</span> <span class="kn">import</span> <span class="n">Delayed</span>
+<span class="linenos">259</span>
+<span class="linenos">260</span>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">Delayed</span><span class="p">):</span>
+<span class="linenos">261</span>        <span class="n">xp</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">DASK</span><span class="o">.</span><span class="n">module</span><span class="p">()</span>
+<span class="linenos">262</span>        <span class="n">arr</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">from_delayed</span><span class="p">(</span>
+<span class="linenos">263</span>            <span class="n">data</span><span class="p">,</span>
+<span class="linenos">264</span>            <span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">,</span>
+<span class="linenos">265</span>            <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span>
+<span class="linenos">266</span>        <span class="p">)</span>
+<span class="linenos">267</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">268</span>        <span class="n">arr</span> <span class="o">=</span> <span class="n">data</span>
+<span class="linenos">269</span>    <span class="k">return</span> <span class="n">arr</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+<div id="searchbox"></div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

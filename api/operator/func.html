@@ -1,0 +1,1177 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pyxu.operator.func &#8212; Pyxu Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-codeautolink.css?v=125d5c1c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=1031a718" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../../_static/documentation_options.js?v=e02fc88f"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=30646c52"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/operator/func';</script>
+    <link rel="icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="pyxu.operator.linop" href="linop.html" />
+    <link rel="prev" title="pyxu.operator.map" href="map.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../intro/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../fair/index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><strong> v1.0.x </strong></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../intro/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../fair/index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><strong> v1.0.x </strong></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../abc.html">pyxu.abc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opt.html">pyxu.opt</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">pyxu.operator</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="map.html">pyxu.operator.map</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">pyxu.operator.func</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linop.html">pyxu.operator.linop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blocks.html">pyxu.operator.blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interop.html">pyxu.operator.interop</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../runtime.html">pyxu.runtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../util.html">pyxu.util</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math.html">pyxu.math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info.html">pyxu.info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../experimental.html">pyxu.experimental</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">pyxu.operator</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">pyxu.operator.func</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="pyxu-operator-func">
+<h1>pyxu.operator.func<a class="headerlink" href="#pyxu-operator-func" title="Link to this heading">#</a></h1>
+<nav class="contents local" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#norms" id="id4">Norms</a></p></li>
+<li><p><a class="reference internal" href="#indicator-functions" id="id5">Indicator functions</a></p></li>
+</ul>
+</nav>
+<section id="norms">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Norms</a><a class="headerlink" href="#norms" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.operator.func.norm.L1Norm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">L1Norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/norm.html#L1Norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.norm.L1Norm" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ShiftLossMixin</span></code>, <a class="reference internal" href="../abc.html#pyxu.abc.operator.ProxFunc" title="pyxu.abc.operator.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a></p>
+<p><span class="math notranslate nohighlight">\(\ell_{1}\)</span>-norm, <span class="math notranslate nohighlight">\(\Vert\mathbf{x}\Vert_{1} := \sum_{i=1}^{N} |x_{i}|\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dim</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.operator.func.norm.L2Norm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">L2Norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/norm.html#L2Norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.norm.L2Norm" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ShiftLossMixin</span></code>, <a class="reference internal" href="../abc.html#pyxu.abc.operator.ProxFunc" title="pyxu.abc.operator.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a></p>
+<p><span class="math notranslate nohighlight">\(\ell_{2}\)</span>-norm, <span class="math notranslate nohighlight">\(\Vert\mathbf{x}\Vert_{2} := \sqrt{\sum_{i=1}^{N} |x_{i}|^{2}}\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dim</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.operator.func.norm.SquaredL2Norm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SquaredL2Norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/norm.html#SquaredL2Norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.norm.SquaredL2Norm" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../abc.html#pyxu.abc.operator.QuadraticFunc" title="pyxu.abc.operator.QuadraticFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuadraticFunc</span></code></a></p>
+<p><span class="math notranslate nohighlight">\(\ell^{2}_{2}\)</span>-norm, <span class="math notranslate nohighlight">\(\Vert\mathbf{x}\Vert^{2}_{2} := \sum_{i=1}^{N} |x_{i}|^{2}\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dim</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.operator.func.norm.SquaredL1Norm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SquaredL1Norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prox_algo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sort'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/norm.html#SquaredL1Norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.norm.SquaredL1Norm" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ShiftLossMixin</span></code>, <a class="reference internal" href="../abc.html#pyxu.abc.operator.ProxFunc" title="pyxu.abc.operator.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a></p>
+<p><span class="math notranslate nohighlight">\(\ell^{2}_{1}\)</span>-norm, <span class="math notranslate nohighlight">\(\Vert\mathbf{x}\Vert^{2}_{1} := (\sum_{i=1}^{N} |x_{i}|)^{2}\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a>) – </p></li>
+<li><p><strong>prox_algo</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.operator.func.norm.SquaredL1Norm.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prox_algo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sort'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/norm.html#SquaredL1Norm.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.norm.SquaredL1Norm.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.Integer" title="pyxu.info.ptype.Integer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integer</span></code></a>) – </p></li>
+<li><p><strong>prox_algo</strong> (<code class="docutils literal notranslate"><span class="pre">&quot;root&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;sort&quot;</span></code>) – <p>Algorithm used for computing the proximal operator:</p>
+<ul>
+<li><p>’root’ uses <a class="reference internal" href="../../references.html#firstord" id="id1"><span>[FirstOrd]</span></a> Lemma 6.70,</p></li>
+<li><p>’sort’ uses <a class="reference internal" href="../../references.html#onkerlearn" id="id2"><span>[OnKerLearn]</span></a> Algorithm 2 (faster).</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Calling <a class="reference internal" href="#pyxu.operator.func.norm.SquaredL1Norm.prox" title="pyxu.operator.func.norm.SquaredL1Norm.prox"><code class="xref py py-meth docutils literal notranslate"><span class="pre">prox()</span></code></a> with DASK inputs when
+<code class="code docutils literal notranslate"><span class="pre">algo=&quot;sort&quot;</span></code> is inefficient at scale.
+Prefer <code class="code docutils literal notranslate"><span class="pre">algo=&quot;root&quot;</span></code> in this case.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.operator.func.norm.SquaredL1Norm.prox">
+<span class="sig-name descname"><span class="pre">prox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/norm.html#SquaredL1Norm.prox"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.norm.SquaredL1Norm.prox" title="Link to this definition">#</a></dt>
+<dd><p>Evaluate proximity operator of <span class="math notranslate nohighlight">\(\tau f\)</span> at specified point(s).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – (…, M) input points.</p></li>
+<li><p><strong>tau</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Positive scale factor.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>out</strong> – (…, M) proximal evaluations.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>For <span class="math notranslate nohighlight">\(\tau &gt;0\)</span>, the <em>proximity operator</em> of a scaled functional
+<span class="math notranslate nohighlight">\(f: \mathbb{R}^{M} \to \mathbb{R}\)</span> is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{\text{prox}}_{\tau f}(\mathbf{z})
+:=
+\arg\min_{\mathbf{x}\in\mathbb{R}^{M}} f(x)+\frac{1}{2\tau} \|\mathbf{x}-\mathbf{z}\|_{2}^{2},
+\quad
+\forall \mathbf{z} \in \mathbb{R}^{M}.\]</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.operator.func.norm.LInfinityNorm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LInfinityNorm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/norm.html#LInfinityNorm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.norm.LInfinityNorm" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ShiftLossMixin</span></code>, <a class="reference internal" href="../abc.html#pyxu.abc.operator.ProxFunc" title="pyxu.abc.operator.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a></p>
+<p><span class="math notranslate nohighlight">\(\ell_{\infty}\)</span>-norm, <span class="math notranslate nohighlight">\(\Vert\mathbf{x}\Vert_{\infty} := \max_{i=1,\ldots,N} |x_{i}|\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dim</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.operator.func.norm.L21Norm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">L21Norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/norm.html#L21Norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.norm.L21Norm" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ShiftLossMixin</span></code>, <a class="reference internal" href="../abc.html#pyxu.abc.operator.ProxFunc" title="pyxu.abc.operator.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a></p>
+<p>Mixed <span class="math notranslate nohighlight">\(\ell_{2}-\ell_{1}\)</span> norm,
+<span class="math notranslate nohighlight">\(\Vert\mathbf{x}\Vert_{2, 1} := \sum_{i=1}^{N} \sqrt{\sum_{j=1}^{M} x_{i, j}^{2}}\)</span>,
+for arrays of dimension <span class="math notranslate nohighlight">\(\geq 2\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The input array need not be 2-dimensional:
+the <span class="math notranslate nohighlight">\(\ell_{2}\)</span> norm is applied along a predefined subset of dimensions, and the
+<span class="math notranslate nohighlight">\(\ell_{1}\)</span> norm on the remaining ones.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arg_shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><em>...</em><em>]</em>) – </p></li>
+<li><p><strong>l2_axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><em>...</em><em>]</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.operator.func.norm.L21Norm.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/norm.html#L21Norm.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.norm.L21Norm.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arg_shape</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.NDArrayShape" title="pyxu.info.ptype.NDArrayShape"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArrayShape</span></code></a>) – Shape of the input array.</p></li>
+<li><p><strong>l2_axis</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.NDArrayAxis" title="pyxu.info.ptype.NDArrayAxis"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArrayAxis</span></code></a>) – Axis (or axes) along which the <span class="math notranslate nohighlight">\(\ell_{2}\)</span> norm is applied.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.operator.func.norm.PositiveL1Norm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PositiveL1Norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/norm.html#PositiveL1Norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.norm.PositiveL1Norm" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ShiftLossMixin</span></code>, <a class="reference internal" href="../abc.html#pyxu.abc.operator.ProxFunc" title="pyxu.abc.operator.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a></p>
+<p><span class="math notranslate nohighlight">\(\ell_{1}\)</span>-norm, with a positivity constraint.</p>
+<div class="math notranslate nohighlight">
+\[f(\mathbf{x})
+:=
+\lVert\mathbf{x}\rVert_{1} + \iota_{+}(\mathbf{x}),\]</div>
+<div class="math notranslate nohighlight">
+\[\textbf{prox}_{\tau f}(\mathbf{z})
+:=
+\max(\mathrm{soft}_\tau(\mathbf{z}), \mathbf{0})\]</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#pyxu.operator.func.indicator.PositiveOrthant" title="pyxu.operator.func.indicator.PositiveOrthant"><code class="xref py py-class docutils literal notranslate"><span class="pre">PositiveOrthant</span></code></a></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dim</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="indicator-functions">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Indicator functions</a><a class="headerlink" href="#indicator-functions" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.func.indicator.L1Ball">
+<span class="sig-name descname"><span class="pre">L1Ball</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/indicator.html#L1Ball"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.indicator.L1Ball" title="Link to this definition">#</a></dt>
+<dd><p>Indicator function of the <span class="math notranslate nohighlight">\(\ell_{1}\)</span>-ball.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\iota_{1}^{r}(\mathbf{x})
+:=
+\begin{cases}
+    0 &amp; \|\mathbf{x}\|_{1} \le r \\
+    \infty &amp; \text{otherwise}.
+\end{cases}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\text{prox}_{\tau\, \iota_{1}^{r}}(\mathbf{x})
+:=
+\mathbf{x} - \text{prox}_{r\, \ell_{\infty}}(\mathbf{x})\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.Integer" title="pyxu.info.ptype.Integer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integer</span></code></a>) – </p></li>
+<li><p><strong>radius</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Ball radius. (Default: unit ball.)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>op</strong></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.func.indicator.L2Ball">
+<span class="sig-name descname"><span class="pre">L2Ball</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/indicator.html#L2Ball"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.indicator.L2Ball" title="Link to this definition">#</a></dt>
+<dd><p>Indicator function of the <span class="math notranslate nohighlight">\(\ell_{2}\)</span>-ball.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\iota_{2}^{r}(\mathbf{x})
+:=
+\begin{cases}
+    0 &amp; \|\mathbf{x}\|_{2} \le r \\
+    \infty &amp; \text{otherwise}.
+\end{cases}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\text{prox}_{\tau\, \iota_{2}^{r}}(\mathbf{x})
+:=
+\mathbf{x} - \text{prox}_{r\, \ell_{2}}(\mathbf{x})\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.Integer" title="pyxu.info.ptype.Integer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integer</span></code></a>) – </p></li>
+<li><p><strong>radius</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Ball radius. (Default: unit ball.)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>op</strong></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.operator.func.indicator.LInfinityBall">
+<span class="sig-name descname"><span class="pre">LInfinityBall</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/indicator.html#LInfinityBall"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.indicator.LInfinityBall" title="Link to this definition">#</a></dt>
+<dd><p>Indicator function of the <span class="math notranslate nohighlight">\(\ell_{\infty}\)</span>-ball.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\iota_{\infty}^{r}(\mathbf{x})
+:=
+\begin{cases}
+    0 &amp; \|\mathbf{x}\|_{\infty} \le r \\
+    \infty &amp; \text{otherwise}.
+\end{cases}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\text{prox}_{\tau\, \iota_{\infty}^{r}}(\mathbf{x})
+:=
+\mathbf{x} - \text{prox}_{r\, \ell_{1}}(\mathbf{x})\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.Integer" title="pyxu.info.ptype.Integer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integer</span></code></a>) – </p></li>
+<li><p><strong>radius</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Ball radius. (Default: unit ball.)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>op</strong></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.operator.func.indicator.PositiveOrthant">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PositiveOrthant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/indicator.html#PositiveOrthant"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.indicator.PositiveOrthant" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_IndicatorFunction</span></code></p>
+<p>Indicator function of the positive orthant.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\iota_{+}(\mathbf{x})
+:=
+\begin{cases}
+    0 &amp; \min{\mathbf{x}} \ge 0,\\
+    \infty &amp; \text{otherwise}.
+\end{cases}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\text{prox}_{\tau\, \iota_{+}}(\mathbf{x})
+:=
+\max(\mathbf{x}, \mathbf{0})\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dim</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.operator.func.indicator.HyperSlab">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HyperSlab</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ub</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/indicator.html#HyperSlab"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.indicator.HyperSlab" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_IndicatorFunction</span></code></p>
+<p>Indicator function of a hyperslab.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\iota_{\mathbf{a}}^{l,u}(\mathbf{x})
+:=
+\begin{cases}
+    0 &amp; l \le \langle \mathbf{a}, \mathbf{x} \rangle \le u \\
+    \infty &amp; \text{otherwise}.
+\end{cases}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\text{prox}_{\tau\, \iota_{\mathbf{a}}^{l,u}}(\mathbf{x})
+:=
+\begin{cases}
+    \mathbf{x} + \frac{l - \langle \mathbf{a}, \mathbf{x} \rangle}{\|\mathbf{a}\|^{2}} \mathbf{a} &amp; \langle \mathbf{a}, \mathbf{x} \rangle &lt; l, \\
+    \mathbf{x} + \frac{u - \langle \mathbf{a}, \mathbf{x} \rangle}{\|\mathbf{a}\|^{2}} \mathbf{a} &amp; \langle \mathbf{a}, \mathbf{x} \rangle &gt; u, \\
+    \mathbf{x} &amp; \text{otherwise}.
+\end{cases}\end{split}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<a class="reference internal" href="../abc.html#pyxu.abc.operator.LinFunc" title="pyxu.abc.operator.LinFunc"><em>LinFunc</em></a>) – </p></li>
+<li><p><strong>lb</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.Real" title="numbers.Real"><em>Real</em></a>) – </p></li>
+<li><p><strong>ub</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.Real" title="numbers.Real"><em>Real</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.operator.func.indicator.HyperSlab.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ub</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/indicator.html#HyperSlab.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.indicator.HyperSlab.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> (<a class="reference internal" href="../abc.html#pyxu.abc.operator.LinFunc" title="pyxu.abc.operator.LinFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinFunc</span></code></a>) – (N,) operator</p></li>
+<li><p><strong>lb</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Lower bound</p></li>
+<li><p><strong>ub</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Upper bound</p></li>
+<li><p><strong>a</strong> (<a class="reference internal" href="../abc.html#pyxu.abc.operator.LinFunc" title="pyxu.abc.operator.LinFunc"><em>LinFunc</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.operator.func.indicator.RangeSet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RangeSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/indicator.html#RangeSet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.indicator.RangeSet" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_IndicatorFunction</span></code></p>
+<p>Indicator function of a range set.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\iota_{\mathbf{A}}^{R}(\mathbf{x})
+:=
+\begin{cases}
+    0 &amp; \mathbf{x} \in \text{span}(\mathbf{A}) \\
+    \infty &amp; \text{otherwise}.
+\end{cases}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\text{prox}_{\tau\, \iota_{\mathbf{A}}^{R}}(\mathbf{x})
+:=
+\mathbf{A} (\mathbf{A}^{T} \mathbf{A})^{-1} \mathbf{A}^{T} \mathbf{x}.\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>A</strong> (<a class="reference internal" href="../abc.html#pyxu.abc.operator.LinOp" title="pyxu.abc.operator.LinOp"><em>LinOp</em></a>) – </p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.operator.func.indicator.RangeSet.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/indicator.html#RangeSet.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.indicator.RangeSet.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>A</strong> (<a class="reference internal" href="../abc.html#pyxu.abc.operator.LinOp" title="pyxu.abc.operator.LinOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinOp</span></code></a>) – (M, N) operator</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.operator.func.indicator.AffineSet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AffineSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/indicator.html#AffineSet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.indicator.AffineSet" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_IndicatorFunction</span></code></p>
+<p>Indicator function of an affine set.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\iota_{\mathbf{A}}^{\mathbf{b}}(\mathbf{x})
+:=
+\begin{cases}
+    0 &amp; \mathbf{A} \mathbf{x} = \mathbf{b} \\
+    \infty &amp; \text{otherwise}.
+\end{cases}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\text{prox}_{\tau\, \iota_{\mathbf{A}}^{\mathbf{b}}}(\mathbf{x})
+:=
+\mathbf{x} - \mathbf{A}^{T} (\mathbf{A}\mathbf{A}^{T})^{-1} (\mathbf{Ax - b})\]</div>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Assumptions on <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b}\)</span>:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{b} \in \text{span}(\mathbf{A})\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{A}\)</span> has full row-rank, i.e. <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is square or fat.</p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#pyxu.operator.func.indicator.AffineSet" title="pyxu.operator.func.indicator.AffineSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">AffineSet</span></code></a> instances are <strong>not arraymodule-agnostic</strong>:
+they will only work with NDArrays belonging to the same array module as <code class="code docutils literal notranslate"><span class="pre">A</span></code> and <code class="code docutils literal notranslate"><span class="pre">b</span></code>.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> (<a class="reference internal" href="../abc.html#pyxu.abc.operator.LinOp" title="pyxu.abc.operator.LinOp"><em>LinOp</em></a>) – </p></li>
+<li><p><strong>b</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.operator.func.indicator.AffineSet.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/indicator.html#AffineSet.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.indicator.AffineSet.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> (<a class="reference internal" href="../abc.html#pyxu.abc.operator.LinOp" title="pyxu.abc.operator.LinOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinOp</span></code></a>) – (M, N) operator</p></li>
+<li><p><strong>b</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – (M,)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.operator.func.indicator.ConvexSetIntersection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ConvexSetIntersection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/indicator.html#ConvexSetIntersection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.indicator.ConvexSetIntersection" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_IndicatorFunction</span></code></p>
+<p>Indicator function of an intersection of convex domains
+<span class="math notranslate nohighlight">\(\mathcal{C}_{1} \cap \cdots \cap \mathcal{C}_{K}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\iota(\mathbf{x})
+:=
+\iota_{1}(\mathbf{x}) + \cdots + \iota_{K}(\mathbf{x}).\]</div>
+<p><span class="math notranslate nohighlight">\(\text{prox}_{\tau\, \iota}(\mathbf{x})\)</span> is computed using the PoCS algorithm.
+(Dykstra’s variant <a class="reference internal" href="../../references.html#pocs-dykstra" id="id3"><span>[PoCS_Dykstra]</span></a>.)</p>
+<p>This function assumes <span class="math notranslate nohighlight">\(\mathcal{C}_{1} \cap \cdots \cap \mathcal{C}_{K} \ne \emptyset\)</span>.
+<a class="reference internal" href="#pyxu.operator.func.indicator.ConvexSetIntersection.prox" title="pyxu.operator.func.indicator.ConvexSetIntersection.prox"><code class="xref py py-meth docutils literal notranslate"><span class="pre">prox()</span></code></a> will loop indefinitely if
+this condition is violated.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pyxu.operator</span> <span class="k">as</span> <span class="nn">pxo</span>
+
+<span class="n">op</span> <span class="o">=</span> <span class="n">pxo</span><span class="o">.</span><span class="n">ConvexSetIntersection</span><span class="p">(</span>             <span class="c1"># intersection of</span>
+    <span class="n">pxo</span><span class="o">.</span><span class="n">LInfinityBall</span><span class="p">(),</span>                    <span class="c1">#   L-\infty ball centered at (0,0)</span>
+    <span class="n">pxo</span><span class="o">.</span><span class="n">L2Ball</span><span class="p">()</span><span class="o">.</span><span class="n">asloss</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])),</span>  <span class="c1">#   L2 ball centered at (1,0)</span>
+<span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>  <span class="c1"># not in LInfinity ball -&gt; \infty</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>  <span class="c1"># not in L2 ball -&gt; \infty</span>
+ <span class="p">])</span>
+<span class="n">op</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># [0 0 inf 0 0 inf]</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>args</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><em>Sequence</em></a><em>[</em><a class="reference internal" href="../abc.html#pyxu.abc.operator.ProxFunc" title="pyxu.abc.operator.ProxFunc"><em>ProxFunc</em></a><em>]</em>) – </p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.operator.func.indicator.ConvexSetIntersection.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/indicator.html#ConvexSetIntersection.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.indicator.ConvexSetIntersection.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>args</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a> ( <a class="reference internal" href="../abc.html#pyxu.abc.operator.ProxFunc" title="pyxu.abc.operator.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a> )) – Sequence of indicator functions encoding convex domains.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.operator.func.indicator.ConvexSetIntersection.prox">
+<span class="sig-name descname"><span class="pre">prox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/indicator.html#ConvexSetIntersection.prox"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.indicator.ConvexSetIntersection.prox" title="Link to this definition">#</a></dt>
+<dd><p>Evaluate proximity operator of <span class="math notranslate nohighlight">\(\tau f\)</span> at specified point(s).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – (…, M) input points.</p></li>
+<li><p><strong>tau</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Positive scale factor.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>out</strong> – (…, M) proximal evaluations.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>For <span class="math notranslate nohighlight">\(\tau &gt;0\)</span>, the <em>proximity operator</em> of a scaled functional
+<span class="math notranslate nohighlight">\(f: \mathbb{R}^{M} \to \mathbb{R}\)</span> is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{\text{prox}}_{\tau f}(\mathbf{z})
+:=
+\arg\min_{\mathbf{x}\in\mathbb{R}^{M}} f(x)+\frac{1}{2\tau} \|\mathbf{x}-\mathbf{z}\|_{2}^{2},
+\quad
+\forall \mathbf{z} \in \mathbb{R}^{M}.\]</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="map.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">pyxu.operator.map</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="linop.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">pyxu.operator.linop</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#norms">Norms</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.norm.L1Norm"><code class="docutils literal notranslate"><span class="pre">L1Norm</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.norm.L2Norm"><code class="docutils literal notranslate"><span class="pre">L2Norm</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.norm.SquaredL2Norm"><code class="docutils literal notranslate"><span class="pre">SquaredL2Norm</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.norm.SquaredL1Norm"><code class="docutils literal notranslate"><span class="pre">SquaredL1Norm</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.norm.SquaredL1Norm.__init__"><code class="docutils literal notranslate"><span class="pre">SquaredL1Norm.__init__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.norm.SquaredL1Norm.prox"><code class="docutils literal notranslate"><span class="pre">SquaredL1Norm.prox()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.norm.LInfinityNorm"><code class="docutils literal notranslate"><span class="pre">LInfinityNorm</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.norm.L21Norm"><code class="docutils literal notranslate"><span class="pre">L21Norm</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.norm.L21Norm.__init__"><code class="docutils literal notranslate"><span class="pre">L21Norm.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.norm.PositiveL1Norm"><code class="docutils literal notranslate"><span class="pre">PositiveL1Norm</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indicator-functions">Indicator functions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.indicator.L1Ball"><code class="docutils literal notranslate"><span class="pre">L1Ball()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.indicator.L2Ball"><code class="docutils literal notranslate"><span class="pre">L2Ball()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.indicator.LInfinityBall"><code class="docutils literal notranslate"><span class="pre">LInfinityBall()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.indicator.PositiveOrthant"><code class="docutils literal notranslate"><span class="pre">PositiveOrthant</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.indicator.HyperSlab"><code class="docutils literal notranslate"><span class="pre">HyperSlab</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.indicator.HyperSlab.__init__"><code class="docutils literal notranslate"><span class="pre">HyperSlab.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.indicator.RangeSet"><code class="docutils literal notranslate"><span class="pre">RangeSet</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.indicator.RangeSet.__init__"><code class="docutils literal notranslate"><span class="pre">RangeSet.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.indicator.AffineSet"><code class="docutils literal notranslate"><span class="pre">AffineSet</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.indicator.AffineSet.__init__"><code class="docutils literal notranslate"><span class="pre">AffineSet.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.indicator.ConvexSetIntersection"><code class="docutils literal notranslate"><span class="pre">ConvexSetIntersection</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.indicator.ConvexSetIntersection.__init__"><code class="docutils literal notranslate"><span class="pre">ConvexSetIntersection.__init__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.indicator.ConvexSetIntersection.prox"><code class="docutils literal notranslate"><span class="pre">ConvexSetIntersection.prox()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+<div id="searchbox"></div></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/matthieumeo/pyxu/edit/main/doc/api/operator/func.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/api/operator/func.rst">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

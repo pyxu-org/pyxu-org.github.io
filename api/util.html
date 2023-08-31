@@ -1,0 +1,1085 @@
+
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>pyxu.util — Pyxu Documentation</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../_static/plot_directive.css?v=7f9a90b1" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
+<link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
+<link href="../_static/sg_gallery.css?v=61a4c737" rel="stylesheet" type="text/css"/>
+<link href="../_static/sg_gallery-binder.css?v=f4aeca0c" rel="stylesheet" type="text/css"/>
+<link href="../_static/sg_gallery-dataframe.css?v=2082cf3c" rel="stylesheet" type="text/css"/>
+<link href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" rel="stylesheet" type="text/css"/>
+<link href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css?v=1031a718" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
+<link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
+<script src="../_static/documentation_options.js?v=e02fc88f"></script>
+<script src="../_static/doctools.js?v=888ff710"></script>
+<script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="../_static/copybutton.js?v=30646c52"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+<script src="../_static/design-tabs.js?v=36754332"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+<script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'api/util';</script>
+<link href="../_static/favicon.png" rel="icon"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="math.html" rel="next" title="pyxu.math"/>
+<link href="runtime.html" rel="prev" title="pyxu.runtime"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="light" data-offset="180">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search the docs ..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+<label class="sidebar-toggle primary-toggle" for="__primary">
+<span class="fa-solid fa-bars"></span>
+</label>
+<div class="navbar-header-items__start">
+<div class="navbar-item">
+<a class="navbar-brand logo" href="../index.html">
+<img alt="Logo image" class="logo__image only-light" src="../_static/logo.png"/>
+<script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+</a></div>
+</div>
+<div class="col-lg-9 navbar-header-items">
+<div class="me-auto navbar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../intro/index.html">
+                        Getting Started
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../guide/index.html">
+                        User Guide
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../examples/index.html">
+                        Example Gallery
+                      </a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link nav-internal" href="index.html">
+                        API Reference
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../fair/index.html">
+                        Extending Pyxu
+                      </a>
+</li>
+</ul>
+</nav></div>
+</div>
+<div class="navbar-header-items__end">
+<div class="navbar-item navbar-persistent--container">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<div class="navbar-item"><strong> v1.0.x </strong></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://pypi.org/project/pyxu/" rel="noopener" target="_blank" title="PyPI"><span><i class="fa-brands fa-python"></i></span>
+<label class="sr-only">PyPI</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="mailto: matthieu.simeoni@gmail.com" rel="noopener" target="_blank" title="Contact"><span><i class="fa-brands fa-telegram"></i></span>
+<label class="sr-only">Contact</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://imaging.epfl.ch/" rel="noopener" target="_blank" title="EPFL Center for Imaging"><img alt="EPFL Center for Imaging" class="icon-link-image" src="../_static/imaging.png"/></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<label class="sidebar-toggle secondary-toggle" for="__secondary">
+<span class="fa-solid fa-outdent"></span>
+</label>
+</div>
+</nav>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+<div class="sidebar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../intro/index.html">
+                        Getting Started
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../guide/index.html">
+                        User Guide
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../examples/index.html">
+                        Example Gallery
+                      </a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link nav-internal" href="index.html">
+                        API Reference
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../fair/index.html">
+                        Extending Pyxu
+                      </a>
+</li>
+</ul>
+</nav></div>
+</div>
+<div class="sidebar-header-items__end">
+<div class="navbar-item"><strong> v1.0.x </strong></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://pypi.org/project/pyxu/" rel="noopener" target="_blank" title="PyPI"><span><i class="fa-brands fa-python"></i></span>
+<label class="sr-only">PyPI</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="mailto: matthieu.simeoni@gmail.com" rel="noopener" target="_blank" title="Contact"><span><i class="fa-brands fa-telegram"></i></span>
+<label class="sr-only">Contact</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://imaging.epfl.ch/" rel="noopener" target="_blank" title="EPFL Center for Imaging"><img alt="EPFL Center for Imaging" class="icon-link-image" src="../_static/imaging.png"/></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item"><nav aria-label="Section Navigation" class="bd-docs-nav bd-links">
+<p aria-level="1" class="bd-links__title" role="heading">Section Navigation</p>
+<div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="abc.html">pyxu.abc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opt.html">pyxu.opt</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="operator/index.html">pyxu.operator</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="operator/map.html">pyxu.operator.map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operator/func.html">pyxu.operator.func</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operator/linop.html">pyxu.operator.linop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operator/blocks.html">pyxu.operator.blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operator/interop.html">pyxu.operator.interop</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="runtime.html">pyxu.runtime</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">pyxu.util</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math.html">pyxu.math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.html">pyxu.info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="experimental.html">pyxu.experimental</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content">
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item">
+<nav aria-label="Breadcrumbs">
+<ul aria-label="Breadcrumb" class="bd-breadcrumbs" role="navigation">
+<li class="breadcrumb-item breadcrumb-home">
+<a aria-label="Home" class="nav-link" href="../index.html">
+<i class="fa-solid fa-home"></i>
+</a>
+</li>
+<li class="breadcrumb-item"><a class="nav-link" href="index.html">API Reference</a></li>
+<li aria-current="page" class="breadcrumb-item active">pyxu.util</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article" role="main">
+<section id="pyxu-util">
+<h1>pyxu.util<a class="headerlink" href="#pyxu-util" title="Link to this heading">#</a></h1>
+<nav class="contents local" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#module-pyxu.util.array_module" id="id1">pyxu.util.array_module</a></p></li>
+<li><p><a class="reference internal" href="#module-pyxu.util.complex" id="id2">pyxu.util.complex</a></p></li>
+<li><p><a class="reference internal" href="#module-pyxu.util.inspect" id="id3">pyxu.util.inspect</a></p></li>
+<li><p><a class="reference internal" href="#module-pyxu.util.misc" id="id4">pyxu.util.misc</a></p></li>
+<li><p><a class="reference internal" href="#module-pyxu.util.operator" id="id5">pyxu.util.operator</a></p></li>
+</ul>
+</nav>
+<section id="module-pyxu.util.array_module">
+<span id="pyxu-util-array-module"></span><h2><a class="toc-backref" href="#id1" role="doc-backlink">pyxu.util.array_module</a><a class="headerlink" href="#module-pyxu.util.array_module" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.util.array_module.compute">
+<span class="sig-name descname"><span class="pre">compute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'compute'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/util/array_module.html#compute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.util.array_module.compute" title="Link to this definition">#</a></dt>
+<dd><p>Force computation of Dask collections.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>*args</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – Any number of objects.
+If it is a dask object, it is evaluated and the result is returned.
+Non-dask arguments are passed through unchanged.
+Python collections are traversed to find/evaluate dask objects within.
+(Use <code class="code docutils literal notranslate"><span class="pre">traverse</span></code> =False to disable this behavior.)</p></li>
+<li><p><strong>mode</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Dask evaluation strategy: compute or persist.</p></li>
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – Extra keyword parameters forwarded to <a class="reference external" href="https://docs.dask.org/en/stable/api.html#dask.compute" title="(in Dask)"><code class="xref py py-func docutils literal notranslate"><span class="pre">dask.compute()</span></code></a> or <a class="reference external" href="https://docs.dask.org/en/stable/api.html#dask.persist" title="(in Dask)"><code class="xref py py-func docutils literal notranslate"><span class="pre">dask.persist()</span></code></a>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>*cargs</strong> – Evaluated objects. Non-dask arguments are passed through unchanged.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.util.array_module.copy_if_unsafe">
+<span class="sig-name descname"><span class="pre">copy_if_unsafe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/util/array_module.html#copy_if_unsafe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.util.array_module.copy_if_unsafe" title="Link to this definition">#</a></dt>
+<dd><p>Copy array if it is unsafe to do in-place updates on it, i.e.</p>
+<ul class="simple">
+<li><p>if the array is read-only, OR</p></li>
+<li><p>if the array is a view onto another array.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>y</strong></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.util.array_module.get_array_module">
+<span class="sig-name descname"><span class="pre">get_array_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fallback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/util/array_module.html#get_array_module"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.util.array_module.get_array_module" title="Link to this definition">#</a></dt>
+<dd><p>Get the array namespace corresponding to a given object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a>) – Any object compatible with the interface of NumPy arrays.</p></li>
+<li><p><strong>fallback</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.ArrayModule" title="pyxu.info.ptype.ArrayModule"><code class="xref py py-class docutils literal notranslate"><span class="pre">ArrayModule</span></code></a>) – Fallback module if <code class="code docutils literal notranslate"><span class="pre">x</span></code> is not a NumPy-like array.
+Default behaviour: raise error if fallback used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>namespace</strong> – The namespace to use to manipulate <code class="code docutils literal notranslate"><span class="pre">x</span></code>, or <code class="code docutils literal notranslate"><span class="pre">fallback</span></code> if provided.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="info.html#pyxu.info.ptype.ArrayModule" title="pyxu.info.ptype.ArrayModule"><code class="xref py py-class docutils literal notranslate"><span class="pre">ArrayModule</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.util.array_module.read_only">
+<span class="sig-name descname"><span class="pre">read_only</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/util/array_module.html#read_only"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.util.array_module.read_only" title="Link to this definition">#</a></dt>
+<dd><p>Make an array read-only.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>y</strong></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.util.array_module.redirect">
+<span class="sig-name descname"><span class="pre">redirect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/util/array_module.html#redirect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.util.array_module.redirect" title="Link to this definition">#</a></dt>
+<dd><p>Change codepath for supplied array backends.</p>
+<p>Some functions/methods cannot be written in module-agnostic fashion. The action of this
+decorator is summarized below:</p>
+<ul class="simple">
+<li><p>Analyze an array-valued parameter (<code class="code docutils literal notranslate"><span class="pre">x</span></code>) of the wrapped function/method (<code class="code docutils literal notranslate"><span class="pre">f</span></code>).</p></li>
+<li><p>If <code class="code docutils literal notranslate"><span class="pre">x</span></code> lies in one of the supplied array namespaces: re-route execution to the specified
+function.</p></li>
+<li><p>If <code class="code docutils literal notranslate"><span class="pre">x</span></code> lies in none of the supplied array namespaces: execute <code class="code docutils literal notranslate"><span class="pre">f</span></code>.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>i</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.VarName" title="pyxu.info.ptype.VarName"><code class="xref py py-class docutils literal notranslate"><span class="pre">VarName</span></code></a>) – name of the array-like variable in <code class="code docutils literal notranslate"><span class="pre">f</span></code> to base dispatch on.</p></li>
+<li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>) – <ul>
+<li><p>key[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]: array backend short-name as defined in <a class="reference internal" href="info.html#pyxu.info.deps.NDArrayInfo" title="pyxu.info.deps.NDArrayInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArrayInfo</span></code></a>.</p></li>
+<li><p>value[<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.Callable</span></code></a>]: function/method to dispatch to.</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.11)"><em>Callable</em></a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Auto-dispatch via <a class="reference internal" href="#pyxu.util.array_module.redirect" title="pyxu.util.array_module.redirect"><code class="xref py py-func docutils literal notranslate"><span class="pre">redirect()</span></code></a> assumes the dispatcher/dispatchee have the same
+parameterization, i.e.:</p>
+<ul class="simple">
+<li><p>if <code class="code docutils literal notranslate"><span class="pre">f</span></code> is a function -&gt; dispatch possible to another callable with identical signature (i.e.,
+function or staticmethod)</p></li>
+<li><p>if <code class="code docutils literal notranslate"><span class="pre">f</span></code> is a staticmethod -&gt; dispatch possible to another callable with identical signature
+(i.e., function or staticmethod)</p></li>
+<li><p>if <code class="code docutils literal notranslate"><span class="pre">f</span></code> is an instance-method -&gt; dispatch to another instance-method of the class with
+identical signature.</p></li>
+</ul>
+<p class="rubric">Example</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="k">return</span> <span class="s2">"f"</span>
+
+<span class="nd">@redirect</span><span class="p">(</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">NUMPY</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>    <span class="c1"># if 'x' is of type NDArrayInfo.NUMPY, i.e. has</span>
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="k">return</span> <span class="s2">"g"</span>    <span class="c1"># short-name 'NUMPY' -&gt; reroute execution to `f`</span>
+
+<span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">g</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">g</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># 'f', 'g'</span>
+</pre></div>
+</div>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.util.array_module.to_NUMPY">
+<span class="sig-name descname"><span class="pre">to_NUMPY</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/util/array_module.html#to_NUMPY"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.util.array_module.to_NUMPY" title="Link to this definition">#</a></dt>
+<dd><p>Convert an array from a specific backend to NUMPY.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – Array to be converted.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>y</strong> – Array with NumPy backend.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function is a no-op if the array is already a NumPy array.</p>
+</dd></dl>
+</section>
+<section id="module-pyxu.util.complex">
+<span id="pyxu-util-complex"></span><h2><a class="toc-backref" href="#id2" role="doc-backlink">pyxu.util.complex</a><a class="headerlink" href="#module-pyxu.util.complex" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.util.complex.view_as_real">
+<span class="sig-name descname"><span class="pre">view_as_real</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/util/complex.html#view_as_real"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.util.complex.view_as_real" title="Link to this definition">#</a></dt>
+<dd><p>View complex-valued array as its real-valued bijection.
+(Inverse of <a class="reference internal" href="#pyxu.util.complex.view_as_complex" title="pyxu.util.complex.view_as_complex"><code class="xref py py-func docutils literal notranslate"><span class="pre">view_as_complex()</span></code></a>.)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – (…, N) complex-valued array.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>y</strong> – (…, 2N) real-valued array.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.util</span> <span class="kn">import</span> <span class="n">view_as_real</span><span class="p">,</span> <span class="n">view_as_complex</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>   <span class="c1"># array([0.+2.j, 1.+3.j, 2.+4.j])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">view_as_real</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>               <span class="c1"># array([0., 2., 1., 3., 2., 4.])</span>
+<span class="n">view_as_complex</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="n">x</span>           <span class="c1"># True</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Real-valued inputs are returned unchanged.
+For complex-valued inputs, this function acts on the last axis as:</p>
+<div class="math notranslate nohighlight">
+\[y_{2n-1} = \mathcal{R}(x_n),
+\quad
+y_{2n} = \mathcal{I}(x_n),
+\quad 1\leq n\leq N,\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{R}, \mathcal{I}\)</span> denote the real/imaginary parts respectively.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#pyxu.util.complex.view_as_complex" title="pyxu.util.complex.view_as_complex"><code class="xref py py-func docutils literal notranslate"><span class="pre">view_as_complex()</span></code></a>, <a class="reference internal" href="#pyxu.util.complex.view_as_real_mat" title="pyxu.util.complex.view_as_real_mat"><code class="xref py py-func docutils literal notranslate"><span class="pre">view_as_real_mat()</span></code></a>, <a class="reference internal" href="#pyxu.util.complex.view_as_complex_mat" title="pyxu.util.complex.view_as_complex_mat"><code class="xref py py-func docutils literal notranslate"><span class="pre">view_as_complex_mat()</span></code></a></p>
+</div>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.util.complex.view_as_complex">
+<span class="sig-name descname"><span class="pre">view_as_complex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/util/complex.html#view_as_complex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.util.complex.view_as_complex" title="Link to this definition">#</a></dt>
+<dd><p>View real-valued array as its complex-valued bijection.
+(Inverse of <a class="reference internal" href="#pyxu.util.complex.view_as_real" title="pyxu.util.complex.view_as_real"><code class="xref py py-func docutils literal notranslate"><span class="pre">view_as_real()</span></code></a>.)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – (…, 2N) real-valued array.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>y</strong> – (…, N) complex-valued array.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.util</span> <span class="kn">import</span> <span class="n">view_as_real</span><span class="p">,</span> <span class="n">view_as_complex</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">6.0</span><span class="p">)</span>      <span class="c1"># array([0., 1., 2., 3., 4., 5.])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">view_as_complex</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># array([0.+1.j, 2.+3.j, 4.+5.j])</span>
+<span class="n">view_as_real</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="n">x</span>    <span class="c1"># True</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Complex-valued inputs are returned unchanged.
+For real-valued inputs, this function acts on the last axis as:</p>
+<div class="math notranslate nohighlight">
+\[y_n = x_{2n-1}+j \, x_{2n}, \qquad 1\leq n\leq N.\]</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#pyxu.util.complex.view_as_real" title="pyxu.util.complex.view_as_real"><code class="xref py py-func docutils literal notranslate"><span class="pre">view_as_real()</span></code></a>, <a class="reference internal" href="#pyxu.util.complex.view_as_real_mat" title="pyxu.util.complex.view_as_real_mat"><code class="xref py py-func docutils literal notranslate"><span class="pre">view_as_real_mat()</span></code></a>, <a class="reference internal" href="#pyxu.util.complex.view_as_complex_mat" title="pyxu.util.complex.view_as_complex_mat"><code class="xref py py-func docutils literal notranslate"><span class="pre">view_as_complex_mat()</span></code></a></p>
+</div>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.util.complex.view_as_real_mat">
+<span class="sig-name descname"><span class="pre">view_as_real_mat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">real_input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">real_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/util/complex.html#view_as_real_mat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.util.complex.view_as_real_mat" title="Link to this definition">#</a></dt>
+<dd><p>View complex-valued matrix as its real-valued equivalent.
+(Inverse of <a class="reference internal" href="#pyxu.util.complex.view_as_complex_mat" title="pyxu.util.complex.view_as_complex_mat"><code class="xref py py-func docutils literal notranslate"><span class="pre">view_as_complex_mat()</span></code></a>.)</p>
+<p>Useful to transform complex-valued matrix/vector products to their real-valued counterparts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cmat</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – (M, N) complex-valued matrix.</p></li>
+<li><p><strong>real_input</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – </p></li>
+<li><p><strong>real_output</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p><strong>rmat</strong> –</p>
+<p>The output shape depends on the values of <code class="code docutils literal notranslate"><span class="pre">real_input</span></code> and <code class="code docutils literal notranslate"><span class="pre">real_output</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span> <span class="n">real_input</span> <span class="o">|</span> <span class="n">real_output</span> <span class="o">|</span> <span class="n">rmat</span><span class="o">.</span><span class="n">shape</span> <span class="o">|</span>
+<span class="o">|------------|-------------|------------|</span>
+<span class="o">|</span> <span class="kc">False</span>      <span class="o">|</span> <span class="kc">False</span>       <span class="o">|</span> <span class="p">(</span><span class="mi">2</span><span class="n">M</span><span class="p">,</span> <span class="mi">2</span><span class="n">N</span><span class="p">)</span>   <span class="o">|</span>
+<span class="o">|</span> <span class="kc">False</span>      <span class="o">|</span> <span class="kc">True</span>        <span class="o">|</span> <span class="p">(</span> <span class="n">M</span><span class="p">,</span> <span class="mi">2</span><span class="n">N</span><span class="p">)</span>   <span class="o">|</span>
+<span class="o">|</span> <span class="kc">True</span>       <span class="o">|</span> <span class="kc">False</span>       <span class="o">|</span> <span class="p">(</span><span class="mi">2</span><span class="n">M</span><span class="p">,</span>  <span class="n">N</span><span class="p">)</span>   <span class="o">|</span>
+<span class="o">|</span> <span class="kc">True</span>       <span class="o">|</span> <span class="kc">True</span>        <span class="o">|</span> <span class="p">(</span> <span class="n">M</span><span class="p">,</span>  <span class="n">N</span><span class="p">)</span>   <span class="o">|</span>
+</pre></div>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.util</span> <span class="kn">import</span> <span class="n">view_as_real_mat</span><span class="p">,</span> <span class="n">view_as_complex_mat</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">8</span><span class="p">],</span> <span class="c1"># array([[0.+2.j, 1.+3.j, 2.+4.j],</span>
+    <span class="n">newshape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>             <span class="c1">#        [3.+5.j, 4.+6.j, 5.+7.j]])</span>
+<span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">view_as_real_mat</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>          <span class="c1"># array([[ 0., -2.,  1., -3.,  2., -4.],</span>
+                                 <span class="c1">#        [ 2.,  0.,  3.,  1.,  4.,  2.],</span>
+                                 <span class="c1">#        [ 3., -5.,  4., -6.,  5., -7.],</span>
+                                 <span class="c1">#        [ 5.,  3.,  6.,  4.,  7.,  5.]])</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<ul>
+<li><p>Real-valued matrices are returned unchanged.</p></li>
+<li><p>Complex-valued matrices <span class="math notranslate nohighlight">\(A\in\mathbb{C}^{M\times N}\)</span> are mapped into a real-valued
+matrix <span class="math notranslate nohighlight">\(\hat{A}\in\mathbb{R}^{2M\times 2N}\)</span> defined, for <span class="math notranslate nohighlight">\(1\leq n \leq N\)</span>,
+<span class="math notranslate nohighlight">\(1\leq m\leq M\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\hat{A}_{2m-1,2n-1} = \mathcal{R}(A_{m,n}),
+&amp; \quad
+\hat{A}_{2m-1,2n} = -\mathcal{I}(A_{m,n}),\\
+\hat{A}_{2m,2n-1} = \mathcal{I}(A_{m,n}),
+&amp; \quad
+\hat{A}_{2m,2n}=\mathcal{R}(A_{m,n}).\end{split}\]</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">real_[in|out]put=True</span></code>, then even columns/rows (or both) are furthermore dropped.
+We have <code class="docutils literal notranslate"><span class="pre">view_as_real(A</span> <span class="pre">@</span> <span class="pre">x)</span> <span class="pre">=</span> <span class="pre">view_as_real_mat(A)</span> <span class="pre">@</span> <span class="pre">view_as_real(x)</span></code>.</p>
+</li>
+</ul>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#pyxu.util.complex.view_as_real" title="pyxu.util.complex.view_as_real"><code class="xref py py-func docutils literal notranslate"><span class="pre">view_as_real()</span></code></a>, <a class="reference internal" href="#pyxu.util.complex.view_as_complex" title="pyxu.util.complex.view_as_complex"><code class="xref py py-func docutils literal notranslate"><span class="pre">view_as_complex()</span></code></a>, <a class="reference internal" href="#pyxu.util.complex.view_as_complex_mat" title="pyxu.util.complex.view_as_complex_mat"><code class="xref py py-func docutils literal notranslate"><span class="pre">view_as_complex_mat()</span></code></a></p>
+</div>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.util.complex.view_as_complex_mat">
+<span class="sig-name descname"><span class="pre">view_as_complex_mat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rmat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">real_input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">real_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/util/complex.html#view_as_complex_mat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.util.complex.view_as_complex_mat" title="Link to this definition">#</a></dt>
+<dd><p>View real-valued matrix as its complex-valued equivalent.
+(Inverse of <a class="reference internal" href="#pyxu.util.complex.view_as_real_mat" title="pyxu.util.complex.view_as_real_mat"><code class="xref py py-func docutils literal notranslate"><span class="pre">view_as_real_mat()</span></code></a>.)</p>
+<p>Useful to transform real-valued matrix/vector products to their complex-valued counterparts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rmat</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – <p>Real-valued matrix.
+Accepted dimensions depend on the values of <code class="code docutils literal notranslate"><span class="pre">real_input</span></code> and <code class="code docutils literal notranslate"><span class="pre">real_output</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span> <span class="n">real_input</span> <span class="o">|</span> <span class="n">real_output</span> <span class="o">|</span> <span class="n">rmat</span><span class="o">.</span><span class="n">shape</span> <span class="o">|</span>
+<span class="o">|------------|-------------|------------|</span>
+<span class="o">|</span> <span class="kc">False</span>      <span class="o">|</span> <span class="kc">False</span>       <span class="o">|</span> <span class="p">(</span><span class="mi">2</span><span class="n">M</span><span class="p">,</span> <span class="mi">2</span><span class="n">N</span><span class="p">)</span>   <span class="o">|</span>
+<span class="o">|</span> <span class="kc">False</span>      <span class="o">|</span> <span class="kc">True</span>        <span class="o">|</span> <span class="p">(</span> <span class="n">M</span><span class="p">,</span> <span class="mi">2</span><span class="n">N</span><span class="p">)</span>   <span class="o">|</span>
+<span class="o">|</span> <span class="kc">True</span>       <span class="o">|</span> <span class="kc">False</span>       <span class="o">|</span> <span class="p">(</span><span class="mi">2</span><span class="n">M</span><span class="p">,</span>  <span class="n">N</span><span class="p">)</span>   <span class="o">|</span>
+<span class="o">|</span> <span class="kc">True</span>       <span class="o">|</span> <span class="kc">True</span>        <span class="o">|</span> <span class="p">(</span> <span class="n">M</span><span class="p">,</span>  <span class="n">N</span><span class="p">)</span>   <span class="o">|</span>
+</pre></div>
+</div>
+</p></li>
+<li><p><strong>real_input</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – </p></li>
+<li><p><strong>real_output</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>cmat</strong> – (M, N) complex-valued matrix.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.util</span> <span class="kn">import</span> <span class="n">view_as_real_mat</span><span class="p">,</span> <span class="n">view_as_complex_mat</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.</span><span class="p">],</span>
+              <span class="p">[</span> <span class="mf">2.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span>  <span class="mf">3.</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">,</span>  <span class="mf">4.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">],</span>
+              <span class="p">[</span> <span class="mf">3.</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.</span><span class="p">,</span>  <span class="mf">4.</span><span class="p">,</span> <span class="o">-</span><span class="mf">6.</span><span class="p">,</span>  <span class="mf">5.</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.</span><span class="p">],</span>
+              <span class="p">[</span> <span class="mf">5.</span><span class="p">,</span>  <span class="mf">3.</span><span class="p">,</span>  <span class="mf">6.</span><span class="p">,</span>  <span class="mf">4.</span><span class="p">,</span>  <span class="mf">7.</span><span class="p">,</span>  <span class="mf">5.</span><span class="p">]])</span>
+
+<span class="n">B</span> <span class="o">=</span> <span class="n">view_as_complex</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>  <span class="c1"># array([[0.+2.j, 1.+3.j, 2.+4.j],</span>
+                        <span class="c1">#        [3.+5.j, 4.+6.j, 5.+7.j]])</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<ul>
+<li><p>Complex-valued matrices are returned unchanged.</p></li>
+<li><p>Real-valued matrices are mapped into a complex-valued matrix <span class="math notranslate nohighlight">\({A}\in\mathbb{C}^{M\times
+N}\)</span> as follows:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{A}\in\mathbb{R}^{2M\times 2N}\)</span>:  <span class="math notranslate nohighlight">\(A_{m,n} = \hat{A}_{2m-1,2n-1} + j \hat{A}_{2m,2n-1}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{A}\in\mathbb{R}^{M\times 2N}\)</span>:  <span class="math notranslate nohighlight">\(A_{m,n} = \hat{A}_{m,2n-1} - j \hat{A}_{m,2n}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{A}\in\mathbb{R}^{2M\times N}\)</span>:  <span class="math notranslate nohighlight">\(A_{m,n} = \hat{A}_{2m-1,n} + j \hat{A}_{2m,n}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{A}\in\mathbb{R}^{M\times N}\)</span>:  <span class="math notranslate nohighlight">\(A_{m,n} = \hat{A}_{m,n} + 0j\)</span>,</p></li>
+</ul>
+<p>for <span class="math notranslate nohighlight">\(1\leq n \leq N\)</span>, <span class="math notranslate nohighlight">\(1\leq m\leq M\)</span>.</p>
+</li>
+</ul>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#pyxu.util.complex.view_as_real" title="pyxu.util.complex.view_as_real"><code class="xref py py-func docutils literal notranslate"><span class="pre">view_as_real()</span></code></a>, <a class="reference internal" href="#pyxu.util.complex.view_as_complex" title="pyxu.util.complex.view_as_complex"><code class="xref py py-func docutils literal notranslate"><span class="pre">view_as_complex()</span></code></a>, <a class="reference internal" href="#pyxu.util.complex.view_as_real_mat" title="pyxu.util.complex.view_as_real_mat"><code class="xref py py-func docutils literal notranslate"><span class="pre">view_as_real_mat()</span></code></a></p>
+</div>
+</dd></dl>
+</section>
+<section id="module-pyxu.util.inspect">
+<span id="pyxu-util-inspect"></span><h2><a class="toc-backref" href="#id3" role="doc-backlink">pyxu.util.inspect</a><a class="headerlink" href="#module-pyxu.util.inspect" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.util.inspect.import_module">
+<span class="sig-name descname"><span class="pre">import_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fail_on_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/util/inspect.html#import_module"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.util.inspect.import_module" title="Link to this definition">#</a></dt>
+<dd><p>Load a Python module dynamically.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – </p></li>
+<li><p><strong>fail_on_error</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>module</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.util.inspect.parse_params">
+<span class="sig-name descname"><span class="pre">parse_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/util/inspect.html#parse_params"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.util.inspect.parse_params" title="Link to this definition">#</a></dt>
+<dd><p>Get function parameterization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>params</strong> – (key, value) params as seen in body of <code class="code docutils literal notranslate"><span class="pre">func</span></code> when called via <code class="code docutils literal notranslate"><span class="pre">func(*args,</span> <span class="pre">**kwargs)</span></code>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="module-pyxu.util.misc">
+<span id="pyxu-util-misc"></span><h2><a class="toc-backref" href="#id4" role="doc-backlink">pyxu.util.misc</a><a class="headerlink" href="#module-pyxu.util.misc" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.util.misc.peaks">
+<span class="sig-name descname"><span class="pre">peaks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/util/misc.html#peaks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.util.misc.peaks" title="Link to this definition">#</a></dt>
+<dd><p>Matlab 2D peaks function.</p>
+<p>Peaks is a function of two variables, obtained by translating and scaling Gaussian
+distributions.
+(See <a class="reference external" href="https://www.mathworks.com/help/matlab/ref/peaks.html">Matlab’s peaks function</a>.)</p>
+<p>This function is useful for testing purposes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – X coordinates.</p></li>
+<li><p><strong>y</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – Y coordinates.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>z</strong> – Values of the 2D function <code class="docutils literal notranslate"><span class="pre">peaks</span></code> at the points specified by the entries of <code class="code docutils literal notranslate"><span class="pre">x</span></code> and <code class="code docutils literal notranslate"><span class="pre">y</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <a class="sphinx-codeautolink-a" href="../api/util.html#module-pyxu.util.misc" title="pyxu.util.misc"><span class="nn">pyxu.util.misc</span></a> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
+
+<span class="n">x</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html#numpy.linspace" title="numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.meshgrid.html#numpy.meshgrid" title="numpy.meshgrid"><span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span></a><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">)</span>
+<a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
+<a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow" title="matplotlib.pyplot.imshow"><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span></a><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(<a class="reference download internal" download="" href="../_downloads/7a96e89967447e1042b7a00e8e9f004a/util-1.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../_downloads/6c763f0d1d1bca3dea56eef770528674/util-1.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/09a11b0e08c73736be787c749bfba607/util-1.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/5be70851f96b004b61b84e14faba6d02/util-1.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../_images/util-1.png" class="plot-directive" src="../_images/util-1.png"/>
+</figure>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.util.misc.star_like_sample">
+<span class="sig-name descname"><span class="pre">star_like_sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">po</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ndi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">NDArrayInfo.NUMPY</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/util/misc.html#star_like_sample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.util.misc.star_like_sample" title="Link to this definition">#</a></dt>
+<dd><p>Star-like test image.</p>
+<p>Generates a (N, N) square image of a star-like object normalized between 0 and 1.
+Based on <a class="reference external" href="https://github.com/Biomedical-Imaging-Group/GlobalBioIm/blob/master/Util/StarLikeSample.m">GlobalBioIm’s StarLikeSample function</a>.
+This function is useful for testing purposes as it contains high-frequency information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>N</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.Integer" title="pyxu.info.ptype.Integer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integer</span></code></a>) – Size of the image (must be an even number).</p></li>
+<li><p><strong>w</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.Integer" title="pyxu.info.ptype.Integer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integer</span></code></a>) – The number of branches of the sample will be 4*w.</p></li>
+<li><p><strong>s</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Slope of the sigmoid function <span class="math notranslate nohighlight">\(\frac1{1+\exp[s (x-x_{0})]}\)</span> attenuating the boundaries.</p></li>
+<li><p><strong>po</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.Integer" title="pyxu.info.ptype.Integer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integer</span></code></a>) – Power-raising factor for the final image (to have smoother edges).</p></li>
+<li><p><strong>x0</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Radial shift of the sigmoid function <span class="math notranslate nohighlight">\(\frac1{1+\exp[s (x-x_{0})]}\)</span>.</p></li>
+<li><p><strong>ndi</strong> (<a class="reference internal" href="info.html#pyxu.info.deps.NDArrayInfo" title="pyxu.info.deps.NDArrayInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArrayInfo</span></code></a>) – Desired array module for the output.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>image</strong> – (N, N) image of star-like sample.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <a class="sphinx-codeautolink-a" href="../api/util.html#module-pyxu.util.misc" title="pyxu.util.misc"><span class="nn">pyxu.util.misc</span></a> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/util.html#pyxu.util.misc.star_like_sample" title="pyxu.util.misc.star_like_sample"><span class="n">star_like_sample</span></a>
+
+<span class="n">star</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/util.html#pyxu.util.misc.star_like_sample" title="pyxu.util.misc.star_like_sample"><span class="n">star_like_sample</span></a><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">po</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
+<a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow" title="matplotlib.pyplot.imshow"><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span></a><span class="p">(</span><span class="n">star</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(<a class="reference download internal" download="" href="../_downloads/0fc82206eb78ed17440026ce6f7cb455/util-2.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../_downloads/92b871487a1a9b8139c3540b67b17b89/util-2.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/97ed94caa646cf7937bbaa1dba9f3fc9/util-2.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/5420c90dcdf9b097dbed8ebf47bc7a03/util-2.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../_images/util-2.png" class="plot-directive" src="../_images/util-2.png"/>
+</figure>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.util.misc.as_canonical_shape">
+<span class="sig-name descname"><span class="pre">as_canonical_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/util/misc.html#as_canonical_shape"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.util.misc.as_canonical_shape" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><em>...</em><em>]</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)">tuple</a>[<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a>, …]</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.util.misc.next_fast_len">
+<span class="sig-name descname"><span class="pre">next_fast_len</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">even</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/util/misc.html#next_fast_len"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.util.misc.next_fast_len" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>N</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a>) – </p></li>
+<li><p><strong>even</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="module-pyxu.util.operator">
+<span id="pyxu-util-operator"></span><h2><a class="toc-backref" href="#id5" role="doc-backlink">pyxu.util.operator</a><a class="headerlink" href="#module-pyxu.util.operator" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.util.operator._dask_zip">
+<span class="sig-name descname"><span class="pre">_dask_zip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/util/operator.html#_dask_zip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.util.operator._dask_zip" title="Link to this definition">#</a></dt>
+<dd><p>(This is a Low-Level function.)</p>
+<p>Computes the equivalent of <code class="docutils literal notranslate"><span class="pre">out</span> <span class="pre">=</span> <span class="pre">[f(x)</span> <span class="pre">for</span> <span class="pre">(f,</span> <span class="pre">x)</span> <span class="pre">in</span> <span class="pre">zip(func,</span> <span class="pre">data)]</span></code>, with the following semantics:</p>
+<ul class="simple">
+<li><p>If <code class="code docutils literal notranslate"><span class="pre">data</span></code> contains only NUMPY/CUPY arrays, then <code class="docutils literal notranslate"><span class="pre">out</span></code> is computed as above.</p></li>
+<li><p>If <code class="code docutils literal notranslate"><span class="pre">data</span></code> contains only DASK arrays, then entries of <code class="docutils literal notranslate"><span class="pre">out</span></code> are computed:</p>
+<ul>
+<li><p>if <code class="code docutils literal notranslate"><span class="pre">parallel</span></code> enabled  -&gt; dask-delay each <code class="code docutils literal notranslate"><span class="pre">func</span></code>, then evaluate in parallel.</p></li>
+<li><p>if <code class="code docutils literal notranslate"><span class="pre">parallel</span></code> disabled -&gt; dask-delay each <code class="code docutils literal notranslate"><span class="pre">func</span></code>, then evaluate in sequence.
+(This is useful if <code class="code docutils literal notranslate"><span class="pre">func</span></code> s share a common resource, thus not thread-safe.)</p></li>
+</ul>
+</li>
+</ul>
+<p>For Dask-array inputs, this amounts to creating a task graph with virtual dependencies
+between successive <code class="code docutils literal notranslate"><span class="pre">func</span></code> calls. In other words, the task graph looks like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_dask_zip</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">parallel</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">out</span>
+
+              <span class="o">+----+</span>              <span class="o">+----+</span>
+    <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">--&gt;|</span><span class="n">func</span><span class="o">|--&gt;</span><span class="n">blk</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-+--&gt;|</span><span class="nb">list</span><span class="o">|--&gt;</span><span class="n">out</span>
+        <span class="o">.</span>     <span class="o">+----+</span>          <span class="o">|</span>   <span class="o">+----+</span>
+        <span class="o">.</span>                     <span class="o">|</span>
+        <span class="o">.</span>     <span class="o">+----+</span>          <span class="o">|</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">--&gt;|</span><span class="n">func</span><span class="o">|--&gt;</span><span class="n">blk</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">-+</span>
+              <span class="o">+----+</span>
+
+<span class="o">==========================================================================================================</span>
+<span class="n">_dask_zip</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">parallel</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">out</span>
+                                                                                       <span class="o">+----+</span>
+                        <span class="o">+-------------------+----------------+--------------------+----+</span><span class="nb">list</span><span class="o">|--&gt;</span><span class="n">out</span>
+                        <span class="o">|</span>                   <span class="o">|</span>                <span class="o">|</span>                    <span class="o">|</span>    <span class="o">+----+</span>
+                        <span class="o">|</span>                   <span class="o">|</span>                <span class="o">|</span>                    <span class="o">|</span>
+              <span class="o">+----+</span>    <span class="o">|</span>        <span class="o">+----+</span>     <span class="o">|</span>      <span class="o">+---+</span>     <span class="o">|</span>         <span class="o">+----+</span>     <span class="o">|</span>
+    <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">--&gt;|</span><span class="n">func</span><span class="o">|--&gt;</span><span class="n">out</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-+-&gt;|</span><span class="n">func</span><span class="o">|--&gt;</span><span class="n">out</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">--&gt;|...|--&gt;</span><span class="n">out</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-+-&gt;|</span><span class="n">func</span><span class="o">|--&gt;</span><span class="n">out</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+              <span class="o">+----+</span>          <span class="o">|</span>  <span class="o">+----+</span>            <span class="o">+---+</span>            <span class="o">|</span>  <span class="o">+----+</span>
+                              <span class="o">|</span>                                     <span class="o">|</span>
+    <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-------------------+</span>                                     <span class="o">|</span>
+        <span class="o">.</span>                                                           <span class="o">|</span>
+        <span class="o">.</span>                                                           <span class="o">|</span>
+        <span class="o">.</span>                                                           <span class="o">|</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">---------------------------------------------------------+</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – <p>Functions to apply to each element of <code class="code docutils literal notranslate"><span class="pre">data</span></code>.</p>
+<p>Function signatures are <code class="docutils literal notranslate"><span class="pre">Callable[[NDArray],</span> <span class="pre">NDArray]</span></code>.</p>
+</p></li>
+<li><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – (N_data,) arrays to act on.</p></li>
+<li><p><strong>out_shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – <p>Shapes of <code class="docutils literal notranslate"><span class="pre">func[i](data[i])</span></code>.</p>
+<p>This parameter is only used if inputs are DASK arrays.
+Its goal is to transform <a class="reference external" href="https://docs.dask.org/en/stable/delayed-api.html#dask.delayed.Delayed" title="(in Dask)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Delayed</span></code></a> objects back to array form.</p>
+</p></li>
+<li><p><strong>out_dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – <p>Dtypes of <code class="docutils literal notranslate"><span class="pre">func[i](data[i])</span></code>.</p>
+<p>This parameter is only used if inputs are DASK arrays.
+Its goal is to transform <a class="reference external" href="https://docs.dask.org/en/stable/delayed-api.html#dask.delayed.Delayed" title="(in Dask)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Delayed</span></code></a> objects back to array form.</p>
+</p></li>
+<li><p><strong>parallel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p><strong>out</strong> – (N_data,) objects acted upon.</p>
+<p>Outputs have the same backend/dtype as inputs, or as specified by <code class="code docutils literal notranslate"><span class="pre">out_[shape,dtype]</span></code>.</p>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.util.operator._array_ize">
+<span class="sig-name descname"><span class="pre">_array_ize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/util/operator.html#_array_ize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.util.operator._array_ize" title="Link to this definition">#</a></dt>
+<dd><p>(This is a Low-Level function.)</p>
+<p>Transform a Dask-delayed object into its Dask-array counterpart.
+This function is a no-op if <code class="code docutils literal notranslate"><span class="pre">data</span></code> is not a <a class="reference external" href="https://docs.dask.org/en/stable/delayed-api.html#dask.delayed.Delayed" title="(in Dask)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Delayed</span></code></a> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>, <a class="reference external" href="https://docs.dask.org/en/stable/delayed-api.html#dask.delayed.Delayed" title="(in Dask)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Delayed</span></code></a>) – Object to act upon.</p></li>
+<li><p><strong>shape</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.NDArrayShape" title="pyxu.info.ptype.NDArrayShape"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArrayShape</span></code></a>) – <p>Shape of <code class="code docutils literal notranslate"><span class="pre">data</span></code>.</p>
+<p>This parameter is only used if <code class="code docutils literal notranslate"><span class="pre">data</span></code> is a <a class="reference external" href="https://docs.dask.org/en/stable/delayed-api.html#dask.delayed.Delayed" title="(in Dask)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Delayed</span></code></a> object.
+Its goal is to transform the former back to array form.</p>
+</p></li>
+<li><p><strong>dtype</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.DType" title="pyxu.info.ptype.DType"><code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code></a>) – <p>Dtype of <code class="code docutils literal notranslate"><span class="pre">data</span></code>.</p>
+<p>This parameter is only used if <code class="code docutils literal notranslate"><span class="pre">data</span></code> is a <a class="reference external" href="https://docs.dask.org/en/stable/delayed-api.html#dask.delayed.Delayed" title="(in Dask)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Delayed</span></code></a> object.
+Its goal is to transform the former back to array form.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>arr</strong> – Dask-backed NDArray if <code class="code docutils literal notranslate"><span class="pre">data</span></code> was a <a class="reference external" href="https://docs.dask.org/en/stable/delayed-api.html#dask.delayed.Delayed" title="(in Dask)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Delayed</span></code></a> object; no-op otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.util.operator.infer_composition_shape">
+<span class="sig-name descname"><span class="pre">infer_composition_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sh1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sh2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/util/operator.html#infer_composition_shape"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.util.operator.infer_composition_shape" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sh1</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em>) – </p></li>
+<li><p><strong>sh2</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)">tuple</a>[<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.util.operator.infer_sum_shape">
+<span class="sig-name descname"><span class="pre">infer_sum_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sh1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sh2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/util/operator.html#infer_sum_shape"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.util.operator.infer_sum_shape" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sh1</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em>) – </p></li>
+<li><p><strong>sh2</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)">tuple</a>[<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyxu.util.operator.vectorize">
+<span class="sig-name descname"><span class="pre">vectorize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'scan'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/util/operator.html#vectorize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.util.operator.vectorize" title="Link to this definition">#</a></dt>
+<dd><p>Decorator to auto-vectorize an array function to abide by
+<a class="reference internal" href="abc.html#pyxu.abc.operator.Property" title="pyxu.abc.operator.Property"><code class="xref py py-class docutils literal notranslate"><span class="pre">Property</span></code></a> API rules.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>i</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.VarName" title="pyxu.info.ptype.VarName"><code class="xref py py-class docutils literal notranslate"><span class="pre">VarName</span></code></a>) – Function parameter to vectorize. This variable must hold an object with a NumPy API.</p></li>
+<li><p><strong>method</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – <p>Vectorization strategy:</p>
+<ul>
+<li><p><code class="code docutils literal notranslate"><span class="pre">scan</span></code> computes outputs using a for-loop.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">parallel</span></code> passes inputs to DASK and evaluates them in parallel.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">scan_dask</span></code> passes inputs to DASK but evaluates inputs in sequence.
+This is useful if the function being vectorized has a shared resource, i.e. is not
+thread-safe.
+It effectively gives a DASK-unaware function the ability to work with DASK inputs.</p></li>
+</ul>
+</p></li>
+<li><p><strong>codim</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.Integer" title="pyxu.info.ptype.Integer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integer</span></code></a>) – <p>Size of the function’s core dimension output.</p>
+<p>This parameter is only required in “parallel” and “scan_dask” modes.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.11)"><em>Callable</em></a></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyxu.util</span> <span class="k">as</span> <span class="nn">pxu</span>
+
+<span class="nd">@pxu</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1">#  [10], [35]</span>
+<span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>              <span class="c1">#  [10, 35] -&gt; would have retured [45] if not decorated.</span>
+</pre></div>
+</div>
+</dd></dl>
+</section>
+</section>
+</article>
+<footer class="bd-footer-article">
+<div class="footer-article-items footer-article__inner">
+<div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="runtime.html" title="previous page">
+<i class="fa-solid fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">pyxu.runtime</p>
+</div>
+</a>
+<a class="right-next" href="math.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">pyxu.math</p>
+</div>
+<i class="fa-solid fa-angle-right"></i>
+</a>
+</div></div>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> On this page
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyxu.util.array_module">pyxu.util.array_module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.util.array_module.compute"><code class="docutils literal notranslate"><span class="pre">compute()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.util.array_module.copy_if_unsafe"><code class="docutils literal notranslate"><span class="pre">copy_if_unsafe()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.util.array_module.get_array_module"><code class="docutils literal notranslate"><span class="pre">get_array_module()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.util.array_module.read_only"><code class="docutils literal notranslate"><span class="pre">read_only()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.util.array_module.redirect"><code class="docutils literal notranslate"><span class="pre">redirect()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.util.array_module.to_NUMPY"><code class="docutils literal notranslate"><span class="pre">to_NUMPY()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyxu.util.complex">pyxu.util.complex</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.util.complex.view_as_real"><code class="docutils literal notranslate"><span class="pre">view_as_real()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.util.complex.view_as_complex"><code class="docutils literal notranslate"><span class="pre">view_as_complex()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.util.complex.view_as_real_mat"><code class="docutils literal notranslate"><span class="pre">view_as_real_mat()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.util.complex.view_as_complex_mat"><code class="docutils literal notranslate"><span class="pre">view_as_complex_mat()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyxu.util.inspect">pyxu.util.inspect</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.util.inspect.import_module"><code class="docutils literal notranslate"><span class="pre">import_module()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.util.inspect.parse_params"><code class="docutils literal notranslate"><span class="pre">parse_params()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyxu.util.misc">pyxu.util.misc</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.util.misc.peaks"><code class="docutils literal notranslate"><span class="pre">peaks()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.util.misc.star_like_sample"><code class="docutils literal notranslate"><span class="pre">star_like_sample()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.util.misc.as_canonical_shape"><code class="docutils literal notranslate"><span class="pre">as_canonical_shape()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.util.misc.next_fast_len"><code class="docutils literal notranslate"><span class="pre">next_fast_len()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyxu.util.operator">pyxu.util.operator</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.util.operator._dask_zip"><code class="docutils literal notranslate"><span class="pre">_dask_zip()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.util.operator._array_ize"><code class="docutils literal notranslate"><span class="pre">_array_ize()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.util.operator.infer_composition_shape"><code class="docutils literal notranslate"><span class="pre">infer_composition_shape()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.util.operator.infer_sum_shape"><code class="docutils literal notranslate"><span class="pre">infer_sum_shape()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.util.operator.vectorize"><code class="docutils literal notranslate"><span class="pre">vectorize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
+<div class="sidebar-secondary-item">
+<div id="searchbox"></div></div>
+<div class="sidebar-secondary-item">
+<div class="tocsection editthispage">
+<a href="https://github.com/matthieumeo/pyxu/edit/main/doc/api/util.rst">
+<i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+</div>
+</div>
+<div class="sidebar-secondary-item">
+<div class="tocsection sourcelink">
+<a href="../_sources/api/util.rst">
+<i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+</div>
+</div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+<footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+<div class="footer-items__start">
+<div class="footer-item">
+<p class="copyright">
+    
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      <br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    <br/>
+</p>
+</div>
+<div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+</div>
+<div class="footer-items__end">
+<div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+</div>
+</div>
+</footer>
+</body>
+</html>

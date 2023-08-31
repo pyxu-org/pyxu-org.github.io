@@ -1,0 +1,891 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>WaveProp &#8212; Pyxu Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-codeautolink.css?v=125d5c1c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=1031a718" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../../_static/documentation_options.js?v=e02fc88f"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=30646c52"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'fair/plugins/WaveProp';</script>
+    <link rel="icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="UncertaintyQuant" href="UncertaintyQuant.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../intro/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../api/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><strong> v1.0.x </strong></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../intro/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../api/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><strong> v1.0.x </strong></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../howto.html">How to use plugins in Pyxu?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">Contributing to the Pyxu-FAIR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../score.html">Pyxu Score Explained</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Plugin Catalog</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="CSEEG.html">CSEEG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DSP-Notebooks.html">DSP-Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EnvironTracker.html">EnvironTracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HoughDetector.html">HoughDetector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HVOX.html">HVOX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OrientationPy.html">OrientationPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Palentologist.html">Palentologist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PhaseRet.html">PhaseRet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PycGSP.html">PycGSP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pycNUFFT.html">pycNUFFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PycSphere.html">PycSphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pycWavelet.html">pycWavelet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PYFW.html">PYFW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TokemakRec.html">TokemakRec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TVDenoiser.html">TVDenoiser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UncertaintyQuant.html">UncertaintyQuant</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">WaveProp</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Extending Pyxu</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Plugin Catalog</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">WaveProp</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <span class="target" id="plugins-page"></span><!-- CSS overrides on the pyxu-fair only -->
+<style>
+
+.summaryinfo {
+    color: #000;
+    font-size: 80%;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+.entrypointraw {
+    color: #777;
+}
+.badge {
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
+    /*vertical-align: baseline;*/
+    font-family: "DejaVu Sans", Verdana, Geneva, sans-serif;
+    /*font-size: 90%;*/
+}
+.currentstate {
+    color: #666;
+    font-size: 90%;
+    margin-bottom: 12px;
+}
+span.badge-left {
+    border-radius: .25rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    color: #212529;
+    background-color: #A2CBFF;
+    /* color: #ffffff; */
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+
+    padding: .25em .4em;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    float: left;
+    display: block;
+}
+
+span.badge-right {
+    border-radius: .25rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    color: #fff;
+    background-color: #343a40;
+
+    padding: .25em .4em;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    float: left;
+    display: block;
+}
+
+.badge-right.light-blue, .badge-left.light-blue {
+    background-color: #A2CBFF;
+    color: #212529;
+}
+
+.badge-right.light-red, .badge-left.light-red {
+    background-color: rgb(255, 162, 162);
+    color: rgb(43, 14, 14);
+}
+
+.badge-right.red, .badge-left.red {
+    background-color: #e41a1c;
+    color: #fff;
+}
+
+.badge-right.blue, .badge-left.blue {
+    background-color: #377eb8;
+    color: #fff;
+}
+
+.badge-right.green, .badge-left.green {
+    background-color: #4daf4a;
+    color: #fff;
+}
+
+.badge-right.purple, .badge-left.purple {
+    background-color: #984ea3;
+    color: #fff;
+}
+
+.badge-right.orange, .badge-left.orange {
+    background-color: #ff7f00;
+    color: #fff;
+}
+
+.badge-right.brown, .badge-left.brown {
+    background-color: #a65628;
+    color: #fff;
+}
+
+.badge-right.dark-gray, .badge-left.dark-gray {
+    color: #fff;
+    background-color: #343a40;
+}
+
+
+.badge a {
+    text-decoration: none;
+    padding: 0;
+    border: 0;
+    color: inherit;
+}
+
+.badge a:visited, .badge a:active {
+    color: inherit;
+  }
+
+.badge a:focus, .badge a:hover {
+    color: rgba(255,255,255,0.5);
+    mix-blend-mode: difference;
+    text-decoration: none;
+    /* background-color: rgb(192, 219, 255); */
+}
+
+
+.svg-badge {
+    vertical-align: middle;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    /* width: 120px; */
+    background-color: rgb(255, 247, 175);
+    color: #000;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+</style><section id="waveprop">
+<h1>WaveProp<a class="headerlink" href="#waveprop" title="Link to this heading">#</a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h2>
+Velit sed sit quaerat. Amet tempora magnam quiquia est ut quisquam magnam. Amet eius labore eius ipsum. Etincidunt aliquam labore neque neque est aliquam dolor. Amet modi ipsum labore sit tempora. Ut quaerat tempora neque quiquia. Dolor voluptatem ipsum labore aliquam ut neque magnam. Quiquia quiquia ipsum voluptatem.
+
+Eius numquam dolor magnam ut. Quiquia etincidunt quiquia ut est consectetur. Dolorem etincidunt ipsum voluptatem quiquia ipsum est. Aliquam non ipsum non amet porro ipsum aliquam. Quiquia etincidunt eius est quaerat. Amet sed amet quaerat dolor.
+
+Velit numquam modi velit velit consectetur. Sed velit etincidunt ut. Sed aliquam voluptatem eius dolor. Velit aliquam dolorem etincidunt est consectetur quiquia. Voluptatem consectetur est eius consectetur quiquia consectetur. Magnam porro est est dolor. Consectetur ipsum sit quisquam sit est.
+
+Amet ut ipsum quiquia. Quisquam modi voluptatem est. Dolore aliquam non dolorem consectetur. Eius labore dolorem consectetur quisquam non. Sit amet voluptatem velit est. Etincidunt magnam modi ipsum dolore. Tempora neque ipsum magnam. Dolor etincidunt sit quisquam adipisci porro. Dolor sed neque ipsum amet ipsum. Magnam porro aliquam dolore modi quiquia.
+
+Magnam quisquam non amet non. Quaerat aliquam quiquia non porro consectetur. Dolor modi sit velit voluptatem labore labore. Labore etincidunt dolore quisquam. Eius aliquam numquam sit quaerat. Magnam tempora quiquia amet amet quaerat. Quaerat ut consectetur ut quiquia dolorem non eius. Velit eius est aliquam tempora.</section>
+<section id="general-information">
+<h2>General information<a class="headerlink" href="#general-information" title="Link to this heading">#</a></h2>
+<p>
+    <strong>Short description</strong>: Wave propagation reconstruction
+</p>
+
+
+<p class="currentstate">
+
+    <img class="svg-badge" src="../../_static/plugins/status/status-beta-d6af23.svg" title="Beta: Adds new functionality, not yet ready for production. Testing welcome!"></p>
+
+
+<p>
+    <strong>Source code</strong>: <a href="https://github.com/knix/WaveProp" target="_blank">Go to the source code repository</a>
+</p>
+
+
+<p>
+    <strong>Documentation</strong>: <a href="https://knix.github.io/WaveProp/html/index" target="_blank">Go to plugin documentation</a>
+<p></section>
+<section id="detailed-information">
+<h2>Detailed information<a class="headerlink" href="#detailed-information" title="Link to this heading">#</a></h2>
+<p>
+    <strong>Author(s)</strong>: Kenneth Nix
+</p>
+
+
+<p>
+    <strong>Contact</strong>: <a href="mailto:kenneth.nix@pyxu_user.org">kenneth.nix@pyxu_user.org</a>
+</p>
+
+
+<p>
+    <strong>Most recent version</strong>: 0.1.0
+</p>
+<p>
+    <strong>Compatibility</strong>:
+    <img class="svg-badge" title="Compatible with Pyxu 2.0.0" src="https://img.shields.io/badge/Pyxu-2.0.0-007ec6.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAYAAADQWvz5AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAfFJREFUOI2Vkl9IU1Ecxz933TVdFlHOt9pfg1AcBS0MCSUIIRa2XjLowbegiKAggujFN80gevWhHuzdsH8UpJkQ+JKyheRyW1Qyc2xG3Nrudn896C7Ti237vJ3fOedzvr9zjiIiQgVi6PB9CCMd5a9yHJpase8PsCb7cLlcbItskH/3UrSh27J0uVNkxiky4xR9/ICsvrkr3oNuSWuGpDVDus70ysjwPdmKrSzUHz3EWJinkG2sPAaAucUEK/EYJw77mJ54wfinWUsgG8DU5KRZaNhhulEa8gDs3qnQFw4D0BcOk135SeexkFWkaRqnYxkctwZpbvuCnnRuzCoARM6f4kJ/PwCPx8YIdLSTyWU3iZStl12m8H6Q0sdR5I+Nb4bK9eVuvi4scuhoEID5J0+JJxPVRZUEPF46Lp41x78zWZZeTXMuEmH4/kh9IgBf70kQIfX2A6WCDmCmUqtJypQ3iAitXp9l3mapVEFRFOLJBEW9WJvowbVL/xWq9s3NWForFYuM3rnKcuIzA8EWvO1HmHj+jJ7uHq7cvIG/SWU29YPQrjUcqspAsGU9aS2XLQhzU6+xNzppC3XRvGcvAKu/chWL6iQWjYrf7RG/2yOpVMqs15SokvJXyOfzOBwO8zXrfjWzE8MAIJdbb6/uRNvxD+osJR0a6bPBAAAAAElFTkSuQmCC">
+</p></section>
+<section id="components-contributed">
+<h2>Components contributed<a class="headerlink" href="#components-contributed" title="Link to this heading">#</a></h2>
+    <span class="badge">
+        <span class="badge-left blue">Operator</span>
+        <span class="badge-right">1</span>
+    </span>
+
+    <span class="badge">
+        <span class="badge-left brown">Solver</span>
+        <span class="badge-right">1</span>
+    </span>
+
+    <span class="badge">
+        <span class="badge-left purple">Stop</span>
+        <span class="badge-right">1</span>
+    </span>
+
+    <span class="badge">
+        <span class="badge-left green">Math</span>
+        <span class="badge-right">1</span>
+    </span>
+
+    <span class="badge">
+        <span class="badge-left orange">Contrib</span>
+        <span class="badge-right">1</span>
+    </span>
+
+</p>
+
+
+
+  Operator <span class="entrypointraw">(pyxu.operator)</span>
+
+<ul>
+
+<li><code>vulgar_operator</code>
+
+</ul>
+
+
+  Contrib <span class="entrypointraw">(pyxu.contrib)</span>
+
+<ul>
+
+<li><code>moldy_contrib</code>
+
+</ul>
+
+
+  Stop <span class="entrypointraw">(pyxu.stop)</span>
+
+<ul>
+
+<li><code>raspy_stop</code>
+
+</ul>
+
+
+  Math <span class="entrypointraw">(pyxu.math)</span>
+
+<ul>
+
+<li><code>new_math</code>
+
+</ul>
+
+
+  Solver <span class="entrypointraw">(pyxu.solver)</span>
+
+<ul>
+
+<li><code>weak_solver</code>
+
+</ul></section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="UncertaintyQuant.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">UncertaintyQuant</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-information">General information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detailed-information">Detailed information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#components-contributed">Components contributed</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+<div id="searchbox"></div></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/matthieumeo/pyxu/edit/main/doc/fair/plugins/WaveProp.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/fair/plugins/WaveProp.rst">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

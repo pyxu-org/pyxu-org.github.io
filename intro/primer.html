@@ -1,0 +1,681 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Computational Imaging in a Nutshell &#8212; Pyxu Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-codeautolink.css?v=125d5c1c" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=1031a718" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../_static/documentation_options.js?v=e02fc88f"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=30646c52"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'intro/primer';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Hands-on Example: Computerised Tomography with Pyxu" href="tomo.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../api/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fair/index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item"><strong> v1.0.x </strong></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Example Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../api/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fair/index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><strong> v1.0.x </strong></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pyxu/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+            <label class="sr-only">Contact</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://imaging.epfl.ch/" title="EPFL Center for Imaging" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../_static/imaging.png" class="icon-link-image" alt="EPFL Center for Imaging"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Computational Imaging in a Nutshell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tomo.html">Hands-on Example: Computerised Tomography with Pyxu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comparison.html">Comparison with other Frameworks</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Getting Started</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Computational Imaging in a Nutshell</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="Computational-Imaging-in-a-Nutshell">
+<h1>Computational Imaging in a Nutshell<a class="headerlink" href="#Computational-Imaging-in-a-Nutshell" title="Link to this heading">#</a></h1>
+<section id="The-Multifaceted-Realm-of-Computational-Imaging">
+<h2>The Multifaceted Realm of Computational Imaging<a class="headerlink" href="#The-Multifaceted-Realm-of-Computational-Imaging" title="Link to this heading">#</a></h2>
+<p>Digital image restoration and enhancement techniques—concisely termed as image reconstruction methods—serve as the linchpins in the evolving landscape of computer vision. These techniques endeavor to rejuvenate degraded or partially captured raw images, transforming them into superior-quality versions better aligned for visualization or intricate image analysis. The resultant images often boast enhanced resolution and perceptual quality, diminished noise and blur, and may even feature
+completions in areas where data is lacking.</p>
+<p>At the core of many image reconstruction techniques lies the challenge of solving a mathematical inverse problem. Here’s how it works: an object of interest—be it a cell, a scene, or something else—is observed through an acquisition system, such as a microscope or camera. This system collects data that is often both noisy and blurred. The ultimate objective is to reconstruct the original object from these imperfect measurements, effectively “inverting” the acquisition process to obtain a clearer
+image or representation. The diagram below succinctly illustrates an inverse problem setting:</p>
+<center><p><img alt="Forward model" class="no-scaled-link" src="../_images/g10575.png" style="width: 70%;" /></p>
+</center><p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f\)</span> denotes the unknown image,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Phi\)</span> is an operator modelling the acquisition system (typically linear),</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> is some random noise, typically additive and zero-mean.</p></li>
+</ul>
+<p>Common examples of computational imaging tasks include for example:</p>
+<ul class="simple">
+<li><p><strong>Image Denoising:</strong> The process of eliminating noise artifacts to create a cleaner, crisper image.</p></li>
+<li><p><strong>Image Deblurring:</strong> Restoration of a sharp image from a blurry input, enhancing focus and detail.</p></li>
+<li><p><strong>Image Inpainting:</strong> Reconstructing missing or damaged regions within an image, often used for tasks like replacing lost blocks during coding and transmission or erasing watermark/logo overlays.</p></li>
+<li><p><strong>Image Super-Resolution:</strong> Elevating the resolution of an image or an imaging system to provide finer detail.</p></li>
+<li><p><strong>Image Fusion:</strong> The merging of two or more degraded images of the same object or scene into a single image that exceeds the quality of any individual input.</p></li>
+<li><p><strong>Image Filtering:</strong> Modifying an image to accentuate particular features of interest, such as points, lines, or shapes.</p></li>
+<li><p><strong>Tomographic Reconstruction:</strong> Rebuilding an image from its lower-dimensional projections, known as sinograms in the context of CT or PET scans.</p></li>
+<li><p>and many more…</p></li>
+</ul>
+<center><p><img alt="Forward model" class="no-scaled-link" src="../_images/recon_examples.jpg" style="width: 95%;" /></p>
+</center></section>
+<section id="The-Dawn-of-Computational-Imaging">
+<h2>The Dawn of Computational Imaging<a class="headerlink" href="#The-Dawn-of-Computational-Imaging" title="Link to this heading">#</a></h2>
+<p>Traditional software-based imaging pipelines have often relied on direct inversion techniques. These methods provide a rough approximation of the pseudoinverse of the sensing operator that models the image acquisition system. While these approaches are fast, intuitive, and relatively scalable, they are fundamentally limited in terms of accuracy, frequently resulting in poorly resolved images marred by significant reconstruction artifacts.</p>
+<center><p><img alt="Forward model" class="no-scaled-link" src="../_images/illposed.jpg" style="width: 70%;" /></p>
+</center><p>One way to counteract the numerical instability inherent in the use of the pseudo-inverse is by solving dampened normal equations:</p>
+<center><p><img alt="Forward model" class="no-scaled-link" src="../_images/g15273.png" style="width: 70%;" /></p>
+</center><p>However, a key limitation of such conventional reconstruction schemes is their fixed-function design. This rigidity prevents the incorporation of any prior knowledge about the observed scene, such as its smoothness, sparsity, or high compressibility in certain domains.</p>
+</section>
+<section id="Bayesian-Computational-Imaging">
+<h2>Bayesian Computational Imaging<a class="headerlink" href="#Bayesian-Computational-Imaging" title="Link to this heading">#</a></h2>
+<p>State-of-the-art image restoration techniques generally rely on powerful and universal image priors that promote specific perceptual or structural features commonly found in natural images. These effectively regularise the ill-posed inverse problem and improve reconstruction accuracy. This is typically achieved by means of handcrafted Bayesian estimation problems, built from the composition of universal mathematical building blocks (e.g., mathematical transforms and cost/regularisation
+functionals). These Bayesian problems assess an optimal trade-off between a likelihood term, which controls the reconstruction fidelity in terms of the data and its statistics, and a prior term, which promotes physical plausibility of the reconstruction. These Bayesian problems are generally solved using sophisticated iterative first-order proximal-splitting methods and are well-suited for uncertainty quantification through Markov Chain Monte Carlo (MCMC) samplers.</p>
+<center><p><img alt="Forward model" class="no-scaled-link" src="../_images/g15005.png" style="width: 70%;" /></p>
+</center><p>At their core, image priors aim to approximate the intricate and high-dimensional manifold of natural images.</p>
+<center><p><img alt="Forward model" class="no-scaled-link" src="../_images/manifold.jpg" style="width: 95%;" /></p>
+</center><p>Historically, this approximation was often achieved using methods like Tikhonov or Total Variation priors. These traditional priors emphasized simple, physically-admissible behaviors such as smoothness or sparsity within a specific domain.</p>
+<center><p><img alt="Forward model" class="no-scaled-link" src="../_images/l2_l1.jpg" style="width: 95%;" /></p>
+</center></section>
+<section id="The-Deep-Learning-Revolution">
+<h2>The Deep Learning Revolution<a class="headerlink" href="#The-Deep-Learning-Revolution" title="Link to this heading">#</a></h2>
+<p>The rise of deep learning has been a game-changer in the field of computational imaging, resulting in a new era of highly effective, data-driven image priors. These advanced priors are capable of learning the manifold of natural images much more fidely than model-based priors. Consequently, contemporary techniques for image restoration, enhancement, and manipulation have reached unprecedented levels of performance. In fact, the advancements have been so significant that some experts speculate we
+may have arrived at a performance and accuracy plateau:</p>
+<blockquote>
+<div><p>Recent studies suggest that modern image denoising methods are approaching the optimally possible performance in denoising. (Romano et al., 2017)</p>
+</div></blockquote>
+<center><p><img alt="Forward model" class="no-scaled-link" src="../_images/nerf_dark.gif" style="width: 70%;" /></p>
+</center></section>
+<section id="The-Adoptability-and-Usability-Crisis-of-Computational-Imaging">
+<h2>The Adoptability and Usability Crisis of Computational Imaging<a class="headerlink" href="#The-Adoptability-and-Usability-Crisis-of-Computational-Imaging" title="Link to this heading">#</a></h2>
+<p>Despite the remarkable strides made in the field, advanced image reconstruction technologies face significant obstacles in terms of adoptability, usability, and reproducibility, particularly in applied imaging sciences. A large portion of the computational imaging techniques cited in academic literature are hyper-specialized for specific applications, and many remain in the proof-of-concept stage. These methods often necessitate expert knowledge to calibrate, utilize, and integrate into
+production pipelines. Further, many lack support for N-dimensional images, distributed out-of-core computing, and hardware acceleration, which restricts their practical applicability.</p>
+<p>To accelerate the path from research prototyping to production deployment in imaging science, there is hence a strong need to rethink traditional imaging pipelines, with an emphasis on scalability (for both CPUs and GPUs) and modularity (to allow for high customizability and coexistence of both standard and advanced techniques). This requires in particular to transition from monolithic to microservice ones with highly maintainable, testable, optimised, loosely coupled, hardware-agnostic and
+universal software components. Such a design of the imaging pipeline should enable the rapid and reliable prototyping/scaling/deployment of complex image reconstruction methods and deliver on their many promises beyond academic environments. This core objective is, in essence, the very <em>raison d’être</em> of Pyxu.</p>
+</section>
+<section id="Pyxu:-High-Performance-Computational-Imaging-with-Python">
+<h2>Pyxu: High-Performance Computational Imaging with Python<a class="headerlink" href="#Pyxu:-High-Performance-Computational-Imaging-with-Python" title="Link to this heading">#</a></h2>
+<p>Pyxu is an open-source computational imaging software framework for Python with native support for hardware acceleration and distributed computing. The latter adopts a modular and interoperable microservice architecture providing highly optimised and scalable general-purpose computational imaging functionalities and tools, easy to reuse and share across imaging modalities. These include notably a rich collection of common sensing operators and cost/penalty functionals, which can easily be
+combined via an advanced operator algebra logic to handcraft tailored inverse problems mappable to the generic state-of-the-art (stochastic) proximal methods of the library’s comprehensive algorithmic suite. This suite simplifies the user experience, automatically calculating gradients, proximal operators, and hyperparameters through the operator algebra logic or guided by best practices.</p>
+<p>At its foundation, Pyxu takes advantage of an array of high-performance computing (HPC) tools from the Python ecosystem to assure superior performance and scalability. For instance, Pyxu’s computational logic operates across multiple precisions and fully supports Duck arrays—array-like entities compliant with the NumPy API standard. This compatibility encompasses not just traditional CPU-bound NumPy arrays, but also extends to GPU-bound CuPy arrays and distributed or out-of-core chunked Dask
+arrays. Internally, the framework employs a module-agnostic codebase, dispatching routine calls to either NumPy, CuPy, Dask, or any other NumPy-compatible library based on the type of array in operation. As a result, Pyxu offers native support for both hardware acceleration and distributed computing within a singular, easily maintainable, testable, and readable Python codebase.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="installation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Installation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tomo.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Hands-on Example: Computerised Tomography with Pyxu</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#The-Multifaceted-Realm-of-Computational-Imaging">The Multifaceted Realm of Computational Imaging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#The-Dawn-of-Computational-Imaging">The Dawn of Computational Imaging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Bayesian-Computational-Imaging">Bayesian Computational Imaging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#The-Deep-Learning-Revolution">The Deep Learning Revolution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#The-Adoptability-and-Usability-Crisis-of-Computational-Imaging">The Adoptability and Usability Crisis of Computational Imaging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Pyxu:-High-Performance-Computational-Imaging-with-Python">Pyxu: High-Performance Computational Imaging with Python</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+<div id="searchbox"></div></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/matthieumeo/pyxu/edit/main/doc/intro/primer.ipynb">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/intro/primer.ipynb">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
