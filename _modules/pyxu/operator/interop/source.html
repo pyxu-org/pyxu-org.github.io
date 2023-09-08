@@ -43,7 +43,7 @@
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../../_static/documentation_options.js?v=29481255"></script>
+    <script src="../../../../_static/documentation_options.js?v=e02fc88f"></script>
     <script src="../../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -199,7 +199,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> v0.0.1 </strong></div>
+        <div class="navbar-item"><strong> v1.0.x </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -341,7 +341,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> v0.0.1 </strong></div>
+          <div class="navbar-item"><strong> v1.0.x </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -455,7 +455,7 @@ document.write(`
 <span class="linenos">  2</span><span class="kn">import</span> <span class="nn">types</span>
 <span class="linenos">  3</span><span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">typ</span>
 <span class="linenos">  4</span>
-<span class="linenos">  5</span><span class="kn">import</span> <span class="nn">pyxu.abc.operator</span> <span class="k">as</span> <span class="nn">pxo</span>
+<span class="linenos">  5</span><span class="kn">import</span> <span class="nn">pyxu.abc</span> <span class="k">as</span> <span class="nn">pxa</span>
 <span class="linenos">  6</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
 <span class="linenos">  7</span><span class="kn">import</span> <span class="nn">pyxu.runtime</span> <span class="k">as</span> <span class="nn">pxrt</span>
 <span class="linenos">  8</span><span class="kn">import</span> <span class="nn">pyxu.util</span> <span class="k">as</span> <span class="nn">pxu</span>
@@ -615,107 +615,109 @@ document.write(`
 <span class="linenos">159</span>        <span class="n">enforce_precision</span><span class="p">:</span> <span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
 <span class="linenos">160</span>        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="linenos">161</span>    <span class="p">):</span>
-<span class="linenos">162</span>        <span class="k">assert</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="n">pxo</span><span class="o">.</span><span class="n">_core_operators</span><span class="p">(),</span> <span class="sa">f</span><span class="s2">&quot;Unknown Operator type: </span><span class="si">{</span><span class="bp">cls</span><span class="si">}</span><span class="s2">.&quot;</span>
-<span class="linenos">163</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_op</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># ensure shape well-formed</span>
-<span class="linenos">164</span>
-<span class="linenos">165</span>        <span class="c1"># Arithmetic methods to attach to `_op`.</span>
-<span class="linenos">166</span>        <span class="n">meth</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">arithmetic_methods</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pxo</span><span class="o">.</span><span class="n">Property</span><span class="p">])</span>
-<span class="linenos">167</span>        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">meth</span><span class="p">):</span>
-<span class="linenos">168</span>            <span class="n">msg_head</span> <span class="o">=</span> <span class="s2">&quot;Unknown arithmetic methods:&quot;</span>
-<span class="linenos">169</span>            <span class="n">unknown</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-</span> <span class="n">meth</span>
-<span class="linenos">170</span>            <span class="n">msg_tail</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">()&quot;</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">unknown</span><span class="p">])</span>
-<span class="linenos">171</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg_head</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">msg_tail</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">172</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span> <span class="o">=</span> <span class="n">kwargs</span>
-<span class="linenos">173</span>
-<span class="linenos">174</span>        <span class="c1"># Extra attributes to attach to `_op`.</span>
-<span class="linenos">175</span>        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">embed</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">)</span>
-<span class="linenos">176</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_embed</span> <span class="o">=</span> <span class="n">embed</span>
-<span class="linenos">177</span>
-<span class="linenos">178</span>        <span class="c1"># Add-on functionality to enable.</span>
-<span class="linenos">179</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_vkwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_vectorize</span><span class="p">(</span><span class="n">vectorize</span><span class="p">,</span> <span class="n">vmethod</span><span class="p">)</span>
-<span class="linenos">180</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_vectorize</span> <span class="o">=</span> <span class="n">vectorize</span>
-<span class="linenos">181</span>
-<span class="linenos">182</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_ekwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_precision</span><span class="p">(</span><span class="n">enforce_precision</span><span class="p">)</span>
-<span class="linenos">183</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_enforce_fp</span> <span class="o">=</span> <span class="n">enforce_precision</span>
-<span class="linenos">184</span>
-<span class="linenos">185</span>    <span class="k">def</span> <span class="nf">op</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
-<span class="linenos">186</span>        <span class="n">_op</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_op</span>  <span class="c1"># shorthand</span>
-<span class="linenos">187</span>        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">_op</span><span class="o">.</span><span class="n">properties</span><span class="p">():</span>
-<span class="linenos">188</span>            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">arithmetic_methods</span><span class="p">():</span>
-<span class="linenos">189</span>                <span class="k">if</span> <span class="n">func</span> <span class="o">:=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
-<span class="linenos">190</span>                    <span class="c1"># vectorize() &amp; enforce_precision() do NOT kick in for default-provided methods.</span>
-<span class="linenos">191</span>                    <span class="c1"># (We assume they are Pyxu-compliant from the start.)</span>
-<span class="linenos">192</span>
-<span class="linenos">193</span>                    <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vectorize</span><span class="p">:</span>
-<span class="linenos">194</span>                        <span class="n">decorate</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_vkwargs</span><span class="p">[</span><span class="n">name</span><span class="p">])</span>
-<span class="linenos">195</span>                        <span class="n">func</span> <span class="o">=</span> <span class="n">decorate</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="linenos">196</span>
-<span class="linenos">197</span>                    <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_enforce_fp</span><span class="p">:</span>
-<span class="linenos">198</span>                        <span class="n">decorate</span> <span class="o">=</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_ekwargs</span><span class="p">[</span><span class="n">name</span><span class="p">])</span>
-<span class="linenos">199</span>                        <span class="n">func</span> <span class="o">=</span> <span class="n">decorate</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="linenos">200</span>
-<span class="linenos">201</span>                    <span class="nb">setattr</span><span class="p">(</span><span class="n">_op</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">types</span><span class="o">.</span><span class="n">MethodType</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">_op</span><span class="p">))</span>
+<span class="linenos">162</span>        <span class="kn">from</span> <span class="nn">pyxu.abc.operator</span> <span class="kn">import</span> <span class="n">_core_operators</span>
+<span class="linenos">163</span>
+<span class="linenos">164</span>        <span class="k">assert</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="n">_core_operators</span><span class="p">(),</span> <span class="sa">f</span><span class="s2">&quot;Unknown Operator type: </span><span class="si">{</span><span class="bp">cls</span><span class="si">}</span><span class="s2">.&quot;</span>
+<span class="linenos">165</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_op</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># ensure shape well-formed</span>
+<span class="linenos">166</span>
+<span class="linenos">167</span>        <span class="c1"># Arithmetic methods to attach to `_op`.</span>
+<span class="linenos">168</span>        <span class="n">meth</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">arithmetic_methods</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pxa</span><span class="o">.</span><span class="n">Property</span><span class="p">])</span>
+<span class="linenos">169</span>        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">meth</span><span class="p">):</span>
+<span class="linenos">170</span>            <span class="n">msg_head</span> <span class="o">=</span> <span class="s2">&quot;Unknown arithmetic methods:&quot;</span>
+<span class="linenos">171</span>            <span class="n">unknown</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-</span> <span class="n">meth</span>
+<span class="linenos">172</span>            <span class="n">msg_tail</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">()&quot;</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">unknown</span><span class="p">])</span>
+<span class="linenos">173</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg_head</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">msg_tail</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">174</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span> <span class="o">=</span> <span class="n">kwargs</span>
+<span class="linenos">175</span>
+<span class="linenos">176</span>        <span class="c1"># Extra attributes to attach to `_op`.</span>
+<span class="linenos">177</span>        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">embed</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">)</span>
+<span class="linenos">178</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_embed</span> <span class="o">=</span> <span class="n">embed</span>
+<span class="linenos">179</span>
+<span class="linenos">180</span>        <span class="c1"># Add-on functionality to enable.</span>
+<span class="linenos">181</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_vkwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_vectorize</span><span class="p">(</span><span class="n">vectorize</span><span class="p">,</span> <span class="n">vmethod</span><span class="p">)</span>
+<span class="linenos">182</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_vectorize</span> <span class="o">=</span> <span class="n">vectorize</span>
+<span class="linenos">183</span>
+<span class="linenos">184</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_ekwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_precision</span><span class="p">(</span><span class="n">enforce_precision</span><span class="p">)</span>
+<span class="linenos">185</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_enforce_fp</span> <span class="o">=</span> <span class="n">enforce_precision</span>
+<span class="linenos">186</span>
+<span class="linenos">187</span>    <span class="k">def</span> <span class="nf">op</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
+<span class="linenos">188</span>        <span class="n">_op</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_op</span>  <span class="c1"># shorthand</span>
+<span class="linenos">189</span>        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">_op</span><span class="o">.</span><span class="n">properties</span><span class="p">():</span>
+<span class="linenos">190</span>            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">arithmetic_methods</span><span class="p">():</span>
+<span class="linenos">191</span>                <span class="k">if</span> <span class="n">func</span> <span class="o">:=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+<span class="linenos">192</span>                    <span class="c1"># vectorize() &amp; enforce_precision() do NOT kick in for default-provided methods.</span>
+<span class="linenos">193</span>                    <span class="c1"># (We assume they are Pyxu-compliant from the start.)</span>
+<span class="linenos">194</span>
+<span class="linenos">195</span>                    <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vectorize</span><span class="p">:</span>
+<span class="linenos">196</span>                        <span class="n">decorate</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_vkwargs</span><span class="p">[</span><span class="n">name</span><span class="p">])</span>
+<span class="linenos">197</span>                        <span class="n">func</span> <span class="o">=</span> <span class="n">decorate</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="linenos">198</span>
+<span class="linenos">199</span>                    <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_enforce_fp</span><span class="p">:</span>
+<span class="linenos">200</span>                        <span class="n">decorate</span> <span class="o">=</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_ekwargs</span><span class="p">[</span><span class="n">name</span><span class="p">])</span>
+<span class="linenos">201</span>                        <span class="n">func</span> <span class="o">=</span> <span class="n">decorate</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
 <span class="linenos">202</span>
-<span class="linenos">203</span>        <span class="c1"># Embed extra attributes</span>
-<span class="linenos">204</span>        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">attr</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_embed</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<span class="linenos">205</span>            <span class="nb">setattr</span><span class="p">(</span><span class="n">_op</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
-<span class="linenos">206</span>
-<span class="linenos">207</span>        <span class="k">return</span> <span class="n">_op</span>
+<span class="linenos">203</span>                    <span class="nb">setattr</span><span class="p">(</span><span class="n">_op</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">types</span><span class="o">.</span><span class="n">MethodType</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">_op</span><span class="p">))</span>
+<span class="linenos">204</span>
+<span class="linenos">205</span>        <span class="c1"># Embed extra attributes</span>
+<span class="linenos">206</span>        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">attr</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_embed</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="linenos">207</span>            <span class="nb">setattr</span><span class="p">(</span><span class="n">_op</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
 <span class="linenos">208</span>
-<span class="linenos">209</span>    <span class="k">def</span> <span class="nf">_parse_vectorize</span><span class="p">(</span>
-<span class="linenos">210</span>        <span class="bp">self</span><span class="p">,</span>
-<span class="linenos">211</span>        <span class="n">vectorize</span><span class="p">:</span> <span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
-<span class="linenos">212</span>        <span class="n">vmethod</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">],</span>
-<span class="linenos">213</span>    <span class="p">):</span>
-<span class="linenos">214</span>        <span class="n">vsize</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>  <span class="c1"># `codim` hint for vectorize()</span>
-<span class="linenos">215</span>            <span class="n">apply</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">codim</span><span class="p">,</span>
-<span class="linenos">216</span>            <span class="n">prox</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">dim</span><span class="p">,</span>
-<span class="linenos">217</span>            <span class="n">grad</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">dim</span><span class="p">,</span>
-<span class="linenos">218</span>            <span class="n">adjoint</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">dim</span><span class="p">,</span>
-<span class="linenos">219</span>            <span class="n">pinv</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">dim</span><span class="p">,</span>
-<span class="linenos">220</span>        <span class="p">)</span>
-<span class="linenos">221</span>
-<span class="linenos">222</span>        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">vectorize</span> <span class="o">&lt;=</span> <span class="nb">set</span><span class="p">(</span><span class="n">vsize</span><span class="p">)):</span>  <span class="c1"># un-recognized arithmetic method</span>
-<span class="linenos">223</span>            <span class="n">msg_head</span> <span class="o">=</span> <span class="s2">&quot;Can only vectorize arithmetic methods&quot;</span>
-<span class="linenos">224</span>            <span class="n">msg_tail</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">()&quot;</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">vsize</span><span class="p">])</span>
-<span class="linenos">225</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg_head</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">msg_tail</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">226</span>
-<span class="linenos">227</span>        <span class="n">vmethod_default</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">parse_params</span><span class="p">(</span>
-<span class="linenos">228</span>            <span class="n">pxu</span><span class="o">.</span><span class="n">vectorize</span><span class="p">,</span>
-<span class="linenos">229</span>            <span class="n">i</span><span class="o">=</span><span class="s2">&quot;bogus&quot;</span><span class="p">,</span>  <span class="c1"># doesn&#39;t matter</span>
-<span class="linenos">230</span>        <span class="p">)[</span><span class="s2">&quot;method&quot;</span><span class="p">]</span>
-<span class="linenos">231</span>        <span class="k">if</span> <span class="n">vmethod</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="linenos">232</span>            <span class="n">vmethod</span> <span class="o">=</span> <span class="n">vmethod_default</span>
-<span class="linenos">233</span>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">vmethod</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<span class="linenos">234</span>            <span class="n">vmethod</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">vmethod</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">vsize</span><span class="p">}</span>
-<span class="linenos">235</span>
-<span class="linenos">236</span>        <span class="n">vkwargs</span> <span class="o">=</span> <span class="p">{</span>
-<span class="linenos">237</span>            <span class="n">name</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span>
-<span class="linenos">238</span>                <span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">,</span>  <span class="c1"># Pyxu arithmetic methods broadcast along parameter `arr`.</span>
-<span class="linenos">239</span>                <span class="n">method</span><span class="o">=</span><span class="n">vmethod</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">vmethod_default</span><span class="p">),</span>
-<span class="linenos">240</span>                <span class="n">codim</span><span class="o">=</span><span class="n">vsize</span><span class="p">[</span><span class="n">name</span><span class="p">],</span>
-<span class="linenos">241</span>            <span class="p">)</span>
-<span class="linenos">242</span>            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">vsize</span>
-<span class="linenos">243</span>        <span class="p">}</span>
-<span class="linenos">244</span>        <span class="k">return</span> <span class="n">vkwargs</span>
-<span class="linenos">245</span>
-<span class="linenos">246</span>    <span class="k">def</span> <span class="nf">_parse_precision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enforce_precision</span><span class="p">:</span> <span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span>
-<span class="linenos">247</span>        <span class="n">ekwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-<span class="linenos">248</span>            <span class="c1"># Pyxu arithmetic methods enforce FP-precision along these parameters.</span>
-<span class="linenos">249</span>            <span class="n">apply</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">),</span>
-<span class="linenos">250</span>            <span class="n">prox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;arr&quot;</span><span class="p">,</span> <span class="s2">&quot;tau&quot;</span><span class="p">)),</span>
-<span class="linenos">251</span>            <span class="n">grad</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">),</span>
-<span class="linenos">252</span>            <span class="n">adjoint</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">),</span>
-<span class="linenos">253</span>            <span class="n">pinv</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;arr&quot;</span><span class="p">,</span> <span class="s2">&quot;damp&quot;</span><span class="p">)),</span>
-<span class="linenos">254</span>            <span class="n">svdvals</span><span class="o">=</span><span class="nb">dict</span><span class="p">(),</span>
-<span class="linenos">255</span>            <span class="n">trace</span><span class="o">=</span><span class="nb">dict</span><span class="p">(),</span>
-<span class="linenos">256</span>        <span class="p">)</span>
-<span class="linenos">257</span>
-<span class="linenos">258</span>        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">enforce_precision</span> <span class="o">&lt;=</span> <span class="nb">set</span><span class="p">(</span><span class="n">ekwargs</span><span class="p">)):</span>
-<span class="linenos">259</span>            <span class="n">msg_head</span> <span class="o">=</span> <span class="s2">&quot;Can only enforce precision on arithmetic methods&quot;</span>
-<span class="linenos">260</span>            <span class="n">msg_tail</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">()&quot;</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">ekwargs</span><span class="p">])</span>
-<span class="linenos">261</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg_head</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">msg_tail</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">262</span>        <span class="k">return</span> <span class="n">ekwargs</span>
+<span class="linenos">209</span>        <span class="k">return</span> <span class="n">_op</span>
+<span class="linenos">210</span>
+<span class="linenos">211</span>    <span class="k">def</span> <span class="nf">_parse_vectorize</span><span class="p">(</span>
+<span class="linenos">212</span>        <span class="bp">self</span><span class="p">,</span>
+<span class="linenos">213</span>        <span class="n">vectorize</span><span class="p">:</span> <span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+<span class="linenos">214</span>        <span class="n">vmethod</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">],</span>
+<span class="linenos">215</span>    <span class="p">):</span>
+<span class="linenos">216</span>        <span class="n">vsize</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>  <span class="c1"># `codim` hint for vectorize()</span>
+<span class="linenos">217</span>            <span class="n">apply</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">codim</span><span class="p">,</span>
+<span class="linenos">218</span>            <span class="n">prox</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">dim</span><span class="p">,</span>
+<span class="linenos">219</span>            <span class="n">grad</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">dim</span><span class="p">,</span>
+<span class="linenos">220</span>            <span class="n">adjoint</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">dim</span><span class="p">,</span>
+<span class="linenos">221</span>            <span class="n">pinv</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">dim</span><span class="p">,</span>
+<span class="linenos">222</span>        <span class="p">)</span>
+<span class="linenos">223</span>
+<span class="linenos">224</span>        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">vectorize</span> <span class="o">&lt;=</span> <span class="nb">set</span><span class="p">(</span><span class="n">vsize</span><span class="p">)):</span>  <span class="c1"># un-recognized arithmetic method</span>
+<span class="linenos">225</span>            <span class="n">msg_head</span> <span class="o">=</span> <span class="s2">&quot;Can only vectorize arithmetic methods&quot;</span>
+<span class="linenos">226</span>            <span class="n">msg_tail</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">()&quot;</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">vsize</span><span class="p">])</span>
+<span class="linenos">227</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg_head</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">msg_tail</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">228</span>
+<span class="linenos">229</span>        <span class="n">vmethod_default</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">parse_params</span><span class="p">(</span>
+<span class="linenos">230</span>            <span class="n">pxu</span><span class="o">.</span><span class="n">vectorize</span><span class="p">,</span>
+<span class="linenos">231</span>            <span class="n">i</span><span class="o">=</span><span class="s2">&quot;bogus&quot;</span><span class="p">,</span>  <span class="c1"># doesn&#39;t matter</span>
+<span class="linenos">232</span>        <span class="p">)[</span><span class="s2">&quot;method&quot;</span><span class="p">]</span>
+<span class="linenos">233</span>        <span class="k">if</span> <span class="n">vmethod</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">234</span>            <span class="n">vmethod</span> <span class="o">=</span> <span class="n">vmethod_default</span>
+<span class="linenos">235</span>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">vmethod</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="linenos">236</span>            <span class="n">vmethod</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">vmethod</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">vsize</span><span class="p">}</span>
+<span class="linenos">237</span>
+<span class="linenos">238</span>        <span class="n">vkwargs</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos">239</span>            <span class="n">name</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span>
+<span class="linenos">240</span>                <span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">,</span>  <span class="c1"># Pyxu arithmetic methods broadcast along parameter `arr`.</span>
+<span class="linenos">241</span>                <span class="n">method</span><span class="o">=</span><span class="n">vmethod</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">vmethod_default</span><span class="p">),</span>
+<span class="linenos">242</span>                <span class="n">codim</span><span class="o">=</span><span class="n">vsize</span><span class="p">[</span><span class="n">name</span><span class="p">],</span>
+<span class="linenos">243</span>            <span class="p">)</span>
+<span class="linenos">244</span>            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">vsize</span>
+<span class="linenos">245</span>        <span class="p">}</span>
+<span class="linenos">246</span>        <span class="k">return</span> <span class="n">vkwargs</span>
+<span class="linenos">247</span>
+<span class="linenos">248</span>    <span class="k">def</span> <span class="nf">_parse_precision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enforce_precision</span><span class="p">:</span> <span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span>
+<span class="linenos">249</span>        <span class="n">ekwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+<span class="linenos">250</span>            <span class="c1"># Pyxu arithmetic methods enforce FP-precision along these parameters.</span>
+<span class="linenos">251</span>            <span class="n">apply</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">),</span>
+<span class="linenos">252</span>            <span class="n">prox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;arr&quot;</span><span class="p">,</span> <span class="s2">&quot;tau&quot;</span><span class="p">)),</span>
+<span class="linenos">253</span>            <span class="n">grad</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">),</span>
+<span class="linenos">254</span>            <span class="n">adjoint</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">),</span>
+<span class="linenos">255</span>            <span class="n">pinv</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;arr&quot;</span><span class="p">,</span> <span class="s2">&quot;damp&quot;</span><span class="p">)),</span>
+<span class="linenos">256</span>            <span class="n">svdvals</span><span class="o">=</span><span class="nb">dict</span><span class="p">(),</span>
+<span class="linenos">257</span>            <span class="n">trace</span><span class="o">=</span><span class="nb">dict</span><span class="p">(),</span>
+<span class="linenos">258</span>        <span class="p">)</span>
+<span class="linenos">259</span>
+<span class="linenos">260</span>        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">enforce_precision</span> <span class="o">&lt;=</span> <span class="nb">set</span><span class="p">(</span><span class="n">ekwargs</span><span class="p">)):</span>
+<span class="linenos">261</span>            <span class="n">msg_head</span> <span class="o">=</span> <span class="s2">&quot;Can only enforce precision on arithmetic methods&quot;</span>
+<span class="linenos">262</span>            <span class="n">msg_tail</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">()&quot;</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">ekwargs</span><span class="p">])</span>
+<span class="linenos">263</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg_head</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">msg_tail</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">264</span>        <span class="k">return</span> <span class="n">ekwargs</span>
 </pre></div>
 
                 </article>

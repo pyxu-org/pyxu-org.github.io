@@ -43,7 +43,7 @@
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../../_static/documentation_options.js?v=29481255"></script>
+    <script src="../../../../_static/documentation_options.js?v=e02fc88f"></script>
     <script src="../../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -199,7 +199,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> v0.0.1 </strong></div>
+        <div class="navbar-item"><strong> v1.0.x </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -341,7 +341,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> v0.0.1 </strong></div>
+          <div class="navbar-item"><strong> v1.0.x </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -464,13 +464,13 @@ document.write(`
 <span class="linenos"> 11</span>
 <span class="linenos"> 12</span><span class="kn">import</span> <span class="nn">packaging.version</span> <span class="k">as</span> <span class="nn">pkgv</span>
 <span class="linenos"> 13</span>
-<span class="linenos"> 14</span><span class="kn">import</span> <span class="nn">pyxu.abc.operator</span> <span class="k">as</span> <span class="nn">pxo</span>
+<span class="linenos"> 14</span><span class="kn">import</span> <span class="nn">pyxu.abc</span> <span class="k">as</span> <span class="nn">pxa</span>
 <span class="linenos"> 15</span><span class="kn">import</span> <span class="nn">pyxu.info.deps</span> <span class="k">as</span> <span class="nn">pxd</span>
 <span class="linenos"> 16</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
 <span class="linenos"> 17</span><span class="kn">import</span> <span class="nn">pyxu.info.warning</span> <span class="k">as</span> <span class="nn">pxw</span>
-<span class="linenos"> 18</span><span class="kn">import</span> <span class="nn">pyxu.operator.interop.source</span> <span class="k">as</span> <span class="nn">pxsrc</span>
+<span class="linenos"> 18</span><span class="kn">import</span> <span class="nn">pyxu.operator.interop.source</span> <span class="k">as</span> <span class="nn">px_src</span>
 <span class="linenos"> 19</span><span class="kn">import</span> <span class="nn">pyxu.runtime</span> <span class="k">as</span> <span class="nn">pxrt</span>
-<span class="linenos"> 20</span><span class="kn">from</span> <span class="nn">pyxu.util.inspect</span> <span class="kn">import</span> <span class="n">import_module</span>
+<span class="linenos"> 20</span><span class="kn">from</span> <span class="nn">pyxu.util</span> <span class="kn">import</span> <span class="n">import_module</span>
 <span class="linenos"> 21</span>
 <span class="linenos"> 22</span><span class="n">torch</span> <span class="o">=</span> <span class="n">import_module</span><span class="p">(</span><span class="s2">&quot;torch&quot;</span><span class="p">,</span> <span class="n">fail_on_error</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="linenos"> 23</span><span class="k">if</span> <span class="n">torch</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -565,7 +565,7 @@ document.write(`
 
 <span class="linenos">107</span>
 <span class="linenos">108</span>
-<span class="linenos">109</span><span class="k">class</span> <span class="nc">_FromTorch</span><span class="p">(</span><span class="n">pxsrc</span><span class="o">.</span><span class="n">_FromSource</span><span class="p">):</span>
+<span class="linenos">109</span><span class="k">class</span> <span class="nc">_FromTorch</span><span class="p">(</span><span class="n">px_src</span><span class="o">.</span><span class="n">_FromSource</span><span class="p">):</span>
 <span class="linenos">110</span>    <span class="c1"># supported methods in __init__(**kwargs)</span>
 <span class="linenos">111</span>    <span class="n">_meth</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">({</span><span class="s2">&quot;apply&quot;</span><span class="p">,</span> <span class="s2">&quot;grad&quot;</span><span class="p">,</span> <span class="s2">&quot;prox&quot;</span><span class="p">,</span> <span class="s2">&quot;pinv&quot;</span><span class="p">,</span> <span class="s2">&quot;adjoint&quot;</span><span class="p">})</span>
 <span class="linenos">112</span>
@@ -573,7 +573,7 @@ document.write(`
 <span class="linenos">114</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">115</span>        <span class="n">apply</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">,</span>
 <span class="linenos">116</span>        <span class="n">shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpShape</span><span class="p">,</span>
-<span class="linenos">117</span>        <span class="bp">cls</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpC</span> <span class="o">=</span> <span class="n">pxo</span><span class="o">.</span><span class="n">Map</span><span class="p">,</span>
+<span class="linenos">117</span>        <span class="bp">cls</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpC</span> <span class="o">=</span> <span class="n">pxa</span><span class="o">.</span><span class="n">Map</span><span class="p">,</span>
 <span class="linenos">118</span>        <span class="n">vectorize</span><span class="p">:</span> <span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(),</span>
 <span class="linenos">119</span>        <span class="n">batch_size</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="linenos">120</span>        <span class="n">jit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>  <span class="c1"># Unused for now</span>
@@ -622,7 +622,7 @@ document.write(`
 <span class="linenos">163</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_auto_vectorize</span><span class="p">()</span>
 <span class="linenos">164</span>        <span class="n">t_state</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interface</span><span class="p">()</span>
 <span class="linenos">165</span>
-<span class="linenos">166</span>        <span class="n">_op</span> <span class="o">=</span> <span class="n">pxsrc</span><span class="o">.</span><span class="n">from_source</span><span class="p">(</span>
+<span class="linenos">166</span>        <span class="n">_op</span> <span class="o">=</span> <span class="n">px_src</span><span class="o">.</span><span class="n">from_source</span><span class="p">(</span>
 <span class="linenos">167</span>            <span class="bp">cls</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span>
 <span class="linenos">168</span>            <span class="n">shape</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
 <span class="linenos">169</span>            <span class="n">embed</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
@@ -658,8 +658,8 @@ document.write(`
 <span class="linenos">199</span>
 <span class="linenos">200</span>        <span class="n">nl_difffunc</span> <span class="o">=</span> <span class="nb">all</span><span class="p">(</span>  <span class="c1"># non-linear diff-func</span>
 <span class="linenos">201</span>            <span class="p">[</span>
-<span class="linenos">202</span>                <span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="n">pxo</span><span class="o">.</span><span class="n">Property</span><span class="o">.</span><span class="n">DIFFERENTIABLE_FUNCTION</span><span class="p">),</span>
-<span class="linenos">203</span>                <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="n">pxo</span><span class="o">.</span><span class="n">Property</span><span class="o">.</span><span class="n">LINEAR</span><span class="p">),</span>
+<span class="linenos">202</span>                <span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">Property</span><span class="o">.</span><span class="n">DIFFERENTIABLE_FUNCTION</span><span class="p">),</span>
+<span class="linenos">203</span>                <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">Property</span><span class="o">.</span><span class="n">LINEAR</span><span class="p">),</span>
 <span class="linenos">204</span>            <span class="p">]</span>
 <span class="linenos">205</span>        <span class="p">)</span>
 <span class="linenos">206</span>        <span class="k">if</span> <span class="n">nl_difffunc</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;grad&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">):</span>
@@ -673,8 +673,8 @@ document.write(`
 <span class="linenos">214</span>
 <span class="linenos">215</span>        <span class="n">non_selfadj</span> <span class="o">=</span> <span class="nb">all</span><span class="p">(</span>  <span class="c1"># linear, but not self-adjoint</span>
 <span class="linenos">216</span>            <span class="p">[</span>
-<span class="linenos">217</span>                <span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="n">pxo</span><span class="o">.</span><span class="n">Property</span><span class="o">.</span><span class="n">LINEAR</span><span class="p">),</span>
-<span class="linenos">218</span>                <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="n">pxo</span><span class="o">.</span><span class="n">Property</span><span class="o">.</span><span class="n">LINEAR_SELF_ADJOINT</span><span class="p">),</span>
+<span class="linenos">217</span>                <span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">Property</span><span class="o">.</span><span class="n">LINEAR</span><span class="p">),</span>
+<span class="linenos">218</span>                <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_op</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">Property</span><span class="o">.</span><span class="n">LINEAR_SELF_ADJOINT</span><span class="p">),</span>
 <span class="linenos">219</span>            <span class="p">]</span>
 <span class="linenos">220</span>        <span class="p">)</span>
 <span class="linenos">221</span>        <span class="k">if</span> <span class="n">non_selfadj</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;adjoint&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">):</span>
@@ -826,7 +826,7 @@ document.write(`
 <span class="linenos">367</span>                <span class="n">out</span> <span class="o">=</span> <span class="n">f_vjp</span><span class="p">(</span><span class="n">cotan</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># f_vjp returns a tuple</span>
 <span class="linenos">368</span>                <span class="k">return</span> <span class="n">out</span>
 <span class="linenos">369</span>
-<span class="linenos">370</span>            <span class="n">klass</span> <span class="o">=</span> <span class="n">pxo</span><span class="o">.</span><span class="n">LinFunc</span> <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">codim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">else</span> <span class="n">pxo</span><span class="o">.</span><span class="n">LinOp</span>
+<span class="linenos">370</span>            <span class="n">klass</span> <span class="o">=</span> <span class="n">pxa</span><span class="o">.</span><span class="n">LinFunc</span> <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">codim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">else</span> <span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span>
 <span class="linenos">371</span>            <span class="n">op</span> <span class="o">=</span> <span class="n">from_torch</span><span class="p">(</span>
 <span class="linenos">372</span>                <span class="n">apply</span><span class="o">=</span><span class="n">jf_apply</span><span class="p">,</span>
 <span class="linenos">373</span>                <span class="n">shape</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
@@ -843,7 +843,7 @@ document.write(`
 <span class="linenos">384</span>        <span class="k">return</span> <span class="n">op</span>
 <span class="linenos">385</span>
 <span class="linenos">386</span>    <span class="k">def</span> <span class="nf">_quad_spec</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos">387</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="n">pxo</span><span class="o">.</span><span class="n">Property</span><span class="o">.</span><span class="n">QUADRATIC</span><span class="p">):</span>
+<span class="linenos">387</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">Property</span><span class="o">.</span><span class="n">QUADRATIC</span><span class="p">):</span>
 <span class="linenos">388</span>            <span class="c1"># auto-infer (Q, c, t)</span>
 <span class="linenos">389</span>            <span class="n">_grad</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_torch</span><span class="p">[</span><span class="s2">&quot;grad&quot;</span><span class="p">]</span>
 <span class="linenos">390</span>
@@ -863,7 +863,7 @@ document.write(`
 <span class="linenos">404</span>            <span class="n">Q</span> <span class="o">=</span> <span class="n">from_torch</span><span class="p">(</span>
 <span class="linenos">405</span>                <span class="n">apply</span><span class="o">=</span><span class="n">Q_apply</span><span class="p">,</span>
 <span class="linenos">406</span>                <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">),</span>
-<span class="linenos">407</span>                <span class="bp">cls</span><span class="o">=</span><span class="n">pxo</span><span class="o">.</span><span class="n">PosDefOp</span><span class="p">,</span>
+<span class="linenos">407</span>                <span class="bp">cls</span><span class="o">=</span><span class="n">pxa</span><span class="o">.</span><span class="n">PosDefOp</span><span class="p">,</span>
 <span class="linenos">408</span>                <span class="n">vectorize</span><span class="o">=</span><span class="s2">&quot;apply&quot;</span><span class="p">,</span>
 <span class="linenos">409</span>                <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_batch_size</span><span class="p">,</span>
 <span class="linenos">410</span>                <span class="n">jit</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_jit</span><span class="p">,</span>
@@ -876,7 +876,7 @@ document.write(`
 <span class="linenos">417</span>            <span class="n">c</span> <span class="o">=</span> <span class="n">from_torch</span><span class="p">(</span>
 <span class="linenos">418</span>                <span class="n">apply</span><span class="o">=</span><span class="n">c_apply</span><span class="p">,</span>
 <span class="linenos">419</span>                <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">),</span>
-<span class="linenos">420</span>                <span class="bp">cls</span><span class="o">=</span><span class="n">pxo</span><span class="o">.</span><span class="n">LinFunc</span><span class="p">,</span>
+<span class="linenos">420</span>                <span class="bp">cls</span><span class="o">=</span><span class="n">pxa</span><span class="o">.</span><span class="n">LinFunc</span><span class="p">,</span>
 <span class="linenos">421</span>                <span class="n">vectorize</span><span class="o">=</span><span class="s2">&quot;apply&quot;</span><span class="p">,</span>
 <span class="linenos">422</span>                <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_batch_size</span><span class="p">,</span>
 <span class="linenos">423</span>                <span class="n">jit</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_jit</span><span class="p">,</span>
@@ -916,7 +916,7 @@ document.write(`
 <span class="linenos">455</span><span class="k">def</span> <span class="nf">from_torch</span><span class="p">(</span>
 <span class="linenos">456</span>    <span class="n">apply</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">,</span>
 <span class="linenos">457</span>    <span class="n">shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpShape</span><span class="p">,</span>
-<span class="linenos">458</span>    <span class="bp">cls</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpC</span> <span class="o">=</span> <span class="n">pxo</span><span class="o">.</span><span class="n">Map</span><span class="p">,</span>
+<span class="linenos">458</span>    <span class="bp">cls</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpC</span> <span class="o">=</span> <span class="n">pxa</span><span class="o">.</span><span class="n">Map</span><span class="p">,</span>
 <span class="linenos">459</span>    <span class="n">vectorize</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">VarName</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(),</span>
 <span class="linenos">460</span>    <span class="n">batch_size</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="linenos">461</span>    <span class="n">jit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>

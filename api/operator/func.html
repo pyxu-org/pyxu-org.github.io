@@ -204,7 +204,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> v1.0.x </strong></div>
+        <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -346,7 +346,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> v1.0.x </strong></div>
+          <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -489,12 +489,13 @@ document.write(`
 <nav class="contents local" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#norms" id="id4">Norms</a></p></li>
-<li><p><a class="reference internal" href="#indicator-functions" id="id5">Indicator functions</a></p></li>
+<li><p><a class="reference internal" href="#norms" id="id5">Norms</a></p></li>
+<li><p><a class="reference internal" href="#indicator-functions" id="id6">Indicator functions</a></p></li>
+<li><p><a class="reference internal" href="#loss-functions" id="id7">Loss functions</a></p></li>
 </ul>
 </nav>
 <section id="norms">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Norms</a><a class="headerlink" href="#norms" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Norms</a><a class="headerlink" href="#norms" title="Link to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pyxu.operator.func.norm.L1Norm">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">L1Norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/norm.html#L1Norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.norm.L1Norm" title="Link to this definition">#</a></dt>
@@ -671,7 +672,7 @@ the <span class="math notranslate nohighlight">\(\ell_{2}\)</span> norm is appli
 
 </section>
 <section id="indicator-functions">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Indicator functions</a><a class="headerlink" href="#indicator-functions" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Indicator functions</a><a class="headerlink" href="#indicator-functions" title="Link to this heading">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyxu.operator.func.indicator.L1Ball">
 <span class="sig-name descname"><span class="pre">L1Ball</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/indicator.html#L1Ball"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.indicator.L1Ball" title="Link to this definition">#</a></dt>
@@ -999,6 +1000,88 @@ this condition is violated.</p>
 </dd></dl>
 
 </section>
+<section id="loss-functions">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Loss functions</a><a class="headerlink" href="#loss-functions" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.operator.func.loss.KLDivergence">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">KLDivergence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/loss.html#KLDivergence"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.loss.KLDivergence" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../abc.html#pyxu.abc.operator.ProxFunc" title="pyxu.abc.operator.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a></p>
+<p>Generalised Kullback-Leibler divergence <span class="math notranslate nohighlight">\(D_{KL}(\mathbf{y}||\mathbf{x}):=\sum_{i=1}^N y_i\log(y_i/x_i) -y_i +x_i\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a>) – </p></li>
+<li><p><strong>data</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.operator.func.loss.KLDivergence.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/loss.html#KLDivergence.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.loss.KLDivergence.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.Integer" title="pyxu.info.ptype.Integer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integer</span></code></a>) – </p></li>
+<li><p><strong>data</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – (M,) strictly positive input data.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">KLDivergence</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">loss</span> <span class="o">=</span> <span class="n">KLDivergence</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">y</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">loss</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1"># 13.80837687480246</span>
+<span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">loss</span><span class="o">.</span><span class="n">prox</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">tau</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="c1"># array([ 0.,  2.,  4.,  6.,  8., 10., 12., 14., 16., 18.])</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>In information theory, and in the case where <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>  sum to one  –and hence
+can be interpreted as discrete probability distributions, the KL-divergence can be interpreted as the relative
+entropy of <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> w.r.t. <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, i.e. the amount of information lost when using
+<span class="math notranslate nohighlight">\(\mathbf{x}\)</span> to approximate <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>. It is particularly useful in the context of count data
+with Poisson distribution. Indeed, the KL-divergence corresponds –up to an additive constant– to the likelihood
+of the data <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> where each component is independent with Poisson distribution and respective
+intensities given by the entries of <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>. See <a class="reference internal" href="../../references.html#funcsphere" id="id4"><span>[FuncSphere]</span></a> Section 5 of Chapter 7 for the
+computation of its proximal operator.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.operator.func.loss.KLDivergence.prox">
+<span class="sig-name descname"><span class="pre">prox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/func/loss.html#KLDivergence.prox"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.func.loss.KLDivergence.prox" title="Link to this definition">#</a></dt>
+<dd><p>Evaluate proximity operator of <span class="math notranslate nohighlight">\(\tau f\)</span> at specified point(s).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – (…, M) input points.</p></li>
+<li><p><strong>tau</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Positive scale factor.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>out</strong> – (…, M) proximal evaluations.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>For <span class="math notranslate nohighlight">\(\tau &gt;0\)</span>, the <em>proximity operator</em> of a scaled functional
+<span class="math notranslate nohighlight">\(f: \mathbb{R}^{M} \to \mathbb{R}\)</span> is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{\text{prox}}_{\tau f}(\mathbf{z})
+:=
+\arg\min_{\mathbf{x}\in\mathbb{R}^{M}} f(x)+\frac{1}{2\tau} \|\mathbf{x}-\mathbf{z}\|_{2}^{2},
+\quad
+\forall \mathbf{z} \in \mathbb{R}^{M}.\]</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
 </section>
 
 
@@ -1089,6 +1172,14 @@ this condition is violated.</p>
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-functions">Loss functions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.loss.KLDivergence"><code class="docutils literal notranslate"><span class="pre">KLDivergence</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.loss.KLDivergence.__init__"><code class="docutils literal notranslate"><span class="pre">KLDivergence.__init__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.func.loss.KLDivergence.prox"><code class="docutils literal notranslate"><span class="pre">KLDivergence.prox()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -1150,14 +1241,10 @@ this condition is violated.</p>
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>
-      
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
-</p></div>
       
     </div>
   

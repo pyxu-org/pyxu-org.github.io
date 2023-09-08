@@ -63,7 +63,7 @@
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Hands-on Example: Computerised Tomography with Pyxu" href="tomo.html" />
+    <link rel="next" title="Hands-on Example: Computerized Tomography with Pyxu" href="tomo.html" />
     <link rel="prev" title="Installation" href="installation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -204,7 +204,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> v1.0.x </strong></div>
+        <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -346,7 +346,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> v1.0.x </strong></div>
+          <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -410,7 +410,7 @@ document.write(`
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Computational Imaging in a Nutshell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tomo.html">Hands-on Example: Computerised Tomography with Pyxu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tomo.html">Hands-on Example: Computerized Tomography with Pyxu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="comparison.html">Comparison with other Frameworks</a></li>
 </ul>
 </div>
@@ -471,11 +471,10 @@ document.write(`
                   
   <section id="Computational-Imaging-in-a-Nutshell">
 <h1>Computational Imaging in a Nutshell<a class="headerlink" href="#Computational-Imaging-in-a-Nutshell" title="Link to this heading">#</a></h1>
-<section id="The-Multifaceted-Realm-of-Computational-Imaging">
-<h2>The Multifaceted Realm of Computational Imaging<a class="headerlink" href="#The-Multifaceted-Realm-of-Computational-Imaging" title="Link to this heading">#</a></h2>
-<p>Digital image restoration and enhancement techniques—concisely termed as image reconstruction methods—serve as the linchpins in the evolving landscape of computer vision. These techniques endeavor to rejuvenate degraded or partially captured raw images, transforming them into superior-quality versions better aligned for visualization or intricate image analysis. The resultant images often boast enhanced resolution and perceptual quality, diminished noise and blur, and may even feature
-completions in areas where data is lacking.</p>
-<p>At the core of many image reconstruction techniques lies the challenge of solving a mathematical inverse problem. Here’s how it works: an object of interest—be it a cell, a scene, or something else—is observed through an acquisition system, such as a microscope or camera. This system collects data that is often both noisy and blurred. The ultimate objective is to reconstruct the original object from these imperfect measurements, effectively “inverting” the acquisition process to obtain a clearer
+<section id="The-Multi-faceted-Realm-of-Computational-Imaging">
+<h2>The Multi-faceted Realm of Computational Imaging<a class="headerlink" href="#The-Multi-faceted-Realm-of-Computational-Imaging" title="Link to this heading">#</a></h2>
+<p>Digital image restoration and enhancement techniques — concisely known as image reconstruction methods — are cornerstone to computer vision. They strive to improve degraded or partially captured raw images, transforming them into superior-quality versions better aligned for visualization or image analysis. The resultant images often boast enhanced resolution and perceptual quality, reduced noise and blur, and may even feature completions in areas where data is lacking.</p>
+<p>At the core of many image reconstruction techniques lies the challenge of solving a mathematical inverse problem. Here’s how it works: an object of interest — be it a cell, a scene, or something else — is observed through an acquisition system, such as a microscope or camera. This system collects data that is both noisy and blurred. The ultimate objective is to reconstruct the original object from these imperfect measurements, effectively “inverting” the acquisition process to obtain a clearer
 image or representation. The diagram below succinctly illustrates an inverse problem setting:</p>
 <center><p><img alt="Forward model" class="no-scaled-link" src="../_images/g10575.png" style="width: 70%;" /></p>
 </center><p>where:</p>
@@ -491,7 +490,7 @@ image or representation. The diagram below succinctly illustrates an inverse pro
 <li><p><strong>Image Inpainting:</strong> Reconstructing missing or damaged regions within an image, often used for tasks like replacing lost blocks during coding and transmission or erasing watermark/logo overlays.</p></li>
 <li><p><strong>Image Super-Resolution:</strong> Elevating the resolution of an image or an imaging system to provide finer detail.</p></li>
 <li><p><strong>Image Fusion:</strong> The merging of two or more degraded images of the same object or scene into a single image that exceeds the quality of any individual input.</p></li>
-<li><p><strong>Image Filtering:</strong> Modifying an image to accentuate particular features of interest, such as points, lines, or shapes.</p></li>
+<li><p><strong>Image Filtering:</strong> Modifying an image to promote particular features of interest, such as points, lines, or shapes.</p></li>
 <li><p><strong>Tomographic Reconstruction:</strong> Rebuilding an image from its lower-dimensional projections, known as sinograms in the context of CT or PET scans.</p></li>
 <li><p>and many more…</p></li>
 </ul>
@@ -499,7 +498,7 @@ image or representation. The diagram below succinctly illustrates an inverse pro
 </center></section>
 <section id="The-Dawn-of-Computational-Imaging">
 <h2>The Dawn of Computational Imaging<a class="headerlink" href="#The-Dawn-of-Computational-Imaging" title="Link to this heading">#</a></h2>
-<p>Traditional software-based imaging pipelines have often relied on direct inversion techniques. These methods provide a rough approximation of the pseudoinverse of the sensing operator that models the image acquisition system. While these approaches are fast, intuitive, and relatively scalable, they are fundamentally limited in terms of accuracy, frequently resulting in poorly resolved images marred by significant reconstruction artifacts.</p>
+<p>Traditional software-based imaging pipelines have often relied on direct inversion techniques. These methods provide a rough approximation of the pseudoinverse of the sensing operator that models the image acquisition system. While these approaches are fast, intuitive, and relatively scalable, they are fundamentally limited in terms of accuracy, frequently resulting in poorly resolved images with significant reconstruction artifacts.</p>
 <center><p><img alt="Forward model" class="no-scaled-link" src="../_images/illposed.jpg" style="width: 70%;" /></p>
 </center><p>One way to counteract the numerical instability inherent in the use of the pseudo-inverse is by solving dampened normal equations:</p>
 <center><p><img alt="Forward model" class="no-scaled-link" src="../_images/g15273.png" style="width: 70%;" /></p>
@@ -507,18 +506,18 @@ image or representation. The diagram below succinctly illustrates an inverse pro
 </section>
 <section id="Bayesian-Computational-Imaging">
 <h2>Bayesian Computational Imaging<a class="headerlink" href="#Bayesian-Computational-Imaging" title="Link to this heading">#</a></h2>
-<p>State-of-the-art image restoration techniques generally rely on powerful and universal image priors that promote specific perceptual or structural features commonly found in natural images. These effectively regularise the ill-posed inverse problem and improve reconstruction accuracy. This is typically achieved by means of handcrafted Bayesian estimation problems, built from the composition of universal mathematical building blocks (e.g., mathematical transforms and cost/regularisation
-functionals). These Bayesian problems assess an optimal trade-off between a likelihood term, which controls the reconstruction fidelity in terms of the data and its statistics, and a prior term, which promotes physical plausibility of the reconstruction. These Bayesian problems are generally solved using sophisticated iterative first-order proximal-splitting methods and are well-suited for uncertainty quantification through Markov Chain Monte Carlo (MCMC) samplers.</p>
+<p>State-of-the-art image restoration techniques generally rely on powerful and universal image priors that promote specific perceptual or structural features commonly found in natural images. These effectively regularise the ill-posed inverse problem and improve reconstruction accuracy. This is typically achieved by means of hand-crafted Bayesian estimation problems, built from the composition of universal mathematical building blocks (e.g., mathematical transforms and cost/regularisation
+functionals). These Bayesian problems assess an optimal trade-off between a likelihood term, which controls the reconstruction fidelity in terms of the data and its statistics, and a prior term, which promotes physical plausibility of the reconstruction. Bayesian problems are solved using sophisticated iterative first-order proximal-splitting methods and are well-suited for uncertainty quantification through Markov Chain Monte Carlo (MCMC) samplers.</p>
 <center><p><img alt="Forward model" class="no-scaled-link" src="../_images/g15005.png" style="width: 70%;" /></p>
 </center><p>At their core, image priors aim to approximate the intricate and high-dimensional manifold of natural images.</p>
 <center><p><img alt="Forward model" class="no-scaled-link" src="../_images/manifold.jpg" style="width: 95%;" /></p>
-</center><p>Historically, this approximation was often achieved using methods like Tikhonov or Total Variation priors. These traditional priors emphasized simple, physically-admissible behaviors such as smoothness or sparsity within a specific domain.</p>
+</center><p>Historically, this approximation was often achieved using methods like Tikhonov or Total Variation priors. These priors emphasized simple, physically-admissible behaviors such as smoothness or sparsity within a specific domain.</p>
 <center><p><img alt="Forward model" class="no-scaled-link" src="../_images/l2_l1.jpg" style="width: 95%;" /></p>
 </center></section>
 <section id="The-Deep-Learning-Revolution">
 <h2>The Deep Learning Revolution<a class="headerlink" href="#The-Deep-Learning-Revolution" title="Link to this heading">#</a></h2>
-<p>The rise of deep learning has been a game-changer in the field of computational imaging, resulting in a new era of highly effective, data-driven image priors. These advanced priors are capable of learning the manifold of natural images much more fidely than model-based priors. Consequently, contemporary techniques for image restoration, enhancement, and manipulation have reached unprecedented levels of performance. In fact, the advancements have been so significant that some experts speculate we
-may have arrived at a performance and accuracy plateau:</p>
+<p>The rise of deep learning has been a game-changer in the field of computational imaging, resulting in a new era of highly effective, data-driven image priors. These advanced priors are capable of learning the manifold of natural images with higher fidelity than model-based priors. Consequently, contemporary techniques for image restoration, enhancement, and manipulation have reached unprecedented levels of performance. In fact, the advancements have been so significant that some experts
+speculate we may have arrived at a performance and accuracy plateau:</p>
 <blockquote>
 <div><p>Recent studies suggest that modern image denoising methods are approaching the optimally possible performance in denoising. (Romano et al., 2017)</p>
 </div></blockquote>
@@ -526,17 +525,17 @@ may have arrived at a performance and accuracy plateau:</p>
 </center></section>
 <section id="The-Adoptability-and-Usability-Crisis-of-Computational-Imaging">
 <h2>The Adoptability and Usability Crisis of Computational Imaging<a class="headerlink" href="#The-Adoptability-and-Usability-Crisis-of-Computational-Imaging" title="Link to this heading">#</a></h2>
-<p>Despite the remarkable strides made in the field, advanced image reconstruction technologies face significant obstacles in terms of adoptability, usability, and reproducibility, particularly in applied imaging sciences. A large portion of the computational imaging techniques cited in academic literature are hyper-specialized for specific applications, and many remain in the proof-of-concept stage. These methods often necessitate expert knowledge to calibrate, utilize, and integrate into
-production pipelines. Further, many lack support for N-dimensional images, distributed out-of-core computing, and hardware acceleration, which restricts their practical applicability.</p>
-<p>To accelerate the path from research prototyping to production deployment in imaging science, there is hence a strong need to rethink traditional imaging pipelines, with an emphasis on scalability (for both CPUs and GPUs) and modularity (to allow for high customizability and coexistence of both standard and advanced techniques). This requires in particular to transition from monolithic to microservice ones with highly maintainable, testable, optimised, loosely coupled, hardware-agnostic and
-universal software components. Such a design of the imaging pipeline should enable the rapid and reliable prototyping/scaling/deployment of complex image reconstruction methods and deliver on their many promises beyond academic environments. This core objective is, in essence, the very <em>raison d’être</em> of Pyxu.</p>
+<p>Despite remarkable strides made in the field, advanced image reconstruction technologies face significant obstacles in terms of adoptability, usability, and reproducibility, particularly in applied imaging sciences. A large portion of computational imaging techniques cited in academic literature are hyper-specialized for specific applications, and many remain in the proof-of-concept stage. These methods often necessitate expert knowledge to calibrate, utilize, and integrate into production
+pipelines. Further, many lack support for N-dimensional images, distributed out-of-core computing, and hardware acceleration, restricting their practical applicability.</p>
+<p>To accelerate the path from research prototyping to production deployment in imaging science, there is hence a strong need to rethink traditional imaging pipelines with an emphasis on scalability (for both CPUs and GPUs) and modularity (to allow for high customizability and coexistence of both standard and advanced techniques). This requires a transition from monolithic software packages to microservice-oriented designs with highly maintainable, testable, optimised, loosely coupled,
+hardware-agnostic software components. Such a design of the imaging pipeline should enable rapid and reliable prototyping/scaling/deployment of complex image reconstruction methods and deliver on their many promises beyond academic environments. This core objective is, in essence, the very <em>raison d’être</em> of Pyxu.</p>
 </section>
 <section id="Pyxu:-High-Performance-Computational-Imaging-with-Python">
 <h2>Pyxu: High-Performance Computational Imaging with Python<a class="headerlink" href="#Pyxu:-High-Performance-Computational-Imaging-with-Python" title="Link to this heading">#</a></h2>
-<p>Pyxu is an open-source computational imaging software framework for Python with native support for hardware acceleration and distributed computing. The latter adopts a modular and interoperable microservice architecture providing highly optimised and scalable general-purpose computational imaging functionalities and tools, easy to reuse and share across imaging modalities. These include notably a rich collection of common sensing operators and cost/penalty functionals, which can easily be
-combined via an advanced operator algebra logic to handcraft tailored inverse problems mappable to the generic state-of-the-art (stochastic) proximal methods of the library’s comprehensive algorithmic suite. This suite simplifies the user experience, automatically calculating gradients, proximal operators, and hyperparameters through the operator algebra logic or guided by best practices.</p>
-<p>At its foundation, Pyxu takes advantage of an array of high-performance computing (HPC) tools from the Python ecosystem to assure superior performance and scalability. For instance, Pyxu’s computational logic operates across multiple precisions and fully supports Duck arrays—array-like entities compliant with the NumPy API standard. This compatibility encompasses not just traditional CPU-bound NumPy arrays, but also extends to GPU-bound CuPy arrays and distributed or out-of-core chunked Dask
-arrays. Internally, the framework employs a module-agnostic codebase, dispatching routine calls to either NumPy, CuPy, Dask, or any other NumPy-compatible library based on the type of array in operation. As a result, Pyxu offers native support for both hardware acceleration and distributed computing within a singular, easily maintainable, testable, and readable Python codebase.</p>
+<p>Pyxu is an open-source computational imaging software framework for Python with native support for hardware acceleration and distributed computing. Pyxu adopts a modular and interoperable microservice architecture providing highly optimised and scalable general-purpose computational imaging functionalities and tools, easy to reuse and share across imaging modalities. These include notably a rich collection of common sensing operators and cost/penalty functionals, which can be combined to
+handcraft tailored inverse problems. The latter can then be solved with state-of-the-art (stochastic) proximal methods included in Pyxu. This suite simplifies the user experience, automatically calculating gradients, proximal operators, and hyperparameters through the operator algebra logic, or guided by best practices.</p>
+<p>At its foundation, Pyxu takes advantage of an array of high-performance computing (HPC) tools from the PyData ecosystem to achieve superior performance and scalability. For instance, Pyxu’s computational logic operates across multiple precisions and fully supports <em>duck arrays</em> — array-like entities compliant with the NumPy API standard. This compatibility encompasses not just traditional CPU-bound NumPy arrays, but also extends to GPU-bound CuPy arrays and distributed or out-of-core chunked
+Dask arrays. Internally, the framework employs a module-agnostic codebase, dispatching routine calls to (NumPy, CuPy, Dask) based on the type of array in operation. As a result, Pyxu offers native support for both hardware acceleration and distributed computing within a singular, easily maintainable, testable, and readable Python codebase.</p>
 </section>
 </section>
 
@@ -565,7 +564,7 @@ arrays. Internally, the framework employs a module-agnostic codebase, dispatchin
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Hands-on Example: Computerised Tomography with Pyxu</p>
+        <p class="prev-next-title">Hands-on Example: Computerized Tomography with Pyxu</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -587,7 +586,7 @@ arrays. Internally, the framework employs a module-agnostic codebase, dispatchin
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#The-Multifaceted-Realm-of-Computational-Imaging">The Multifaceted Realm of Computational Imaging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#The-Multi-faceted-Realm-of-Computational-Imaging">The Multi-faceted Realm of Computational Imaging</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#The-Dawn-of-Computational-Imaging">The Dawn of Computational Imaging</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Bayesian-Computational-Imaging">Bayesian Computational Imaging</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#The-Deep-Learning-Revolution">The Deep Learning Revolution</a></li>
@@ -654,14 +653,10 @@ arrays. Internally, the framework employs a module-agnostic codebase, dispatchin
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>
-      
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
-</p></div>
       
     </div>
   

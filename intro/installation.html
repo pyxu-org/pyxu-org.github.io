@@ -202,7 +202,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> v1.0.x </strong></div>
+        <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -344,7 +344,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> v1.0.x </strong></div>
+          <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -408,7 +408,7 @@ document.write(`
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="primer.html">Computational Imaging in a Nutshell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tomo.html">Hands-on Example: Computerised Tomography with Pyxu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tomo.html">Hands-on Example: Computerized Tomography with Pyxu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="comparison.html">Comparison with other Frameworks</a></li>
 </ul>
 </div>
@@ -469,17 +469,20 @@ document.write(`
                   
   <section id="installation">
 <span id="installation-instructions"></span><h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h1>
-<p>Welcome to the installation guide for Pyxu! If you’re interested in solving inverse problems with state-of-the-art proximal algorithms, you’re in the right place. This guide will walk you through the three levels of installation to meet your specific needs:</p>
+<p>This guide will walk you through the three levels of installation to meet your specific needs:</p>
 <ol class="arabic simple">
 <li><p><strong>Basic Installation</strong> - For users who just want to get started.</p></li>
 <li><p><strong>Installation with Optional Dependencies</strong> - For those looking for extended functionality.</p></li>
 <li><p><strong>Developer Installation</strong> - For contributors or users who need to dive deep into the codebase.</p></li>
 </ol>
-<p>Pyxu is designed to be accessible and is compatible with Linux, macOS, and Windows, although it has not been extensively tested on the latter.</p>
+<p>Pyxu is designed to be accessible and is compatible with Linux, macOS, and Windows, although it has not been extensively
+tested on the latter.</p>
 <section id="basic-installation">
 <h2>Basic Installation<a class="headerlink" href="#basic-installation" title="Link to this heading">#</a></h2>
-<p>The core of <strong>Pyxu</strong> is lightweight and straightforward to install. You’ll need Python (&gt;= 3.9, &lt; 3.12) and a few mandatory dependencies. While these dependencies will be automatically installed via <code class="docutils literal notranslate"><span class="pre">pip</span></code>, we highly recommend installing NumPy and SciPy via <code class="docutils literal notranslate"><span class="pre">conda</span></code> to benefit from Intel MKL bindings and speed optimizations.</p>
-<p>First, to install NumPy and SciPy from the conda-forge channel:</p>
+<p>The core of <strong>Pyxu</strong> is lightweight and straightforward to install. You’ll need Python (&gt;= 3.9, &lt; 3.12) and a few
+mandatory dependencies. While these dependencies will be automatically installed via <code class="docutils literal notranslate"><span class="pre">pip</span></code>, we highly recommend
+installing NumPy and SciPy via <code class="docutils literal notranslate"><span class="pre">conda</span></code> to benefit from optimized math libraries.</p>
+<p>First, to install NumPy and SciPy from conda-forge:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>numpy<span class="w"> </span>scipy
 </pre></div>
 </div>
@@ -493,56 +496,51 @@ document.write(`
 <h2>Installation with Optional Dependencies<a class="headerlink" href="#installation-with-optional-dependencies" title="Link to this heading">#</a></h2>
 <p>For extended features, you can install optional dependencies:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">dev</span></code>: For development tools like Sphinx, pre-commit, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">fft</span></code>: For faster Fourier transforms.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dev</span></code>: development tools like <a class="reference external" href="https://www.sphinx-doc.org/en/master/contents.html">Sphinx</a>, <a class="reference external" href="https://pre-commit.com/">pre-commit</a>, etc.</p></li>
 </ul>
 <p>Additionally, you can use aggregate targets based on your platform’s GPU capabilities:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">complete_no_gpu</span></code>: For platforms without GPU support.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">complete_gpu</span></code>: For platforms with GPU support (CUDA 12.0 and above).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">complete_no_gpu</span></code>: full Pyxu install, without GPU support.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">complete_gpu</span></code>: full Pyxu install, with GPU support. (CUDA 12.* required.)</p></li>
 </ul>
-<p>To install with a specific optional dependency, you can use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pyxu<span class="o">[</span>dev<span class="o">]</span><span class="w">   </span><span class="c1"># for development tools</span>
-pip<span class="w"> </span>install<span class="w"> </span>pyxu<span class="o">[</span>fft<span class="o">]</span><span class="w">   </span><span class="c1"># for FFT support</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can combine different targets by separating them with commas. For example, to install all GPU dependencies alongside the development tools, use:</p>
+<p>Optional dependencies are specified between square brackets:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pyxu<span class="o">[</span>dev,complete_gpu<span class="o">]</span>
 </pre></div>
-</div>
 </div>
 </section>
 <section id="developer-installation">
 <h2>Developer Installation<a class="headerlink" href="#developer-installation" title="Link to this heading">#</a></h2>
-<p>If you’re interested in contributing to Pyxu or experimenting with its codebase, you can clone the repository and install it manually.</p>
+<p>If you’re interested in contributing to Pyxu or experimenting with its codebase, you can clone the repository and
+install it manually.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/matthieumeo/pyxu.git
 <span class="nb">cd</span><span class="w"> </span>pyxu
-pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[dev,complete_gpu]&quot;</span><span class="w"> </span><span class="c1"># complete_no_gpu also available</span>
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[dev,complete_gpu]&quot;</span><span class="w">  </span><span class="c1"># complete_no_gpu also available</span>
 </pre></div>
 </div>
 <p>To run tests, you can execute:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tox<span class="w"> </span>run
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tox<span class="w"> </span>run<span class="w">  </span><span class="c1"># optional, see below.</span>
 </pre></div>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Running the tests may take a significant amount of time. Please be patient.</p>
+<p>Running the full test suite will take several hours.
+This step can be skipped.</p>
 </div>
 <p>For building documentation and running pre-commit hooks:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tox<span class="w"> </span>run<span class="w"> </span>-e<span class="w"> </span>doc<span class="w"> </span><span class="c1"># Builds documentation with Sphinx</span>
-tox<span class="w"> </span>run<span class="w"> </span>-e<span class="w"> </span>pre-commit<span class="w"> </span><span class="c1"># Run pre-commit hooks</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tox<span class="w"> </span>run<span class="w"> </span>-e<span class="w"> </span>doc-fast<span class="w">  </span><span class="c1"># build HTML docs</span>
+tox<span class="w"> </span>run<span class="w"> </span>-e<span class="w"> </span>pre-commit<span class="w">  </span><span class="c1"># run pre-commit hooks</span>
 </pre></div>
 </div>
 </section>
 <section id="interoperation-with-deep-learning-frameworks">
 <h2>Interoperation with Deep Learning Frameworks<a class="headerlink" href="#interoperation-with-deep-learning-frameworks" title="Link to this heading">#</a></h2>
-<p>If you wish to use Pyxu in combination with major deep learning frameworks like JAX and PyTorch, you’ll need to install them separately. For more information, consult the installation guides for <a class="reference external" href="https://github.com/google/jax#installation">JAX</a> and <a class="reference external" href="https://pytorch.org/get-started/locally/">PyTorch</a>.</p>
+<p>If you wish to use Pyxu in combination with deep learning frameworks like JAX and PyTorch, you’ll need to install them
+separately. For more information, consult the installation guides for <a class="reference external" href="https://github.com/google/jax#installation">JAX</a> and <a class="reference external" href="https://pytorch.org/get-started/locally/">PyTorch</a>.</p>
 </section>
 <section id="you-re-all-set">
 <h2>You’re All Set!<a class="headerlink" href="#you-re-all-set" title="Link to this heading">#</a></h2>
-<p>You are now ready to harness the capabilities of Pyxu for your projects and research. If you have any questions or contributions, we would be happy to hear from you!</p>
+<p>You are now ready to harness the capabilities of Pyxu for your projects and research. If you have any questions or
+contributions, we would be happy to hear from you!</p>
 </section>
 </section>
 
@@ -659,14 +657,10 @@ tox<span class="w"> </span>run<span class="w"> </span>-e<span class="w"> </span>
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>
-      
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
-</p></div>
       
     </div>
   

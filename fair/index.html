@@ -202,7 +202,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> v1.0.x </strong></div>
+        <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -344,7 +344,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> v1.0.x </strong></div>
+          <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -408,6 +408,7 @@ document.write(`
   <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="howto.html">How to use plugins in Pyxu?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contributing to the Pyxu-FAIR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_notes.html">Developer Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="score.html">Pyxu Score Explained</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="plugins/index.html">Plugin Catalog</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="plugins/CSEEG.html">CSEEG</a></li>
@@ -659,28 +660,29 @@ span.badge-right {
 <h1 class="sd-d-none">Extending Pyxu<a class="headerlink" href="#extending-pyxu" title="Link to this heading">#</a></h1>
 <h2 style="font-size: 60px; font-weight: bold; display: inline"><span>Pyxu FAIR</span></h2>
 <h3 style="margin-top: 0; font-weight: bold; text-align: left; ">A marketplace for Pyxu-based plugins</h3>
-<p>While Pyxu offers flexibility and portability across various imaging domains, its general-purpose design might
-not cater to the specific needs of certain imaging communities. The <strong>Pyxu FAIR</strong> addresses this by
-offering a platform that allows for the development, sharing, and integration of specialized plugins to enhance the
-framework.
-</p><p>In simple terms, the Pyxu FAIR is designed to supercharge your Pyxu experience:</p>
+<p>
+While Pyxu offers flexibility and portability across various imaging domains, its general-purpose design might not
+cater to the specific needs of certain imaging communities. The <strong>Pyxu FAIR</strong> addresses this by offering
+a platform that allows for the development, sharing, and integration of specialized plugins to enhance the framework.
+</p><p>In simple terms, the Pyxu FAIR is designed to supercharge your Pyxu experience.</p>
 <section id="catalogue-website">
 <h2>Catalogue Website<a class="headerlink" href="#catalogue-website" title="Link to this heading">#</a></h2>
-<p>A <a class="reference external" href="./plugins/index.html">one-stop shop</a> to discover exciting Pyxu plugins right from your browser. Imagine a shopping mall, but just for Pyxu plugins! 🛍️
-Auto-discovery of plugins from the Python Package Index (PyPI). No more manual hunting! 🕵️
-Relevant metadata display and a fuzzy-searchable index. Dive deeper into plugins, explore their features, and find the best fit for your needs. 🔎
-Excitingly, you can even rank plugins based on their <a class="reference external" href="./score.html">Pyxu score</a>. The higher the score, the better they gel with Pyxu’s quality standards. 🏆</p>
+<p>A <a class="reference external" href="./plugins/index.html">one-stop shop</a> to discover exciting Pyxu plugins right from your browser. Imagine a shopping
+mall, but just for Pyxu plugins! 🛍️ Auto-discovery of plugins from the Python Package Index (PyPI). No more manual
+hunting! 🕵️ Relevant metadata display and a fuzzy-searchable index. Dive deeper into plugins, explore their features,
+and find the best fit for your needs. 🔎 Excitingly, you can even rank plugins based on their <a class="reference external" href="./score.html">Pyxu score</a>. The higher the score, the better they comply with Pyxu’s quality standards. 🏆</p>
 </section>
 <section id="meta-programming-framework">
 <h2>Meta-programming Framework<a class="headerlink" href="#meta-programming-framework" title="Link to this heading">#</a></h2>
-<p>Kickstart your plugin development with the <a class="reference external" href="https://github.com/matthieumeo/cookiecutter-pycsou-plugin/">Pyxu cookie-cutter</a> 🖥. Want to share your Pyxu-based tools without the DevOps hassle? We’ve got you covered! 🛠️
-This plugin-template generator ensures your plugins are easy to install, discoverable by Pyxu FAIR, and sync well with Pyxu’s quality controls. 🌟</p>
+<p>Kickstart your plugin development with the <a class="reference external" href="https://github.com/matthieumeo/cookiecutter-pycsou-plugin/">Pyxu cookie-cutter</a> 🖥. Want to share your Pyxu-based tools without the
+DevOps hassle? We’ve got you covered! 🛠️ This plugin-template generator ensures your plugins are easy to install,
+discoverable by Pyxu FAIR, and sync well with Pyxu’s quality controls. 🌟</p>
 </section>
 <section id="interoperability-protocol">
 <h2>Interoperability Protocol<a class="headerlink" href="#interoperability-protocol" title="Link to this heading">#</a></h2>
-<p>Not just a directory, Pyxu FAIR ensures your plugins gel seamlessly with Pyxu’s core framework. 🤝
-Via Python’s <a class="reference external" href="https://setuptools.pypa.io/en/latest/userguide/entry_point.html">entry points</a>, Pyxu FAIR sets guidelines on how plugins communicate with the main framework.
-Excitingly, with our new and improved loading technique, interacting with user-contributed plugins feels like chatting with old friends. 🤖</p>
+<p>Not just a directory, Pyxu FAIR ensures your plugins work seamlessly with Pyxu’s core framework. 🤝 Via Python’s <a class="reference external" href="https://setuptools.pypa.io/en/latest/userguide/entry_point.html">entry
+points</a>, Pyxu FAIR sets guidelines on how plugins
+communicate with the main framework.</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -797,14 +799,10 @@ Excitingly, with our new and improved loading technique, interacting with user-c
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>
-      
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
-</p></div>
       
     </div>
   

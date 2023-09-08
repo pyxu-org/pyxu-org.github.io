@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Loss &amp; Regularization Functionals — Pyxu Documentation</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../_static/plot_directive.css?v=7f9a90b1" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
+<link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
+<link href="../_static/sg_gallery.css?v=61a4c737" rel="stylesheet" type="text/css"/>
+<link href="../_static/sg_gallery-binder.css?v=f4aeca0c" rel="stylesheet" type="text/css"/>
+<link href="../_static/sg_gallery-dataframe.css?v=2082cf3c" rel="stylesheet" type="text/css"/>
+<link href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" rel="stylesheet" type="text/css"/>
+<link href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css?v=1031a718" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
+<link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
+<script src="../_static/documentation_options.js?v=e02fc88f"></script>
+<script src="../_static/doctools.js?v=888ff710"></script>
+<script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="../_static/copybutton.js?v=30646c52"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+<script src="../_static/design-tabs.js?v=36754332"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+<script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'guide/funcs';</script>
+<link href="../_static/favicon.png" rel="icon"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="algebra.html" rel="next" title="Operator Algebra Logic"/>
+<link href="fwdops.html" rel="prev" title="Forward Operators"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="light" data-offset="180">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search the docs ..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+<label class="sidebar-toggle primary-toggle" for="__primary">
+<span class="fa-solid fa-bars"></span>
+</label>
+<div class="navbar-header-items__start">
+<div class="navbar-item">
+<a class="navbar-brand logo" href="../index.html">
+<img alt="Logo image" class="logo__image only-light" src="../_static/logo.png"/>
+<script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+</a></div>
+</div>
+<div class="col-lg-9 navbar-header-items">
+<div class="me-auto navbar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../intro/index.html">
+                        Getting Started
+                      </a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link nav-internal" href="index.html">
+                        User Guide
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../examples/index.html">
+                        Example Gallery
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../api/index.html">
+                        API Reference
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../fair/index.html">
+                        Extending Pyxu
+                      </a>
+</li>
+</ul>
+</nav></div>
+</div>
+<div class="navbar-header-items__end">
+<div class="navbar-item navbar-persistent--container">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://pypi.org/project/pyxu/" rel="noopener" target="_blank" title="PyPI"><span><i class="fa-brands fa-python"></i></span>
+<label class="sr-only">PyPI</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="mailto: matthieu.simeoni@gmail.com" rel="noopener" target="_blank" title="Contact"><span><i class="fa-brands fa-telegram"></i></span>
+<label class="sr-only">Contact</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://imaging.epfl.ch/" rel="noopener" target="_blank" title="EPFL Center for Imaging"><img alt="EPFL Center for Imaging" class="icon-link-image" src="../_static/imaging.png"/></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<label class="sidebar-toggle secondary-toggle" for="__secondary">
+<span class="fa-solid fa-outdent"></span>
+</label>
+</div>
+</nav>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+<div class="sidebar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../intro/index.html">
+                        Getting Started
+                      </a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link nav-internal" href="index.html">
+                        User Guide
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../examples/index.html">
+                        Example Gallery
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../api/index.html">
+                        API Reference
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../fair/index.html">
+                        Extending Pyxu
+                      </a>
+</li>
+</ul>
+</nav></div>
+</div>
+<div class="sidebar-header-items__end">
+<div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://pypi.org/project/pyxu/" rel="noopener" target="_blank" title="PyPI"><span><i class="fa-brands fa-python"></i></span>
+<label class="sr-only">PyPI</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="mailto: matthieu.simeoni@gmail.com" rel="noopener" target="_blank" title="Contact"><span><i class="fa-brands fa-telegram"></i></span>
+<label class="sr-only">Contact</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://imaging.epfl.ch/" rel="noopener" target="_blank" title="EPFL Center for Imaging"><img alt="EPFL Center for Imaging" class="icon-link-image" src="../_static/imaging.png"/></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item"><nav aria-label="Section Navigation" class="bd-docs-nav bd-links">
+<p aria-level="1" class="bd-links__title" role="heading">Section Navigation</p>
+<div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fwdops.html">Forward Operators</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Loss &amp; Regularization Functionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algebra.html">Operator Algebra Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Optimization Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lipschitz.html">Lipschitz Constants and Automatic Step Size Tuning</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content">
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item">
+<nav aria-label="Breadcrumbs">
+<ul aria-label="Breadcrumb" class="bd-breadcrumbs" role="navigation">
+<li class="breadcrumb-item breadcrumb-home">
+<a aria-label="Home" class="nav-link" href="../index.html">
+<i class="fa-solid fa-home"></i>
+</a>
+</li>
+<li class="breadcrumb-item"><a class="nav-link" href="index.html">User Guide</a></li>
+<li aria-current="page" class="breadcrumb-item active">Loss &amp; Regularization Functionals</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article" role="main">
+<section id="Loss-&amp;-Regularization-Functionals">
+<h1>Loss &amp; Regularization Functionals<a class="headerlink" href="#Loss-&amp;-Regularization-Functionals" title="Link to this heading">#</a></h1>
+<section id="What-is-a-Functional?">
+<h2>What is a Functional?<a class="headerlink" href="#What-is-a-Functional?" title="Link to this heading">#</a></h2>
+<p>A “functional” is a special type of function in mathematics and computational science. Unlike typical functions that map from one vector space to another, a functional takes in vectors and maps them to real numbers. Think of it as a way to assign a numerical “score” to any given input. This is particularly useful in optimization problems, where the goal is to find the input that minimizes (or maximizes) this score.</p>
+<p>In the realm of computational imaging, functionals often serve as objective criteria to optimize. These objectives usually consist of two or more parts: a loss term and a regularization term. In Bayesian contexts, the objective functional often signifies the negative log-posterior density, which needs to be either sampled or summarized (e.g. by its moments).</p>
+</section>
+<section id="Functionals-Hierarchy-in-Pyxu">
+<h2>Functionals Hierarchy in Pyxu<a class="headerlink" href="#Functionals-Hierarchy-in-Pyxu" title="Link to this heading">#</a></h2>
+<p>Pyxu provides a versatile and robust class hierarchy to define various types of functionals. This structure aims to offer maximal flexibility for both elementary and complex computational imaging tasks. Below is an exploration of these different classes, complete with (very simplified) example implementations.</p>
+<blockquote>
+<div><p><strong>Important Note</strong>: The base classes described below are designed as abstract base classes. This means they serve as templates or “blueprints” for creating specific functionals that suit your project needs. You’re not supposed to instantiate them directly. Instead, you have two main options:</p>
+<ol class="arabic simple">
+<li><p><strong>Subclassing</strong>: Extend these classes to create customized functionals tailored to your problem.</p></li>
+<li><p><strong>Generic Constructor Routine</strong>: Utilize the <code class="docutils literal notranslate"><span class="pre">from_source</span></code> method to define new functionals from their core methods, like <code class="docutils literal notranslate"><span class="pre">apply()</span></code>, <code class="docutils literal notranslate"><span class="pre">grad()</span></code>, or <code class="docutils literal notranslate"><span class="pre">prox()</span></code>.</p></li>
+</ol>
+<p>Additionally, don’t forget to explore our comprehensive Reference API. It features pre-implemented versions of many commonly used functionals, serving as both a shortcut for common tasks and a useful learning resource.</p>
+</div></blockquote>
+<section id="Func:-The-Foundation-Stone-🧱">
+<h3><code class="docutils literal notranslate"><span class="pre">Func</span></code>: The Foundation Stone 🧱<a class="headerlink" href="#Func:-The-Foundation-Stone-🧱" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Func</span></code> class is the base class in the functional hierarchy. Its core method is <code class="docutils literal notranslate"><span class="pre">apply()</span></code>, which computes the value of the functional at a given input.</p>
+<p>Here’s a simplified example, implementing the squared <span class="math notranslate nohighlight">\(L_2\)</span> norm:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.Func" title="pyxu.abc.operator.Func"><span class="n">Func</span></a>
+
+<span class="k">class</span> <span class="nc">SquaredL2</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.Func" title="pyxu.abc.operator.Func"><span class="n">Func</span></a><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.norm.html#numpy.linalg.norm" title="numpy.linalg.norm"><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span></a><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>This base functional can be adapted into a loss functional using the <code class="docutils literal notranslate"><span class="pre">asloss()</span></code> method:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transforms the functional into a loss</span>
+<span class="n">l2_loss</span> <span class="o">=</span> <span class="n">SquaredL2</span><span class="p">()</span><span class="o">.</span><span class="n">asloss</span><span class="p">(</span><span class="n">data_vector</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this specific example, the <code class="docutils literal notranslate"><span class="pre">asloss()</span></code> method shifts the functional using a given data vector, transforming it into a loss that measures the squared Euclidean distance between the input and the data.</p>
+<blockquote>
+<div><p><strong>Special Cases</strong>: The <code class="docutils literal notranslate"><span class="pre">asloss()</span></code> method doesn’t always produce a simple shift of the original functional. For instance, when applied to an entropy functional, it transforms it into the relative entropy.</p>
+</div></blockquote>
+</section>
+<section id="DiffFunc:-Differentiable-Functionals-🎯">
+<h3><code class="docutils literal notranslate"><span class="pre">DiffFunc</span></code>: Differentiable Functionals 🎯<a class="headerlink" href="#DiffFunc:-Differentiable-Functionals-🎯" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">DiffFunc</span></code> class extends <code class="docutils literal notranslate"><span class="pre">Func</span></code> for functionals that have a well-defined gradient. It introduces an additional method, <code class="docutils literal notranslate"><span class="pre">grad()</span></code>, for gradient computation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.DiffFunc" title="pyxu.abc.operator.DiffFunc"><span class="n">DiffFunc</span></a>
+
+<span class="k">class</span> <span class="nc">SquaredL2</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.DiffFunc" title="pyxu.abc.operator.DiffFunc"><span class="n">DiffFunc</span></a><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.norm.html#numpy.linalg.norm" title="numpy.linalg.norm"><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span></a><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+
+    <span class="k">def</span> <span class="nf">grad</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>🌈Tip: With Pyxu, you can use <code class="docutils literal notranslate"><span class="pre">from_torch</span></code> or <code class="docutils literal notranslate"><span class="pre">from_jax</span></code> to automatically compute the gradient if you have a PyTorch or JAX implementation of your functional.</p>
+</div></blockquote>
+</section>
+<section id="ProxFunc:-Proximable-Functionals-🛡️">
+<h3><code class="docutils literal notranslate"><span class="pre">ProxFunc</span></code>: Proximable Functionals 🛡️<a class="headerlink" href="#ProxFunc:-Proximable-Functionals-🛡️" title="Link to this heading">#</a></h3>
+<p>For functionals with a simple proximal operator, you’ll find <code class="docutils literal notranslate"><span class="pre">ProxFunc</span></code> extremely useful. It offers the <code class="docutils literal notranslate"><span class="pre">prox()</span></code> method, which evaluates the proximal operator of the functional. Here’s an example using the <span class="math notranslate nohighlight">\(L_1\)</span> norm:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.ProxFunc" title="pyxu.abc.operator.ProxFunc"><span class="n">ProxFunc</span></a>
+
+<span class="k">class</span> <span class="nc">L1Norm</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.ProxFunc" title="pyxu.abc.operator.ProxFunc"><span class="n">ProxFunc</span></a><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">prox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">tau</span><span class="p">):</span>
+        <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.sign.html#numpy.sign" title="numpy.sign"><span class="n">np</span><span class="o">.</span><span class="n">sign</span></a><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.clip.html#numpy.clip" title="numpy.clip"><span class="n">np</span><span class="o">.</span><span class="n">clip</span></a><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">tau</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="Moreau-Envelope-for-Smoothing">
+<h4>Moreau Envelope for Smoothing<a class="headerlink" href="#Moreau-Envelope-for-Smoothing" title="Link to this heading">#</a></h4>
+<p>You can also smooth out a proximable functional using the <code class="docutils literal notranslate"><span class="pre">moreau_envelope()</span></code> method. For example, you can smooth the L1 norm to create the <a class="reference external" href="https://www.wikiwand.com/en/Huber_loss">Huber loss function</a> as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">huber</span> <span class="o">=</span> <span class="n">L1Norm</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">moreau_envelope</span><span class="p">(</span><span class="n">mu</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="Demystifying-the-Proximal-Operator-🎭">
+<h4>Demystifying the Proximal Operator 🎭<a class="headerlink" href="#Demystifying-the-Proximal-Operator-🎭" title="Link to this heading">#</a></h4>
+<p>The proximal operator is a powerful tool, especially in the context of nonsmooth optimization. It allows you to iteratively refine a given point in a way that minimizes a functional. It’s like asking the algorithm to fine-tune a guess toward the actual optimal solution.</p>
+<p>For example, consider the indicator function of a convex set. The proximal operator in this context is simply a projection onto that set. Essentially, it pulls any “off-the-mark” points back into the permissible set, ensuring they comply with the constraints of your problem.</p>
+<p>Mathematically, the proximal operator of a function <span class="math notranslate nohighlight">\(f: \mathbb{R}^n \rightarrow \mathbb{R} \cup \{ +\infty \}\)</span> is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\text{prox}_{\tau f}(x) = \arg \min_{u \in \mathbb{R}^n} \left( f(u) + \frac{1}{2\tau} \| u - x \|^{2} \right)\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\tau &gt; 0\)</span> is a parameter and <span class="math notranslate nohighlight">\(\| \cdot \|\)</span> is the Euclidean norm. The term <span class="math notranslate nohighlight">\(\frac{1}{2\tau} \| u - x \|^{2}\)</span> is a regularization term that pulls the solution <span class="math notranslate nohighlight">\(u\)</span> closer to <span class="math notranslate nohighlight">\(x\)</span>. The proximal operator <span class="math notranslate nohighlight">\(\text{prox}_{\tau f}(x)\)</span> returns the point <span class="math notranslate nohighlight">\(u\)</span> that minimizes this expression, essentially finding a compromise between minimizing <span class="math notranslate nohighlight">\(f(u)\)</span> and staying close to the original point <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>This mathematical tool is invaluable for optimization problems, especially those involving nonsmooth or complex functionals. It provides a way to make “smart” steps toward the minimum, even when you can’t directly calculate the gradient for all points.</p>
+</section>
+</section>
+<section id="Specialized-Classes:-ProxDiffFunc,-LinFunc,-QuadraticFunc-🎨">
+<h3>Specialized Classes: <code class="docutils literal notranslate"><span class="pre">ProxDiffFunc</span></code>, <code class="docutils literal notranslate"><span class="pre">LinFunc</span></code>, <code class="docutils literal notranslate"><span class="pre">QuadraticFunc</span></code> 🎨<a class="headerlink" href="#Specialized-Classes:-ProxDiffFunc,-LinFunc,-QuadraticFunc-🎨" title="Link to this heading">#</a></h3>
+<p>These classes are for functionals that offer even more, like being both proximable and differentiable (<code class="docutils literal notranslate"><span class="pre">ProxDiffFunc</span></code>), or being linear (<code class="docutils literal notranslate"><span class="pre">LinFunc</span></code>) or quadratic (<code class="docutils literal notranslate"><span class="pre">QuadraticFunc</span></code>). Quadratic functionals are especially important in primal-dual methods for faster convergence, so do use them when you can!</p>
+<blockquote>
+<div><p>Note: when dealing with <code class="docutils literal notranslate"><span class="pre">ProxDiffFunc</span></code> instances, it can be hard to decide whether the gradient or proximal operator should be used for optimization purposes. The general rule-of-thumb is to use the gradient as much as possible, as the latter requires more regularity on the objective functional, which can be leveraged by solvers for fatser convergence.</p>
+</div></blockquote>
+</section>
+<section id="Implicit-Functionals:-The-Undercover-Agents-🕵️‍♀️">
+<h3>Implicit Functionals: The Undercover Agents 🕵️‍♀️<a class="headerlink" href="#Implicit-Functionals:-The-Undercover-Agents-🕵️‍♀️" title="Link to this heading">#</a></h3>
+<p>In some cases, you may not know the functional itself but you might know its proximal operator or gradient (e.g. for plug-and-play or score-based priors). Pyxu lets you define such “implicit functionals” as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.ProxFunc" title="pyxu.abc.operator.ProxFunc"><span class="n">ProxFunc</span></a>
+<span class="kn">from</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/ndimage.html#module-scipy.ndimage" title="scipy.ndimage"><span class="nn">scipy.ndimage</span></a> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.median_filter.html#scipy.ndimage.median_filter" title="scipy.ndimage.median_filter"><span class="n">median_filter</span></a>
+
+<span class="k">class</span> <span class="nc">MedianFilterPrior</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.ProxFunc" title="pyxu.abc.operator.ProxFunc"><span class="n">ProxFunc</span></a><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/constants.html#NotImplemented" title="NotImplemented"><span class="bp">NotImplemented</span></a> <span class="c1"># apply method not provided</span>
+
+    <span class="k">def</span> <span class="nf">prox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">tau</span><span class="p">):</span>
+        <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.median_filter.html#scipy.ndimage.median_filter" title="scipy.ndimage.median_filter"><span class="n">median_filter</span></a><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="Crafting-Custom-Loss-Functionals-through-Composition-with-Forward-Operators">
+<h2>Crafting Custom Loss Functionals through Composition with Forward Operators<a class="headerlink" href="#Crafting-Custom-Loss-Functionals-through-Composition-with-Forward-Operators" title="Link to this heading">#</a></h2>
+<p>Inverse problems often involve unknown variables that are related to observable data through a forward operator. In simple terms, a forward operator is like a “real-world filter” that transforms your unknown variable, and what you actually observe is the transformed version. In computational imaging, for example, this could represent the blurring of an image. Pyxu makes it easy to handle these intricacies by allowing you to integrate these forward operators directly into your loss functionals.</p>
+<p>For example, let’s say you have a blurred image, represented by the variable <span class="math notranslate nohighlight">\(b\)</span>. The blurring occurred through a known process—described by a forward operator <span class="math notranslate nohighlight">\(A\)</span>—applied to the original image <span class="math notranslate nohighlight">\(x\)</span>. Mathematically, this is:</p>
+<div class="math notranslate nohighlight">
+\[b = A x\]</div>
+<p>The challenge here is to recover <span class="math notranslate nohighlight">\(x\)</span> given <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(A\)</span>. But why does this matter? Because in real-world applications, you often don’t observe <span class="math notranslate nohighlight">\(x\)</span> directly. What you have is <span class="math notranslate nohighlight">\(b\)</span>, and you have to work your way backward to find <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<section id="Practical-Example:-Deblurring-through-Least-Squares-🌠">
+<h3>Practical Example: Deblurring through Least-Squares 🌠<a class="headerlink" href="#Practical-Example:-Deblurring-through-Least-Squares-🌠" title="Link to this heading">#</a></h3>
+<p>A common strategy to solve this problem is to minimize the least-squares difference between <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(A x\)</span>. In Pyxu, you can create a composite loss functional for this exact problem like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.func.norm.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">SquaredL2Norm</span></a>
+
+<span class="n">loss</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.func.norm.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">SquaredL2Norm</span></a><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">b</span><span class="o">.</span><span class="n">size</span><span class="p">)</span><span class="o">.</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.Func.asloss" title="pyxu.abc.operator.Func.asloss"><span class="n">asloss</span></a><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">A</span>
+</pre></div>
+</div>
+<p>What did we do here? We took the squared <span class="math notranslate nohighlight">\(L_2\)</span> norm, which measures the distance between two vectors, and used the <code class="docutils literal notranslate"><span class="pre">.asloss()</span></code> method to turn it into a loss functional specifically tailored to our blurred image <span class="math notranslate nohighlight">\(b\)</span>. The <code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">A</span></code> part then integrates the forward operator <span class="math notranslate nohighlight">\(A\)</span> into this loss, making sure we’re comparing apples to apples—or in this case, blurred images to blurred images.</p>
+</section>
+<section id="The-Benefit:-Automatic-Propagation-🚀">
+<h3>The Benefit: Automatic Propagation 🚀<a class="headerlink" href="#The-Benefit:-Automatic-Propagation-🚀" title="Link to this heading">#</a></h3>
+<p>The beauty of this approach is that it streamlines your optimization. The gradient calculations and other relevant methods get automatically updated to incorporate <span class="math notranslate nohighlight">\(A\)</span>, making your life a lot easier!</p>
+</section>
+<section id="The-Takeaway:-Flexibility-and-Power-🌈">
+<h3>The Takeaway: Flexibility and Power 🌈<a class="headerlink" href="#The-Takeaway:-Flexibility-and-Power-🌈" title="Link to this heading">#</a></h3>
+<p>This feature adds another layer of flexibility and power to Pyxu, allowing you to tackle a wide range of problems involving different types of transformations and physical processes with ease.</p>
+</section>
+</section>
+</section>
+</article>
+<footer class="bd-footer-article">
+<div class="footer-article-items footer-article__inner">
+<div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="fwdops.html" title="previous page">
+<i class="fa-solid fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Forward Operators</p>
+</div>
+</a>
+<a class="right-next" href="algebra.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Operator Algebra Logic</p>
+</div>
+<i class="fa-solid fa-angle-right"></i>
+</a>
+</div></div>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> On this page
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#What-is-a-Functional?">What is a Functional?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Functionals-Hierarchy-in-Pyxu">Functionals Hierarchy in Pyxu</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Func:-The-Foundation-Stone-🧱"><code class="docutils literal notranslate"><span class="pre">Func</span></code>: The Foundation Stone 🧱</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#DiffFunc:-Differentiable-Functionals-🎯"><code class="docutils literal notranslate"><span class="pre">DiffFunc</span></code>: Differentiable Functionals 🎯</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ProxFunc:-Proximable-Functionals-🛡️"><code class="docutils literal notranslate"><span class="pre">ProxFunc</span></code>: Proximable Functionals 🛡️</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Moreau-Envelope-for-Smoothing">Moreau Envelope for Smoothing</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Demystifying-the-Proximal-Operator-🎭">Demystifying the Proximal Operator 🎭</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Specialized-Classes:-ProxDiffFunc,-LinFunc,-QuadraticFunc-🎨">Specialized Classes: <code class="docutils literal notranslate"><span class="pre">ProxDiffFunc</span></code>, <code class="docutils literal notranslate"><span class="pre">LinFunc</span></code>, <code class="docutils literal notranslate"><span class="pre">QuadraticFunc</span></code> 🎨</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Implicit-Functionals:-The-Undercover-Agents-🕵️‍♀️">Implicit Functionals: The Undercover Agents 🕵️‍♀️</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Crafting-Custom-Loss-Functionals-through-Composition-with-Forward-Operators">Crafting Custom Loss Functionals through Composition with Forward Operators</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Practical-Example:-Deblurring-through-Least-Squares-🌠">Practical Example: Deblurring through Least-Squares 🌠</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#The-Benefit:-Automatic-Propagation-🚀">The Benefit: Automatic Propagation 🚀</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#The-Takeaway:-Flexibility-and-Power-🌈">The Takeaway: Flexibility and Power 🌈</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
+<div class="sidebar-secondary-item">
+<div id="searchbox"></div></div>
+<div class="sidebar-secondary-item">
+<div class="tocsection editthispage">
+<a href="https://github.com/matthieumeo/pyxu/edit/main/doc/guide/funcs.ipynb">
+<i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+</div>
+</div>
+<div class="sidebar-secondary-item">
+<div class="tocsection sourcelink">
+<a href="../_sources/guide/funcs.ipynb">
+<i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+</div>
+</div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+<footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+<div class="footer-items__start">
+<div class="footer-item">
+<p class="copyright">
+    
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      <br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+    <br/>
+</p>
+</div>
+</div>
+<div class="footer-items__end">
+<div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+</div>
+</div>
+</footer>
+</body>
+</html>

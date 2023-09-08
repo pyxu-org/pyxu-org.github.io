@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from pyxu.operator import PartialDerivative
 from pyxu.util.misc import peaks
+
 x = np.linspace(-2.5, 2.5, 25)
 xx, yy = np.meshgrid(x, x)
 image = peaks(xx, yy)

@@ -128,7 +128,7 @@ document.write(`
 `);
 </script>
 </div>
-<div class="navbar-item"><strong> v1.0.x </strong></div>
+<div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
 <a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
@@ -201,7 +201,7 @@ document.write(`
 </nav></div>
 </div>
 <div class="sidebar-header-items__end">
-<div class="navbar-item"><strong> v1.0.x </strong></div>
+<div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
 <a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
@@ -720,12 +720,12 @@ Users are expected to set <code class="code docutils literal notranslate"><span 
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="kn">import</span> <span class="nn">pyxu.operator</span> <span class="k">as</span> <span class="nn">pxo</span>
-<span class="kn">import</span> <span class="nn">pyxu.opt.solver</span> <span class="k">as</span> <span class="nn">pxs</span>
+<span class="kn">import</span> <span class="nn">pyxu.opt.solver</span> <span class="k">as</span> <span class="nn">pxsl</span>
 
 <span class="n">N</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">pxo</span><span class="o">.</span><span class="n">SquaredL2Norm</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">.</span><span class="n">asloss</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">argscale</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c1"># \norm(Ax - b)**2</span>
 
-<span class="n">nlcg</span> <span class="o">=</span> <span class="n">pxs</span><span class="o">.</span><span class="n">NLCG</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">nlcg</span> <span class="o">=</span> <span class="n">pxsl</span><span class="o">.</span><span class="n">NLCG</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 <span class="n">nlcg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,)),</span> <span class="n">variant</span><span class="o">=</span><span class="s2">"FR"</span><span class="p">)</span>
 <span class="n">x_opt</span> <span class="o">=</span> <span class="n">nlcg</span><span class="o">.</span><span class="n">solution</span><span class="p">()</span>
 <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">x_opt</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">a</span><span class="p">)</span>  <span class="c1"># True</span>
@@ -741,41 +741,27 @@ overhead. The former depends on the cost of applying <span class="math notransla
 </dl>
 </dd></dl>
 <dl class="py class">
-<dt class="sig sig-object py" id="pyxu.opt.solver.prox_adam.ProxAdam">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ProxAdam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/opt/solver/prox_adam.html#ProxAdam"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.opt.solver.prox_adam.ProxAdam" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="pyxu.opt.solver.adam.Adam">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Adam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/opt/solver/adam.html#Adam"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.opt.solver.adam.Adam" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="abc.html#pyxu.abc.solver.Solver" title="pyxu.abc.solver.Solver"><code class="xref py py-class docutils literal notranslate"><span class="pre">Solver</span></code></a></p>
-<p>Proximal Adam solver <a class="reference internal" href="../references.html#proxadam" id="id8"><span>[ProxAdam]</span></a>.</p>
-<p>ProxAdam minimizes</p>
+<p>Adam solver <a class="reference internal" href="../references.html#proxadam" id="id8"><span>[ProxAdam]</span></a>.</p>
+<p>Adam minimizes</p>
 <div class="math notranslate nohighlight">
-\[{\min_{\mathbf{x}\in\mathbb{R}^N} \;\mathcal{F}(\mathbf{x})\;\;+\;\;\mathcal{G}(\mathbf{x})},\]</div>
+\[{\min_{\mathbf{x}\in\mathbb{R}^N} \;\mathcal{F}(\mathbf{x})},\]</div>
 <p>where:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\mathcal{F}:\mathbb{R}^N\rightarrow \mathbb{R}\)</span> is <em>convex</em> and <em>differentiable</em>, with
 <span class="math notranslate nohighlight">\(\beta\)</span>-<em>Lipschitz continuous</em> gradient, for some <span class="math notranslate nohighlight">\(\beta\in[0,+\infty[\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathcal{G}:\mathbb{R}^N\rightarrow \mathbb{R}\cup\{+\infty\}\)</span> is a <em>proper</em>, <em>lower
-semicontinuous</em> and <em>convex function</em> with a <em>simple proximal operator</em>.</p></li>
 </ul>
-<p>ProxAdam is a suitable alternative to Proximal Gradient Descent
-(<a class="reference internal" href="#pyxu.opt.solver.pgd.PGD" title="pyxu.opt.solver.pgd.PGD"><code class="xref py py-class docutils literal notranslate"><span class="pre">PGD</span></code></a>) when:</p>
+<p>Adam is a suitable alternative to Proximal Gradient Descent (<a class="reference internal" href="#pyxu.opt.solver.pgd.PGD" title="pyxu.opt.solver.pgd.PGD"><code class="xref py py-class docutils literal notranslate"><span class="pre">PGD</span></code></a>) when:</p>
 <ul class="simple">
-<li><p>computing <span class="math notranslate nohighlight">\(\beta\)</span> to optimally choose the step size is infeasible, and</p></li>
+<li><p>the cost function is differentiable,</p></li>
+<li><p>computing <span class="math notranslate nohighlight">\(\beta\)</span> to optimally choose the step size is infeasible,</p></li>
 <li><p>line-search methods to estimate step sizes are too expensive.</p></li>
 </ul>
-<p>Compared to PGD, ProxAdam:</p>
-<ul>
-<li><p>auto-tunes gradient updates based on stochastic estimates of
-<span class="math notranslate nohighlight">\(\phi_{t} = \mathbb{E}[\nabla\mathcal{F}]\)</span> and <span class="math notranslate nohighlight">\(\psi_{t} =
-\mathbb{E}[\nabla\mathcal{F}^{2}]\)</span> respectively;</p></li>
-<li><p>uses a modified proximity operator at each iteration to update coordinates at varying scales:</p>
-<div class="math notranslate nohighlight">
-\[\text{prox}_{\alpha\mathcal{G}}(\mathbf{x}_{t})
-=
-\min_{\mathbf{z}\in\mathbb{R}^N} \;\mathcal{G}(\mathbf{z})\;\;+\;\;\frac{1}{2\alpha}||\mathbf{z}-\mathbf{x}_t||_H^2,\]</div>
-<p>where <span class="math notranslate nohighlight">\(H=\text{diag}(\psi_t)\)</span>.
-The modified proximity operator is computed by solving a PGD sub-problem.</p>
-</li>
-</ul>
-<p>ProxAdam has many named variants for particular choices of <span class="math notranslate nohighlight">\(\phi\)</span> and <span class="math notranslate nohighlight">\(\psi\)</span>:</p>
+<p>Compared to PGD, Adam auto-tunes gradient updates based on stochastic estimates of <span class="math notranslate nohighlight">\(\phi_{t} =
+\mathbb{E}[\nabla\mathcal{F}]\)</span> and <span class="math notranslate nohighlight">\(\psi_{t} = \mathbb{E}[\nabla\mathcal{F}^{2}]\)</span> respectively.</p>
+<p>Adam has many named variants for particular choices of <span class="math notranslate nohighlight">\(\phi\)</span> and <span class="math notranslate nohighlight">\(\psi\)</span>:</p>
 <ul>
 <li><p>Adam:</p>
 <div class="math notranslate nohighlight">
@@ -829,15 +815,13 @@ The modified proximity operator is computed by solving a PGD sub-problem.</p>
 <section id="id9">
 <h3>Remarks<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>The algorithm is still valid if <span class="math notranslate nohighlight">\(\mathcal{G}\)</span> is zero.</p></li>
 <li><p>The convergence is guaranteed for step sizes <span class="math notranslate nohighlight">\(\alpha\leq 2/\beta\)</span>.</p></li>
 <li><p>The default stopping criterion is the relative norm change of the primal variable.
 By default, the algorithm stops when the norm of the difference between two consecutive iterates
 <span class="math notranslate nohighlight">\(\{\mathbf{x}_n\}_{n\in\mathbb{N}}\)</span> is smaller than 1e-4.
 Different stopping criteria can be used.
-It is recommended to change the stopping criterion when using the PAdam and AMSGrad variants to
-avoid premature stops.
-By default, the same stopping criterion is used for the proximal sub-problem.</p></li>
+It is recommended to change the stopping criterion when using the PAdam and AMSGrad variants to avoid premature
+stops.</p></li>
 </ul>
 </section>
 <section id="id10">
@@ -846,9 +830,6 @@ By default, the same stopping criterion is used for the proximal sub-problem.</p
 <li><p><strong>f</strong> (<a class="reference internal" href="abc.html#pyxu.abc.operator.DiffFunc" title="pyxu.abc.operator.DiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffFunc</span></code></a>)
 –
 Differentiable function <span class="math notranslate nohighlight">\(\mathcal{F}\)</span>.</p></li>
-<li><p><strong>g</strong> (<a class="reference internal" href="abc.html#pyxu.abc.operator.ProxFunc" title="pyxu.abc.operator.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
-–
-Proximable function <span class="math notranslate nohighlight">\(\mathcal{G}\)</span>.</p></li>
 <li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.solver.Solver.__init__" title="pyxu.abc.solver.Solver.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.solver.Solver.__init__()</span></code></a>.</p></li>
@@ -862,7 +843,7 @@ Other keyword parameters passed on to <a class="reference internal" href="abc.ht
 (…, N) initial point(s).</p></li>
 <li><p><strong>variant</strong> (“adam”, “amsgrad”, “padam”)
 –
-Name of the ProxAdam variant to use.
+Name of the Adam variant to use.
 Defaults to “adam”.</p></li>
 <li><p><strong>a</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
@@ -882,15 +863,6 @@ Defaults to the null vector if unspecified.</p></li>
 –
 (…, N) initial 2nd-order gradient estimate corresponding to each initial point.
 Defaults to the null vector if unspecified.</p></li>
-<li><p><strong>kwargs_sub</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
-–
-Keyword parameters used to initialize <a class="reference internal" href="#pyxu.opt.solver.pgd.PGD" title="pyxu.opt.solver.pgd.PGD"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PGD()</span></code></a>’s <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> in
-sub-problems.
-This is an advanced option: use it with care.</p></li>
-<li><p><strong>stop_crit_sub</strong> (<a class="reference internal" href="abc.html#pyxu.abc.solver.StoppingCriterion" title="pyxu.abc.solver.StoppingCriterion"><code class="xref py py-class docutils literal notranslate"><span class="pre">StoppingCriterion</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
-–
-Sub-problem stopping criterion.
-Default: use same stopping criterion as main problem.</p></li>
 <li><p><strong>p</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>)
 –
 PAdam power parameter <span class="math notranslate nohighlight">\(p \in (0, 0.5]\)</span>.
@@ -915,33 +887,29 @@ Other keyword parameters passed on to <a class="reference internal" href="abc.ht
 <p class="rubric">Example</p>
 <p>Consider the following optimization problem:</p>
 <div class="math notranslate nohighlight">
-\[\min_{\mathbf{x}\in\mathbb{R}^N} \Vert{\mathbf{x}-\mathbf{1}}\Vert_2^2 + \Vert{\mathbf{x}-\mathbf{1}}\Vert_1\]</div>
+\[\min_{\mathbf{x}\in\mathbb{R}^N} \Vert{\mathbf{x}-\mathbf{1}}\Vert_2^2\]</div>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">pyxu.operator.func</span> <span class="kn">import</span> <span class="n">L1Norm</span><span class="p">,</span> <span class="n">SquaredL2Norm</span>
-<span class="kn">from</span> <span class="nn">pyxu.opt.solver</span> <span class="kn">import</span> <span class="n">ProxAdam</span>
+<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">SquaredL2Norm</span>
+<span class="kn">from</span> <span class="nn">pyxu.opt.solver</span> <span class="kn">import</span> <span class="n">Adam</span>
 
 <span class="n">N</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">SquaredL2Norm</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">N</span><span class="p">)</span><span class="o">.</span><span class="n">asloss</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">L1Norm</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">N</span><span class="p">)</span><span class="o">.</span><span class="n">asloss</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="n">prox_adam</span> <span class="o">=</span> <span class="n">ProxAdam</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span>
-<span class="n">prox_adam</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+<span class="n">slvr</span> <span class="o">=</span> <span class="n">Adam</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">slvr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
     <span class="n">x0</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,)),</span>
     <span class="n">variant</span><span class="o">=</span><span class="s2">"padam"</span><span class="p">,</span>
     <span class="n">p</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">x_opt</span> <span class="o">=</span> <span class="n">prox_adam</span><span class="o">.</span><span class="n">solution</span><span class="p">()</span>
-<span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">x_opt</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># True</span>
+<span class="n">x_opt</span> <span class="o">=</span> <span class="n">slvr</span><span class="o">.</span><span class="n">solution</span><span class="p">()</span>
+<span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">x_opt</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">)</span>  <span class="c1"># True</span>
 </pre></div>
 </div>
 </section>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>f</strong> (<a class="reference internal" href="abc.html#pyxu.abc.operator.DiffFunc" title="pyxu.abc.operator.DiffFunc"><em>DiffFunc</em></a>) – </p></li>
-<li><p><strong>g</strong> (<a class="reference internal" href="abc.html#pyxu.abc.operator.ProxFunc" title="pyxu.abc.operator.ProxFunc"><em>ProxFunc</em></a>) – </p></li>
-</ul>
+<dd class="field-odd"><p><strong>f</strong> (<a class="reference internal" href="abc.html#pyxu.abc.operator.DiffFunc" title="pyxu.abc.operator.DiffFunc"><em>DiffFunc</em></a>) – </p>
 </dd>
 </dl>
 </dd></dl>
@@ -2133,7 +2101,7 @@ Otherwise, a sub-iterative <a class="reference internal" href="#pyxu.opt.solver.
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.opt.solver.pgd.PGD"><code class="docutils literal notranslate"><span class="pre">PGD</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.opt.solver.cg.CG"><code class="docutils literal notranslate"><span class="pre">CG</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.opt.solver.nlcg.NLCG"><code class="docutils literal notranslate"><span class="pre">NLCG</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.opt.solver.prox_adam.ProxAdam"><code class="docutils literal notranslate"><span class="pre">ProxAdam</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.opt.solver.adam.Adam"><code class="docutils literal notranslate"><span class="pre">Adam</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.opt.solver.pds.CondatVu"><code class="docutils literal notranslate"><span class="pre">CondatVu</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.opt.solver.pds.CV"><code class="docutils literal notranslate"><span class="pre">CV</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.opt.solver.pds.PD3O"><code class="docutils literal notranslate"><span class="pre">PD3O</span></code></a></li>
@@ -2198,13 +2166,10 @@ Otherwise, a sub-iterative <a class="reference internal" href="#pyxu.opt.solver.
 </div>
 <div class="footer-item">
 <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
 </p>
 </div>
-<div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
-</p></div>
 </div>
 <div class="footer-items__end">
 <div class="footer-item"><p class="theme-version">

@@ -43,7 +43,7 @@
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../../_static/documentation_options.js?v=29481255"></script>
+    <script src="../../../../_static/documentation_options.js?v=e02fc88f"></script>
     <script src="../../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -199,7 +199,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> v0.0.1 </strong></div>
+        <div class="navbar-item"><strong> v1.0.x </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -341,7 +341,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> v0.0.1 </strong></div>
+          <div class="navbar-item"><strong> v1.0.x </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -460,7 +460,7 @@ document.write(`
 <span class="linenos">  7</span><span class="kn">import</span> <span class="nn">pyxu.info.deps</span> <span class="k">as</span> <span class="nn">pxd</span>
 <span class="linenos">  8</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
 <span class="linenos">  9</span><span class="kn">import</span> <span class="nn">pyxu.info.warning</span> <span class="k">as</span> <span class="nn">pxw</span>
-<span class="linenos"> 10</span><span class="kn">import</span> <span class="nn">pyxu.math.linalg</span> <span class="k">as</span> <span class="nn">pxlg</span>
+<span class="linenos"> 10</span><span class="kn">import</span> <span class="nn">pyxu.math</span> <span class="k">as</span> <span class="nn">pxm</span>
 <span class="linenos"> 11</span><span class="kn">import</span> <span class="nn">pyxu.runtime</span> <span class="k">as</span> <span class="nn">pxrt</span>
 <span class="linenos"> 12</span><span class="kn">import</span> <span class="nn">pyxu.util</span> <span class="k">as</span> <span class="nn">pxu</span>
 <span class="linenos"> 13</span>
@@ -496,7 +496,7 @@ document.write(`
 <span class="linenos"> 41</span>
 <span class="linenos"> 42</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">)</span>
 <span class="linenos"> 43</span>    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
-<span class="linenos"> 44</span>        <span class="n">y</span> <span class="o">=</span> <span class="n">pxlg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos"> 44</span>        <span class="n">y</span> <span class="o">=</span> <span class="n">pxm</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="linenos"> 45</span>        <span class="k">return</span> <span class="n">y</span>
 <span class="linenos"> 46</span>
 <span class="linenos"> 47</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;arr&quot;</span><span class="p">,</span> <span class="s2">&quot;tau&quot;</span><span class="p">))</span>
@@ -522,7 +522,7 @@ document.write(`
 <span class="linenos"> 64</span>
 <span class="linenos"> 65</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">)</span>
 <span class="linenos"> 66</span>    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
-<span class="linenos"> 67</span>        <span class="n">y</span> <span class="o">=</span> <span class="n">pxlg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos"> 67</span>        <span class="n">y</span> <span class="o">=</span> <span class="n">pxm</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="linenos"> 68</span>        <span class="k">return</span> <span class="n">y</span>
 <span class="linenos"> 69</span>
 <span class="linenos"> 70</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;arr&quot;</span><span class="p">,</span> <span class="s2">&quot;tau&quot;</span><span class="p">))</span>
@@ -550,7 +550,7 @@ document.write(`
 <span class="linenos"> 89</span>
 <span class="linenos"> 90</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">)</span>
 <span class="linenos"> 91</span>    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
-<span class="linenos"> 92</span>        <span class="n">y</span> <span class="o">=</span> <span class="n">pxlg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos"> 92</span>        <span class="n">y</span> <span class="o">=</span> <span class="n">pxm</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="linenos"> 93</span>        <span class="n">y</span> <span class="o">**=</span> <span class="mi">2</span>
 <span class="linenos"> 94</span>        <span class="k">return</span> <span class="n">y</span>
 <span class="linenos"> 95</span>
@@ -565,7 +565,7 @@ document.write(`
 <span class="linenos">104</span>        <span class="k">return</span> <span class="n">y</span>
 <span class="linenos">105</span>
 <span class="linenos">106</span>    <span class="k">def</span> <span class="nf">_quad_spec</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos">107</span>        <span class="kn">from</span> <span class="nn">pyxu.operator.linop</span> <span class="kn">import</span> <span class="n">HomothetyOp</span><span class="p">,</span> <span class="n">NullFunc</span>
+<span class="linenos">107</span>        <span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">HomothetyOp</span><span class="p">,</span> <span class="n">NullFunc</span>
 <span class="linenos">108</span>
 <span class="linenos">109</span>        <span class="n">Q</span> <span class="o">=</span> <span class="n">HomothetyOp</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">,</span> <span class="n">cst</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="linenos">110</span>        <span class="n">c</span> <span class="o">=</span> <span class="n">NullFunc</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
@@ -610,7 +610,7 @@ document.write(`
 <span class="linenos">143</span>
 <span class="linenos">144</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">)</span>
 <span class="linenos">145</span>    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
-<span class="linenos">146</span>        <span class="n">y</span> <span class="o">=</span> <span class="n">pxlg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">146</span>        <span class="n">y</span> <span class="o">=</span> <span class="n">pxm</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="linenos">147</span>        <span class="n">y</span> <span class="o">**=</span> <span class="mi">2</span>
 <span class="linenos">148</span>        <span class="k">return</span> <span class="n">y</span>
 <span class="linenos">149</span>
@@ -722,7 +722,7 @@ document.write(`
 <span class="linenos">249</span>
 <span class="linenos">250</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">)</span>
 <span class="linenos">251</span>    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
-<span class="linenos">252</span>        <span class="n">y</span> <span class="o">=</span> <span class="n">pxlg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">252</span>        <span class="n">y</span> <span class="o">=</span> <span class="n">pxm</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="linenos">253</span>        <span class="k">return</span> <span class="n">y</span>
 <span class="linenos">254</span>
 <span class="linenos">255</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;arr&quot;</span><span class="p">,</span> <span class="s2">&quot;tau&quot;</span><span class="p">))</span>

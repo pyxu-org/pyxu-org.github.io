@@ -204,7 +204,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> v1.0.x </strong></div>
+        <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -346,7 +346,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> v1.0.x </strong></div>
+          <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -507,8 +507,9 @@ document.write(`
 <p>Ufuncs have class-oriented and function-oriented interfaces.
 Only the functional interface is exposed due to its common use.</p>
 <p class="rubric">Example</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.operator.map</span> <span class="kn">import</span> <span class="n">Sin</span><span class="p">,</span> <span class="n">sin</span>
-<span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <span class="n">LinOp</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <span class="n">LinOp</span>
+<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">sin</span>
+<span class="kn">from</span> <span class="nn">pyxu.operator.map.ufunc</span> <span class="kn">import</span> <span class="n">_Sin</span>
 
 <span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
@@ -1343,14 +1344,10 @@ constant <span class="math notranslate nohighlight">\(\partial L = 1\)</span>.</
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>
-      
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
-</p></div>
       
     </div>
   

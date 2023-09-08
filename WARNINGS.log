@@ -1,12 +1,86 @@
-[91m/Users/mmjasime/Documents/Github/pyxu/doc/guide/fwdops.ipynb:35: WARNING: expected an indented block after class definition on line 7 (<unknown>, line 7) in document 'guide/fwdops'
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/guide/lipschitz.ipynb:286: WARNING: invalid syntax (<unknown>, line 24) in document 'guide/lipschitz'
 Parsed source in `python` block:
-concatenations: class Sum(LinOp):
-    def apply(self, arr):
-        return arr.sum()
+concatenations: # Access Lipschitz constant of an operator 'op'
+lip_const = op.lipschitz
+                # Estimate Lipschitz constant and update the attribute
+op.lipschitz = op.estimate_lipschitz()
+                # Using trace method
+op.lipschitz = op.estimate_lipschitz(method="trace")
+                # Using SVD method with reduced accuracy
+op.lipschitz = op.estimate_lipschitz(method="svd", tol=1e-3)
+                from pyxu.abc import LinOp
+import numpy as np
 
-    def adjoint(self, arr):
-        return arr * np.ones(self.shape[1])
-block source:   class Sum(LinOp):[39;49;00m
+rand_op = LinOp.from_array(np.random.random((10000, 10000)))
+
+                rand_op.lipschitz # Unknown as this stage
+
+                get_ipython().run_cell_magic('timeit', '', 'rand_op.lipschitz = rand_op.estimate_lipschitz(method="trace")\n')
+
+                rand_op.lipschitz # Rough estimate
+
+                get_ipython().run_cell_magic('timeit', '', 'rand_op.lipschitz = rand_op.estimate_lipschitz(method="svd", tol=1e-2)\n')
+
+                rand_op.lipschitz # Tighter estimate
+
+block source:   >> op1 = difffunc * linop;
+                >> op1.lipschitz == difffunc.lipschitz * linop.lipschitz
+                True
+                >> op1.diff_lipschitz == difffunc.diff_lipschitz * (linop.lipschitz ** 2)
+                True
+                >> op2 = linop * diffmap;
+                >> op2.diff_lipschitz == linop.lipschitz * diffmap.diff_lipschitz
+                True
+                ...[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/guide/algebra.ipynb:18: WARNING: invalid syntax (<unknown>, line 1) in document 'guide/algebra'
+Parsed source in `python` block:
+block source: >> op1 + op2  # Addition of two operators
+              >> op1 * op2  # Composition of two operators
+              >> op ** 3    # Exponentiation of an operator
+              >> op.argscale(c)  # Dilation by a scalar 'c'
+              >> op.argshift(x)  # Shifting by a vector 'x'
+              >> 4 * op  # Scaling by a scalar
+              >> op.T  # Transposing[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/guide/algebra.ipynb:54: WARNING: invalid syntax (<unknown>, line 1) in document 'guide/algebra'
+Parsed source in `python` block:
+block source: >> h = f * L
+              >> h.grad(x) = L.jacobian(x).adjoint(f.grad(L(x)))[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/guide/algebra.ipynb:63: WARNING: cannot assign to function call here. Maybe you meant '==' instead of '='? (<unknown>, line 1) in document 'guide/algebra'
+Parsed source in `python` block:
+block source: op.apply(arr) = lhs.apply(rhs.apply(arr))
+              op.lipschitz = lhs.lipschitz * rhs.lipschitz[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/guide/algebra.ipynb:70: WARNING: cannot assign to function call here. Maybe you meant '==' instead of '='? (<unknown>, line 1) in document 'guide/algebra'
+Parsed source in `python` block:
+block source: op.prox(arr, tau) = rhs.adjoint(lhs.prox(rhs.apply(arr), tau))[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/guide/algebra.ipynb:76: WARNING: cannot assign to function call here. Maybe you meant '==' instead of '='? (<unknown>, line 1) in document 'guide/algebra'
+Parsed source in `python` block:
+block source: op.jacobian(arr) = lhs.jacobian(rhs.apply(arr)) * rhs.jacobian(arr)
+              op.diff_lipschitz =
+                  linear * linear  => 0
+                  linear * diff    => lhs.lipschitz * rhs.diff_lipschitz
+                  diff   * linear  => lhs.diff_lipschitz * (rhs.lipschitz ** 2)
+                  diff   * diff    => infty[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/guide/algebra.ipynb:87: WARNING: cannot assign to function call here. Maybe you meant '==' instead of '='? (<unknown>, line 1) in document 'guide/algebra'
+Parsed source in `python` block:
+block source: op.grad(arr) = lhs.grad(rhs.apply(arr)) @ rhs.jacobian(arr).asarray()[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/guide/algebra.ipynb:98: WARNING: invalid syntax (<unknown>, line 1) in document 'guide/algebra'
+Parsed source in `python` block:
+block source: >> coo_block(([A(500,1000), B(1,1000), C(500,500), D(1,3)],  # data
+                 ...      [[0, 1, 0, 2],  # i
+                 ...       [0, 0, 2, 1],  # j
+                          ]),grid_shape=(3, 3))[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/guide/algorithms.ipynb:66: WARNING: invalid syntax (<unknown>, line 1) in document 'guide/algorithms'
+Parsed source in `python` block:
+block source: >> K = vstack([K_1, ..., K_J])
+              >> H = hstack([h_1, ..., h_J])[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/guide/funcs.ipynb:129: WARNING: Title underline too short.
+
+Implicit Functionals: The Undercover Agents 🕵️‍♀️
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[39;49;00m
+[91m/Users/mmjasime/Documents/Github/pyxu/doc/guide/funcs.ipynb:129: WARNING: Title underline too short.
+
+Implicit Functionals: The Undercover Agents 🕵️‍♀️
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[39;49;00m
 [31m/Users/mmjasime/Documents/Github/pyxu/doc/examples/DifferentialOperators.ipynb:640: ERROR: Unexpected indentation.[39;49;00m
 [91m/Users/mmjasime/Documents/Github/pyxu/doc/examples/DifferentialOperators.ipynb:638: WARNING: Inline interpreted text or phrase reference start-string without end-string.[39;49;00m
 [91m/Users/mmjasime/Documents/Github/pyxu/doc/examples/DifferentialOperators.ipynb:644: WARNING: Block quote ends without a blank line; unexpected unindent.[39;49;00m

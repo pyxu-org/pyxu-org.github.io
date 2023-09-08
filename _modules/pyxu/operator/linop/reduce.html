@@ -43,7 +43,7 @@
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../../_static/documentation_options.js?v=29481255"></script>
+    <script src="../../../../_static/documentation_options.js?v=e02fc88f"></script>
     <script src="../../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -199,7 +199,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> v0.0.1 </strong></div>
+        <div class="navbar-item"><strong> v1.0.x </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -341,7 +341,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> v0.0.1 </strong></div>
+          <div class="navbar-item"><strong> v1.0.x </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -457,7 +457,7 @@ document.write(`
 <span class="linenos">  4</span>
 <span class="linenos">  5</span><span class="kn">import</span> <span class="nn">pyxu.abc</span> <span class="k">as</span> <span class="nn">pxa</span>
 <span class="linenos">  6</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
-<span class="linenos">  7</span><span class="kn">import</span> <span class="nn">pyxu.operator.interop.source</span> <span class="k">as</span> <span class="nn">pxsrc</span>
+<span class="linenos">  7</span><span class="kn">import</span> <span class="nn">pyxu.operator.interop.source</span> <span class="k">as</span> <span class="nn">px_src</span>
 <span class="linenos">  8</span><span class="kn">import</span> <span class="nn">pyxu.runtime</span> <span class="k">as</span> <span class="nn">pxrt</span>
 <span class="linenos">  9</span><span class="kn">import</span> <span class="nn">pyxu.util</span> <span class="k">as</span> <span class="nn">pxu</span>
 <span class="linenos"> 10</span>
@@ -563,7 +563,7 @@ document.write(`
 <span class="linenos">108</span>    <span class="n">dim</span> <span class="o">=</span> <span class="n">arg_shape</span><span class="o">.</span><span class="n">prod</span><span class="p">()</span>
 <span class="linenos">109</span>    <span class="n">codim</span> <span class="o">=</span> <span class="n">dim</span> <span class="o">//</span> <span class="n">arg_shape</span><span class="p">[</span><span class="n">axis</span><span class="p">]</span><span class="o">.</span><span class="n">prod</span><span class="p">()</span>
 <span class="linenos">110</span>
-<span class="linenos">111</span>    <span class="n">op</span> <span class="o">=</span> <span class="n">pxsrc</span><span class="o">.</span><span class="n">from_source</span><span class="p">(</span>
+<span class="linenos">111</span>    <span class="n">op</span> <span class="o">=</span> <span class="n">px_src</span><span class="o">.</span><span class="n">from_source</span><span class="p">(</span>
 <span class="linenos">112</span>        <span class="bp">cls</span><span class="o">=</span><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span> <span class="k">if</span> <span class="n">codim</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">pxa</span><span class="o">.</span><span class="n">LinFunc</span><span class="p">,</span>
 <span class="linenos">113</span>        <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">codim</span><span class="p">,</span> <span class="n">dim</span><span class="p">),</span>
 <span class="linenos">114</span>        <span class="n">embed</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>

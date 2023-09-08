@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Plugin Catalog" href="plugins/index.html" />
-    <link rel="prev" title="Contributing to the Pyxu-FAIR" href="contribute.html" />
+    <link rel="prev" title="Developer Notes" href="dev_notes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -202,7 +202,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> v1.0.x </strong></div>
+        <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -344,7 +344,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> v1.0.x </strong></div>
+          <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -408,6 +408,7 @@ document.write(`
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="howto.html">How to use plugins in Pyxu?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contributing to the Pyxu-FAIR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_notes.html">Developer Notes</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Pyxu Score Explained</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="plugins/index.html">Plugin Catalog</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="plugins/CSEEG.html">CSEEG</a></li>
@@ -488,35 +489,37 @@ document.write(`
                   
   <section id="pyxu-score-explained">
 <h1>Pyxu Score Explained<a class="headerlink" href="#pyxu-score-explained" title="Link to this heading">#</a></h1>
-<p>The <strong>Pyxu Score</strong> is a quantitative measure we use to rank and evaluate Pyxu plugins. The score takes into account multiple criteria, ensuring you get a holistic understanding of a plugin’s standing. Here’s a breakdown:</p>
+<p>The <strong>Pyxu Score</strong> is a quantitative measure we use to rank and evaluate Pyxu plugins. The score takes into account
+multiple criteria, ensuring you get a holistic understanding of a plugin’s standing. Here’s a breakdown:</p>
 <p>The Pyxu Score is calculated using the following criteria:</p>
 <ol class="arabic">
 <li><p><strong>Version Matching</strong>: If a plugin’s version matches the latest Pyxu version, it gets a point.</p></li>
-<li><dl class="simple">
-<dt><strong>Pyxu Principles Adherence</strong>: Plugins abiding by key Pyxu principles – namely:</dt><dd><ul class="simple">
+<li><p><strong>Pyxu Principles Adherence</strong>: Plugins abiding by key Pyxu principles, namely:</p>
+<ul class="simple">
 <li><p>Input shape agnosticity (i.e., support for NDArrays),</p></li>
 <li><p>Complete backend-agnosticity (i.e., support for Numpy, Cupy and Dask arrays),</p></li>
 <li><p>Precision management (i.e., allow selection between computation at both single and double precision)</p></li>
 </ul>
-</dd>
-</dl>
 <p><em>(each earn an additional point)</em></p>
 </li>
-<li><dl class="simple">
-<dt><strong>Development Stage Weight</strong>:</dt><dd><ul class="simple">
+<li><p><strong>Development Stage Weight</strong>:</p>
+<ul class="simple">
 <li><p><strong>Early stages</strong> (Planning 📑, Pre-Alpha 🌒, Alpha 🌓) contribute 0.5 points.</p></li>
 <li><p><strong>Advanced stages</strong> (Beta 🌔, Production/Stable ✔️, Mature 🌟) contribute 1 point.</p></li>
-<li><p><strong>Inactive 🚫</strong> plugins, however, aren’t factored into the final score.</p></li>
+<li><p><strong>Inactive 🚫</strong> plugins do not recieive a score.</p></li>
 </ul>
-</dd>
-</dl>
 </li>
-<li><p><strong>Downloads ⬇️</strong>: Plugins get points based on the number of downloads in the last month, up to a maximum of 1 point for 1000 downloads.</p></li>
+<li><p><strong>Downloads ⬇️</strong>: Plugins get points based on the number of downloads in the last month, up to a maximum of 1 point
+for 1000 downloads.</p></li>
 </ol>
 <p>The final score is then normalized by the number of criteria used (6 in this case) and presented as a percentage.</p>
-<p><strong>Note</strong>: While the Pyxu Score offers insights into a plugin’s quality and popularity, it’s just one of many metrics. Users are encouraged to explore plugins individually and consider other factors before making a decision.</p>
-<h3 style="margin-top: 0; font-weight: bold; text-align: left; ">Contribute to the Pyxu Score</h3><p>Your insights matter! If you’re a developer with ideas on how we can further refine the Pyxu Score, we’d love to hear from you. 💡</p>
-<p>We invite you to <strong>open an issue</strong> suggesting novel metrics or criteria that, in your opinion, would better represent the value and quality of Pyxu plugins. By contributing your thoughts, you play an integral role in refining and shaping the Pyxu community’s standards.</p>
+<p><strong>Note</strong>: While the Pyxu Score offers insights into a plugin’s quality and popularity, it’s just one of many metrics.
+Users are encouraged to explore plugins individually and consider other factors before making a decision.</p>
+<h3 style="margin-top: 0; font-weight: bold; text-align: left; ">Contribute to the Pyxu Score</h3><p>Your insights matter! If you’re a developer with ideas on how we can further refine the Pyxu Score, we’d love to hear
+from you. 💡</p>
+<p>We invite you to <strong>open an issue</strong> suggesting novel metrics or criteria that, in your opinion, would better represent
+the value and quality of Pyxu plugins. By contributing your thoughts, you play an integral role in refining and shaping
+the Pyxu community’s standards.</p>
 <p>Together, let’s make the Pyxu Score the best reflection of plugin excellence! 🌟</p>
 </section>
 
@@ -532,12 +535,12 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="contribute.html"
+       href="dev_notes.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Contributing to the Pyxu-FAIR</p>
+        <p class="prev-next-title">Developer Notes</p>
       </div>
     </a>
     <a class="right-next"
@@ -619,14 +622,10 @@ document.write(`
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>
-      
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
-</p></div>
       
     </div>
   

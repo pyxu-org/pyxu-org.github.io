@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="User Guide" href="../guide/index.html" />
-    <link rel="prev" title="Hands-on Example: Computerised Tomography with Pyxu" href="tomo.html" />
+    <link rel="prev" title="Hands-on Example: Computerized Tomography with Pyxu" href="tomo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -202,7 +202,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> v1.0.x </strong></div>
+        <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -344,7 +344,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> v1.0.x </strong></div>
+          <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -408,7 +408,7 @@ document.write(`
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="primer.html">Computational Imaging in a Nutshell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tomo.html">Hands-on Example: Computerised Tomography with Pyxu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tomo.html">Hands-on Example: Computerized Tomography with Pyxu</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Comparison with other Frameworks</a></li>
 </ul>
 </div>
@@ -469,37 +469,41 @@ document.write(`
                   
   <section id="comparison-with-other-frameworks">
 <h1>Comparison with other Frameworks<a class="headerlink" href="#comparison-with-other-frameworks" title="Link to this heading">#</a></h1>
-<p>This document aims to provide a comprehensive comparison between
-Pyxu and its main contenders in the field of computational imaging software frameworks.
-Various attributes such as features, maturity, ease-of-use, and support for distributed and GPU computing are discussed.</p>
+<p>This document aims to provide a comprehensive comparison between Pyxu and its main contenders in the field of
+computational imaging frameworks.  Various attributes such as features, maturity, ease-of-use, and support for
+distributed and GPU computing are discussed.</p>
 <section id="main-contenders">
 <h2>Main Contenders<a class="headerlink" href="#main-contenders" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/PyLops/pylops">PyLops</a>: PyLops is an open-source Python library focused on providing a backend-agnostic, idiomatic, matrix-free library of linear operators and related computations.</p></li>
+<li><p><a class="reference external" href="https://github.com/PyLops/pylops">PyLops</a>: PyLops is an open-source Python library focused on providing a
+backend-agnostic, idiomatic, matrix-free library of linear operators and related computations.</p></li>
 <li><p><a class="reference external" href="https://github.com/PyLops/pyproximal">PyProximal</a>: Proximal Operators and Algorithms in Python.</p></li>
-<li><p><a class="reference external" href="https://github.com/odlgroup/odl">ODL</a>: The <em>Operator Discretization Library (ODL)</em> is a Python library that enables research in inverse problems on realistic or real data.</p></li>
-<li><p><a class="reference external" href="https://github.com/lanl/scico">SCICO</a>: SCICO is a JAX-powered Python package for solving the inverse problems that arise in scientific imaging applications.</p></li>
-<li><p><a class="reference external" href="https://deepinv.github.io/deepinv/">DeepInv</a>: Deep Inverse is a Pytorch based library for solving imaging inverse problems with deep learning.</p></li>
-<li><p><a class="reference external" href="https://github.com/mikgroup/sigpy">SigPy</a>: SigPy is a package for signal processing, with emphasis on iterative methods. It is built on NumPy and CuPy.</p></li>
-<li><p><a class="reference external" href="https://biomedical-imaging-group.github.io/GlobalBioIm/">GlobalBioIm</a> (MATLAB): A unifying Matlab framework for the development of reconstruction algorithms (solving inverse problems) in computational imaging.</p></li>
+<li><p><a class="reference external" href="https://github.com/odlgroup/odl">ODL</a>: The <em>Operator Discretization Library (ODL)</em> is a Python library that enables
+research in inverse problems on realistic or real data.</p></li>
+<li><p><a class="reference external" href="https://github.com/lanl/scico">SCICO</a>: SCICO is a JAX-powered Python package for solving the inverse problems that
+arise in scientific imaging applications.</p></li>
+<li><p><a class="reference external" href="https://deepinv.github.io/deepinv/">DeepInv</a>: Deep Inverse is a Pytorch based library for solving imaging inverse
+problems with deep learning.</p></li>
+<li><p><a class="reference external" href="https://github.com/mikgroup/sigpy">SigPy</a>: SigPy is a package for signal processing, with emphasis on iterative
+methods. It is built on NumPy and CuPy.</p></li>
+<li><p><a class="reference external" href="https://biomedical-imaging-group.github.io/GlobalBioIm/">GlobalBioIm</a> (MATLAB): A unifying Matlab framework for the
+development of reconstruction algorithms (solving inverse problems) in computational imaging.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This comparison excludes traditional medical imaging frameworks like <a class="reference external" href="https://tomopy.readthedocs.io/en/latest/">TomoPy</a> and <a class="reference external" href="https://www.astra-toolbox.com/">ASTRA</a>,
-as well as general-purpose optimization frameworks (e.g., <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.html">scipy.optimize</a>,
-<a class="reference external" href="https://www.mathworks.com/help/optim/ug/optimization-toolbox.html">MATLAB’s Optimization</a> or <a class="reference external" href="http://cvxr.com/cvx/">CVX toolboxes</a>) and
-deep learning frameworks (e.g., <a class="reference external" href="https://scikit-learn.org/stable/">scikit-learn</a>, <a class="reference external" href="https://pytorch.org/">PyTorch</a>,
-<a class="reference external" href="https://www.tensorflow.org/">TensorFlow</a>, <a class="reference external" href="https://keras.io/">Keras</a>).
-These exclusions are due to their architectural limitations or the narrow focus of their optimization methods,
-which are unsuitable for the diverse requirements of modern computational imaging.</p>
+<p>This comparison excludes traditional medical imaging frameworks like <a class="reference external" href="https://tomopy.readthedocs.io/en/latest/">TomoPy</a> and <a class="reference external" href="https://www.astra-toolbox.com/">ASTRA</a>, as well as
+general-purpose optimization frameworks (e.g., <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.html">scipy.optimize</a>, <a class="reference external" href="https://www.mathworks.com/help/optim/ug/optimization-toolbox.html">MATLAB’s Optimization</a> or <a class="reference external" href="http://cvxr.com/cvx/">CVX toolboxes</a>) and
+deep learning frameworks (e.g., <a class="reference external" href="https://scikit-learn.org/stable/">scikit-learn</a>, <a class="reference external" href="https://pytorch.org/">PyTorch</a>, <a class="reference external" href="https://www.tensorflow.org/">TensorFlow</a>, <a class="reference external" href="https://keras.io/">Keras</a>).  These
+exclusions are due to their architectural limitations or the narrow focus of their optimization methods, which are
+unsuitable for the diverse requirements of modern computational imaging.</p>
 </div>
 </section>
 <section id="comparative-analysis">
 <h2>Comparative Analysis<a class="headerlink" href="#comparative-analysis" title="Link to this heading">#</a></h2>
 <section id="features-and-maturity">
 <h3>Features and Maturity<a class="headerlink" href="#features-and-maturity" title="Link to this heading">#</a></h3>
-<p>Pyxu offers a comprehensive suite of algorithms, including the latest primal-dual splitting methods for hybrid optimization.
-The feature set is robust and mature, positioning it as a leader in the computational imaging arena.</p>
+<p>Pyxu offers a comprehensive suite of algorithms, including the latest primal-dual splitting methods for hybrid
+optimization.  The feature set is robust and mature, positioning it as a leader in the computational imaging arena.</p>
 <table class="table" id="id2">
 <caption><span class="caption-text">Feature Maturity Comparison</span><a class="headerlink" href="#id2" title="Link to this table">#</a></caption>
 <thead>
@@ -517,7 +521,7 @@ The feature set is robust and mature, positioning it as a leader in the computat
 <td><p>🟡 Partial</p></td>
 <td><p>🔴 Least-squares &amp; sparse rec.</p></td>
 <td><p>🟡 Wave-processing, geophysics</p></td>
-<td><p>🔴 Linear ops. based on old NumPy’s matrix interface</p></td>
+<td><p>🔴 Linear ops. based on NumPy’s old matrix interface</p></td>
 </tr>
 <tr class="row-odd"><th class="stub"><p>PyProximal</p></th>
 <td><p>🔴 Prox. funcs</p></td>
@@ -573,13 +577,14 @@ The feature set is robust and mature, positioning it as a leader in the computat
 </section>
 <section id="ease-of-use">
 <h3>Ease-of-Use<a class="headerlink" href="#ease-of-use" title="Link to this heading">#</a></h3>
-<p>Pyxu stands out in its ease-of-use, providing well-documented code and a user-friendly interface.
-Most of its contenders either lack comprehensive documentation or have steeper learning curves.</p>
+<p>Pyxu stands out in its ease-of-use, providing well-documented code and a user-friendly interface.  Most of its
+contenders either lack comprehensive documentation or have steeper learning curves.</p>
 </section>
 <section id="support-for-hpc-computing">
 <h3>Support for HPC Computing<a class="headerlink" href="#support-for-hpc-computing" title="Link to this heading">#</a></h3>
-<p>Pyxu is unique in supporting both out-of-core and distributed computing. Additionally, it offers robust support for JIT compilation abd GPU computing
-via Numba and CuPy, respectively. Most contenders either offer partial support or lack these features altogether.</p>
+<p>Pyxu is unique in supporting both out-of-core and distributed computing. Additionally, it offers robust support for JIT
+compilation and GPU computing via Numba and CuPy respectively. Most contenders either offer partial support or lack
+these features altogether.</p>
 <table class="table" id="id3">
 <caption><span class="caption-text">HPC Features Comparison</span><a class="headerlink" href="#id3" title="Link to this table">#</a></caption>
 <thead>
@@ -645,10 +650,13 @@ via Numba and CuPy, respectively. Most contenders either offer partial support o
 </section>
 <section id="scico-a-closer-look">
 <h2>SCICO: A Closer Look<a class="headerlink" href="#scico-a-closer-look" title="Link to this heading">#</a></h2>
-<p>Although SCICO is almost feature-complete, it relies on <a class="reference external" href="https://github.com/google/jax">JAX</a>, which has some drawbacks:</p>
+<p>Although SCICO is almost feature-complete, it relies on <a class="reference external" href="https://github.com/google/jax">JAX</a>, which has some
+drawbacks:</p>
 <ol class="arabic simple">
-<li><p><strong>Experimental Framework</strong>: JAX is relatively young and is still officially considered experimental. If you’re looking for a stable, long-term solution, this could be a concern.</p></li>
-<li><p><strong>Expertise Required</strong>: Working with JAX requires a deep understanding of functional programming to avoid pitfalls and debugging headaches.</p></li>
+<li><p><strong>Experimental Framework</strong>: JAX is relatively young and is still officially considered experimental. If you’re
+looking for a stable, long-term solution, this could be a concern.</p></li>
+<li><p><strong>Expertise Required</strong>: Working with JAX requires a deep understanding of functional programming to avoid pitfalls
+and debugging headaches.</p></li>
 <li><p><strong>CPU Optimization</strong>: JAX is not optimized for CPU computing, making it less versatile than NumPy in some scenarios.</p></li>
 <li><p><strong>Platform Support</strong>: JAX doesn’t support Windows, limiting its adoption among those who use Windows-based systems.</p></li>
 </ol>
@@ -656,12 +664,14 @@ via Numba and CuPy, respectively. Most contenders either offer partial support o
 <section id="deepinv-a-note-on-usability">
 <h2>DeepInv: A Note on Usability<a class="headerlink" href="#deepinv-a-note-on-usability" title="Link to this heading">#</a></h2>
 <p>DeepInv is based on <a class="reference external" href="https://pytorch.org/">PyTorch</a>, making it less portable due to its numerous dependencies.
-Moreover, it’s primarily designed for deep learning users, making it less accessible for imaging scientists who may not be as well-versed in deep learning paradigms.</p>
+Moreover, it’s primarily designed for deep learning users, making it less accessible for imaging scientists who may not
+be as well-versed in deep learning paradigms.</p>
 </section>
 <section id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
-<p>While all the frameworks discussed here have their merits, Pyxu appears to offer the most well-rounded set of features, robustness, and ease-of-use.
-Its support for distributed and GPU computing adds to its advantages, making it a leading choice for computational imaging applications.</p>
+<p>While all the frameworks discussed here have their merits, Pyxu appears to offer the most well-rounded set of features,
+robustness, and ease-of-use.  Its support for distributed and GPU computing adds to its advantages, making it a leading
+choice for computational imaging applications.</p>
 </section>
 </section>
 
@@ -682,7 +692,7 @@ Its support for distributed and GPU computing adds to its advantages, making it 
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Hands-on Example: Computerised Tomography with Pyxu</p>
+        <p class="prev-next-title">Hands-on Example: Computerized Tomography with Pyxu</p>
       </div>
     </a>
     <a class="right-next"
@@ -783,14 +793,10 @@ Its support for distributed and GPU computing adds to its advantages, making it 
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>
-      
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
-</p></div>
       
     </div>
   

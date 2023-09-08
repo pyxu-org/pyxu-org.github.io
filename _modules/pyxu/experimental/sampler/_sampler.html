@@ -43,7 +43,7 @@
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../../_static/documentation_options.js?v=29481255"></script>
+    <script src="../../../../_static/documentation_options.js?v=e02fc88f"></script>
     <script src="../../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -199,7 +199,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> v0.0.1 </strong></div>
+        <div class="navbar-item"><strong> v1.0.x </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -341,7 +341,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> v0.0.1 </strong></div>
+          <div class="navbar-item"><strong> v1.0.x </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -474,9 +474,9 @@ document.write(`
 <span class="linenos"> 21</span>
 <span class="linenos"> 22</span><span class="sd">   import matplotlib.pyplot as plt</span>
 <span class="linenos"> 23</span><span class="sd">   import numpy as np</span>
-<span class="linenos"> 24</span><span class="sd">   import pyxu.experimental.sampler as pxes</span>
+<span class="linenos"> 24</span><span class="sd">   import pyxu.experimental.sampler as pxe_sampler</span>
 <span class="linenos"> 25</span><span class="sd">   import pyxu.operator as pxo</span>
-<span class="linenos"> 26</span><span class="sd">   import pyxu.opt.solver as pxs</span>
+<span class="linenos"> 26</span><span class="sd">   import pyxu.opt.solver as pxsl</span>
 <span class="linenos"> 27</span><span class="sd">   import skimage as skim</span>
 <span class="linenos"> 28</span>
 <span class="linenos"> 29</span><span class="sd">   sh_im = (128,) * 2</span>
@@ -494,7 +494,7 @@ document.write(`
 <span class="linenos"> 41</span><span class="sd">   theta = 10  # Regularization parameter</span>
 <span class="linenos"> 42</span>
 <span class="linenos"> 43</span><span class="sd">   # Compute MAP estimator</span>
-<span class="linenos"> 44</span><span class="sd">   pgd = pxs.PGD(f=f + theta * g)</span>
+<span class="linenos"> 44</span><span class="sd">   pgd = pxsl.PGD(f=f + theta * g)</span>
 <span class="linenos"> 45</span><span class="sd">   pgd.fit(x0=y.ravel())</span>
 <span class="linenos"> 46</span><span class="sd">   im_MAP = pgd.solution().reshape(sh_im)</span>
 <span class="linenos"> 47</span>
@@ -509,14 +509,14 @@ document.write(`
 <span class="linenos"> 56</span><span class="sd">   ax[2].set_title(&quot;MAP reconstruction&quot;)</span>
 <span class="linenos"> 57</span><span class="sd">   ax[2].axis(&quot;off&quot;)</span>
 <span class="linenos"> 58</span>
-<span class="linenos"> 59</span><span class="sd">   ula = pxes.ULA(f=f + theta * g)  # ULA sampler</span>
+<span class="linenos"> 59</span><span class="sd">   ula = pxe_sampler.ULA(f=f + theta * g)  # ULA sampler</span>
 <span class="linenos"> 60</span>
 <span class="linenos"> 61</span><span class="sd">   n = int(1e4)  # Number of samples</span>
 <span class="linenos"> 62</span><span class="sd">   burn_in = int(1e3)  # Number of burn-in iterations</span>
 <span class="linenos"> 63</span><span class="sd">   gen = ula.samples(x0=np.zeros(N), rng=rng)  # Generator for ULA samples</span>
 <span class="linenos"> 64</span><span class="sd">   # Objects for computing online statistics based on samples</span>
-<span class="linenos"> 65</span><span class="sd">   online_mean = pxes.OnlineMoment(order=1)</span>
-<span class="linenos"> 66</span><span class="sd">   online_var = pxes.OnlineVariance()</span>
+<span class="linenos"> 65</span><span class="sd">   online_mean = pxe_sampler.OnlineMoment(order=1)</span>
+<span class="linenos"> 66</span><span class="sd">   online_var = pxe_sampler.OnlineVariance()</span>
 <span class="linenos"> 67</span>
 <span class="linenos"> 68</span><span class="sd">   i = 0  # Number of samples</span>
 <span class="linenos"> 69</span><span class="sd">   for sample in gen:  # Draw ULA sample</span>
@@ -698,13 +698,13 @@ document.write(`
 <span class="linenos">243</span>
 <span class="linenos">244</span><span class="sd">       import matplotlib.pyplot as plt</span>
 <span class="linenos">245</span><span class="sd">       import numpy as np</span>
-<span class="linenos">246</span><span class="sd">       import pyxu.experimental.sampler as pxes</span>
+<span class="linenos">246</span><span class="sd">       import pyxu.experimental.sampler as pxe_sampler</span>
 <span class="linenos">247</span><span class="sd">       import pyxu.operator as pxo</span>
 <span class="linenos">248</span><span class="sd">       import scipy as sp</span>
 <span class="linenos">249</span>
 <span class="linenos">250</span><span class="sd">       f = pxo.SquaredL2Norm(dim=1) / 2  # To sample 1D normal distribution (mean 0, variance 1)</span>
-<span class="linenos">251</span><span class="sd">       ula = pxes.ULA(f=f)  # Sampler with maximum step size</span>
-<span class="linenos">252</span><span class="sd">       ula_lb = pxes.ULA(f=f, gamma=1e-1)  # Sampler with small step size</span>
+<span class="linenos">251</span><span class="sd">       ula = pxe_sampler.ULA(f=f)  # Sampler with maximum step size</span>
+<span class="linenos">252</span><span class="sd">       ula_lb = pxe_sampler.ULA(f=f, gamma=1e-1)  # Sampler with small step size</span>
 <span class="linenos">253</span>
 <span class="linenos">254</span><span class="sd">       gen_ula = ula.samples(x0=np.zeros(1))</span>
 <span class="linenos">255</span><span class="sd">       gen_ula_lb = ula_lb.samples(x0=np.zeros(1))</span>
@@ -714,10 +714,10 @@ document.write(`
 <span class="linenos">259</span><span class="sd">           next(gen_ula_lb)</span>
 <span class="linenos">260</span>
 <span class="linenos">261</span><span class="sd">       # Online statistics objects</span>
-<span class="linenos">262</span><span class="sd">       mean_ula = pxes.OnlineMoment(order=1)</span>
-<span class="linenos">263</span><span class="sd">       mean_ula_lb = pxes.OnlineMoment(order=1)</span>
-<span class="linenos">264</span><span class="sd">       var_ula = pxes.OnlineVariance()</span>
-<span class="linenos">265</span><span class="sd">       var_ula_lb = pxes.OnlineVariance()</span>
+<span class="linenos">262</span><span class="sd">       mean_ula = pxe_sampler.OnlineMoment(order=1)</span>
+<span class="linenos">263</span><span class="sd">       mean_ula_lb = pxe_sampler.OnlineMoment(order=1)</span>
+<span class="linenos">264</span><span class="sd">       var_ula = pxe_sampler.OnlineVariance()</span>
+<span class="linenos">265</span><span class="sd">       var_ula_lb = pxe_sampler.OnlineVariance()</span>
 <span class="linenos">266</span>
 <span class="linenos">267</span><span class="sd">       n = int(1e4)  # Number of samples</span>
 <span class="linenos">268</span><span class="sd">       samples_ula = np.zeros(n)</span>

@@ -129,7 +129,7 @@ document.write(`
 `);
 </script>
 </div>
-<div class="navbar-item"><strong> v1.0.x </strong></div>
+<div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
 <a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
@@ -202,7 +202,7 @@ document.write(`
 </nav></div>
 </div>
 <div class="sidebar-header-items__end">
-<div class="navbar-item"><strong> v1.0.x </strong></div>
+<div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
 <a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
@@ -261,7 +261,7 @@ document.write(`
 <div id="searchbox"></div>
 <article class="bd-article" role="main">
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
@@ -290,12 +290,15 @@ document.write(`
 <p>We first start creating a 2D binary image of size 128x128 with blobs, where the blobs occupy approximately 20% of the image’s area and are about half the size of the image.</p>
 <p>The resulting binary image is then converted to a floating-point representation.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">npix</span> <span class="o">=</span> <span class="mi">128</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">skimage</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">binary_blobs</span><span class="p">(</span>
-    <span class="n">length</span><span class="o">=</span><span class="n">npix</span><span class="p">,</span> <span class="n">blob_size_fraction</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">n_dim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">volume_fraction</span><span class="o">=</span><span class="mf">0.2</span>
+    <span class="n">length</span><span class="o">=</span><span class="n">npix</span><span class="p">,</span>
+    <span class="n">blob_size_fraction</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">n_dim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">volume_fraction</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
 <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#float" title="float"><span class="nb">float</span></a><span class="p">)</span>
 </pre></div>
 </div>
@@ -304,7 +307,7 @@ document.write(`
 <section id="Create-blurring-kernel">
 <h3>Create blurring kernel<a class="headerlink" href="#Create-blurring-kernel" title="Link to this heading">#</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sigma</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># Gaussian kernel std</span>
@@ -318,14 +321,21 @@ document.write(`
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Original image"</span><span class="p">)</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kernel_1d</span><span class="p">),</span> <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"1D Gaussian kernel"</span><span class="p">)</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">kernel_2d</span><span class="p">),</span> <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"2D Gaussian kernel"</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Original image"</span><span class="p">)</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kernel_1d</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"1D Gaussian kernel"</span><span class="p">)</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">kernel_2d</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"2D Gaussian kernel"</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -342,9 +352,9 @@ document.write(`
 <h2>2) Convolve image<a class="headerlink" href="#2)-Convolve-image" title="Link to this heading">#</a></h2>
 <section id="Scipy">
 <h3>Scipy<a class="headerlink" href="#Scipy" title="Link to this heading">#</a></h3>
-<p>If you want to use scipy.signal.convolve to perform 2D convolution, it expects the kernel to match the dimensionality of the input data. So, for 2D data, you would generally provide a 2D kernel.</p>
+<p>If you want to use <code class="docutils literal notranslate"><span class="pre">scipy.signal.convolve()</span></code> to perform 2D convolutions, it expects the kernel to match the dimensionality of the input data. So, for 2D data, you would generally provide a 2D kernel.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/signal.html#module-scipy.signal" title="scipy.signal"><span class="nn">scipy.signal</span></a> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.convolve.html#scipy.signal.convolve" title="scipy.signal.convolve"><span class="n">convolve</span></a> <span class="k">as</span> <span class="n">conv_scipy</span>
@@ -360,17 +370,24 @@ document.write(`
 <li><p>Then, convolve the result from the first step with the same 1D kernel along the other dimension (e.g., columns).</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Separable convolution</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Separable convolution ...</span>
 
-<span class="n">convolved_rows</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.convolve.html#scipy.signal.convolve" title="scipy.signal.convolve"><span class="n">conv_scipy</span></a><span class="p">(</span>
-    <span class="n">data</span><span class="p">,</span> <span class="n">kernel_1d</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"same"</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"direct"</span>
-<span class="p">)</span>  <span class="c1"># Along rows</span>
-<span class="n">y_separable</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.convolve.html#scipy.signal.convolve" title="scipy.signal.convolve"><span class="n">conv_scipy</span></a><span class="p">(</span>
-    <span class="n">convolved_rows</span><span class="p">,</span> <span class="n">kernel_1d</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:],</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"same"</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"direct"</span>
-<span class="p">)</span>  <span class="c1"># Along columns</span>
+<span class="n">convolved_rows</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.convolve.html#scipy.signal.convolve" title="scipy.signal.convolve"><span class="n">conv_scipy</span></a><span class="p">(</span>  <span class="c1"># ... along rows</span>
+    <span class="n">data</span><span class="p">,</span>
+    <span class="n">kernel_1d</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s2">"same"</span><span class="p">,</span>
+    <span class="n">method</span><span class="o">=</span><span class="s2">"direct"</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">y_separable</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.convolve.html#scipy.signal.convolve" title="scipy.signal.convolve"><span class="n">conv_scipy</span></a><span class="p">(</span>  <span class="c1"># ... then along columns</span>
+    <span class="n">convolved_rows</span><span class="p">,</span>
+    <span class="n">kernel_1d</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:],</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s2">"same"</span><span class="p">,</span>
+    <span class="n">method</span><span class="o">=</span><span class="s2">"direct"</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="k">assert</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.allclose.html#numpy.allclose" title="numpy.allclose"><span class="n">np</span><span class="o">.</span><span class="n">allclose</span></a><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_separable</span><span class="p">)</span>
 </pre></div>
@@ -381,7 +398,7 @@ document.write(`
 <h3>Pyxu<a class="headerlink" href="#Pyxu" title="Link to this heading">#</a></h3>
 <p>Pyxu is optimized to handle separable kernels, which enhances performance. When working with such kernels, Pyxu can directly manage the separable convolution. Additionally, Pyxu leverages <a class="reference external" href="https://numba.pydata.org/numba-doc/latest/user/stencil.html">Numba.stencil</a> to just-in-time (JIT) compile the convolution under the hood to make it faster. Here’s how you can use it:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.linop.stencil.stencil.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">conv</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.linop.stencil.stencil.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">Convolve</span></a><span class="p">(</span>
@@ -400,19 +417,19 @@ document.write(`
 </section>
 <section id="PyLops">
 <h3>PyLops<a class="headerlink" href="#PyLops" title="Link to this heading">#</a></h3>
-<p>PyLops uses a flattened (raveled) version of your 2D data when applying the linear operator, so you need to flatten and reshape your data as you move between operations. If you want to utilize separable convolution, you’d have to manually decompose the 2D kernel into two 1D kernels and then apply two separate 1D convolution operations sequentially. This adds an extra layer of complexity in the implementation compared to just using a 2D convolution directly.</p>
+<p>PyLops uses a flattened (raveled) version of your 2D data when applying the linear operator, so you need to flatten and reshape your data as you move between operations. If you want to perform a separable convolution, you need to manually decompose the 2D kernel into two 1D kernels, then apply two separate 1D convolution operations sequentially. This adds an extra layer of complexity in the implementation compared to just using a 2D convolution directly.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.operator.interop</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/operator/interop.html#pyxu.operator.interop.sciop.from_sciop" title="pyxu.operator.interop.sciop.from_sciop"><span class="n">from_sciop</span></a>
-<span class="kn">import</span> <span class="nn">pyxu.abc</span> <span class="k">as</span> <span class="nn">pyca</span>
+<span class="kn">import</span> <span class="nn">pyxu.abc</span> <span class="k">as</span> <span class="nn">pxa</span>
 
 <span class="kn">from</span> <span class="nn">pylops.signalprocessing</span> <span class="kn">import</span> <span class="n">Convolve2D</span>
 
 <span class="c1"># 2d convolution</span>
 <span class="n">conv_pylops</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/interop.html#pyxu.operator.interop.sciop.from_sciop" title="pyxu.operator.interop.sciop.from_sciop"><span class="n">from_sciop</span></a><span class="p">(</span>
-    <span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pyca</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
+    <span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
     <span class="n">sp_op</span><span class="o">=</span><span class="n">Convolve2D</span><span class="p">(</span>
         <span class="n">dims</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
         <span class="n">h</span><span class="o">=</span><span class="n">kernel_2d</span><span class="p">,</span>
@@ -427,12 +444,12 @@ document.write(`
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Separable convolution</span>
 <span class="n">conv_pylops_rows</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/interop.html#pyxu.operator.interop.sciop.from_sciop" title="pyxu.operator.interop.sciop.from_sciop"><span class="n">from_sciop</span></a><span class="p">(</span>
-    <span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pyca</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
+    <span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
     <span class="n">sp_op</span><span class="o">=</span><span class="n">Convolve2D</span><span class="p">(</span>
         <span class="n">dims</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
         <span class="n">h</span><span class="o">=</span><span class="n">kernel_1d</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:],</span>
@@ -442,7 +459,7 @@ document.write(`
     <span class="p">),</span>
 <span class="p">)</span>
 <span class="n">conv_pylops_cols</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/interop.html#pyxu.operator.interop.sciop.from_sciop" title="pyxu.operator.interop.sciop.from_sciop"><span class="n">from_sciop</span></a><span class="p">(</span>
-    <span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pyca</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
+    <span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
     <span class="n">sp_op</span><span class="o">=</span><span class="n">Convolve2D</span><span class="p">(</span>
         <span class="n">dims</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
         <span class="n">h</span><span class="o">=</span><span class="n">kernel_1d</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span>
@@ -460,10 +477,10 @@ document.write(`
 </section>
 <section id="Scico">
 <h3>Scico<a class="headerlink" href="#Scico" title="Link to this heading">#</a></h3>
-<p>Like Pyxu, Scico employs JIT (Just-In-Time) compilation to speed up convolution operations. However, Scico relies on Jax, instead of Numba. This necessitates the transition of our array module from NumPy to Jax.</p>
+<p>Like Pyxu, Scico employs JIT (Just-In-Time) compilation to speed up convolution operations. However, Scico relies on Jax instead of Numba. This necessitates the transition of our array module from NumPy to Jax.</p>
 <p>In a manner similar to PyLops, Scico expects the convolutional kernel to have the same dimensionality as the input image. One can opt for a more efficient combination of two 1D operators or a simpler single 2D operator.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scico.linop</span> <span class="kn">import</span> <span class="n">Convolve</span> <span class="k">as</span> <span class="n">Conv_scico</span>
@@ -489,7 +506,7 @@ document.write(`
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Separable convolution</span>
@@ -520,8 +537,8 @@ document.write(`
 <h2>3) Benchmark convolution runtime across all libraries<a class="headerlink" href="#3)-Benchmark-convolution-runtime-across-all-libraries" title="Link to this heading">#</a></h2>
 <section id="Separable-1d-convolution">
 <h3>Separable 1d convolution<a class="headerlink" href="#Separable-1d-convolution" title="Link to this heading">#</a></h3>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#module-time" title="time"><span class="nn">time</span></a>
@@ -614,7 +631,7 @@ document.write(`
                 <span class="c1"># Instantation + first run time</span>
                 <span class="n">tic</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span>
                 <span class="n">conv_pylops_rows</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/interop.html#pyxu.operator.interop.sciop.from_sciop" title="pyxu.operator.interop.sciop.from_sciop"><span class="n">from_sciop</span></a><span class="p">(</span>
-                    <span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pyca</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
+                    <span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
                     <span class="n">sp_op</span><span class="o">=</span><span class="n">Convolve2D</span><span class="p">(</span>
                         <span class="n">dims</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
                         <span class="n">h</span><span class="o">=</span><span class="n">kernel_1d</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:],</span>
@@ -624,7 +641,7 @@ document.write(`
                     <span class="p">),</span>
                 <span class="p">)</span>
                 <span class="n">conv_pylops_cols</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/interop.html#pyxu.operator.interop.sciop.from_sciop" title="pyxu.operator.interop.sciop.from_sciop"><span class="n">from_sciop</span></a><span class="p">(</span>
-                    <span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pyca</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
+                    <span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
                     <span class="n">sp_op</span><span class="o">=</span><span class="n">Convolve2D</span><span class="p">(</span>
                         <span class="n">dims</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
                         <span class="n">h</span><span class="o">=</span><span class="n">kernel_1d</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span>
@@ -684,8 +701,16 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+100%|██████████| 20/20 [00:48&lt;00:00,  2.44s/it]
+</pre></div></div>
+</div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
@@ -733,7 +758,7 @@ document.write(`
 <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span>
     <span class="sa">f</span><span class="s2">"2D convolution (time in log-scale: t-init includes JIT compilation, t-run is the mean runtime across </span><span class="si">{</span><span class="n">nreps</span><span class="si">}</span><span class="s2"> reps)"</span>
 <span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -748,140 +773,7 @@ document.write(`
 <section id="Direct-2d-convolution">
 <h3>Direct 2d convolution<a class="headerlink" href="#Direct-2d-convolution" title="Link to this heading">#</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#module-time" title="time"><span class="nn">time</span></a>
-<span class="kn">import</span> <span class="nn">tqdm</span>
-
-<span class="n">npixs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#range" title="range"><span class="nb">range</span></a><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span>
-<span class="n">nwidths</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#range" title="range"><span class="nb">range</span></a><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">)]</span>
-
-<span class="n">t_pyxu</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.full.html#numpy.full" title="numpy.full"><span class="n">np</span><span class="o">.</span><span class="n">full</span></a><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#len" title="len"><span class="nb">len</span></a><span class="p">(</span><span class="n">npixs</span><span class="p">),</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#len" title="len"><span class="nb">len</span></a><span class="p">(</span><span class="n">nwidths</span><span class="p">)),</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/constants.html#numpy.nan" title="numpy.nan"><span class="n">np</span><span class="o">.</span><span class="n">nan</span></a><span class="p">)</span>
-<span class="n">t_scipy</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.full.html#numpy.full" title="numpy.full"><span class="n">np</span><span class="o">.</span><span class="n">full</span></a><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#len" title="len"><span class="nb">len</span></a><span class="p">(</span><span class="n">npixs</span><span class="p">),</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#len" title="len"><span class="nb">len</span></a><span class="p">(</span><span class="n">nwidths</span><span class="p">)),</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/constants.html#numpy.nan" title="numpy.nan"><span class="n">np</span><span class="o">.</span><span class="n">nan</span></a><span class="p">)</span>
-<span class="n">t_pylops</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.full.html#numpy.full" title="numpy.full"><span class="n">np</span><span class="o">.</span><span class="n">full</span></a><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#len" title="len"><span class="nb">len</span></a><span class="p">(</span><span class="n">npixs</span><span class="p">),</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#len" title="len"><span class="nb">len</span></a><span class="p">(</span><span class="n">nwidths</span><span class="p">)),</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/constants.html#numpy.nan" title="numpy.nan"><span class="n">np</span><span class="o">.</span><span class="n">nan</span></a><span class="p">)</span>
-<span class="n">t_scico</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.full.html#numpy.full" title="numpy.full"><span class="n">np</span><span class="o">.</span><span class="n">full</span></a><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#len" title="len"><span class="nb">len</span></a><span class="p">(</span><span class="n">npixs</span><span class="p">),</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#len" title="len"><span class="nb">len</span></a><span class="p">(</span><span class="n">nwidths</span><span class="p">)),</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/constants.html#numpy.nan" title="numpy.nan"><span class="n">np</span><span class="o">.</span><span class="n">nan</span></a><span class="p">)</span>
-
-<span class="n">sigma</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">gauss</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/constants.html#numpy.pi" title="numpy.pi"><span class="n">np</span><span class="o">.</span><span class="n">pi</span></a> <span class="o">*</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.exp.html#numpy.exp" title="numpy.exp"><span class="n">np</span><span class="o">.</span><span class="n">exp</span></a><span class="p">(</span>
-    <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="p">)</span>
-
-<span class="n">nreps</span> <span class="o">=</span> <span class="mi">5</span>
-
-<span class="k">with</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">tqdm</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#len" title="len"><span class="nb">len</span></a><span class="p">(</span><span class="n">npixs</span><span class="p">)</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#len" title="len"><span class="nb">len</span></a><span class="p">(</span><span class="n">nwidths</span><span class="p">))</span> <span class="k">as</span> <span class="n">pbar</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">npix</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#enumerate" title="enumerate"><span class="nb">enumerate</span></a><span class="p">(</span><span class="n">npixs</span><span class="p">):</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">skimage</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">binary_blobs</span><span class="p">(</span>
-            <span class="n">length</span><span class="o">=</span><span class="n">npix</span><span class="p">,</span> <span class="n">blob_size_fraction</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">n_dim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">volume_fraction</span><span class="o">=</span><span class="mf">0.2</span>
-        <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#float" title="float"><span class="nb">float</span></a><span class="p">)</span>
-        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">width</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#enumerate" title="enumerate"><span class="nb">enumerate</span></a><span class="p">(</span><span class="n">nwidths</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">npix</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">width</span> <span class="o">*</span> <span class="mi">2</span><span class="p">):</span>
-                <span class="n">kernel</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.fromfunction.html#numpy.fromfunction" title="numpy.fromfunction"><span class="n">np</span><span class="o">.</span><span class="n">fromfunction</span></a><span class="p">(</span><span class="n">gauss</span><span class="p">,</span> <span class="p">(</span><span class="n">width</span><span class="p">,))</span>
-                <span class="n">kernel_2d</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.outer.html#numpy.outer" title="numpy.outer"><span class="n">np</span><span class="o">.</span><span class="n">outer</span></a><span class="p">(</span><span class="n">kernel</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">kernel</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-                <span class="n">x_jax</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://jax.readthedocs.io/en/latest/_autosummary/jax.numpy.asarray.html#jax.numpy.asarray" title="jax.numpy.asarray"><span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span></a><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-                <span class="n">k2d_jax</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://jax.readthedocs.io/en/latest/_autosummary/jax.numpy.asarray.html#jax.numpy.asarray" title="jax.numpy.asarray"><span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span></a><span class="p">(</span><span class="n">kernel_2d</span><span class="p">)</span>
-
-                <span class="c1">## PYXU</span>
-
-                <span class="c1"># Instantation + first run time</span>
-                <span class="n">tic</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span>
-                <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.linop.stencil.stencil.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">conv_pyxu</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.linop.stencil.stencil.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">Convolve</span></a><span class="p">(</span>
-                    <span class="n">arg_shape</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
-                    <span class="n">kernel</span><span class="o">=</span><span class="n">kernel_2d</span><span class="p">,</span>
-                    <span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">],</span>
-                    <span class="n">mode</span><span class="o">=</span><span class="s2">"constant"</span><span class="p">,</span>
-                    <span class="n">enable_warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                <span class="p">)</span>
-                <span class="n">y</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.linop.stencil.stencil.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">conv_pyxu</span></a><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-                <span class="n">t_pyxu</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span> <span class="o">-</span> <span class="n">tic</span>
-
-                <span class="c1"># Run time</span>
-                <span class="n">times</span> <span class="o">=</span> <span class="mi">0</span>
-                <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#range" title="range"><span class="nb">range</span></a><span class="p">(</span><span class="n">nreps</span><span class="p">):</span>
-                    <span class="n">tic</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span>
-                    <span class="n">y</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.linop.stencil.stencil.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">conv_pyxu</span></a><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-                    <span class="n">times</span> <span class="o">+=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span> <span class="o">-</span> <span class="n">tic</span>
-
-                <span class="n">t_pyxu</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">times</span> <span class="o">/</span> <span class="n">nreps</span>
-
-                <span class="c1">## SCIPY</span>
-
-                <span class="c1"># Instantation + first run time</span>
-                <span class="n">tic</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span>
-                <span class="n">y_scipy</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.convolve.html#scipy.signal.convolve" title="scipy.signal.convolve"><span class="n">conv_scipy</span></a><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">kernel_2d</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"same"</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"direct"</span><span class="p">)</span>
-                <span class="n">t_scipy</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span> <span class="o">-</span> <span class="n">tic</span>
-
-                <span class="c1"># Run time</span>
-                <span class="n">times</span> <span class="o">=</span> <span class="mi">0</span>
-                <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#range" title="range"><span class="nb">range</span></a><span class="p">(</span><span class="n">nreps</span><span class="p">):</span>
-                    <span class="n">tic</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span>
-                    <span class="n">y_scipy</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.convolve.html#scipy.signal.convolve" title="scipy.signal.convolve"><span class="n">conv_scipy</span></a><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">kernel_2d</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"same"</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"direct"</span><span class="p">)</span>
-                    <span class="n">times</span> <span class="o">+=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span> <span class="o">-</span> <span class="n">tic</span>
-
-                <span class="n">t_scipy</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">times</span> <span class="o">/</span> <span class="n">nreps</span>
-
-                <span class="c1">## PYLOPS</span>
-
-                <span class="c1"># Instantation + first run time</span>
-                <span class="n">tic</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span>
-                <span class="n">conv_pylops</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/interop.html#pyxu.operator.interop.sciop.from_sciop" title="pyxu.operator.interop.sciop.from_sciop"><span class="n">from_sciop</span></a><span class="p">(</span>
-                    <span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pyca</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
-                    <span class="n">sp_op</span><span class="o">=</span><span class="n">Convolve2D</span><span class="p">(</span>
-                        <span class="n">dims</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
-                        <span class="n">h</span><span class="o">=</span><span class="n">kernel_2d</span><span class="p">,</span>
-                        <span class="n">offset</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.r_.html#numpy.r_" title="numpy.r_"><span class="n">np</span><span class="o">.</span><span class="n">r_</span></a><span class="p">[</span><span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">],</span>
-                        <span class="n">axes</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-                        <span class="n">method</span><span class="o">=</span><span class="s2">"direct"</span><span class="p">,</span>
-                    <span class="p">),</span>
-                <span class="p">)</span>
-
-                <span class="n">y_pylops</span> <span class="o">=</span> <span class="n">conv_pylops</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-                <span class="n">t_pylops</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span> <span class="o">-</span> <span class="n">tic</span>
-
-                <span class="c1"># Run time</span>
-                <span class="n">times</span> <span class="o">=</span> <span class="mi">0</span>
-                <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#range" title="range"><span class="nb">range</span></a><span class="p">(</span><span class="n">nreps</span><span class="p">):</span>
-                    <span class="n">tic</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span>
-                    <span class="n">y_pylops</span> <span class="o">=</span> <span class="n">conv_pylops</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-                    <span class="n">times</span> <span class="o">+=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span> <span class="o">-</span> <span class="n">tic</span>
-                <span class="n">t_pylops</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">times</span> <span class="o">/</span> <span class="n">nreps</span>
-
-                <span class="c1">## SCICO</span>
-
-                <span class="c1"># Instantation + first run time</span>
-
-                <span class="n">tic</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span>
-                <span class="n">conv_scico</span> <span class="o">=</span> <span class="n">Conv_scico</span><span class="p">(</span>
-                    <span class="n">k2d_jax</span><span class="p">,</span>
-                    <span class="n">input_shape</span><span class="o">=</span><span class="n">x_jax</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
-                    <span class="n">input_dtype</span><span class="o">=</span><span class="n">x_jax</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span>
-                    <span class="n">mode</span><span class="o">=</span><span class="s2">"same"</span><span class="p">,</span>
-                    <span class="n">jit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                <span class="p">)</span>
-                <span class="n">y_scico</span> <span class="o">=</span> <span class="n">conv_scico</span><span class="p">(</span><span class="n">x_jax</span><span class="p">)</span>
-                <span class="n">t_scico</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span> <span class="o">-</span> <span class="n">tic</span>
-
-                <span class="c1"># Run time</span>
-                <span class="n">times</span> <span class="o">=</span> <span class="mi">0</span>
-                <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#range" title="range"><span class="nb">range</span></a><span class="p">(</span><span class="n">nreps</span><span class="p">):</span>
-                    <span class="n">tic</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span>
-                    <span class="n">y_scico</span> <span class="o">=</span> <span class="n">conv_scico</span><span class="p">(</span><span class="n">x_jax</span><span class="p">)</span>
-                    <span class="n">times</span> <span class="o">+=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span> <span class="o">-</span> <span class="n">tic</span>
-                <span class="n">t_scico</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">times</span> <span class="o">/</span> <span class="n">nreps</span>
-            <span class="n">pbar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [13:43&lt;00:00, 41.15s/it]
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
@@ -930,7 +822,7 @@ document.write(`
 <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span>
     <span class="sa">f</span><span class="s2">"2D convolution (time in log-scale: t-init includes JIT compilation, t-run is the mean runtime across </span><span class="si">{</span><span class="n">nreps</span><span class="si">}</span><span class="s2"> reps)"</span>
 <span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -938,7 +830,7 @@ document.write(`
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_Stencils_29_0.png" src="../_images/examples_Stencils_29_0.png"/>
+<img alt="../_images/examples_Stencils_28_0.png" src="../_images/examples_Stencils_28_0.png"/>
 </div>
 </div>
 </section>
@@ -1038,13 +930,10 @@ document.write(`
 </div>
 <div class="footer-item">
 <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
 </p>
 </div>
-<div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
-</p></div>
 </div>
 <div class="footer-items__end">
 <div class="footer-item"><p class="theme-version">

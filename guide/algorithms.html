@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Optimization Algorithms — Pyxu Documentation</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../_static/plot_directive.css?v=7f9a90b1" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
+<link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
+<link href="../_static/sg_gallery.css?v=61a4c737" rel="stylesheet" type="text/css"/>
+<link href="../_static/sg_gallery-binder.css?v=f4aeca0c" rel="stylesheet" type="text/css"/>
+<link href="../_static/sg_gallery-dataframe.css?v=2082cf3c" rel="stylesheet" type="text/css"/>
+<link href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" rel="stylesheet" type="text/css"/>
+<link href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css?v=1031a718" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
+<link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
+<script src="../_static/documentation_options.js?v=e02fc88f"></script>
+<script src="../_static/doctools.js?v=888ff710"></script>
+<script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="../_static/copybutton.js?v=30646c52"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+<script src="../_static/design-tabs.js?v=36754332"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+<script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'guide/algorithms';</script>
+<link href="../_static/favicon.png" rel="icon"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="lipschitz.html" rel="next" title="Lipschitz Constants and Automatic Step Size Tuning"/>
+<link href="algebra.html" rel="prev" title="Operator Algebra Logic"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="light" data-offset="180">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search the docs ..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+<label class="sidebar-toggle primary-toggle" for="__primary">
+<span class="fa-solid fa-bars"></span>
+</label>
+<div class="navbar-header-items__start">
+<div class="navbar-item">
+<a class="navbar-brand logo" href="../index.html">
+<img alt="Logo image" class="logo__image only-light" src="../_static/logo.png"/>
+<script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+</a></div>
+</div>
+<div class="col-lg-9 navbar-header-items">
+<div class="me-auto navbar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../intro/index.html">
+                        Getting Started
+                      </a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link nav-internal" href="index.html">
+                        User Guide
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../examples/index.html">
+                        Example Gallery
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../api/index.html">
+                        API Reference
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../fair/index.html">
+                        Extending Pyxu
+                      </a>
+</li>
+</ul>
+</nav></div>
+</div>
+<div class="navbar-header-items__end">
+<div class="navbar-item navbar-persistent--container">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://pypi.org/project/pyxu/" rel="noopener" target="_blank" title="PyPI"><span><i class="fa-brands fa-python"></i></span>
+<label class="sr-only">PyPI</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="mailto: matthieu.simeoni@gmail.com" rel="noopener" target="_blank" title="Contact"><span><i class="fa-brands fa-telegram"></i></span>
+<label class="sr-only">Contact</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://imaging.epfl.ch/" rel="noopener" target="_blank" title="EPFL Center for Imaging"><img alt="EPFL Center for Imaging" class="icon-link-image" src="../_static/imaging.png"/></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<label class="sidebar-toggle secondary-toggle" for="__secondary">
+<span class="fa-solid fa-outdent"></span>
+</label>
+</div>
+</nav>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+<div class="sidebar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../intro/index.html">
+                        Getting Started
+                      </a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link nav-internal" href="index.html">
+                        User Guide
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../examples/index.html">
+                        Example Gallery
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../api/index.html">
+                        API Reference
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../fair/index.html">
+                        Extending Pyxu
+                      </a>
+</li>
+</ul>
+</nav></div>
+</div>
+<div class="sidebar-header-items__end">
+<div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://pypi.org/project/pyxu/" rel="noopener" target="_blank" title="PyPI"><span><i class="fa-brands fa-python"></i></span>
+<label class="sr-only">PyPI</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="mailto: matthieu.simeoni@gmail.com" rel="noopener" target="_blank" title="Contact"><span><i class="fa-brands fa-telegram"></i></span>
+<label class="sr-only">Contact</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://imaging.epfl.ch/" rel="noopener" target="_blank" title="EPFL Center for Imaging"><img alt="EPFL Center for Imaging" class="icon-link-image" src="../_static/imaging.png"/></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item"><nav aria-label="Section Navigation" class="bd-docs-nav bd-links">
+<p aria-level="1" class="bd-links__title" role="heading">Section Navigation</p>
+<div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fwdops.html">Forward Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funcs.html">Loss &amp; Regularization Functionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algebra.html">Operator Algebra Logic</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Optimization Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lipschitz.html">Lipschitz Constants and Automatic Step Size Tuning</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content">
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item">
+<nav aria-label="Breadcrumbs">
+<ul aria-label="Breadcrumb" class="bd-breadcrumbs" role="navigation">
+<li class="breadcrumb-item breadcrumb-home">
+<a aria-label="Home" class="nav-link" href="../index.html">
+<i class="fa-solid fa-home"></i>
+</a>
+</li>
+<li class="breadcrumb-item"><a class="nav-link" href="index.html">User Guide</a></li>
+<li aria-current="page" class="breadcrumb-item active">Optimization Algorithms</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article" role="main">
+<section id="Optimization-Algorithms">
+<h1>Optimization Algorithms<a class="headerlink" href="#Optimization-Algorithms" title="Link to this heading">#</a></h1>
+<p>Navigating the landscape of optimization algorithms can be overwhelming at times, especially when each algorithm comes with its own set of assumptions and applicability scope. Pyxu aims to simplify this by offering a comprehensive suite of algorithms tailored for solving Bayesian estimation problems. In this section, we’ll walk through the different algorithms available, discuss how to choose the most suitable ones for your problem, and show you how to flexibly configure them. 🎛️</p>
+<section id="Algorithms-Overview">
+<h2>Algorithms Overview<a class="headerlink" href="#Algorithms-Overview" title="Link to this heading">#</a></h2>
+<section id="Conjugate-Gradient-(CG)">
+<h3>Conjugate Gradient (CG)<a class="headerlink" href="#Conjugate-Gradient-(CG)" title="Link to this heading">#</a></h3>
+<p>👉 <strong>Use case:</strong> Quadratic problems, particularly when you have a well-conditioned matrix <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p><strong>Mathematical Form:</strong></p>
+<div class="math notranslate nohighlight">
+\[\min_{x\in\mathbb{R}^{N}} \frac{1}{2} \mathbf{x}^{T} \mathbf{A} \mathbf{x} - \mathbf{x}^{T} \mathbf{b}\]</div>
+</section>
+<section id="Accelerated-Proximal-Gradient-Descent-(APGD)">
+<h3>Accelerated Proximal Gradient Descent (APGD)<a class="headerlink" href="#Accelerated-Proximal-Gradient-Descent-(APGD)" title="Link to this heading">#</a></h3>
+<p>👉 <strong>Use case:</strong> Problems that separate into smooth and non-smooth components.</p>
+<p><strong>Mathematical Form:</strong></p>
+<div class="math notranslate nohighlight">
+\[\min_{\mathbf{x}\in\mathbb{R}^N} \;\mathcal{F}(\mathbf{x})\;\;+\;\;\mathcal{G}(\mathbf{x}),\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{F}\)</span> and <span class="math notranslate nohighlight">\(\mathcal{G}\)</span> are differentiable and proximable functionals, respectively.</p>
+<blockquote>
+<div><p><strong>Note:</strong> With acceleration, <code class="docutils literal notranslate"><span class="pre">APGD</span></code> can be shown to be an <em>optimal</em> first-order method, with the fastest possible convergence rate!</p>
+</div></blockquote>
+</section>
+<section id="Primal-Dual-Splitting-(PDS)-Methods">
+<h3>Primal-Dual Splitting (PDS) Methods<a class="headerlink" href="#Primal-Dual-Splitting-(PDS)-Methods" title="Link to this heading">#</a></h3>
+<p>👉 <strong>Use case:</strong> Multi-term problems, with smooth and non-smooth terms, possibly composed with a linear operator <span class="math notranslate nohighlight">\(K\)</span>.</p>
+<p><strong>Mathematical Form:</strong></p>
+<div class="math notranslate nohighlight">
+\[\min_{\mathbf{x}\in\mathbb{R}^N} \;\mathcal{F}(\mathbf{x})\;\;+\;\;\mathcal{G}(\mathbf{x})\;\;+\;\;\mathcal{H}(K\mathbf{x})\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{F}\)</span> is differentiable, <span class="math notranslate nohighlight">\(\mathcal{G}\)</span> and <span class="math notranslate nohighlight">\(\mathcal{H}\)</span> are proximable, and <span class="math notranslate nohighlight">\(K\)</span> is a linear operator.</p>
+<p>Methods under this category include <code class="docutils literal notranslate"><span class="pre">CondatVu</span></code>, <code class="docutils literal notranslate"><span class="pre">PD3O</span></code>, <code class="docutils literal notranslate"><span class="pre">ADMM</span></code>, <code class="docutils literal notranslate"><span class="pre">ChambollePock</span></code>, and more.</p>
+<p>Note that, although implemented for three-term objective functionals, PDS methods can easilybe generalized to objective functionals of the form:</p>
+<div class="math notranslate nohighlight">
+\[{\min_{\mathbf{x}\in\mathbb{R}^N} \;\mathcal{F}(\mathbf{x})\;\;+\;\;\mathcal{G}(\mathbf{x})\;\;+\;\;\sum_{i=1}^J\mathcal{H}_i(K_i\mathbf{x})}\]</div>
+<p>by means of stacking operators:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">K</span> <span class="o">=</span> <span class="n">vstack</span><span class="p">([</span><span class="n">K_1</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">K_J</span><span class="p">])</span>
+<span class="o">&gt;&gt;</span> <span class="n">H</span> <span class="o">=</span> <span class="n">hstack</span><span class="p">([</span><span class="n">h_1</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">h_J</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="Choosing-the-Right-Algorithm">
+<h2>Choosing the Right Algorithm<a class="headerlink" href="#Choosing-the-Right-Algorithm" title="Link to this heading">#</a></h2>
+<p>The golden rule is to <strong>choose the most specific algorithm</strong> —i.e., the one that makes the most assumptions consistent with your problem. This often results in faster convergence. For example, if your objective functional has a gradient, a gradient-based method like <code class="docutils literal notranslate"><span class="pre">APGD</span></code> will generally be more efficient than a generic proximal-based method like <code class="docutils literal notranslate"><span class="pre">DouglasRachford</span></code>.</p>
+<p>The most generic algorithms in Pyxu are <code class="docutils literal notranslate"><span class="pre">PD3O</span></code> and <code class="docutils literal notranslate"><span class="pre">CondatVu</span></code>, but they are also the least efficient, so use them only when simpler methods like <code class="docutils literal notranslate"><span class="pre">ADMM</span></code>, <code class="docutils literal notranslate"><span class="pre">APGD</span></code> or <code class="docutils literal notranslate"><span class="pre">CG</span></code> cannot be used. Note that <code class="docutils literal notranslate"><span class="pre">ADAM</span></code> can also be useful when step sizes are too complex to compute.</p>
+</section>
+<section id="Hyperparameter-Tuning">
+<h2>Hyperparameter Tuning<a class="headerlink" href="#Hyperparameter-Tuning" title="Link to this heading">#</a></h2>
+<p>Pyxu comes with pre-implemented automatic tuning strategies for various algorithms. For instance, the primal-dual splitting methods offer three strategies:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tuning_strategy</span> <span class="pre">==</span> <span class="pre">1</span></code>: <strong>safe step sizes and no relaxation</strong>.This is the most standard way of setting the parameters in the literature, does not leverage relaxation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tuning_strategy</span> <span class="pre">==</span> <span class="pre">2</span></code>: <strong>large step sizes and no relaxation</strong>. This strategy favours large step sizes forbidding the use of overrelaxation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tuning_strategy</span> <span class="pre">==</span> <span class="pre">3</span></code>: <strong>safe step sizes and large overrelaxation</strong>. This strategy chooses smaller step sizes, but performs overrelaxation (momentum acceleration).</p></li>
+</ol>
+</section>
+<section id="Example-Usage">
+<h2>Example Usage<a class="headerlink" href="#Example-Usage" title="Link to this heading">#</a></h2>
+<p>Here’s how you can solve a problem involving multiple terms:</p>
+<div class="math notranslate nohighlight">
+\[\min_{\mathbf{x}\in\mathbb{R}^N}\frac{1}{2}\left\|\mathbf{y}-\mathbf{A}\mathbf{x}\right\|_2^2\quad+\quad\lambda_1 \|\mathbf{D}\mathbf{x}\|_1\quad+\quad\lambda_2 \|\mathbf{x}\|_1\]</div>
+<p>This problem can be written in the form</p>
+<div class="math notranslate nohighlight">
+\[{\min_{\mathbf{x}\in\mathbb{R}^N} \;\mathcal{F}(\mathbf{x})\;\;+\;\;\mathcal{G}(\mathbf{x})\;\;+\;\;\mathcal{H}(\mathbf{K} \mathbf{x})}\]</div>
+<p>by choosing <span class="math notranslate nohighlight">\(\mathcal{F}(\mathbf{x})= \frac{1}{2}\left\|\mathbf{y}-\mathbf{A}\mathbf{x}\right\|_2^2\)</span>, <span class="math notranslate nohighlight">\(\mathcal{G}(\mathbf{x})=\lambda_2\|\mathbf{x}\|_1\)</span>, <span class="math notranslate nohighlight">\(\mathcal{H}(\mathbf{x})=\lambda_1 \|\mathbf{x}\|_1\)</span> and <span class="math notranslate nohighlight">\(K=\mathbf{D}\)</span>.</p>
+<p>Solving this problem with Pyxu amounts to the following steps:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define operators A and D,</span>
+<span class="o">...</span>
+
+<span class="c1"># Defining functionals</span>
+<span class="n">l22_loss</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">SquaredL2Norm</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">asloss</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">A</span> <span class="c1"># Least-squares loss</span>
+<span class="n">l1_norm</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">L1Norm</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Proximable term H</span>
+<span class="n">l1_tv</span> <span class="o">=</span> <span class="mf">0.01</span> <span class="o">*</span> <span class="n">L1Norm</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Proximable term F</span>
+
+<span class="c1"># Initialize solver (Using Condat-Vu as an example)</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="n">CondatVu</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">loss</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="n">l1_norm</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="n">l1_tv</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="n">D</span><span class="p">,</span> <span class="n">show_progress</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Fit the model</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span> <span class="n">tuning_strategy</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solution</span><span class="p">()</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="Advanced-Usage:-Guru-Interface">
+<h2>Advanced Usage: Guru Interface<a class="headerlink" href="#Advanced-Usage:-Guru-Interface" title="Link to this heading">#</a></h2>
+<p>For those who want even more control, we provide a guru interface allowing you to overload default settings, including the stopping criteria (see module <code class="docutils literal notranslate"><span class="pre">pyxu.opt.stop</span></code> for available stopping criteria).</p>
+<p>For example, overloading the default stopping criterion of the <code class="docutils literal notranslate"><span class="pre">CondatVu</span></code> solver initialized above can be achieved as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Custom stopping criterion (optional)</span>
+<span class="n">custom_stop_crit</span> <span class="o">=</span> <span class="p">(</span><span class="n">RelError</span><span class="p">(</span><span class="n">eps</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">var</span><span class="o">=</span><span class="s2">"x"</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">satisfy_all</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">&amp;</span>
+                    <span class="n">RelError</span><span class="p">(</span><span class="n">eps</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">var</span><span class="o">=</span><span class="s2">"z"</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">satisfy_all</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">&amp;</span>
+                    <span class="n">MaxIter</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span> <span class="o">|</span> <span class="n">MaxIter</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1"># Fit the model  with the new stopping criterion</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span> <span class="n">tuning_strategy</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">stop_crit</span><span class="o">=</span><span class="n">custom_stop_crit</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="Implementing-New-Algorithms">
+<h2>Implementing New Algorithms<a class="headerlink" href="#Implementing-New-Algorithms" title="Link to this heading">#</a></h2>
+<p>To implement a new iterative solver, users need to sub-class <code class="docutils literal notranslate"><span class="pre">pyxu.abc.solver.Solver</span></code> and overwrite some of its core methods, such as <code class="docutils literal notranslate"><span class="pre">m_init()</span></code>, and <code class="docutils literal notranslate"><span class="pre">m_step()</span></code>, which describe the initalization and update step of iterative algorithms (see the API Reference for more details).</p>
+<p>Sub-classes of <code class="docutils literal notranslate"><span class="pre">Solver</span></code> inherit automatically from its very versatile API for solving optimisation problems, with the following notable features:</p>
+<ul class="simple">
+<li><p>manual/automatic/background execution of solver iterations via parameters provided to <code class="docutils literal notranslate"><span class="pre">fit()</span></code>.</p></li>
+<li><p>automatic checkpointing of solver progress, providing a safe restore point in case of faulty numerical code. Each solver instance backs its state and final output to a folder on disk for post-analysis. In particular <code class="docutils literal notranslate"><span class="pre">fit()</span></code> will never crash: detailed exception information will always be available in a logfile for post-analysis.</p></li>
+<li><p>solve for multiple initial points in parallel.</p></li>
+</ul>
+<p>Now that you’re equipped with the algorithmic know-how, go ahead and choose the best algorithm for your Bayesian estimation problem. Happy optimizing! 🚀</p>
+</section>
+</section>
+</article>
+<footer class="bd-footer-article">
+<div class="footer-article-items footer-article__inner">
+<div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="algebra.html" title="previous page">
+<i class="fa-solid fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Operator Algebra Logic</p>
+</div>
+</a>
+<a class="right-next" href="lipschitz.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Lipschitz Constants and Automatic Step Size Tuning</p>
+</div>
+<i class="fa-solid fa-angle-right"></i>
+</a>
+</div></div>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> On this page
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Algorithms-Overview">Algorithms Overview</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Conjugate-Gradient-(CG)">Conjugate Gradient (CG)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Accelerated-Proximal-Gradient-Descent-(APGD)">Accelerated Proximal Gradient Descent (APGD)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Primal-Dual-Splitting-(PDS)-Methods">Primal-Dual Splitting (PDS) Methods</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Choosing-the-Right-Algorithm">Choosing the Right Algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Hyperparameter-Tuning">Hyperparameter Tuning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Example-Usage">Example Usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Advanced-Usage:-Guru-Interface">Advanced Usage: Guru Interface</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Implementing-New-Algorithms">Implementing New Algorithms</a></li>
+</ul>
+</nav></div>
+<div class="sidebar-secondary-item">
+<div id="searchbox"></div></div>
+<div class="sidebar-secondary-item">
+<div class="tocsection editthispage">
+<a href="https://github.com/matthieumeo/pyxu/edit/main/doc/guide/algorithms.ipynb">
+<i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+</div>
+</div>
+<div class="sidebar-secondary-item">
+<div class="tocsection sourcelink">
+<a href="../_sources/guide/algorithms.ipynb">
+<i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+</div>
+</div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+<footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+<div class="footer-items__start">
+<div class="footer-item">
+<p class="copyright">
+    
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      <br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+    <br/>
+</p>
+</div>
+</div>
+<div class="footer-items__end">
+<div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+</div>
+</div>
+</footer>
+</body>
+</html>

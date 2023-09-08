@@ -202,7 +202,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> v1.0.x </strong></div>
+        <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -344,7 +344,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> v1.0.x </strong></div>
+          <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -408,7 +408,7 @@ document.write(`
   <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="primer.html">Computational Imaging in a Nutshell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tomo.html">Hands-on Example: Computerised Tomography with Pyxu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tomo.html">Hands-on Example: Computerized Tomography with Pyxu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="comparison.html">Comparison with other Frameworks</a></li>
 </ul>
 </div>
@@ -466,44 +466,59 @@ document.write(`
                   
   <section id="getting-started">
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h1>
-<p>In the fast-paced landscape of <a class="reference external" href="https://www.wikiwand.com/en/Computational_imaging">computational imaging</a>, where digital image restoration and enhancement techniques are cornerstone methodologies, you need a tool that’s not only efficient but also incredibly adaptable.
-That’s where Pyxu comes in! Whether you’re in computer vision, biomedical imaging, or radio-interferometry, Pyxu is here to turbocharge your imaging projects across the board.</p>
+<p>In the fast-paced landscape of <a class="reference external" href="https://www.wikiwand.com/en/Computational_imaging">computational imaging</a>, where
+digital image restoration and enhancement techniques are cornerstone methodologies, you need a tool that’s not only
+efficient but also incredibly adaptable.  That’s where Pyxu comes in! Whether you’re in computer vision, biomedical
+imaging, or radio-interferometry, Pyxu is here to turbocharge your imaging projects across the board.</p>
 <section id="what-makes-pyxu-special">
 <h2>What Makes Pyxu Special?<a class="headerlink" href="#what-makes-pyxu-special" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Universal &amp; Modular 🌐:</strong> Unlike other platforms that are specialized for particular imaging types, Pyxu is a general-purpose computational imaging tool. No more wrestling with one-size-fits-all solutions that don’t quite fit!</p></li>
-<li><p><strong>Plug-and-Play Functionality 🎮:</strong> Craft bespoke imaging pipelines effortlessly with advanced operator algebra logic. Pyxu automates the tedious bits, like computing gradients, proximal operators, and hyperparameters.</p></li>
-<li><p><strong>High-Performance Computing 🚀:</strong> Whether you’re working with CPUs or GPUs, Pyxu is optimized for both. It employs <a class="reference external" href="https://numpy.org/neps/nep-0022-ndarray-duck-typing-overview.html">Duck arrays</a> and just-in-time compiling with <a class="reference external" href="https://numba.pydata.org/">Numba</a>, supporting frameworks like <a class="reference external" href="https://cupy.dev/">CuPy</a> for GPU and <a class="reference external" href="https://dask.org/">Dask</a> for distributed computing.</p></li>
-<li><p><strong>Flexible &amp; Adaptable 🛠️:</strong> Combat the common woes of software rigidity with Pyxu’s ultra-flexible framework. Bayesian techniques requiring extensive software flexibility are a breeze here.</p></li>
-<li><p><strong>Hardware Acceleration 🖥️:</strong> Leverage built-in support for hardware acceleration to ramp up your computational speed, all thanks to our module-agnostic codebase.</p></li>
-<li><p><strong>Distributed Computing 🔗:</strong> Got a lot of data? No worries! Pyxu is built for scaling, easily deployable on institutional clusters using industry-standard technologies like <a class="reference external" href="https://kubernetes.io/">Kubernetes</a> and <a class="reference external" href="https://www.docker.com/">Docker</a>.</p></li>
-<li><p><strong>Deep Learning Interoperability 🤖:</strong>  Integrate with major deep learning frameworks like <a class="reference external" href="https://pytorch.org/">PyTorch</a> and <a class="reference external" href="https://jax.readthedocs.io/en/latest/jax.html">JAX</a> for state-of-the-art computational imaging techniques.</p></li>
+<li><p><strong>Universal &amp; Modular 🌐:</strong> Unlike other frameworks which are specialized for particular imaging types, Pyxu is a
+general-purpose computational imaging tool. No more wrestling with one-size-fits-all solutions that don’t quite fit!</p></li>
+<li><p><strong>Plug-and-Play Functionality 🎮:</strong> Craft imaging pipelines effortlessly with advanced operator algebra logic.  Pyxu
+automates the tedious bits, like computing gradients, proximal operators, and computing hyperparameters.</p></li>
+<li><p><strong>High-Performance Computing 🚀:</strong> Whether you’re using CPUs or GPUs, Pyxu works with both. It employs <a class="reference external" href="https://numpy.org/neps/nep-0022-ndarray-duck-typing-overview.html">Duck arrays</a>, just-in-time compilation via <a class="reference external" href="https://numba.pydata.org/">Numba</a>, and relies on <a class="reference external" href="https://cupy.dev/">CuPy</a> and <a class="reference external" href="https://dask.org/">Dask</a> for
+GPU/distributed computing needs.</p></li>
+<li><p><strong>Flexible &amp; Adaptable 🛠️:</strong> Combat the common woes of software rigidity with Pyxu’s ultra-flexible framework.
+Bayesian techniques requiring extensive software flexibility are a breeze here.</p></li>
+<li><p><strong>Hardware Acceleration 🖥️:</strong> Leverage built-in support for hardware acceleration to ramp up your computational
+speed, all thanks to our module-agnostic codebase.</p></li>
+<li><p><strong>Distributed Computing 🔗:</strong> Got a lot of data? No worries! Pyxu works at scale and is easily deployable on
+institutional clusters using industry-standard technologies like <a class="reference external" href="https://kubernetes.io/">Kubernetes</a> and <a class="reference external" href="https://www.docker.com/">Docker</a>.</p></li>
+<li><p><strong>Deep Learning Interoperability 🤖:</strong>  Integrate with major deep learning frameworks like <a class="reference external" href="https://pytorch.org/">PyTorch</a> and <a class="reference external" href="https://jax.readthedocs.io/en/latest/jax.html">JAX</a> for state-of-the-art computational
+imaging techniques.</p></li>
 </ul>
 </section>
 <section id="why-is-pyxu-necessary">
 <h2>Why is Pyxu Necessary?<a class="headerlink" href="#why-is-pyxu-necessary" title="Link to this heading">#</a></h2>
-<p>In the realm of computer vision 📷, digital image restoration and enhancement techniques have established themselves as indispensable pillars.
-These techniques, aiming to restore and elevate the quality of degraded or partially observed images, have witnessed unprecedented progress 📈 in recent times.
-Thanks to potent image priors, we’ve now reached an era where image restoration and enhancement methods are incredibly advanced ✨ —so much so that we might be approaching a pinnacle in terms of performance and accuracy.</p>
+<p>In the realm of computer vision 📷, digital image restoration and enhancement techniques have established themselves as
+indispensable pillars.  These techniques, aiming to restore and elevate the quality of degraded or partially observed
+images, have witnessed unprecedented progress 📈 in recent times.  Thanks to potent image priors, we’ve now reached an
+era where image restoration and enhancement methods are incredibly advanced ✨ —so much so that we might be approaching a
+pinnacle in terms of performance and accuracy.</p>
 <p>However, it’s not all roses 🌹.</p>
-<p>Despite their leaps in progress, advanced image reconstruction methods often find themselves trapped in a vicious cycle of limited adaptability, usability, and reproducibility.
-Many advanced computational imaging solutions, while effective, are tailored for specific use-cases and seldom venture beyond the confines of a proof-of-concept 🚧.
-These niche solutions demand deep expertise to customize and deploy, making their adoption in production pipelines challenging.</p>
-<p>In essence, the imaging domain is desperately seeking what the deep learning community found in frameworks like <a class="reference external" href="https://pytorch.org/">PyTorch</a>, <a class="reference external" href="https://www.tensorflow.org/">TensorFlow</a>, or <a class="reference external" href="https://keras.io/">Keras</a> —a flexible, modular, and powerful environment that accelerates the adoption of cutting-edge methods in real-world settings.
-Pyxu stands as an answer to this call: a groundbreaking, open-source computational imaging software framework tailored for Python enthusiasts 🐍.</p>
+<p>Despite their leaps in progress, advanced image reconstruction methods often find themselves trapped in a vicious cycle
+of limited adaptability, usability, and reproducibility.  Many advanced computational imaging solutions, while
+effective, are tailored for specific use-cases and seldom venture beyond the confines of a proof-of-concept 🚧.  These
+niche solutions demand deep expertise to customize and deploy, making their adoption in production pipelines
+challenging.</p>
+<p>In essence, the imaging domain is desperately seeking what the deep learning community found in frameworks like <a class="reference external" href="https://pytorch.org/">PyTorch</a>, <a class="reference external" href="https://www.tensorflow.org/">TensorFlow</a>, or <a class="reference external" href="https://keras.io/">Keras</a> —a flexible,
+modular, and powerful environment that accelerates the adoption of cutting-edge methods in real-world settings.  Pyxu
+stands as an answer to this call: a groundbreaking, open-source computational imaging software framework tailored for
+Python enthusiasts 🐍.</p>
 </section>
 <section id="get-started-now">
 <h2>Get Started Now!<a class="headerlink" href="#get-started-now" title="Link to this heading">#</a></h2>
-<p>Ready to dive in? 🏊‍♀️ Our tutorial kicks off with an introductory overview of computational imaging and Bayesian reconstruction.
-It then provides an in-depth tour of Pyxu’s multitude of features through concrete examples.</p>
-<p>So, gear up to embark on a transformative journey in computational imaging.</p>
+<p>Ready to dive in? 🏊‍♀️ Our tutorial kicks off with an introductory overview of computational imaging and Bayesian
+reconstruction.  It then provides an in-depth tour of Pyxu’s features through concrete examples.</p>
+<p>So gear up to embark on a transformative journey in computational imaging.</p>
 </section>
 <section id="join-our-community">
 <h2>Join Our Community<a class="headerlink" href="#join-our-community" title="Link to this heading">#</a></h2>
-<p>Pyxu is open-source and ever-evolving 🚀. Your contributions, whether big or small, can make a significant impact.
-So come be a part of the community that’s setting the pace for computational imaging 🌱.</p>
-<p>Let’s accelerate the transition from research prototypes to production-ready solutions.
-Dive into Pyxu today and make computational imaging more powerful, efficient, and accessible for everyone! 🎉</p>
+<p>Pyxu is open-source and ever-evolving 🚀. Your contributions, whether big or small, can make a significant impact.  So
+come be part of the community that’s setting the pace for computational imaging 🌱.</p>
+<p>Let’s accelerate the transition from research prototypes to production-ready solutions.  Dive into Pyxu today and make
+computational imaging more powerful, efficient, and accessible for everyone! 🎉</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -621,14 +636,10 @@ Dive into Pyxu today and make computational imaging more powerful, efficient, an
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>
-      
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
-</p></div>
       
     </div>
   

@@ -43,7 +43,7 @@
   <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../../../_static/documentation_options.js?v=29481255"></script>
+    <script src="../../../../../_static/documentation_options.js?v=e02fc88f"></script>
     <script src="../../../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -199,7 +199,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> v0.0.1 </strong></div>
+        <div class="navbar-item"><strong> v1.0.x </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -341,7 +341,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> v0.0.1 </strong></div>
+          <div class="navbar-item"><strong> v1.0.x </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -510,7 +510,7 @@ document.write(`
 <span class="linenos"> 55</span>
 <span class="linenos"> 56</span><span class="sd">      .. code-block:: python3</span>
 <span class="linenos"> 57</span>
-<span class="linenos"> 58</span><span class="sd">         from pyxu.operator.linop import FFT</span>
+<span class="linenos"> 58</span><span class="sd">         from pyxu.operator import FFT</span>
 <span class="linenos"> 59</span><span class="sd">         import pyxu.util as pxu</span>
 <span class="linenos"> 60</span>
 <span class="linenos"> 61</span><span class="sd">         N = 10</span>
@@ -530,7 +530,7 @@ document.write(`
 <span class="linenos"> 75</span>
 <span class="linenos"> 76</span><span class="sd">      .. code-block:: python3</span>
 <span class="linenos"> 77</span>
-<span class="linenos"> 78</span><span class="sd">         from pyxu.operator.linop import FFT</span>
+<span class="linenos"> 78</span><span class="sd">         from pyxu.operator import FFT</span>
 <span class="linenos"> 79</span><span class="sd">         import pyxu.util as pxu</span>
 <span class="linenos"> 80</span>
 <span class="linenos"> 81</span><span class="sd">         N = 10</span>
@@ -560,7 +560,7 @@ document.write(`
 <span class="linenos">105</span>
 <span class="linenos">106</span><span class="sd">      .. code-block:: python3</span>
 <span class="linenos">107</span>
-<span class="linenos">108</span><span class="sd">         from pyxu.operator.linop import FFT</span>
+<span class="linenos">108</span><span class="sd">         from pyxu.operator import FFT</span>
 <span class="linenos">109</span><span class="sd">         import pyxu.util as pxu</span>
 <span class="linenos">110</span>
 <span class="linenos">111</span><span class="sd">         N_h, N_w = 10, 8</span>
@@ -585,7 +585,7 @@ document.write(`
 <span class="linenos">130</span>
 <span class="linenos">131</span><span class="sd">      .. code-block:: python3</span>
 <span class="linenos">132</span>
-<span class="linenos">133</span><span class="sd">         from pyxu.operator.linop import FFT</span>
+<span class="linenos">133</span><span class="sd">         from pyxu.operator import FFT</span>
 <span class="linenos">134</span><span class="sd">         import pyxu.util as pxu</span>
 <span class="linenos">135</span>
 <span class="linenos">136</span><span class="sd">         N_h, N_w = 10, 8</span>
@@ -679,7 +679,7 @@ document.write(`
 <span class="linenos">221</span>        <span class="k">return</span> <span class="n">L</span>
 <span class="linenos">222</span>
 <span class="linenos">223</span>    <span class="k">def</span> <span class="nf">gram</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
-<span class="linenos">224</span>        <span class="kn">from</span> <span class="nn">pyxu.operator.linop</span> <span class="kn">import</span> <span class="n">HomothetyOp</span>
+<span class="linenos">224</span>        <span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">HomothetyOp</span>
 <span class="linenos">225</span>
 <span class="linenos">226</span>        <span class="n">op_g</span> <span class="o">=</span> <span class="n">HomothetyOp</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">,</span> <span class="n">cst</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">lipschitz</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="linenos">227</span>        <span class="k">return</span> <span class="n">op_g</span>
@@ -690,7 +690,7 @@ document.write(`
 <span class="linenos">232</span>            <span class="c1"># There is no simple closed form to compute the co-gram in this case.</span>
 <span class="linenos">233</span>            <span class="n">op_cg</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">cogram</span><span class="p">()</span>
 <span class="linenos">234</span>        <span class="k">else</span><span class="p">:</span>
-<span class="linenos">235</span>            <span class="kn">from</span> <span class="nn">pyxu.operator.linop</span> <span class="kn">import</span> <span class="n">HomothetyOp</span>
+<span class="linenos">235</span>            <span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">HomothetyOp</span>
 <span class="linenos">236</span>
 <span class="linenos">237</span>            <span class="n">op_cg</span> <span class="o">=</span> <span class="n">HomothetyOp</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">codim</span><span class="p">,</span> <span class="n">cst</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">lipschitz</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="linenos">238</span>        <span class="k">return</span> <span class="n">op_cg</span>

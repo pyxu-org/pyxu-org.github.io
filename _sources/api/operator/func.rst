@@ -4,8 +4,8 @@ pyxu.operator.func
 .. contents:: Table of Contents
    :local:
    :depth: 1
-   
-Norms 
+
+Norms
 -----
 
 .. autoclass:: pyxu.operator.func.norm.L1Norm
@@ -57,6 +57,13 @@ Indicator functions
    :special-members: __init__
 
 .. autoclass:: pyxu.operator.func.indicator.ConvexSetIntersection
+   :no-members:
+   :members: prox
+   :special-members: __init__
+
+Loss functions
+--------------
+.. autoclass:: pyxu.operator.func.loss.KLDivergence
    :no-members:
    :members: prox
    :special-members: __init__
