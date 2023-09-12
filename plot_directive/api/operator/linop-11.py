@@ -1,31 +1,40 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from pyxu.operator import DirectionalGradient
+from pyxu.operator import PartialDerivative
 from pyxu.util.misc import peaks
 
 x = np.linspace(-2.5, 2.5, 25)
 xx, yy = np.meshgrid(x, x)
-z = peaks(xx, yy)
-directions1 = np.zeros(shape=(2, z.size))
-directions1[0, :z.size // 2] = 1
-directions1[1, z.size // 2:] = 1
-directions2 = np.zeros(shape=(2, z.size))
-directions2[1, :z.size // 2] = -1
-directions2[0, z.size // 2:] = -1
-arg_shape = z.shape
-dop = DirectionalGradient(arg_shape=arg_shape, directions=[directions1, directions2])
-out = dop.unravel(dop(z.ravel()))
+image = peaks(xx, yy)
+arg_shape = image.shape  # Shape of our image
+# Specify derivative order at each direction
+df_dx = (1, 0)  # Compute derivative of order 1 in first dimension
+d2f_dy2 = (0, 2)  # Compute derivative of order 2 in second dimension
+d3f_dxdy2 = (1, 2)  # Compute derivative of order 1 in first dimension and der. of order 2 in second dimension
+# Instantiate derivative operators
+sigma = 2.0
+diff1 = PartialDerivative.gaussian_derivative(order=df_dx, arg_shape=arg_shape, sigma=sigma / np.sqrt(2))
+diff2 = PartialDerivative.gaussian_derivative(order=d2f_dy2, arg_shape=arg_shape, sigma=sigma / np.sqrt(2))
+diff = PartialDerivative.gaussian_derivative(order=d3f_dxdy2, arg_shape=arg_shape, sigma=sigma)
+# Compute derivatives
+out1 = (diff1 * diff2)(image.ravel()).reshape(arg_shape)
+out2 = diff(image.ravel()).reshape(arg_shape)
+# Plot derivatives
+fig, axs = plt.subplots(1, 3, figsize=(15, 4))
+im = axs[0].imshow(image)
+axs[0].axis("off")
+axs[0].set_title("f(x,y)")
+plt.colorbar(im, ax=axs[0])
+axs[1].imshow(out1)
+axs[1].axis("off")
+axs[1].set_title(r"$\frac{\partial^{3} f(x,y)}{\partial x\partial y^{2}}$")
+plt.colorbar(im, ax=axs[1])
+
+axs[2].imshow(out2)
+axs[2].axis("off")
+axs[2].set_title(r"$\frac{\partial^{3} f(x,y)}{\partial x\partial y^{2}}$")
+plt.colorbar(im, ax=axs[2])
+
+# Test approximation error
 plt.figure()
-h = plt.pcolormesh(xx, yy, z, shading='auto')
-plt.quiver(x, x, directions1[1].reshape(arg_shape), directions1[0].reshape(xx.shape))
-plt.quiver(x, x, directions2[1].reshape(arg_shape), directions2[0].reshape(xx.shape), color='red')
-plt.colorbar(h)
-plt.title(r'Signal $\mathbf{f}$ and directions of derivatives')
-plt.figure()
-h = plt.pcolormesh(xx, yy, out[0], shading='auto')
-plt.colorbar(h)
-plt.title(r'$\nabla_{\mathbf{v}_0} \mathbf{f}$')
-plt.figure()
-h = plt.pcolormesh(xx, yy, out[1], shading='auto')
-plt.colorbar(h)
-plt.title(r'$\nabla_{\mathbf{v}_1} \mathbf{f}$')
+plt.imshow(abs(out1 - out2) / abs(out2)), plt.colorbar()

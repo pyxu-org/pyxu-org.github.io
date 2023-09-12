@@ -1,35 +1,34 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from pyxu.operator import DirectionalHessian
+from pyxu.operator import Gradient
 from pyxu.util.misc import peaks
 
-x = np.linspace(-2.5, 2.5, 25)
+# Define input image
+n = 100
+x = np.linspace(-3, 3, n)
 xx, yy = np.meshgrid(x, x)
-z = peaks(xx, yy)
-directions1 = np.zeros(shape=(2, z.size))
-directions1[0, :z.size // 2] = 1
-directions1[1, z.size // 2:] = 1
-directions2 = np.zeros(shape=(2, z.size))
-directions2[1, :z.size // 2] = -1
-directions2[0, z.size // 2:] = -1
-arg_shape = z.shape
-d_hess = DirectionalHessian(arg_shape=arg_shape, directions=[directions1, directions2])
-out = d_hess.unravel(d_hess(z.ravel()))
-plt.figure()
-h = plt.pcolormesh(xx, yy, z, shading='auto')
-plt.quiver(x, x, directions1[1].reshape(arg_shape), directions1[0].reshape(xx.shape))
-plt.quiver(x, x, directions2[1].reshape(arg_shape), directions2[0].reshape(xx.shape), color='red')
-plt.colorbar(h)
-plt.title(r'Signal $\mathbf{f}$ and directions of derivatives')
-plt.figure()
-h = plt.pcolormesh(xx, yy, out[0], shading='auto')
-plt.colorbar(h)
-plt.title(r'$\nabla^2_{\mathbf{v}_0} \mathbf{f}$')
-plt.figure()
-h = plt.pcolormesh(xx, yy, out[1], shading='auto')
-plt.colorbar(h)
-plt.title(r'$\nabla_{\mathbf{v}_0} \nabla_{\mathbf{v}_{1}} \mathbf{f}$')
-plt.figure()
-h = plt.pcolormesh(xx, yy, out[2], shading='auto')
-plt.colorbar(h)
-plt.title(r'$\nabla^2_{\mathbf{v}_1} \mathbf{f}$')
+image = peaks(xx, yy)
+arg_shape = image.shape  # (1000, 1000)
+# Instantiate gradient operator
+grad = Gradient(arg_shape=arg_shape)
+
+# Compute gradients
+output = grad(image.ravel()) # shape = (2000000, )
+df_dx, df_dy = grad.unravel(output) # shape = (2, 1000, 1000)
+
+# Plot image
+fig, axs = plt.subplots(1, 3, figsize=(15, 4))
+im = axs[0].imshow(image)
+axs[0].set_title("Image")
+axs[0].axis("off")
+plt.colorbar(im, ax=axs[0])
+
+# Plot gradient
+im = axs[1].imshow(df_dx)
+axs[1].set_title(r"$\partial f/ \partial x$")
+axs[1].axis("off")
+plt.colorbar(im, ax=axs[1])
+im = axs[2].imshow(df_dy)
+axs[2].set_title(r"$\partial f/ \partial y$")
+axs[2].axis("off")
+plt.colorbar(im, ax=axs[2])

@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css?v=7f9a90b1" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
@@ -199,7 +199,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> v1.0.x </strong></div>
+        <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -341,7 +341,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> v1.0.x </strong></div>
+          <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -466,7 +466,7 @@ document.write(`
 <span class="linenos">13</span>
 <span class="linenos">14</span>
 <div class="viewcode-block" id="backtracking_linesearch">
-<a class="viewcode-back" href="../../../api/math.html#pyxu.math.linesearch.backtracking_linesearch">[docs]</a>
+<a class="viewcode-back" href="../../../api/math.html#pyxu.math.backtracking_linesearch">[docs]</a>
 <span class="linenos">15</span><span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span>
 <span class="linenos">16</span>    <span class="n">i</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;direction&quot;</span><span class="p">,</span> <span class="s2">&quot;gradient&quot;</span><span class="p">,</span> <span class="s2">&quot;a0&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">),</span>
 <span class="linenos">17</span>    <span class="n">allow_None</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
@@ -481,8 +481,8 @@ document.write(`
 <span class="linenos">26</span>    <span class="n">c</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span> <span class="o">=</span> <span class="n">LINESEARCH_DEFAULT_C</span><span class="p">,</span>
 <span class="linenos">27</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">28</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">29</span><span class="sd">    Backtracking line search algorithm based on the</span>
-<span class="linenos">30</span><span class="sd">    `Armijo-Goldstein condition &lt;https://www.wikiwand.com/en/Backtracking_line_search&gt;`_.</span>
+<span class="linenos">29</span><span class="sd">    Backtracking line search algorithm based on the `Armijo-Goldstein condition</span>
+<span class="linenos">30</span><span class="sd">    &lt;https://www.wikiwand.com/en/Backtracking_line_search&gt;`_.</span>
 <span class="linenos">31</span>
 <span class="linenos">32</span><span class="sd">    Parameters</span>
 <span class="linenos">33</span><span class="sd">    ----------</span>
@@ -495,13 +495,13 @@ document.write(`
 <span class="linenos">40</span><span class="sd">    gradient: NDArray</span>
 <span class="linenos">41</span><span class="sd">        (..., N) gradient of `f` at initial search point(s).</span>
 <span class="linenos">42</span>
-<span class="linenos">43</span><span class="sd">        Specifying `gradient` when known is an optimization:</span>
-<span class="linenos">44</span><span class="sd">        it will be autocomputed via :py:meth:`~pyxu.abc.operator.DiffFunc.grad` if unspecified.</span>
+<span class="linenos">43</span><span class="sd">        Specifying `gradient` when known is an optimization: it will be autocomputed via</span>
+<span class="linenos">44</span><span class="sd">        :py:meth:`~pyxu.abc.DiffFunc.grad` if unspecified.</span>
 <span class="linenos">45</span><span class="sd">    a0: Real</span>
 <span class="linenos">46</span><span class="sd">        Initial step size.</span>
 <span class="linenos">47</span>
-<span class="linenos">48</span><span class="sd">        If unspecified and :math:`\nabla f` is :math:`\beta`-Lipschitz continuous, then `a0` is</span>
-<span class="linenos">49</span><span class="sd">        auto-chosen as :math:`\frac{1}{\beta}`.</span>
+<span class="linenos">48</span><span class="sd">        If unspecified and :math:`\nabla f` is :math:`\beta`-Lipschitz continuous, then `a0` is auto-chosen as</span>
+<span class="linenos">49</span><span class="sd">        :math:`\frac{1}{\beta}`.</span>
 <span class="linenos">50</span><span class="sd">    r: Real</span>
 <span class="linenos">51</span><span class="sd">        Step reduction factor.</span>
 <span class="linenos">52</span><span class="sd">    c: Real</span>
@@ -607,14 +607,10 @@ document.write(`
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>
-      
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
-</p></div>
       
     </div>
   

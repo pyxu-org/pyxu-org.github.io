@@ -140,7 +140,7 @@ document.write(`
 <label class="sr-only">PyPI</label></a>
 </li>
 <li class="nav-item">
-<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="mailto: matthieu.simeoni@gmail.com" rel="noopener" target="_blank" title="Contact"><span><i class="fa-brands fa-telegram"></i></span>
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="mailto: contact@pyxu.org" rel="noopener" target="_blank" title="Contact"><span><i class="fa-brands fa-telegram"></i></span>
 <label class="sr-only">Contact</label></a>
 </li>
 <li class="nav-item">
@@ -213,7 +213,7 @@ document.write(`
 <label class="sr-only">PyPI</label></a>
 </li>
 <li class="nav-item">
-<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="mailto: matthieu.simeoni@gmail.com" rel="noopener" target="_blank" title="Contact"><span><i class="fa-brands fa-telegram"></i></span>
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="mailto: contact@pyxu.org" rel="noopener" target="_blank" title="Contact"><span><i class="fa-brands fa-telegram"></i></span>
 <label class="sr-only">Contact</label></a>
 </li>
 <li class="nav-item">
@@ -267,7 +267,7 @@ document.write(`
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">skimage</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.linop.stencil.stencil.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">Convolve</span></a>
+<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">Convolve</span>
 </pre></div>
 </div>
 </div>
@@ -401,14 +401,14 @@ document.write(`
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.linop.stencil.stencil.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">conv</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.linop.stencil.stencil.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">Convolve</span></a><span class="p">(</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conv</span> <span class="o">=</span> <span class="n">Convolve</span><span class="p">(</span>
     <span class="n">arg_shape</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
     <span class="n">kernel</span><span class="o">=</span><span class="p">[</span><span class="n">kernel_1d</span><span class="p">,</span> <span class="n">kernel_1d</span><span class="p">],</span>
     <span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">],</span>
     <span class="n">mode</span><span class="o">=</span><span class="s2">"constant"</span><span class="p">,</span>
     <span class="n">enable_warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">y_pyxu</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.linop.stencil.stencil.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">conv</span></a><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">y_pyxu</span> <span class="o">=</span> <span class="n">conv</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
 <span class="k">assert</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.allclose.html#numpy.allclose" title="numpy.allclose"><span class="n">np</span><span class="o">.</span><span class="n">allclose</span></a><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pyxu</span><span class="p">)</span>
 </pre></div>
@@ -422,14 +422,14 @@ document.write(`
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.operator.interop</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/operator/interop.html#pyxu.operator.interop.sciop.from_sciop" title="pyxu.operator.interop.sciop.from_sciop"><span class="n">from_sciop</span></a>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.operator.interop</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/operator.interop.html#pyxu.operator.interop.from_sciop" title="pyxu.operator.interop.from_sciop"><span class="n">from_sciop</span></a>
 <span class="kn">import</span> <span class="nn">pyxu.abc</span> <span class="k">as</span> <span class="nn">pxa</span>
 
 <span class="kn">from</span> <span class="nn">pylops.signalprocessing</span> <span class="kn">import</span> <span class="n">Convolve2D</span>
 
 <span class="c1"># 2d convolution</span>
-<span class="n">conv_pylops</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/interop.html#pyxu.operator.interop.sciop.from_sciop" title="pyxu.operator.interop.sciop.from_sciop"><span class="n">from_sciop</span></a><span class="p">(</span>
-    <span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
+<span class="n">conv_pylops</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator.interop.html#pyxu.operator.interop.from_sciop" title="pyxu.operator.interop.from_sciop"><span class="n">from_sciop</span></a><span class="p">(</span>
+    <span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc/operator.html#pyxu.abc.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
     <span class="n">sp_op</span><span class="o">=</span><span class="n">Convolve2D</span><span class="p">(</span>
         <span class="n">dims</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
         <span class="n">h</span><span class="o">=</span><span class="n">kernel_2d</span><span class="p">,</span>
@@ -448,8 +448,8 @@ document.write(`
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Separable convolution</span>
-<span class="n">conv_pylops_rows</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/interop.html#pyxu.operator.interop.sciop.from_sciop" title="pyxu.operator.interop.sciop.from_sciop"><span class="n">from_sciop</span></a><span class="p">(</span>
-    <span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
+<span class="n">conv_pylops_rows</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator.interop.html#pyxu.operator.interop.from_sciop" title="pyxu.operator.interop.from_sciop"><span class="n">from_sciop</span></a><span class="p">(</span>
+    <span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc/operator.html#pyxu.abc.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
     <span class="n">sp_op</span><span class="o">=</span><span class="n">Convolve2D</span><span class="p">(</span>
         <span class="n">dims</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
         <span class="n">h</span><span class="o">=</span><span class="n">kernel_1d</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:],</span>
@@ -458,8 +458,8 @@ document.write(`
         <span class="n">method</span><span class="o">=</span><span class="s2">"direct"</span><span class="p">,</span>
     <span class="p">),</span>
 <span class="p">)</span>
-<span class="n">conv_pylops_cols</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/interop.html#pyxu.operator.interop.sciop.from_sciop" title="pyxu.operator.interop.sciop.from_sciop"><span class="n">from_sciop</span></a><span class="p">(</span>
-    <span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
+<span class="n">conv_pylops_cols</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator.interop.html#pyxu.operator.interop.from_sciop" title="pyxu.operator.interop.from_sciop"><span class="n">from_sciop</span></a><span class="p">(</span>
+    <span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc/operator.html#pyxu.abc.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
     <span class="n">sp_op</span><span class="o">=</span><span class="n">Convolve2D</span><span class="p">(</span>
         <span class="n">dims</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
         <span class="n">h</span><span class="o">=</span><span class="n">kernel_1d</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span>
@@ -574,21 +574,21 @@ document.write(`
 
                 <span class="c1"># Instantation + first run time</span>
                 <span class="n">tic</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span>
-                <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.linop.stencil.stencil.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">conv_pyxu</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.linop.stencil.stencil.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">Convolve</span></a><span class="p">(</span>
+                <span class="n">conv_pyxu</span> <span class="o">=</span> <span class="n">Convolve</span><span class="p">(</span>
                     <span class="n">arg_shape</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
                     <span class="n">kernel</span><span class="o">=</span><span class="p">[</span><span class="n">kernel</span><span class="p">,</span> <span class="n">kernel</span><span class="p">],</span>
                     <span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">],</span>
                     <span class="n">mode</span><span class="o">=</span><span class="s2">"constant"</span><span class="p">,</span>
                     <span class="n">enable_warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                 <span class="p">)</span>
-                <span class="n">y</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.linop.stencil.stencil.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">conv_pyxu</span></a><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+                <span class="n">y</span> <span class="o">=</span> <span class="n">conv_pyxu</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
                 <span class="n">t_pyxu</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span> <span class="o">-</span> <span class="n">tic</span>
 
                 <span class="c1"># Run time</span>
                 <span class="n">times</span> <span class="o">=</span> <span class="mi">0</span>
                 <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#range" title="range"><span class="nb">range</span></a><span class="p">(</span><span class="n">nreps</span><span class="p">):</span>
                     <span class="n">tic</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span>
-                    <span class="n">y</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.linop.stencil.stencil.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">conv_pyxu</span></a><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+                    <span class="n">y</span> <span class="o">=</span> <span class="n">conv_pyxu</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
                     <span class="n">times</span> <span class="o">+=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span> <span class="o">-</span> <span class="n">tic</span>
 
                 <span class="n">t_pyxu</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">times</span> <span class="o">/</span> <span class="n">nreps</span>
@@ -630,8 +630,8 @@ document.write(`
 
                 <span class="c1"># Instantation + first run time</span>
                 <span class="n">tic</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span>
-                <span class="n">conv_pylops_rows</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/interop.html#pyxu.operator.interop.sciop.from_sciop" title="pyxu.operator.interop.sciop.from_sciop"><span class="n">from_sciop</span></a><span class="p">(</span>
-                    <span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
+                <span class="n">conv_pylops_rows</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator.interop.html#pyxu.operator.interop.from_sciop" title="pyxu.operator.interop.from_sciop"><span class="n">from_sciop</span></a><span class="p">(</span>
+                    <span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc/operator.html#pyxu.abc.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
                     <span class="n">sp_op</span><span class="o">=</span><span class="n">Convolve2D</span><span class="p">(</span>
                         <span class="n">dims</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
                         <span class="n">h</span><span class="o">=</span><span class="n">kernel_1d</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:],</span>
@@ -640,8 +640,8 @@ document.write(`
                         <span class="n">method</span><span class="o">=</span><span class="s2">"direct"</span><span class="p">,</span>
                     <span class="p">),</span>
                 <span class="p">)</span>
-                <span class="n">conv_pylops_cols</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/interop.html#pyxu.operator.interop.sciop.from_sciop" title="pyxu.operator.interop.sciop.from_sciop"><span class="n">from_sciop</span></a><span class="p">(</span>
-                    <span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
+                <span class="n">conv_pylops_cols</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator.interop.html#pyxu.operator.interop.from_sciop" title="pyxu.operator.interop.from_sciop"><span class="n">from_sciop</span></a><span class="p">(</span>
+                    <span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc/operator.html#pyxu.abc.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
                     <span class="n">sp_op</span><span class="o">=</span><span class="n">Convolve2D</span><span class="p">(</span>
                         <span class="n">dims</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
                         <span class="n">h</span><span class="o">=</span><span class="n">kernel_1d</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span>

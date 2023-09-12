@@ -199,7 +199,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> v1.0.x </strong></div>
+        <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -341,7 +341,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> v1.0.x </strong></div>
+          <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -469,81 +469,80 @@ document.write(`
 <span class="linenos">16</span>
 <span class="linenos">17</span>
 <div class="viewcode-block" id="from_sciop">
-<a class="viewcode-back" href="../../../../api/operator/interop.html#pyxu.operator.interop.sciop.from_sciop">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator.interop.html#pyxu.operator.interop.from_sciop">[docs]</a>
 <span class="linenos">18</span><span class="k">def</span> <span class="nf">from_sciop</span><span class="p">(</span><span class="bp">cls</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpC</span><span class="p">,</span> <span class="n">sp_op</span><span class="p">:</span> <span class="n">spsl</span><span class="o">.</span><span class="n">LinearOperator</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
 <span class="linenos">19</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">20</span><span class="sd">    Wrap a :py:class:`scipy.sparse.linalg.LinearOperator` as a</span>
-<span class="linenos">21</span><span class="sd">    :py:class:`~pyxu.abc.operator.LinOp` (or sub-classes thereof).</span>
-<span class="linenos">22</span>
-<span class="linenos">23</span><span class="sd">    Parameters</span>
-<span class="linenos">24</span><span class="sd">    ----------</span>
-<span class="linenos">25</span><span class="sd">    sp_op: ~scipy.sparse.linalg.LinearOperator</span>
-<span class="linenos">26</span><span class="sd">        (N, M) Linear CPU/GPU operator compliant with SciPy&#39;s interface.</span>
-<span class="linenos">27</span>
-<span class="linenos">28</span><span class="sd">    Returns</span>
-<span class="linenos">29</span><span class="sd">    -------</span>
-<span class="linenos">30</span><span class="sd">    op: OpT</span>
-<span class="linenos">31</span><span class="sd">        (N, M) Pyxu-compliant linear operator.</span>
-<span class="linenos">32</span><span class="sd">    &quot;&quot;&quot;</span>
-<span class="linenos">33</span>    <span class="k">assert</span> <span class="bp">cls</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">Property</span><span class="o">.</span><span class="n">LINEAR</span><span class="p">)</span>
-<span class="linenos">34</span>
-<span class="linenos">35</span>    <span class="k">if</span> <span class="n">sp_op</span><span class="o">.</span><span class="n">dtype</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">_</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="p">]:</span>
-<span class="linenos">36</span>        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="linenos">37</span>            <span class="s2">&quot;Computation may not be performed at the requested precision.&quot;</span><span class="p">,</span>
-<span class="linenos">38</span>            <span class="n">pxw</span><span class="o">.</span><span class="n">PrecisionWarning</span><span class="p">,</span>
-<span class="linenos">39</span>        <span class="p">)</span>
-<span class="linenos">40</span>
-<span class="linenos">41</span>    <span class="c1"># [r]matmat only accepts 2D inputs -&gt; reshape apply|adjoint inputs as needed.</span>
-<span class="linenos">42</span>
-<span class="linenos">43</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">)</span>
-<span class="linenos">44</span>    <span class="k">def</span> <span class="nf">op_apply</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
-<span class="linenos">45</span>        <span class="n">sh</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="linenos">46</span>        <span class="n">arr</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">_</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
-<span class="linenos">47</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">_</span><span class="o">.</span><span class="n">_sp_op</span><span class="o">.</span><span class="n">matmat</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
-<span class="linenos">48</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">out</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">*</span><span class="n">sh</span><span class="p">,</span> <span class="n">_</span><span class="o">.</span><span class="n">codim</span><span class="p">)</span>
-<span class="linenos">49</span>        <span class="k">return</span> <span class="n">out</span>
-<span class="linenos">50</span>
-<span class="linenos">51</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">)</span>
-<span class="linenos">52</span>    <span class="k">def</span> <span class="nf">op_adjoint</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
-<span class="linenos">53</span>        <span class="n">sh</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="linenos">54</span>        <span class="n">arr</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">_</span><span class="o">.</span><span class="n">codim</span><span class="p">)</span>
-<span class="linenos">55</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">_</span><span class="o">.</span><span class="n">_sp_op</span><span class="o">.</span><span class="n">rmatmat</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
-<span class="linenos">56</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">out</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">*</span><span class="n">sh</span><span class="p">,</span> <span class="n">_</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
-<span class="linenos">57</span>        <span class="k">return</span> <span class="n">out</span>
-<span class="linenos">58</span>
-<span class="linenos">59</span>    <span class="k">def</span> <span class="nf">op_asarray</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
-<span class="linenos">60</span>        <span class="c1"># Determine XP-module accepted by sci_op, then compute array-representation.</span>
-<span class="linenos">61</span>        <span class="k">for</span> <span class="n">ndi</span> <span class="ow">in</span> <span class="p">[</span>
-<span class="linenos">62</span>            <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">NUMPY</span><span class="p">,</span>
-<span class="linenos">63</span>            <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">CUPY</span><span class="p">,</span>
-<span class="linenos">64</span>        <span class="p">]:</span>
-<span class="linenos">65</span>            <span class="k">try</span><span class="p">:</span>
-<span class="linenos">66</span>                <span class="bp">cls</span> <span class="o">=</span> <span class="n">_</span><span class="o">.</span><span class="vm">__class__</span>
-<span class="linenos">67</span>                <span class="n">_A</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">xp</span><span class="o">=</span><span class="n">ndi</span><span class="o">.</span><span class="n">module</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="n">_sp_op</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-<span class="linenos">68</span>                <span class="k">break</span>
-<span class="linenos">69</span>            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-<span class="linenos">70</span>                <span class="k">pass</span>
-<span class="linenos">71</span>
-<span class="linenos">72</span>        <span class="c1"># Cast to user specs.</span>
-<span class="linenos">73</span>        <span class="n">xp</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;xp&quot;</span><span class="p">,</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">NUMPY</span><span class="o">.</span><span class="n">module</span><span class="p">())</span>
-<span class="linenos">74</span>        <span class="n">dtype</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;dtype&quot;</span><span class="p">,</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">getPrecision</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
-<span class="linenos">75</span>        <span class="n">A</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pxu</span><span class="o">.</span><span class="n">to_NUMPY</span><span class="p">(</span><span class="n">_A</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
-<span class="linenos">76</span>        <span class="k">return</span> <span class="n">A</span>
-<span class="linenos">77</span>
-<span class="linenos">78</span>    <span class="k">def</span> <span class="nf">op_expr</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
-<span class="linenos">79</span>        <span class="k">return</span> <span class="p">(</span><span class="s2">&quot;from_sciop&quot;</span><span class="p">,</span> <span class="n">_</span><span class="o">.</span><span class="n">_sp_op</span><span class="p">)</span>
-<span class="linenos">80</span>
-<span class="linenos">81</span>    <span class="n">op</span> <span class="o">=</span> <span class="n">px_src</span><span class="o">.</span><span class="n">from_source</span><span class="p">(</span>
-<span class="linenos">82</span>        <span class="bp">cls</span><span class="o">=</span><span class="bp">cls</span><span class="p">,</span>
-<span class="linenos">83</span>        <span class="n">shape</span><span class="o">=</span><span class="n">sp_op</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
-<span class="linenos">84</span>        <span class="n">apply</span><span class="o">=</span><span class="n">op_apply</span><span class="p">,</span>
-<span class="linenos">85</span>        <span class="n">adjoint</span><span class="o">=</span><span class="n">op_adjoint</span><span class="p">,</span>
-<span class="linenos">86</span>        <span class="n">asarray</span><span class="o">=</span><span class="n">op_asarray</span><span class="p">,</span>
-<span class="linenos">87</span>        <span class="n">_expr</span><span class="o">=</span><span class="n">op_expr</span><span class="p">,</span>
-<span class="linenos">88</span>    <span class="p">)</span>
-<span class="linenos">89</span>    <span class="n">op</span><span class="o">.</span><span class="n">_sp_op</span> <span class="o">=</span> <span class="n">sp_op</span>
-<span class="linenos">90</span>
-<span class="linenos">91</span>    <span class="k">return</span> <span class="n">op</span></div>
+<span class="linenos">20</span><span class="sd">    Wrap a :py:class:`~scipy.sparse.linalg.LinearOperator` as a :py:class:`~pyxu.abc.LinOp` (or sub-class thereof).</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="sd">    Parameters</span>
+<span class="linenos">23</span><span class="sd">    ----------</span>
+<span class="linenos">24</span><span class="sd">    sp_op: ~scipy.sparse.linalg.LinearOperator</span>
+<span class="linenos">25</span><span class="sd">        (N, M) Linear CPU/GPU operator compliant with SciPy&#39;s interface.</span>
+<span class="linenos">26</span>
+<span class="linenos">27</span><span class="sd">    Returns</span>
+<span class="linenos">28</span><span class="sd">    -------</span>
+<span class="linenos">29</span><span class="sd">    op: OpT</span>
+<span class="linenos">30</span><span class="sd">        (N, M) Pyxu-compliant linear operator.</span>
+<span class="linenos">31</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">32</span>    <span class="k">assert</span> <span class="bp">cls</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">Property</span><span class="o">.</span><span class="n">LINEAR</span><span class="p">)</span>
+<span class="linenos">33</span>
+<span class="linenos">34</span>    <span class="k">if</span> <span class="n">sp_op</span><span class="o">.</span><span class="n">dtype</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">_</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="p">]:</span>
+<span class="linenos">35</span>        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="linenos">36</span>            <span class="s2">&quot;Computation may not be performed at the requested precision.&quot;</span><span class="p">,</span>
+<span class="linenos">37</span>            <span class="n">pxw</span><span class="o">.</span><span class="n">PrecisionWarning</span><span class="p">,</span>
+<span class="linenos">38</span>        <span class="p">)</span>
+<span class="linenos">39</span>
+<span class="linenos">40</span>    <span class="c1"># [r]matmat only accepts 2D inputs -&gt; reshape apply|adjoint inputs as needed.</span>
+<span class="linenos">41</span>
+<span class="linenos">42</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">)</span>
+<span class="linenos">43</span>    <span class="k">def</span> <span class="nf">op_apply</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">44</span>        <span class="n">sh</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="linenos">45</span>        <span class="n">arr</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">_</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+<span class="linenos">46</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">_</span><span class="o">.</span><span class="n">_sp_op</span><span class="o">.</span><span class="n">matmat</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<span class="linenos">47</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">out</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">*</span><span class="n">sh</span><span class="p">,</span> <span class="n">_</span><span class="o">.</span><span class="n">codim</span><span class="p">)</span>
+<span class="linenos">48</span>        <span class="k">return</span> <span class="n">out</span>
+<span class="linenos">49</span>
+<span class="linenos">50</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">)</span>
+<span class="linenos">51</span>    <span class="k">def</span> <span class="nf">op_adjoint</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">52</span>        <span class="n">sh</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="linenos">53</span>        <span class="n">arr</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">_</span><span class="o">.</span><span class="n">codim</span><span class="p">)</span>
+<span class="linenos">54</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">_</span><span class="o">.</span><span class="n">_sp_op</span><span class="o">.</span><span class="n">rmatmat</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<span class="linenos">55</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">out</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">*</span><span class="n">sh</span><span class="p">,</span> <span class="n">_</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>
+<span class="linenos">56</span>        <span class="k">return</span> <span class="n">out</span>
+<span class="linenos">57</span>
+<span class="linenos">58</span>    <span class="k">def</span> <span class="nf">op_asarray</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">59</span>        <span class="c1"># Determine XP-module accepted by sci_op, then compute array-representation.</span>
+<span class="linenos">60</span>        <span class="k">for</span> <span class="n">ndi</span> <span class="ow">in</span> <span class="p">[</span>
+<span class="linenos">61</span>            <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">NUMPY</span><span class="p">,</span>
+<span class="linenos">62</span>            <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">CUPY</span><span class="p">,</span>
+<span class="linenos">63</span>        <span class="p">]:</span>
+<span class="linenos">64</span>            <span class="k">try</span><span class="p">:</span>
+<span class="linenos">65</span>                <span class="bp">cls</span> <span class="o">=</span> <span class="n">_</span><span class="o">.</span><span class="vm">__class__</span>
+<span class="linenos">66</span>                <span class="n">_A</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">xp</span><span class="o">=</span><span class="n">ndi</span><span class="o">.</span><span class="n">module</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="n">_sp_op</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<span class="linenos">67</span>                <span class="k">break</span>
+<span class="linenos">68</span>            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="linenos">69</span>                <span class="k">pass</span>
+<span class="linenos">70</span>
+<span class="linenos">71</span>        <span class="c1"># Cast to user specs.</span>
+<span class="linenos">72</span>        <span class="n">xp</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;xp&quot;</span><span class="p">,</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">NUMPY</span><span class="o">.</span><span class="n">module</span><span class="p">())</span>
+<span class="linenos">73</span>        <span class="n">dtype</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;dtype&quot;</span><span class="p">,</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">getPrecision</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+<span class="linenos">74</span>        <span class="n">A</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pxu</span><span class="o">.</span><span class="n">to_NUMPY</span><span class="p">(</span><span class="n">_A</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+<span class="linenos">75</span>        <span class="k">return</span> <span class="n">A</span>
+<span class="linenos">76</span>
+<span class="linenos">77</span>    <span class="k">def</span> <span class="nf">op_expr</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="linenos">78</span>        <span class="k">return</span> <span class="p">(</span><span class="s2">&quot;from_sciop&quot;</span><span class="p">,</span> <span class="n">_</span><span class="o">.</span><span class="n">_sp_op</span><span class="p">)</span>
+<span class="linenos">79</span>
+<span class="linenos">80</span>    <span class="n">op</span> <span class="o">=</span> <span class="n">px_src</span><span class="o">.</span><span class="n">from_source</span><span class="p">(</span>
+<span class="linenos">81</span>        <span class="bp">cls</span><span class="o">=</span><span class="bp">cls</span><span class="p">,</span>
+<span class="linenos">82</span>        <span class="n">shape</span><span class="o">=</span><span class="n">sp_op</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
+<span class="linenos">83</span>        <span class="n">apply</span><span class="o">=</span><span class="n">op_apply</span><span class="p">,</span>
+<span class="linenos">84</span>        <span class="n">adjoint</span><span class="o">=</span><span class="n">op_adjoint</span><span class="p">,</span>
+<span class="linenos">85</span>        <span class="n">asarray</span><span class="o">=</span><span class="n">op_asarray</span><span class="p">,</span>
+<span class="linenos">86</span>        <span class="n">_expr</span><span class="o">=</span><span class="n">op_expr</span><span class="p">,</span>
+<span class="linenos">87</span>    <span class="p">)</span>
+<span class="linenos">88</span>    <span class="n">op</span><span class="o">.</span><span class="n">_sp_op</span> <span class="o">=</span> <span class="n">sp_op</span>
+<span class="linenos">89</span>
+<span class="linenos">90</span>    <span class="k">return</span> <span class="n">op</span></div>
 
 </pre></div>
 
@@ -604,14 +603,10 @@ document.write(`
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>
-      
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
-</p></div>
       
     </div>
   

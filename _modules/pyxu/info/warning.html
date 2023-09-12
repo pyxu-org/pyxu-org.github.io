@@ -199,7 +199,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> v1.0.x </strong></div>
+        <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -236,7 +236,7 @@ document.write(`
           
           
           
-          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+          <a href="mailto: contact@pyxu.org" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
             <label class="sr-only">Contact</label></a>
         </li>
         <li class="nav-item">
@@ -341,7 +341,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> v1.0.x </strong></div>
+          <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -378,7 +378,7 @@ document.write(`
           
           
           
-          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+          <a href="mailto: contact@pyxu.org" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
             <label class="sr-only">Contact</label></a>
         </li>
         <li class="nav-item">
@@ -451,84 +451,82 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <h1>Source code for pyxu.info.warning</h1><div class="highlight"><pre>
-<span></span><span class="linenos"> 1</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos"> 2</span><span class="sd">Custom warnings used inside Pyxu.</span>
-<span class="linenos"> 3</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos"> 4</span>
-<span class="linenos"> 5</span>
+<span></span><span class="linenos"> 1</span><span class="c1"># Custom warnings used inside Pyxu.</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
 <div class="viewcode-block" id="PyxuWarning">
-<a class="viewcode-back" href="../../../api/info.html#pyxu.info.warning.PyxuWarning">[docs]</a>
-<span class="linenos"> 6</span><span class="k">class</span> <span class="nc">PyxuWarning</span><span class="p">(</span><span class="ne">UserWarning</span><span class="p">):</span>
-<span class="linenos"> 7</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos"> 8</span><span class="sd">    Parent class of all warnings raised in Pyxu.</span>
-<span class="linenos"> 9</span><span class="sd">    &quot;&quot;&quot;</span>
+<a class="viewcode-back" href="../../../api/info.warning.html#pyxu.info.warning.PyxuWarning">[docs]</a>
+<span class="linenos"> 4</span><span class="k">class</span> <span class="nc">PyxuWarning</span><span class="p">(</span><span class="ne">UserWarning</span><span class="p">):</span>
+<span class="linenos"> 5</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 6</span><span class="sd">    Parent class of all warnings raised in Pyxu.</span>
+<span class="linenos"> 7</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>    <span class="k">pass</span></div>
+
 <span class="linenos">10</span>
-<span class="linenos">11</span>    <span class="k">pass</span></div>
-
-<span class="linenos">12</span>
-<span class="linenos">13</span>
+<span class="linenos">11</span>
 <div class="viewcode-block" id="AutoInferenceWarning">
-<a class="viewcode-back" href="../../../api/info.html#pyxu.info.warning.AutoInferenceWarning">[docs]</a>
-<span class="linenos">14</span><span class="k">class</span> <span class="nc">AutoInferenceWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
-<span class="linenos">15</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">16</span><span class="sd">    Use when a quantity was auto-inferenced with possible caveats.</span>
-<span class="linenos">17</span><span class="sd">    &quot;&quot;&quot;</span>
+<a class="viewcode-back" href="../../../api/info.warning.html#pyxu.info.warning.AutoInferenceWarning">[docs]</a>
+<span class="linenos">12</span><span class="k">class</span> <span class="nc">AutoInferenceWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
+<span class="linenos">13</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">14</span><span class="sd">    Use when a quantity was auto-inferenced with possible caveats.</span>
+<span class="linenos">15</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span>    <span class="k">pass</span></div>
+
 <span class="linenos">18</span>
-<span class="linenos">19</span>    <span class="k">pass</span></div>
-
-<span class="linenos">20</span>
-<span class="linenos">21</span>
+<span class="linenos">19</span>
 <div class="viewcode-block" id="PerformanceWarning">
-<a class="viewcode-back" href="../../../api/info.html#pyxu.info.warning.PerformanceWarning">[docs]</a>
-<span class="linenos">22</span><span class="k">class</span> <span class="nc">PerformanceWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
-<span class="linenos">23</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">24</span><span class="sd">    Use for performance-related warnings.</span>
-<span class="linenos">25</span><span class="sd">    &quot;&quot;&quot;</span></div>
+<a class="viewcode-back" href="../../../api/info.warning.html#pyxu.info.warning.PerformanceWarning">[docs]</a>
+<span class="linenos">20</span><span class="k">class</span> <span class="nc">PerformanceWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
+<span class="linenos">21</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">22</span><span class="sd">    Use for performance-related warnings.</span>
+<span class="linenos">23</span><span class="sd">    &quot;&quot;&quot;</span></div>
 
-<span class="linenos">26</span>
-<span class="linenos">27</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span>
 <div class="viewcode-block" id="PrecisionWarning">
-<a class="viewcode-back" href="../../../api/info.html#pyxu.info.warning.PrecisionWarning">[docs]</a>
-<span class="linenos">28</span><span class="k">class</span> <span class="nc">PrecisionWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
-<span class="linenos">29</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">30</span><span class="sd">    Use for precision-related warnings.</span>
-<span class="linenos">31</span><span class="sd">    &quot;&quot;&quot;</span></div>
+<a class="viewcode-back" href="../../../api/info.warning.html#pyxu.info.warning.PrecisionWarning">[docs]</a>
+<span class="linenos">26</span><span class="k">class</span> <span class="nc">PrecisionWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
+<span class="linenos">27</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">28</span><span class="sd">    Use for precision-related warnings.</span>
+<span class="linenos">29</span><span class="sd">    &quot;&quot;&quot;</span></div>
 
-<span class="linenos">32</span>
-<span class="linenos">33</span>
+<span class="linenos">30</span>
+<span class="linenos">31</span>
 <div class="viewcode-block" id="DenseWarning">
-<a class="viewcode-back" href="../../../api/info.html#pyxu.info.warning.DenseWarning">[docs]</a>
-<span class="linenos">34</span><span class="k">class</span> <span class="nc">DenseWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
-<span class="linenos">35</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">36</span><span class="sd">    Use for sparse-based algos which revert to dense arrays.</span>
-<span class="linenos">37</span><span class="sd">    &quot;&quot;&quot;</span></div>
+<a class="viewcode-back" href="../../../api/info.warning.html#pyxu.info.warning.DenseWarning">[docs]</a>
+<span class="linenos">32</span><span class="k">class</span> <span class="nc">DenseWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
+<span class="linenos">33</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">34</span><span class="sd">    Use for sparse-based algos which revert to dense arrays.</span>
+<span class="linenos">35</span><span class="sd">    &quot;&quot;&quot;</span></div>
 
-<span class="linenos">38</span>
-<span class="linenos">39</span>
+<span class="linenos">36</span>
+<span class="linenos">37</span>
 <div class="viewcode-block" id="NonTransparentWarning">
-<a class="viewcode-back" href="../../../api/info.html#pyxu.info.warning.NonTransparentWarning">[docs]</a>
-<span class="linenos">40</span><span class="k">class</span> <span class="nc">NonTransparentWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
-<span class="linenos">41</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">42</span><span class="sd">    Inform test suite runner of (safe) non-transparent function call.</span>
-<span class="linenos">43</span><span class="sd">    &quot;&quot;&quot;</span></div>
+<a class="viewcode-back" href="../../../api/info.warning.html#pyxu.info.warning.NonTransparentWarning">[docs]</a>
+<span class="linenos">38</span><span class="k">class</span> <span class="nc">NonTransparentWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
+<span class="linenos">39</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">40</span><span class="sd">    Inform test suite runner of (safe) non-transparent function call.</span>
+<span class="linenos">41</span><span class="sd">    &quot;&quot;&quot;</span></div>
 
-<span class="linenos">44</span>
-<span class="linenos">45</span>
+<span class="linenos">42</span>
+<span class="linenos">43</span>
 <div class="viewcode-block" id="BackendWarning">
-<a class="viewcode-back" href="../../../api/info.html#pyxu.info.warning.BackendWarning">[docs]</a>
-<span class="linenos">46</span><span class="k">class</span> <span class="nc">BackendWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
-<span class="linenos">47</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">48</span><span class="sd">    Inform user of a backend-specific problem to be aware of.</span>
-<span class="linenos">49</span><span class="sd">    &quot;&quot;&quot;</span></div>
+<a class="viewcode-back" href="../../../api/info.warning.html#pyxu.info.warning.BackendWarning">[docs]</a>
+<span class="linenos">44</span><span class="k">class</span> <span class="nc">BackendWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
+<span class="linenos">45</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">46</span><span class="sd">    Inform user of a backend-specific problem to be aware of.</span>
+<span class="linenos">47</span><span class="sd">    &quot;&quot;&quot;</span></div>
 
-<span class="linenos">50</span>
-<span class="linenos">51</span>
+<span class="linenos">48</span>
+<span class="linenos">49</span>
 <div class="viewcode-block" id="ContributionWarning">
-<a class="viewcode-back" href="../../../api/info.html#pyxu.info.warning.ContributionWarning">[docs]</a>
-<span class="linenos">52</span><span class="k">class</span> <span class="nc">ContributionWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
-<span class="linenos">53</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">54</span><span class="sd">    Use for warnings related to Pyxu plugins.</span>
-<span class="linenos">55</span><span class="sd">    &quot;&quot;&quot;</span></div>
+<a class="viewcode-back" href="../../../api/info.warning.html#pyxu.info.warning.ContributionWarning">[docs]</a>
+<span class="linenos">50</span><span class="k">class</span> <span class="nc">ContributionWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
+<span class="linenos">51</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">52</span><span class="sd">    Use for warnings related to Pyxu plugins.</span>
+<span class="linenos">53</span><span class="sd">    &quot;&quot;&quot;</span></div>
 
 </pre></div>
 
@@ -589,14 +587,10 @@ document.write(`
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>
-      
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
-</p></div>
       
     </div>
   

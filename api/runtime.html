@@ -61,8 +61,8 @@
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="pyxu.util" href="util.html" />
-    <link rel="prev" title="pyxu.operator.interop" href="operator/interop.html" />
+    <link rel="next" title="pyxu.math" href="math.html" />
+    <link rel="prev" title="pyxu.opt.stop" href="opt.stop.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -239,7 +239,7 @@ document.write(`
           
           
           
-          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+          <a href="mailto: contact@pyxu.org" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
             <label class="sr-only">Contact</label></a>
         </li>
         <li class="nav-item">
@@ -381,7 +381,7 @@ document.write(`
           
           
           
-          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+          <a href="mailto: contact@pyxu.org" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
             <label class="sr-only">Contact</label></a>
         </li>
         <li class="nav-item">
@@ -406,22 +406,36 @@ document.write(`
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="abc.html">pyxu.abc</a></li>
-<li class="toctree-l1"><a class="reference internal" href="opt.html">pyxu.opt</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="operator/index.html">pyxu.operator</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="operator/map.html">pyxu.operator.map</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operator/func.html">pyxu.operator.func</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operator/linop.html">pyxu.operator.linop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operator/blocks.html">pyxu.operator.blocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operator/interop.html">pyxu.operator.interop</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="abc/index.html">pyxu.abc</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="abc/arithmetic.html">pyxu.abc.arithmetic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abc/operator.html">pyxu.abc.operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abc/solver.html">pyxu.abc.solver</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="info.deps.html">pyxu.info.deps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.ptype.html">pyxu.info.ptype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.warning.html">pyxu.info.warning</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="operator/index.html">pyxu.operator</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="operator/blocks.html">pyxu.operator.blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operator/func.html">pyxu.operator.func</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operator/linop.html">pyxu.operator.linop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operator/map.html">pyxu.operator.map</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="operator.interop.html">pyxu.operator.interop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opt.solver.html">pyxu.opt.solver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opt.stop.html">pyxu.opt.stop</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">pyxu.runtime</a></li>
-<li class="toctree-l1"><a class="reference internal" href="util.html">pyxu.util</a></li>
 <li class="toctree-l1"><a class="reference internal" href="math.html">pyxu.math</a></li>
-<li class="toctree-l1"><a class="reference internal" href="info.html">pyxu.info</a></li>
-<li class="toctree-l1"><a class="reference internal" href="experimental.html">pyxu.experimental</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="util/index.html">pyxu.util</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="util/array_module.html">pyxu.util.array_module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="util/complex.html">pyxu.util.complex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="util/misc.html">pyxu.util.misc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="util/operator.html">pyxu.util.operator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="experimental.sampler.html">pyxu.experimental.sampler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html"><strong>References</strong></a></li>
 </ul>
 </div>
 </nav></div>
@@ -508,9 +522,7 @@ document.write(`
 <dt class="sig sig-object py" id="pyxu.runtime.EnforcePrecision">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EnforcePrecision</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/runtime/_runtime.html#EnforcePrecision"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.runtime.EnforcePrecision" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/contextlib.html#contextlib.AbstractContextManager" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractContextManager</span></code></a></p>
-<p>Context Manager to locally disable effect of
-<a class="reference internal" href="#pyxu.runtime.enforce_precision" title="pyxu.runtime.enforce_precision"><code class="xref py py-func docutils literal notranslate"><span class="pre">enforce_precision()</span></code></a>.
-[Default: enabled.]</p>
+<p>Context Manager to locally disable effect of <a class="reference internal" href="#pyxu.runtime.enforce_precision" title="pyxu.runtime.enforce_precision"><code class="xref py py-func docutils literal notranslate"><span class="pre">enforce_precision()</span></code></a>.  [Default: enabled.]</p>
 <p>Use this object via a with-block.</p>
 <p class="rubric">Example</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyxu.runtime</span> <span class="k">as</span> <span class="nn">pxrt</span>
@@ -572,7 +584,7 @@ document.write(`
 <p>Returns the difference between 1 and the next smallest representable float larger than 1.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="info.html#pyxu.info.ptype.Real" title="numbers.Real"><em>Real</em></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="numbers.Real"><em>Real</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -591,14 +603,14 @@ document.write(`
 <dd><p>Transform input to match runtime FP-precision.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference internal" href="info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – </p>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – </p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>y</strong> – Input cast to the runtime FP-precision.
-Fails if operation is impossible or unsafe. (I.e. casting complex-valued data.)</p>
+<dd class="field-even"><p><strong>y</strong> – Input cast to the runtime FP-precision.  Fails if operation is impossible or unsafe. (I.e. casting
+complex-valued data.)</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="info.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference internal" href="info.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a></p>
 </dd>
 </dl>
 <div class="admonition note">
@@ -614,12 +626,10 @@ Fails if operation is impossible or unsafe. (I.e. casting complex-valued data.)<
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>i</strong> (<a class="reference internal" href="info.html#pyxu.info.ptype.VarName" title="pyxu.info.ptype.VarName"><code class="xref py py-class docutils literal notranslate"><span class="pre">VarName</span></code></a>) – Function parameters for which precision must be enforced to runtime’s FP-precision.
-Function parameter values must have a NumPy API, or be scalars.
-None-valued parameters are allowed if <code class="code docutils literal notranslate"><span class="pre">allow_None</span></code> is True (default).</p></li>
-<li><p><strong>o</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If True (default), ensure function’s output (if any) has runtime’s FP-precision.
-If function’s output does not have a NumPy API or is not scalar-valued, set <code class="code docutils literal notranslate"><span class="pre">o</span></code> explicitly
-to False.</p></li>
+<li><p><strong>i</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.VarName" title="pyxu.info.ptype.VarName"><code class="xref py py-class docutils literal notranslate"><span class="pre">VarName</span></code></a>) – Function parameters for which precision must be enforced to runtime’s FP-precision.  Function parameter values
+must have a NumPy API, or be scalars.  None-valued parameters are allowed if <code class="code docutils literal notranslate"><span class="pre">allow_None</span></code> is True (default).</p></li>
+<li><p><strong>o</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If True (default), ensure function’s output (if any) has runtime’s FP-precision.  If function’s output does not
+have a NumPy API or is not scalar-valued, set <code class="code docutils literal notranslate"><span class="pre">o</span></code> explicitly to False.</p></li>
 <li><p><strong>allow_None</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – </p></li>
 </ul>
 </dd>
@@ -648,7 +658,8 @@ to False.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyxu.runtime.getCoerceState">
 <span class="sig-name descname"><span class="pre">getCoerceState</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/runtime/_runtime.html#getCoerceState"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.runtime.getCoerceState" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Query if <a class="reference internal" href="#pyxu.runtime.coerce" title="pyxu.runtime.coerce"><code class="xref py py-func docutils literal notranslate"><span class="pre">coerce()</span></code></a> is (currently) a no-op.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)">bool</a></p>
 </dd>
@@ -658,7 +669,8 @@ to False.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyxu.runtime.getPrecision">
 <span class="sig-name descname"><span class="pre">getPrecision</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/runtime/_runtime.html#getPrecision"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.runtime.getPrecision" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Query current FP precision.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#pyxu.runtime.Width" title="pyxu.runtime._runtime.Width"><em>Width</em></a></p>
 </dd>
@@ -679,20 +691,20 @@ to False.</p></li>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="operator/interop.html"
+       href="opt.stop.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">pyxu.operator.interop</p>
+        <p class="prev-next-title">pyxu.opt.stop</p>
       </div>
     </a>
     <a class="right-next"
-       href="util.html"
+       href="math.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">pyxu.util</p>
+        <p class="prev-next-title">pyxu.math</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

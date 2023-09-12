@@ -63,8 +63,8 @@
     <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="pyxu.operator.interop" href="interop.html" />
-    <link rel="prev" title="pyxu.operator.linop" href="linop.html" />
+    <link rel="next" title="pyxu.operator.func" href="func.html" />
+    <link rel="prev" title="pyxu.operator" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -241,7 +241,7 @@ document.write(`
           
           
           
-          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+          <a href="mailto: contact@pyxu.org" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
             <label class="sr-only">Contact</label></a>
         </li>
         <li class="nav-item">
@@ -383,7 +383,7 @@ document.write(`
           
           
           
-          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+          <a href="mailto: contact@pyxu.org" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
             <label class="sr-only">Contact</label></a>
         </li>
         <li class="nav-item">
@@ -408,22 +408,36 @@ document.write(`
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../abc.html">pyxu.abc</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../opt.html">pyxu.opt</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">pyxu.operator</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="map.html">pyxu.operator.map</a></li>
-<li class="toctree-l2"><a class="reference internal" href="func.html">pyxu.operator.func</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linop.html">pyxu.operator.linop</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">pyxu.operator.blocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interop.html">pyxu.operator.interop</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../abc/index.html">pyxu.abc</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../abc/arithmetic.html">pyxu.abc.arithmetic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../abc/operator.html">pyxu.abc.operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../abc/solver.html">pyxu.abc.solver</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../info.deps.html">pyxu.info.deps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info.ptype.html">pyxu.info.ptype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info.warning.html">pyxu.info.warning</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">pyxu.operator</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">pyxu.operator.blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="func.html">pyxu.operator.func</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linop.html">pyxu.operator.linop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map.html">pyxu.operator.map</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../operator.interop.html">pyxu.operator.interop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opt.solver.html">pyxu.opt.solver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opt.stop.html">pyxu.opt.stop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../runtime.html">pyxu.runtime</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../util.html">pyxu.util</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../math.html">pyxu.math</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../info.html">pyxu.info</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../experimental.html">pyxu.experimental</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../util/index.html">pyxu.util</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../util/array_module.html">pyxu.util.array_module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../util/complex.html">pyxu.util.complex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../util/misc.html">pyxu.util.misc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../util/operator.html">pyxu.util.operator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../experimental.sampler.html">pyxu.experimental.sampler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html"><strong>References</strong></a></li>
 </ul>
 </div>
 </nav></div>
@@ -484,21 +498,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="module-pyxu.operator.blocks">
-<span id="pyxu-operator-blocks"></span><h1>pyxu.operator.blocks<a class="headerlink" href="#module-pyxu.operator.blocks" title="Link to this heading">#</a></h1>
+  <section id="pyxu-operator-blocks">
+<h1>pyxu.operator.blocks<a class="headerlink" href="#pyxu-operator-blocks" title="Link to this heading">#</a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="pyxu.operator.blocks.stack">
-<span class="sig-name descname"><span class="pre">stack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ops</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/blocks.html#stack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.blocks.stack" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="pyxu.operator.stack">
+<span class="sig-name descname"><span class="pre">stack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ops</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/blocks.html#stack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.stack" title="Link to this definition">#</a></dt>
 <dd><p>Construct a stacked operator.</p>
 <p>A stacked-operator <span class="math notranslate nohighlight">\(V: \mathbb{R}^{d} \to \mathbb{R}^{c}\)</span> is an operator containing (vertically or
 horizontally) blocks of smaller operators <span class="math notranslate nohighlight">\(\{O_{1}, \ldots, O_{N}\}\)</span>.</p>
-<p>This is a convenience function around <a class="reference internal" href="#pyxu.operator.blocks.hstack" title="pyxu.operator.blocks.hstack"><code class="xref py py-func docutils literal notranslate"><span class="pre">hstack()</span></code></a> and
-<a class="reference internal" href="#pyxu.operator.blocks.vstack" title="pyxu.operator.blocks.vstack"><code class="xref py py-func docutils literal notranslate"><span class="pre">vstack()</span></code></a>.</p>
+<p>This is a convenience function around <a class="reference internal" href="#pyxu.operator.hstack" title="pyxu.operator.hstack"><code class="xref py py-func docutils literal notranslate"><span class="pre">hstack()</span></code></a> and <a class="reference internal" href="#pyxu.operator.vstack" title="pyxu.operator.vstack"><code class="xref py py-func docutils literal notranslate"><span class="pre">vstack()</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> )) – [op1(c1, d1), …, opN(cN, dN)] operators to join.</p></li>
-<li><p><strong>axis</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.Integer" title="pyxu.info.ptype.Integer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integer</span></code></a>) – <p>The axis along which operators will be joined, i.e.</p>
+<li><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> )) – [op1(c1, d1), …, opN(cN, dN)] operators to join.</p></li>
+<li><p><strong>axis</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Integer" title="pyxu.info.ptype.Integer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integer</span></code></a>) – <p>The axis along which operators will be joined, i.e.</p>
 <ul>
 <li><p>0: stack vertically (row-wise)</p></li>
 <li><p>1: stack horizontally (column-wise)</p></li>
@@ -511,18 +524,18 @@ horizontally) blocks of smaller operators <span class="math notranslate nohighli
 <dd class="field-even"><p><strong>op</strong> – Stacked operator.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
 </dd>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#pyxu.operator.blocks.hstack" title="pyxu.operator.blocks.hstack"><code class="xref py py-func docutils literal notranslate"><span class="pre">hstack()</span></code></a>, <a class="reference internal" href="#pyxu.operator.blocks.vstack" title="pyxu.operator.blocks.vstack"><code class="xref py py-func docutils literal notranslate"><span class="pre">vstack()</span></code></a></p>
+<p><a class="reference internal" href="#pyxu.operator.hstack" title="pyxu.operator.hstack"><code class="xref py py-func docutils literal notranslate"><span class="pre">hstack()</span></code></a>, <a class="reference internal" href="#pyxu.operator.vstack" title="pyxu.operator.vstack"><code class="xref py py-func docutils literal notranslate"><span class="pre">vstack()</span></code></a></p>
 </div>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="pyxu.operator.blocks.vstack">
-<span class="sig-name descname"><span class="pre">vstack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ops</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/blocks.html#vstack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.blocks.vstack" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="pyxu.operator.vstack">
+<span class="sig-name descname"><span class="pre">vstack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ops</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/blocks.html#vstack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.vstack" title="Link to this definition">#</a></dt>
 <dd><p>Construct a vertically-stacked operator.</p>
 <p>A vstacked-operator <span class="math notranslate nohighlight">\(V: \mathbb{R}^{d} \to \mathbb{R}^{c_{1} + \cdots + c_{N}}\)</span> is an operator containing
 (vertically) blocks of smaller operators <span class="math notranslate nohighlight">\(\{O_{1}: \mathbb{R}^{d} \to \mathbb{R}^{c_{1}}, \ldots, O_{N}:
@@ -540,7 +553,7 @@ horizontally) blocks of smaller operators <span class="math notranslate nohighli
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> )) – [op1(c1, d), …, opN(cN, d)] operators to concatenate.</p></li>
+<li><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> )) – [op1(c1, d), …, opN(cN, d)] operators to concatenate.</p></li>
 <li><p><strong>kwargs</strong> – Extra keyword-arguments forwarded to <code class="xref py py-class docutils literal notranslate"><span class="pre">_COOBlock</span></code>.</p></li>
 </ul>
 </dd>
@@ -548,7 +561,7 @@ horizontally) blocks of smaller operators <span class="math notranslate nohighli
 <dd class="field-even"><p><strong>op</strong> – Vertically-stacked (c1+…+cN, d) operator.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -557,13 +570,13 @@ horizontally) blocks of smaller operators <span class="math notranslate nohighli
 </ul>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#pyxu.operator.blocks.hstack" title="pyxu.operator.blocks.hstack"><code class="xref py py-func docutils literal notranslate"><span class="pre">hstack()</span></code></a>, <a class="reference internal" href="#pyxu.operator.blocks.stack" title="pyxu.operator.blocks.stack"><code class="xref py py-func docutils literal notranslate"><span class="pre">stack()</span></code></a></p>
+<p><a class="reference internal" href="#pyxu.operator.hstack" title="pyxu.operator.hstack"><code class="xref py py-func docutils literal notranslate"><span class="pre">hstack()</span></code></a>, <a class="reference internal" href="#pyxu.operator.stack" title="pyxu.operator.stack"><code class="xref py py-func docutils literal notranslate"><span class="pre">stack()</span></code></a></p>
 </div>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="pyxu.operator.blocks.hstack">
-<span class="sig-name descname"><span class="pre">hstack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ops</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/blocks.html#hstack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.blocks.hstack" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="pyxu.operator.hstack">
+<span class="sig-name descname"><span class="pre">hstack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ops</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/blocks.html#hstack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.hstack" title="Link to this definition">#</a></dt>
 <dd><p>Construct a horizontally-stacked operator.</p>
 <p>A hstacked-operator <span class="math notranslate nohighlight">\(H: \mathbb{R}^{d_{1} + \cdots + d_{N}} \to \mathbb{R}^{c}\)</span> is an operator containing
 (horizontally) blocks of smaller operators <span class="math notranslate nohighlight">\(\{O_{1}: \mathbb{R}^{d_{1}} \to \mathbb{R}^{c}, \ldots, O_{N}:
@@ -579,7 +592,7 @@ horizontally) blocks of smaller operators <span class="math notranslate nohighli
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> )) – [op1(c, d1), …, opN(c, dN)] operators to concatenate.</p></li>
+<li><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> )) – [op1(c, d1), …, opN(c, dN)] operators to concatenate.</p></li>
 <li><p><strong>kwargs</strong> – Extra keyword-arguments forwarded to <code class="xref py py-class docutils literal notranslate"><span class="pre">_COOBlock</span></code>.</p></li>
 </ul>
 </dd>
@@ -587,7 +600,7 @@ horizontally) blocks of smaller operators <span class="math notranslate nohighli
 <dd class="field-even"><p><strong>op</strong> – Horizontally-stacked (c, d1+….+dN) operator.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -596,13 +609,13 @@ horizontally) blocks of smaller operators <span class="math notranslate nohighli
 </ul>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#pyxu.operator.blocks.vstack" title="pyxu.operator.blocks.vstack"><code class="xref py py-func docutils literal notranslate"><span class="pre">vstack()</span></code></a>, <a class="reference internal" href="#pyxu.operator.blocks.stack" title="pyxu.operator.blocks.stack"><code class="xref py py-func docutils literal notranslate"><span class="pre">stack()</span></code></a></p>
+<p><a class="reference internal" href="#pyxu.operator.vstack" title="pyxu.operator.vstack"><code class="xref py py-func docutils literal notranslate"><span class="pre">vstack()</span></code></a>, <a class="reference internal" href="#pyxu.operator.stack" title="pyxu.operator.stack"><code class="xref py py-func docutils literal notranslate"><span class="pre">stack()</span></code></a></p>
 </div>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="pyxu.operator.blocks.block_diag">
-<span class="sig-name descname"><span class="pre">block_diag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ops</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/blocks.html#block_diag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.blocks.block_diag" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="pyxu.operator.block_diag">
+<span class="sig-name descname"><span class="pre">block_diag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ops</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/blocks.html#block_diag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.block_diag" title="Link to this definition">#</a></dt>
 <dd><p>Construct a block-diagonal operator.</p>
 <p>A block-diagonal operator <span class="math notranslate nohighlight">\(D: \mathbb{R}^{d_{1} + \cdots + d_{N}} \to \mathbb{R}^{c_{1} + \cdots + c_{N}}\)</span> is
 an operator containing (diagonally) blocks of smaller operators <span class="math notranslate nohighlight">\(\{O_{1}: \mathbb{R}^{d_{1}} \to
@@ -620,7 +633,7 @@ an operator containing (diagonally) blocks of smaller operators <span class="mat
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> )) – [op1(c1, d1), …, opN(cN, dN)] operators to concatenate.</p></li>
+<li><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> )) – [op1(c1, d1), …, opN(cN, dN)] operators to concatenate.</p></li>
 <li><p><strong>kwargs</strong> – Extra keyword-arguments forwarded to <code class="xref py py-class docutils literal notranslate"><span class="pre">_COOBlock</span></code>.</p></li>
 </ul>
 </dd>
@@ -628,29 +641,29 @@ an operator containing (diagonally) blocks of smaller operators <span class="mat
 <dd class="field-even"><p><strong>op</strong> – Block-diagonal (c1+…+cN, d1+…+dN) operator.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
 </dd>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#pyxu.operator.blocks.block" title="pyxu.operator.blocks.block"><code class="xref py py-func docutils literal notranslate"><span class="pre">block()</span></code></a>, <a class="reference internal" href="#pyxu.operator.blocks.coo_block" title="pyxu.operator.blocks.coo_block"><code class="xref py py-func docutils literal notranslate"><span class="pre">coo_block()</span></code></a></p>
+<p><a class="reference internal" href="#pyxu.operator.block" title="pyxu.operator.block"><code class="xref py py-func docutils literal notranslate"><span class="pre">block()</span></code></a>, <a class="reference internal" href="#pyxu.operator.coo_block" title="pyxu.operator.coo_block"><code class="xref py py-func docutils literal notranslate"><span class="pre">coo_block()</span></code></a></p>
 </div>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="pyxu.operator.blocks.block">
-<span class="sig-name descname"><span class="pre">block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ops</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/blocks.html#block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.blocks.block" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="pyxu.operator.block">
+<span class="sig-name descname"><span class="pre">block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ops</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/blocks.html#block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.block" title="Link to this definition">#</a></dt>
 <dd><p>Construct a (dense) block-defined operator.</p>
-<p>A block-defined operator is an operator containing blocks of smaller operators.
-Blocks are stacked horizontally/vertically in a user-specified order to obtain the final shape.</p>
+<p>A block-defined operator is an operator containing blocks of smaller operators.  Blocks are stacked
+horizontally/vertically in a user-specified order to obtain the final shape.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> ) )) – 2D nested sequence of (ck, dk)-shaped operators.</p></li>
+<li><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> ) )) – 2D nested sequence of (ck, dk)-shaped operators.</p></li>
 <li><p><strong>order</strong> (<code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>) – <p>Order in which the nested operators are specified/concatenated:</p>
 <ul>
-<li><p>0: concatenate inner-most blocks via <a class="reference internal" href="#pyxu.operator.blocks.vstack" title="pyxu.operator.blocks.vstack"><code class="xref py py-func docutils literal notranslate"><span class="pre">vstack()</span></code></a>, then <a class="reference internal" href="#pyxu.operator.blocks.hstack" title="pyxu.operator.blocks.hstack"><code class="xref py py-func docutils literal notranslate"><span class="pre">hstack()</span></code></a>.</p></li>
-<li><p>1: concatenate inner-most blocks via <a class="reference internal" href="#pyxu.operator.blocks.hstack" title="pyxu.operator.blocks.hstack"><code class="xref py py-func docutils literal notranslate"><span class="pre">hstack()</span></code></a>, then <a class="reference internal" href="#pyxu.operator.blocks.vstack" title="pyxu.operator.blocks.vstack"><code class="xref py py-func docutils literal notranslate"><span class="pre">vstack()</span></code></a>.</p></li>
+<li><p>0: concatenate inner-most blocks via <a class="reference internal" href="#pyxu.operator.vstack" title="pyxu.operator.vstack"><code class="xref py py-func docutils literal notranslate"><span class="pre">vstack()</span></code></a>, then <a class="reference internal" href="#pyxu.operator.hstack" title="pyxu.operator.hstack"><code class="xref py py-func docutils literal notranslate"><span class="pre">hstack()</span></code></a>.</p></li>
+<li><p>1: concatenate inner-most blocks via <a class="reference internal" href="#pyxu.operator.hstack" title="pyxu.operator.hstack"><code class="xref py py-func docutils literal notranslate"><span class="pre">hstack()</span></code></a>, then <a class="reference internal" href="#pyxu.operator.vstack" title="pyxu.operator.vstack"><code class="xref py py-func docutils literal notranslate"><span class="pre">vstack()</span></code></a>.</p></li>
 </ul>
 </p></li>
 <li><p><strong>kwargs</strong> – Extra keyword-arguments forwarded to <code class="xref py py-class docutils literal notranslate"><span class="pre">_COOBlock</span></code>.</p></li>
@@ -660,7 +673,7 @@ Blocks are stacked horizontally/vertically in a user-specified order to obtain t
 <dd class="field-even"><p><strong>op</strong> – Block-defined operator. (See below for examples.)</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -690,27 +703,27 @@ Blocks are stacked horizontally/vertically in a user-specified order to obtain t
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#pyxu.operator.blocks.block_diag" title="pyxu.operator.blocks.block_diag"><code class="xref py py-func docutils literal notranslate"><span class="pre">block_diag()</span></code></a>, <a class="reference internal" href="#pyxu.operator.blocks.coo_block" title="pyxu.operator.blocks.coo_block"><code class="xref py py-func docutils literal notranslate"><span class="pre">coo_block()</span></code></a></p>
+<p><a class="reference internal" href="#pyxu.operator.block_diag" title="pyxu.operator.block_diag"><code class="xref py py-func docutils literal notranslate"><span class="pre">block_diag()</span></code></a>, <a class="reference internal" href="#pyxu.operator.coo_block" title="pyxu.operator.coo_block"><code class="xref py py-func docutils literal notranslate"><span class="pre">coo_block()</span></code></a></p>
 </div>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="pyxu.operator.blocks.coo_block">
-<span class="sig-name descname"><span class="pre">coo_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ops</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_shape</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/blocks.html#coo_block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.blocks.coo_block" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="pyxu.operator.coo_block">
+<span class="sig-name descname"><span class="pre">coo_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ops</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_shape</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/blocks.html#coo_block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.coo_block" title="Link to this definition">#</a></dt>
 <dd><p>Constuct a (possibly-sparse) block-defined operator in COOrdinate format.</p>
-<p>A block-defined operator is an operator containing blocks of smaller operators.
-Blocks must align on a coarse grid, akin to the COO format used to define sparse arrays.</p>
+<p>A block-defined operator is an operator containing blocks of smaller operators.  Blocks must align on a coarse grid,
+akin to the COO format used to define sparse arrays.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><em>Sequence</em></a><em>[</em><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em><em>]</em><em>]</em>) – <p>(data, (i, j)) sequences defining block placement, i.e.</p>
+<li><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><em>Sequence</em></a><em>[</em><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em><em>]</em><em>]</em>) – <p>(data, (i, j)) sequences defining block placement, i.e.</p>
 <ul>
-<li><p><code class="code docutils literal notranslate"><span class="pre">data[:]</span></code> are <a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> instances, in any order.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">data[:]</span></code> are <a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> instances, in any order.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">i[:]</span></code> are the row indices of the block entries on the coarse grid.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">j[:]</span></code> are the column indices of the block entries on the coarse grid.</p></li>
 </ul>
 </p></li>
-<li><p><strong>grid_shape</strong> (<a class="reference internal" href="../info.html#pyxu.info.ptype.OpShape" title="pyxu.info.ptype.OpShape"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpShape</span></code></a>) – (M, N) shape of the coarse grid.</p></li>
+<li><p><strong>grid_shape</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpShape" title="pyxu.info.ptype.OpShape"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpShape</span></code></a>) – (M, N) shape of the coarse grid.</p></li>
 <li><p><strong>parallel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – <p>If <code class="docutils literal notranslate"><span class="pre">true</span></code> , use Dask to evaluate the following methods:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">.apply()</span></code></p></li>
@@ -726,7 +739,7 @@ Blocks must align on a coarse grid, akin to the COO format used to define sparse
 <dd class="field-even"><p><strong>op</strong> – Block-defined operator. (See below for examples.)</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="../info.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -738,11 +751,9 @@ Blocks must align on a coarse grid, akin to the COO format used to define sparse
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>When processing Dask inputs, or when <code class="docutils literal notranslate"><span class="pre">parallel=True</span></code>, operators which are not thread-safe may produce incorrect
-results.
-There is no easy way to ensure thread-safety at the level of <a class="reference internal" href="#module-pyxu.operator.blocks" title="pyxu.operator.blocks"><code class="xref py py-mod docutils literal notranslate"><span class="pre">blocks</span></code></a> without impacting
-performance of all operators involved.
-Users are thus responsible for executing block-defined operators correctly, i.e., if thread-unsafe operators are
-involved, stick to NumPy/CuPy inputs.</p>
+results.  There is no easy way to ensure thread-safety at the level of <code class="xref py py-mod docutils literal notranslate"><span class="pre">blocks</span></code> without
+impacting performance of all operators involved.  Users are thus responsible for executing block-defined
+operators correctly, i.e., if thread-unsafe operators are involved, stick to NumPy/CuPy inputs.</p>
 </div>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">coo_block</span><span class="p">(</span>
@@ -777,20 +788,20 @@ involved, stick to NumPy/CuPy inputs.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="linop.html"
+       href="index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">pyxu.operator.linop</p>
+        <p class="prev-next-title">pyxu.operator</p>
       </div>
     </a>
     <a class="right-next"
-       href="interop.html"
+       href="func.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">pyxu.operator.interop</p>
+        <p class="prev-next-title">pyxu.operator.func</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -812,12 +823,12 @@ involved, stick to NumPy/CuPy inputs.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.blocks.stack"><code class="docutils literal notranslate"><span class="pre">stack()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.blocks.vstack"><code class="docutils literal notranslate"><span class="pre">vstack()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.blocks.hstack"><code class="docutils literal notranslate"><span class="pre">hstack()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.blocks.block_diag"><code class="docutils literal notranslate"><span class="pre">block_diag()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.blocks.block"><code class="docutils literal notranslate"><span class="pre">block()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.blocks.coo_block"><code class="docutils literal notranslate"><span class="pre">coo_block()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.stack"><code class="docutils literal notranslate"><span class="pre">stack()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.vstack"><code class="docutils literal notranslate"><span class="pre">vstack()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.hstack"><code class="docutils literal notranslate"><span class="pre">hstack()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.block_diag"><code class="docutils literal notranslate"><span class="pre">block_diag()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.block"><code class="docutils literal notranslate"><span class="pre">block()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.coo_block"><code class="docutils literal notranslate"><span class="pre">coo_block()</span></code></a></li>
 </ul>
   </nav></div>
 

@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css?v=7f9a90b1" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
@@ -199,7 +199,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> v1.0.x </strong></div>
+        <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -341,7 +341,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> v1.0.x </strong></div>
+          <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -467,7 +467,7 @@ document.write(`
 <span class="linenos"> 14</span>
 <span class="linenos"> 15</span>
 <div class="viewcode-block" id="Pad">
-<a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.linop.pad.Pad">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.Pad">[docs]</a>
 <span class="linenos"> 16</span><span class="k">class</span> <span class="nc">Pad</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span><span class="p">):</span>
 <span class="linenos"> 17</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 18</span><span class="sd">    Multi-dimensional padding operator.</span>
@@ -478,8 +478,8 @@ document.write(`
 <span class="linenos"> 23</span><span class="sd">    -----</span>
 <span class="linenos"> 24</span><span class="sd">    * If inputs are D-dimensional, then some of the padding of later axes are calculated from padding of previous axes.</span>
 <span class="linenos"> 25</span><span class="sd">    * The *adjoint* of the padding operator performs a cumulative summation over the original positions used to pad.</span>
-<span class="linenos"> 26</span><span class="sd">      Its effect is clear from its matrix form.</span>
-<span class="linenos"> 27</span><span class="sd">      For example the matrix-form of ``Pad(arg_shape=(3,), mode=&quot;wrap&quot;, pad_width=(1, 1))`` is:</span>
+<span class="linenos"> 26</span><span class="sd">      Its effect is clear from its matrix form.  For example the matrix-form of ``Pad(arg_shape=(3,), mode=&quot;wrap&quot;,</span>
+<span class="linenos"> 27</span><span class="sd">      pad_width=(1, 1))`` is:</span>
 <span class="linenos"> 28</span>
 <span class="linenos"> 29</span><span class="sd">      .. math::</span>
 <span class="linenos"> 30</span>
@@ -555,8 +555,8 @@ document.write(`
 <span class="linenos">100</span><span class="sd">         =</span>
 <span class="linenos">101</span><span class="sd">         \mathbf{I}_{N} + \mathbf{S}_{i}^{\ast} \mathbf{S}_{i}.</span>
 <span class="linenos">102</span>
-<span class="linenos">103</span><span class="sd">      - In mode=&quot;constant&quot;, :math:`\text{diag}(\mathbf{S}_{i}^{\ast} \mathbf{S}_{i}) = \mathbf{0}`,</span>
-<span class="linenos">104</span><span class="sd">        hence :math:`L_{i} = 1`.</span>
+<span class="linenos">103</span><span class="sd">      - In mode=&quot;constant&quot;, :math:`\text{diag}(\mathbf{S}_{i}^{\ast} \mathbf{S}_{i}) = \mathbf{0}`, hence :math:`L_{i} =</span>
+<span class="linenos">104</span><span class="sd">        1`.</span>
 <span class="linenos">105</span><span class="sd">      - In mode=&quot;edge&quot;,</span>
 <span class="linenos">106</span>
 <span class="linenos">107</span><span class="sd">        .. math::</span>
@@ -566,8 +566,8 @@ document.write(`
 <span class="linenos">111</span><span class="sd">           \left[p_{lhs}, 0, \ldots, 0, p_{rhs} \right],</span>
 <span class="linenos">112</span>
 <span class="linenos">113</span><span class="sd">        hence :math:`L_{i} = \sqrt{1 + \min(p_{lhs}, p_{rhs})}`.</span>
-<span class="linenos">114</span><span class="sd">      - In mode=&quot;symmetric&quot;, &quot;wrap&quot;, &quot;reflect&quot;, :math:`\text{diag}(\mathbf{S}_{i}^{\ast}</span>
-<span class="linenos">115</span><span class="sd">        \mathbf{S}_{i})` equals (up to a mode-dependant permutation)</span>
+<span class="linenos">114</span><span class="sd">      - In mode=&quot;symmetric&quot;, &quot;wrap&quot;, &quot;reflect&quot;, :math:`\text{diag}(\mathbf{S}_{i}^{\ast} \mathbf{S}_{i})` equals (up to</span>
+<span class="linenos">115</span><span class="sd">        a mode-dependant permutation)</span>
 <span class="linenos">116</span>
 <span class="linenos">117</span><span class="sd">        .. math::</span>
 <span class="linenos">118</span>
@@ -592,7 +592,7 @@ document.write(`
 <span class="linenos">137</span>    <span class="n">ModeSpec</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span>
 <span class="linenos">138</span>
 <div class="viewcode-block" id="Pad.__init__">
-<a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.linop.pad.Pad.__init__">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.Pad.__init__">[docs]</a>
 <span class="linenos">139</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
 <span class="linenos">140</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">141</span>        <span class="n">arg_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
@@ -932,14 +932,10 @@ document.write(`
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>
-      
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
-</p></div>
       
     </div>
   

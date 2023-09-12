@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Extending Pyxu" href="fair/index.html" />
-    <link rel="prev" title="pyxu.experimental" href="api/experimental.html" />
+    <link rel="prev" title="pyxu.experimental.sampler" href="api/experimental.sampler.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -239,7 +239,7 @@ document.write(`
           
           
           
-          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+          <a href="mailto: contact@pyxu.org" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
             <label class="sr-only">Contact</label></a>
         </li>
         <li class="nav-item">
@@ -381,7 +381,7 @@ document.write(`
           
           
           
-          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+          <a href="mailto: contact@pyxu.org" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
             <label class="sr-only">Contact</label></a>
         </li>
         <li class="nav-item">
@@ -406,22 +406,36 @@ document.write(`
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="api/abc.html">pyxu.abc</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/opt.html">pyxu.opt</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="api/operator/index.html">pyxu.operator</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="api/operator/map.html">pyxu.operator.map</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/operator/func.html">pyxu.operator.func</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/operator/linop.html">pyxu.operator.linop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/operator/blocks.html">pyxu.operator.blocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/operator/interop.html">pyxu.operator.interop</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api/abc/index.html">pyxu.abc</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/abc/arithmetic.html">pyxu.abc.arithmetic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/abc/operator.html">pyxu.abc.operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/abc/solver.html">pyxu.abc.solver</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="api/info.deps.html">pyxu.info.deps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/info.ptype.html">pyxu.info.ptype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/info.warning.html">pyxu.info.warning</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api/operator/index.html">pyxu.operator</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/operator/blocks.html">pyxu.operator.blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/operator/func.html">pyxu.operator.func</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/operator/linop.html">pyxu.operator.linop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/operator/map.html">pyxu.operator.map</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/operator.interop.html">pyxu.operator.interop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/opt.solver.html">pyxu.opt.solver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/opt.stop.html">pyxu.opt.stop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/runtime.html">pyxu.runtime</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/util.html">pyxu.util</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/math.html">pyxu.math</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/info.html">pyxu.info</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/experimental.html">pyxu.experimental</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">References</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api/util/index.html">pyxu.util</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/util/array_module.html">pyxu.util.array_module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/util/complex.html">pyxu.util.complex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/util/misc.html">pyxu.util.misc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/util/operator.html">pyxu.util.operator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/experimental.sampler.html">pyxu.experimental.sampler</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>References</strong></a></li>
 </ul>
 </div>
 </nav></div>
@@ -462,7 +476,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="api/index.html" class="nav-link">API Reference</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">References</li>
+    <li class="breadcrumb-item active" aria-current="page"><strong>References</strong></li>
   </ul>
 </nav>
 </div>
@@ -480,7 +494,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="references">
-<h1>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h1>
+<h1><strong>References</strong><a class="headerlink" href="#references" title="Link to this heading">#</a></h1>
 <div role="list" class="citation-list">
 <div class="citation" id="proxadam" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>ProxAdam<span class="fn-bracket">]</span></span>
@@ -583,12 +597,12 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="api/experimental.html"
+       href="api/experimental.sampler.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">pyxu.experimental</p>
+        <p class="prev-next-title">pyxu.experimental.sampler</p>
       </div>
     </a>
     <a class="right-next"

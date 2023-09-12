@@ -1,29 +1,45 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from pyxu.operator import DirectionalDerivative
+from pyxu.operator import StructureTensor
 from pyxu.util.misc import peaks
 
-x = np.linspace(-2.5, 2.5, 25)
+# Define input image
+n = 1000
+x = np.linspace(-3, 3, n)
 xx, yy = np.meshgrid(x, x)
-z = peaks(xx, yy)
-directions = np.zeros(shape=(2, z.size))
-directions[0, : z.size // 2] = 1
-directions[1, z.size // 2:] = 1
-dop = DirectionalDerivative(arg_shape=z.shape, order=1, directions=directions)
-out = dop.unravel(dop(z.ravel()))
-dop2 = DirectionalDerivative(arg_shape=z.shape, order=2, directions=directions)
-out2 = dop2.unravel(dop2(z.ravel()))
-fig, axs = plt.subplots(1, 3, figsize=(15, 5))
-axs = np.ravel(axs)
-h = axs[0].pcolormesh(xx, yy, z, shading="auto")
-axs[0].quiver(x, x, directions[1].reshape(xx.shape), directions[0].reshape(xx.shape))
-plt.colorbar(h, ax=axs[0])
-axs[0].set_title("Signal and directions of first derivatives")
+image = peaks(xx, yy)
+nsamples = 2
+arg_shape = image.shape  # (1000, 1000)
+images = np.tile(image, (nsamples, 1, 1)).reshape(nsamples, -1)
+print(images.shape)  # (2, 1000000)
+# Instantiate structure tensor operator
+structure_tensor = StructureTensor(arg_shape=arg_shape)
 
-h = axs[1].pcolormesh(xx, yy, out.squeeze(), shading="auto")
-plt.colorbar(h, ax=axs[1])
-axs[1].set_title("First-order directional derivatives")
+outputs = structure_tensor(images)
+print(outputs.shape)  # (2, 3000000)
+# Plot
+outputs = structure_tensor.unravel(outputs)
+print(outputs.shape)  # (2, 3, 1000, 1000)
+plt.figure()
+plt.imshow(images[0].reshape(arg_shape))
+plt.colorbar()
+plt.title("Image")
+plt.axis("off")
 
-h = axs[2].pcolormesh(xx, yy, out2.squeeze(), shading="auto")
-plt.colorbar(h, ax=axs[2])
-axs[2].set_title("Second-order directional derivative")
+plt.figure()
+plt.imshow(outputs[0][0].reshape(arg_shape))
+plt.colorbar()
+plt.title(r"$\hat{S}_{xx}$")
+plt.axis("off")
+
+plt.figure()
+plt.imshow(outputs[0][1].reshape(arg_shape))
+plt.colorbar()
+plt.title(r"$\hat{S}_{xy}$")
+plt.axis("off")
+
+plt.figure()
+plt.imshow(outputs[0][2].reshape(arg_shape))
+plt.colorbar()
+plt.title(r"$\hat{S}_{yy}$")
+plt.axis("off")

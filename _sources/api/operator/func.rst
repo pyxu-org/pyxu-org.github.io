@@ -3,67 +3,66 @@ pyxu.operator.func
 
 .. contents:: Table of Contents
    :local:
-   :depth: 1
+   :depth: 2
 
-Norms
------
+Norms & Loss Functions
+----------------------
 
-.. autoclass:: pyxu.operator.func.norm.L1Norm
+.. autoclass:: pyxu.operator.L1Norm
    :no-members:
 
-.. autoclass:: pyxu.operator.func.norm.L2Norm
+.. autoclass:: pyxu.operator.L2Norm
    :no-members:
 
-.. autoclass:: pyxu.operator.func.norm.SquaredL2Norm
+.. autoclass:: pyxu.operator.SquaredL2Norm
    :no-members:
 
-.. autoclass:: pyxu.operator.func.norm.SquaredL1Norm
+.. autoclass:: pyxu.operator.SquaredL1Norm
    :no-members:
    :members: prox
    :special-members: __init__
 
-.. autoclass:: pyxu.operator.func.norm.LInfinityNorm
-   :no-members:
+.. autofunction:: pyxu.operator.shift_loss
 
-.. autoclass:: pyxu.operator.func.norm.L21Norm
+.. autoclass:: pyxu.operator.KLDivergence
    :no-members:
    :special-members: __init__
 
-.. autoclass:: pyxu.operator.func.norm.PositiveL1Norm
+.. autoclass:: pyxu.operator.LInfinityNorm
    :no-members:
 
-Indicator functions
+.. autoclass:: pyxu.operator.L21Norm
+   :no-members:
+   :special-members: __init__
+
+.. autoclass:: pyxu.operator.PositiveL1Norm
+   :no-members:
+
+Indicator Functions
 -------------------
 
-.. autofunction:: pyxu.operator.func.indicator.L1Ball
+.. autofunction:: pyxu.operator.L1Ball
 
-.. autofunction:: pyxu.operator.func.indicator.L2Ball
+.. autofunction:: pyxu.operator.L2Ball
 
-.. autofunction:: pyxu.operator.func.indicator.LInfinityBall
+.. autofunction:: pyxu.operator.LInfinityBall
 
-.. autoclass:: pyxu.operator.func.indicator.PositiveOrthant
+.. autoclass:: pyxu.operator.PositiveOrthant
    :no-members:
 
-.. autoclass:: pyxu.operator.func.indicator.HyperSlab
-   :no-members:
-   :special-members: __init__
-
-.. autoclass:: pyxu.operator.func.indicator.RangeSet
+.. autoclass:: pyxu.operator.HyperSlab
    :no-members:
    :special-members: __init__
 
-.. autoclass:: pyxu.operator.func.indicator.AffineSet
+.. autoclass:: pyxu.operator.RangeSet
    :no-members:
    :special-members: __init__
 
-.. autoclass:: pyxu.operator.func.indicator.ConvexSetIntersection
+.. autoclass:: pyxu.operator.AffineSet
    :no-members:
-   :members: prox
    :special-members: __init__
 
-Loss functions
---------------
-.. autoclass:: pyxu.operator.func.loss.KLDivergence
+.. autoclass:: pyxu.operator.ConvexSetIntersection
    :no-members:
    :members: prox
    :special-members: __init__

@@ -199,7 +199,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> v1.0.x </strong></div>
+        <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -341,7 +341,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> v1.0.x </strong></div>
+          <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -568,179 +568,181 @@ document.write(`
 <a class="viewcode-back" href="../../../api/runtime.html#pyxu.runtime.EnforcePrecision">[docs]</a>
 <span class="linenos">102</span><span class="k">class</span> <span class="nc">EnforcePrecision</span><span class="p">(</span><span class="n">contextlib</span><span class="o">.</span><span class="n">AbstractContextManager</span><span class="p">):</span>
 <span class="linenos">103</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">104</span><span class="sd">    Context Manager to locally disable effect of</span>
-<span class="linenos">105</span><span class="sd">    :py:func:`~pyxu.runtime.enforce_precision`.</span>
-<span class="linenos">106</span><span class="sd">    [Default: enabled.]</span>
+<span class="linenos">104</span><span class="sd">    Context Manager to locally disable effect of :py:func:`~pyxu.runtime.enforce_precision`.  [Default: enabled.]</span>
+<span class="linenos">105</span>
+<span class="linenos">106</span><span class="sd">    Use this object via a with-block.</span>
 <span class="linenos">107</span>
-<span class="linenos">108</span><span class="sd">    Use this object via a with-block.</span>
-<span class="linenos">109</span>
-<span class="linenos">110</span><span class="sd">    Example</span>
-<span class="linenos">111</span><span class="sd">    -------</span>
-<span class="linenos">112</span><span class="sd">    .. code-block:: python3</span>
+<span class="linenos">108</span><span class="sd">    Example</span>
+<span class="linenos">109</span><span class="sd">    -------</span>
+<span class="linenos">110</span><span class="sd">    .. code-block:: python3</span>
+<span class="linenos">111</span>
+<span class="linenos">112</span><span class="sd">       import pyxu.runtime as pxrt</span>
 <span class="linenos">113</span>
-<span class="linenos">114</span><span class="sd">       import pyxu.runtime as pxrt</span>
-<span class="linenos">115</span>
-<span class="linenos">116</span><span class="sd">       pxrt.getCoerceState()                    # True</span>
-<span class="linenos">117</span><span class="sd">       with pxrt.EnforcePrecision(False):</span>
-<span class="linenos">118</span><span class="sd">           pxrt.getCoerceState()                # False</span>
-<span class="linenos">119</span><span class="sd">       pxrt.getCoerceState()                    # True</span>
-<span class="linenos">120</span><span class="sd">    &quot;&quot;&quot;</span>
-<span class="linenos">121</span>
-<span class="linenos">122</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
-<span class="linenos">123</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span> <span class="n">state</span>
-<span class="linenos">124</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_state_prev</span> <span class="o">=</span> <span class="n">getCoerceState</span><span class="p">()</span>
-<span class="linenos">125</span>
-<span class="linenos">126</span>    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;EnforcePrecision&quot;</span><span class="p">:</span>
-<span class="linenos">127</span>        <span class="n">_setCoerceState</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_state</span><span class="p">)</span>
-<span class="linenos">128</span>        <span class="k">return</span> <span class="bp">self</span>
-<span class="linenos">129</span>
-<span class="linenos">130</span>    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="linenos">131</span>        <span class="n">exc_raised</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span><span class="n">_</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="p">[</span><span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">])</span>
-<span class="linenos">132</span>        <span class="k">if</span> <span class="n">exc_raised</span><span class="p">:</span>
-<span class="linenos">133</span>            <span class="k">pass</span>
-<span class="linenos">134</span>
-<span class="linenos">135</span>        <span class="n">_setCoerceState</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_state_prev</span><span class="p">)</span>
-<span class="linenos">136</span>        <span class="k">return</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">exc_raised</span> <span class="k">else</span> <span class="kc">True</span></div>
+<span class="linenos">114</span><span class="sd">       pxrt.getCoerceState()                    # True</span>
+<span class="linenos">115</span><span class="sd">       with pxrt.EnforcePrecision(False):</span>
+<span class="linenos">116</span><span class="sd">           pxrt.getCoerceState()                # False</span>
+<span class="linenos">117</span><span class="sd">       pxrt.getCoerceState()                    # True</span>
+<span class="linenos">118</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">119</span>
+<span class="linenos">120</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
+<span class="linenos">121</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span> <span class="n">state</span>
+<span class="linenos">122</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_state_prev</span> <span class="o">=</span> <span class="n">getCoerceState</span><span class="p">()</span>
+<span class="linenos">123</span>
+<span class="linenos">124</span>    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;EnforcePrecision&quot;</span><span class="p">:</span>
+<span class="linenos">125</span>        <span class="n">_setCoerceState</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_state</span><span class="p">)</span>
+<span class="linenos">126</span>        <span class="k">return</span> <span class="bp">self</span>
+<span class="linenos">127</span>
+<span class="linenos">128</span>    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="linenos">129</span>        <span class="n">exc_raised</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span><span class="n">_</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="p">[</span><span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">])</span>
+<span class="linenos">130</span>        <span class="k">if</span> <span class="n">exc_raised</span><span class="p">:</span>
+<span class="linenos">131</span>            <span class="k">pass</span>
+<span class="linenos">132</span>
+<span class="linenos">133</span>        <span class="n">_setCoerceState</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_state_prev</span><span class="p">)</span>
+<span class="linenos">134</span>        <span class="k">return</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">exc_raised</span> <span class="k">else</span> <span class="kc">True</span></div>
 
-<span class="linenos">137</span>
-<span class="linenos">138</span>
+<span class="linenos">135</span>
+<span class="linenos">136</span>
 <div class="viewcode-block" id="enforce_precision">
 <a class="viewcode-back" href="../../../api/runtime.html#pyxu.runtime.enforce_precision">[docs]</a>
-<span class="linenos">139</span><span class="k">def</span> <span class="nf">enforce_precision</span><span class="p">(</span>
-<span class="linenos">140</span>    <span class="n">i</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">VarName</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(),</span>
-<span class="linenos">141</span>    <span class="n">o</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-<span class="linenos">142</span>    <span class="n">allow_None</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-<span class="linenos">143</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">:</span>
-<span class="linenos">144</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">145</span><span class="sd">    Decorator to pre/post-process function parameters to enforce runtime FP-precision.</span>
-<span class="linenos">146</span>
-<span class="linenos">147</span><span class="sd">    Parameters</span>
-<span class="linenos">148</span><span class="sd">    ----------</span>
-<span class="linenos">149</span><span class="sd">    i: VarName</span>
-<span class="linenos">150</span><span class="sd">        Function parameters for which precision must be enforced to runtime&#39;s FP-precision.</span>
-<span class="linenos">151</span><span class="sd">        Function parameter values must have a NumPy API, or be scalars.</span>
-<span class="linenos">152</span><span class="sd">        None-valued parameters are allowed if `allow_None` is True (default).</span>
-<span class="linenos">153</span><span class="sd">    o: bool</span>
-<span class="linenos">154</span><span class="sd">        If True (default), ensure function&#39;s output (if any) has runtime&#39;s FP-precision.</span>
-<span class="linenos">155</span><span class="sd">        If function&#39;s output does not have a NumPy API or is not scalar-valued, set `o` explicitly</span>
-<span class="linenos">156</span><span class="sd">        to False.</span>
-<span class="linenos">157</span><span class="sd">    allow_None: bool</span>
+<span class="linenos">137</span><span class="k">def</span> <span class="nf">enforce_precision</span><span class="p">(</span>
+<span class="linenos">138</span>    <span class="n">i</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">VarName</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(),</span>
+<span class="linenos">139</span>    <span class="n">o</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="linenos">140</span>    <span class="n">allow_None</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="linenos">141</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">:</span>
+<span class="linenos">142</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">143</span><span class="sd">    Decorator to pre/post-process function parameters to enforce runtime FP-precision.</span>
+<span class="linenos">144</span>
+<span class="linenos">145</span><span class="sd">    Parameters</span>
+<span class="linenos">146</span><span class="sd">    ----------</span>
+<span class="linenos">147</span><span class="sd">    i: VarName</span>
+<span class="linenos">148</span><span class="sd">        Function parameters for which precision must be enforced to runtime&#39;s FP-precision.  Function parameter values</span>
+<span class="linenos">149</span><span class="sd">        must have a NumPy API, or be scalars.  None-valued parameters are allowed if `allow_None` is True (default).</span>
+<span class="linenos">150</span><span class="sd">    o: bool</span>
+<span class="linenos">151</span><span class="sd">        If True (default), ensure function&#39;s output (if any) has runtime&#39;s FP-precision.  If function&#39;s output does not</span>
+<span class="linenos">152</span><span class="sd">        have a NumPy API or is not scalar-valued, set `o` explicitly to False.</span>
+<span class="linenos">153</span><span class="sd">    allow_None: bool</span>
+<span class="linenos">154</span>
+<span class="linenos">155</span><span class="sd">    Example</span>
+<span class="linenos">156</span><span class="sd">    -------</span>
+<span class="linenos">157</span><span class="sd">    .. code-block:: python3</span>
 <span class="linenos">158</span>
-<span class="linenos">159</span><span class="sd">    Example</span>
-<span class="linenos">160</span><span class="sd">    -------</span>
-<span class="linenos">161</span><span class="sd">    .. code-block:: python3</span>
-<span class="linenos">162</span>
-<span class="linenos">163</span><span class="sd">       import pyxu.runtime as pxrt</span>
-<span class="linenos">164</span>
-<span class="linenos">165</span><span class="sd">       @pxrt.enforce_precision(i=&#39;y&#39;, o=False)  # `i` can process multiple args: `i=(&#39;x&#39;,&#39;y&#39;)`.</span>
-<span class="linenos">166</span><span class="sd">       def f(x, y, z=1):</span>
-<span class="linenos">167</span><span class="sd">           print(x.dtype, y.dtype)</span>
-<span class="linenos">168</span><span class="sd">           return x + y + z</span>
-<span class="linenos">169</span>
-<span class="linenos">170</span><span class="sd">       x, y = np.arange(5), np.r_[0.5]</span>
-<span class="linenos">171</span><span class="sd">       print(x.dtype, y.dtype)  # int64, float64</span>
-<span class="linenos">172</span>
-<span class="linenos">173</span><span class="sd">       with pxrt.Precision(pxrt.Width.SINGLE):</span>
-<span class="linenos">174</span><span class="sd">           out = f(x,y)                         # (int64, float32) [printed inside f-call.]</span>
-<span class="linenos">175</span><span class="sd">       print(out.dtype)                         # float64 [would have been float32 if `o=True`.]</span>
-<span class="linenos">176</span><span class="sd">    &quot;&quot;&quot;</span>
-<span class="linenos">177</span>
-<span class="linenos">178</span>    <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">:</span>
-<span class="linenos">179</span>        <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="linenos">180</span>        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">ARGS</span><span class="p">,</span> <span class="o">**</span><span class="n">KWARGS</span><span class="p">):</span>
-<span class="linenos">181</span>            <span class="n">func_args</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">parse_params</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">ARGS</span><span class="p">,</span> <span class="o">**</span><span class="n">KWARGS</span><span class="p">)</span>
-<span class="linenos">182</span>
-<span class="linenos">183</span>            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">i</span><span class="p">:</span>
-<span class="linenos">184</span>                <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">func_args</span><span class="p">:</span>
-<span class="linenos">185</span>                    <span class="n">error_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Parameter[</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">] not part of </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__qualname__</span><span class="si">}</span><span class="s2">() parameter list.&quot;</span>
-<span class="linenos">186</span>                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">error_msg</span><span class="p">)</span>
-<span class="linenos">187</span>                <span class="k">elif</span> <span class="n">func_args</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="linenos">188</span>                    <span class="k">if</span> <span class="ow">not</span> <span class="n">allow_None</span><span class="p">:</span>
-<span class="linenos">189</span>                        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Parameter[</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">] cannot be None-valued.&quot;</span><span class="p">)</span>
-<span class="linenos">190</span>                <span class="k">else</span><span class="p">:</span>
-<span class="linenos">191</span>                    <span class="n">func_args</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">coerce</span><span class="p">(</span><span class="n">func_args</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
-<span class="linenos">192</span>
-<span class="linenos">193</span>            <span class="n">out</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">**</span><span class="n">func_args</span><span class="p">)</span>
-<span class="linenos">194</span>            <span class="k">if</span> <span class="n">o</span> <span class="ow">and</span> <span class="p">(</span><span class="n">out</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
-<span class="linenos">195</span>                <span class="n">out</span> <span class="o">=</span> <span class="n">coerce</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
-<span class="linenos">196</span>            <span class="k">return</span> <span class="n">out</span>
-<span class="linenos">197</span>
-<span class="linenos">198</span>        <span class="k">return</span> <span class="n">wrapper</span>
-<span class="linenos">199</span>
-<span class="linenos">200</span>    <span class="k">return</span> <span class="n">decorator</span></div>
+<span class="linenos">159</span><span class="sd">       import pyxu.runtime as pxrt</span>
+<span class="linenos">160</span>
+<span class="linenos">161</span><span class="sd">       @pxrt.enforce_precision(i=&#39;y&#39;, o=False)  # `i` can process multiple args: `i=(&#39;x&#39;,&#39;y&#39;)`.</span>
+<span class="linenos">162</span><span class="sd">       def f(x, y, z=1):</span>
+<span class="linenos">163</span><span class="sd">           print(x.dtype, y.dtype)</span>
+<span class="linenos">164</span><span class="sd">           return x + y + z</span>
+<span class="linenos">165</span>
+<span class="linenos">166</span><span class="sd">       x, y = np.arange(5), np.r_[0.5]</span>
+<span class="linenos">167</span><span class="sd">       print(x.dtype, y.dtype)  # int64, float64</span>
+<span class="linenos">168</span>
+<span class="linenos">169</span><span class="sd">       with pxrt.Precision(pxrt.Width.SINGLE):</span>
+<span class="linenos">170</span><span class="sd">           out = f(x,y)                         # (int64, float32) [printed inside f-call.]</span>
+<span class="linenos">171</span><span class="sd">       print(out.dtype)                         # float64 [would have been float32 if `o=True`.]</span>
+<span class="linenos">172</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">173</span>
+<span class="linenos">174</span>    <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">:</span>
+<span class="linenos">175</span>        <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="linenos">176</span>        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">ARGS</span><span class="p">,</span> <span class="o">**</span><span class="n">KWARGS</span><span class="p">):</span>
+<span class="linenos">177</span>            <span class="n">func_args</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">parse_params</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">ARGS</span><span class="p">,</span> <span class="o">**</span><span class="n">KWARGS</span><span class="p">)</span>
+<span class="linenos">178</span>
+<span class="linenos">179</span>            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">i</span><span class="p">:</span>
+<span class="linenos">180</span>                <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">func_args</span><span class="p">:</span>
+<span class="linenos">181</span>                    <span class="n">error_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Parameter[</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">] not part of </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__qualname__</span><span class="si">}</span><span class="s2">() parameter list.&quot;</span>
+<span class="linenos">182</span>                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">error_msg</span><span class="p">)</span>
+<span class="linenos">183</span>                <span class="k">elif</span> <span class="n">func_args</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">184</span>                    <span class="k">if</span> <span class="ow">not</span> <span class="n">allow_None</span><span class="p">:</span>
+<span class="linenos">185</span>                        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Parameter[</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">] cannot be None-valued.&quot;</span><span class="p">)</span>
+<span class="linenos">186</span>                <span class="k">else</span><span class="p">:</span>
+<span class="linenos">187</span>                    <span class="n">func_args</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">coerce</span><span class="p">(</span><span class="n">func_args</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+<span class="linenos">188</span>
+<span class="linenos">189</span>            <span class="n">out</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">**</span><span class="n">func_args</span><span class="p">)</span>
+<span class="linenos">190</span>            <span class="k">if</span> <span class="n">o</span> <span class="ow">and</span> <span class="p">(</span><span class="n">out</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+<span class="linenos">191</span>                <span class="n">out</span> <span class="o">=</span> <span class="n">coerce</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+<span class="linenos">192</span>            <span class="k">return</span> <span class="n">out</span>
+<span class="linenos">193</span>
+<span class="linenos">194</span>        <span class="k">return</span> <span class="n">wrapper</span>
+<span class="linenos">195</span>
+<span class="linenos">196</span>    <span class="k">return</span> <span class="n">decorator</span></div>
 
-<span class="linenos">201</span>
-<span class="linenos">202</span>
+<span class="linenos">197</span>
+<span class="linenos">198</span>
 <div class="viewcode-block" id="getPrecision">
 <a class="viewcode-back" href="../../../api/runtime.html#pyxu.runtime.getPrecision">[docs]</a>
-<span class="linenos">203</span><span class="k">def</span> <span class="nf">getPrecision</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Width</span><span class="p">:</span>
-<span class="linenos">204</span>    <span class="n">state</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()</span>
-<span class="linenos">205</span>    <span class="k">return</span> <span class="n">state</span><span class="p">[</span><span class="s2">&quot;__width&quot;</span><span class="p">]</span></div>
+<span class="linenos">199</span><span class="k">def</span> <span class="nf">getPrecision</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Width</span><span class="p">:</span>
+<span class="linenos">200</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">201</span><span class="sd">    Query current FP precision.</span>
+<span class="linenos">202</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">203</span>    <span class="n">state</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()</span>
+<span class="linenos">204</span>    <span class="k">return</span> <span class="n">state</span><span class="p">[</span><span class="s2">&quot;__width&quot;</span><span class="p">]</span></div>
 
+<span class="linenos">205</span>
 <span class="linenos">206</span>
-<span class="linenos">207</span>
 <div class="viewcode-block" id="getCoerceState">
 <a class="viewcode-back" href="../../../api/runtime.html#pyxu.runtime.getCoerceState">[docs]</a>
-<span class="linenos">208</span><span class="k">def</span> <span class="nf">getCoerceState</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="linenos">209</span>    <span class="n">state</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()</span>
-<span class="linenos">210</span>    <span class="k">return</span> <span class="n">state</span><span class="p">[</span><span class="s2">&quot;__coerce&quot;</span><span class="p">]</span></div>
+<span class="linenos">207</span><span class="k">def</span> <span class="nf">getCoerceState</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="linenos">208</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">209</span><span class="sd">    Query if :py:func:`~pyxu.runtime.coerce` is (currently) a no-op.</span>
+<span class="linenos">210</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">211</span>    <span class="n">state</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()</span>
+<span class="linenos">212</span>    <span class="k">return</span> <span class="n">state</span><span class="p">[</span><span class="s2">&quot;__coerce&quot;</span><span class="p">]</span></div>
 
-<span class="linenos">211</span>
-<span class="linenos">212</span>
+<span class="linenos">213</span>
+<span class="linenos">214</span>
 <div class="viewcode-block" id="coerce">
 <a class="viewcode-back" href="../../../api/runtime.html#pyxu.runtime.coerce">[docs]</a>
-<span class="linenos">213</span><span class="k">def</span> <span class="nf">coerce</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos">214</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">215</span><span class="sd">    Transform input to match runtime FP-precision.</span>
-<span class="linenos">216</span>
-<span class="linenos">217</span><span class="sd">    Parameters</span>
-<span class="linenos">218</span><span class="sd">    ----------</span>
-<span class="linenos">219</span><span class="sd">    x: Real, NDArray</span>
-<span class="linenos">220</span>
-<span class="linenos">221</span><span class="sd">    Returns</span>
-<span class="linenos">222</span><span class="sd">    -------</span>
-<span class="linenos">223</span><span class="sd">    y: Real, NDArray</span>
-<span class="linenos">224</span><span class="sd">        Input cast to the runtime FP-precision.</span>
-<span class="linenos">225</span><span class="sd">        Fails if operation is impossible or unsafe. (I.e. casting complex-valued data.)</span>
-<span class="linenos">226</span>
-<span class="linenos">227</span><span class="sd">    Note</span>
-<span class="linenos">228</span><span class="sd">    ----</span>
-<span class="linenos">229</span><span class="sd">    This method is a NO-OP if :py:func:`~pyxu.runtime.getCoerceState()` returns ``False``.</span>
-<span class="linenos">230</span><span class="sd">    &quot;&quot;&quot;</span>
-<span class="linenos">231</span>    <span class="k">if</span> <span class="n">getCoerceState</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
-<span class="linenos">232</span>        <span class="k">return</span> <span class="n">x</span>
-<span class="linenos">233</span>    <span class="k">else</span><span class="p">:</span>
-<span class="linenos">234</span>        <span class="n">dtype</span> <span class="o">=</span> <span class="n">getPrecision</span><span class="p">()</span><span class="o">.</span><span class="n">value</span>
-<span class="linenos">235</span>        <span class="k">try</span><span class="p">:</span>
-<span class="linenos">236</span>            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">):</span>
-<span class="linenos">237</span>                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)[()]</span>
-<span class="linenos">238</span>            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">nb</span><span class="o">.</span><span class="n">Number</span><span class="p">):</span>
-<span class="linenos">239</span>                <span class="k">raise</span>  <span class="c1"># other number categories cannot be converted.</span>
-<span class="linenos">240</span>            <span class="k">elif</span> <span class="n">np</span><span class="o">.</span><span class="n">can_cast</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">casting</span><span class="o">=</span><span class="s2">&quot;same_kind&quot;</span><span class="p">):</span>
-<span class="linenos">241</span>                <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># cast warnings impossible</span>
-<span class="linenos">242</span>            <span class="k">else</span><span class="p">:</span>
-<span class="linenos">243</span>                <span class="k">raise</span>
-<span class="linenos">244</span>        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-<span class="linenos">245</span>            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot coerce </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2"> to scalar/array of precision </span><span class="si">{</span><span class="n">dtype</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span></div>
+<span class="linenos">215</span><span class="k">def</span> <span class="nf">coerce</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos">216</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">217</span><span class="sd">    Transform input to match runtime FP-precision.</span>
+<span class="linenos">218</span>
+<span class="linenos">219</span><span class="sd">    Parameters</span>
+<span class="linenos">220</span><span class="sd">    ----------</span>
+<span class="linenos">221</span><span class="sd">    x: Real, NDArray</span>
+<span class="linenos">222</span>
+<span class="linenos">223</span><span class="sd">    Returns</span>
+<span class="linenos">224</span><span class="sd">    -------</span>
+<span class="linenos">225</span><span class="sd">    y: Real, NDArray</span>
+<span class="linenos">226</span><span class="sd">        Input cast to the runtime FP-precision.  Fails if operation is impossible or unsafe. (I.e. casting</span>
+<span class="linenos">227</span><span class="sd">        complex-valued data.)</span>
+<span class="linenos">228</span>
+<span class="linenos">229</span><span class="sd">    Note</span>
+<span class="linenos">230</span><span class="sd">    ----</span>
+<span class="linenos">231</span><span class="sd">    This method is a NO-OP if :py:func:`~pyxu.runtime.getCoerceState()` returns ``False``.</span>
+<span class="linenos">232</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">233</span>    <span class="k">if</span> <span class="n">getCoerceState</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+<span class="linenos">234</span>        <span class="k">return</span> <span class="n">x</span>
+<span class="linenos">235</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">236</span>        <span class="n">dtype</span> <span class="o">=</span> <span class="n">getPrecision</span><span class="p">()</span><span class="o">.</span><span class="n">value</span>
+<span class="linenos">237</span>        <span class="k">try</span><span class="p">:</span>
+<span class="linenos">238</span>            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">):</span>
+<span class="linenos">239</span>                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)[()]</span>
+<span class="linenos">240</span>            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">nb</span><span class="o">.</span><span class="n">Number</span><span class="p">):</span>
+<span class="linenos">241</span>                <span class="k">raise</span>  <span class="c1"># other number categories cannot be converted.</span>
+<span class="linenos">242</span>            <span class="k">elif</span> <span class="n">np</span><span class="o">.</span><span class="n">can_cast</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">casting</span><span class="o">=</span><span class="s2">&quot;same_kind&quot;</span><span class="p">):</span>
+<span class="linenos">243</span>                <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># cast warnings impossible</span>
+<span class="linenos">244</span>            <span class="k">else</span><span class="p">:</span>
+<span class="linenos">245</span>                <span class="k">raise</span>
+<span class="linenos">246</span>        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="linenos">247</span>            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot coerce </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2"> to scalar/array of precision </span><span class="si">{</span><span class="n">dtype</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span></div>
 
-<span class="linenos">246</span>
-<span class="linenos">247</span>
-<span class="linenos">248</span><span class="k">def</span> <span class="nf">_setPrecision</span><span class="p">(</span><span class="n">width</span><span class="p">:</span> <span class="n">Width</span><span class="p">):</span>
-<span class="linenos">249</span>    <span class="c1"># For internal use only. It is recommended to modify FP-precision locally using the `Precision`</span>
-<span class="linenos">250</span>    <span class="c1"># context manager.</span>
-<span class="linenos">251</span>    <span class="n">state</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()</span>
-<span class="linenos">252</span>    <span class="n">state</span><span class="p">[</span><span class="s2">&quot;__width&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">width</span>
-<span class="linenos">253</span>
-<span class="linenos">254</span>
-<span class="linenos">255</span><span class="k">def</span> <span class="nf">_setCoerceState</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
-<span class="linenos">256</span>    <span class="c1"># For internal use only. It is recommended to modify coercion effect locally using the `Coerce`</span>
-<span class="linenos">257</span>    <span class="c1"># context manager.</span>
-<span class="linenos">258</span>    <span class="n">state</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()</span>
-<span class="linenos">259</span>    <span class="n">state</span><span class="p">[</span><span class="s2">&quot;__coerce&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span>
-<span class="linenos">260</span>
-<span class="linenos">261</span>
-<span class="linenos">262</span><span class="n">__width</span> <span class="o">=</span> <span class="n">Width</span><span class="o">.</span><span class="n">DOUBLE</span>  <span class="c1"># default FP-precision.</span>
-<span class="linenos">263</span><span class="n">__coerce</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># default: coerce() activated.</span>
+<span class="linenos">248</span>
+<span class="linenos">249</span>
+<span class="linenos">250</span><span class="k">def</span> <span class="nf">_setPrecision</span><span class="p">(</span><span class="n">width</span><span class="p">:</span> <span class="n">Width</span><span class="p">):</span>
+<span class="linenos">251</span>    <span class="c1"># For internal use only. It is recommended to modify FP-precision locally using the `Precision`</span>
+<span class="linenos">252</span>    <span class="c1"># context manager.</span>
+<span class="linenos">253</span>    <span class="n">state</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()</span>
+<span class="linenos">254</span>    <span class="n">state</span><span class="p">[</span><span class="s2">&quot;__width&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">width</span>
+<span class="linenos">255</span>
+<span class="linenos">256</span>
+<span class="linenos">257</span><span class="k">def</span> <span class="nf">_setCoerceState</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
+<span class="linenos">258</span>    <span class="c1"># For internal use only. It is recommended to modify coercion effect locally using the `Coerce`</span>
+<span class="linenos">259</span>    <span class="c1"># context manager.</span>
+<span class="linenos">260</span>    <span class="n">state</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()</span>
+<span class="linenos">261</span>    <span class="n">state</span><span class="p">[</span><span class="s2">&quot;__coerce&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span>
+<span class="linenos">262</span>
+<span class="linenos">263</span>
+<span class="linenos">264</span><span class="n">__width</span> <span class="o">=</span> <span class="n">Width</span><span class="o">.</span><span class="n">DOUBLE</span>  <span class="c1"># default FP-precision.</span>
+<span class="linenos">265</span><span class="n">__coerce</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># default: coerce() activated.</span>
 </pre></div>
 
                 </article>
@@ -800,14 +802,10 @@ document.write(`
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>
-      
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
-</p></div>
       
     </div>
   

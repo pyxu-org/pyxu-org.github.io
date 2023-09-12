@@ -239,7 +239,7 @@ document.write(`
           
           
           
-          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+          <a href="mailto: contact@pyxu.org" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
             <label class="sr-only">Contact</label></a>
         </li>
         <li class="nav-item">
@@ -381,7 +381,7 @@ document.write(`
           
           
           
-          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+          <a href="mailto: contact@pyxu.org" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
             <label class="sr-only">Contact</label></a>
         </li>
         <li class="nav-item">
@@ -492,10 +492,10 @@ document.write(`
 <section id="api-rules">
 <h2>API Rules<a class="headerlink" href="#api-rules" title="Link to this heading">#</a></h2>
 <p>To implement novel operators or algorithms, users must subclass an abstract base class from Pyxu’s
-<a class="reference internal" href="../api/abc.html#pyxu.abc.operator.Operator" title="pyxu.abc.operator.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> hierarchy. Doing so requires defining the fundamental methods attached to the
-subclass (e.g. <a class="reference internal" href="../api/abc.html#pyxu.abc.operator.Map.apply" title="pyxu.abc.operator.Map.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply()</span></code></a>, <a class="reference internal" href="../api/abc.html#pyxu.abc.operator.DiffFunc.grad" title="pyxu.abc.operator.DiffFunc.grad"><code class="xref py py-meth docutils literal notranslate"><span class="pre">grad()</span></code></a>,
-<a class="reference internal" href="../api/abc.html#pyxu.abc.operator.ProxFunc.prox" title="pyxu.abc.operator.ProxFunc.prox"><code class="xref py py-meth docutils literal notranslate"><span class="pre">prox()</span></code></a>, <a class="reference internal" href="../api/abc.html#pyxu.abc.operator.LinOp.adjoint" title="pyxu.abc.operator.LinOp.adjoint"><code class="xref py py-meth docutils literal notranslate"><span class="pre">adjoint()</span></code></a>, …). When marked as such in
-the documentation, such a user-defined method should abide by the following set of rules:</p>
+<a class="reference internal" href="../api/abc/operator.html#pyxu.abc.Operator" title="pyxu.abc.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> hierarchy. Doing so requires defining the fundamental methods attached to the subclass
+(e.g. <a class="reference internal" href="../api/abc/operator.html#pyxu.abc.Map.apply" title="pyxu.abc.Map.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply()</span></code></a>, <a class="reference internal" href="../api/abc/operator.html#pyxu.abc.DiffFunc.grad" title="pyxu.abc.DiffFunc.grad"><code class="xref py py-meth docutils literal notranslate"><span class="pre">grad()</span></code></a>, <a class="reference internal" href="../api/abc/operator.html#pyxu.abc.ProxFunc.prox" title="pyxu.abc.ProxFunc.prox"><code class="xref py py-meth docutils literal notranslate"><span class="pre">prox()</span></code></a>,
+<a class="reference internal" href="../api/abc/operator.html#pyxu.abc.LinOp.adjoint" title="pyxu.abc.LinOp.adjoint"><code class="xref py py-meth docutils literal notranslate"><span class="pre">adjoint()</span></code></a>, …). When marked as such in the documentation, such a user-defined method should
+abide by the following set of rules:</p>
 <ul class="simple">
 <li><p>It must handle properly the case where the input array is a 1-D or N-D array. In the latter case, the  first N-1
 dimensions of the input array should be considered as stacking dimensions, i.e. the method is applied along the last
@@ -506,8 +506,8 @@ axis.</p></li>
 <em>double</em>) of the inputs/outputs. If possible, the computation performed by the method itself should also be carried
 out at the user-specified precision, accessible via <a class="reference internal" href="../api/runtime.html#pyxu.runtime.getPrecision" title="pyxu.runtime.getPrecision"><code class="xref py py-func docutils literal notranslate"><span class="pre">getPrecision()</span></code></a>.</p></li>
 <li><p>Whenever possible, it should be compatible with the array modules supported by Pyxu. (Use
-<a class="reference internal" href="../api/info.html#pyxu.info.deps.supported_array_modules" title="pyxu.info.deps.supported_array_modules"><code class="xref py py-func docutils literal notranslate"><span class="pre">supported_array_modules()</span></code></a> for an up-to-date list).
-<a class="reference internal" href="../api/util.html#pyxu.util.array_module.get_array_module" title="pyxu.util.array_module.get_array_module"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_array_module()</span></code></a> can be used to write <a class="reference external" href="https://docs.cupy.dev/en/stable/user_guide/basic.html#how-to-write-cpu-gpu-agnostic-code">module-agnostic</a> code easily.</p></li>
+<a class="reference internal" href="../api/info.deps.html#pyxu.info.deps.supported_array_modules" title="pyxu.info.deps.supported_array_modules"><code class="xref py py-func docutils literal notranslate"><span class="pre">supported_array_modules()</span></code></a> for an up-to-date list).  <a class="reference internal" href="../api/util/array_module.html#pyxu.util.get_array_module" title="pyxu.util.get_array_module"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_array_module()</span></code></a>
+can be used to write <a class="reference external" href="https://docs.cupy.dev/en/stable/user_guide/basic.html#how-to-write-cpu-gpu-agnostic-code">module-agnostic</a> code easily.</p></li>
 </ul>
 </section>
 <section id="example-of-a-rule-abiding-operator">

@@ -3,111 +3,113 @@ pyxu.operator.linop
 
 .. contents:: Table of Contents
    :local:
-   :depth: 1
+   :depth: 2
 
-Basic operators
+Basic Operators
 ---------------
 
-.. autoclass:: pyxu.operator.linop.select.SubSample
+.. autoclass:: pyxu.operator.SubSample
    :no-members:
    :members: apply, adjoint, TrimSpec, IndexSpec
    :special-members: __init__
 
-.. autofunction:: pyxu.operator.linop.select.Trim
+.. autofunction:: pyxu.operator.Trim
 
-.. autofunction:: pyxu.operator.linop.reduce.Sum
+.. autofunction:: pyxu.operator.Sum
 
-.. autofunction:: pyxu.operator.linop.kron.kron
-
-.. autofunction:: pyxu.operator.linop.kron.khatri_rao
-
-.. autoclass:: pyxu.operator.linop.base.IdentityOp
+.. autoclass:: pyxu.operator.IdentityOp
    :no-members:
 
-.. autoclass:: pyxu.operator.linop.base.NullOp
+.. autoclass:: pyxu.operator.NullOp
    :no-members:
 
-.. autofunction:: pyxu.operator.linop.base.NullFunc
+.. autofunction:: pyxu.operator.NullFunc
 
-.. autofunction:: pyxu.operator.linop.base.HomothetyOp
+.. autofunction:: pyxu.operator.HomothetyOp
 
-.. autofunction:: pyxu.operator.linop.base.DiagonalOp
+.. autofunction:: pyxu.operator.DiagonalOp
 
-.. autofunction:: pyxu.operator.linop.base._ExplicitLinOp
-
-.. autoclass:: pyxu.operator.linop.pad.Pad
+.. autoclass:: pyxu.operator.Pad
    :no-members:
    :members: WidthSpec, ModeSpec
    :special-members: __init__
 
-
-Stencils and Convolutions
--------------------------
-
-.. autoclass:: pyxu.operator.linop.stencil._stencil._Stencil
-   :no-members:
-   :members: init, apply, IndexSpec
-
-.. autoclass:: pyxu.operator.linop.stencil.stencil.Stencil
-   :no-members:
-   :members: KernelSpec, configure_dispatcher, kernel, center, relative_indices, visualize
-   :special-members: __init__
-
-.. autoclass:: pyxu.operator.linop.stencil.stencil.Correlate
-
-.. autofunction:: pyxu.operator.linop.stencil.stencil.Convolve
-
 Transforms
 ----------
 
-.. autoclass:: pyxu.operator.linop.fft.fft.FFT
+.. autoclass:: pyxu.operator.FFT
    :no-members:
    :members: apply, adjoint
    :special-members: __init__
 
-.. autoclass:: pyxu.operator.linop.fft.nufft.NUFFT
+.. autoclass:: pyxu.operator.NUFFT
    :no-members:
    :members: type1, type2, type3, apply, adjoint, ascomplexarray, mesh, plot_kernel, params, auto_chunk, allocate, diagnostic_plot, stats
 
-Derivatives
------------
+Stencils & Convolutions
+-----------------------
 
-.. autoclass:: pyxu.operator.linop.diff.PartialDerivative
-   :members: finite_difference, gaussian_derivative
+.. autoclass:: pyxu.operator._Stencil
+   :no-members:
+   :members: init, apply, IndexSpec
 
-.. autofunction:: pyxu.operator.linop.diff.Gradient
+.. autoclass:: pyxu.operator.Stencil
+   :no-members:
+   :members: KernelSpec, configure_dispatcher, kernel, center, relative_indices, visualize
+   :special-members: __init__
 
-.. autofunction:: pyxu.operator.linop.diff.Jacobian
+.. autoclass:: pyxu.operator.Correlate
 
-.. autofunction:: pyxu.operator.linop.diff.Divergence
-
-.. autofunction:: pyxu.operator.linop.diff.Hessian
-
-.. autofunction:: pyxu.operator.linop.diff.Laplacian
-
-.. autofunction:: pyxu.operator.linop.diff.DirectionalDerivative
-
-.. autofunction:: pyxu.operator.linop.diff.DirectionalGradient
-
-.. autofunction:: pyxu.operator.linop.diff.DirectionalLaplacian
-
-.. autofunction:: pyxu.operator.linop.diff.DirectionalHessian
+.. autofunction:: pyxu.operator.Convolve
 
 Filters
 -------
 
-.. autofunction:: pyxu.operator.linop.filter.MovingAverage
+.. autofunction:: pyxu.operator.MovingAverage
 
-.. autofunction:: pyxu.operator.linop.filter.Gaussian
+.. autofunction:: pyxu.operator.Gaussian
 
-.. autofunction:: pyxu.operator.linop.filter.DifferenceOfGaussians
+.. autofunction:: pyxu.operator.DifferenceOfGaussians
 
-.. autofunction:: pyxu.operator.linop.filter.DoG
+.. autofunction:: pyxu.operator.DoG
 
-.. autofunction:: pyxu.operator.linop.filter.Laplace
+.. autofunction:: pyxu.operator.Laplace
 
-.. autofunction:: pyxu.operator.linop.filter.Sobel
+.. autofunction:: pyxu.operator.Sobel
 
-.. autofunction:: pyxu.operator.linop.filter.Prewitt
+.. autofunction:: pyxu.operator.Prewitt
 
-.. autofunction:: pyxu.operator.linop.filter.Scharr
+.. autofunction:: pyxu.operator.Scharr
+
+.. autoclass:: pyxu.operator.StructureTensor
+
+Derivatives
+-----------
+
+.. autoclass:: pyxu.operator.PartialDerivative
+   :members: finite_difference, gaussian_derivative
+
+.. autofunction:: pyxu.operator.Gradient
+
+.. autofunction:: pyxu.operator.Jacobian
+
+.. autofunction:: pyxu.operator.Divergence
+
+.. autofunction:: pyxu.operator.Hessian
+
+.. autofunction:: pyxu.operator.Laplacian
+
+.. autofunction:: pyxu.operator.DirectionalDerivative
+
+.. autofunction:: pyxu.operator.DirectionalGradient
+
+.. autofunction:: pyxu.operator.DirectionalLaplacian
+
+.. autofunction:: pyxu.operator.DirectionalHessian
+
+Tensor Products
+---------------
+
+.. autofunction:: pyxu.operator.kron
+
+.. autofunction:: pyxu.operator.khatri_rao

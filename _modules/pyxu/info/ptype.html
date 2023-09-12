@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css?v=7f9a90b1" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
@@ -199,7 +199,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> v1.0.x </strong></div>
+        <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -341,7 +341,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> v1.0.x </strong></div>
+          <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -451,87 +451,83 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <h1>Source code for pyxu.info.ptype</h1><div class="highlight"><pre>
-<span></span><span class="linenos"> 1</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos"> 2</span><span class="sd">The purpose of this module is to group all abstract types and helpers useful to Python&#39;s static type-checker.</span>
-<span class="linenos"> 3</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos"> 4</span>
-<span class="linenos"> 5</span><span class="kn">import</span> <span class="nn">collections.abc</span> <span class="k">as</span> <span class="nn">cabc</span>
-<span class="linenos"> 6</span><span class="kn">import</span> <span class="nn">numbers</span> <span class="k">as</span> <span class="nn">nb</span>
-<span class="linenos"> 7</span><span class="kn">import</span> <span class="nn">pathlib</span> <span class="k">as</span> <span class="nn">plib</span>
-<span class="linenos"> 8</span><span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">typ</span>
+<span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">collections.abc</span> <span class="k">as</span> <span class="nn">cabc</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">numbers</span> <span class="k">as</span> <span class="nn">nb</span>
+<span class="linenos"> 3</span><span class="kn">import</span> <span class="nn">pathlib</span> <span class="k">as</span> <span class="nn">plib</span>
+<span class="linenos"> 4</span><span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">typ</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="kn">import</span> <span class="nn">numpy.typing</span> <span class="k">as</span> <span class="nn">npt</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="kn">import</span> <span class="nn">pyxu.info.deps</span> <span class="k">as</span> <span class="nn">pxd</span>
 <span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="kn">import</span> <span class="nn">numpy.typing</span> <span class="k">as</span> <span class="nn">npt</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="kn">import</span> <span class="nn">pyxu.info.deps</span> <span class="k">as</span> <span class="nn">pxd</span>
+<span class="linenos">10</span><span class="k">if</span> <span class="n">typ</span><span class="o">.</span><span class="n">TYPE_CHECKING</span><span class="p">:</span>
+<span class="linenos">11</span>    <span class="kn">import</span> <span class="nn">pyxu.abc.operator</span> <span class="k">as</span> <span class="nn">pxo</span>
+<span class="linenos">12</span>    <span class="kn">import</span> <span class="nn">pyxu.abc.solver</span> <span class="k">as</span> <span class="nn">pxs</span>
 <span class="linenos">13</span>
-<span class="linenos">14</span><span class="k">if</span> <span class="n">typ</span><span class="o">.</span><span class="n">TYPE_CHECKING</span><span class="p">:</span>
-<span class="linenos">15</span>    <span class="kn">import</span> <span class="nn">pyxu.abc.operator</span> <span class="k">as</span> <span class="nn">pxo</span>
-<span class="linenos">16</span>    <span class="kn">import</span> <span class="nn">pyxu.abc.solver</span> <span class="k">as</span> <span class="nn">pxs</span>
-<span class="linenos">17</span>
-<span class="linenos">18</span><span class="c1">#: Supported dense array types.</span>
-<span class="linenos">19</span><span class="n">NDArray</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;NDArray&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">pxd</span><span class="o">.</span><span class="n">supported_array_types</span><span class="p">())</span>
-<span class="linenos">20</span>
-<span class="linenos">21</span><span class="c1">#: Supported dense array modules.</span>
-<span class="linenos">22</span><span class="n">ArrayModule</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span>
-<span class="linenos">23</span>    <span class="s2">&quot;ArrayModule&quot;</span><span class="p">,</span>
-<span class="linenos">24</span>    <span class="o">*</span><span class="p">[</span><span class="n">typ</span><span class="o">.</span><span class="n">Literal</span><span class="p">[</span><span class="n">_</span><span class="p">]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">pxd</span><span class="o">.</span><span class="n">supported_array_modules</span><span class="p">()],</span>
-<span class="linenos">25</span><span class="p">)</span>
-<span class="linenos">26</span>
-<span class="linenos">27</span><span class="c1">#: Supported sparse array types.</span>
-<span class="linenos">28</span><span class="n">SparseArray</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;SparseArray&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">pxd</span><span class="o">.</span><span class="n">supported_sparse_types</span><span class="p">())</span>
-<span class="linenos">29</span>
-<span class="linenos">30</span><span class="c1">#: Supported sparse array modules.</span>
-<span class="linenos">31</span><span class="n">SparseModule</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span>
-<span class="linenos">32</span>    <span class="s2">&quot;SparseModule&quot;</span><span class="p">,</span>
-<span class="linenos">33</span>    <span class="o">*</span><span class="p">[</span><span class="n">typ</span><span class="o">.</span><span class="n">Literal</span><span class="p">[</span><span class="n">_</span><span class="p">]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">pxd</span><span class="o">.</span><span class="n">supported_sparse_modules</span><span class="p">()],</span>
-<span class="linenos">34</span><span class="p">)</span>
-<span class="linenos">35</span>
-<span class="linenos">36</span><span class="c1">#: Top-level abstract :py:class:`~pyxu.abc.operator.Operator` interface exposed to users.</span>
-<span class="linenos">37</span><span class="n">OpT</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span>
-<span class="linenos">38</span>    <span class="c1"># This list should be kept in sync with all user-facing operators in `pxo`.</span>
-<span class="linenos">39</span>    <span class="s2">&quot;OpT&quot;</span><span class="p">,</span>
-<span class="linenos">40</span>    <span class="s2">&quot;pxo.Operator&quot;</span><span class="p">,</span>
-<span class="linenos">41</span>    <span class="s2">&quot;pxo.DiffFunc&quot;</span><span class="p">,</span>
-<span class="linenos">42</span>    <span class="s2">&quot;pxo.ProxDiffFunc&quot;</span><span class="p">,</span>
-<span class="linenos">43</span>    <span class="s2">&quot;pxo.NormalOp&quot;</span><span class="p">,</span>
-<span class="linenos">44</span>    <span class="s2">&quot;pxo.ProxFunc&quot;</span><span class="p">,</span>
-<span class="linenos">45</span>    <span class="s2">&quot;pxo.SquareOp&quot;</span><span class="p">,</span>
-<span class="linenos">46</span>    <span class="s2">&quot;pxo.QuadraticFunc&quot;</span><span class="p">,</span>
-<span class="linenos">47</span>    <span class="s2">&quot;pxo.ProjOp&quot;</span><span class="p">,</span>
-<span class="linenos">48</span>    <span class="s2">&quot;pxo.LinFunc&quot;</span><span class="p">,</span>
-<span class="linenos">49</span>    <span class="s2">&quot;pxo.PosDefOp&quot;</span><span class="p">,</span>
-<span class="linenos">50</span>    <span class="s2">&quot;pxo.Map&quot;</span><span class="p">,</span>
-<span class="linenos">51</span>    <span class="s2">&quot;pxo.Func&quot;</span><span class="p">,</span>
-<span class="linenos">52</span>    <span class="s2">&quot;pxo.OrthProjOp&quot;</span><span class="p">,</span>
-<span class="linenos">53</span>    <span class="s2">&quot;pxo.DiffMap&quot;</span><span class="p">,</span>
-<span class="linenos">54</span>    <span class="s2">&quot;pxo.UnitOp&quot;</span><span class="p">,</span>
-<span class="linenos">55</span>    <span class="s2">&quot;pxo.SelfAdjointOp&quot;</span><span class="p">,</span>
-<span class="linenos">56</span>    <span class="s2">&quot;pxo.LinOp&quot;</span><span class="p">,</span>
-<span class="linenos">57</span><span class="p">)</span>
-<span class="linenos">58</span>
-<span class="linenos">59</span><span class="c1">#: :py:class:`~pyxu.abc.operator.Operator` hierarchy class type.</span>
-<span class="linenos">60</span><span class="n">OpC</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">Type</span><span class="p">[</span><span class="n">OpT</span><span class="p">]</span>  <span class="c1"># Operator classes</span>
-<span class="linenos">61</span>
-<span class="linenos">62</span><span class="c1">#: Mathematical properties attached to :py:class:`~pyxu.abc.operator.Operator` objects.</span>
-<span class="linenos">63</span><span class="n">Property</span> <span class="o">=</span> <span class="s2">&quot;pxo.Property&quot;</span>
-<span class="linenos">64</span>
-<span class="linenos">65</span><span class="c1">#: Top-level abstract :py:class:`~pyxu.abc.solver.Solver` interface exposed to users.</span>
-<span class="linenos">66</span><span class="n">SolverT</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;SolverT&quot;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="s2">&quot;pxs.Solver&quot;</span><span class="p">)</span>
-<span class="linenos">67</span>
-<span class="linenos">68</span><span class="c1">#: :py:class:`~pyxu.abc.solver.Solver` hierarchy class type.</span>
-<span class="linenos">69</span><span class="n">SolverC</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">Type</span><span class="p">[</span><span class="n">SolverT</span><span class="p">]</span>
-<span class="linenos">70</span>
-<span class="linenos">71</span><span class="c1">#: Solver run-modes.</span>
-<span class="linenos">72</span><span class="n">SolverM</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;SolverM&quot;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="s2">&quot;pxs.Mode&quot;</span><span class="p">)</span>
-<span class="linenos">73</span>
-<span class="linenos">74</span><span class="n">Integer</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">Integral</span>
-<span class="linenos">75</span><span class="n">Real</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">Real</span>
-<span class="linenos">76</span><span class="n">DType</span> <span class="o">=</span> <span class="n">npt</span><span class="o">.</span><span class="n">DTypeLike</span>  <span class="c1">#: NDArray dtype specifier.</span>
-<span class="linenos">77</span><span class="n">OpShape</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Integer</span><span class="p">,</span> <span class="n">Integer</span><span class="p">]</span>  <span class="c1">#: Operator shape specifier.</span>
-<span class="linenos">78</span><span class="n">NDArrayAxis</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">Integer</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Integer</span><span class="p">,</span> <span class="o">...</span><span class="p">]]</span>  <span class="c1">#: Axis/Axes specifier.</span>
-<span class="linenos">79</span><span class="n">NDArrayShape</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">Integer</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Integer</span><span class="p">,</span> <span class="o">...</span><span class="p">]]</span>  <span class="c1">#: NDArray shape specifier.</span>
-<span class="linenos">80</span><span class="n">Path</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">plib</span><span class="o">.</span><span class="n">Path</span><span class="p">]</span>  <span class="c1">#: Path-like object.</span>
-<span class="linenos">81</span><span class="n">VarName</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Collection</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span>  <span class="c1">#: Variable name(s).</span>
+<span class="linenos">14</span><span class="c1">#: Supported dense array types.</span>
+<span class="linenos">15</span><span class="n">NDArray</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;NDArray&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">pxd</span><span class="o">.</span><span class="n">supported_array_types</span><span class="p">())</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="c1">#: Supported dense array modules.</span>
+<span class="linenos">18</span><span class="n">ArrayModule</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span>
+<span class="linenos">19</span>    <span class="s2">&quot;ArrayModule&quot;</span><span class="p">,</span>
+<span class="linenos">20</span>    <span class="o">*</span><span class="p">[</span><span class="n">typ</span><span class="o">.</span><span class="n">Literal</span><span class="p">[</span><span class="n">_</span><span class="p">]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">pxd</span><span class="o">.</span><span class="n">supported_array_modules</span><span class="p">()],</span>
+<span class="linenos">21</span><span class="p">)</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span><span class="c1">#: Supported sparse array types.</span>
+<span class="linenos">24</span><span class="n">SparseArray</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;SparseArray&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">pxd</span><span class="o">.</span><span class="n">supported_sparse_types</span><span class="p">())</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span><span class="c1">#: Supported sparse array modules.</span>
+<span class="linenos">27</span><span class="n">SparseModule</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span>
+<span class="linenos">28</span>    <span class="s2">&quot;SparseModule&quot;</span><span class="p">,</span>
+<span class="linenos">29</span>    <span class="o">*</span><span class="p">[</span><span class="n">typ</span><span class="o">.</span><span class="n">Literal</span><span class="p">[</span><span class="n">_</span><span class="p">]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">pxd</span><span class="o">.</span><span class="n">supported_sparse_modules</span><span class="p">()],</span>
+<span class="linenos">30</span><span class="p">)</span>
+<span class="linenos">31</span>
+<span class="linenos">32</span><span class="c1">#: Top-level abstract :py:class:`~pyxu.abc.Operator` interface exposed to users.</span>
+<span class="linenos">33</span><span class="n">OpT</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span>
+<span class="linenos">34</span>    <span class="c1"># This list should be kept in sync with all user-facing operators in `pxo`.</span>
+<span class="linenos">35</span>    <span class="s2">&quot;OpT&quot;</span><span class="p">,</span>
+<span class="linenos">36</span>    <span class="s2">&quot;pxo.Operator&quot;</span><span class="p">,</span>
+<span class="linenos">37</span>    <span class="s2">&quot;pxo.DiffFunc&quot;</span><span class="p">,</span>
+<span class="linenos">38</span>    <span class="s2">&quot;pxo.ProxDiffFunc&quot;</span><span class="p">,</span>
+<span class="linenos">39</span>    <span class="s2">&quot;pxo.NormalOp&quot;</span><span class="p">,</span>
+<span class="linenos">40</span>    <span class="s2">&quot;pxo.ProxFunc&quot;</span><span class="p">,</span>
+<span class="linenos">41</span>    <span class="s2">&quot;pxo.SquareOp&quot;</span><span class="p">,</span>
+<span class="linenos">42</span>    <span class="s2">&quot;pxo.QuadraticFunc&quot;</span><span class="p">,</span>
+<span class="linenos">43</span>    <span class="s2">&quot;pxo.ProjOp&quot;</span><span class="p">,</span>
+<span class="linenos">44</span>    <span class="s2">&quot;pxo.LinFunc&quot;</span><span class="p">,</span>
+<span class="linenos">45</span>    <span class="s2">&quot;pxo.PosDefOp&quot;</span><span class="p">,</span>
+<span class="linenos">46</span>    <span class="s2">&quot;pxo.Map&quot;</span><span class="p">,</span>
+<span class="linenos">47</span>    <span class="s2">&quot;pxo.Func&quot;</span><span class="p">,</span>
+<span class="linenos">48</span>    <span class="s2">&quot;pxo.OrthProjOp&quot;</span><span class="p">,</span>
+<span class="linenos">49</span>    <span class="s2">&quot;pxo.DiffMap&quot;</span><span class="p">,</span>
+<span class="linenos">50</span>    <span class="s2">&quot;pxo.UnitOp&quot;</span><span class="p">,</span>
+<span class="linenos">51</span>    <span class="s2">&quot;pxo.SelfAdjointOp&quot;</span><span class="p">,</span>
+<span class="linenos">52</span>    <span class="s2">&quot;pxo.LinOp&quot;</span><span class="p">,</span>
+<span class="linenos">53</span><span class="p">)</span>
+<span class="linenos">54</span>
+<span class="linenos">55</span><span class="c1">#: :py:class:`~pyxu.abc.Operator` hierarchy class type.</span>
+<span class="linenos">56</span><span class="n">OpC</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">Type</span><span class="p">[</span><span class="n">OpT</span><span class="p">]</span>  <span class="c1"># Operator classes</span>
+<span class="linenos">57</span>
+<span class="linenos">58</span><span class="c1">#: Mathematical properties attached to :py:class:`~pyxu.abc.Operator` objects.</span>
+<span class="linenos">59</span><span class="n">Property</span> <span class="o">=</span> <span class="s2">&quot;pxo.Property&quot;</span>
+<span class="linenos">60</span>
+<span class="linenos">61</span><span class="c1">#: Top-level abstract :py:class:`~pyxu.abc.Solver` interface exposed to users.</span>
+<span class="linenos">62</span><span class="n">SolverT</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;SolverT&quot;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="s2">&quot;pxs.Solver&quot;</span><span class="p">)</span>
+<span class="linenos">63</span>
+<span class="linenos">64</span><span class="c1">#: :py:class:`~pyxu.abc.Solver` hierarchy class type.</span>
+<span class="linenos">65</span><span class="n">SolverC</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">Type</span><span class="p">[</span><span class="n">SolverT</span><span class="p">]</span>
+<span class="linenos">66</span>
+<span class="linenos">67</span><span class="c1">#: Solver run-modes.</span>
+<span class="linenos">68</span><span class="n">SolverM</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;SolverM&quot;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="s2">&quot;pxs.SolverMode&quot;</span><span class="p">)</span>
+<span class="linenos">69</span>
+<span class="linenos">70</span><span class="n">Integer</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">Integral</span>
+<span class="linenos">71</span><span class="n">Real</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">Real</span>  <span class="c1">#: Alias of :py:class:`numbers.Real`.</span>
+<span class="linenos">72</span><span class="n">DType</span> <span class="o">=</span> <span class="n">npt</span><span class="o">.</span><span class="n">DTypeLike</span>  <span class="c1">#: :py:attr:`~pyxu.info.ptype.NDArray` dtype specifier.</span>
+<span class="linenos">73</span><span class="n">OpShape</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Integer</span><span class="p">,</span> <span class="n">Integer</span><span class="p">]</span>  <span class="c1">#: :py:class:`~pyxu.abc.Operator` shape specifier.</span>
+<span class="linenos">74</span><span class="n">NDArrayAxis</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">Integer</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Integer</span><span class="p">,</span> <span class="o">...</span><span class="p">]]</span>  <span class="c1">#: Axis/Axes specifier.</span>
+<span class="linenos">75</span><span class="n">NDArrayShape</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">Integer</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Integer</span><span class="p">,</span> <span class="o">...</span><span class="p">]]</span>  <span class="c1">#: :py:attr:`~pyxu.info.ptype.NDArray` shape specifier.</span>
+<span class="linenos">76</span><span class="n">Path</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">plib</span><span class="o">.</span><span class="n">Path</span><span class="p">]</span>  <span class="c1">#: Path-like object.</span>
+<span class="linenos">77</span><span class="n">VarName</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Collection</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span>  <span class="c1">#: Variable name(s).</span>
 </pre></div>
 
                 </article>
@@ -591,14 +587,10 @@ document.write(`
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>
-      
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
-</p></div>
       
     </div>
   

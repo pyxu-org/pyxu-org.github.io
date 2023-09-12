@@ -5,8 +5,7 @@ pyxu.operator
    :maxdepth: 2
    :hidden:
 
-   map
+   blocks
    func
    linop
-   blocks
-   interop
+   map

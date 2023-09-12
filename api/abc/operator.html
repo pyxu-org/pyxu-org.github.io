@@ -1,0 +1,1805 @@
+
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>pyxu.abc.operator — Pyxu Documentation</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../../_static/plot_directive.css?v=7f9a90b1" rel="stylesheet" type="text/css"/>
+<link href="../../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
+<link href="../../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="../../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
+<link href="../../_static/sg_gallery.css?v=61a4c737" rel="stylesheet" type="text/css"/>
+<link href="../../_static/sg_gallery-binder.css?v=f4aeca0c" rel="stylesheet" type="text/css"/>
+<link href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" rel="stylesheet" type="text/css"/>
+<link href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" rel="stylesheet" type="text/css"/>
+<link href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/custom.css?v=1031a718" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
+<link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
+<script src="../../_static/documentation_options.js?v=e02fc88f"></script>
+<script src="../../_static/doctools.js?v=888ff710"></script>
+<script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="../../_static/copybutton.js?v=30646c52"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+<script src="../../_static/design-tabs.js?v=36754332"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+<script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'api/abc/operator';</script>
+<link href="../../_static/favicon.png" rel="icon"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="solver.html" rel="next" title="pyxu.abc.solver"/>
+<link href="arithmetic.html" rel="prev" title="pyxu.abc.arithmetic"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="light" data-offset="180">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search the docs ..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+<label class="sidebar-toggle primary-toggle" for="__primary">
+<span class="fa-solid fa-bars"></span>
+</label>
+<div class="navbar-header-items__start">
+<div class="navbar-item">
+<a class="navbar-brand logo" href="../../index.html">
+<img alt="Logo image" class="logo__image only-light" src="../../_static/logo.png"/>
+<script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+</a></div>
+</div>
+<div class="col-lg-9 navbar-header-items">
+<div class="me-auto navbar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../intro/index.html">
+                        Getting Started
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../guide/index.html">
+                        User Guide
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../examples/index.html">
+                        Example Gallery
+                      </a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link nav-internal" href="../index.html">
+                        API Reference
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../fair/index.html">
+                        Extending Pyxu
+                      </a>
+</li>
+</ul>
+</nav></div>
+</div>
+<div class="navbar-header-items__end">
+<div class="navbar-item navbar-persistent--container">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://pypi.org/project/pyxu/" rel="noopener" target="_blank" title="PyPI"><span><i class="fa-brands fa-python"></i></span>
+<label class="sr-only">PyPI</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="mailto: contact@pyxu.org" rel="noopener" target="_blank" title="Contact"><span><i class="fa-brands fa-telegram"></i></span>
+<label class="sr-only">Contact</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://imaging.epfl.ch/" rel="noopener" target="_blank" title="EPFL Center for Imaging"><img alt="EPFL Center for Imaging" class="icon-link-image" src="../../_static/imaging.png"/></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<label class="sidebar-toggle secondary-toggle" for="__secondary">
+<span class="fa-solid fa-outdent"></span>
+</label>
+</div>
+</nav>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+<div class="sidebar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../intro/index.html">
+                        Getting Started
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../guide/index.html">
+                        User Guide
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../examples/index.html">
+                        Example Gallery
+                      </a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link nav-internal" href="../index.html">
+                        API Reference
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../fair/index.html">
+                        Extending Pyxu
+                      </a>
+</li>
+</ul>
+</nav></div>
+</div>
+<div class="sidebar-header-items__end">
+<div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://pypi.org/project/pyxu/" rel="noopener" target="_blank" title="PyPI"><span><i class="fa-brands fa-python"></i></span>
+<label class="sr-only">PyPI</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="mailto: contact@pyxu.org" rel="noopener" target="_blank" title="Contact"><span><i class="fa-brands fa-telegram"></i></span>
+<label class="sr-only">Contact</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://imaging.epfl.ch/" rel="noopener" target="_blank" title="EPFL Center for Imaging"><img alt="EPFL Center for Imaging" class="icon-link-image" src="../../_static/imaging.png"/></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item"><nav aria-label="Section Navigation" class="bd-docs-nav bd-links">
+<p aria-level="1" class="bd-links__title" role="heading">Section Navigation</p>
+<div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">pyxu.abc</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arithmetic.html">pyxu.abc.arithmetic</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">pyxu.abc.operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solver.html">pyxu.abc.solver</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../info.deps.html">pyxu.info.deps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info.ptype.html">pyxu.info.ptype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info.warning.html">pyxu.info.warning</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../operator/index.html">pyxu.operator</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../operator/blocks.html">pyxu.operator.blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../operator/func.html">pyxu.operator.func</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../operator/linop.html">pyxu.operator.linop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../operator/map.html">pyxu.operator.map</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../operator.interop.html">pyxu.operator.interop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opt.solver.html">pyxu.opt.solver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opt.stop.html">pyxu.opt.stop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../runtime.html">pyxu.runtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math.html">pyxu.math</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../util/index.html">pyxu.util</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../util/array_module.html">pyxu.util.array_module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../util/complex.html">pyxu.util.complex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../util/misc.html">pyxu.util.misc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../util/operator.html">pyxu.util.operator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../experimental.sampler.html">pyxu.experimental.sampler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html"><strong>References</strong></a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content">
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item">
+<nav aria-label="Breadcrumbs">
+<ul aria-label="Breadcrumb" class="bd-breadcrumbs" role="navigation">
+<li class="breadcrumb-item breadcrumb-home">
+<a aria-label="Home" class="nav-link" href="../../index.html">
+<i class="fa-solid fa-home"></i>
+</a>
+</li>
+<li class="breadcrumb-item"><a class="nav-link" href="../index.html">API Reference</a></li>
+<li class="breadcrumb-item"><a class="nav-link" href="index.html">pyxu.abc</a></li>
+<li aria-current="page" class="breadcrumb-item active">pyxu.abc.operator</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article" role="main">
+<section id="pyxu-abc-operator">
+<h1>pyxu.abc.operator<a class="headerlink" href="#pyxu-abc-operator" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.abc.Property">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#Property"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.Property" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></a></p>
+<p>Mathematical property.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#pyxu.abc.Operator" title="pyxu.abc.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a></p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyxu.abc.Property.CAN_EVAL">
+<span class="sig-name descname"><span class="pre">CAN_EVAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#pyxu.abc.Property.CAN_EVAL" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyxu.abc.Property.FUNCTIONAL">
+<span class="sig-name descname"><span class="pre">FUNCTIONAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#pyxu.abc.Property.FUNCTIONAL" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyxu.abc.Property.PROXIMABLE">
+<span class="sig-name descname"><span class="pre">PROXIMABLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#pyxu.abc.Property.PROXIMABLE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyxu.abc.Property.DIFFERENTIABLE">
+<span class="sig-name descname"><span class="pre">DIFFERENTIABLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#pyxu.abc.Property.DIFFERENTIABLE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyxu.abc.Property.DIFFERENTIABLE_FUNCTION">
+<span class="sig-name descname"><span class="pre">DIFFERENTIABLE_FUNCTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#pyxu.abc.Property.DIFFERENTIABLE_FUNCTION" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyxu.abc.Property.LINEAR">
+<span class="sig-name descname"><span class="pre">LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#pyxu.abc.Property.LINEAR" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyxu.abc.Property.LINEAR_SQUARE">
+<span class="sig-name descname"><span class="pre">LINEAR_SQUARE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#pyxu.abc.Property.LINEAR_SQUARE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyxu.abc.Property.LINEAR_NORMAL">
+<span class="sig-name descname"><span class="pre">LINEAR_NORMAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#pyxu.abc.Property.LINEAR_NORMAL" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyxu.abc.Property.LINEAR_IDEMPOTENT">
+<span class="sig-name descname"><span class="pre">LINEAR_IDEMPOTENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></em><a class="headerlink" href="#pyxu.abc.Property.LINEAR_IDEMPOTENT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyxu.abc.Property.LINEAR_SELF_ADJOINT">
+<span class="sig-name descname"><span class="pre">LINEAR_SELF_ADJOINT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#pyxu.abc.Property.LINEAR_SELF_ADJOINT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyxu.abc.Property.LINEAR_POSITIVE_DEFINITE">
+<span class="sig-name descname"><span class="pre">LINEAR_POSITIVE_DEFINITE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">11</span></em><a class="headerlink" href="#pyxu.abc.Property.LINEAR_POSITIVE_DEFINITE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyxu.abc.Property.LINEAR_UNITARY">
+<span class="sig-name descname"><span class="pre">LINEAR_UNITARY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">12</span></em><a class="headerlink" href="#pyxu.abc.Property.LINEAR_UNITARY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyxu.abc.Property.QUADRATIC">
+<span class="sig-name descname"><span class="pre">QUADRATIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">13</span></em><a class="headerlink" href="#pyxu.abc.Property.QUADRATIC" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.Property.arithmetic_methods">
+<span class="sig-name descname"><span class="pre">arithmetic_methods</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#Property.arithmetic_methods"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.Property.arithmetic_methods" title="Link to this definition">#</a></dt>
+<dd><p>Instance methods affected by arithmetic operations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Set" title="(in Python v3.11)"><em>Set</em></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.abc.Operator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Operator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#Operator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.Operator" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Abstract Base Class for Pyxu operators.</p>
+<p>Goals:</p>
+<ul class="simple">
+<li><p>enable operator arithmetic.</p></li>
+<li><p>cast operators to specialized forms.</p></li>
+<li><p>attach <a class="reference internal" href="#pyxu.abc.Property" title="pyxu.abc.Property"><code class="xref py py-class docutils literal notranslate"><span class="pre">Property</span></code></a> tags encoding certain mathematical properties.  Each core sub-class <strong>must</strong>
+have a unique set of properties to be distinguishable from its peers.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em>) – </p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.Operator.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#Operator.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.Operator.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>shape</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpShape" title="pyxu.info.ptype.OpShape"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpShape</span></code></a>) – (N, M) operator shape.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="pyxu.abc.Operator.shape">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shape</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><span class="pre">Integral</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><span class="pre">Integral</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pyxu.abc.Operator.shape" title="Link to this definition">#</a></dt>
+<dd><p>Return (N, M) operator shape.</p>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="pyxu.abc.Operator.dim">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dim</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><span class="pre">Integral</span></a></em><a class="headerlink" href="#pyxu.abc.Operator.dim" title="Link to this definition">#</a></dt>
+<dd><p>Return dimension of operator’s domain. (M)</p>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="pyxu.abc.Operator.codim">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">codim</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><span class="pre">Integral</span></a></em><a class="headerlink" href="#pyxu.abc.Operator.codim" title="Link to this definition">#</a></dt>
+<dd><p>Return dimension of operator’s co-domain. (N)</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.Operator.properties">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#Operator.properties"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.Operator.properties" title="Link to this definition">#</a></dt>
+<dd><p>Mathematical properties of the operator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Set" title="(in Python v3.11)"><em>Set</em></a>[<a class="reference internal" href="#pyxu.abc.Property" title="pyxu.abc.operator.Property"><em>Property</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.Operator.has">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">has</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#Operator.has"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.Operator.has" title="Link to this definition">#</a></dt>
+<dd><p>Verify if operator possesses supplied properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>prop</strong> (<a class="reference internal" href="#pyxu.abc.Property" title="pyxu.abc.operator.Property"><em>Property</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Collection" title="(in Python v3.11)"><em>Collection</em></a><em>[</em><a class="reference internal" href="#pyxu.abc.Property" title="pyxu.abc.operator.Property"><em>Property</em></a><em>]</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.Operator.asop">
+<span class="sig-name descname"><span class="pre">asop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cast_to</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#Operator.asop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.Operator.asop" title="Link to this definition">#</a></dt>
+<dd><p>Recast an <a class="reference internal" href="#pyxu.abc.Operator" title="pyxu.abc.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> (or subclass thereof) to another <a class="reference internal" href="#pyxu.abc.Operator" title="pyxu.abc.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a>.</p>
+<p>Users may call this method if the arithmetic API yields sub-optimal return types.</p>
+<p>This method is a no-op if <code class="code docutils literal notranslate"><span class="pre">cast_to</span></code> is a parent class of <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cast_to</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpC" title="pyxu.info.ptype.OpC"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpC</span></code></a>) – Target type for the recast.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p><strong>op</strong> – Operator with the new interface.</p>
+<p>Fails when cast is forbidden.
+(Ex: <a class="reference internal" href="#pyxu.abc.Map" title="pyxu.abc.Map"><code class="xref py py-class docutils literal notranslate"><span class="pre">Map</span></code></a> -&gt; <a class="reference internal" href="#pyxu.abc.Func" title="pyxu.abc.Func"><code class="xref py py-class docutils literal notranslate"><span class="pre">Func</span></code></a> if codim &gt; 1)</p>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The interface of <code class="code docutils literal notranslate"><span class="pre">cast_to</span></code> is provided via encapsulation + forwarding.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">self</span></code> does not implement all methods from <code class="code docutils literal notranslate"><span class="pre">cast_to</span></code>, then unimplemented methods will raise
+<a class="reference external" href="https://docs.python.org/3/library/exceptions.html#NotImplementedError" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NotImplementedError</span></code></a> when called.</p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.Operator.__add__">
+<span class="sig-name descname"><span class="pre">__add__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#Operator.__add__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.Operator.__add__" title="Link to this definition">#</a></dt>
+<dd><p>Add two operators.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a>) – (A, B) Left operand.</p></li>
+<li><p><strong>other</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a>) – (C, D) Right operand.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>op</strong> – Composite operator <code class="docutils literal notranslate"><span class="pre">self</span> <span class="pre">+</span> <span class="pre">other</span></code></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Operand shapes must be <code class="code docutils literal notranslate"><span class="pre">consistent</span></code>, i.e.:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>have <code class="code docutils literal notranslate"><span class="pre">identical</span> <span class="pre">shape</span></code>, or</p></li>
+<li><p>be <code class="code docutils literal notranslate"><span class="pre">range-broadcastable</span></code>, i.e. functional + map works.</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="arithmetic.html#pyxu.abc.arithmetic.AddRule" title="pyxu.abc.arithmetic.AddRule"><code class="xref py py-class docutils literal notranslate"><span class="pre">AddRule</span></code></a></p>
+</div>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.Operator.__sub__">
+<span class="sig-name descname"><span class="pre">__sub__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#Operator.__sub__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.Operator.__sub__" title="Link to this definition">#</a></dt>
+<dd><p>Subtract two operators.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a>) – (A, B) Left operand.</p></li>
+<li><p><strong>other</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a>) – (C, D) Right operand.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>op</strong> – Composite operator <code class="docutils literal notranslate"><span class="pre">self</span> <span class="pre">-</span> <span class="pre">other</span></code></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.Operator.__neg__">
+<span class="sig-name descname"><span class="pre">__neg__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#Operator.__neg__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.Operator.__neg__" title="Link to this definition">#</a></dt>
+<dd><p>Negate an operator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> – Composite operator <code class="docutils literal notranslate"><span class="pre">-1</span> <span class="pre">*</span> <span class="pre">self</span></code>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.Operator.__mul__">
+<span class="sig-name descname"><span class="pre">__mul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#Operator.__mul__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.Operator.__mul__" title="Link to this definition">#</a></dt>
+<dd><p>Compose two operators, or scale an operator by a constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a>) – (A, B) Left operand.</p></li>
+<li><p><strong>other</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a>) – (1,) scalar, or
+(C, D) Right operand.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>op</strong> – (A, B) scaled operator, or
+(A, D) composed operator <code class="docutils literal notranslate"><span class="pre">self</span> <span class="pre">*</span> <span class="pre">other</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>If called with two operators, their shapes must be <code class="code docutils literal notranslate"><span class="pre">consistent</span></code>, i.e. B == C.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="arithmetic.html#pyxu.abc.arithmetic.ScaleRule" title="pyxu.abc.arithmetic.ScaleRule"><code class="xref py py-class docutils literal notranslate"><span class="pre">ScaleRule</span></code></a>, <a class="reference internal" href="arithmetic.html#pyxu.abc.arithmetic.ChainRule" title="pyxu.abc.arithmetic.ChainRule"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChainRule</span></code></a></p>
+</div>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.Operator.__pow__">
+<span class="sig-name descname"><span class="pre">__pow__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#Operator.__pow__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.Operator.__pow__" title="Link to this definition">#</a></dt>
+<dd><p>Exponentiate an operator, i.e. compose it with itself.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>k</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Integer" title="pyxu.info.ptype.Integer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integer</span></code></a>) – Number of times the operator is composed with itself.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>op</strong> – Exponentiated operator.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Exponentiation is only allowed for endomorphisms, i.e. square operators.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="arithmetic.html#pyxu.abc.arithmetic.PowerRule" title="pyxu.abc.arithmetic.PowerRule"><code class="xref py py-class docutils literal notranslate"><span class="pre">PowerRule</span></code></a></p>
+</div>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.Operator.argscale">
+<span class="sig-name descname"><span class="pre">argscale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scalar</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#Operator.argscale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.Operator.argscale" title="Link to this definition">#</a></dt>
+<dd><p>Scale operator’s domain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>scalar</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>op</strong> – (N, M) domain-scaled operator.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="arithmetic.html#pyxu.abc.arithmetic.ArgScaleRule" title="pyxu.abc.arithmetic.ArgScaleRule"><code class="xref py py-class docutils literal notranslate"><span class="pre">ArgScaleRule</span></code></a></p>
+</div>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.Operator.argshift">
+<span class="sig-name descname"><span class="pre">argshift</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shift</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#Operator.argshift"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.Operator.argshift" title="Link to this definition">#</a></dt>
+<dd><p>Shift operator’s domain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>shift</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – (M,) shift value</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>op</strong> – (N, M) domain-shifted operator.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="arithmetic.html#pyxu.abc.arithmetic.ArgShiftRule" title="pyxu.abc.arithmetic.ArgShiftRule"><code class="xref py py-class docutils literal notranslate"><span class="pre">ArgShiftRule</span></code></a></p>
+</div>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.Operator.squeeze">
+<span class="sig-name descname"><span class="pre">squeeze</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#Operator.squeeze"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.Operator.squeeze" title="Link to this definition">#</a></dt>
+<dd><p>Cast an <a class="reference internal" href="#pyxu.abc.Operator" title="pyxu.abc.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> to the right core operator sub-type given codomain dimension.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.Operator.expr">
+<span class="sig-name descname"><span class="pre">expr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#Operator.expr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.Operator.expr" title="Link to this definition">#</a></dt>
+<dd><p>Pretty-Print the expression representation of the operator.</p>
+<p>Useful for debugging arithmetic-induced expressions.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pyxu.abc</span> <span class="k">as</span> <span class="nn">pxa</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">op1</span> <span class="o">=</span> <span class="n">pxa</span><span class="o">.</span><span class="n">LinFunc</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+<span class="n">op2</span> <span class="o">=</span> <span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">)))</span>
+<span class="n">op</span> <span class="o">=</span> <span class="p">((</span><span class="mi">2</span> <span class="o">*</span> <span class="n">op1</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">op2</span> <span class="o">**</span> <span class="mi">3</span><span class="p">))</span><span class="o">.</span><span class="n">argshift</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">expr</span><span class="p">())</span>
+<span class="c1"># [argshift, ==&gt; DiffMap(5, 5)</span>
+<span class="c1"># .[add, ==&gt; SquareOp(5, 5)</span>
+<span class="c1"># ..[scale, ==&gt; LinFunc(1, 5)</span>
+<span class="c1"># ...LinFunc(1, 5),</span>
+<span class="c1"># ...2.0],</span>
+<span class="c1"># ..[exp, ==&gt; SquareOp(5, 5)</span>
+<span class="c1"># ...LinOp(5, 5),</span>
+<span class="c1"># ...3]],</span>
+<span class="c1"># .(5,)]</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – </p></li>
+<li><p><strong>strip</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.abc.Map">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#Map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.Map" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.abc.Operator" title="pyxu.abc.operator.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a></p>
+<p>Base class for real-valued maps <span class="math notranslate nohighlight">\(\mathbf{f}: \mathbb{R}^{M} \to \mathbb{R}^{N}\)</span>.</p>
+<p>Instances of this class must implement <a class="reference internal" href="#pyxu.abc.Map.apply" title="pyxu.abc.Map.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply()</span></code></a>.</p>
+<p>If <span class="math notranslate nohighlight">\(\mathbf{f}\)</span> is Lipschitz-continuous with known Lipschitz constant <span class="math notranslate nohighlight">\(L\)</span>, the latter should be stored
+in the <a class="reference internal" href="#pyxu.abc.Map.lipschitz" title="pyxu.abc.Map.lipschitz"><code class="xref py py-attr docutils literal notranslate"><span class="pre">lipschitz</span></code></a> property.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em>) – </p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.Map.properties">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#Map.properties"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.Map.properties" title="Link to this definition">#</a></dt>
+<dd><p>Mathematical properties of the operator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Set" title="(in Python v3.11)"><em>Set</em></a>[<a class="reference internal" href="#pyxu.abc.Property" title="pyxu.abc.operator.Property"><em>Property</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.Map.apply">
+<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#Map.apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.Map.apply" title="Link to this definition">#</a></dt>
+<dd><p>Evaluate operator at specified point(s).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>arr</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – (…, M) input points.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>out</strong> – (…, N) output points.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.Map.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#Map.__call__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.Map.__call__" title="Link to this definition">#</a></dt>
+<dd><p>Alias for <a class="reference internal" href="#pyxu.abc.Map.apply" title="pyxu.abc.Map.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>arr</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="pyxu.abc.Map.lipschitz">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lipschitz</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="numbers.Real"><span class="pre">Real</span></a></em><a class="headerlink" href="#pyxu.abc.Map.lipschitz" title="Link to this definition">#</a></dt>
+<dd><p>Return the last computed Lipschitz constant of <span class="math notranslate nohighlight">\(\mathbf{f}\)</span>.</p>
+<p class="rubric">Notes</p>
+<ul>
+<li><p>If a Lipschitz constant is known apriori, it can be stored in the instance as follows:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestOp</span><span class="p">(</span><span class="n">Map</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shape</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lipschitz</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">op</span> <span class="o">=</span> <span class="n">TestOp</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">op</span><span class="o">.</span><span class="n">lipschitz</span>  <span class="c1"># =&gt; 2</span>
+</pre></div>
+</div>
+<p>Alternatively the Lipschitz constant can be set manually after initialization:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestOp</span><span class="p">(</span><span class="n">Map</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shape</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="n">op</span> <span class="o">=</span> <span class="n">TestOp</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">op</span><span class="o">.</span><span class="n">lipschitz</span>  <span class="c1"># =&gt; inf, since unknown apriori</span>
+
+<span class="n">op</span><span class="o">.</span><span class="n">lipschitz</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># post-init specification</span>
+<span class="n">op</span><span class="o">.</span><span class="n">lipschitz</span>  <span class="c1"># =&gt; 2</span>
+</pre></div>
+</div>
+</li>
+<li><p><a class="reference internal" href="#pyxu.abc.Map.lipschitz" title="pyxu.abc.Map.lipschitz"><code class="xref py py-meth docutils literal notranslate"><span class="pre">lipschitz()</span></code></a> <strong>never</strong> computes anything:
+call <a class="reference internal" href="#pyxu.abc.Map.estimate_lipschitz" title="pyxu.abc.Map.estimate_lipschitz"><code class="xref py py-meth docutils literal notranslate"><span class="pre">estimate_lipschitz()</span></code></a> manually to <em>compute</em> a new Lipschitz estimate:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">op</span><span class="o">.</span><span class="n">lipschitz</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">estimate_lipschitz</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.Map.estimate_lipschitz">
+<span class="sig-name descname"><span class="pre">estimate_lipschitz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#Map.estimate_lipschitz"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.Map.estimate_lipschitz" title="Link to this definition">#</a></dt>
+<dd><p>Compute a Lipschitz constant of the operator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>) – Class-specific kwargs to configure Lipschitz estimation.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="numbers.Real"><em>Real</em></a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul>
+<li><p>This method should always be callable without specifying any kwargs.</p></li>
+<li><p>A constant <span class="math notranslate nohighlight">\(L_{\mathbf{f}} &gt; 0\)</span> is said to be a <em>Lipschitz constant</em> for a map <span class="math notranslate nohighlight">\(\mathbf{f}:
+\mathbb{R}^{M} \to \mathbb{R}^{N}\)</span> if:</p>
+<div class="math notranslate nohighlight">
+\[\|\mathbf{f}(\mathbf{x}) - \mathbf{f}(\mathbf{y})\|_{\mathbb{R}^{N}}
+\leq
+L_{\mathbf{f}} \|\mathbf{x} - \mathbf{y}\|_{\mathbb{R}^{M}},
+\qquad
+\forall \mathbf{x}, \mathbf{y}\in \mathbb{R}^{M},\]</div>
+<p>where <span class="math notranslate nohighlight">\(\|\cdot\|_{\mathbb{R}^{M}}\)</span> and <span class="math notranslate nohighlight">\(\|\cdot\|_{\mathbb{R}^{N}}\)</span> are the canonical norms on
+their respective spaces.</p>
+<p>The smallest Lipschitz constant of a map is called the <em>optimal Lipschitz constant</em>.</p>
+</li>
+</ul>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.abc.Func">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#Func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.Func" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.abc.Map" title="pyxu.abc.operator.Map"><code class="xref py py-class docutils literal notranslate"><span class="pre">Map</span></code></a></p>
+<p>Base class for real-valued functionals <span class="math notranslate nohighlight">\(f: \mathbb{R}^{M} \to \mathbb{R}\cup\{+\infty\}\)</span>.</p>
+<p>Instances of this class must implement <a class="reference internal" href="#pyxu.abc.Map.apply" title="pyxu.abc.Map.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply()</span></code></a>.</p>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> is Lipschitz-continuous with known Lipschitz constant <span class="math notranslate nohighlight">\(L\)</span>, the latter should be stored in the
+<a class="reference internal" href="#pyxu.abc.Map.lipschitz" title="pyxu.abc.Map.lipschitz"><code class="xref py py-attr docutils literal notranslate"><span class="pre">lipschitz</span></code></a> property.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em>) – </p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.Func.asloss">
+<span class="sig-name descname"><span class="pre">asloss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#Func.asloss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.Func.asloss" title="Link to this definition">#</a></dt>
+<dd><p>Transform a functional into a loss functional.</p>
+<p>The meaning of <a class="reference internal" href="#pyxu.abc.Func.asloss" title="pyxu.abc.Func.asloss"><code class="xref py py-meth docutils literal notranslate"><span class="pre">asloss()</span></code></a> is operator-dependent: always examine the output of
+<a class="reference internal" href="#pyxu.abc.Operator.expr" title="pyxu.abc.Operator.expr"><code class="xref py py-meth docutils literal notranslate"><span class="pre">expr()</span></code></a> to determine the loss-notion involved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – (M,) input.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>op</strong> – (1, M) loss function.
+If <code class="code docutils literal notranslate"><span class="pre">data</span></code> is unspecified, returns <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.abc.DiffMap">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DiffMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#DiffMap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.DiffMap" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.abc.Map" title="pyxu.abc.operator.Map"><code class="xref py py-class docutils literal notranslate"><span class="pre">Map</span></code></a></p>
+<p>Base class for real-valued differentiable maps <span class="math notranslate nohighlight">\(\mathbf{f}: \mathbb{R}^{M} \to \mathbb{R}^{N}\)</span>.</p>
+<p>Instances of this class must implement <a class="reference internal" href="#pyxu.abc.Map.apply" title="pyxu.abc.Map.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply()</span></code></a> and <a class="reference internal" href="#pyxu.abc.DiffMap.jacobian" title="pyxu.abc.DiffMap.jacobian"><code class="xref py py-meth docutils literal notranslate"><span class="pre">jacobian()</span></code></a>.</p>
+<p>If <span class="math notranslate nohighlight">\(\mathbf{f}\)</span> is Lipschitz-continuous with known Lipschitz constant <span class="math notranslate nohighlight">\(L\)</span>, the latter should be stored
+in the <a class="reference internal" href="#pyxu.abc.Map.lipschitz" title="pyxu.abc.Map.lipschitz"><code class="xref py py-attr docutils literal notranslate"><span class="pre">lipschitz</span></code></a> property.</p>
+<p>If <span class="math notranslate nohighlight">\(\mathbf{J}_{\mathbf{f}}\)</span> is Lipschitz-continuous with known Lipschitz constant <span class="math notranslate nohighlight">\(\partial L\)</span>, the
+latter should be stored in the <a class="reference internal" href="#pyxu.abc.DiffMap.diff_lipschitz" title="pyxu.abc.DiffMap.diff_lipschitz"><code class="xref py py-attr docutils literal notranslate"><span class="pre">diff_lipschitz</span></code></a> property.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em>) – </p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.DiffMap.jacobian">
+<span class="sig-name descname"><span class="pre">jacobian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#DiffMap.jacobian"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.DiffMap.jacobian" title="Link to this definition">#</a></dt>
+<dd><p>Evaluate the Jacobian of <span class="math notranslate nohighlight">\(\mathbf{f}\)</span> at the specified point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>arr</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – (M,) evaluation point.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>op</strong> – (N, M) Jacobian operator at point <code class="code docutils literal notranslate"><span class="pre">arr</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Let <span class="math notranslate nohighlight">\(\mathbf{f}=[f_{1}, \ldots, f_{N}]: \mathbb{R}^{M} \to \mathbb{R}^{N}\)</span> be a differentiable
+multi-dimensional map.  The <em>Jacobian</em> (or <em>differential</em>) of <span class="math notranslate nohighlight">\(\mathbf{f}\)</span> at <span class="math notranslate nohighlight">\(\mathbf{z} \in
+\mathbb{R}^{M}\)</span> is defined as the best linear approximator of <span class="math notranslate nohighlight">\(\mathbf{f}\)</span> near <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>, in the
+following sense:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{f}(\mathbf{x}) - \mathbf{f}(\mathbf{z})
+=
+\mathbf{J}_{\mathbf{f}}(\mathbf{z}) (\mathbf{x} - \mathbf{z})
++
+o(\| \mathbf{x} - \mathbf{z} \|)
+\quad
+\text{as} \quad \mathbf{x} \to \mathbf{z}.\]</div>
+<p>The Jacobian admits the following matrix representation:</p>
+<div class="math notranslate nohighlight">
+\[[\mathbf{J}_{\mathbf{f}}(\mathbf{x})]_{ij}
+:=
+\frac{\partial f_{i}}{\partial x_{j}}(\mathbf{x}),
+\qquad
+\forall (i,j) \in \{1,\ldots,N\} \times \{1,\ldots,M\}.\]</div>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="pyxu.abc.DiffMap.diff_lipschitz">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">diff_lipschitz</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="numbers.Real"><span class="pre">Real</span></a></em><a class="headerlink" href="#pyxu.abc.DiffMap.diff_lipschitz" title="Link to this definition">#</a></dt>
+<dd><p>Return the last computed Lipschitz constant of <span class="math notranslate nohighlight">\(\mathbf{J}_{\mathbf{f}}\)</span>.</p>
+<p class="rubric">Notes</p>
+<ul>
+<li><p>If a diff-Lipschitz constant is known apriori, it can be stored in the instance as follows:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestOp</span><span class="p">(</span><span class="n">DiffMap</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shape</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">diff_lipschitz</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">op</span> <span class="o">=</span> <span class="n">TestOp</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">op</span><span class="o">.</span><span class="n">diff_lipschitz</span>  <span class="c1"># =&gt; 2</span>
+</pre></div>
+</div>
+<p>Alternatively the diff-Lipschitz constant can be set manually after initialization:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestOp</span><span class="p">(</span><span class="n">DiffMap</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shape</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="n">op</span> <span class="o">=</span> <span class="n">TestOp</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">op</span><span class="o">.</span><span class="n">diff_lipschitz</span>  <span class="c1"># =&gt; inf, since unknown apriori</span>
+
+<span class="n">op</span><span class="o">.</span><span class="n">diff_lipschitz</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># post-init specification</span>
+<span class="n">op</span><span class="o">.</span><span class="n">diff_lipschitz</span>  <span class="c1"># =&gt; 2</span>
+</pre></div>
+</div>
+</li>
+<li><p><a class="reference internal" href="#pyxu.abc.DiffMap.diff_lipschitz" title="pyxu.abc.DiffMap.diff_lipschitz"><code class="xref py py-meth docutils literal notranslate"><span class="pre">diff_lipschitz()</span></code></a> <strong>never</strong> computes anything:
+call <a class="reference internal" href="#pyxu.abc.DiffMap.estimate_diff_lipschitz" title="pyxu.abc.DiffMap.estimate_diff_lipschitz"><code class="xref py py-meth docutils literal notranslate"><span class="pre">estimate_diff_lipschitz()</span></code></a> manually to <em>compute</em> a new diff-Lipschitz estimate:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">op</span><span class="o">.</span><span class="n">diff_lipschitz</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">estimate_diff_lipschitz</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.DiffMap.estimate_diff_lipschitz">
+<span class="sig-name descname"><span class="pre">estimate_diff_lipschitz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#DiffMap.estimate_diff_lipschitz"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.DiffMap.estimate_diff_lipschitz" title="Link to this definition">#</a></dt>
+<dd><p>Compute a Lipschitz constant of <a class="reference internal" href="#pyxu.abc.DiffMap.jacobian" title="pyxu.abc.DiffMap.jacobian"><code class="xref py py-meth docutils literal notranslate"><span class="pre">jacobian()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>) – Class-specific kwargs to configure diff-Lipschitz estimation.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="numbers.Real"><em>Real</em></a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul>
+<li><p>This method should always be callable without specifying any kwargs.</p></li>
+<li><p>A Lipschitz constant <span class="math notranslate nohighlight">\(L_{\mathbf{J}_{\mathbf{f}}} &gt; 0\)</span> of the Jacobian map
+<span class="math notranslate nohighlight">\(\mathbf{J}_{\mathbf{f}}: \mathbb{R}^{M} \to \mathbb{R}^{N \times M}\)</span> is such that:</p>
+<div class="math notranslate nohighlight">
+\[\|\mathbf{J}_{\mathbf{f}}(\mathbf{x}) - \mathbf{J}_{\mathbf{f}}(\mathbf{y})\|_{\mathbb{R}^{N \times M}}
+\leq
+L_{\mathbf{J}_{\mathbf{f}}} \|\mathbf{x} - \mathbf{y}\|_{\mathbb{R}^{M}},
+\qquad
+\forall \mathbf{x}, \mathbf{y} \in \mathbb{R}^{M},\]</div>
+<p>where <span class="math notranslate nohighlight">\(\|\cdot\|_{\mathbb{R}^{N \times M}}\)</span> and <span class="math notranslate nohighlight">\(\|\cdot\|_{\mathbb{R}^{M}}\)</span> are the canonical
+norms on their respective spaces.</p>
+<p>The smallest Lipschitz constant of the Jacobian is called the <em>optimal diff-Lipschitz constant</em>.</p>
+</li>
+</ul>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.abc.DiffFunc">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DiffFunc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#DiffFunc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.DiffFunc" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.abc.DiffMap" title="pyxu.abc.operator.DiffMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffMap</span></code></a>, <a class="reference internal" href="#pyxu.abc.Func" title="pyxu.abc.operator.Func"><code class="xref py py-class docutils literal notranslate"><span class="pre">Func</span></code></a></p>
+<p>Base class for real-valued differentiable functionals <span class="math notranslate nohighlight">\(f: \mathbb{R}^{M} \to \mathbb{R}\)</span>.</p>
+<p>Instances of this class must implement <a class="reference internal" href="#pyxu.abc.Map.apply" title="pyxu.abc.Map.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply()</span></code></a> and <a class="reference internal" href="#pyxu.abc.DiffFunc.grad" title="pyxu.abc.DiffFunc.grad"><code class="xref py py-meth docutils literal notranslate"><span class="pre">grad()</span></code></a>.</p>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> and/or its derivative <span class="math notranslate nohighlight">\(f'\)</span> are Lipschitz-continuous with known Lipschitz constants <span class="math notranslate nohighlight">\(L\)</span> and
+<span class="math notranslate nohighlight">\(\partial L\)</span>, the latter should be stored in the <a class="reference internal" href="#pyxu.abc.Map.lipschitz" title="pyxu.abc.Map.lipschitz"><code class="xref py py-attr docutils literal notranslate"><span class="pre">lipschitz</span></code></a> and
+<a class="reference internal" href="#pyxu.abc.DiffMap.diff_lipschitz" title="pyxu.abc.DiffMap.diff_lipschitz"><code class="xref py py-attr docutils literal notranslate"><span class="pre">diff_lipschitz</span></code></a> properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em>) – </p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.DiffFunc.grad">
+<span class="sig-name descname"><span class="pre">grad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#DiffFunc.grad"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.DiffFunc.grad" title="Link to this definition">#</a></dt>
+<dd><p>Evaluate operator gradient at specified point(s).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>arr</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – (…, M) input points.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>out</strong> – (…, M) gradients.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The gradient of a functional <span class="math notranslate nohighlight">\(f: \mathbb{R}^{M} \to \mathbb{R}\)</span> is given, for every <span class="math notranslate nohighlight">\(\mathbf{x} \in
+\mathbb{R}^{M}\)</span>, by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\nabla f(\mathbf{x})
+:=
+\left[\begin{array}{c}
+\frac{\partial f}{\partial x_{1}}(\mathbf{x}) \\
+\vdots \\
+\frac{\partial f}{\partial x_{M}}(\mathbf{x})
+\end{array}\right].\end{split}\]</div>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.abc.ProxFunc">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ProxFunc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#ProxFunc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.ProxFunc" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.abc.Func" title="pyxu.abc.operator.Func"><code class="xref py py-class docutils literal notranslate"><span class="pre">Func</span></code></a></p>
+<p>Base class for real-valued proximable functionals <span class="math notranslate nohighlight">\(f: \mathbb{R}^{M} \to \mathbb{R} \cup \{+\infty\}\)</span>.</p>
+<p>A functional <span class="math notranslate nohighlight">\(f: \mathbb{R}^{M} \to \mathbb{R} \cup \{+\infty\}\)</span> is said <em>proximable</em> if its <strong>proximity
+operator</strong> (see <a class="reference internal" href="#pyxu.abc.ProxFunc.prox" title="pyxu.abc.ProxFunc.prox"><code class="xref py py-meth docutils literal notranslate"><span class="pre">prox()</span></code></a> for a definition) admits a <em>simple closed-form expression</em> <strong>or</strong>
+can be evaluated <em>efficiently</em> and with <em>high accuracy</em>.</p>
+<p>Instances of this class must implement <a class="reference internal" href="#pyxu.abc.Map.apply" title="pyxu.abc.Map.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply()</span></code></a> and <a class="reference internal" href="#pyxu.abc.ProxFunc.prox" title="pyxu.abc.ProxFunc.prox"><code class="xref py py-meth docutils literal notranslate"><span class="pre">prox()</span></code></a>.</p>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> is Lipschitz-continuous with known Lipschitz constant <span class="math notranslate nohighlight">\(L\)</span>, the latter should be stored in the
+<a class="reference internal" href="#pyxu.abc.Map.lipschitz" title="pyxu.abc.Map.lipschitz"><code class="xref py py-attr docutils literal notranslate"><span class="pre">lipschitz</span></code></a> property.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em>) – </p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.ProxFunc.prox">
+<span class="sig-name descname"><span class="pre">prox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#ProxFunc.prox"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.ProxFunc.prox" title="Link to this definition">#</a></dt>
+<dd><p>Evaluate proximity operator of <span class="math notranslate nohighlight">\(\tau f\)</span> at specified point(s).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – (…, M) input points.</p></li>
+<li><p><strong>tau</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Positive scale factor.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>out</strong> – (…, M) proximal evaluations.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>For <span class="math notranslate nohighlight">\(\tau &gt;0\)</span>, the <em>proximity operator</em> of a scaled functional <span class="math notranslate nohighlight">\(f: \mathbb{R}^{M} \to \mathbb{R}\)</span> is
+defined as:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{\text{prox}}_{\tau f}(\mathbf{z})
+:=
+\arg\min_{\mathbf{x}\in\mathbb{R}^{M}} f(x)+\frac{1}{2\tau} \|\mathbf{x}-\mathbf{z}\|_{2}^{2},
+\quad
+\forall \mathbf{z} \in \mathbb{R}^{M}.\]</div>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.ProxFunc.fenchel_prox">
+<span class="sig-name descname"><span class="pre">fenchel_prox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#ProxFunc.fenchel_prox"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.ProxFunc.fenchel_prox" title="Link to this definition">#</a></dt>
+<dd><p>Evaluate proximity operator of <span class="math notranslate nohighlight">\(\sigma f^{\ast}\)</span>, the scaled Fenchel conjugate of <span class="math notranslate nohighlight">\(f\)</span>, at specified
+point(s).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – (…, M) input points.</p></li>
+<li><p><strong>sigma</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Positive scale factor.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>out</strong> – (…, M) proximal evaluations.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>For <span class="math notranslate nohighlight">\(\sigma &gt; 0\)</span>, the <em>Fenchel conjugate</em> is defined as:</p>
+<div class="math notranslate nohighlight">
+\[f^{\ast}(\mathbf{z})
+:=
+\max_{\mathbf{x}\in\mathbb{R}^{M}} \langle \mathbf{x},\mathbf{z} \rangle - f(\mathbf{x}).\]</div>
+<p>From <em>Moreau’s identity</em>, its proximal operator is given by:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{\text{prox}}_{\sigma f^{\ast}}(\mathbf{z})
+=
+\mathbf{z} - \sigma \mathbf{\text{prox}}_{f/\sigma}(\mathbf{z}/\sigma).\]</div>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.ProxFunc.moreau_envelope">
+<span class="sig-name descname"><span class="pre">moreau_envelope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mu</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#ProxFunc.moreau_envelope"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.ProxFunc.moreau_envelope" title="Link to this definition">#</a></dt>
+<dd><p>Approximate proximable functional <span class="math notranslate nohighlight">\(f\)</span> by its <em>Moreau envelope</em> <span class="math notranslate nohighlight">\(f^{\mu}\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mu</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Positive regularization parameter.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>op</strong> – Differential Moreau envelope.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Consider a convex non-smooth proximable functional <span class="math notranslate nohighlight">\(f: \mathbb{R}^{M} \to \mathbb{R} \cup \{+\infty\}\)</span> and
+a regularization parameter <span class="math notranslate nohighlight">\(\mu &gt; 0\)</span>.  The <span class="math notranslate nohighlight">\(\mu\)</span>-<em>Moreau envelope</em> (or <em>Moreau-Yoshida envelope</em>) of
+<span class="math notranslate nohighlight">\(f\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[f^{\mu}(\mathbf{x})
+=
+\min_{\mathbf{z} \in \mathbb{R}^{M}}
+f(\mathbf{z})
+\quad + \quad
+\frac{1}{2\mu} \|\mathbf{x} - \mathbf{z}\|^{2}.\]</div>
+<p>The parameter <span class="math notranslate nohighlight">\(\mu\)</span> controls the trade-off between the regularity properties of <span class="math notranslate nohighlight">\(f^{\mu}\)</span> and the
+approximation error incurred by the Moreau-Yoshida regularization.</p>
+<p>The Moreau envelope inherits the convexity of <span class="math notranslate nohighlight">\(f\)</span> and is gradient-Lipschitz (with Lipschitz constant
+<span class="math notranslate nohighlight">\(\mu^{-1}\)</span>), even if <span class="math notranslate nohighlight">\(f\)</span> is non-smooth.  Its gradient is moreover given by:</p>
+<div class="math notranslate nohighlight">
+\[\nabla f^{\mu}(\mathbf{x})
+=
+\mu^{-1} \left(\mathbf{x} - \text{prox}_{\mu f}(\mathbf{x})\right).\]</div>
+<p>In addition, <span class="math notranslate nohighlight">\(f^{\mu}\)</span> envelopes <span class="math notranslate nohighlight">\(f\)</span> from below: <span class="math notranslate nohighlight">\(f^{\mu}(\mathbf{x}) \leq f(\mathbf{x})\)</span>.
+This envelope becomes tighter as <span class="math notranslate nohighlight">\(\mu \to 0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\lim_{\mu \to 0} f^{\mu}(\mathbf{x}) = f(\mathbf{x}).\]</div>
+<p>Finally, it can be shown that the minimizers of <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(f^{\mu}\)</span> coincide, and that the Fenchel
+conjugate of <span class="math notranslate nohighlight">\(f^{\mu}\)</span> is strongly-convex.</p>
+<p class="rubric">Example</p>
+<p>Construct and plot the Moreau envelope of the <span class="math notranslate nohighlight">\(\ell_{1}\)</span>-norm:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/abc/operator.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><span class="n">ProxFunc</span></a>
+
+<span class="k">class</span> <span class="nc">L1Norm</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../../api/abc/operator.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><span class="n">ProxFunc</span></a><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim</span><span class="p">:</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#int" title="int"><span class="nb">int</span></a><span class="p">):</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
+    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
+        <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.norm.html#numpy.linalg.norm" title="numpy.linalg.norm"><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span></a><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">prox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">tau</span><span class="p">):</span>
+        <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.clip.html#numpy.clip" title="numpy.clip"><span class="n">np</span><span class="o">.</span><span class="n">clip</span></a><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span><span class="o">-</span><span class="n">tau</span><span class="p">,</span> <span class="n">a_min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">a_max</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.sign.html#numpy.sign" title="numpy.sign"><span class="n">np</span><span class="o">.</span><span class="n">sign</span></a><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">512</span>
+<span class="n">l1_norm</span> <span class="o">=</span> <span class="n">L1Norm</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
+<span class="n">mus</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">smooth_l1_norms</span> <span class="o">=</span> <span class="p">[</span><span class="n">l1_norm</span><span class="o">.</span><span class="n">moreau_envelope</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span> <span class="k">for</span> <span class="n">mu</span> <span class="ow">in</span> <span class="n">mus</span><span class="p">]</span>
+
+<span class="n">x</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html#numpy.linspace" title="numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)[:,</span> <span class="kc">None</span><span class="p">]</span>
+<span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">'mu=0'</span><span class="p">]</span>
+<span class="n">labels</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="sa">f</span><span class="s1">'mu=</span><span class="si">{</span><span class="n">mu</span><span class="si">}</span><span class="s1">'</span> <span class="k">for</span> <span class="n">mu</span> <span class="ow">in</span> <span class="n">mus</span><span class="p">])</span>
+<a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
+<a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">l1_norm</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">smooth_l1_norms</span><span class="p">:</span>
+    <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html#matplotlib.pyplot.legend" title="matplotlib.pyplot.legend"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span></a><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+<a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="matplotlib.pyplot.title"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="s1">'Moreau Envelope'</span><span class="p">)</span>
+
+<span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s1">'mu=</span><span class="si">{</span><span class="n">mu</span><span class="si">}</span><span class="s1">'</span> <span class="k">for</span> <span class="n">mu</span> <span class="ow">in</span> <span class="n">mus</span><span class="p">]</span>
+<a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">smooth_l1_norms</span><span class="p">:</span>
+    <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html#matplotlib.pyplot.legend" title="matplotlib.pyplot.legend"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span></a><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+<a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="matplotlib.pyplot.title"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="s1">'Derivative of Moreau Envelope'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(<a class="reference download internal" download="" href="../../_downloads/361d1b99c32bc7c73255c4c2931a831c/operator-1.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>)</p>
+<figure class="align-default" id="id1">
+<img alt="../../_images/operator-1_00.png" class="plot-directive" src="../../_images/operator-1_00.png"/>
+<figcaption>
+<p><span class="caption-text">(<a class="reference download internal" download="" href="../../_downloads/9349be48fdb330bb37c232589c22ff15/operator-1_00.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/974082c7d04ec660ca43a107ea8e53ba/operator-1_00.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/6d6eb2e18628afcd80afb9b1f46a86c9/operator-1_00.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id2">
+<img alt="../../_images/operator-1_01.png" class="plot-directive" src="../../_images/operator-1_01.png"/>
+<figcaption>
+<p><span class="caption-text">(<a class="reference download internal" download="" href="../../_downloads/de31929cc6f8f0bc6cc09c15e633691b/operator-1_01.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/f8ea786379495b526ad196ae9c2114a1/operator-1_01.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/468910fa079d504203df7361bc14fe4f/operator-1_01.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.abc.ProxDiffFunc">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ProxDiffFunc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#ProxDiffFunc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.ProxDiffFunc" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference internal" href="#pyxu.abc.DiffFunc" title="pyxu.abc.operator.DiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffFunc</span></code></a></p>
+<p>Base class for real-valued differentiable <em>and</em> proximable functionals <span class="math notranslate nohighlight">\(f:\mathbb{R}^{M} \to \mathbb{R}\)</span>.</p>
+<p>Instances of this class must implement <a class="reference internal" href="#pyxu.abc.Map.apply" title="pyxu.abc.Map.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply()</span></code></a>, <a class="reference internal" href="#pyxu.abc.DiffFunc.grad" title="pyxu.abc.DiffFunc.grad"><code class="xref py py-meth docutils literal notranslate"><span class="pre">grad()</span></code></a>, and
+<a class="reference internal" href="#pyxu.abc.ProxFunc.prox" title="pyxu.abc.ProxFunc.prox"><code class="xref py py-meth docutils literal notranslate"><span class="pre">prox()</span></code></a>.</p>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> and/or its derivative <span class="math notranslate nohighlight">\(f'\)</span> are Lipschitz-continuous with known Lipschitz constants <span class="math notranslate nohighlight">\(L\)</span> and
+<span class="math notranslate nohighlight">\(\partial L\)</span>, the latter should be stored in the <a class="reference internal" href="#pyxu.abc.Map.lipschitz" title="pyxu.abc.Map.lipschitz"><code class="xref py py-attr docutils literal notranslate"><span class="pre">lipschitz</span></code></a> and
+<a class="reference internal" href="#pyxu.abc.DiffMap.diff_lipschitz" title="pyxu.abc.DiffMap.diff_lipschitz"><code class="xref py py-attr docutils literal notranslate"><span class="pre">diff_lipschitz</span></code></a> properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.abc.QuadraticFunc">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">QuadraticFunc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Q</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#QuadraticFunc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.QuadraticFunc" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.abc.ProxDiffFunc" title="pyxu.abc.operator.ProxDiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxDiffFunc</span></code></a></p>
+<p>Base class for quadratic functionals <span class="math notranslate nohighlight">\(f: \mathbb{R}^{M} \to \mathbb{R} \cup \{+\infty\}\)</span>.</p>
+<p>The quadratic functional is defined as:</p>
+<div class="math notranslate nohighlight">
+\[f(\mathbf{x})
+=
+\frac{1}{2} \langle\mathbf{x}, \mathbf{Q}\mathbf{x}\rangle
++
+\mathbf{c}^T\mathbf{x}
++
+t,
+\qquad \forall \mathbf{x} \in \mathbb{R}^{M},\]</div>
+<p>where <span class="math notranslate nohighlight">\(Q\)</span> is a positive-definite operator <span class="math notranslate nohighlight">\(\mathbf{Q}:\mathbb{R}^{M} \to \mathbb{R}^{M}\)</span>,
+<span class="math notranslate nohighlight">\(\mathbf{c} \in \mathbb{R}^{M}\)</span>, and <span class="math notranslate nohighlight">\(t &gt; 0\)</span>.</p>
+<p>Its gradient is given by:</p>
+<div class="math notranslate nohighlight">
+\[\nabla f(\mathbf{x}) = \mathbf{Q}\mathbf{x} + \mathbf{c}.\]</div>
+<p>Its proximity operator by:</p>
+<div class="math notranslate nohighlight">
+\[\text{prox}_{\tau f}(x)
+=
+\left(
+    \mathbf{Q} + \tau^{-1} \mathbf{Id}
+\right)^{-1}
+\left(
+    \tau^{-1}\mathbf{x} - \mathbf{c}
+\right).\]</div>
+<p>In practice the proximity operator is evaluated via <a class="reference internal" href="../opt.solver.html#pyxu.opt.solver.CG" title="pyxu.opt.solver.CG"><code class="xref py py-class docutils literal notranslate"><span class="pre">CG</span></code></a>.</p>
+<p>The Lipschitz constant <span class="math notranslate nohighlight">\(L\)</span> of a quadratic on an unbounded domain is unbounded.  The Lipschitz constant
+<span class="math notranslate nohighlight">\(\partial L\)</span> of <span class="math notranslate nohighlight">\(\nabla f\)</span> is given by the spectral norm of <span class="math notranslate nohighlight">\(\mathbf{Q}\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em>) – </p></li>
+<li><p><strong>Q</strong> (<a class="reference internal" href="#pyxu.abc.PosDefOp" title="pyxu.abc.PosDefOp"><em>PosDefOp</em></a>) – </p></li>
+<li><p><strong>c</strong> (<a class="reference internal" href="#pyxu.abc.LinFunc" title="pyxu.abc.LinFunc"><em>LinFunc</em></a>) – </p></li>
+<li><p><strong>t</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="numbers.Real"><em>Real</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.QuadraticFunc.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Q</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#QuadraticFunc.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.QuadraticFunc.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Q</strong> (<a class="reference internal" href="#pyxu.abc.PosDefOp" title="pyxu.abc.PosDefOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">PosDefOp</span></code></a>) – (N, N) positive-definite operator. (Default: Identity)</p></li>
+<li><p><strong>c</strong> (<a class="reference internal" href="#pyxu.abc.LinFunc" title="pyxu.abc.LinFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinFunc</span></code></a>) – (1, N) linear functional. (Default: NullFunc)</p></li>
+<li><p><strong>t</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – offset. (Default: 0)</p></li>
+<li><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.QuadraticFunc._quad_spec">
+<span class="sig-name descname"><span class="pre">_quad_spec</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#QuadraticFunc._quad_spec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.QuadraticFunc._quad_spec" title="Link to this definition">#</a></dt>
+<dd><p>Canonical quadratic parameterization.</p>
+<p>Useful for some internal methods, and overloaded during operator arithmetic.</p>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.abc.LinOp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LinOp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#LinOp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.LinOp" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.abc.DiffMap" title="pyxu.abc.operator.DiffMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffMap</span></code></a></p>
+<p>Base class for real-valued linear operators <span class="math notranslate nohighlight">\(\mathbf{A}: \mathbb{R}^{M} \to \mathbb{R}^{N}\)</span>.</p>
+<p>Instances of this class must implement <a class="reference internal" href="#pyxu.abc.Map.apply" title="pyxu.abc.Map.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply()</span></code></a> and <a class="reference internal" href="#pyxu.abc.LinOp.adjoint" title="pyxu.abc.LinOp.adjoint"><code class="xref py py-meth docutils literal notranslate"><span class="pre">adjoint()</span></code></a>.</p>
+<p>If known, the Lipschitz constant <span class="math notranslate nohighlight">\(L\)</span> should be stored in the <a class="reference internal" href="#pyxu.abc.Map.lipschitz" title="pyxu.abc.Map.lipschitz"><code class="xref py py-attr docutils literal notranslate"><span class="pre">lipschitz</span></code></a> property.</p>
+<p>The Jacobian of a linear map <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em>) – </p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.LinOp.adjoint">
+<span class="sig-name descname"><span class="pre">adjoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#LinOp.adjoint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.LinOp.adjoint" title="Link to this definition">#</a></dt>
+<dd><p>Evaluate operator adjoint at specified point(s).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>arr</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – (…, N) input points.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>out</strong> – (…, M) adjoint evaluations.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The <em>adjoint</em> <span class="math notranslate nohighlight">\(\mathbf{A}^{\ast}: \mathbb{R}^{N} \to \mathbb{R}^{M}\)</span> of <span class="math notranslate nohighlight">\(\mathbf{A}: \mathbb{R}^{M}
+\to \mathbb{R}^{N}\)</span> is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\langle \mathbf{x}, \mathbf{A}^{\ast}\mathbf{y}\rangle_{\mathbb{R}^{M}}
+:=
+\langle \mathbf{A}\mathbf{x}, \mathbf{y}\rangle_{\mathbb{R}^{N}},
+\qquad
+\forall (\mathbf{x},\mathbf{y})\in \mathbb{R}^{M} \times \mathbb{R}^{N}.\]</div>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="pyxu.abc.LinOp.T">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">T</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><span class="pre">OpT</span></a></em><a class="headerlink" href="#pyxu.abc.LinOp.T" title="Link to this definition">#</a></dt>
+<dd><p>Return the (M, N) adjoint of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.LinOp.to_sciop">
+<span class="sig-name descname"><span class="pre">to_sciop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gpu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#LinOp.to_sciop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.LinOp.to_sciop" title="Link to this definition">#</a></dt>
+<dd><p>Cast a <a class="reference internal" href="#pyxu.abc.LinOp" title="pyxu.abc.LinOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinOp</span></code></a> to a CPU/GPU <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.LinearOperator.html#scipy.sparse.linalg.LinearOperator" title="(in SciPy v1.11.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinearOperator</span></code></a>, compatible with
+the matrix-free linear algebra routines of <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/sparse.linalg.html#module-scipy.sparse.linalg" title="(in SciPy v1.11.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.sparse.linalg</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dtype</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.DType" title="pyxu.info.ptype.DType"><code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code></a>) – Working precision of the linear operator.</p></li>
+<li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Operate on CuPy inputs (True) vs. NumPy inputs (False).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>op</strong> – Linear operator object compliant with SciPy’s interface.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.LinearOperator.html#scipy.sparse.linalg.LinearOperator" title="(in SciPy v1.11.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinearOperator</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.LinOp.estimate_lipschitz">
+<span class="sig-name descname"><span class="pre">estimate_lipschitz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#LinOp.estimate_lipschitz"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.LinOp.estimate_lipschitz" title="Link to this definition">#</a></dt>
+<dd><p>Compute a Lipschitz constant of the operator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>method</strong> (<code class="docutils literal notranslate"><span class="pre">"svd"</span></code> | <code class="docutils literal notranslate"><span class="pre">"trace"</span></code>) – <ul>
+<li><p>If <code class="code docutils literal notranslate"><span class="pre">svd</span></code>, compute the optimal Lipschitz constant.</p></li>
+<li><p>If <code class="code docutils literal notranslate"><span class="pre">trace</span></code>, compute an upper bound. (Default)</p></li>
+</ul>
+</p></li>
+<li><p><strong>kwargs</strong> – <p>Optional kwargs passed on to:</p>
+<ul>
+<li><p><code class="code docutils literal notranslate"><span class="pre">svd</span></code>: <a class="reference internal" href="#pyxu.abc.LinOp.svdvals" title="pyxu.abc.LinOp.svdvals"><code class="xref py py-func docutils literal notranslate"><span class="pre">svdvals()</span></code></a></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">trace</span></code>: <a class="reference internal" href="../math.html#pyxu.math.hutchpp" title="pyxu.math.hutchpp"><code class="xref py py-func docutils literal notranslate"><span class="pre">hutchpp()</span></code></a></p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="numbers.Real"><em>Real</em></a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul>
+<li><p>The tightest Lipschitz constant is given by the spectral norm of the operator <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>:
+<span class="math notranslate nohighlight">\(\|\mathbf{A}\|_{2}\)</span>.  It can be computed via the SVD, which is compute-intensive task for large
+operators.  In this setting, it may be advantageous to overestimate the Lipschitz constant with the Frobenius
+norm of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> since <span class="math notranslate nohighlight">\(\|\mathbf{A}\|_{F} \geq \|\mathbf{A}\|_{2}\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\|\mathbf{A}\|_{F}\)</span> can be efficiently approximated by computing the trace of <span class="math notranslate nohighlight">\(\mathbf{A}^{\ast}
+\mathbf{A}\)</span> (or <span class="math notranslate nohighlight">\(\mathbf{A}\mathbf{A}^{\ast}\)</span>) via the <a class="reference external" href="https://arxiv.org/abs/2010.09649">Hutch++ stochastic algorithm</a>.</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\|\mathbf{A}\|_{F}\)</span> is upper-bounded by <span class="math notranslate nohighlight">\(\|\mathbf{A}\|_{F} \leq \sqrt{n} \|\mathbf{A}\|_{2}\)</span>,
+where the equality is reached (worst-case scenario) when the eigenspectrum of the linear operator is flat.</p></li>
+</ul>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.LinOp.svdvals">
+<span class="sig-name descname"><span class="pre">svdvals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">which</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'LM'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gpu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#LinOp.svdvals"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.LinOp.svdvals" title="Link to this definition">#</a></dt>
+<dd><p>Compute singular values of a linear operator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Integer" title="pyxu.info.ptype.Integer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integer</span></code></a>) – Number of singular values to compute.</p></li>
+<li><p><strong>which</strong> (<code class="docutils literal notranslate"><span class="pre">"LM"</span></code> | <code class="docutils literal notranslate"><span class="pre">"SM"</span></code>) – <p>Which <code class="code docutils literal notranslate"><span class="pre">k</span></code> singular values to find:</p>
+<blockquote>
+<div><ul>
+<li><p><code class="code docutils literal notranslate"><span class="pre">LM</span></code>: largest magnitude</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">SM</span></code>: smallest magnitude</p></li>
+</ul>
+</div></blockquote>
+</p></li>
+<li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code> the singular value decomposition is performed on the GPU.</p></li>
+<li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>) – Additional kwargs accepted by <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.svds.html#scipy.sparse.linalg.svds" title="(in SciPy v1.11.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">svds()</span></code></a>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>D</strong> – (k,) singular values in ascending order.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.LinOp.asarray">
+<span class="sig-name descname"><span class="pre">asarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#LinOp.asarray"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.LinOp.asarray" title="Link to this definition">#</a></dt>
+<dd><p>Matrix representation of the linear operator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xp</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.ArrayModule" title="pyxu.info.ptype.ArrayModule"><code class="xref py py-class docutils literal notranslate"><span class="pre">ArrayModule</span></code></a>) – Which array module to use to represent the output. (Default: NumPy.)</p></li>
+<li><p><strong>dtype</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.DType" title="pyxu.info.ptype.DType"><code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code></a>) – Precision of the array. (Default: current runtime precision.)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>A</strong> – (N, M) array-representation of the operator.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This generic implementation assumes the operator is backend-agnostic.  Thus, when defining a new
+backend-specific operator, <a class="reference internal" href="#pyxu.abc.LinOp.asarray" title="pyxu.abc.LinOp.asarray"><code class="xref py py-meth docutils literal notranslate"><span class="pre">asarray()</span></code></a> may need to be overriden.</p>
+</div>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.LinOp.gram">
+<span class="sig-name descname"><span class="pre">gram</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#LinOp.gram"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.LinOp.gram" title="Link to this definition">#</a></dt>
+<dd><p>Gram operator <span class="math notranslate nohighlight">\(\mathbf{A}^{\ast} \mathbf{A}: \mathbb{R}^{M} \to \mathbb{R}^{M}\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> – (M, M) Gram operator.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default the Gram is computed by the composition <code class="docutils literal notranslate"><span class="pre">self.T</span> <span class="pre">*</span> <span class="pre">self</span></code>.  This may not be the fastest way to
+compute the Gram operator.  If the Gram can be computed more efficiently (e.g. with a convolution), the user
+should re-define this method.</p>
+</div>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.LinOp.cogram">
+<span class="sig-name descname"><span class="pre">cogram</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#LinOp.cogram"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.LinOp.cogram" title="Link to this definition">#</a></dt>
+<dd><p>Co-Gram operator <span class="math notranslate nohighlight">\(\mathbf{A}\mathbf{A}^{\ast}:\mathbb{R}^{N} \to \mathbb{R}^{N}\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> – (N, N) Co-Gram operator.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default the co-Gram is computed by the composition <code class="docutils literal notranslate"><span class="pre">self</span> <span class="pre">*</span> <span class="pre">self.T</span></code>.  This may not be the fastest way to
+compute the co-Gram operator.  If the co-Gram can be computed more efficiently (e.g. with a convolution), the
+user should re-define this method.</p>
+</div>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.LinOp.pinv">
+<span class="sig-name descname"><span class="pre">pinv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">damp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_fit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#LinOp.pinv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.LinOp.pinv" title="Link to this definition">#</a></dt>
+<dd><p>Evaluate the Moore-Penrose pseudo-inverse <span class="math notranslate nohighlight">\(\mathbf{A}^{\dagger}\)</span> at specified point(s).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – (…, N) input points.</p></li>
+<li><p><strong>damp</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Positive dampening factor regularizing the pseudo-inverse.</p></li>
+<li><p><strong>kwargs_init</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>) – Optional kwargs to be passed to <a class="reference internal" href="../opt.solver.html#pyxu.opt.solver.CG" title="pyxu.opt.solver.CG"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CG()</span></code></a>’s <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method.</p></li>
+<li><p><strong>kwargs_fit</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>) – Optional kwargs to be passed to <a class="reference internal" href="../opt.solver.html#pyxu.opt.solver.CG" title="pyxu.opt.solver.CG"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CG()</span></code></a>’s <code class="docutils literal notranslate"><span class="pre">fit()</span></code> method.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>out</strong> – (…, M) pseudo-inverse(s).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The Moore-Penrose pseudo-inverse of an operator <span class="math notranslate nohighlight">\(\mathbf{A}: \mathbb{R}^{M} \to \mathbb{R}^{N}\)</span> is defined
+as the operator <span class="math notranslate nohighlight">\(\mathbf{A}^{\dagger}: \mathbb{R}^{N} \to \mathbb{R}^{M}\)</span> verifying the Moore-Penrose
+conditions:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{A} \mathbf{A}^{\dagger} \mathbf{A} = \mathbf{A}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{A}^{\dagger} \mathbf{A} \mathbf{A}^{\dagger} = \mathbf{A}^{\dagger}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\((\mathbf{A}^{\dagger} \mathbf{A})^{\ast} = \mathbf{A}^{\dagger} \mathbf{A}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\((\mathbf{A} \mathbf{A}^{\dagger})^{\ast} = \mathbf{A} \mathbf{A}^{\dagger}\)</span>.</p></li>
+</ol>
+</div></blockquote>
+<p>This operator exists and is unique for any finite-dimensional linear operator.  The action of the pseudo-inverse
+<span class="math notranslate nohighlight">\(\mathbf{A}^{\dagger} \mathbf{y}\)</span> for every <span class="math notranslate nohighlight">\(\mathbf{y} \in \mathbb{R}^{N}\)</span> can be computed in
+matrix-free fashion by solving the <em>normal equations</em>:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{A}^{\ast} \mathbf{A} \mathbf{x} = \mathbf{A}^{\ast} \mathbf{y}
+\quad\Leftrightarrow\quad
+\mathbf{x} = \mathbf{A}^{\dagger} \mathbf{y},
+\quad
+\forall (\mathbf{x}, \mathbf{y}) \in \mathbb{R}^{M} \times \mathbb{R}^{N}.\]</div>
+<p>In the case of severe ill-conditioning, it is possible to consider the dampened normal equations for a
+numerically-stabler approximation of <span class="math notranslate nohighlight">\(\mathbf{A}^{\dagger} \mathbf{y}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[(\mathbf{A}^{\ast} \mathbf{A} + \tau I) \mathbf{x} = \mathbf{A}^{\ast} \mathbf{y},\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tau &gt; 0\)</span> corresponds to the <code class="code docutils literal notranslate"><span class="pre">damp</span></code> parameter.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.LinOp.dagger">
+<span class="sig-name descname"><span class="pre">dagger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">damp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_fit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#LinOp.dagger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.LinOp.dagger" title="Link to this definition">#</a></dt>
+<dd><p>Return the Moore-Penrose pseudo-inverse operator <span class="math notranslate nohighlight">\(\mathbf{A}^\dagger\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>damp</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Positive dampening factor regularizing the pseudo-inverse.</p></li>
+<li><p><strong>kwargs_init</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>) – Optional kwargs to be passed to <a class="reference internal" href="../opt.solver.html#pyxu.opt.solver.CG" title="pyxu.opt.solver.CG"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CG()</span></code></a>’s <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method.</p></li>
+<li><p><strong>kwargs_fit</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>) – Optional kwargs to be passed to <a class="reference internal" href="../opt.solver.html#pyxu.opt.solver.CG" title="pyxu.opt.solver.CG"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CG()</span></code></a>’s <code class="docutils literal notranslate"><span class="pre">fit()</span></code> method.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>op</strong> – (M, N) Moore-Penrose pseudo-inverse operator.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.LinOp.from_array">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_warnings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#LinOp.from_array"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.LinOp.from_array" title="Link to this definition">#</a></dt>
+<dd><p>Instantiate a <a class="reference internal" href="#pyxu.abc.LinOp" title="pyxu.abc.LinOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinOp</span></code></a> from its array representation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – (N, M) array</p></li>
+<li><p><strong>enable_warnings</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, emit a warning in case of precision mis-match issues.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>op</strong> – (N, M) linear operator</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.abc.SquareOp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SquareOp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#SquareOp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.SquareOp" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.abc.LinOp" title="pyxu.abc.operator.LinOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinOp</span></code></a></p>
+<p>Base class for <em>square</em> linear operators, i.e. <span class="math notranslate nohighlight">\(\mathbf{A}: \mathbb{R}^{M} \to \mathbb{R}^{M}\)</span>
+(endomorphsisms).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em>) – </p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.abc.SquareOp.trace">
+<span class="sig-name descname"><span class="pre">trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#SquareOp.trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.SquareOp.trace" title="Link to this definition">#</a></dt>
+<dd><p>Compute trace of the operator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>method</strong> (<code class="docutils literal notranslate"><span class="pre">"explicit"</span></code> | <code class="docutils literal notranslate"><span class="pre">"hutchpp"</span></code>) – <ul>
+<li><p>If <code class="code docutils literal notranslate"><span class="pre">explicit</span></code>, compute the exact trace.</p></li>
+<li><p>If <code class="code docutils literal notranslate"><span class="pre">hutchpp</span></code>, compute an approximation.</p></li>
+</ul>
+</p></li>
+<li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>) – <p>Optional kwargs passed to:</p>
+<ul>
+<li><p><code class="code docutils literal notranslate"><span class="pre">explicit</span></code>: <a class="reference internal" href="../math.html#pyxu.math.trace" title="pyxu.math.trace"><code class="xref py py-func docutils literal notranslate"><span class="pre">trace()</span></code></a></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">hutchpp</span></code>: <a class="reference internal" href="../math.html#pyxu.math.hutchpp" title="pyxu.math.hutchpp"><code class="xref py py-func docutils literal notranslate"><span class="pre">hutchpp()</span></code></a></p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>tr</strong> – Trace estimate.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.abc.NormalOp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NormalOp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#NormalOp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.NormalOp" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.abc.SquareOp" title="pyxu.abc.operator.SquareOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">SquareOp</span></code></a></p>
+<p>Base class for <em>normal</em> operators.</p>
+<p>Normal operators satisfy the relation <span class="math notranslate nohighlight">\(\mathbf{A} \mathbf{A}^{\ast} = \mathbf{A}^{\ast} \mathbf{A}\)</span>.  It can
+be <a class="reference external" href="https://www.wikiwand.com/en/Spectral_theorem#/Normal_matrices">shown</a> that an operator is normal iff it is
+<em>unitarily diagonalizable</em>, i.e.  <span class="math notranslate nohighlight">\(\mathbf{A} = \mathbf{U} \mathbf{D} \mathbf{U}^{\ast}\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.abc.SelfAdjointOp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SelfAdjointOp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#SelfAdjointOp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.SelfAdjointOp" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.abc.NormalOp" title="pyxu.abc.operator.NormalOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">NormalOp</span></code></a></p>
+<p>Base class for <em>self-adjoint</em> operators.</p>
+<p>Self-adjoint operators satisfy the relation <span class="math notranslate nohighlight">\(\mathbf{A}^{\ast} = \mathbf{A}\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.abc.UnitOp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UnitOp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#UnitOp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.UnitOp" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.abc.NormalOp" title="pyxu.abc.operator.NormalOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">NormalOp</span></code></a></p>
+<p>Base class for <em>unitary</em> operators.</p>
+<p>Unitary operators satisfy the relation <span class="math notranslate nohighlight">\(\mathbf{A} \mathbf{A}^{\ast} = \mathbf{A}^{\ast} \mathbf{A} = I\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.abc.ProjOp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ProjOp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#ProjOp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.ProjOp" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.abc.SquareOp" title="pyxu.abc.operator.SquareOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">SquareOp</span></code></a></p>
+<p>Base class for <em>projection</em> operators.</p>
+<p>Projection operators are <em>idempotent</em>, i.e. <span class="math notranslate nohighlight">\(\mathbf{A}^{2} = \mathbf{A}\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.abc.OrthProjOp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OrthProjOp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#OrthProjOp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.OrthProjOp" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.abc.ProjOp" title="pyxu.abc.operator.ProjOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProjOp</span></code></a>, <a class="reference internal" href="#pyxu.abc.SelfAdjointOp" title="pyxu.abc.operator.SelfAdjointOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">SelfAdjointOp</span></code></a></p>
+<p>Base class for <em>orthogonal projection</em> operators.</p>
+<p>Orthogonal projection operators are <em>idempotent</em> and <em>self-adjoint</em>, i.e.  <span class="math notranslate nohighlight">\(\mathbf{A}^{2} = \mathbf{A}\)</span> and
+<span class="math notranslate nohighlight">\(\mathbf{A}^{\ast} = \mathbf{A}\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.abc.PosDefOp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PosDefOp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#PosDefOp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.PosDefOp" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.abc.SelfAdjointOp" title="pyxu.abc.operator.SelfAdjointOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">SelfAdjointOp</span></code></a></p>
+<p>Base class for <em>positive-definite</em> operators.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.abc.LinFunc">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LinFunc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/abc/operator.html#LinFunc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.LinFunc" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.abc.ProxDiffFunc" title="pyxu.abc.operator.ProxDiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxDiffFunc</span></code></a>, <a class="reference internal" href="#pyxu.abc.LinOp" title="pyxu.abc.operator.LinOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinOp</span></code></a></p>
+<p>Base class for real-valued linear functionals <span class="math notranslate nohighlight">\(f: \mathbb{R}^{M} \to \mathbb{R}\)</span>.</p>
+<p>Instances of this class must implement <a class="reference internal" href="#pyxu.abc.Map.apply" title="pyxu.abc.Map.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply()</span></code></a>, and <a class="reference internal" href="#pyxu.abc.LinOp.adjoint" title="pyxu.abc.LinOp.adjoint"><code class="xref py py-meth docutils literal notranslate"><span class="pre">adjoint()</span></code></a>.</p>
+<p>If known, the Lipschitz constant <span class="math notranslate nohighlight">\(L\)</span> should be stored in the <a class="reference internal" href="#pyxu.abc.Map.lipschitz" title="pyxu.abc.Map.lipschitz"><code class="xref py py-attr docutils literal notranslate"><span class="pre">lipschitz</span></code></a> property.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+</section>
+</article>
+<footer class="bd-footer-article">
+<div class="footer-article-items footer-article__inner">
+<div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="arithmetic.html" title="previous page">
+<i class="fa-solid fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">pyxu.abc.arithmetic</p>
+</div>
+</a>
+<a class="right-next" href="solver.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">pyxu.abc.solver</p>
+</div>
+<i class="fa-solid fa-angle-right"></i>
+</a>
+</div></div>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> On this page
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Property"><code class="docutils literal notranslate"><span class="pre">Property</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Property.CAN_EVAL"><code class="docutils literal notranslate"><span class="pre">Property.CAN_EVAL</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Property.FUNCTIONAL"><code class="docutils literal notranslate"><span class="pre">Property.FUNCTIONAL</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Property.PROXIMABLE"><code class="docutils literal notranslate"><span class="pre">Property.PROXIMABLE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Property.DIFFERENTIABLE"><code class="docutils literal notranslate"><span class="pre">Property.DIFFERENTIABLE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Property.DIFFERENTIABLE_FUNCTION"><code class="docutils literal notranslate"><span class="pre">Property.DIFFERENTIABLE_FUNCTION</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Property.LINEAR"><code class="docutils literal notranslate"><span class="pre">Property.LINEAR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Property.LINEAR_SQUARE"><code class="docutils literal notranslate"><span class="pre">Property.LINEAR_SQUARE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Property.LINEAR_NORMAL"><code class="docutils literal notranslate"><span class="pre">Property.LINEAR_NORMAL</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Property.LINEAR_IDEMPOTENT"><code class="docutils literal notranslate"><span class="pre">Property.LINEAR_IDEMPOTENT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Property.LINEAR_SELF_ADJOINT"><code class="docutils literal notranslate"><span class="pre">Property.LINEAR_SELF_ADJOINT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Property.LINEAR_POSITIVE_DEFINITE"><code class="docutils literal notranslate"><span class="pre">Property.LINEAR_POSITIVE_DEFINITE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Property.LINEAR_UNITARY"><code class="docutils literal notranslate"><span class="pre">Property.LINEAR_UNITARY</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Property.QUADRATIC"><code class="docutils literal notranslate"><span class="pre">Property.QUADRATIC</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Property.arithmetic_methods"><code class="docutils literal notranslate"><span class="pre">Property.arithmetic_methods()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Operator"><code class="docutils literal notranslate"><span class="pre">Operator</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Operator.__init__"><code class="docutils literal notranslate"><span class="pre">Operator.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Operator.shape"><code class="docutils literal notranslate"><span class="pre">Operator.shape</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Operator.dim"><code class="docutils literal notranslate"><span class="pre">Operator.dim</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Operator.codim"><code class="docutils literal notranslate"><span class="pre">Operator.codim</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Operator.properties"><code class="docutils literal notranslate"><span class="pre">Operator.properties()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Operator.has"><code class="docutils literal notranslate"><span class="pre">Operator.has()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Operator.asop"><code class="docutils literal notranslate"><span class="pre">Operator.asop()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Operator.__add__"><code class="docutils literal notranslate"><span class="pre">Operator.__add__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Operator.__sub__"><code class="docutils literal notranslate"><span class="pre">Operator.__sub__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Operator.__neg__"><code class="docutils literal notranslate"><span class="pre">Operator.__neg__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Operator.__mul__"><code class="docutils literal notranslate"><span class="pre">Operator.__mul__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Operator.__pow__"><code class="docutils literal notranslate"><span class="pre">Operator.__pow__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Operator.argscale"><code class="docutils literal notranslate"><span class="pre">Operator.argscale()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Operator.argshift"><code class="docutils literal notranslate"><span class="pre">Operator.argshift()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Operator.squeeze"><code class="docutils literal notranslate"><span class="pre">Operator.squeeze()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Operator.expr"><code class="docutils literal notranslate"><span class="pre">Operator.expr()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Map"><code class="docutils literal notranslate"><span class="pre">Map</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Map.properties"><code class="docutils literal notranslate"><span class="pre">Map.properties()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Map.apply"><code class="docutils literal notranslate"><span class="pre">Map.apply()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Map.__call__"><code class="docutils literal notranslate"><span class="pre">Map.__call__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Map.lipschitz"><code class="docutils literal notranslate"><span class="pre">Map.lipschitz</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Map.estimate_lipschitz"><code class="docutils literal notranslate"><span class="pre">Map.estimate_lipschitz()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Func"><code class="docutils literal notranslate"><span class="pre">Func</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.Func.asloss"><code class="docutils literal notranslate"><span class="pre">Func.asloss()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.DiffMap"><code class="docutils literal notranslate"><span class="pre">DiffMap</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.DiffMap.jacobian"><code class="docutils literal notranslate"><span class="pre">DiffMap.jacobian()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.DiffMap.diff_lipschitz"><code class="docutils literal notranslate"><span class="pre">DiffMap.diff_lipschitz</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.DiffMap.estimate_diff_lipschitz"><code class="docutils literal notranslate"><span class="pre">DiffMap.estimate_diff_lipschitz()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.DiffFunc"><code class="docutils literal notranslate"><span class="pre">DiffFunc</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.DiffFunc.grad"><code class="docutils literal notranslate"><span class="pre">DiffFunc.grad()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.ProxFunc"><code class="docutils literal notranslate"><span class="pre">ProxFunc</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.ProxFunc.prox"><code class="docutils literal notranslate"><span class="pre">ProxFunc.prox()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.ProxFunc.fenchel_prox"><code class="docutils literal notranslate"><span class="pre">ProxFunc.fenchel_prox()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.ProxFunc.moreau_envelope"><code class="docutils literal notranslate"><span class="pre">ProxFunc.moreau_envelope()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.ProxDiffFunc"><code class="docutils literal notranslate"><span class="pre">ProxDiffFunc</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.QuadraticFunc"><code class="docutils literal notranslate"><span class="pre">QuadraticFunc</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.QuadraticFunc.__init__"><code class="docutils literal notranslate"><span class="pre">QuadraticFunc.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.QuadraticFunc._quad_spec"><code class="docutils literal notranslate"><span class="pre">QuadraticFunc._quad_spec()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.LinOp"><code class="docutils literal notranslate"><span class="pre">LinOp</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.LinOp.adjoint"><code class="docutils literal notranslate"><span class="pre">LinOp.adjoint()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.LinOp.T"><code class="docutils literal notranslate"><span class="pre">LinOp.T</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.LinOp.to_sciop"><code class="docutils literal notranslate"><span class="pre">LinOp.to_sciop()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.LinOp.estimate_lipschitz"><code class="docutils literal notranslate"><span class="pre">LinOp.estimate_lipschitz()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.LinOp.svdvals"><code class="docutils literal notranslate"><span class="pre">LinOp.svdvals()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.LinOp.asarray"><code class="docutils literal notranslate"><span class="pre">LinOp.asarray()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.LinOp.gram"><code class="docutils literal notranslate"><span class="pre">LinOp.gram()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.LinOp.cogram"><code class="docutils literal notranslate"><span class="pre">LinOp.cogram()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.LinOp.pinv"><code class="docutils literal notranslate"><span class="pre">LinOp.pinv()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.LinOp.dagger"><code class="docutils literal notranslate"><span class="pre">LinOp.dagger()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.LinOp.from_array"><code class="docutils literal notranslate"><span class="pre">LinOp.from_array()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.SquareOp"><code class="docutils literal notranslate"><span class="pre">SquareOp</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.SquareOp.trace"><code class="docutils literal notranslate"><span class="pre">SquareOp.trace()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.NormalOp"><code class="docutils literal notranslate"><span class="pre">NormalOp</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.SelfAdjointOp"><code class="docutils literal notranslate"><span class="pre">SelfAdjointOp</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.UnitOp"><code class="docutils literal notranslate"><span class="pre">UnitOp</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.ProjOp"><code class="docutils literal notranslate"><span class="pre">ProjOp</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.OrthProjOp"><code class="docutils literal notranslate"><span class="pre">OrthProjOp</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.PosDefOp"><code class="docutils literal notranslate"><span class="pre">PosDefOp</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.abc.LinFunc"><code class="docutils literal notranslate"><span class="pre">LinFunc</span></code></a></li>
+</ul>
+</nav></div>
+<div class="sidebar-secondary-item">
+<div id="searchbox"></div></div>
+<div class="sidebar-secondary-item">
+<div class="tocsection editthispage">
+<a href="https://github.com/matthieumeo/pyxu/edit/main/doc/api/abc/operator.rst">
+<i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+</div>
+</div>
+<div class="sidebar-secondary-item">
+<div class="tocsection sourcelink">
+<a href="../../_sources/api/abc/operator.rst">
+<i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+</div>
+</div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+<footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+<div class="footer-items__start">
+<div class="footer-item">
+<p class="copyright">
+    
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      <br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+    <br/>
+</p>
+</div>
+</div>
+<div class="footer-items__end">
+<div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+</div>
+</div>
+</footer>
+</body>
+</html>

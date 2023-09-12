@@ -52,7 +52,7 @@
 <link href="../_static/favicon.png" rel="icon"/>
 <link href="../genindex.html" rel="index" title="Index"/>
 <link href="../search.html" rel="search" title="Search"/>
-<link href="../examples/index.html" rel="next" title="Example Gallery"/>
+<link href="hpc.html" rel="next" title="High Performance Computing Features"/>
 <link href="algorithms.html" rel="prev" title="Optimization Algorithms"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="en" name="docsearch:language"/>
@@ -140,7 +140,7 @@ document.write(`
 <label class="sr-only">PyPI</label></a>
 </li>
 <li class="nav-item">
-<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="mailto: matthieu.simeoni@gmail.com" rel="noopener" target="_blank" title="Contact"><span><i class="fa-brands fa-telegram"></i></span>
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="mailto: contact@pyxu.org" rel="noopener" target="_blank" title="Contact"><span><i class="fa-brands fa-telegram"></i></span>
 <label class="sr-only">Contact</label></a>
 </li>
 <li class="nav-item">
@@ -213,7 +213,7 @@ document.write(`
 <label class="sr-only">PyPI</label></a>
 </li>
 <li class="nav-item">
-<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="mailto: matthieu.simeoni@gmail.com" rel="noopener" target="_blank" title="Contact"><span><i class="fa-brands fa-telegram"></i></span>
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="mailto: contact@pyxu.org" rel="noopener" target="_blank" title="Contact"><span><i class="fa-brands fa-telegram"></i></span>
 <label class="sr-only">Contact</label></a>
 </li>
 <li class="nav-item">
@@ -231,6 +231,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="algebra.html">Operator Algebra Logic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithms.html">Optimization Algorithms</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Lipschitz Constants and Automatic Step Size Tuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hpc.html">High Performance Computing Features</a></li>
 </ul>
 </div>
 </nav></div>
@@ -317,10 +318,10 @@ document.write(`
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">LinOp</span></a>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc/operator.html#pyxu.abc.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">LinOp</span></a>
 <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">rand_op</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.operator.LinOp.from_array" title="pyxu.abc.operator.LinOp.from_array"><span class="n">LinOp</span><span class="o">.</span><span class="n">from_array</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.random.html#numpy.random.random" title="numpy.random.random"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span></a><span class="p">((</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)))</span>
+<span class="n">rand_op</span> <span class="o">=</span> <span class="n">LinOp</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.random.html#numpy.random.random" title="numpy.random.random"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span></a><span class="p">((</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -444,10 +445,10 @@ inf
 <p class="prev-next-title">Optimization Algorithms</p>
 </div>
 </a>
-<a class="right-next" href="../examples/index.html" title="next page">
+<a class="right-next" href="hpc.html" title="next page">
 <div class="prev-next-info">
 <p class="prev-next-subtitle">next</p>
-<p class="prev-next-title">Example Gallery</p>
+<p class="prev-next-title">High Performance Computing Features</p>
 </div>
 <i class="fa-solid fa-angle-right"></i>
 </a>
