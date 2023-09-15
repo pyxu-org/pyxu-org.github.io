@@ -27,8 +27,8 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
@@ -37,13 +37,13 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=1031a718" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=14df3d68" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../../_static/documentation_options.js?v=e02fc88f"></script>
+    <script src="../../../../_static/documentation_options.js?v=a4a8746c"></script>
     <script src="../../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -236,7 +236,7 @@ document.write(`
           
           
           
-          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+          <a href="mailto: contact@pyxu.org" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
             <label class="sr-only">Contact</label></a>
         </li>
         <li class="nav-item">
@@ -378,7 +378,7 @@ document.write(`
           
           
           
-          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+          <a href="mailto: contact@pyxu.org" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
             <label class="sr-only">Contact</label></a>
         </li>
         <li class="nav-item">
@@ -525,7 +525,7 @@ document.write(`
 <span class="linenos">  72</span>
 <span class="linenos">  73</span>
 <div class="viewcode-block" id="MovingAverage">
-<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.MovingAverage">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.MovingAverage">[docs]</a>
 <span class="linenos">  74</span><span class="k">def</span> <span class="nf">MovingAverage</span><span class="p">(</span>
 <span class="linenos">  75</span>    <span class="n">arg_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos">  76</span>    <span class="n">size</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">typ</span><span class="o">.</span><span class="n">Tuple</span><span class="p">,</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">],</span>
@@ -640,7 +640,7 @@ document.write(`
 <span class="linenos"> 184</span>
 <span class="linenos"> 185</span>
 <div class="viewcode-block" id="Gaussian">
-<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.Gaussian">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.Gaussian">[docs]</a>
 <span class="linenos"> 186</span><span class="k">def</span> <span class="nf">Gaussian</span><span class="p">(</span>
 <span class="linenos"> 187</span>    <span class="n">arg_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 188</span>    <span class="n">sigma</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">typ</span><span class="o">.</span><span class="n">Tuple</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">],</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
@@ -770,7 +770,7 @@ document.write(`
 <span class="linenos"> 311</span>
 <span class="linenos"> 312</span>
 <div class="viewcode-block" id="DifferenceOfGaussians">
-<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.DifferenceOfGaussians">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.DifferenceOfGaussians">[docs]</a>
 <span class="linenos"> 313</span><span class="k">def</span> <span class="nf">DifferenceOfGaussians</span><span class="p">(</span>
 <span class="linenos"> 314</span>    <span class="n">arg_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 315</span>    <span class="n">low_sigma</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
@@ -902,7 +902,7 @@ document.write(`
 <span class="linenos"> 440</span>
 <span class="linenos"> 441</span>
 <div class="viewcode-block" id="Laplace">
-<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.Laplace">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.Laplace">[docs]</a>
 <span class="linenos"> 442</span><span class="k">def</span> <span class="nf">Laplace</span><span class="p">(</span>
 <span class="linenos"> 443</span>    <span class="n">arg_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 444</span>    <span class="n">mode</span><span class="p">:</span> <span class="n">ModeSpec</span> <span class="o">=</span> <span class="s2">&quot;constant&quot;</span><span class="p">,</span>
@@ -998,7 +998,7 @@ document.write(`
 <span class="linenos"> 533</span>
 <span class="linenos"> 534</span>
 <div class="viewcode-block" id="Sobel">
-<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.Sobel">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.Sobel">[docs]</a>
 <span class="linenos"> 535</span><span class="k">def</span> <span class="nf">Sobel</span><span class="p">(</span>
 <span class="linenos"> 536</span>    <span class="n">arg_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 537</span>    <span class="n">axis</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typ</span><span class="o">.</span><span class="n">Tuple</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1099,7 +1099,7 @@ document.write(`
 <span class="linenos"> 631</span>
 <span class="linenos"> 632</span>
 <div class="viewcode-block" id="Prewitt">
-<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.Prewitt">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.Prewitt">[docs]</a>
 <span class="linenos"> 633</span><span class="k">def</span> <span class="nf">Prewitt</span><span class="p">(</span>
 <span class="linenos"> 634</span>    <span class="n">arg_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 635</span>    <span class="n">axis</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typ</span><span class="o">.</span><span class="n">Tuple</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1200,7 +1200,7 @@ document.write(`
 <span class="linenos"> 729</span>
 <span class="linenos"> 730</span>
 <div class="viewcode-block" id="Scharr">
-<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.Scharr">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.Scharr">[docs]</a>
 <span class="linenos"> 731</span><span class="k">def</span> <span class="nf">Scharr</span><span class="p">(</span>
 <span class="linenos"> 732</span>    <span class="n">arg_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 733</span>    <span class="n">axis</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typ</span><span class="o">.</span><span class="n">Tuple</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1342,7 +1342,7 @@ document.write(`
 <span class="linenos"> 868</span>
 <span class="linenos"> 869</span>
 <div class="viewcode-block" id="StructureTensor">
-<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.StructureTensor">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.StructureTensor">[docs]</a>
 <span class="linenos"> 870</span><span class="k">class</span> <span class="nc">StructureTensor</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">DiffMap</span><span class="p">):</span>
 <span class="linenos"> 871</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 872</span><span class="sd">    Structure tensor operator.</span>
@@ -1492,19 +1492,19 @@ document.write(`
 <span class="linenos">1016</span>            <span class="bp">self</span><span class="o">.</span><span class="n">smooth</span> <span class="o">=</span> <span class="n">pxlb</span><span class="o">.</span><span class="n">IdentityOp</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">arg_shape</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
 <span class="linenos">1017</span>
 <div class="viewcode-block" id="StructureTensor.unravel">
-<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.StructureTensor.unravel">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.StructureTensor.unravel">[docs]</a>
 <span class="linenos">1018</span>    <span class="k">def</span> <span class="nf">unravel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
 <span class="linenos">1019</span>        <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">*</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">arg_shape</span><span class="p">)</span></div>
 
 <span class="linenos">1020</span>
 <div class="viewcode-block" id="StructureTensor.ravel">
-<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.StructureTensor.ravel">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.StructureTensor.ravel">[docs]</a>
 <span class="linenos">1021</span>    <span class="k">def</span> <span class="nf">ravel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
 <span class="linenos">1022</span>        <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">*</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">arg_shape</span><span class="p">)],</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span></div>
 
 <span class="linenos">1023</span>
 <div class="viewcode-block" id="StructureTensor.apply">
-<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.StructureTensor.apply">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.StructureTensor.apply">[docs]</a>
 <span class="linenos">1024</span>    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
 <span class="linenos">1025</span>        <span class="n">xp</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">get_array_module</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 <span class="linenos">1026</span>        <span class="n">sh</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>

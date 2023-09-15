@@ -18,7 +18,7 @@
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
-<link href="../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css?v=b76e3c8a" rel="stylesheet" type="text/css"/>
 <link href="../_static/plot_directive.css?v=7f9a90b1" rel="stylesheet" type="text/css"/>
 <link href="../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
 <link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
@@ -28,11 +28,11 @@
 <link href="../_static/sg_gallery-dataframe.css?v=2082cf3c" rel="stylesheet" type="text/css"/>
 <link href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" rel="stylesheet" type="text/css"/>
 <link href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
-<link href="../_static/css/custom.css?v=1031a718" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css?v=14df3d68" rel="stylesheet" type="text/css"/>
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../_static/documentation_options.js?v=e02fc88f"></script>
+<script src="../_static/documentation_options.js?v=a4a8746c"></script>
 <script src="../_static/doctools.js?v=888ff710"></script>
 <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -52,7 +52,7 @@
 <link href="../genindex.html" rel="index" title="Index"/>
 <link href="../search.html" rel="search" title="Search"/>
 <link href="../references.html" rel="next" title="References"/>
-<link href="util/operator.html" rel="prev" title="pyxu.util.operator"/>
+<link href="util.html" rel="prev" title="pyxu.util"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="en" name="docsearch:language"/>
 </head>
@@ -225,16 +225,11 @@ document.write(`
 <div class="sidebar-primary-item"><nav aria-label="Section Navigation" class="bd-docs-nav bd-links">
 <p aria-level="1" class="bd-links__title" role="heading">Section Navigation</p>
 <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="abc/index.html">pyxu.abc</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="abc/arithmetic.html">pyxu.abc.arithmetic</a></li>
-<li class="toctree-l2"><a class="reference internal" href="abc/operator.html">pyxu.abc.operator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="abc/solver.html">pyxu.abc.solver</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="abc.html">pyxu.abc</a></li>
 <li class="toctree-l1"><a class="reference internal" href="info.deps.html">pyxu.info.deps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="info.ptype.html">pyxu.info.ptype</a></li>
 <li class="toctree-l1"><a class="reference internal" href="info.warning.html">pyxu.info.warning</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="operator/index.html">pyxu.operator</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="operator/index.html">pyxu.operator</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="operator/blocks.html">pyxu.operator.blocks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="operator/func.html">pyxu.operator.func</a></li>
 <li class="toctree-l2"><a class="reference internal" href="operator/linop.html">pyxu.operator.linop</a></li>
@@ -246,13 +241,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="opt.stop.html">pyxu.opt.stop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="runtime.html">pyxu.runtime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="math.html">pyxu.math</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="util/index.html">pyxu.util</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="util/array_module.html">pyxu.util.array_module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="util/complex.html">pyxu.util.complex</a></li>
-<li class="toctree-l2"><a class="reference internal" href="util/misc.html">pyxu.util.misc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="util/operator.html">pyxu.util.operator</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="util.html">pyxu.util</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">pyxu.experimental.sampler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html"><strong>References</strong></a></li>
 </ul>
@@ -332,10 +321,10 @@ is well balanced.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>f</strong> (<a class="reference internal" href="abc/operator.html#pyxu.abc.DiffFunc" title="pyxu.abc.operator.DiffFunc"><em>DiffFunc</em></a>) – </p></li>
-<li><p><strong>g</strong> (<a class="reference internal" href="abc/operator.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><em>ProxFunc</em></a>) – </p></li>
-<li><p><strong>gamma</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="numbers.Real"><em>Real</em></a>) – </p></li>
-<li><p><strong>lamb</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="numbers.Real"><em>Real</em></a>) – </p></li>
+<li><p><strong>f</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.operator.DiffFunc"><em>DiffFunc</em></a>) – </p></li>
+<li><p><strong>g</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><em>ProxFunc</em></a>) – </p></li>
+<li><p><strong>gamma</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><em>Real</em></a>) – </p></li>
+<li><p><strong>lamb</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><em>Real</em></a>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -345,8 +334,8 @@ is well balanced.</p>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>f</strong> (<a class="reference internal" href="abc/operator.html#pyxu.abc.DiffFunc" title="pyxu.abc.DiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>) – Differentiable functional.</p></li>
-<li><p><strong>g</strong> (<a class="reference internal" href="abc/operator.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>) – Proximable functional.</p></li>
+<li><p><strong>f</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.DiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>) – Differentiable functional.</p></li>
+<li><p><strong>g</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>) – Proximable functional.</p></li>
 <li><p><strong>gamma</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Euler-Maruyama discretization step of the Langevin equation (see <code class="code docutils literal notranslate"><span class="pre">Notes</span></code> of
 <a class="reference internal" href="#pyxu.experimental.sampler.ULA" title="pyxu.experimental.sampler.ULA"><code class="xref py py-class docutils literal notranslate"><span class="pre">ULA</span></code></a> documentation).</p></li>
 <li><p><strong>lamb</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Moreau-Yosida envelope parameter for <code class="code docutils literal notranslate"><span class="pre">g</span></code>.</p></li>
@@ -373,7 +362,7 @@ precisely, the array <code class="docutils literal notranslate"><span class="pre
 \sum_{k=1}^K (\mathbf{x}_k-\boldsymbol{\mu})^{i+2}\)</span> for <span class="math notranslate nohighlight">\(0 \leq i \leq d-2\)</span>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>order</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="numbers.Real"><em>Real</em></a>) – </p>
+<dd class="field-odd"><p><strong>order</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><em>Real</em></a>) – </p>
 </dd>
 </dl>
 <dl class="py method">
@@ -412,7 +401,7 @@ particular, the kurtosis of a Gaussian distribution is always 3.</p>
 k \leq K}\)</span> is given by <span class="math notranslate nohighlight">\(\frac{1}{K}\sum_{k=1}^K \mathbf{x}_k^d\)</span>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>order</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="numbers.Real"><em>Real</em></a>) – </p>
+<dd class="field-odd"><p><strong>order</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><em>Real</em></a>) – </p>
 </dd>
 </dl>
 <dl class="py method">
@@ -625,7 +614,7 @@ Mises criterion), which illustrates the aforementioned bias-variance tradeoff fo
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>f</strong> (<a class="reference internal" href="abc/operator.html#pyxu.abc.DiffFunc" title="pyxu.abc.DiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffFunc</span></code></a>) – Differentiable functional.</p></li>
+<li><p><strong>f</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.DiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffFunc</span></code></a>) – Differentiable functional.</p></li>
 <li><p><strong>gamma</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Euler-Maruyama discretization step of the Langevin equation (see <code class="code docutils literal notranslate"><span class="pre">Notes</span></code>).</p></li>
 </ul>
 </dd>
@@ -641,7 +630,7 @@ samples should accumulate around the modes of the target distribution, i.e., tow
 <span class="math notranslate nohighlight">\(\mathcal{F}\)</span>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="numbers.Real"><em>Real</em></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><em>Real</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -649,8 +638,8 @@ samples should accumulate around the modes of the target distribution, i.e., tow
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>f</strong> (<a class="reference internal" href="abc/operator.html#pyxu.abc.DiffFunc" title="pyxu.abc.operator.DiffFunc"><em>DiffFunc</em></a>) – </p></li>
-<li><p><strong>gamma</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="numbers.Real"><em>Real</em></a>) – </p></li>
+<li><p><strong>f</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.operator.DiffFunc"><em>DiffFunc</em></a>) – </p></li>
+<li><p><strong>gamma</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><em>Real</em></a>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -661,11 +650,11 @@ samples should accumulate around the modes of the target distribution, i.e., tow
 <div class="footer-article-items footer-article__inner">
 <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-<a class="left-prev" href="util/operator.html" title="previous page">
+<a class="left-prev" href="util.html" title="previous page">
 <i class="fa-solid fa-angle-left"></i>
 <div class="prev-next-info">
 <p class="prev-next-subtitle">previous</p>
-<p class="prev-next-title">pyxu.util.operator</p>
+<p class="prev-next-title">pyxu.util</p>
 </div>
 </a>
 <a class="right-next" href="../references.html" title="next page">

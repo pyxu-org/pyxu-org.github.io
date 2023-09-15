@@ -18,7 +18,7 @@
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
-<link href="../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css?v=b76e3c8a" rel="stylesheet" type="text/css"/>
 <link href="../_static/plot_directive.css?v=7f9a90b1" rel="stylesheet" type="text/css"/>
 <link href="../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
 <link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
@@ -29,11 +29,11 @@
 <link href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" rel="stylesheet" type="text/css"/>
 <link href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
 <link href="../_static/nbsphinx-code-cells.css?v=2aa19091" rel="stylesheet" type="text/css"/>
-<link href="../_static/css/custom.css?v=1031a718" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css?v=14df3d68" rel="stylesheet" type="text/css"/>
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../_static/documentation_options.js?v=e02fc88f"></script>
+<script src="../_static/documentation_options.js?v=a4a8746c"></script>
 <script src="../_static/doctools.js?v=888ff710"></script>
 <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -232,6 +232,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="algorithms.html">Optimization Algorithms</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Lipschitz Constants and Automatic Step Size Tuning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hpc.html">High Performance Computing Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diff_ops.html">Differential Operators in Pyxu</a></li>
 </ul>
 </div>
 </nav></div>
@@ -277,7 +278,7 @@ document.write(`
 </section>
 <section id="Accessing-Lipschitz-Constants">
 <h2>Accessing Lipschitz Constants<a class="headerlink" href="#Accessing-Lipschitz-Constants" title="Link to this heading">#</a></h2>
-<p>Pyxu operators come equipped with attributes <code class="docutils literal notranslate"><span class="pre">lipschitz</span></code> and <code class="docutils literal notranslate"><span class="pre">diff_lipschitz</span></code> for storing the Lipschitz constants of a map and its derivative (if defined), respectively. These constants are leveraged under the hood by Pyxu to auto-tune the step sizes in various optimization algorithms.</p>
+<p>Pyxu operators come equipped with attributes <code class="docutils literal notranslate"><span class="pre">lipschitz</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Map.lipschitz">🔗</a> and <code class="docutils literal notranslate"><span class="pre">diff_lipschitz</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.DiffMap.diff_lipschitz">🔗</a> for storing the Lipschitz constants of a map and its derivative (if defined), respectively. These constants are leveraged under the hood by Pyxu to auto-tune the step sizes in various optimization algorithms.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Access Lipschitz constant of an operator 'op'</span>
 <span class="n">lip_const</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">lipschitz</span>
 </pre></div>
@@ -285,7 +286,7 @@ document.write(`
 </section>
 <section id="Estimating-Lipschitz-Constants">
 <h2>Estimating Lipschitz Constants<a class="headerlink" href="#Estimating-Lipschitz-Constants" title="Link to this heading">#</a></h2>
-<p>For user-defined or complicated operators where Lipschitz constants are unknown, you can estimate them using Pyxu’s <code class="docutils literal notranslate"><span class="pre">estimate_lipschitz()</span></code> method.</p>
+<p>For user-defined or complicated operators where Lipschitz constants are unknown, you can estimate them using Pyxu’s <code class="docutils literal notranslate"><span class="pre">estimate_lipschitz()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Map.estimate_lipschitz">🔗</a> method.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estimate Lipschitz constant and update the attribute</span>
 <span class="n">op</span><span class="o">.</span><span class="n">lipschitz</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">estimate_lipschitz</span><span class="p">()</span>
 </pre></div>
@@ -294,13 +295,13 @@ document.write(`
 <h3>Supported Backends 🎛️<a class="headerlink" href="#Supported-Backends-🎛️" title="Link to this heading">#</a></h3>
 <p>Pyxu offers two methods to estimate Lipschitz constants:</p>
 <ol class="arabic">
-<li><p><strong>Trace Method (``trace``)</strong>: This is the default and computationally lighter option. It computes a rough estimate using the Frobenius norm of the operator, making use of the <a class="reference external" href="https://arxiv.org/abs/2010.09649">Hutch++ stochastic algorithm</a>:</p>
+<li><p><strong>Trace Method (</strong><code class="docutils literal notranslate"><span class="pre">trace</span></code><strong>)</strong>: This is the default and computationally lighter option. It computes a rough estimate using the Frobenius norm of the operator, making use of the <a class="reference external" href="https://arxiv.org/abs/2010.09649">Hutch++ stochastic algorithm</a>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using trace method</span>
 <span class="n">op</span><span class="o">.</span><span class="n">lipschitz</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">estimate_lipschitz</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">"trace"</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
-<li><p><strong>SVD Method (``svd``)</strong>: This method computes the spectral norm of the operator and generally provides a tighter Lipschitz constant. However, it can be computationally intensive for large operators. A reduced-accuracy mode is available for quicker but slightly overestimated constants:</p>
+<li><p><strong>SVD Method (</strong><code class="docutils literal notranslate"><span class="pre">svd</span></code><strong>)</strong>: This method computes the spectral norm of the operator and generally provides a tighter Lipschitz constant. However, it can be computationally intensive for large operators. A reduced-accuracy mode is available for quicker but slightly overestimated constants:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using SVD method with reduced accuracy</span>
 <span class="n">op</span><span class="o">.</span><span class="n">lipschitz</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">estimate_lipschitz</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">"svd"</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">)</span>
 </pre></div>
@@ -318,7 +319,7 @@ document.write(`
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc/operator.html#pyxu.abc.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">LinOp</span></a>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">LinOp</span></a>
 <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">rand_op</span> <span class="o">=</span> <span class="n">LinOp</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.random.html#numpy.random.random" title="numpy.random.random"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span></a><span class="p">((</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)))</span>
@@ -426,7 +427,7 @@ inf
 <span class="o">...</span>
 </pre></div>
 </div>
-<p>More details on this feature can be found in the API reference under <code class="docutils literal notranslate"><span class="pre">pyxu.abc.arithmetic</span></code>.</p>
+<p>More details on this feature can be found in the <a class="reference external" href="../api/index.html">API reference</a> under <code class="docutils literal notranslate"><span class="pre">pyxu.abc.arithmetic</span></code><a class="reference external" href="../api/abc/arithmetic.html#">🔗</a>.</p>
 <blockquote>
 <div><p><strong>Note 📝</strong>: While the propagated constants are usually good enough for step size tuning, they may not always be the tightest estimates.</p>
 </div></blockquote>

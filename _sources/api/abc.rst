@@ -1,19 +1,13 @@
 pyxu.abc
 ========
 
-.. Solver-Related -------------------------------------------------------------
-.. autoclass:: pyxu.abc.Solver
+.. contents:: Table of Contents
+   :local:
+   :depth: 2
 
-   .. autoattribute:: _mstate
+pyxu.abc.arithmetic
+-------------------
 
-   .. autoattribute:: _astate
-
-.. autoclass:: pyxu.abc.SolverMode
-
-.. autoclass:: pyxu.abc.StoppingCriterion
-
-
-.. Arithmetic Rules -----------------------------------------------------------
 .. autoclass:: pyxu.abc.arithmetic.Rule
    :members: op
    :no-members:
@@ -39,7 +33,9 @@ pyxu.abc
 .. autoclass:: pyxu.abc.arithmetic.TransposeRule
    :no-members:
 
-.. Operator-Related -----------------------------------------------------------
+pyxu.abc.operator
+-----------------
+
 .. autoclass:: pyxu.abc.Property
 
 .. autoclass:: pyxu.abc.Operator
@@ -101,3 +97,16 @@ pyxu.abc
 
 .. autoclass:: pyxu.abc.LinFunc
    :no-members:
+
+pyxu.abc.solver
+---------------
+
+.. autoclass:: pyxu.abc.Solver
+
+   .. autoattribute:: _mstate
+
+   .. autoattribute:: _astate
+
+.. autoclass:: pyxu.abc.SolverMode
+
+.. autoclass:: pyxu.abc.StoppingCriterion

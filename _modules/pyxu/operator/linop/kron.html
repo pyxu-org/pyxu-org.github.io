@@ -27,8 +27,8 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
@@ -37,13 +37,13 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=1031a718" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=14df3d68" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../../_static/documentation_options.js?v=e02fc88f"></script>
+    <script src="../../../../_static/documentation_options.js?v=a4a8746c"></script>
     <script src="../../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -236,7 +236,7 @@ document.write(`
           
           
           
-          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+          <a href="mailto: contact@pyxu.org" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
             <label class="sr-only">Contact</label></a>
         </li>
         <li class="nav-item">
@@ -378,7 +378,7 @@ document.write(`
           
           
           
-          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+          <a href="mailto: contact@pyxu.org" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
             <label class="sr-only">Contact</label></a>
         </li>
         <li class="nav-item">
@@ -467,7 +467,7 @@ document.write(`
 <span class="linenos"> 14</span>
 <span class="linenos"> 15</span>
 <div class="viewcode-block" id="kron">
-<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.kron">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.kron">[docs]</a>
 <span class="linenos"> 16</span><span class="k">def</span> <span class="nf">kron</span><span class="p">(</span><span class="n">A</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">,</span> <span class="n">B</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
 <span class="linenos"> 17</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 18</span><span class="sd">    `Kronecker product &lt;https://en.wikipedia.org/wiki/Kronecker_product#Definition&gt;`_ :math:`A \otimes B` between two</span>
@@ -694,7 +694,7 @@ document.write(`
 <span class="linenos">238</span>
 <span class="linenos">239</span>
 <div class="viewcode-block" id="khatri_rao">
-<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.khatri_rao">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.khatri_rao">[docs]</a>
 <span class="linenos">240</span><span class="k">def</span> <span class="nf">khatri_rao</span><span class="p">(</span><span class="n">A</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">,</span> <span class="n">B</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
 <span class="linenos">241</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">242</span><span class="sd">    `Column-wise Khatri-Rao product</span>

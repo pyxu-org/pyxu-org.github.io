@@ -27,8 +27,8 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
@@ -37,13 +37,13 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=1031a718" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=14df3d68" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../../_static/documentation_options.js?v=e02fc88f"></script>
+    <script src="../../../../_static/documentation_options.js?v=a4a8746c"></script>
     <script src="../../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -236,7 +236,7 @@ document.write(`
           
           
           
-          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+          <a href="mailto: contact@pyxu.org" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
             <label class="sr-only">Contact</label></a>
         </li>
         <li class="nav-item">
@@ -378,7 +378,7 @@ document.write(`
           
           
           
-          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+          <a href="mailto: contact@pyxu.org" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
             <label class="sr-only">Contact</label></a>
         </li>
         <li class="nav-item">
@@ -484,7 +484,7 @@ document.write(`
 <span class="linenos"> 31</span>
 <span class="linenos"> 32</span>
 <div class="viewcode-block" id="L1Norm">
-<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.L1Norm">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator/func.html#pyxu.operator.L1Norm">[docs]</a>
 <span class="linenos"> 33</span><span class="k">class</span> <span class="nc">L1Norm</span><span class="p">(</span><span class="n">_ShiftLossMixin</span><span class="p">,</span> <span class="n">pxa</span><span class="o">.</span><span class="n">ProxFunc</span><span class="p">):</span>
 <span class="linenos"> 34</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 35</span><span class="sd">    :math:`\ell_{1}`-norm, :math:`\Vert\mathbf{x}\Vert_{1} := \sum_{i=1}^{N} |x_{i}|`.</span>
@@ -509,7 +509,7 @@ document.write(`
 <span class="linenos"> 53</span>
 <span class="linenos"> 54</span>
 <div class="viewcode-block" id="L2Norm">
-<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.L2Norm">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator/func.html#pyxu.operator.L2Norm">[docs]</a>
 <span class="linenos"> 55</span><span class="k">class</span> <span class="nc">L2Norm</span><span class="p">(</span><span class="n">_ShiftLossMixin</span><span class="p">,</span> <span class="n">pxa</span><span class="o">.</span><span class="n">ProxFunc</span><span class="p">):</span>
 <span class="linenos"> 56</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 57</span><span class="sd">    :math:`\ell_{2}`-norm, :math:`\Vert\mathbf{x}\Vert_{2} := \sqrt{\sum_{i=1}^{N} |x_{i}|^{2}}`.</span>
@@ -537,7 +537,7 @@ document.write(`
 <span class="linenos"> 78</span>
 <span class="linenos"> 79</span>
 <div class="viewcode-block" id="SquaredL2Norm">
-<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.SquaredL2Norm">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator/func.html#pyxu.operator.SquaredL2Norm">[docs]</a>
 <span class="linenos"> 80</span><span class="k">class</span> <span class="nc">SquaredL2Norm</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">QuadraticFunc</span><span class="p">):</span>
 <span class="linenos"> 81</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 82</span><span class="sd">    :math:`\ell^{2}_{2}`-norm, :math:`\Vert\mathbf{x}\Vert^{2}_{2} := \sum_{i=1}^{N} |x_{i}|^{2}`.</span>
@@ -575,14 +575,14 @@ document.write(`
 <span class="linenos">113</span>
 <span class="linenos">114</span>
 <div class="viewcode-block" id="SquaredL1Norm">
-<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.SquaredL1Norm">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator/func.html#pyxu.operator.SquaredL1Norm">[docs]</a>
 <span class="linenos">115</span><span class="k">class</span> <span class="nc">SquaredL1Norm</span><span class="p">(</span><span class="n">_ShiftLossMixin</span><span class="p">,</span> <span class="n">pxa</span><span class="o">.</span><span class="n">ProxFunc</span><span class="p">):</span>
 <span class="linenos">116</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">117</span><span class="sd">    :math:`\ell^{2}_{1}`-norm, :math:`\Vert\mathbf{x}\Vert^{2}_{1} := (\sum_{i=1}^{N} |x_{i}|)^{2}`.</span>
 <span class="linenos">118</span><span class="sd">    &quot;&quot;&quot;</span>
 <span class="linenos">119</span>
 <div class="viewcode-block" id="SquaredL1Norm.__init__">
-<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.SquaredL1Norm.__init__">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator/func.html#pyxu.operator.SquaredL1Norm.__init__">[docs]</a>
 <span class="linenos">120</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">prox_algo</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;sort&quot;</span><span class="p">):</span>
 <span class="linenos">121</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">122</span><span class="sd">        Parameters</span>
@@ -678,7 +678,7 @@ document.write(`
 <span class="linenos">211</span>        <span class="k">return</span> <span class="n">out</span>
 <span class="linenos">212</span>
 <div class="viewcode-block" id="SquaredL1Norm.prox">
-<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.SquaredL1Norm.prox">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator/func.html#pyxu.operator.SquaredL1Norm.prox">[docs]</a>
 <span class="linenos">213</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;arr&quot;</span><span class="p">,</span> <span class="s2">&quot;tau&quot;</span><span class="p">))</span>
 <span class="linenos">214</span>    <span class="k">def</span> <span class="nf">prox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">tau</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">215</span>        <span class="n">N</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span>
@@ -709,7 +709,7 @@ document.write(`
 <span class="linenos">238</span>
 <span class="linenos">239</span>
 <div class="viewcode-block" id="LInfinityNorm">
-<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.LInfinityNorm">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator/func.html#pyxu.operator.LInfinityNorm">[docs]</a>
 <span class="linenos">240</span><span class="k">class</span> <span class="nc">LInfinityNorm</span><span class="p">(</span><span class="n">_ShiftLossMixin</span><span class="p">,</span> <span class="n">pxa</span><span class="o">.</span><span class="n">ProxFunc</span><span class="p">):</span>
 <span class="linenos">241</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">242</span><span class="sd">    :math:`\ell_{\infty}`-norm, :math:`\Vert\mathbf{x}\Vert_{\infty} := \max_{i=1,\ldots,N} |x_{i}|`.</span>
@@ -767,7 +767,7 @@ document.write(`
 <span class="linenos">293</span>
 <span class="linenos">294</span>
 <div class="viewcode-block" id="L21Norm">
-<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.L21Norm">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator/func.html#pyxu.operator.L21Norm">[docs]</a>
 <span class="linenos">295</span><span class="k">class</span> <span class="nc">L21Norm</span><span class="p">(</span><span class="n">_ShiftLossMixin</span><span class="p">,</span> <span class="n">pxa</span><span class="o">.</span><span class="n">ProxFunc</span><span class="p">):</span>
 <span class="linenos">296</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">297</span><span class="sd">    Mixed :math:`\ell_{2}-\ell_{1}` norm, :math:`\Vert\mathbf{x}\Vert_{2, 1} := \sum_{i=1}^{N} \sqrt{\sum_{j=1}^{M}</span>
@@ -780,7 +780,7 @@ document.write(`
 <span class="linenos">304</span><span class="sd">    &quot;&quot;&quot;</span>
 <span class="linenos">305</span>
 <div class="viewcode-block" id="L21Norm.__init__">
-<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.L21Norm.__init__">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator/func.html#pyxu.operator.L21Norm.__init__">[docs]</a>
 <span class="linenos">306</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
 <span class="linenos">307</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">308</span>        <span class="n">arg_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
@@ -842,7 +842,7 @@ document.write(`
 <span class="linenos">362</span>
 <span class="linenos">363</span>
 <div class="viewcode-block" id="PositiveL1Norm">
-<a class="viewcode-back" href="../../../../api/operator.html#pyxu.operator.PositiveL1Norm">[docs]</a>
+<a class="viewcode-back" href="../../../../api/operator/func.html#pyxu.operator.PositiveL1Norm">[docs]</a>
 <span class="linenos">364</span><span class="k">class</span> <span class="nc">PositiveL1Norm</span><span class="p">(</span><span class="n">_ShiftLossMixin</span><span class="p">,</span> <span class="n">pxa</span><span class="o">.</span><span class="n">ProxFunc</span><span class="p">):</span>
 <span class="linenos">365</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">366</span><span class="sd">    :math:`\ell_{1}`-norm, with a positivity constraint.</span>

@@ -18,7 +18,7 @@
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
-<link href="../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css?v=b76e3c8a" rel="stylesheet" type="text/css"/>
 <link href="../_static/plot_directive.css?v=7f9a90b1" rel="stylesheet" type="text/css"/>
 <link href="../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
 <link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
@@ -29,11 +29,11 @@
 <link href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" rel="stylesheet" type="text/css"/>
 <link href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
 <link href="../_static/nbsphinx-code-cells.css?v=2aa19091" rel="stylesheet" type="text/css"/>
-<link href="../_static/css/custom.css?v=1031a718" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css?v=14df3d68" rel="stylesheet" type="text/css"/>
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../_static/documentation_options.js?v=e02fc88f"></script>
+<script src="../_static/documentation_options.js?v=a4a8746c"></script>
 <script src="../_static/doctools.js?v=888ff710"></script>
 <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -397,7 +397,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">skimage.transform</span> <span class="k">as</span> <span class="nn">skt</span>
 
 <span class="c1"># Radon Operator (imported from `skt` since Pyxu did not ship with a Radon transform at the time of this writing.)</span>
-<span class="n">Radon</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator.interop.html#pyxu.operator.interop.from_source" title="pyxu.operator.interop.from_source"><span class="n">from_source</span></a><span class="p">(</span><span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc/operator.html#pyxu.abc.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
+<span class="n">Radon</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator.interop.html#pyxu.operator.interop.from_source" title="pyxu.operator.interop.from_source"><span class="n">from_source</span></a><span class="p">(</span><span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
                     <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">sino</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">phantom</span><span class="o">.</span><span class="n">size</span><span class="p">),</span>
                     <span class="n">apply</span><span class="o">=</span><span class="k">lambda</span> <span class="n">_</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">skt</span><span class="o">.</span><span class="n">radon</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span>
                                                    <span class="n">theta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="n">angles</span><span class="p">),</span>
@@ -754,7 +754,7 @@ the data, which might not be easily expressed in mathematical terms.</p>
     <span class="n">arr</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">arg_shape</span><span class="p">)</span>
     <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.median_filter.html#scipy.ndimage.median_filter" title="scipy.ndimage.median_filter"><span class="n">median_filter</span></a><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">wsize</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
 
-<span class="k">class</span> <span class="nc">MedianFilterPnP</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc/operator.html#pyxu.abc.ProxDiffFunc" title="pyxu.abc.operator.ProxDiffFunc"><span class="n">pxa</span><span class="o">.</span><span class="n">ProxDiffFunc</span></a><span class="p">):</span>
+<span class="k">class</span> <span class="nc">MedianFilterPnP</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.ProxDiffFunc" title="pyxu.abc.operator.ProxDiffFunc"><span class="n">pxa</span><span class="o">.</span><span class="n">ProxDiffFunc</span></a><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg_shape</span><span class="p">,</span> <span class="n">wsize</span><span class="p">):</span>
         <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">arg_shape</span><span class="p">)))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_arg_shape</span> <span class="o">=</span> <span class="n">arg_shape</span>

@@ -4,12 +4,12 @@ Example Gallery
 .. nblinkgallery::
     :name: rst-link-gallery
 
-    Stencils
-    DifferentialOperators
+    stencils
 
 .. toctree::
    :maxdepth: 2
    :hidden:
 
-   Stencils
-   DifferentialOperators
+   contributing
+   stencils
+

@@ -18,7 +18,7 @@
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
-<link href="../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css?v=b76e3c8a" rel="stylesheet" type="text/css"/>
 <link href="../_static/plot_directive.css?v=7f9a90b1" rel="stylesheet" type="text/css"/>
 <link href="../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
 <link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
@@ -28,11 +28,11 @@
 <link href="../_static/sg_gallery-dataframe.css?v=2082cf3c" rel="stylesheet" type="text/css"/>
 <link href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" rel="stylesheet" type="text/css"/>
 <link href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
-<link href="../_static/css/custom.css?v=1031a718" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css?v=14df3d68" rel="stylesheet" type="text/css"/>
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../_static/documentation_options.js?v=e02fc88f"></script>
+<script src="../_static/documentation_options.js?v=a4a8746c"></script>
 <script src="../_static/doctools.js?v=888ff710"></script>
 <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -231,6 +231,7 @@ document.write(`
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Optimization Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lipschitz.html">Lipschitz Constants and Automatic Step Size Tuning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hpc.html">High Performance Computing Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diff_ops.html">Differential Operators in Pyxu</a></li>
 </ul>
 </div>
 </nav></div>
@@ -268,15 +269,15 @@ document.write(`
 <p>Navigating the landscape of optimization algorithms can be overwhelming at times, especially when each algorithm comes with its own set of assumptions and applicability scope. Pyxu aims to simplify this by offering a comprehensive suite of algorithms tailored for solving Bayesian estimation problems. In this section, we’ll walk through the different algorithms available, discuss how to choose the most suitable ones for your problem, and show you how to flexibly configure them. 🎛️</p>
 <section id="Algorithms-Overview">
 <h2>Algorithms Overview<a class="headerlink" href="#Algorithms-Overview" title="Link to this heading">#</a></h2>
-<section id="Conjugate-Gradient-(CG)">
-<h3>Conjugate Gradient (CG)<a class="headerlink" href="#Conjugate-Gradient-(CG)" title="Link to this heading">#</a></h3>
+<section id="Conjugate-Gradient-(CG)-🔗">
+<h3>Conjugate Gradient (CG) <a class="reference external" href="../api/opt.solver.html#pyxu.opt.solver.CG">🔗</a><a class="headerlink" href="#Conjugate-Gradient-(CG)-🔗" title="Link to this heading">#</a></h3>
 <p>👉 <strong>Use case:</strong> Quadratic problems, particularly when you have a well-conditioned matrix <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <p><strong>Mathematical Form:</strong></p>
 <div class="math notranslate nohighlight">
 \[\min_{x\in\mathbb{R}^{N}} \frac{1}{2} \mathbf{x}^{T} \mathbf{A} \mathbf{x} - \mathbf{x}^{T} \mathbf{b}\]</div>
 </section>
-<section id="Accelerated-Proximal-Gradient-Descent-(APGD)">
-<h3>Accelerated Proximal Gradient Descent (APGD)<a class="headerlink" href="#Accelerated-Proximal-Gradient-Descent-(APGD)" title="Link to this heading">#</a></h3>
+<section id="Accelerated-Proximal-Gradient-Descent-(APGD)-🔗">
+<h3>Accelerated Proximal Gradient Descent (APGD) <a class="reference external" href="../api/opt.solver.html#pyxu.opt.solver.PGD">🔗</a><a class="headerlink" href="#Accelerated-Proximal-Gradient-Descent-(APGD)-🔗" title="Link to this heading">#</a></h3>
 <p>👉 <strong>Use case:</strong> Problems that separate into smooth and non-smooth components.</p>
 <p><strong>Mathematical Form:</strong></p>
 <div class="math notranslate nohighlight">
@@ -293,7 +294,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\min_{\mathbf{x}\in\mathbb{R}^N} \;\mathcal{F}(\mathbf{x})\;\;+\;\;\mathcal{G}(\mathbf{x})\;\;+\;\;\mathcal{H}(K\mathbf{x})\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathcal{F}\)</span> is differentiable, <span class="math notranslate nohighlight">\(\mathcal{G}\)</span> and <span class="math notranslate nohighlight">\(\mathcal{H}\)</span> are proximable, and <span class="math notranslate nohighlight">\(K\)</span> is a linear operator.</p>
-<p>Methods under this category include <code class="docutils literal notranslate"><span class="pre">CondatVu</span></code>, <code class="docutils literal notranslate"><span class="pre">PD3O</span></code>, <code class="docutils literal notranslate"><span class="pre">ADMM</span></code>, <code class="docutils literal notranslate"><span class="pre">ChambollePock</span></code>, and more.</p>
+<p>Methods under this category include <code class="docutils literal notranslate"><span class="pre">CondatVu</span></code> <a class="reference external" href="../api/opt.solver.html#pyxu.opt.solver.CondatVu">🔗</a>, <code class="docutils literal notranslate"><span class="pre">PD3O</span></code> <a class="reference external" href="../api/opt.solver.html#pyxu.opt.solver.PD3O">🔗</a>, <code class="docutils literal notranslate"><span class="pre">ADMM</span></code> <a class="reference external" href="../api/opt.solver.html#pyxu.opt.solver.ADMM">🔗</a>, <code class="docutils literal notranslate"><span class="pre">ChambollePock</span></code> <a class="reference external" href="../api/opt.solver.html#pyxu.opt.solver.ChambollePock">🔗</a>, and more.</p>
 <p>Note that, although implemented for three-term objective functionals, PDS methods can easilybe generalized to objective functionals of the form:</p>
 <div class="math notranslate nohighlight">
 \[{\min_{\mathbf{x}\in\mathbb{R}^N} \;\mathcal{F}(\mathbf{x})\;\;+\;\;\mathcal{G}(\mathbf{x})\;\;+\;\;\sum_{i=1}^J\mathcal{H}_i(K_i\mathbf{x})}\]</div>
@@ -306,8 +307,8 @@ document.write(`
 </section>
 <section id="Choosing-the-Right-Algorithm">
 <h2>Choosing the Right Algorithm<a class="headerlink" href="#Choosing-the-Right-Algorithm" title="Link to this heading">#</a></h2>
-<p>The golden rule is to <strong>choose the most specific algorithm</strong> —i.e., the one that makes the most assumptions consistent with your problem. This often results in faster convergence. For example, if your objective functional has a gradient, a gradient-based method like <code class="docutils literal notranslate"><span class="pre">APGD</span></code> will generally be more efficient than a generic proximal-based method like <code class="docutils literal notranslate"><span class="pre">DouglasRachford</span></code>.</p>
-<p>The most generic algorithms in Pyxu are <code class="docutils literal notranslate"><span class="pre">PD3O</span></code> and <code class="docutils literal notranslate"><span class="pre">CondatVu</span></code>, but they are also the least efficient, so use them only when simpler methods like <code class="docutils literal notranslate"><span class="pre">ADMM</span></code>, <code class="docutils literal notranslate"><span class="pre">APGD</span></code> or <code class="docutils literal notranslate"><span class="pre">CG</span></code> cannot be used. Note that <code class="docutils literal notranslate"><span class="pre">ADAM</span></code> can also be useful when step sizes are too complex to compute.</p>
+<p>The golden rule is to <strong>choose the most specific algorithm</strong> —i.e., the one that makes the most assumptions consistent with your problem. This often results in faster convergence. For example, if your objective functional has a gradient, a gradient-based method like <code class="docutils literal notranslate"><span class="pre">APGD</span></code> will generally be more efficient than a generic proximal-based method like <code class="docutils literal notranslate"><span class="pre">DouglasRachford</span></code> <a class="reference external" href="../api/opt.solver.html#pyxu.opt.solver.DouglasRachford">🔗</a>.</p>
+<p>The most generic algorithms in Pyxu are <code class="docutils literal notranslate"><span class="pre">PD3O</span></code> and <code class="docutils literal notranslate"><span class="pre">CondatVu</span></code>, but they are also the least efficient, so use them only when simpler methods like <code class="docutils literal notranslate"><span class="pre">ADMM</span></code>, <code class="docutils literal notranslate"><span class="pre">APGD</span></code> or <code class="docutils literal notranslate"><span class="pre">CG</span></code> cannot be used. Note that <code class="docutils literal notranslate"><span class="pre">ADAM</span></code> <a class="reference external" href="../api/opt.solver.html#pyxu.opt.solver.Adam">🔗</a> can also be useful when step sizes are too complex to compute.</p>
 </section>
 <section id="Hyperparameter-Tuning">
 <h2>Hyperparameter Tuning<a class="headerlink" href="#Hyperparameter-Tuning" title="Link to this heading">#</a></h2>
@@ -347,7 +348,7 @@ document.write(`
 </section>
 <section id="Advanced-Usage:-Guru-Interface">
 <h2>Advanced Usage: Guru Interface<a class="headerlink" href="#Advanced-Usage:-Guru-Interface" title="Link to this heading">#</a></h2>
-<p>For those who want even more control, we provide a guru interface allowing you to overload default settings, including the stopping criteria (see module <code class="docutils literal notranslate"><span class="pre">pyxu.opt.stop</span></code> for available stopping criteria).</p>
+<p>For those who want even more control, we provide a guru interface allowing you to overload default settings, including the stopping criteria (see module <code class="docutils literal notranslate"><span class="pre">pyxu.opt.stop</span></code><a class="reference external" href="../api/opt.stop.html">🔗</a> for available stopping criteria).</p>
 <p>For example, overloading the default stopping criterion of the <code class="docutils literal notranslate"><span class="pre">CondatVu</span></code> solver initialized above can be achieved as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Custom stopping criterion (optional)</span>
 <span class="n">custom_stop_crit</span> <span class="o">=</span> <span class="p">(</span><span class="n">RelError</span><span class="p">(</span><span class="n">eps</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">var</span><span class="o">=</span><span class="s2">"x"</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">satisfy_all</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">&amp;</span>
@@ -361,10 +362,10 @@ document.write(`
 </section>
 <section id="Implementing-New-Algorithms">
 <h2>Implementing New Algorithms<a class="headerlink" href="#Implementing-New-Algorithms" title="Link to this heading">#</a></h2>
-<p>To implement a new iterative solver, users need to sub-class <code class="docutils literal notranslate"><span class="pre">pyxu.abc.solver.Solver</span></code> and overwrite some of its core methods, such as <code class="docutils literal notranslate"><span class="pre">m_init()</span></code>, and <code class="docutils literal notranslate"><span class="pre">m_step()</span></code>, which describe the initalization and update step of iterative algorithms (see the API Reference for more details).</p>
+<p>To implement a new iterative solver, users need to sub-class <code class="docutils literal notranslate"><span class="pre">pyxu.abc.solver.Solver</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Solver">🔗</a> and overwrite some of its core methods, such as <code class="docutils literal notranslate"><span class="pre">m_init()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Solver.m_init">🔗</a>, and <code class="docutils literal notranslate"><span class="pre">m_step()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Solver.m_step">🔗</a>, which describe the initalization and update step of iterative algorithms (see the API Reference for more details).</p>
 <p>Sub-classes of <code class="docutils literal notranslate"><span class="pre">Solver</span></code> inherit automatically from its very versatile API for solving optimisation problems, with the following notable features:</p>
 <ul class="simple">
-<li><p>manual/automatic/background execution of solver iterations via parameters provided to <code class="docutils literal notranslate"><span class="pre">fit()</span></code>.</p></li>
+<li><p>manual/automatic/background execution of solver iterations via parameters provided to <code class="docutils literal notranslate"><span class="pre">fit()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Solver.fit">🔗</a>.</p></li>
 <li><p>automatic checkpointing of solver progress, providing a safe restore point in case of faulty numerical code. Each solver instance backs its state and final output to a folder on disk for post-analysis. In particular <code class="docutils literal notranslate"><span class="pre">fit()</span></code> will never crash: detailed exception information will always be available in a logfile for post-analysis.</p></li>
 <li><p>solve for multiple initial points in parallel.</p></li>
 </ul>
@@ -402,8 +403,8 @@ document.write(`
 <nav class="bd-toc-nav page-toc">
 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Algorithms-Overview">Algorithms Overview</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Conjugate-Gradient-(CG)">Conjugate Gradient (CG)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Accelerated-Proximal-Gradient-Descent-(APGD)">Accelerated Proximal Gradient Descent (APGD)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Conjugate-Gradient-(CG)-🔗">Conjugate Gradient (CG) 🔗</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Accelerated-Proximal-Gradient-Descent-(APGD)-🔗">Accelerated Proximal Gradient Descent (APGD) 🔗</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Primal-Dual-Splitting-(PDS)-Methods">Primal-Dual Splitting (PDS) Methods</a></li>
 </ul>
 </li>

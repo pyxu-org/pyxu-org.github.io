@@ -27,8 +27,8 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css?v=13237357" />
@@ -37,13 +37,13 @@
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/css/custom.css?v=1031a718" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/css/custom.css?v=14df3d68" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../../../_static/documentation_options.js?v=e02fc88f"></script>
+    <script src="../../../../../_static/documentation_options.js?v=a4a8746c"></script>
     <script src="../../../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -236,7 +236,7 @@ document.write(`
           
           
           
-          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+          <a href="mailto: contact@pyxu.org" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
             <label class="sr-only">Contact</label></a>
         </li>
         <li class="nav-item">
@@ -378,7 +378,7 @@ document.write(`
           
           
           
-          <a href="mailto: matthieu.simeoni@gmail.com" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
+          <a href="mailto: contact@pyxu.org" title="Contact" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-telegram"></i></span>
             <label class="sr-only">Contact</label></a>
         </li>
         <li class="nav-item">
@@ -477,7 +477,7 @@ document.write(`
 <span class="linenos"> 24</span>
 <span class="linenos"> 25</span>
 <div class="viewcode-block" id="Stencil">
-<a class="viewcode-back" href="../../../../../api/operator.html#pyxu.operator.Stencil">[docs]</a>
+<a class="viewcode-back" href="../../../../../api/operator/linop.html#pyxu.operator.Stencil">[docs]</a>
 <span class="linenos"> 26</span><span class="k">class</span> <span class="nc">Stencil</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">SquareOp</span><span class="p">):</span>
 <span class="linenos"> 27</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 28</span><span class="sd">    Multi-dimensional JIT-compiled stencil.</span>
@@ -801,7 +801,7 @@ document.write(`
 <span class="linenos">346</span>    <span class="p">]</span>
 <span class="linenos">347</span>
 <div class="viewcode-block" id="Stencil.__init__">
-<a class="viewcode-back" href="../../../../../api/operator.html#pyxu.operator.Stencil.__init__">[docs]</a>
+<a class="viewcode-back" href="../../../../../api/operator/linop.html#pyxu.operator.Stencil.__init__">[docs]</a>
 <span class="linenos">348</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
 <span class="linenos">349</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">350</span>        <span class="n">arg_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
@@ -909,7 +909,7 @@ document.write(`
 <span class="linenos">451</span>        <span class="k">return</span> <span class="n">out</span>
 <span class="linenos">452</span>
 <div class="viewcode-block" id="Stencil.configure_dispatcher">
-<a class="viewcode-back" href="../../../../../api/operator.html#pyxu.operator.Stencil.configure_dispatcher">[docs]</a>
+<a class="viewcode-back" href="../../../../../api/operator/linop.html#pyxu.operator.Stencil.configure_dispatcher">[docs]</a>
 <span class="linenos">453</span>    <span class="k">def</span> <span class="nf">configure_dispatcher</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="linenos">454</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">455</span><span class="sd">        (Only applies if `kernel` is a CuPy array.)</span>
@@ -1206,7 +1206,7 @@ document.write(`
 <span class="linenos">745</span>        <span class="k">return</span> <span class="n">r_idx</span>
 <span class="linenos">746</span>
 <div class="viewcode-block" id="Stencil.visualize">
-<a class="viewcode-back" href="../../../../../api/operator.html#pyxu.operator.Stencil.visualize">[docs]</a>
+<a class="viewcode-back" href="../../../../../api/operator/linop.html#pyxu.operator.Stencil.visualize">[docs]</a>
 <span class="linenos">747</span>    <span class="k">def</span> <span class="nf">visualize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="linenos">748</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">749</span><span class="sd">        Show the :math:`D`-dimensional stencil kernel.</span>
@@ -1247,7 +1247,7 @@ document.write(`
 <span class="linenos">782</span>
 <span class="linenos">783</span>
 <div class="viewcode-block" id="Convolve">
-<a class="viewcode-back" href="../../../../../api/operator.html#pyxu.operator.Convolve">[docs]</a>
+<a class="viewcode-back" href="../../../../../api/operator/linop.html#pyxu.operator.Convolve">[docs]</a>
 <span class="linenos">784</span><span class="k">class</span> <span class="nc">Convolve</span><span class="p">(</span><span class="n">Stencil</span><span class="p">):</span>
 <span class="linenos">785</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">786</span><span class="sd">    Multi-dimensional JIT-compiled convolution.</span>

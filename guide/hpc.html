@@ -18,7 +18,7 @@
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
-<link href="../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css?v=b76e3c8a" rel="stylesheet" type="text/css"/>
 <link href="../_static/plot_directive.css?v=7f9a90b1" rel="stylesheet" type="text/css"/>
 <link href="../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
 <link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
@@ -29,11 +29,11 @@
 <link href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" rel="stylesheet" type="text/css"/>
 <link href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
 <link href="../_static/nbsphinx-code-cells.css?v=2aa19091" rel="stylesheet" type="text/css"/>
-<link href="../_static/css/custom.css?v=1031a718" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css?v=14df3d68" rel="stylesheet" type="text/css"/>
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../_static/documentation_options.js?v=e02fc88f"></script>
+<script src="../_static/documentation_options.js?v=a4a8746c"></script>
 <script src="../_static/doctools.js?v=888ff710"></script>
 <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -52,7 +52,7 @@
 <link href="../_static/favicon.png" rel="icon"/>
 <link href="../genindex.html" rel="index" title="Index"/>
 <link href="../search.html" rel="search" title="Search"/>
-<link href="../examples/index.html" rel="next" title="Example Gallery"/>
+<link href="diff_ops.html" rel="next" title="Differential Operators in Pyxu"/>
 <link href="lipschitz.html" rel="prev" title="Lipschitz Constants and Automatic Step Size Tuning"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="en" name="docsearch:language"/>
@@ -232,6 +232,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="algorithms.html">Optimization Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lipschitz.html">Lipschitz Constants and Automatic Step Size Tuning</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">High Performance Computing Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diff_ops.html">Differential Operators in Pyxu</a></li>
 </ul>
 </div>
 </nav></div>
@@ -345,12 +346,12 @@ modularity becomes a bottleneck.</p>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc/operator.html#pyxu.abc.Map" title="pyxu.abc.operator.Map"><span class="n">Map</span></a>
-<span class="kn">from</span> <span class="nn">pyxu.util</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/util/array_module.html#pyxu.util.get_array_module" title="pyxu.util.get_array_module"><span class="n">get_array_module</span></a>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.Map" title="pyxu.abc.operator.Map"><span class="n">Map</span></a>
+<span class="kn">from</span> <span class="nn">pyxu.util</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/util.html#pyxu.util.get_array_module" title="pyxu.util.get_array_module"><span class="n">get_array_module</span></a>
 <span class="kn">from</span> <a class="sphinx-codeautolink-a" href="../api/runtime.html#module-pyxu.runtime" title="pyxu.runtime"><span class="nn">pyxu.runtime</span></a> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/runtime.html#pyxu.runtime.enforce_precision" title="pyxu.runtime.enforce_precision"><span class="n">enforce_precision</span></a>
 
 
-<span class="k">class</span> <span class="nc">Median</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc/operator.html#pyxu.abc.Map" title="pyxu.abc.operator.Map"><span class="n">Map</span></a><span class="p">):</span>
+<span class="k">class</span> <span class="nc">Median</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.Map" title="pyxu.abc.operator.Map"><span class="n">Map</span></a><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
         <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">(</span><span class="n">Median</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
 
@@ -358,7 +359,7 @@ modularity becomes a bottleneck.</p>
     <a class="sphinx-codeautolink-a" href="../api/runtime.html#pyxu.runtime.enforce_precision" title="pyxu.runtime.enforce_precision"><span class="nd">@enforce_precision</span></a><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">"arr"</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
         <span class="c1"># Find the array module.</span>
-        <span class="n">xp</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/util/array_module.html#pyxu.util.get_array_module" title="pyxu.util.get_array_module"><span class="n">get_array_module</span></a><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+        <span class="n">xp</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/util.html#pyxu.util.get_array_module" title="pyxu.util.get_array_module"><span class="n">get_array_module</span></a><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">xp</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="c1"># Dispatch the median call to the right backend</span>
         <span class="c1"># Allow for batch dimensions.</span>
@@ -371,16 +372,16 @@ modularity becomes a bottleneck.</p>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#module-time" title="time"><span class="nn">time</span></a> <span class="k">as</span> <span class="nn">t</span>
-<span class="kn">from</span> <span class="nn">pyxu.util.deps</span> <span class="kn">import</span> <span class="n">supported_array_modules</span>
-<span class="kn">from</span> <span class="nn">pyxu.util</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/util/misc.html#pyxu.util.compute" title="pyxu.util.compute"><span class="n">compute</span></a>
+<span class="kn">from</span> <a class="sphinx-codeautolink-a" href="../api/info.deps.html#module-pyxu.info.deps" title="pyxu.info.deps"><span class="nn">pyxu.info.deps</span></a> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/info.deps.html#pyxu.info.deps.supported_array_modules" title="pyxu.info.deps.supported_array_modules"><span class="n">supported_array_modules</span></a>
+<span class="kn">from</span> <span class="nn">pyxu.util</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/util.html#pyxu.util.compute" title="pyxu.util.compute"><span class="n">compute</span></a>
 
 <span class="n">timings</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#dict" title="dict"><span class="nb">dict</span></a><span class="p">()</span>
 <span class="n">m</span> <span class="o">=</span> <span class="n">Median</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">xp</span> <span class="ow">in</span> <span class="n">supported_array_modules</span><span class="p">():</span> <span class="c1"># Loops over supported array backends</span>
+<span class="k">for</span> <span class="n">xp</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/info.deps.html#pyxu.info.deps.supported_array_modules" title="pyxu.info.deps.supported_array_modules"><span class="n">supported_array_modules</span></a><span class="p">():</span> <span class="c1"># Loops over supported array backends</span>
     <span class="c1"># Apply the operator in turn on a various array types.</span>
     <span class="n">t1</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.time" title="time.time"><span class="n">t</span><span class="o">.</span><span class="n">time</span></a><span class="p">()</span>
     <span class="n">arr</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">260</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
-    <span class="n">out</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/util/misc.html#pyxu.util.compute" title="pyxu.util.compute"><span class="n">compute</span></a><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+    <span class="n">out</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/util.html#pyxu.util.compute" title="pyxu.util.compute"><span class="n">compute</span></a><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
     <span class="n">timings</span><span class="p">[</span><span class="n">xp</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.time" title="time.time"><span class="n">t</span><span class="o">.</span><span class="n">time</span></a><span class="p">()</span> <span class="o">-</span> <span class="n">t1</span>
 <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><span class="n">timings</span><span class="p">)</span>
 </pre></div>
@@ -394,7 +395,7 @@ modularity becomes a bottleneck.</p>
 {'numpy': 0.0005955696105957031, 'cupy': 2.3291730880737305, 'dask.array': 0.0022661685943603516}
 </pre></div></div>
 </div>
-<p>If called from within the context manager <code class="docutils literal notranslate"><span class="pre">Precision</span></code>, the decorated apply method will automatically coerce the input/output to the user-specified precision:</p>
+<p>If called from within the context manager <code class="docutils literal notranslate"><span class="pre">Precision</span></code><a class="reference external" href="../api/runtime.html#pyxu.runtime.Precision">🔗</a>, the decorated apply method will automatically coerce the input/output to the user-specified precision:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -441,7 +442,7 @@ modularity becomes a bottleneck.</p>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">HierarchicalMedian</span><span class="p">(</span><span class="n">Median</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
-        <span class="n">xp</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/util/array_module.html#pyxu.util.get_array_module" title="pyxu.util.get_array_module"><span class="n">get_array_module</span></a><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+        <span class="n">xp</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/util.html#pyxu.util.get_array_module" title="pyxu.util.get_array_module"><span class="n">get_array_module</span></a><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
         <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#zip" title="zip"><span class="nb">zip</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#range" title="range"><span class="nb">range</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">10</span><span class="p">),</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#range" title="range"><span class="nb">range</span></a><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">10</span><span class="p">)):</span>
             <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="p">]))</span>
@@ -473,9 +474,9 @@ modularity becomes a bottleneck.</p>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">timings</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#dict" title="dict"><span class="nb">dict</span></a><span class="p">()</span>
-<span class="k">for</span> <span class="n">xp</span> <span class="ow">in</span> <span class="n">supported_array_modules</span><span class="p">():</span>
+<span class="k">for</span> <span class="n">xp</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/info.deps.html#pyxu.info.deps.supported_array_modules" title="pyxu.info.deps.supported_array_modules"><span class="n">supported_array_modules</span></a><span class="p">():</span>
     <span class="n">t1</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.time" title="time.time"><span class="n">t</span><span class="o">.</span><span class="n">time</span></a><span class="p">()</span>
-    <span class="n">out</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/util/misc.html#pyxu.util.compute" title="pyxu.util.compute"><span class="n">compute</span></a><span class="p">(</span><span class="n">hm</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">xp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2600</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">130</span><span class="p">)))</span>
+    <span class="n">out</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/util.html#pyxu.util.compute" title="pyxu.util.compute"><span class="n">compute</span></a><span class="p">(</span><span class="n">hm</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">xp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2600</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">130</span><span class="p">)))</span>
     <span class="n">timings</span><span class="p">[</span><span class="n">xp</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.time" title="time.time"><span class="n">t</span><span class="o">.</span><span class="n">time</span></a><span class="p">()</span><span class="o">-</span><span class="n">t1</span>
 <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><span class="n">timings</span><span class="p">)</span>
 </pre></div>
@@ -509,10 +510,10 @@ modularity becomes a bottleneck.</p>
 <p class="prev-next-title">Lipschitz Constants and Automatic Step Size Tuning</p>
 </div>
 </a>
-<a class="right-next" href="../examples/index.html" title="next page">
+<a class="right-next" href="diff_ops.html" title="next page">
 <div class="prev-next-info">
 <p class="prev-next-subtitle">next</p>
-<p class="prev-next-title">Example Gallery</p>
+<p class="prev-next-title">Differential Operators in Pyxu</p>
 </div>
 <i class="fa-solid fa-angle-right"></i>
 </a>

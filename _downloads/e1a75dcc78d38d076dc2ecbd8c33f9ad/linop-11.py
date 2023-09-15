@@ -35,6 +35,6 @@ axs[2].axis("off")
 axs[2].set_title(r"$\frac{\partial^{3} f(x,y)}{\partial x\partial y^{2}}$")
 plt.colorbar(im, ax=axs[2])
 
-# Test approximation error
+# Check approximation error
 plt.figure()
-plt.imshow(abs(out1 - out2) / abs(out2)), plt.colorbar()
+plt.imshow(abs(out1 - out2)), plt.colorbar()

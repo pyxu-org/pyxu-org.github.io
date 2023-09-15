@@ -18,7 +18,7 @@
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
-<link href="../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css?v=b76e3c8a" rel="stylesheet" type="text/css"/>
 <link href="../_static/plot_directive.css?v=7f9a90b1" rel="stylesheet" type="text/css"/>
 <link href="../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
 <link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
@@ -28,11 +28,11 @@
 <link href="../_static/sg_gallery-dataframe.css?v=2082cf3c" rel="stylesheet" type="text/css"/>
 <link href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" rel="stylesheet" type="text/css"/>
 <link href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
-<link href="../_static/css/custom.css?v=1031a718" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css?v=14df3d68" rel="stylesheet" type="text/css"/>
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../_static/documentation_options.js?v=e02fc88f"></script>
+<script src="../_static/documentation_options.js?v=a4a8746c"></script>
 <script src="../_static/doctools.js?v=888ff710"></script>
 <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -231,6 +231,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="algorithms.html">Optimization Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lipschitz.html">Lipschitz Constants and Automatic Step Size Tuning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hpc.html">High Performance Computing Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diff_ops.html">Differential Operators in Pyxu</a></li>
 </ul>
 </div>
 </nav></div>
@@ -281,25 +282,26 @@ document.write(`
 <section id="How-Does-it-Work?-🛠️">
 <h3>How Does it Work? 🛠️<a class="headerlink" href="#How-Does-it-Work?-🛠️" title="Link to this heading">#</a></h3>
 <p>Every time you perform an arithmetic operation, Pyxu automatically infers the output type based on the properties of the operators involved in the operation. This type inference is super convenient because it saves you from manual calculations!</p>
-<p>For example, Pyxu takes care of updating as needed methods like <code class="docutils literal notranslate"><span class="pre">apply()</span></code>, <code class="docutils literal notranslate"><span class="pre">jacobian()</span></code>, <code class="docutils literal notranslate"><span class="pre">grad()</span></code>, <code class="docutils literal notranslate"><span class="pre">prox()</span></code>, and <code class="docutils literal notranslate"><span class="pre">adjoint()</span></code> according to arithmetic rules. This means you can plug these composite operators directly into proximal gradient algorithms without sweating the details of implementing gradients or proximal steps.</p>
+<p>For example, Pyxu takes care of updating as needed methods like <code class="docutils literal notranslate"><span class="pre">apply()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Map.apply">🔗</a>, <code class="docutils literal notranslate"><span class="pre">jacobian()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.DiffMap.jacobian">🔗</a>, <code class="docutils literal notranslate"><span class="pre">grad()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.DiffFunc.grad">🔗</a>, <code class="docutils literal notranslate"><span class="pre">prox()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.ProxFunc.prox">🔗</a>, and <code class="docutils literal notranslate"><span class="pre">adjoint()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.LinOp.adjoint">🔗</a> according to arithmetic rules. This means you can plug these composite operators directly into proximal gradient
+algorithms without sweating the details of implementing gradients or proximal steps.</p>
 </section>
 </section>
 <section id="Behind-the-Scenes:-Arithmetic-Rules">
 <h2>Behind the Scenes: Arithmetic Rules<a class="headerlink" href="#Behind-the-Scenes:-Arithmetic-Rules" title="Link to this heading">#</a></h2>
-<p>For those who love to peek under the hood, Pyxu utilizes a set of arithmetic rules located in the <code class="docutils literal notranslate"><span class="pre">pyxu.abc.arithmetic</span></code> module:</p>
+<p>For those who love to peek under the hood, Pyxu utilizes a set of arithmetic rules located in the <code class="docutils literal notranslate"><span class="pre">pyxu.abc.arithmetic</span></code><a class="reference external" href="../api/abc/arithmetic.html">🔗</a> module:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Rule</span></code>: The base class for all arithmetic rules.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ScaleRule</span></code>: Handles scaling of operators by scalars.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ArgScaleRule</span></code>: Manages the dilation of the arguments of operators.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ArgShiftRule</span></code>: Takes care of shifting the arguments of operators.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">AddRule</span></code>: Manages the addition of two operators.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ChainRule</span></code>: Deals with the composition of two operators.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PowerRule</span></code>: Handles exponentiation of an operator.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">TransposeRule</span></code>: Takes care of transposing a linear operator.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Rule</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.arithmetic.Rule">🔗</a>: The base class for all arithmetic rules.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ScaleRule</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.arithmetic.ScaleRule">🔗</a>: Handles scaling of operators by scalars.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ArgScaleRule</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.arithmetic.ArgScaleRule">🔗</a>: Manages the dilation of the arguments of operators.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ArgShiftRule</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.arithmetic.ArgShiftRule">🔗</a>: Takes care of shifting the arguments of operators.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AddRule</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.arithmetic.AddRule">🔗</a>: Manages the addition of two operators.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ChainRule</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.arithmetic.ChainRule">🔗</a>: Deals with the composition of two operators.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PowerRule</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.arithmetic.PowerRule">🔗</a>: Handles exponentiation of an operator.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TransposeRule</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.arithmetic.TransposeRule">🔗</a>: Takes care of transposing a linear operator.</p></li>
 </ul>
 <section id="Working-Example-🎯">
 <h3>Working Example 🎯<a class="headerlink" href="#Working-Example-🎯" title="Link to this heading">#</a></h3>
-<p>Consider the composition of a <code class="docutils literal notranslate"><span class="pre">DiffFunc</span></code> with a <code class="docutils literal notranslate"><span class="pre">DiffMap</span></code>. Let <code class="docutils literal notranslate"><span class="pre">f</span></code> be a <code class="docutils literal notranslate"><span class="pre">DiffFunc</span></code> and <code class="docutils literal notranslate"><span class="pre">L</span></code> be a <code class="docutils literal notranslate"><span class="pre">DiffMap</span></code>. Then their composition <code class="docutils literal notranslate"><span class="pre">h</span></code> is another <code class="docutils literal notranslate"><span class="pre">DiffFunc</span></code>, and the gradient is given by:</p>
+<p>Consider the composition of a <code class="docutils literal notranslate"><span class="pre">DiffFunc</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.DiffFunc">🔗</a> with a <code class="docutils literal notranslate"><span class="pre">DiffMap</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.DiffMap">🔗</a>. Let <code class="docutils literal notranslate"><span class="pre">f</span></code> be a <code class="docutils literal notranslate"><span class="pre">DiffFunc</span></code> and <code class="docutils literal notranslate"><span class="pre">L</span></code> be a <code class="docutils literal notranslate"><span class="pre">DiffMap</span></code>. Then their composition <code class="docutils literal notranslate"><span class="pre">h</span></code> is another <code class="docutils literal notranslate"><span class="pre">DiffFunc</span></code>, and the gradient is given by:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">h</span> <span class="o">=</span> <span class="n">f</span> <span class="o">*</span> <span class="n">L</span>
 <span class="o">&gt;&gt;</span> <span class="n">h</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="n">L</span><span class="o">.</span><span class="n">jacobian</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">adjoint</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">L</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
 </pre></div>
@@ -337,7 +339,8 @@ document.write(`
 </section>
 <section id="Building-Block-Operators">
 <h2>Building Block-Operators<a class="headerlink" href="#Building-Block-Operators" title="Link to this heading">#</a></h2>
-<p>You can even define block-operators using the <code class="docutils literal notranslate"><span class="pre">coo_block</span></code> function. Alternatively, higher-level functions like <code class="docutils literal notranslate"><span class="pre">block</span></code>, <code class="docutils literal notranslate"><span class="pre">block_diag</span></code>, <code class="docutils literal notranslate"><span class="pre">stack</span></code>, <code class="docutils literal notranslate"><span class="pre">vstack</span></code>, and <code class="docutils literal notranslate"><span class="pre">hstack</span></code> can also be used.</p>
+<p>You can even define block-operators using the <code class="docutils literal notranslate"><span class="pre">coo_block</span></code><a class="reference external" href="../api/operator/blocks.html#pyxu.operator.coo_block">🔗</a> function. Alternatively, higher-level functions like <code class="docutils literal notranslate"><span class="pre">block</span></code><a class="reference external" href="../api/operator/blocks.html#pyxu.operator.block">🔗</a>, <code class="docutils literal notranslate"><span class="pre">block_diag</span></code><a class="reference external" href="../api/operator/blocks.html#pyxu.operator.block_diag">🔗</a>, <code class="docutils literal notranslate"><span class="pre">stack</span></code><a class="reference external" href="../api/operator/blocks.html#pyxu.operator.stack">🔗</a>, <code class="docutils literal notranslate"><span class="pre">vstack</span></code><a class="reference external" href="../api/operator/blocks.html#pyxu.operator.vstack">🔗</a>, and
+<code class="docutils literal notranslate"><span class="pre">hstack</span></code><a class="reference external" href="../api/operator/blocks.html#pyxu.operator.hstack">🔗</a> can also be used.</p>
 <p>For example, the following code snippet:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">coo_block</span><span class="p">(([</span><span class="n">A</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="mi">1000</span><span class="p">),</span> <span class="n">B</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span><span class="p">),</span> <span class="n">C</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="mi">500</span><span class="p">),</span> <span class="n">D</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)],</span>  <span class="c1"># data</span>
    <span class="o">...</span>      <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>  <span class="c1"># i</span>

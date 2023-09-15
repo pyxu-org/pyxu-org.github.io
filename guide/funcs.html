@@ -18,7 +18,7 @@
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
-<link href="../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css?v=b76e3c8a" rel="stylesheet" type="text/css"/>
 <link href="../_static/plot_directive.css?v=7f9a90b1" rel="stylesheet" type="text/css"/>
 <link href="../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
 <link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
@@ -28,11 +28,11 @@
 <link href="../_static/sg_gallery-dataframe.css?v=2082cf3c" rel="stylesheet" type="text/css"/>
 <link href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" rel="stylesheet" type="text/css"/>
 <link href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
-<link href="../_static/css/custom.css?v=1031a718" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css?v=14df3d68" rel="stylesheet" type="text/css"/>
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../_static/documentation_options.js?v=e02fc88f"></script>
+<script src="../_static/documentation_options.js?v=a4a8746c"></script>
 <script src="../_static/doctools.js?v=888ff710"></script>
 <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -231,6 +231,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="algorithms.html">Optimization Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lipschitz.html">Lipschitz Constants and Automatic Step Size Tuning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hpc.html">High Performance Computing Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diff_ops.html">Differential Operators in Pyxu</a></li>
 </ul>
 </div>
 </nav></div>
@@ -277,18 +278,18 @@ document.write(`
 <div><p><strong>Important Note</strong>: The base classes described below are designed as abstract base classes. This means they serve as templates or “blueprints” for creating specific functionals that suit your project needs. You’re not supposed to instantiate them directly. Instead, you have two main options:</p>
 <ol class="arabic simple">
 <li><p><strong>Subclassing</strong>: Extend these classes to create customized functionals tailored to your problem.</p></li>
-<li><p><strong>Generic Constructor Routine</strong>: Utilize the <code class="docutils literal notranslate"><span class="pre">from_source</span></code> method to define new functionals from their core methods, like <code class="docutils literal notranslate"><span class="pre">apply()</span></code>, <code class="docutils literal notranslate"><span class="pre">grad()</span></code>, or <code class="docutils literal notranslate"><span class="pre">prox()</span></code>.</p></li>
+<li><p><strong>Generic Constructor Routine</strong>: Utilize the <code class="docutils literal notranslate"><span class="pre">from_source</span></code><a class="reference external" href="../api/operator.interop.html#general">🔗</a> method to define new functionals from their core methods, like <code class="docutils literal notranslate"><span class="pre">apply()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Map.apply">🔗</a>, <code class="docutils literal notranslate"><span class="pre">grad()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.DiffFunc.grad">🔗</a>, or <code class="docutils literal notranslate"><span class="pre">prox()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.ProxFunc.prox">🔗</a>.</p></li>
 </ol>
 <p>Additionally, don’t forget to explore our comprehensive Reference API. It features pre-implemented versions of many commonly used functionals, serving as both a shortcut for common tasks and a useful learning resource.</p>
 </div></blockquote>
 <section id="Func:-The-Foundation-Stone-🧱">
 <h3><code class="docutils literal notranslate"><span class="pre">Func</span></code>: The Foundation Stone 🧱<a class="headerlink" href="#Func:-The-Foundation-Stone-🧱" title="Link to this heading">#</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">Func</span></code> class is the base class in the functional hierarchy. Its core method is <code class="docutils literal notranslate"><span class="pre">apply()</span></code>, which computes the value of the functional at a given input.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Func</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Func">🔗</a> class is the base class in the functional hierarchy. Its core method is <code class="docutils literal notranslate"><span class="pre">apply()</span></code>, which computes the value of the functional at a given input.</p>
 <p>Here’s a simplified example, implementing the squared <span class="math notranslate nohighlight">\(L_2\)</span> norm:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc/operator.html#pyxu.abc.Func" title="pyxu.abc.operator.Func"><span class="n">Func</span></a>
+<span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.Func" title="pyxu.abc.operator.Func"><span class="n">Func</span></a>
 
-<span class="k">class</span> <span class="nc">SquaredL2</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc/operator.html#pyxu.abc.Func" title="pyxu.abc.operator.Func"><span class="n">Func</span></a><span class="p">):</span>
+<span class="k">class</span> <span class="nc">SquaredL2</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.Func" title="pyxu.abc.operator.Func"><span class="n">Func</span></a><span class="p">):</span>
     <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.norm.html#numpy.linalg.norm" title="numpy.linalg.norm"><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span></a><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
 </pre></div>
@@ -305,10 +306,10 @@ document.write(`
 </section>
 <section id="DiffFunc:-Differentiable-Functionals-🎯">
 <h3><code class="docutils literal notranslate"><span class="pre">DiffFunc</span></code>: Differentiable Functionals 🎯<a class="headerlink" href="#DiffFunc:-Differentiable-Functionals-🎯" title="Link to this heading">#</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">DiffFunc</span></code> class extends <code class="docutils literal notranslate"><span class="pre">Func</span></code> for functionals that have a well-defined gradient. It introduces an additional method, <code class="docutils literal notranslate"><span class="pre">grad()</span></code>, for gradient computation.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc/operator.html#pyxu.abc.DiffFunc" title="pyxu.abc.operator.DiffFunc"><span class="n">DiffFunc</span></a>
+<p>The <code class="docutils literal notranslate"><span class="pre">DiffFunc</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.DiffFunc">🔗</a> class extends <code class="docutils literal notranslate"><span class="pre">Func</span></code> for functionals that have a well-defined gradient. It introduces an additional method, <code class="docutils literal notranslate"><span class="pre">grad()</span></code>, for gradient computation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.operator.DiffFunc"><span class="n">DiffFunc</span></a>
 
-<span class="k">class</span> <span class="nc">SquaredL2</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc/operator.html#pyxu.abc.DiffFunc" title="pyxu.abc.operator.DiffFunc"><span class="n">DiffFunc</span></a><span class="p">):</span>
+<span class="k">class</span> <span class="nc">SquaredL2</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.operator.DiffFunc"><span class="n">DiffFunc</span></a><span class="p">):</span>
     <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.norm.html#numpy.linalg.norm" title="numpy.linalg.norm"><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span></a><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
 
@@ -317,15 +318,15 @@ document.write(`
 </pre></div>
 </div>
 <blockquote>
-<div><p>🌈Tip: With Pyxu, you can use <code class="docutils literal notranslate"><span class="pre">from_torch</span></code> or <code class="docutils literal notranslate"><span class="pre">from_jax</span></code> to automatically compute the gradient if you have a PyTorch or JAX implementation of your functional.</p>
+<div><p>🌈Tip: With Pyxu, you can use <code class="docutils literal notranslate"><span class="pre">from_torch</span></code><a class="reference external" href="../api/operator.interop.html#pyxu.operator.interop.from_torch">🔗</a> or <code class="docutils literal notranslate"><span class="pre">from_jax</span></code><a class="reference external" href="../api/operator.interop.html#pyxu.operator.interop.from_jax">🔗</a> to automatically compute the gradient if you have a PyTorch or JAX implementation of your functional.</p>
 </div></blockquote>
 </section>
 <section id="ProxFunc:-Proximable-Functionals-🛡️">
 <h3><code class="docutils literal notranslate"><span class="pre">ProxFunc</span></code>: Proximable Functionals 🛡️<a class="headerlink" href="#ProxFunc:-Proximable-Functionals-🛡️" title="Link to this heading">#</a></h3>
-<p>For functionals with a simple proximal operator, you’ll find <code class="docutils literal notranslate"><span class="pre">ProxFunc</span></code> extremely useful. It offers the <code class="docutils literal notranslate"><span class="pre">prox()</span></code> method, which evaluates the proximal operator of the functional. Here’s an example using the <span class="math notranslate nohighlight">\(L_1\)</span> norm:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc/operator.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><span class="n">ProxFunc</span></a>
+<p>For functionals with a simple proximal operator, you’ll find <code class="docutils literal notranslate"><span class="pre">ProxFunc</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.ProxFunc">🔗</a> extremely useful. It offers the <code class="docutils literal notranslate"><span class="pre">prox()</span></code> method, which evaluates the proximal operator of the functional. Here’s an example using the <span class="math notranslate nohighlight">\(L_1\)</span> norm:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><span class="n">ProxFunc</span></a>
 
-<span class="k">class</span> <span class="nc">L1Norm</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc/operator.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><span class="n">ProxFunc</span></a><span class="p">):</span>
+<span class="k">class</span> <span class="nc">L1Norm</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><span class="n">ProxFunc</span></a><span class="p">):</span>
     <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 
@@ -335,7 +336,7 @@ document.write(`
 </div>
 <section id="Moreau-Envelope-for-Smoothing">
 <h4>Moreau Envelope for Smoothing<a class="headerlink" href="#Moreau-Envelope-for-Smoothing" title="Link to this heading">#</a></h4>
-<p>You can also smooth out a proximable functional using the <code class="docutils literal notranslate"><span class="pre">moreau_envelope()</span></code> method. For example, you can smooth the L1 norm to create the <a class="reference external" href="https://www.wikiwand.com/en/Huber_loss">Huber loss function</a> as follows:</p>
+<p>You can also smooth out a proximable functional using the <code class="docutils literal notranslate"><span class="pre">moreau_envelope()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.ProxFunc.moreau_envelope">🔗</a> method. For example, you can smooth the L1 norm to create the <a class="reference external" href="https://www.wikiwand.com/en/Huber_loss">Huber loss function</a> as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">huber</span> <span class="o">=</span> <span class="n">L1Norm</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">moreau_envelope</span><span class="p">(</span><span class="n">mu</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -353,7 +354,7 @@ document.write(`
 </section>
 <section id="Specialized-Classes:-ProxDiffFunc,-LinFunc,-QuadraticFunc-🎨">
 <h3>Specialized Classes: <code class="docutils literal notranslate"><span class="pre">ProxDiffFunc</span></code>, <code class="docutils literal notranslate"><span class="pre">LinFunc</span></code>, <code class="docutils literal notranslate"><span class="pre">QuadraticFunc</span></code> 🎨<a class="headerlink" href="#Specialized-Classes:-ProxDiffFunc,-LinFunc,-QuadraticFunc-🎨" title="Link to this heading">#</a></h3>
-<p>These classes are for functionals that offer even more, like being both proximable and differentiable (<code class="docutils literal notranslate"><span class="pre">ProxDiffFunc</span></code>), or being linear (<code class="docutils literal notranslate"><span class="pre">LinFunc</span></code>) or quadratic (<code class="docutils literal notranslate"><span class="pre">QuadraticFunc</span></code>). Quadratic functionals are especially important in primal-dual methods for faster convergence, so do use them when you can!</p>
+<p>These classes are for functionals that offer even more, like being both proximable and differentiable (<code class="docutils literal notranslate"><span class="pre">ProxDiffFunc</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.ProxDiffFunc">🔗</a>), or being linear (<code class="docutils literal notranslate"><span class="pre">LinFunc</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.LinFunc">🔗</a>) or quadratic (<code class="docutils literal notranslate"><span class="pre">QuadraticFunc</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.QuadraticFunc">🔗</a>). Quadratic functionals are especially important in primal-dual methods for faster convergence, so do use them when you can!</p>
 <blockquote>
 <div><p>Note: when dealing with <code class="docutils literal notranslate"><span class="pre">ProxDiffFunc</span></code> instances, it can be hard to decide whether the gradient or proximal operator should be used for optimization purposes. The general rule-of-thumb is to use the gradient as much as possible, as the latter requires more regularity on the objective functional, which can be leveraged by solvers for fatser convergence.</p>
 </div></blockquote>
@@ -361,10 +362,10 @@ document.write(`
 <section id="Implicit-Functionals:-The-Undercover-Agents-🕵️‍♀️">
 <h3>Implicit Functionals: The Undercover Agents 🕵️‍♀️<a class="headerlink" href="#Implicit-Functionals:-The-Undercover-Agents-🕵️‍♀️" title="Link to this heading">#</a></h3>
 <p>In some cases, you may not know the functional itself but you might know its proximal operator or gradient (e.g. for plug-and-play or score-based priors). Pyxu lets you define such “implicit functionals” as follows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc/operator.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><span class="n">ProxFunc</span></a>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><span class="n">ProxFunc</span></a>
 <span class="kn">from</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/ndimage.html#module-scipy.ndimage" title="scipy.ndimage"><span class="nn">scipy.ndimage</span></a> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.median_filter.html#scipy.ndimage.median_filter" title="scipy.ndimage.median_filter"><span class="n">median_filter</span></a>
 
-<span class="k">class</span> <span class="nc">MedianFilterPrior</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc/operator.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><span class="n">ProxFunc</span></a><span class="p">):</span>
+<span class="k">class</span> <span class="nc">MedianFilterPrior</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><span class="n">ProxFunc</span></a><span class="p">):</span>
     <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/constants.html#NotImplemented" title="NotImplemented"><span class="bp">NotImplemented</span></a> <span class="c1"># apply method not provided</span>
 
