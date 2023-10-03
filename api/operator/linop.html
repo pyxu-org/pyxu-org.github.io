@@ -18,8 +18,8 @@
 <link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
-<link href="../../_static/pygments.css?v=b76e3c8a" rel="stylesheet" type="text/css"/>
-<link href="../../_static/plot_directive.css?v=7f9a90b1" rel="stylesheet" type="text/css"/>
+<link href="../../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../../_static/plot_directive.css" rel="stylesheet" type="text/css"/>
 <link href="../../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
 <link href="../../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
 <link href="../../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
@@ -32,7 +32,7 @@
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../../_static/documentation_options.js?v=a4a8746c"></script>
+<script src="../../_static/documentation_options.js?v=9f51c310"></script>
 <script src="../../_static/doctools.js?v=888ff710"></script>
 <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -699,7 +699,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: pad dimension[k] using <code class="code docutils literal notranslate"><span class="pre">mode[k]</span></code>.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.25)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.26)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 </ul>
 </dd>
@@ -860,8 +860,8 @@ input array.</p></li>
 <p>If <code class="docutils literal notranslate"><span class="pre">False</span></code>, then <a class="reference internal" href="#pyxu.operator.FFT.apply" title="pyxu.operator.FFT.apply"><code class="xref py py-func docutils literal notranslate"><span class="pre">apply()</span></code></a> takes (…, 2N.prod()) inputs, i.e.
 <span class="math notranslate nohighlight">\(\mathbb{C}^{N}\)</span> vectors viewed as bijections with <span class="math notranslate nohighlight">\(\mathbb{R}^{2N}\)</span>.</p>
 </p></li>
-<li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – <p>Extra kwargs passed to <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.fftn.html#scipy.fft.fftn" title="(in SciPy v1.11.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.fftn()</span></code></a> or <a class="reference external" href="https://docs.cupy.dev/en/latest/reference/generated/cupyx.scipy.fft.fftn.html#cupyx.scipy.fft.fftn" title="(in CuPy v13.0.0b1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">cupyx.scipy.fft.fftn()</span></code></a>.</p>
-<p>Supported parameters for <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.fftn.html#scipy.fft.fftn" title="(in SciPy v1.11.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.fftn()</span></code></a> are:</p>
+<li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – <p>Extra kwargs passed to <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.fftn.html#scipy.fft.fftn" title="(in SciPy v1.11.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.fftn()</span></code></a> or <a class="reference external" href="https://docs.cupy.dev/en/latest/reference/generated/cupyx.scipy.fft.fftn.html#cupyx.scipy.fft.fftn" title="(in CuPy v13.0.0b1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">cupyx.scipy.fft.fftn()</span></code></a>.</p>
+<p>Supported parameters for <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.fftn.html#scipy.fft.fftn" title="(in SciPy v1.11.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.fftn()</span></code></a> are:</p>
 <blockquote>
 <div><ul>
 <li><p>workers: int = 1</p></li>
@@ -1522,7 +1522,12 @@ viewed as a real array.  (See <a class="reference internal" href="../util.html#p
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyxu.operator.NUFFT.ascomplexarray">
-<span class="sig-name descname"><span class="pre">ascomplexarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xp=&lt;module</span> <span class="pre">'numpy'</span> <span class="pre">from</span> <span class="pre">'/home/sep/miniconda3/envs/pyxu/lib/python3.11/site-packages/numpy/__init__.py'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype=None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/linop/fft/nufft.html#NUFFT.ascomplexarray"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.NUFFT.ascomplexarray" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">ascomplexarray</span></span><span class="sig-paren">(</span>
+<dl>
+<dd><em class="sig-param"><span class="n"><span class="pre">xp=&lt;module</span> <span class="pre">'numpy'</span> <span class="pre">from</span> <span class="pre">'/home/sep/tools/miniconda3/envs/pyxu/lib/python3.11/site-packages/numpy/__init__.py'&gt;</span></span></em>,</dd>
+<dd><em class="sig-param"><span class="n"><span class="pre">dtype=None</span></span></em>,</dd>
+</dl>
+<span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/linop/fft/nufft.html#NUFFT.ascomplexarray"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.NUFFT.ascomplexarray" title="Link to this definition">#</a></dt>
 <dd><p>Matrix representation (complex-valued) of the linear operator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1549,7 +1554,7 @@ viewed as a real array.  (See <a class="reference internal" href="../util.html#p
 <dt class="sig sig-object py" id="pyxu.operator.NUFFT.mesh">
 <span class="sig-name descname"><span class="pre">mesh</span></span><span class="sig-paren">(</span>
 <dl>
-<dd><em class="sig-param"><span class="n"><span class="pre">xp=&lt;module</span> <span class="pre">'numpy'</span> <span class="pre">from</span> <span class="pre">'/home/sep/miniconda3/envs/pyxu/lib/python3.11/site-packages/numpy/__init__.py'&gt;</span></span></em>,</dd>
+<dd><em class="sig-param"><span class="n"><span class="pre">xp=&lt;module</span> <span class="pre">'numpy'</span> <span class="pre">from</span> <span class="pre">'/home/sep/tools/miniconda3/envs/pyxu/lib/python3.11/site-packages/numpy/__init__.py'&gt;</span></span></em>,</dd>
 <dd><em class="sig-param"><span class="n"><span class="pre">dtype=None</span></span></em>,</dd>
 <dd><em class="sig-param"><span class="n"><span class="pre">scale='unit'</span></span></em>,</dd>
 <dd><em class="sig-param"><span class="n"><span class="pre">upsampled=False</span></span></em>,</dd>
@@ -1621,15 +1626,15 @@ source/target half-widths.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ax</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.8.0rc1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Axes</span></code></a>) – Axes to draw on.  If <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, a new axes is used.</p></li>
-<li><p><strong>**kwargs</strong> – Keyword arguments forwarded to <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html#matplotlib.axes.Axes.plot" title="(in Matplotlib v3.8.0rc1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">matplotlib.axes.Axes.plot()</span></code></a>.</p></li>
+<li><p><strong>ax</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.8.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Axes</span></code></a>) – Axes to draw on.  If <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, a new axes is used.</p></li>
+<li><p><strong>**kwargs</strong> – Keyword arguments forwarded to <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html#matplotlib.axes.Axes.plot" title="(in Matplotlib v3.8.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">matplotlib.axes.Axes.plot()</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>ax</strong></p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.8.0rc1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Axes</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.8.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Axes</span></code></a></p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -1844,7 +1849,7 @@ direct-evaluation (eps=0) for performance reasons.</p>
 <dd class="field-even"><p><strong>fig</strong> – Diagnostic plot.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.8.0rc1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Figure</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.8.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Figure</span></code></a></p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -2374,7 +2379,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: dimension[k] uses <code class="code docutils literal notranslate"><span class="pre">mode[k]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.25)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.26)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>enable_warnings</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, emit a warning in case of precision mis-match issues.</p></li>
 </ul>
@@ -2615,7 +2620,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="code docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.25)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.26)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Input NDArray type (<code class="code docutils literal notranslate"><span class="pre">True</span></code> for GPU, <code class="code docutils literal notranslate"><span class="pre">False</span></code> for CPU). Defaults to <code class="code docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
 <li><p><strong>dtype</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.DType" title="pyxu.info.ptype.DType"><code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code></a>) – Working precision of the linear operator.</p></li>
@@ -2699,7 +2704,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="code docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.25)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.26)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>sampling</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">list[Real]</span></code>) – Sampling step (i.e. distance between two consecutive elements of an array).
 Defaults to 1.</p></li>
@@ -2797,7 +2802,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="code docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.25)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.26)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>sampling</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">list[Real]</span></code>) – Sampling step (i.e. distance between two consecutive elements of an array).
 Defaults to 1.</p></li>
@@ -2851,7 +2856,7 @@ Defaults to 1.</p></li>
 <li><p><strong>mode</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>]</em>) – </p></li>
 <li><p><strong>sampling</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><em>Real</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><em>Real</em></a><em>, </em><em>...</em><em>]</em>) – </p></li>
 <li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – </p></li>
-<li><p><strong>dtype</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v1.25)"><em>dtype</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>] </em><em>| </em><em>None</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.11)"><em>Type</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>] </em><em>| </em><em>_SupportsDType</em><em>[</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v1.25)"><em>dtype</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>]</em><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.11)"><em>Tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.11)"><em>Tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.11)"><em>SupportsIndex</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.11)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.11)"><em>SupportsIndex</em></a><em>]</em><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><em>List</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>] </em><em>| </em><em>_DTypeDict</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.11)"><em>Tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>]</em>) – </p></li>
+<li><p><strong>dtype</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v1.26)"><em>dtype</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>] </em><em>| </em><em>None</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.11)"><em>type</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>] </em><em>| </em><em>_SupportsDType</em><em>[</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v1.26)"><em>dtype</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>]</em><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.11)"><em>SupportsIndex</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.11)"><em>SupportsIndex</em></a><em>]</em><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>] </em><em>| </em><em>_DTypeDict</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>]</em>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -2885,7 +2890,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="code docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.25)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.26)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>sampling</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">list[Real]</span></code>) – Sampling step (i.e. distance between two consecutive elements of an array).
 Defaults to 1.</p></li>
@@ -2961,7 +2966,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="code docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.25)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.26)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>sampling</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">list[Real]</span></code>) – Sampling step (i.e. distance between two consecutive elements of an array).
 Defaults to 1.</p></li>
@@ -3037,7 +3042,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="code docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.25)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.26)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>sampling</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">list[Real]</span></code>) – Sampling step (i.e. distance between two consecutive elements of an array).
 Defaults to 1.</p></li>
@@ -3113,7 +3118,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="code docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.25)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.26)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>sampling</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">list[Real]</span></code>) – Sampling step (i.e. distance between two consecutive elements of an array).
 Defaults to 1.</p></li>
@@ -3313,7 +3318,7 @@ with standard variation <span class="math notranslate nohighlight">\(\sigma\)</s
 <li><p><strong>mode</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>]</em>) – </p></li>
 <li><p><strong>sampling</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><em>Real</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><em>Real</em></a><em>, </em><em>...</em><em>]</em>) – </p></li>
 <li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – </p></li>
-<li><p><strong>dtype</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v1.25)"><em>dtype</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>] </em><em>| </em><em>None</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.11)"><em>Type</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>] </em><em>| </em><em>_SupportsDType</em><em>[</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v1.25)"><em>dtype</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>]</em><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.11)"><em>Tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.11)"><em>Tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.11)"><em>SupportsIndex</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.11)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.11)"><em>SupportsIndex</em></a><em>]</em><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><em>List</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>] </em><em>| </em><em>_DTypeDict</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.11)"><em>Tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>]</em>) – </p></li>
+<li><p><strong>dtype</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v1.26)"><em>dtype</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>] </em><em>| </em><em>None</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.11)"><em>type</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>] </em><em>| </em><em>_SupportsDType</em><em>[</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v1.26)"><em>dtype</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>]</em><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.11)"><em>SupportsIndex</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.11)"><em>SupportsIndex</em></a><em>]</em><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>] </em><em>| </em><em>_DTypeDict</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><em>Any</em></a><em>]</em>) – </p></li>
 <li><p><strong>parallel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – </p></li>
 </ul>
 </dd>
@@ -3402,7 +3407,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.25)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.26)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Input NDArray type (<code class="code docutils literal notranslate"><span class="pre">True</span></code> for GPU, <code class="code docutils literal notranslate"><span class="pre">False</span></code> for CPU).
 Defaults to <code class="code docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
@@ -3584,7 +3589,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.25)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.26)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Input NDArray type (<code class="code docutils literal notranslate"><span class="pre">True</span></code> for GPU, <code class="code docutils literal notranslate"><span class="pre">False</span></code> for CPU).
 Defaults to <code class="code docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
@@ -3735,7 +3740,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.25)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.26)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Input NDArray type (<code class="code docutils literal notranslate"><span class="pre">True</span></code> for GPU, <code class="code docutils literal notranslate"><span class="pre">False</span></code> for CPU).
 Defaults to <code class="code docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
@@ -3856,7 +3861,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.25)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.26)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Input NDArray type (<code class="code docutils literal notranslate"><span class="pre">True</span></code> for GPU, <code class="code docutils literal notranslate"><span class="pre">False</span></code> for CPU).
 Defaults to <code class="code docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
@@ -3959,7 +3964,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.25)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.26)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Input NDArray type (<code class="code docutils literal notranslate"><span class="pre">True</span></code> for GPU, <code class="code docutils literal notranslate"><span class="pre">False</span></code> for CPU).
 Defaults to <code class="code docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
@@ -4088,7 +4093,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.25)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.26)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Input NDArray type (<code class="code docutils literal notranslate"><span class="pre">True</span></code> for GPU, <code class="code docutils literal notranslate"><span class="pre">False</span></code> for CPU).
 Defaults to <code class="code docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
@@ -4201,7 +4206,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.25)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.26)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Input NDArray type (<code class="code docutils literal notranslate"><span class="pre">True</span></code> for GPU, <code class="code docutils literal notranslate"><span class="pre">False</span></code> for CPU).
 Defaults to <code class="code docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
@@ -4347,7 +4352,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.25)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.26)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>parallel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, use Dask to evaluate the different partial derivatives in parallel.</p></li>
 <li><p><strong>diff_kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – Keyword arguments to parametrize partial derivatives (see
@@ -4452,7 +4457,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.25)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.26)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>parallel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, use Dask to evaluate the different partial derivatives in parallel.</p></li>
 <li><p><strong>diff_kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – Keyword arguments to parametrize partial derivatives (see
@@ -4572,7 +4577,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.25)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.26)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>parallel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, use Dask to evaluate the different partial derivatives in parallel.</p></li>
 <li><p><strong>diff_kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – Keyword arguments to parametrize partial derivatives (see
@@ -4690,7 +4695,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.25)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.26)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>parallel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, use Dask to evaluate the different partial derivatives in parallel.</p></li>
 <li><p><strong>diff_kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – Keyword arguments to parametrize partial derivatives (see
@@ -5043,13 +5048,13 @@ applying <a class="reference internal" href="#pyxu.operator.kron" title="pyxu.op
 <div class="footer-item">
 <p class="copyright">
     
-      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt, Pyxu Developers.
       <br/>
 </p>
 </div>
 <div class="footer-item">
 <p class="sphinx-version">
-     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
 </p>
 </div>

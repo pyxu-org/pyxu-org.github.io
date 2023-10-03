@@ -27,7 +27,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
@@ -43,7 +43,7 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../_static/documentation_options.js?v=a4a8746c"></script>
+    <script src="../../../_static/documentation_options.js?v=9f51c310"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -477,7 +477,7 @@ document.write(`
 <span class="linenos"> 24</span>
 <span class="linenos"> 25</span>
 <div class="viewcode-block" id="SolverMode">
-<a class="viewcode-back" href="../../../api/abc/solver.html#pyxu.abc.SolverMode">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.SolverMode">[docs]</a>
 <span class="linenos"> 26</span><span class="nd">@enum</span><span class="o">.</span><span class="n">unique</span>
 <span class="linenos"> 27</span><span class="k">class</span> <span class="nc">SolverMode</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">Enum</span><span class="p">):</span>
 <span class="linenos"> 28</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -491,7 +491,7 @@ document.write(`
 <span class="linenos"> 35</span>
 <span class="linenos"> 36</span>
 <div class="viewcode-block" id="StoppingCriterion">
-<a class="viewcode-back" href="../../../api/abc/solver.html#pyxu.abc.StoppingCriterion">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.StoppingCriterion">[docs]</a>
 <span class="linenos"> 37</span><span class="k">class</span> <span class="nc">StoppingCriterion</span><span class="p">:</span>
 <span class="linenos"> 38</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 39</span><span class="sd">    State machines (SM) which decide when to stop iterative solvers by examining their mathematical state.</span>
@@ -503,7 +503,7 @@ document.write(`
 <span class="linenos"> 45</span><span class="sd">    &quot;&quot;&quot;</span>
 <span class="linenos"> 46</span>
 <div class="viewcode-block" id="StoppingCriterion.stop">
-<a class="viewcode-back" href="../../../api/abc/solver.html#pyxu.abc.StoppingCriterion.stop">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.StoppingCriterion.stop">[docs]</a>
 <span class="linenos"> 47</span>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="linenos"> 48</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 49</span><span class="sd">        Compute a stop signal based on the current mathematical state.</span>
@@ -524,7 +524,7 @@ document.write(`
 
 <span class="linenos"> 64</span>
 <div class="viewcode-block" id="StoppingCriterion.info">
-<a class="viewcode-back" href="../../../api/abc/solver.html#pyxu.abc.StoppingCriterion.info">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.StoppingCriterion.info">[docs]</a>
 <span class="linenos"> 65</span>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
 <span class="linenos"> 66</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 67</span><span class="sd">        Get statistics associated with the last call to :py:meth:`~pyxu.abc.StoppingCriterion.stop`.</span>
@@ -537,7 +537,7 @@ document.write(`
 
 <span class="linenos"> 74</span>
 <div class="viewcode-block" id="StoppingCriterion.clear">
-<a class="viewcode-back" href="../../../api/abc/solver.html#pyxu.abc.StoppingCriterion.clear">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.StoppingCriterion.clear">[docs]</a>
 <span class="linenos"> 75</span>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="linenos"> 76</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 77</span><span class="sd">        Clear SM state (if any).</span>
@@ -579,7 +579,7 @@ document.write(`
 <span class="linenos">111</span>
 <span class="linenos">112</span>
 <div class="viewcode-block" id="Solver">
-<a class="viewcode-back" href="../../../api/abc/solver.html#pyxu.abc.Solver">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Solver">[docs]</a>
 <span class="linenos">113</span><span class="k">class</span> <span class="nc">Solver</span><span class="p">:</span>
 <span class="linenos">114</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">115</span><span class="sd">    Iterative solver for minimization problems of the form :math:`\hat{x} = \arg\min_{x \in \mathbb{R}^{N}}</span>
@@ -639,7 +639,7 @@ document.write(`
 <span class="linenos">169</span>    <span class="n">_astate</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">typ</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span>  <span class="c1">#: Book-keeping (non-math) state.</span>
 <span class="linenos">170</span>
 <div class="viewcode-block" id="Solver.__init__">
-<a class="viewcode-back" href="../../../api/abc/solver.html#pyxu.abc.Solver.__init__">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Solver.__init__">[docs]</a>
 <span class="linenos">171</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
 <span class="linenos">172</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">173</span>        <span class="o">*</span><span class="p">,</span>
@@ -745,7 +745,7 @@ document.write(`
 
 <span class="linenos">273</span>
 <div class="viewcode-block" id="Solver.fit">
-<a class="viewcode-back" href="../../../api/abc/solver.html#pyxu.abc.Solver.fit">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Solver.fit">[docs]</a>
 <span class="linenos">274</span>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="linenos">275</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">276</span><span class="sd">        Solve minimization problem(s) defined in :py:meth:`~pyxu.abc.Solver.__init__`, with the provided run-specifc</span>
@@ -780,7 +780,7 @@ document.write(`
 
 <span class="linenos">305</span>
 <div class="viewcode-block" id="Solver.m_init">
-<a class="viewcode-back" href="../../../api/abc/solver.html#pyxu.abc.Solver.m_init">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Solver.m_init">[docs]</a>
 <span class="linenos">306</span>    <span class="k">def</span> <span class="nf">m_init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="linenos">307</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">308</span><span class="sd">        Set solver&#39;s initial mathematical state based on kwargs provided to :py:meth:`~pyxu.abc.Solver.fit`.</span>
@@ -794,7 +794,7 @@ document.write(`
 
 <span class="linenos">316</span>
 <div class="viewcode-block" id="Solver.m_step">
-<a class="viewcode-back" href="../../../api/abc/solver.html#pyxu.abc.Solver.m_step">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Solver.m_step">[docs]</a>
 <span class="linenos">317</span>    <span class="k">def</span> <span class="nf">m_step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="linenos">318</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">319</span><span class="sd">        Perform one (mathematical) step.</span>
@@ -805,7 +805,7 @@ document.write(`
 
 <span class="linenos">324</span>
 <div class="viewcode-block" id="Solver.steps">
-<a class="viewcode-back" href="../../../api/abc/solver.html#pyxu.abc.Solver.steps">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Solver.steps">[docs]</a>
 <span class="linenos">325</span>    <span class="k">def</span> <span class="nf">steps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Generator</span><span class="p">:</span>
 <span class="linenos">326</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">327</span><span class="sd">        Generator of logged variables after each iteration.</span>
@@ -845,7 +845,7 @@ document.write(`
 <span class="linenos">360</span>    <span class="n">_stats_history_spec</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
 <span class="linenos">361</span>
 <div class="viewcode-block" id="Solver.stats">
-<a class="viewcode-back" href="../../../api/abc/solver.html#pyxu.abc.Solver.stats">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Solver.stats">[docs]</a>
 <span class="linenos">362</span>    <span class="k">def</span> <span class="nf">stats</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">_stats_data_spec</span><span class="p">,</span> <span class="n">_stats_history_spec</span><span class="p">]:</span>
 <span class="linenos">363</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">364</span><span class="sd">        Query solver state.</span>
@@ -903,7 +903,7 @@ document.write(`
 <span class="linenos">415</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">workdir</span> <span class="o">/</span> <span class="s2">&quot;data.npz&quot;</span>
 <span class="linenos">416</span>
 <div class="viewcode-block" id="Solver.busy">
-<a class="viewcode-back" href="../../../api/abc/solver.html#pyxu.abc.Solver.busy">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Solver.busy">[docs]</a>
 <span class="linenos">417</span>    <span class="k">def</span> <span class="nf">busy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="linenos">418</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">419</span><span class="sd">        Test if an async-running solver has stopped.</span>
@@ -921,7 +921,7 @@ document.write(`
 
 <span class="linenos">431</span>
 <div class="viewcode-block" id="Solver.solution">
-<a class="viewcode-back" href="../../../api/abc/solver.html#pyxu.abc.Solver.solution">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Solver.solution">[docs]</a>
 <span class="linenos">432</span>    <span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="linenos">433</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">434</span><span class="sd">        Output the &quot;solution&quot; of the optimization problem.</span>
@@ -933,7 +933,7 @@ document.write(`
 
 <span class="linenos">440</span>
 <div class="viewcode-block" id="Solver.stop">
-<a class="viewcode-back" href="../../../api/abc/solver.html#pyxu.abc.Solver.stop">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Solver.stop">[docs]</a>
 <span class="linenos">441</span>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="linenos">442</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">443</span><span class="sd">        Stop an async-running solver.</span>
@@ -1026,7 +1026,7 @@ document.write(`
 <span class="linenos">529</span>                <span class="k">pass</span>
 <span class="linenos">530</span>
 <div class="viewcode-block" id="Solver.writeback">
-<a class="viewcode-back" href="../../../api/abc/solver.html#pyxu.abc.Solver.writeback">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Solver.writeback">[docs]</a>
 <span class="linenos">531</span>    <span class="k">def</span> <span class="nf">writeback</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="linenos">532</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">533</span><span class="sd">        Checkpoint state to disk.</span>
@@ -1148,7 +1148,7 @@ document.write(`
 <span class="linenos">648</span>            <span class="n">handler</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="linenos">649</span>
 <div class="viewcode-block" id="Solver.default_stop_crit">
-<a class="viewcode-back" href="../../../api/abc/solver.html#pyxu.abc.Solver.default_stop_crit">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Solver.default_stop_crit">[docs]</a>
 <span class="linenos">650</span>    <span class="k">def</span> <span class="nf">default_stop_crit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StoppingCriterion</span><span class="p">:</span>
 <span class="linenos">651</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">652</span><span class="sd">        Default stopping criterion for solver if unspecified in :py:meth:`~pyxu.abc.Solver.fit` calls.</span>
@@ -1160,7 +1160,7 @@ document.write(`
 
 <span class="linenos">658</span>
 <div class="viewcode-block" id="Solver.objective_func">
-<a class="viewcode-back" href="../../../api/abc/solver.html#pyxu.abc.Solver.objective_func">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Solver.objective_func">[docs]</a>
 <span class="linenos">659</span>    <span class="k">def</span> <span class="nf">objective_func</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">660</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">661</span><span class="sd">        Evaluate objective function given current math state.</span>
@@ -1237,7 +1237,7 @@ document.write(`
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt, Pyxu Developers.
       <br/>
     
   </p>
@@ -1245,7 +1245,7 @@ document.write(`
       
         <div class="footer-item">
   <p class="sphinx-version">
-     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>

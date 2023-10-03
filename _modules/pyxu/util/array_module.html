@@ -27,7 +27,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
@@ -43,7 +43,7 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../_static/documentation_options.js?v=a4a8746c"></script>
+    <script src="../../../_static/documentation_options.js?v=9f51c310"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -469,7 +469,7 @@ document.write(`
 <span class="linenos"> 16</span>
 <span class="linenos"> 17</span>
 <div class="viewcode-block" id="get_array_module">
-<a class="viewcode-back" href="../../../api/util/array_module.html#pyxu.util.get_array_module">[docs]</a>
+<a class="viewcode-back" href="../../../api/util.html#pyxu.util.get_array_module">[docs]</a>
 <span class="linenos"> 18</span><span class="k">def</span> <span class="nf">get_array_module</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fallback</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">ArrayModule</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">ArrayModule</span><span class="p">:</span>
 <span class="linenos"> 19</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 20</span><span class="sd">    Get the array namespace corresponding to a given object.</span>
@@ -503,7 +503,7 @@ document.write(`
 <span class="linenos"> 47</span>
 <span class="linenos"> 48</span>
 <div class="viewcode-block" id="redirect">
-<a class="viewcode-back" href="../../../api/util/array_module.html#pyxu.util.redirect">[docs]</a>
+<a class="viewcode-back" href="../../../api/util.html#pyxu.util.redirect">[docs]</a>
 <span class="linenos"> 49</span><span class="k">def</span> <span class="nf">redirect</span><span class="p">(</span>
 <span class="linenos"> 50</span>    <span class="n">i</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">VarName</span><span class="p">,</span>
 <span class="linenos"> 51</span>    <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">],</span>
@@ -580,7 +580,7 @@ document.write(`
 <span class="linenos">121</span>
 <span class="linenos">122</span>
 <div class="viewcode-block" id="compute">
-<a class="viewcode-back" href="../../../api/util/array_module.html#pyxu.util.compute">[docs]</a>
+<a class="viewcode-back" href="../../../api/util.html#pyxu.util.compute">[docs]</a>
 <span class="linenos">123</span><span class="k">def</span> <span class="nf">compute</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;compute&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="linenos">124</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">125</span><span class="sd">    Force computation of Dask collections.</span>
@@ -614,7 +614,7 @@ document.write(`
 <span class="linenos">152</span>
 <span class="linenos">153</span>
 <div class="viewcode-block" id="to_NUMPY">
-<a class="viewcode-back" href="../../../api/util/array_module.html#pyxu.util.to_NUMPY">[docs]</a>
+<a class="viewcode-back" href="../../../api/util.html#pyxu.util.to_NUMPY">[docs]</a>
 <span class="linenos">154</span><span class="k">def</span> <span class="nf">to_NUMPY</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">155</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">156</span><span class="sd">    Convert an array from a specific backend to NUMPY.</span>
@@ -697,7 +697,7 @@ document.write(`
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt, Pyxu Developers.
       <br/>
     
   </p>
@@ -705,7 +705,7 @@ document.write(`
       
         <div class="footer-item">
   <p class="sphinx-version">
-     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>

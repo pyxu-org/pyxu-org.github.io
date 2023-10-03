@@ -28,8 +28,8 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
@@ -44,7 +44,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../_static/documentation_options.js?v=a4a8746c"></script>
+    <script src="../../_static/documentation_options.js?v=9f51c310"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -429,7 +429,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="PycSphere.html">PycSphere</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pycWavelet.html">pycWavelet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="PYFW.html">PYFW</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TokemakRec.html">TokemakRec</a></li>
 <li class="toctree-l2"><a class="reference internal" href="TVDenoiser.html">TVDenoiser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="UncertaintyQuant.html">UncertaintyQuant</a></li>
 <li class="toctree-l2"><a class="reference internal" href="WaveProp.html">WaveProp</a></li>
@@ -690,7 +689,7 @@ Sit modi etincidunt velit. Aliquam etincidunt quisquam consectetur. Consectetur 
 </p>
 <p>
     <strong>Compatibility</strong>:
-    <img class="svg-badge" title="Compatible with Pyxu 2.0.0" src="https://img.shields.io/badge/Pyxu-2.0.0-007ec6.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAYAAADQWvz5AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAfFJREFUOI2Vkl9IU1Ecxz933TVdFlHOt9pfg1AcBS0MCSUIIRa2XjLowbegiKAggujFN80gevWhHuzdsH8UpJkQ+JKyheRyW1Qyc2xG3Nrudn896C7Ti237vJ3fOedzvr9zjiIiQgVi6PB9CCMd5a9yHJpase8PsCb7cLlcbItskH/3UrSh27J0uVNkxiky4xR9/ICsvrkr3oNuSWuGpDVDus70ysjwPdmKrSzUHz3EWJinkG2sPAaAucUEK/EYJw77mJ54wfinWUsgG8DU5KRZaNhhulEa8gDs3qnQFw4D0BcOk135SeexkFWkaRqnYxkctwZpbvuCnnRuzCoARM6f4kJ/PwCPx8YIdLSTyWU3iZStl12m8H6Q0sdR5I+Nb4bK9eVuvi4scuhoEID5J0+JJxPVRZUEPF46Lp41x78zWZZeTXMuEmH4/kh9IgBf70kQIfX2A6WCDmCmUqtJypQ3iAitXp9l3mapVEFRFOLJBEW9WJvowbVL/xWq9s3NWForFYuM3rnKcuIzA8EWvO1HmHj+jJ7uHq7cvIG/SWU29YPQrjUcqspAsGU9aS2XLQhzU6+xNzppC3XRvGcvAKu/chWL6iQWjYrf7RG/2yOpVMqs15SokvJXyOfzOBwO8zXrfjWzE8MAIJdbb6/uRNvxD+osJR0a6bPBAAAAAElFTkSuQmCC">
+    <img class="svg-badge" title="Compatible with Pyxu 1.0.0" src="https://img.shields.io/badge/Pyxu-1.0.0-007ec6.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAHpAAAB6QHzJ3XIAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAzpJREFUSImtlU1oXFUUx3/nzVemWq1pbQXXIpSaEiPUtiCSTdK4qAhVLFh0VXChKAbSVbCiUFFxoSAB3ZmKH2C0aivigBpR/AJxERS1hGATg9F2JhN999x7XMx7Ly/TaQmZHvhzLoc793e+eCNmxuVsYXT/9vLmwhNRNXqUqpSlGiFVSRQhFWldNAY2DZ7+vtMbUafgWx9/dt/cYt3mFutWFFkwz2jwVsYD3mj55JzmKHzXrA3bSm1oz2UhJ0/Vnvl5dtH29ve/AVAZHyb/sHnDMr96zpshX63UDsx1hEyeqtmeW3cf21TtYX7+XCs5b7nM233u3GaG3ZgHRQlgvlgoUC6VODh8Jw/efw+//n42ybStAgXUEiXn0BnUrA0NABST2I59t/UDcGz8ae69e4Tfzs6yM30oFkLdQwEoCVISpJIoXYCeVjzaWkCqkg7qW0Ciyfdr7+YzuH3vfmYXzlMulSASzEFoBsxoDTlVyPlcJeGCJyz5bFaNz0eujxAOXlws7Np58+rEDEhX3SwREJJWWW7L0p80WzHR8EsUQsA5pd5YXnNpZmaGl2463N7ovOasINNW4SMry5SU+JrSWpT9ZwhcK6+9fdpCCIQQODB4R3bhi+lpAJaW/uHv8xfYtvU6jh45JKzTlj+86wZEz0lFKKoqKSSOHeVyKemKIUBv7xZ6e7fgnM6vFwBw1cgH84CsfDq0L1JVVBV1yntnPskuRVGEmWHJDFTjuUs/eWmrDp75MvJeH1CnuAQ2+c4U3/zwI7v7+hARSEA9PdWBjUAAxMx4buJkMhdP8K3W+RCIm3VEJNPxsUfWPZO8FQFU3Z8h2PbgfQZIt04EQBK/MYsAxh4+skNdq10uNyPnHLFzOOdwsdswJP2s4FR/CsHvCiFkLVNVDOiiiNVKAJ4aPXpLWkG6cS6rSHHOxruGAGisY2sA6nHaatsrL4wfvyKQ5598/EQKWFluZBVpsL82CoDcTFJzzrsQfCmOYywEzIzXJ57d1g3kov94r3pYVfHqUe/p8cVrugFAh0qi5h9TjXA13nsolvtfnThRv+KQRqG3z7t/oeo2v/nyi41uAQDZRzDVoYcea7bHutX/c3lfgmmbsZoAAAAASUVORK5CYII=">
 </p></section>
 <section id="components-contributed">
 <h2>Components contributed<a class="headerlink" href="#components-contributed" title="Link to this heading">#</a></h2>
@@ -830,7 +829,7 @@ Sit modi etincidunt velit. Aliquam etincidunt quisquam consectetur. Consectetur 
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt, Pyxu Developers.
       <br/>
     
   </p>
@@ -838,7 +837,7 @@ Sit modi etincidunt velit. Aliquam etincidunt quisquam consectetur. Consectetur 
       
         <div class="footer-item">
   <p class="sphinx-version">
-     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>

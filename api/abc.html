@@ -18,8 +18,8 @@
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
-<link href="../_static/pygments.css?v=b76e3c8a" rel="stylesheet" type="text/css"/>
-<link href="../_static/plot_directive.css?v=7f9a90b1" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../_static/plot_directive.css" rel="stylesheet" type="text/css"/>
 <link href="../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
 <link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
 <link href="../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
@@ -32,7 +32,7 @@
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../_static/documentation_options.js?v=a4a8746c"></script>
+<script src="../_static/documentation_options.js?v=9f51c310"></script>
 <script src="../_static/doctools.js?v=888ff710"></script>
 <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -1667,8 +1667,8 @@ t,
 <dl class="py method">
 <dt class="sig sig-object py" id="pyxu.abc.LinOp.to_sciop">
 <span class="sig-name descname"><span class="pre">to_sciop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gpu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/abc/operator.html#LinOp.to_sciop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.abc.LinOp.to_sciop" title="Link to this definition">#</a></dt>
-<dd><p>Cast a <a class="reference internal" href="#pyxu.abc.LinOp" title="pyxu.abc.LinOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinOp</span></code></a> to a CPU/GPU <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.LinearOperator.html#scipy.sparse.linalg.LinearOperator" title="(in SciPy v1.11.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinearOperator</span></code></a>, compatible with
-the matrix-free linear algebra routines of <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/sparse.linalg.html#module-scipy.sparse.linalg" title="(in SciPy v1.11.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.sparse.linalg</span></code></a>.</p>
+<dd><p>Cast a <a class="reference internal" href="#pyxu.abc.LinOp" title="pyxu.abc.LinOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinOp</span></code></a> to a CPU/GPU <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.LinearOperator.html#scipy.sparse.linalg.LinearOperator" title="(in SciPy v1.11.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinearOperator</span></code></a>, compatible with
+the matrix-free linear algebra routines of <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/sparse.linalg.html#module-scipy.sparse.linalg" title="(in SciPy v1.11.3)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.sparse.linalg</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -1680,7 +1680,7 @@ the matrix-free linear algebra routines of <a class="reference external" href="h
 <dd class="field-even"><p><strong>op</strong> – Linear operator object compliant with SciPy’s interface.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.LinearOperator.html#scipy.sparse.linalg.LinearOperator" title="(in SciPy v1.11.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinearOperator</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.LinearOperator.html#scipy.sparse.linalg.LinearOperator" title="(in SciPy v1.11.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinearOperator</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1738,7 +1738,7 @@ where the equality is reached (worst-case scenario) when the eigenspectrum of th
 </div></blockquote>
 </p></li>
 <li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code> the singular value decomposition is performed on the GPU.</p></li>
-<li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>) – Additional kwargs accepted by <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.svds.html#scipy.sparse.linalg.svds" title="(in SciPy v1.11.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">svds()</span></code></a>.</p></li>
+<li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>) – Additional kwargs accepted by <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.svds.html#scipy.sparse.linalg.svds" title="(in SciPy v1.11.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">svds()</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -2201,12 +2201,12 @@ are made.</p>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><ul class="simple">
 <li><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>) – Value(s) of <code class="docutils literal notranslate"><span class="pre">log_var</span></code> (s) after last iteration.</p></li>
-<li><p><strong>history</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>) – (N_iter,) records of stopping-criteria values per iteration.</p></li>
+<li><p><strong>history</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.26)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>) – (N_iter,) records of stopping-criteria values per iteration.</p></li>
 </ul>
 </p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)">tuple</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)">dict</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><em>Real</em></a> | <a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a> | None], <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)"><em>ndarray</em></a> | None]</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)">tuple</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)">dict</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><em>Real</em></a> | <a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a> | None], <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.26)"><em>ndarray</em></a> | None]</p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -2601,13 +2601,13 @@ in <a class="reference internal" href="#pyxu.abc.Solver.fit" title="pyxu.abc.Sol
 <div class="footer-item">
 <p class="copyright">
     
-      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt, Pyxu Developers.
       <br/>
 </p>
 </div>
 <div class="footer-item">
 <p class="sphinx-version">
-     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
 </p>
 </div>

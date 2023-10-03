@@ -28,8 +28,8 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
@@ -44,7 +44,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../_static/documentation_options.js?v=a4a8746c"></script>
+    <script src="../_static/documentation_options.js?v=9f51c310"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -494,41 +494,36 @@ installing NumPy and SciPy via <code class="docutils literal notranslate"><span 
 </section>
 <section id="installation-with-optional-dependencies">
 <h2>Installation with Optional Dependencies<a class="headerlink" href="#installation-with-optional-dependencies" title="Link to this heading">#</a></h2>
-<p>For extended features, you can install optional dependencies:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">dev</span></code>: development tools like <a class="reference external" href="https://www.sphinx-doc.org/en/master/contents.html">Sphinx</a>, <a class="reference external" href="https://pre-commit.com/">pre-commit</a>, etc.</p></li>
-</ul>
-<p>Additionally, you can use aggregate targets based on your platform’s GPU capabilities:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">complete_no_gpu</span></code>: full Pyxu install, without GPU support.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">complete_gpu</span></code>: full Pyxu install, with GPU support. (CUDA 12.* required.)</p></li>
-</ul>
-<p>Optional dependencies are specified between square brackets:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pyxu<span class="o">[</span>dev,complete_gpu<span class="o">]</span>
+<p>For extended features, you can install Pyxu with its optional dependencies:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pyxu<span class="o">[</span>complete-cpu<span class="o">]</span><span class="w">  </span><span class="c1"># full CPU-only user install.</span>
+pip<span class="w"> </span>install<span class="w"> </span>pyxu<span class="o">[</span>complete<span class="o">]</span><span class="w">      </span><span class="c1"># full CPU/GPU  user install. (CUDA 12.* required.)</span>
 </pre></div>
 </div>
+<p>More fine-grained extras can be installed by looking at the <code class="docutils literal notranslate"><span class="pre">project.optional-dependencies</span></code> field in
+<code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> at the root of the repository.</p>
 </section>
 <section id="developer-installation">
 <h2>Developer Installation<a class="headerlink" href="#developer-installation" title="Link to this heading">#</a></h2>
-<p>If you’re interested in contributing to Pyxu or experimenting with its codebase, you can clone the repository and
-install it manually.</p>
+<p>If you’re interested in contributing to Pyxu or experimenting with its codebase, you <strong>must</strong> clone the repository and
+install it <em>with developer dependencies</em>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/matthieumeo/pyxu.git
 <span class="nb">cd</span><span class="w"> </span>pyxu
-pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[dev,complete_gpu]&quot;</span><span class="w">  </span><span class="c1"># complete_no_gpu also available</span>
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[dev,complete]&quot;</span>
+pre-commit<span class="w"> </span>install
 </pre></div>
 </div>
-<p>To run tests, you can execute:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tox<span class="w"> </span>run<span class="w">  </span><span class="c1"># optional, see below.</span>
+<p>Pyxu uses <code class="code docutils literal notranslate"><span class="pre">tox</span></code> to automate common operations during the development process. The commands below summarize the main
+operations:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tox<span class="w"> </span>run<span class="w"> </span>-e<span class="w"> </span>py311-test<span class="w">         </span><span class="c1"># run test suite. (fast subset: ~5[min])</span>
+tox<span class="w"> </span>run<span class="w"> </span>-e<span class="w"> </span>py311-test<span class="w"> </span>--<span class="w"> </span>all<span class="w">  </span><span class="c1"># run test suite. (full suite; much longer)</span>
+tox<span class="w"> </span>run<span class="w"> </span>-e<span class="w"> </span>pre-commit<span class="w">         </span><span class="c1"># run pre-commit hooks.</span>
+tox<span class="w"> </span>run<span class="w"> </span>-e<span class="w"> </span>doc<span class="w">                </span><span class="c1"># build HTML docs. (incremental update)</span>
+tox<span class="w"> </span>run<span class="w"> </span>-e<span class="w"> </span>doc<span class="w"> </span>--<span class="w"> </span>clean<span class="w">       </span><span class="c1"># build HTML docs. (from scratch)</span>
+tox<span class="w"> </span>run<span class="w"> </span>-e<span class="w"> </span>dist<span class="w">               </span><span class="c1"># build universal wheels for distribution.</span>
 </pre></div>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Running the full test suite will take several hours.
-This step can be skipped.</p>
-</div>
-<p>For building documentation and running pre-commit hooks:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tox<span class="w"> </span>run<span class="w"> </span>-e<span class="w"> </span>doc-fast<span class="w">  </span><span class="c1"># build HTML docs</span>
-tox<span class="w"> </span>run<span class="w"> </span>-e<span class="w"> </span>pre-commit<span class="w">  </span><span class="c1"># run pre-commit hooks</span>
+<p>All available tox environments can be viewed by running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tox<span class="w"> </span>list
 </pre></div>
 </div>
 </section>
@@ -649,7 +644,7 @@ contributions, we would be happy to hear from you!</p>
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt, Pyxu Developers.
       <br/>
     
   </p>
@@ -657,7 +652,7 @@ contributions, we would be happy to hear from you!</p>
       
         <div class="footer-item">
   <p class="sphinx-version">
-     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>

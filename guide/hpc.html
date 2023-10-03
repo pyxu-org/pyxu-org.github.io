@@ -18,8 +18,8 @@
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
-<link href="../_static/pygments.css?v=b76e3c8a" rel="stylesheet" type="text/css"/>
-<link href="../_static/plot_directive.css?v=7f9a90b1" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../_static/plot_directive.css" rel="stylesheet" type="text/css"/>
 <link href="../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
 <link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
 <link href="../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
@@ -28,12 +28,12 @@
 <link href="../_static/sg_gallery-dataframe.css?v=2082cf3c" rel="stylesheet" type="text/css"/>
 <link href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" rel="stylesheet" type="text/css"/>
 <link href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
-<link href="../_static/nbsphinx-code-cells.css?v=2aa19091" rel="stylesheet" type="text/css"/>
+<link href="../_static/nbsphinx-code-cells.css" rel="stylesheet" type="text/css"/>
 <link href="../_static/css/custom.css?v=14df3d68" rel="stylesheet" type="text/css"/>
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../_static/documentation_options.js?v=a4a8746c"></script>
+<script src="../_static/documentation_options.js?v=9f51c310"></script>
 <script src="../_static/doctools.js?v=888ff710"></script>
 <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -267,102 +267,94 @@ document.write(`
 <article class="bd-article" role="main">
 <section id="High-Performance-Computing-Features">
 <h1>High Performance Computing Features<a class="headerlink" href="#High-Performance-Computing-Features" title="Link to this heading">#</a></h1>
-<p>Traditionally, the worlds of high-performance computing (HPC) and modular software design have been considered mutually exclusive. HPC often demands intricate, low-level optimizations, making the code hard to modularize or even understand. On the flip side, modular design, which thrives on separation of concerns and reusability, has often had to sacrifice performance for the sake of clean, maintainable code. However, modern software technologies, including the features of high-level languages
-like Python, are slowly erasing this dichotomy. Pyxu capitalizes on these advancements to offer a computational imaging platform that doesn’t compromise on either modularity or performance.</p>
+<p>Traditionally, high-performance computing (HPC) and modular software design are at odds. HPC often demands intricate, low-level optimizations, making the code hard to understand and modify. Modularity on the other hand often leads to sacrificing some performance for the sake of clean, maintainable code. The design of Pyxu shows that a pragmatic choice of technologies enables one to obtain a high-performance toolkit without sacrificing flexibility.</p>
 <section id="The-Conundrum-of-Performance-vs-Modularity">
 <h2>The Conundrum of Performance vs Modularity<a class="headerlink" href="#The-Conundrum-of-Performance-vs-Modularity" title="Link to this heading">#</a></h2>
-<p>Achieving peak performance traditionally meant that you had to write highly specialized, monolithic software, sacrificing modularity for the sake of computational speed. This is particularly true in High-Performance Computing (HPC) environments where every millisecond counts. Such software, while incredibly fast, becomes rigid, harder to maintain, and highly tailored for specific tasks. The moment you need to adapt the software to new requirements or integrate it with other tools, the lack of
-modularity becomes a bottleneck.</p>
+<p>Achieving peak performance traditionally meant that you had to write highly specialized, monolithic software, sacrificing modularity for the sake of computational speed. This is particularly true in High-Performance Computing (HPC) environments where resources are pushed to their limits. Such software, while incredibly fast, becomes rigid, harder to maintain, and highly tailored to a specific task. The moment you need to adapt the software to new requirements or integrate it with other tools,
+the lack of modularity becomes a bottleneck.</p>
 </section>
-<section id="Why-High-Level-Languages-Like-Python?">
-<h2>Why High-Level Languages Like Python?<a class="headerlink" href="#Why-High-Level-Languages-Like-Python?" title="Link to this heading">#</a></h2>
+<section id="Why-High-Level-Programming?">
+<h2>Why High-Level Programming?<a class="headerlink" href="#Why-High-Level-Programming?" title="Link to this heading">#</a></h2>
 <p>Python, and other high-level languages, offer intrinsic features that facilitate modularity:</p>
 <ul class="simple">
 <li><p><strong>Easy-to-Read Syntax:</strong> High-level languages are known for their easy-to-read syntax, and Python is a prime example. The language’s design encourages writing clean, readable, and therefore, maintainable code (see <a class="reference external" href="https://peps.python.org/pep-0008/">PEP8</a> for example). This readability naturally promotes modular programming and collaboration.</p></li>
-<li><p><strong>Dynamic Typing and Polymorphism:</strong> Python, like many high-level languages, offers <a class="reference external" href="https://www.wikiwand.com/en/Polymorphism_(computer_science)">dynamic typing and polymorphism</a>. These features allow developers to write more flexible, general-purpose modules. Such flexibility can be a boon for quick prototyping and can also make the codebase more adaptable to changes, further promoting the concept of modularity.</p></li>
-<li><p><strong>Rich Standard Libraries:</strong> The extensive collection of standard libraries in Python reduces the need to write boilerplate code, allowing developers to focus on building application-specific modules. The standard libraries themselves are often highly modular, serving as excellent examples of how to design modular software.</p></li>
-<li><p><strong>Functional and Object-Oriented Programming Support:</strong> Python supports multiple programming paradigms, including both functional and object-oriented programming (OOP). These paradigms offer different approaches to modularization. While OOP focuses on encapsulating state and behavior, functional programming emphasizes stateless operations, both contributing to cleaner, more modular code.</p></li>
-<li><p><strong>C/C++/Fortran Bindings:</strong> Python’s ability to interface with low-level optimized or compiled libraries provides a powerful path for achieving high performance while retaining high-level simplicity and modularity. This opens the door for leveraging performance-optimized code without losing Python’s inherent advantages.</p></li>
+<li><p><strong>Rich Libraries:</strong> The extensive collection of libraries in the Python ecosystem reduces the need to write boilerplate code, allowing developers to focus on building application-specific modules. The standard libraries themselves are highly modular, serving as excellent examples of library design.</p></li>
+<li><p><strong>Foreign Function Interface:</strong> Python’s ability to interface with low-level optimized or compiled libraries provides a powerful path to achieving high performance while retaining a simple and lean codebase. This opens the door for leveraging performance-optimized code without losing Python’s inherent advantages.</p></li>
 </ul>
 </section>
 <section id="Pyxu's-Modern-Take-on-HPC">
 <h2>Pyxu’s Modern Take on HPC<a class="headerlink" href="#Pyxu's-Modern-Take-on-HPC" title="Link to this heading">#</a></h2>
-<p>Pyxu is designed to change the narrative, standing at the intersection of modularity and performance. Leveraging the best of Python’s modularity features and marrying them with state-of-the-art computational technologies, Pyxu proves that you can indeed have the best of both worlds. This transformative approach provides the scientific community with a tool that is not just robust and fast but also flexible and future-proof.</p>
-<p>By building upon a bedrock of vibrant technologies from the PyData stack, Pyxu showcases that modularity and performance are not mutually exclusive but can co-exist harmoniously in a well-designed software ecosystem.</p>
+<p>Pyxu is designed around a set of core ideas/technologies to achieve high performance while retaining modularity. Leveraging state-of-the-art computational technologies from the PyData stack, Pyxu proves that you can indeed have the best of both worlds. This approach provides the scientific community with a tool that is not just robust and fast, but also flexible and future-proof.</p>
 </section>
 <section id="High-Performance-Computing-Features-in-Pyxu">
 <h2>High-Performance Computing Features in Pyxu<a class="headerlink" href="#High-Performance-Computing-Features-in-Pyxu" title="Link to this heading">#</a></h2>
-<section id="Precision-Context-Manager">
-<h3>Precision Context Manager<a class="headerlink" href="#Precision-Context-Manager" title="Link to this heading">#</a></h3>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Numerical_precision">Compute precision</a> is a critical aspect of numerical computations, denoting the exactness or resolution of the computational process. In the world of floating-point arithmetic, higher precision means more bits representing numbers, which in turn means greater accuracy but at the cost of computational speed.</p>
-<p>By incorporating a precision context manager, Pyxu empowers users to dynamically alter compute precision, thereby granting more control over the trade-off between speed and accuracy.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/runtime.html#module-pyxu.runtime" title="pyxu.runtime"><span class="nn">pyxu.runtime</span></a> <span class="k">as</span> <span class="nn">pxrt</span>
-
-<a class="sphinx-codeautolink-a" href="../api/runtime.html#pyxu.runtime.getPrecision" title="pyxu.runtime.getPrecision"><span class="n">pxrt</span><span class="o">.</span><span class="n">getPrecision</span></a><span class="p">()</span>                      <span class="c1"># Width.DOUBLE is the default precision</span>
-<span class="k">with</span> <a class="sphinx-codeautolink-a" href="../api/runtime.html#pyxu.runtime.Precision" title="pyxu.runtime._runtime.Precision"><span class="n">pxrt</span><span class="o">.</span><span class="n">Precision</span></a><span class="p">(</span><span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="o">.</span><span class="n">SINGLE</span><span class="p">):</span>
-    <a class="sphinx-codeautolink-a" href="../api/runtime.html#pyxu.runtime.getPrecision" title="pyxu.runtime.getPrecision"><span class="n">pxrt</span><span class="o">.</span><span class="n">getPrecision</span></a><span class="p">()</span>                  <span class="c1"># Width.SINGLE for local change of compute precision</span>
-<a class="sphinx-codeautolink-a" href="../api/runtime.html#pyxu.runtime.getPrecision" title="pyxu.runtime.getPrecision"><span class="n">pxrt</span><span class="o">.</span><span class="n">getPrecision</span></a><span class="p">()</span>                      <span class="c1"># Width.DOUBLE (back to default out of the context manager's scope</span>
-</pre></div>
-</div>
-</section>
-<section id="Just-In-Time-(JIT)-Compilation">
-<h3>Just-In-Time (JIT) Compilation<a class="headerlink" href="#Just-In-Time-(JIT)-Compilation" title="Link to this heading">#</a></h3>
-<p>Unlike traditional Ahead-Of-Time (AOT) compilation, which compiles the codebase before execution, <a class="reference external" href="https://en.wikipedia.org/wiki/Just-in-time_compilation">Just-In-Time Compilers</a> compile parts of a program during its actual execution. This dynamic compilation optimizes performance based on real-time behavior.</p>
-<p>By employing <a class="reference external" href="https://numba.pydata.org/">Numba</a>, Pyxu harnesses JIT compilation’s power, ensuring that compute-intensive components are optimized during runtime. This methodology yields near-native performance, making Python as performant as statically-typed languages for computational imaging tasks.</p>
-</section>
-<section id="Vectorized-Operations">
-<h3>Vectorized Operations<a class="headerlink" href="#Vectorized-Operations" title="Link to this heading">#</a></h3>
-<p>In computational terms, <a class="reference external" href="https://en.wikipedia.org/wiki/Array_programming">vectorization</a> denotes the parallel processing of multiple data elements rather than iterating over them. It’s a strategy to exploit data-level parallelism in lieu of task-level parallelism.</p>
-<p>Pyxu’s operators are intrinsically vectorized, which means they are optimized to handle stacks of data in parallel. This design strategy significantly enhances efficiency for tasks involving data batches, as frequently seen in imaging.</p>
-</section>
 <section id="Module-Agnostic-Infrastructure">
 <h3>Module-Agnostic Infrastructure<a class="headerlink" href="#Module-Agnostic-Infrastructure" title="Link to this heading">#</a></h3>
-<p>Modern computational trends emphasize array-agnostic programming. This concept of array-agnosticism promotes modularity and portability as you can swap out underlying data structures without rewriting higher-level code. With the emerging <a class="reference external" href="https://data-apis.org/array-api/latest/">array-API standard in Python</a> and platforms like <a class="reference external" href="https://www.oneapi.com/">Intel’s oneAPI</a>, this philosophy is increasingly essential for interoperable and scalable numerical computing solutions.</p>
-<p>Pyxu is meticulously crafted to be module-agnostic. Its inherent architecture ensures seamless interaction with array libraries such as NumPy, CuPy, and Dask, providing unparalleled flexibility and portability.</p>
-</section>
+<p>Standardized array APIs promote code modularity and portability as you can swap out underlying data structures without rewriting higher-level code. With the emerging <a class="reference external" href="https://data-apis.org/array-api/latest/">array-API standard in Python</a> and platforms such as <a class="reference external" href="https://www.oneapi.com/">Intel’s oneAPI</a>, this philosophy is increasingly essential for interoperable and scalable numerical computing solutions.</p>
+<p>The entire Pyxu API is meticulously crafted to be agnostic to the type of arrays being processed: as long as the inputs abide by the NumPy array API, Pyxu can process them using a single code-base shared amongst compute devices.</p>
+<p>This architecture ensures seamless interaction with array libraries such as NumPy, CuPy, and Dask, providing flexibility and portability.</p>
 <section id="NumPy-and-Its-Siblings:-CuPy-and-Dask">
-<h3>NumPy and Its Siblings: CuPy and Dask<a class="headerlink" href="#NumPy-and-Its-Siblings:-CuPy-and-Dask" title="Link to this heading">#</a></h3>
-<p>NumPy is The de facto standard for array computing in Python, offering excellent support for a broad range of mathematical operations. CuPy and Dask extend NumPy to GPUs and out-of-core and distributed computing, respectively.</p>
+<h4>NumPy and Its Siblings: CuPy and Dask<a class="headerlink" href="#NumPy-and-Its-Siblings:-CuPy-and-Dask" title="Link to this heading">#</a></h4>
+<p>NumPy is the de facto standard for array computing in Python, offering excellent support for a broad range of mathematical operations. CuPy and Dask extend NumPy to GPUs and out-of-core and distributed computing, respectively.</p>
+</section>
 <section id="Embracing-GPU-Computing-with-CuPy">
 <h4>Embracing GPU Computing with CuPy<a class="headerlink" href="#Embracing-GPU-Computing-with-CuPy" title="Link to this heading">#</a></h4>
 <p>Graphical Processing Units (GPUs) have transitioned from graphical renderings to a <a class="reference external" href="https://en.wikipedia.org/wiki/General-purpose_computing_on_graphics_processing_units">broader computational domain</a>, credited to their ability to perform parallel operations. For large-scale computations like image processing, GPUs can offer significant performance enhancements over traditional CPU-centric computations.</p>
-<p>By integrating <a class="reference external" href="https://cupy.dev/">CuPy</a>, Pyxu taps into GPU-accelerated numerical operations. A salient point in GPU computing is the overhead of data transfers between CPU and GPU. To maximize performance, it’s imperative to minimize these transfers, a philosophy that Pyxu staunchly adheres to via zero-copy dispatch mechanisms.</p>
 </section>
 <section id="Distributed-and-Out-of-core-Computing-with-Dask">
 <h4>Distributed and Out-of-core Computing with Dask<a class="headerlink" href="#Distributed-and-Out-of-core-Computing-with-Dask" title="Link to this heading">#</a></h4>
-<p><a class="reference external" href="https://dask.org/">Dask</a> is a beacon for parallel computing in Python. It seamlessly scales Python’s eco-system, extending libraries to handle computations that outstrip memory constraints. It does so via lazy computing and chunking:</p>
+<p><a class="reference external" href="https://dask.org/">Dask</a> scales Python’s eco-system to out-of-core computing, extending the NumPy API to handle computations that outgrow machine constraints. It does so via lazy computing and chunking:</p>
 <ol class="arabic simple">
 <li><p><strong>Lazy Computing</strong>: Instead of immediate computations, Dask builds a computation graph. It then evaluates this graph optimally, ensuring resource efficiency.</p></li>
 <li><p><strong>Chunking</strong>: Dask fragments large arrays into smaller, manageable “chunks”, then performs computations on these in parallel, optimizing both memory and compute resources.</p></li>
 </ol>
-<p>Leveraging Dask’s prowess, Pyxu can execute imaging computations efficiently across multi-core CPUs/GPUs and distributed computing setups. The synergy between Pyxu and Dask’s scheduler ensures that computational resources are judiciously utilized, streamlining the most complex imaging tasks.</p>
+<p>Leveraging Dask’s prowess, Pyxu can execute imaging computations efficiently across multi-core CPUs/GPUs and distributed computing setups. Dask’s scheduler ensures that computational resources are judiciously utilized, streamlining even complex imaging tasks.</p>
 </section>
+</section>
+<section id="Vectorization-&amp;-Just-in-Time-Operations">
+<h3>Vectorization &amp; Just-in-Time Operations<a class="headerlink" href="#Vectorization-&amp;-Just-in-Time-Operations" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Array_programming">Vectorization</a> denotes the parallel processing of multiple data elements rather than iterating over them. It’s a strategy to exploit data-level parallelism in lieu of task-level parallelism, a.k.a <code class="docutils literal notranslate"><span class="pre">SIMD</span> <span class="pre">&lt;https://en.wikipedia.org/wiki/Single_instruction,_multiple_data&gt;</span></code>_. Pyxu’s operators are intrinsically vectorized, meaning they are optimized to process stacks of inputs in parallel. This design strategy significantly enhances efficiency
+for tasks involving data batches, as frequently seen in imaging.</p>
+<p>Similarly, compute-intensive Pyxu operators leverage <a class="reference external" href="https://numba.pydata.org/">Numba</a> to Just-in-Time (JIT) compile their codes, side-stepping the Python interpreter entirely. This methodology yields near-native performance, making Python as performant as statically-typed languages for computational imaging tasks.</p>
+</section>
+<section id="Precision-Context-Manager">
+<h3>Precision Context Manager<a class="headerlink" href="#Precision-Context-Manager" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Numerical_precision">Compute precision</a> is a critical aspect of numerical computations, denoting the exactness or resolution of the computational process. In the world of floating-point arithmetic, higher precision means more bits representing numbers, which in turn means greater accuracy but at the cost of computational speed.</p>
+<p>Pyxu empowers users to dynamically alter the precision of specific parts of their compute chains, thereby granting more control over the trade-off between speed and accuracy.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import pyxu.runtime as pxrt
+
+op = &lt;some complicated operator&gt;
+
+y = op.apply(x)  # compute in DOUBLE-precision (default)
+
+with pxrt.Precision(pxrt.Width.SINGLE):
+    z = op.apply(x)  # compute in SINGLE precision
+</pre></div>
+</div>
 </section>
 </section>
 <section id="Hands-on-Example:">
 <h2>Hands-on Example:<a class="headerlink" href="#Hands-on-Example:" title="Link to this heading">#</a></h2>
 <p>As an example, consider the following code snippet, defining the median operator:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.Map" title="pyxu.abc.operator.Map"><span class="n">Map</span></a>
-<span class="kn">from</span> <span class="nn">pyxu.util</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/util.html#pyxu.util.get_array_module" title="pyxu.util.get_array_module"><span class="n">get_array_module</span></a>
-<span class="kn">from</span> <a class="sphinx-codeautolink-a" href="../api/runtime.html#module-pyxu.runtime" title="pyxu.runtime"><span class="nn">pyxu.runtime</span></a> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/runtime.html#pyxu.runtime.enforce_precision" title="pyxu.runtime.enforce_precision"><span class="n">enforce_precision</span></a>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyxu.abc</span> <span class="k">as</span> <span class="nn">pxa</span>
+<span class="kn">import</span> <span class="nn">pyxu.util</span> <span class="k">as</span> <span class="nn">pxu</span>
+<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/runtime.html#module-pyxu.runtime" title="pyxu.runtime"><span class="nn">pyxu.runtime</span></a> <span class="k">as</span> <span class="nn">pxrt</span>
 
-
-<span class="k">class</span> <span class="nc">Median</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.Map" title="pyxu.abc.operator.Map"><span class="n">Map</span></a><span class="p">):</span>
+<span class="k">class</span> <span class="nc">Median</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.Func" title="pyxu.abc.operator.Func"><span class="n">pxa</span><span class="o">.</span><span class="n">Func</span></a><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
         <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">(</span><span class="n">Median</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
 
     <span class="c1"># Enforce input/output precision.</span>
-    <a class="sphinx-codeautolink-a" href="../api/runtime.html#pyxu.runtime.enforce_precision" title="pyxu.runtime.enforce_precision"><span class="nd">@enforce_precision</span></a><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">"arr"</span><span class="p">)</span>
+    <a class="sphinx-codeautolink-a" href="../api/runtime.html#pyxu.runtime.enforce_precision" title="pyxu.runtime.enforce_precision"><span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span></a><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">"arr"</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
-        <span class="c1"># Find the array module.</span>
-        <span class="n">xp</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/util.html#pyxu.util.get_array_module" title="pyxu.util.get_array_module"><span class="n">get_array_module</span></a><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">xp</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="c1"># Dispatch the median call to the right backend</span>
-        <span class="c1"># Allow for batch dimensions.</span>
+        <span class="n">xp</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/util.html#pyxu.util.get_array_module" title="pyxu.util.get_array_module"><span class="n">pxu</span><span class="o">.</span><span class="n">get_array_module</span></a><span class="p">(</span><span class="n">arr</span><span class="p">)</span>   <span class="c1"># Find the array module.</span>
+        <span class="k">return</span> <span class="n">xp</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span>            <span class="c1"># Dispatch the median call to the right backend.</span>
+                         <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>        <span class="c1"># Allow for batch dimensions.</span>
+                         <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -372,18 +364,18 @@ modularity becomes a bottleneck.</p>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#module-time" title="time"><span class="nn">time</span></a> <span class="k">as</span> <span class="nn">t</span>
-<span class="kn">from</span> <a class="sphinx-codeautolink-a" href="../api/info.deps.html#module-pyxu.info.deps" title="pyxu.info.deps"><span class="nn">pyxu.info.deps</span></a> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/info.deps.html#pyxu.info.deps.supported_array_modules" title="pyxu.info.deps.supported_array_modules"><span class="n">supported_array_modules</span></a>
-<span class="kn">from</span> <span class="nn">pyxu.util</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/util.html#pyxu.util.compute" title="pyxu.util.compute"><span class="n">compute</span></a>
+<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/info.deps.html#module-pyxu.info.deps" title="pyxu.info.deps"><span class="nn">pyxu.info.deps</span></a> <span class="k">as</span> <span class="nn">pxd</span>
 
 <span class="n">timings</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#dict" title="dict"><span class="nb">dict</span></a><span class="p">()</span>
-<span class="n">m</span> <span class="o">=</span> <span class="n">Median</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">xp</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/info.deps.html#pyxu.info.deps.supported_array_modules" title="pyxu.info.deps.supported_array_modules"><span class="n">supported_array_modules</span></a><span class="p">():</span> <span class="c1"># Loops over supported array backends</span>
+<span class="n">dim</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">Median</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">xp</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/info.deps.html#pyxu.info.deps.supported_array_modules" title="pyxu.info.deps.supported_array_modules"><span class="n">pxd</span><span class="o">.</span><span class="n">supported_array_modules</span></a><span class="p">():</span>  <span class="c1"># Loops over supported array backends</span>
     <span class="c1"># Apply the operator in turn on a various array types.</span>
-    <span class="n">t1</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.time" title="time.time"><span class="n">t</span><span class="o">.</span><span class="n">time</span></a><span class="p">()</span>
-    <span class="n">arr</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">260</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
-    <span class="n">out</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/util.html#pyxu.util.compute" title="pyxu.util.compute"><span class="n">compute</span></a><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
-    <span class="n">timings</span><span class="p">[</span><span class="n">xp</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.time" title="time.time"><span class="n">t</span><span class="o">.</span><span class="n">time</span></a><span class="p">()</span> <span class="o">-</span> <span class="n">t1</span>
-<a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><span class="n">timings</span><span class="p">)</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">dim</span><span class="p">,))</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+    <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#type" title="type"><span class="nb">type</span></a><span class="p">(</span><span class="n">out</span><span class="p">),</span> <span class="n">out</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/util.html#pyxu.util.compute" title="pyxu.util.compute"><span class="n">pxu</span><span class="o">.</span><span class="n">compute</span></a><span class="p">(</span><span class="n">out</span><span class="p">))</span>  <span class="c1"># we use compute() to evaluate Dask arrays.</span>
 </pre></div>
 </div>
 </div>
@@ -392,18 +384,20 @@ modularity becomes a bottleneck.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-{'numpy': 0.0005955696105957031, 'cupy': 2.3291730880737305, 'dask.array': 0.0022661685943603516}
+&lt;class 'cupy.ndarray'&gt; float64 [0.15318864]
+&lt;class 'dask.array.core.Array'&gt; float64 [1.44176931]
+&lt;class 'numpy.ndarray'&gt; float64 [-0.28534482]
 </pre></div></div>
 </div>
-<p>If called from within the context manager <code class="docutils literal notranslate"><span class="pre">Precision</span></code><a class="reference external" href="../api/runtime.html#pyxu.runtime.Precision">🔗</a>, the decorated apply method will automatically coerce the input/output to the user-specified precision:</p>
+<p>If called from within the <code class="docutils literal notranslate"><span class="pre">Precision</span></code><a class="reference external" href="../api/runtime.html#pyxu.runtime.Precision">🔗</a> context manager, the decorated <code class="docutils literal notranslate"><span class="pre">apply()</span></code> method will automatically coerce the input/output to the user-specified precision:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
-<span class="k">with</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">Precision</span><span class="p">(</span><span class="n">Width</span><span class="o">.</span><span class="n">SINGLE</span><span class="p">):</span>
+<span class="k">with</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">Precision</span><span class="p">(</span><span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="o">.</span><span class="n">SINGLE</span><span class="p">):</span>
     <span class="c1"># Single precision is used for the computation</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">260</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">13</span><span class="p">))</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">26</span><span class="o">*</span><span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -412,7 +406,7 @@ modularity becomes a bottleneck.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-37.3 µs ± 610 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+61.1 µs ± 298 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -420,9 +414,9 @@ modularity becomes a bottleneck.</p>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
-<span class="k">with</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">Precision</span><span class="p">(</span><span class="n">Width</span><span class="o">.</span><span class="n">DOUBLE</span><span class="p">):</span>
+<span class="k">with</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">Precision</span><span class="p">(</span><span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="o">.</span><span class="n">DOUBLE</span><span class="p">):</span>
     <span class="c1"># Double precision is used for the computation</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">260</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">13</span><span class="p">))</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">26</span><span class="o">*</span><span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -431,23 +425,31 @@ modularity becomes a bottleneck.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-37.4 µs ± 117 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+61.5 µs ± 266 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div></div>
 </div>
-<p>The support for Dask array inputs also allows to trivially parallelize computation. Consider for example the hierarchical median operator below:</p>
+<p>The support for Dask array inputs also allows to trivially parallelize computations. Consider for example the hierarchical median operator below:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">HierarchicalMedian</span><span class="p">(</span><span class="n">Median</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">HierarchicalMedian</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.Func" title="pyxu.abc.operator.Func"><span class="n">pxa</span><span class="o">.</span><span class="n">Func</span></a><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
-        <span class="n">xp</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/util.html#pyxu.util.get_array_module" title="pyxu.util.get_array_module"><span class="n">get_array_module</span></a><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
-        <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#zip" title="zip"><span class="nb">zip</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#range" title="range"><span class="nb">range</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">10</span><span class="p">),</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#range" title="range"><span class="nb">range</span></a><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">10</span><span class="p">)):</span>
-            <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="p">]))</span>
-        <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">xp</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">))</span>
-</pre></div>
+        <span class="n">xp</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/util.html#pyxu.util.get_array_module" title="pyxu.util.get_array_module"><span class="n">pxu</span><span class="o">.</span><span class="n">get_array_module</span></a><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+        <span class="n">subs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#range" title="range"><span class="nb">range</span></a><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">10</span><span class="o">*</span><span class="n">i</span><span class="p">:</span><span class="mi">10</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">subs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">subs</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">z</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">z</span>
+<br/></pre></div>
 </div>
 </div>
 <p>There is obviously huge opportunity for parallelism, as shown by the underlying Dask compute graph:</p>
@@ -455,8 +457,11 @@ modularity becomes a bottleneck.</p>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hm</span> <span class="o">=</span> <span class="n">HierarchicalMedian</span><span class="p">()</span>
-<span class="n">hm</span><span class="p">(</span><span class="n">da</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2600</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">130</span><span class="p">))</span><span class="o">.</span><span class="n">visualize</span><span class="p">(</span><span class="n">optimize_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dask.array</span> <span class="k">as</span> <span class="nn">da</span>
+
+<span class="n">dim</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">hm</span> <span class="o">=</span> <span class="n">HierarchicalMedian</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span>
+<span class="n">hm</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="https://docs.dask.org/en/stable/generated/dask.array.arange.html#dask.array.arange" title="dask.array.arange"><span class="n">da</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="mi">26</span><span class="o">*</span><span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span><span class="o">.</span><span class="n">visualize</span><span class="p">(</span><span class="n">optimize_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -474,9 +479,9 @@ modularity becomes a bottleneck.</p>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">timings</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#dict" title="dict"><span class="nb">dict</span></a><span class="p">()</span>
-<span class="k">for</span> <span class="n">xp</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/info.deps.html#pyxu.info.deps.supported_array_modules" title="pyxu.info.deps.supported_array_modules"><span class="n">supported_array_modules</span></a><span class="p">():</span>
+<span class="k">for</span> <span class="n">xp</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/info.deps.html#pyxu.info.deps.supported_array_modules" title="pyxu.info.deps.supported_array_modules"><span class="n">pxd</span><span class="o">.</span><span class="n">supported_array_modules</span></a><span class="p">():</span>
     <span class="n">t1</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.time" title="time.time"><span class="n">t</span><span class="o">.</span><span class="n">time</span></a><span class="p">()</span>
-    <span class="n">out</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/util.html#pyxu.util.compute" title="pyxu.util.compute"><span class="n">compute</span></a><span class="p">(</span><span class="n">hm</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">xp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2600</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">130</span><span class="p">)))</span>
+    <span class="n">out</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/util.html#pyxu.util.compute" title="pyxu.util.compute"><span class="n">pxu</span><span class="o">.</span><span class="n">compute</span></a><span class="p">(</span><span class="n">hm</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">xp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">26</span><span class="o">*</span><span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="n">dim</span><span class="p">)))</span>
     <span class="n">timings</span><span class="p">[</span><span class="n">xp</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.time" title="time.time"><span class="n">t</span><span class="o">.</span><span class="n">time</span></a><span class="p">()</span><span class="o">-</span><span class="n">t1</span>
 <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><span class="n">timings</span><span class="p">)</span>
 </pre></div>
@@ -487,13 +492,13 @@ modularity becomes a bottleneck.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-{'numpy': 0.0024390220642089844, 'cupy': 0.007131814956665039, 'dask.array': 0.01573467254638672}
+{'cupy': 0.8727676868438721, 'dask.array': 0.014710187911987305, 'numpy': 0.00039696693420410156}
 </pre></div></div>
 </div>
-<p>This is very convenient for the developer, who can focus on the functionality and defer prallelism concerns to Dask.</p>
+<p>This is very convenient for the developer, who can focus on the functionality and defer parallelism concerns to Dask.</p>
 </section>
-<section id="Final-thoughts">
-<h2>Final thoughts<a class="headerlink" href="#Final-thoughts" title="Link to this heading">#</a></h2>
+<section id="Final-Thoughts">
+<h2>Final Thoughts<a class="headerlink" href="#Final-Thoughts" title="Link to this heading">#</a></h2>
 <p>Pyxu stands at the intersection of modularity and performance, driven by the power of high-level languages and modern HPC tools. The array-agnostic nature of its architecture embodies the future of numerical computing—flexible, interoperable, and performant. With its focus on computational imaging, Pyxu aims to set a benchmark in how we reconcile ease of use, portability, modularity, and performance in the HPC landscape.</p>
 <p>By leveraging Python’s features and an array of powerful libraries, Pyxu provides a uniquely modular yet blazingly fast platform for computational imaging, making it a prime example of how modern software can, indeed, have it all.</p>
 </section>
@@ -529,22 +534,21 @@ modularity becomes a bottleneck.</p>
 <nav class="bd-toc-nav page-toc">
 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#The-Conundrum-of-Performance-vs-Modularity">The Conundrum of Performance vs Modularity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Why-High-Level-Languages-Like-Python?">Why High-Level Languages Like Python?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Why-High-Level-Programming?">Why High-Level Programming?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Pyxu's-Modern-Take-on-HPC">Pyxu’s Modern Take on HPC</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#High-Performance-Computing-Features-in-Pyxu">High-Performance Computing Features in Pyxu</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Precision-Context-Manager">Precision Context Manager</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Just-In-Time-(JIT)-Compilation">Just-In-Time (JIT) Compilation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Vectorized-Operations">Vectorized Operations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Module-Agnostic-Infrastructure">Module-Agnostic Infrastructure</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#NumPy-and-Its-Siblings:-CuPy-and-Dask">NumPy and Its Siblings: CuPy and Dask</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Module-Agnostic-Infrastructure">Module-Agnostic Infrastructure</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#NumPy-and-Its-Siblings:-CuPy-and-Dask">NumPy and Its Siblings: CuPy and Dask</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Embracing-GPU-Computing-with-CuPy">Embracing GPU Computing with CuPy</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Distributed-and-Out-of-core-Computing-with-Dask">Distributed and Out-of-core Computing with Dask</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Vectorization-&amp;-Just-in-Time-Operations">Vectorization &amp; Just-in-Time Operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Precision-Context-Manager">Precision Context Manager</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Hands-on-Example:">Hands-on Example:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Final-thoughts">Final thoughts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Final-Thoughts">Final Thoughts</a></li>
 </ul>
 </nav></div>
 <div class="sidebar-secondary-item">
@@ -585,13 +589,13 @@ modularity becomes a bottleneck.</p>
 <div class="footer-item">
 <p class="copyright">
     
-      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt, Pyxu Developers.
       <br/>
 </p>
 </div>
 <div class="footer-item">
 <p class="sphinx-version">
-     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
 </p>
 </div>

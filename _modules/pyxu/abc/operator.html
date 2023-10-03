@@ -27,7 +27,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
@@ -43,7 +43,7 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../_static/documentation_options.js?v=a4a8746c"></script>
+    <script src="../../../_static/documentation_options.js?v=9f51c310"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -471,7 +471,7 @@ document.write(`
 <span class="linenos">  18</span>
 <span class="linenos">  19</span>
 <div class="viewcode-block" id="Property">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.Property">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Property">[docs]</a>
 <span class="linenos">  20</span><span class="k">class</span> <span class="nc">Property</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">Enum</span><span class="p">):</span>
 <span class="linenos">  21</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">  22</span><span class="sd">    Mathematical property.</span>
@@ -496,7 +496,7 @@ document.write(`
 <span class="linenos">  41</span>    <span class="n">QUADRATIC</span> <span class="o">=</span> <span class="n">enum</span><span class="o">.</span><span class="n">auto</span><span class="p">()</span>
 <span class="linenos">  42</span>
 <div class="viewcode-block" id="Property.arithmetic_methods">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.Property.arithmetic_methods">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Property.arithmetic_methods">[docs]</a>
 <span class="linenos">  43</span>    <span class="k">def</span> <span class="nf">arithmetic_methods</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="linenos">  44</span>        <span class="s2">&quot;Instance methods affected by arithmetic operations.&quot;</span>
 <span class="linenos">  45</span>        <span class="n">data</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
@@ -537,7 +537,7 @@ document.write(`
 <span class="linenos">  78</span>
 <span class="linenos">  79</span>
 <div class="viewcode-block" id="Operator">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.Operator">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Operator">[docs]</a>
 <span class="linenos">  80</span><span class="k">class</span> <span class="nc">Operator</span><span class="p">:</span>
 <span class="linenos">  81</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">  82</span><span class="sd">    Abstract Base Class for Pyxu operators.</span>
@@ -556,7 +556,7 @@ document.write(`
 <span class="linenos">  95</span>    <span class="n">__array_priority__</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
 <span class="linenos">  96</span>
 <div class="viewcode-block" id="Operator.__init__">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.Operator.__init__">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Operator.__init__">[docs]</a>
 <span class="linenos">  97</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpShape</span><span class="p">):</span>
 <span class="linenos">  98</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">  99</span><span class="sd">        Parameters</span>
@@ -594,7 +594,7 @@ document.write(`
 <span class="linenos"> 130</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="linenos"> 131</span>
 <div class="viewcode-block" id="Operator.properties">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.Operator.properties">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Operator.properties">[docs]</a>
 <span class="linenos"> 132</span>    <span class="nd">@classmethod</span>
 <span class="linenos"> 133</span>    <span class="k">def</span> <span class="nf">properties</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Set</span><span class="p">[</span><span class="n">Property</span><span class="p">]:</span>
 <span class="linenos"> 134</span>        <span class="s2">&quot;Mathematical properties of the operator.&quot;</span>
@@ -602,7 +602,7 @@ document.write(`
 
 <span class="linenos"> 136</span>
 <div class="viewcode-block" id="Operator.has">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.Operator.has">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Operator.has">[docs]</a>
 <span class="linenos"> 137</span>    <span class="nd">@classmethod</span>
 <span class="linenos"> 138</span>    <span class="k">def</span> <span class="nf">has</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">prop</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">Property</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Collection</span><span class="p">[</span><span class="n">Property</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="linenos"> 139</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -614,7 +614,7 @@ document.write(`
 
 <span class="linenos"> 145</span>
 <div class="viewcode-block" id="Operator.asop">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.Operator.asop">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Operator.asop">[docs]</a>
 <span class="linenos"> 146</span>    <span class="k">def</span> <span class="nf">asop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cast_to</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpC</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
 <span class="linenos"> 147</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 148</span><span class="sd">        Recast an :py:class:`~pyxu.abc.Operator` (or subclass thereof) to another :py:class:`~pyxu.abc.Operator`.</span>
@@ -677,7 +677,7 @@ document.write(`
 <span class="linenos"> 204</span>
 <span class="linenos"> 205</span>    <span class="c1"># Operator Arithmetic -----------------------------------------------------</span>
 <div class="viewcode-block" id="Operator.__add__">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.Operator.__add__">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Operator.__add__">[docs]</a>
 <span class="linenos"> 206</span>    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
 <span class="linenos"> 207</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 208</span><span class="sd">        Add two operators.</span>
@@ -714,7 +714,7 @@ document.write(`
 
 <span class="linenos"> 239</span>
 <div class="viewcode-block" id="Operator.__sub__">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.Operator.__sub__">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Operator.__sub__">[docs]</a>
 <span class="linenos"> 240</span>    <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
 <span class="linenos"> 241</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 242</span><span class="sd">        Subtract two operators.</span>
@@ -740,7 +740,7 @@ document.write(`
 
 <span class="linenos"> 262</span>
 <div class="viewcode-block" id="Operator.__neg__">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.Operator.__neg__">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Operator.__neg__">[docs]</a>
 <span class="linenos"> 263</span>    <span class="k">def</span> <span class="fm">__neg__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
 <span class="linenos"> 264</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 265</span><span class="sd">        Negate an operator.</span>
@@ -756,7 +756,7 @@ document.write(`
 
 <span class="linenos"> 275</span>
 <div class="viewcode-block" id="Operator.__mul__">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.Operator.__mul__">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Operator.__mul__">[docs]</a>
 <span class="linenos"> 276</span>    <span class="k">def</span> <span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
 <span class="linenos"> 277</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 278</span><span class="sd">        Compose two operators, or scale an operator by a constant.</span>
@@ -811,7 +811,7 @@ document.write(`
 <span class="linenos"> 326</span>            <span class="k">return</span> <span class="bp">NotImplemented</span>
 <span class="linenos"> 327</span>
 <div class="viewcode-block" id="Operator.__pow__">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.Operator.__pow__">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Operator.__pow__">[docs]</a>
 <span class="linenos"> 328</span>    <span class="k">def</span> <span class="fm">__pow__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
 <span class="linenos"> 329</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 330</span><span class="sd">        Exponentiate an operator, i.e. compose it with itself.</span>
@@ -851,7 +851,7 @@ document.write(`
 <span class="linenos"> 363</span>        <span class="k">return</span> <span class="bp">NotImplemented</span>
 <span class="linenos"> 364</span>
 <div class="viewcode-block" id="Operator.argscale">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.Operator.argscale">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Operator.argscale">[docs]</a>
 <span class="linenos"> 365</span>    <span class="k">def</span> <span class="nf">argscale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scalar</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
 <span class="linenos"> 366</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 367</span><span class="sd">        Scale operator&#39;s domain.</span>
@@ -876,7 +876,7 @@ document.write(`
 
 <span class="linenos"> 386</span>
 <div class="viewcode-block" id="Operator.argshift">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.Operator.argshift">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Operator.argshift">[docs]</a>
 <span class="linenos"> 387</span>    <span class="k">def</span> <span class="nf">argshift</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shift</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
 <span class="linenos"> 388</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 389</span><span class="sd">        Shift operator&#39;s domain.</span>
@@ -913,7 +913,7 @@ document.write(`
 <span class="linenos"> 419</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No operator found with properties </span><span class="si">{</span><span class="n">prop</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 <span class="linenos"> 420</span>
 <div class="viewcode-block" id="Operator.squeeze">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.Operator.squeeze">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Operator.squeeze">[docs]</a>
 <span class="linenos"> 421</span>    <span class="k">def</span> <span class="nf">squeeze</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
 <span class="linenos"> 422</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 423</span><span class="sd">        Cast an :py:class:`~pyxu.abc.Operator` to the right core operator sub-type given codomain dimension.</span>
@@ -953,7 +953,7 @@ document.write(`
 <span class="linenos"> 456</span>        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="p">,)</span>
 <span class="linenos"> 457</span>
 <div class="viewcode-block" id="Operator.expr">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.Operator.expr">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Operator.expr">[docs]</a>
 <span class="linenos"> 458</span>    <span class="k">def</span> <span class="nf">expr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">strip</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="linenos"> 459</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 460</span><span class="sd">        Pretty-Print the expression representation of the operator.</span>
@@ -1014,7 +1014,7 @@ document.write(`
 <span class="linenos"> 513</span>
 <span class="linenos"> 514</span>
 <div class="viewcode-block" id="Map">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.Map">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Map">[docs]</a>
 <span class="linenos"> 515</span><span class="k">class</span> <span class="nc">Map</span><span class="p">(</span><span class="n">Operator</span><span class="p">):</span>
 <span class="linenos"> 516</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 517</span><span class="sd">    Base class for real-valued maps :math:`\mathbf{f}: \mathbb{R}^{M} \to \mathbb{R}^{N}`.</span>
@@ -1026,7 +1026,7 @@ document.write(`
 <span class="linenos"> 523</span><span class="sd">    &quot;&quot;&quot;</span>
 <span class="linenos"> 524</span>
 <div class="viewcode-block" id="Map.properties">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.Map.properties">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Map.properties">[docs]</a>
 <span class="linenos"> 525</span>    <span class="nd">@classmethod</span>
 <span class="linenos"> 526</span>    <span class="k">def</span> <span class="nf">properties</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Set</span><span class="p">[</span><span class="n">Property</span><span class="p">]:</span>
 <span class="linenos"> 527</span>        <span class="n">p</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">properties</span><span class="p">())</span>
@@ -1039,7 +1039,7 @@ document.write(`
 <span class="linenos"> 533</span>        <span class="bp">self</span><span class="o">.</span><span class="n">lipschitz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
 <span class="linenos"> 534</span>
 <div class="viewcode-block" id="Map.apply">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.Map.apply">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Map.apply">[docs]</a>
 <span class="linenos"> 535</span>    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos"> 536</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 537</span><span class="sd">        Evaluate operator at specified point(s).</span>
@@ -1058,7 +1058,7 @@ document.write(`
 
 <span class="linenos"> 550</span>
 <div class="viewcode-block" id="Map.__call__">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.Map.__call__">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Map.__call__">[docs]</a>
 <span class="linenos"> 551</span>    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos"> 552</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 553</span><span class="sd">        Alias for :py:meth:`~pyxu.abc.Map.apply`.</span>
@@ -1126,7 +1126,7 @@ document.write(`
 <span class="linenos"> 614</span>            <span class="bp">self</span><span class="o">.</span><span class="n">estimate_lipschitz</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">MethodType</span><span class="p">(</span><span class="n">op_estimate_lipschitz</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
 <span class="linenos"> 615</span>
 <div class="viewcode-block" id="Map.estimate_lipschitz">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.Map.estimate_lipschitz">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Map.estimate_lipschitz">[docs]</a>
 <span class="linenos"> 616</span>    <span class="k">def</span> <span class="nf">estimate_lipschitz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">:</span>
 <span class="linenos"> 617</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 618</span><span class="sd">        Compute a Lipschitz constant of the operator.</span>
@@ -1162,7 +1162,7 @@ document.write(`
 <span class="linenos"> 646</span>
 <span class="linenos"> 647</span>
 <div class="viewcode-block" id="Func">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.Func">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Func">[docs]</a>
 <span class="linenos"> 648</span><span class="k">class</span> <span class="nc">Func</span><span class="p">(</span><span class="n">Map</span><span class="p">):</span>
 <span class="linenos"> 649</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 650</span><span class="sd">    Base class for real-valued functionals :math:`f: \mathbb{R}^{M} \to \mathbb{R}\cup\{+\infty\}`.</span>
@@ -1184,7 +1184,7 @@ document.write(`
 <span class="linenos"> 666</span>        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">codim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;shape: expected (1, n), got </span><span class="si">{</span><span class="n">shape</span><span class="si">}</span><span class="s2">.&quot;</span>
 <span class="linenos"> 667</span>
 <div class="viewcode-block" id="Func.asloss">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.Func.asloss">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.Func.asloss">[docs]</a>
 <span class="linenos"> 668</span>    <span class="k">def</span> <span class="nf">asloss</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
 <span class="linenos"> 669</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 670</span><span class="sd">        Transform a functional into a loss functional.</span>
@@ -1209,7 +1209,7 @@ document.write(`
 <span class="linenos"> 687</span>
 <span class="linenos"> 688</span>
 <div class="viewcode-block" id="DiffMap">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.DiffMap">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.DiffMap">[docs]</a>
 <span class="linenos"> 689</span><span class="k">class</span> <span class="nc">DiffMap</span><span class="p">(</span><span class="n">Map</span><span class="p">):</span>
 <span class="linenos"> 690</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 691</span><span class="sd">    Base class for real-valued differentiable maps :math:`\mathbf{f}: \mathbb{R}^{M} \to \mathbb{R}^{N}`.</span>
@@ -1234,7 +1234,7 @@ document.write(`
 <span class="linenos"> 710</span>        <span class="bp">self</span><span class="o">.</span><span class="n">diff_lipschitz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
 <span class="linenos"> 711</span>
 <div class="viewcode-block" id="DiffMap.jacobian">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.DiffMap.jacobian">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.DiffMap.jacobian">[docs]</a>
 <span class="linenos"> 712</span>    <span class="k">def</span> <span class="nf">jacobian</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
 <span class="linenos"> 713</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 714</span><span class="sd">        Evaluate the Jacobian of :math:`\mathbf{f}` at the specified point.</span>
@@ -1339,7 +1339,7 @@ document.write(`
 <span class="linenos"> 812</span>            <span class="bp">self</span><span class="o">.</span><span class="n">estimate_diff_lipschitz</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">MethodType</span><span class="p">(</span><span class="n">op_estimate_diff_lipschitz</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
 <span class="linenos"> 813</span>
 <div class="viewcode-block" id="DiffMap.estimate_diff_lipschitz">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.DiffMap.estimate_diff_lipschitz">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.DiffMap.estimate_diff_lipschitz">[docs]</a>
 <span class="linenos"> 814</span>    <span class="k">def</span> <span class="nf">estimate_diff_lipschitz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">:</span>
 <span class="linenos"> 815</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 816</span><span class="sd">        Compute a Lipschitz constant of :py:meth:`~pyxu.abc.DiffMap.jacobian`.</span>
@@ -1375,7 +1375,7 @@ document.write(`
 <span class="linenos"> 844</span>
 <span class="linenos"> 845</span>
 <div class="viewcode-block" id="ProxFunc">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.ProxFunc">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.ProxFunc">[docs]</a>
 <span class="linenos"> 846</span><span class="k">class</span> <span class="nc">ProxFunc</span><span class="p">(</span><span class="n">Func</span><span class="p">):</span>
 <span class="linenos"> 847</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 848</span><span class="sd">    Base class for real-valued proximable functionals :math:`f: \mathbb{R}^{M} \to \mathbb{R} \cup \{+\infty\}`.</span>
@@ -1400,7 +1400,7 @@ document.write(`
 <span class="linenos"> 867</span>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">)</span>
 <span class="linenos"> 868</span>
 <div class="viewcode-block" id="ProxFunc.prox">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.ProxFunc.prox">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.ProxFunc.prox">[docs]</a>
 <span class="linenos"> 869</span>    <span class="k">def</span> <span class="nf">prox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">tau</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos"> 870</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 871</span><span class="sd">        Evaluate proximity operator of :math:`\tau f` at specified point(s).</span>
@@ -1434,7 +1434,7 @@ document.write(`
 
 <span class="linenos"> 899</span>
 <div class="viewcode-block" id="ProxFunc.fenchel_prox">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.ProxFunc.fenchel_prox">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.ProxFunc.fenchel_prox">[docs]</a>
 <span class="linenos"> 900</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;arr&quot;</span><span class="p">,</span> <span class="s2">&quot;sigma&quot;</span><span class="p">))</span>
 <span class="linenos"> 901</span>    <span class="k">def</span> <span class="nf">fenchel_prox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">sigma</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos"> 902</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
@@ -1479,7 +1479,7 @@ document.write(`
 
 <span class="linenos"> 941</span>
 <div class="viewcode-block" id="ProxFunc.moreau_envelope">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.ProxFunc.moreau_envelope">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.ProxFunc.moreau_envelope">[docs]</a>
 <span class="linenos"> 942</span>    <span class="k">def</span> <span class="nf">moreau_envelope</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mu</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
 <span class="linenos"> 943</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 944</span><span class="sd">        Approximate proximable functional :math:`f` by its *Moreau envelope* :math:`f^{\mu}`.</span>
@@ -1609,7 +1609,7 @@ document.write(`
 <span class="linenos">1066</span>
 <span class="linenos">1067</span>
 <div class="viewcode-block" id="DiffFunc">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.DiffFunc">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.DiffFunc">[docs]</a>
 <span class="linenos">1068</span><span class="k">class</span> <span class="nc">DiffFunc</span><span class="p">(</span><span class="n">DiffMap</span><span class="p">,</span> <span class="n">Func</span><span class="p">):</span>
 <span class="linenos">1069</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">1070</span><span class="sd">    Base class for real-valued differentiable functionals :math:`f: \mathbb{R}^{M} \to \mathbb{R}`.</span>
@@ -1638,7 +1638,7 @@ document.write(`
 <span class="linenos">1093</span>        <span class="k">return</span> <span class="n">LinFunc</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
 <span class="linenos">1094</span>
 <div class="viewcode-block" id="DiffFunc.grad">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.DiffFunc.grad">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.DiffFunc.grad">[docs]</a>
 <span class="linenos">1095</span>    <span class="k">def</span> <span class="nf">grad</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">1096</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">1097</span><span class="sd">        Evaluate operator gradient at specified point(s).</span>
@@ -1674,7 +1674,7 @@ document.write(`
 <span class="linenos">1125</span>
 <span class="linenos">1126</span>
 <div class="viewcode-block" id="ProxDiffFunc">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.ProxDiffFunc">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.ProxDiffFunc">[docs]</a>
 <span class="linenos">1127</span><span class="k">class</span> <span class="nc">ProxDiffFunc</span><span class="p">(</span><span class="n">ProxFunc</span><span class="p">,</span> <span class="n">DiffFunc</span><span class="p">):</span>
 <span class="linenos">1128</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">1129</span><span class="sd">    Base class for real-valued differentiable *and* proximable functionals :math:`f:\mathbb{R}^{M} \to \mathbb{R}`.</span>
@@ -1701,7 +1701,7 @@ document.write(`
 <span class="linenos">1149</span>
 <span class="linenos">1150</span>
 <div class="viewcode-block" id="QuadraticFunc">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.QuadraticFunc">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.QuadraticFunc">[docs]</a>
 <span class="linenos">1151</span><span class="k">class</span> <span class="nc">QuadraticFunc</span><span class="p">(</span><span class="n">ProxDiffFunc</span><span class="p">):</span>
 <span class="linenos">1152</span>    <span class="c1"># This is a special abstract base class with more __init__ parameters than `shape`.</span>
 <span class="linenos">1153</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
@@ -1755,7 +1755,7 @@ document.write(`
 <span class="linenos">1201</span>        <span class="k">return</span> <span class="nb">frozenset</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
 <span class="linenos">1202</span>
 <div class="viewcode-block" id="QuadraticFunc.__init__">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.QuadraticFunc.__init__">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.QuadraticFunc.__init__">[docs]</a>
 <span class="linenos">1203</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
 <span class="linenos">1204</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">1205</span>        <span class="n">shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpShape</span><span class="p">,</span>
@@ -1839,7 +1839,7 @@ document.write(`
 <span class="linenos">1282</span>        <span class="k">return</span> <span class="n">dL</span>
 <span class="linenos">1283</span>
 <div class="viewcode-block" id="QuadraticFunc._quad_spec">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.QuadraticFunc._quad_spec">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.QuadraticFunc._quad_spec">[docs]</a>
 <span class="linenos">1284</span>    <span class="k">def</span> <span class="nf">_quad_spec</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="linenos">1285</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">1286</span><span class="sd">        Canonical quadratic parameterization.</span>
@@ -1852,7 +1852,7 @@ document.write(`
 <span class="linenos">1291</span>
 <span class="linenos">1292</span>
 <div class="viewcode-block" id="LinOp">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.LinOp">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.LinOp">[docs]</a>
 <span class="linenos">1293</span><span class="k">class</span> <span class="nc">LinOp</span><span class="p">(</span><span class="n">DiffMap</span><span class="p">):</span>
 <span class="linenos">1294</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">1295</span><span class="sd">    Base class for real-valued linear operators :math:`\mathbf{A}: \mathbb{R}^{M} \to \mathbb{R}^{N}`.</span>
@@ -1889,7 +1889,7 @@ document.write(`
 <span class="linenos">1326</span>        <span class="bp">self</span><span class="o">.</span><span class="n">diff_lipschitz</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="linenos">1327</span>
 <div class="viewcode-block" id="LinOp.adjoint">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.LinOp.adjoint">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.LinOp.adjoint">[docs]</a>
 <span class="linenos">1328</span>    <span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">1329</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">1330</span><span class="sd">        Evaluate operator adjoint at specified point(s).</span>
@@ -1933,7 +1933,7 @@ document.write(`
 <span class="linenos">1367</span>        <span class="k">return</span> <span class="n">arithmetic</span><span class="o">.</span><span class="n">TransposeRule</span><span class="p">(</span><span class="n">op</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">op</span><span class="p">()</span>
 <span class="linenos">1368</span>
 <div class="viewcode-block" id="LinOp.to_sciop">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.LinOp.to_sciop">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.LinOp.to_sciop">[docs]</a>
 <span class="linenos">1369</span>    <span class="k">def</span> <span class="nf">to_sciop</span><span class="p">(</span>
 <span class="linenos">1370</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">1371</span>        <span class="n">dtype</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">DType</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1983,7 +1983,7 @@ document.write(`
 
 <span class="linenos">1415</span>
 <div class="viewcode-block" id="LinOp.estimate_lipschitz">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.LinOp.estimate_lipschitz">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.LinOp.estimate_lipschitz">[docs]</a>
 <span class="linenos">1416</span>    <span class="k">def</span> <span class="nf">estimate_lipschitz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">:</span>
 <span class="linenos">1417</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">1418</span><span class="sd">        Compute a Lipschitz constant of the operator.</span>
@@ -2055,7 +2055,7 @@ document.write(`
 
 <span class="linenos">1484</span>
 <div class="viewcode-block" id="LinOp.svdvals">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.LinOp.svdvals">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.LinOp.svdvals">[docs]</a>
 <span class="linenos">1485</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">()</span>
 <span class="linenos">1486</span>    <span class="k">def</span> <span class="nf">svdvals</span><span class="p">(</span>
 <span class="linenos">1487</span>        <span class="bp">self</span><span class="p">,</span>
@@ -2130,7 +2130,7 @@ document.write(`
 
 <span class="linenos">1556</span>
 <div class="viewcode-block" id="LinOp.asarray">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.LinOp.asarray">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.LinOp.asarray">[docs]</a>
 <span class="linenos">1557</span>    <span class="k">def</span> <span class="nf">asarray</span><span class="p">(</span>
 <span class="linenos">1558</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">1559</span>        <span class="n">xp</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">ArrayModule</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -2168,7 +2168,7 @@ document.write(`
 
 <span class="linenos">1591</span>
 <div class="viewcode-block" id="LinOp.gram">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.LinOp.gram">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.LinOp.gram">[docs]</a>
 <span class="linenos">1592</span>    <span class="k">def</span> <span class="nf">gram</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
 <span class="linenos">1593</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">1594</span><span class="sd">        Gram operator :math:`\mathbf{A}^{\ast} \mathbf{A}: \mathbb{R}^{M} \to \mathbb{R}^{M}`.</span>
@@ -2194,7 +2194,7 @@ document.write(`
 
 <span class="linenos">1614</span>
 <div class="viewcode-block" id="LinOp.cogram">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.LinOp.cogram">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.LinOp.cogram">[docs]</a>
 <span class="linenos">1615</span>    <span class="k">def</span> <span class="nf">cogram</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
 <span class="linenos">1616</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">1617</span><span class="sd">        Co-Gram operator :math:`\mathbf{A}\mathbf{A}^{\ast}:\mathbb{R}^{N} \to \mathbb{R}^{N}`.</span>
@@ -2220,7 +2220,7 @@ document.write(`
 
 <span class="linenos">1637</span>
 <div class="viewcode-block" id="LinOp.pinv">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.LinOp.pinv">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.LinOp.pinv">[docs]</a>
 <span class="linenos">1638</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;arr&quot;</span><span class="p">,</span> <span class="s2">&quot;damp&quot;</span><span class="p">))</span>
 <span class="linenos">1639</span>    <span class="k">def</span> <span class="nf">pinv</span><span class="p">(</span>
 <span class="linenos">1640</span>        <span class="bp">self</span><span class="p">,</span>
@@ -2306,7 +2306,7 @@ document.write(`
 
 <span class="linenos">1720</span>
 <div class="viewcode-block" id="LinOp.dagger">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.LinOp.dagger">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.LinOp.dagger">[docs]</a>
 <span class="linenos">1721</span>    <span class="k">def</span> <span class="nf">dagger</span><span class="p">(</span>
 <span class="linenos">1722</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">1723</span>        <span class="n">damp</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span>
@@ -2368,7 +2368,7 @@ document.write(`
 
 <span class="linenos">1779</span>
 <div class="viewcode-block" id="LinOp.from_array">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.LinOp.from_array">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.LinOp.from_array">[docs]</a>
 <span class="linenos">1780</span>    <span class="nd">@classmethod</span>
 <span class="linenos">1781</span>    <span class="k">def</span> <span class="nf">from_array</span><span class="p">(</span>
 <span class="linenos">1782</span>        <span class="bp">cls</span><span class="p">,</span>
@@ -2398,7 +2398,7 @@ document.write(`
 <span class="linenos">1804</span>
 <span class="linenos">1805</span>
 <div class="viewcode-block" id="SquareOp">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.SquareOp">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.SquareOp">[docs]</a>
 <span class="linenos">1806</span><span class="k">class</span> <span class="nc">SquareOp</span><span class="p">(</span><span class="n">LinOp</span><span class="p">):</span>
 <span class="linenos">1807</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">1808</span><span class="sd">    Base class for *square* linear operators, i.e. :math:`\mathbf{A}: \mathbb{R}^{M} \to \mathbb{R}^{M}`</span>
@@ -2416,7 +2416,7 @@ document.write(`
 <span class="linenos">1820</span>        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">codim</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;shape: expected (M, M), got </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">.&quot;</span>
 <span class="linenos">1821</span>
 <div class="viewcode-block" id="SquareOp.trace">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.SquareOp.trace">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.SquareOp.trace">[docs]</a>
 <span class="linenos">1822</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">()</span>
 <span class="linenos">1823</span>    <span class="k">def</span> <span class="nf">trace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">:</span>
 <span class="linenos">1824</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2464,7 +2464,7 @@ document.write(`
 <span class="linenos">1864</span>
 <span class="linenos">1865</span>
 <div class="viewcode-block" id="NormalOp">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.NormalOp">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.NormalOp">[docs]</a>
 <span class="linenos">1866</span><span class="k">class</span> <span class="nc">NormalOp</span><span class="p">(</span><span class="n">SquareOp</span><span class="p">):</span>
 <span class="linenos">1867</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">1868</span><span class="sd">    Base class for *normal* operators.</span>
@@ -2486,7 +2486,7 @@ document.write(`
 <span class="linenos">1883</span>
 <span class="linenos">1884</span>
 <div class="viewcode-block" id="SelfAdjointOp">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.SelfAdjointOp">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.SelfAdjointOp">[docs]</a>
 <span class="linenos">1885</span><span class="k">class</span> <span class="nc">SelfAdjointOp</span><span class="p">(</span><span class="n">NormalOp</span><span class="p">):</span>
 <span class="linenos">1886</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">1887</span><span class="sd">    Base class for *self-adjoint* operators.</span>
@@ -2506,7 +2506,7 @@ document.write(`
 <span class="linenos">1900</span>
 <span class="linenos">1901</span>
 <div class="viewcode-block" id="UnitOp">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.UnitOp">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.UnitOp">[docs]</a>
 <span class="linenos">1902</span><span class="k">class</span> <span class="nc">UnitOp</span><span class="p">(</span><span class="n">NormalOp</span><span class="p">):</span>
 <span class="linenos">1903</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">1904</span><span class="sd">    Base class for *unitary* operators.</span>
@@ -2555,7 +2555,7 @@ document.write(`
 <span class="linenos">1946</span>
 <span class="linenos">1947</span>
 <div class="viewcode-block" id="ProjOp">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.ProjOp">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.ProjOp">[docs]</a>
 <span class="linenos">1948</span><span class="k">class</span> <span class="nc">ProjOp</span><span class="p">(</span><span class="n">SquareOp</span><span class="p">):</span>
 <span class="linenos">1949</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">1950</span><span class="sd">    Base class for *projection* operators.</span>
@@ -2572,7 +2572,7 @@ document.write(`
 <span class="linenos">1960</span>
 <span class="linenos">1961</span>
 <div class="viewcode-block" id="OrthProjOp">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.OrthProjOp">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.OrthProjOp">[docs]</a>
 <span class="linenos">1962</span><span class="k">class</span> <span class="nc">OrthProjOp</span><span class="p">(</span><span class="n">ProjOp</span><span class="p">,</span> <span class="n">SelfAdjointOp</span><span class="p">):</span>
 <span class="linenos">1963</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">1964</span><span class="sd">    Base class for *orthogonal projection* operators.</span>
@@ -2616,7 +2616,7 @@ document.write(`
 <span class="linenos">2001</span>
 <span class="linenos">2002</span>
 <div class="viewcode-block" id="PosDefOp">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.PosDefOp">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.PosDefOp">[docs]</a>
 <span class="linenos">2003</span><span class="k">class</span> <span class="nc">PosDefOp</span><span class="p">(</span><span class="n">SelfAdjointOp</span><span class="p">):</span>
 <span class="linenos">2004</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">2005</span><span class="sd">    Base class for *positive-definite* operators.</span>
@@ -2631,7 +2631,7 @@ document.write(`
 <span class="linenos">2013</span>
 <span class="linenos">2014</span>
 <div class="viewcode-block" id="LinFunc">
-<a class="viewcode-back" href="../../../api/abc/operator.html#pyxu.abc.LinFunc">[docs]</a>
+<a class="viewcode-back" href="../../../api/abc.html#pyxu.abc.LinFunc">[docs]</a>
 <span class="linenos">2015</span><span class="k">class</span> <span class="nc">LinFunc</span><span class="p">(</span><span class="n">ProxDiffFunc</span><span class="p">,</span> <span class="n">LinOp</span><span class="p">):</span>
 <span class="linenos">2016</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">2017</span><span class="sd">    Base class for real-valued linear functionals :math:`f: \mathbb{R}^{M} \to \mathbb{R}`.</span>
@@ -2798,7 +2798,7 @@ document.write(`
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt, Pyxu Developers.
       <br/>
     
   </p>
@@ -2806,7 +2806,7 @@ document.write(`
       
         <div class="footer-item">
   <p class="sphinx-version">
-     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>

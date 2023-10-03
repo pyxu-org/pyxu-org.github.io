@@ -18,8 +18,8 @@
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
-<link href="../_static/pygments.css?v=b76e3c8a" rel="stylesheet" type="text/css"/>
-<link href="../_static/plot_directive.css?v=7f9a90b1" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../_static/plot_directive.css" rel="stylesheet" type="text/css"/>
 <link href="../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
 <link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
 <link href="../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
@@ -28,12 +28,12 @@
 <link href="../_static/sg_gallery-dataframe.css?v=2082cf3c" rel="stylesheet" type="text/css"/>
 <link href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" rel="stylesheet" type="text/css"/>
 <link href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
-<link href="../_static/nbsphinx-code-cells.css?v=2aa19091" rel="stylesheet" type="text/css"/>
+<link href="../_static/nbsphinx-code-cells.css" rel="stylesheet" type="text/css"/>
 <link href="../_static/css/custom.css?v=14df3d68" rel="stylesheet" type="text/css"/>
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../_static/documentation_options.js?v=a4a8746c"></script>
+<script src="../_static/documentation_options.js?v=9f51c310"></script>
 <script src="../_static/doctools.js?v=888ff710"></script>
 <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -340,7 +340,7 @@ document.write(`
 </section>
 <section id="Naive-Application-of-Filtered-Back-Projection">
 <h2>Naive Application of Filtered-Back Projection<a class="headerlink" href="#Naive-Application-of-Filtered-Back-Projection" title="Link to this heading">#</a></h2>
-<p>In this section, we explore what happens when we naively apply the <code class="docutils literal notranslate"><span class="pre">iradon()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">scikit-image</span></code> library, which implements the <em>Filtered Back Projection (FBP)</em> algorithm, without accounting for the non-idealities inherent to our tomographic setup. Despite the algorithm’s effectiveness in idealized scenarios, we observe that our reconstructed image is riddled with severe artifacts.</p>
+<p>In this section, we explore what happens when we naively apply <code class="docutils literal notranslate"><span class="pre">iradon()</span></code><a class="reference external" href="https://scikit-image.org/docs/stable/api/skimage.transform.html#skimage.transform.iradon">🔗</a> from <code class="docutils literal notranslate"><span class="pre">scikit-image</span></code>, which implements the <em>Filtered Back Projection (FBP)</em> algorithm, without accounting for the non-idealities inherent to our tomographic setup. Despite the algorithm’s effectiveness in idealized scenarios, we observe that our reconstructed image is riddled with severe artifacts.</p>
 <p>We attempt to mitigate these artifacts by filling in the gaps in the sinogram through matched filtering. However, as can be seen below, this approach proves insufficient for handling the complex distortions caused by the non-ideal conditions in our setup. This section serves as a poignant illustration of the limitations of using off-the-shelf Radon transform methods in scenarios that deviate from their underlying assumptions.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -383,7 +383,8 @@ document.write(`
 </section>
 <section id="Pyxu's-Modularity-to-the-Rescue">
 <h2>Pyxu’s Modularity to the Rescue<a class="headerlink" href="#Pyxu's-Modularity-to-the-Rescue" title="Link to this heading">#</a></h2>
-<p>We now turn our attention to how Pyxu addresses the limitations encountered when using <code class="docutils literal notranslate"><span class="pre">iradon()</span></code> for reconstruction in non-ideal conditions. Unlike monolithic approaches, Pyxu’s microservice architecture thrives on modularity, allowing us to decompose the data model into a sequence of simple linear operators: the Radon transform (<span class="math notranslate nohighlight">\(R\)</span>), followed by filtering (<span class="math notranslate nohighlight">\(F\)</span>), masking (<span class="math notranslate nohighlight">\(M\)</span>), and finally tapering (<span class="math notranslate nohighlight">\(T\)</span>).</p>
+<p>We now turn our attention to how Pyxu addresses the limitations encountered when using <code class="docutils literal notranslate"><span class="pre">iradon()</span></code><a class="reference external" href="https://scikit-image.org/docs/stable/api/skimage.transform.html#skimage.transform.iradon">🔗</a> for reconstruction in non-ideal conditions. Unlike monolithic approaches, Pyxu’s microservice architecture thrives on modularity, allowing us to decompose the data model into a sequence of simple linear operators: the Radon transform (<span class="math notranslate nohighlight">\(R\)</span>), followed by filtering (<span class="math notranslate nohighlight">\(F\)</span>), masking
+(<span class="math notranslate nohighlight">\(M\)</span>), and finally tapering (<span class="math notranslate nohighlight">\(T\)</span>).</p>
 <div class="math notranslate nohighlight">
 \[\Phi= T \circ M \circ F \circ R\]</div>
 <p>Here is a code snippet detailing the construction of such an operator with Pyxu:</p>
@@ -427,8 +428,9 @@ document.write(`
 </div>
 <p>Note that the <code class="docutils literal notranslate"><span class="pre">apply</span></code> and <code class="docutils literal notranslate"><span class="pre">adjoint</span></code> methods of the composite operator <span class="math notranslate nohighlight">\(\Phi\)</span> are automatically inferred by Pyxu, leveraging standard composition rules.</p>
 <p>In Pyxu, one of the powerful features is the ability to define matrix-free linear operators, a crucial advantage for large-scale imaging problems. In layman’s terms, you define an operator by just coding its <code class="docutils literal notranslate"><span class="pre">apply</span></code> and <code class="docutils literal notranslate"><span class="pre">adjoint</span></code> methods. This bypasses the need for storing the operator as a cumbersome matrix, which not only saves memory but also boosts computational speed when the matrix is structured.</p>
-<p>In the example above, we have for example used the <code class="docutils literal notranslate"><span class="pre">radon()</span></code> and <code class="docutils literal notranslate"><span class="pre">iradon()</span></code> functions from <code class="docutils literal notranslate"><span class="pre">scikit-image</span></code> to define the <code class="docutils literal notranslate"><span class="pre">apply</span></code> and <code class="docutils literal notranslate"><span class="pre">adjoint</span></code> methods of our Radon operator. This exemplifies Pyxu’s core philosophy: you don’t have to reinvent the wheel; leverage useful components from other libraries when available. Pyxu is designed to stitch these disparate elements together into a seamless, modular workflow.</p>
-<p>Internally, Pyxu maintains a detailed record of the composition chains and arithmetic operations that define each operator. This comprehensive tracking is made accessible through the operator’s <code class="docutils literal notranslate"><span class="pre">expr()</span></code> method, which can reveal the intricate web of calculations and transformations that the operator encompasses.</p>
+<p>In the example above, we have for example used the <code class="docutils literal notranslate"><span class="pre">radon()</span></code><a class="reference external" href="https://scikit-image.org/docs/stable/api/skimage.transform.html#skimage.transform.radon">🔗</a> and <code class="docutils literal notranslate"><span class="pre">iradon()</span></code><a class="reference external" href="https://scikit-image.org/docs/stable/api/skimage.transform.html#skimage.transform.iradon">🔗</a> functions from <code class="docutils literal notranslate"><span class="pre">scikit-image</span></code> to define the <code class="docutils literal notranslate"><span class="pre">apply</span></code> and <code class="docutils literal notranslate"><span class="pre">adjoint</span></code> methods of our Radon operator. This exemplifies Pyxu’s core philosophy: you don’t have to reinvent the wheel; leverage useful components from other
+libraries when available. Pyxu is designed to stitch these disparate elements together into a seamless, modular workflow.</p>
+<p>Internally, Pyxu maintains a detailed record of the composition chains and arithmetic operations that define each operator. This comprehensive tracking is made accessible through the operator’s <code class="docutils literal notranslate"><span class="pre">expr()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Operator.expr">🔗</a> method, which can reveal the intricate web of calculations and transformations that the operator encompasses.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -497,7 +499,7 @@ document.write(`
 <h3>Pseudoinverse Solution<a class="headerlink" href="#Pseudoinverse-Solution" title="Link to this heading">#</a></h3>
 <p>Now that we’ve accurately modeled our acquisition system using the composite operator <span class="math notranslate nohighlight">\(\Phi\)</span>, we can proceed to the reconstruction phase. Traditional methods like filtered backprojection are no longer applicable here due to the complexities introduced in our custom setup. Consequently, we must resort to generic solvers such as the conjugate gradient method to solve the corresponding (dampened) normal equations.</p>
 <center><p><img alt="Forward model" class="no-scaled-link" src="../_images/g15273.png" style="width: 70%;"/></p>
-</center><p>In Pyxu, this task is greatly simplified by the <code class="docutils literal notranslate"><span class="pre">pinv()</span></code> (pseudoinverse) method provided by <code class="docutils literal notranslate"><span class="pre">LinOp</span></code> instances. The <code class="docutils literal notranslate"><span class="pre">pinv()</span></code> method allows us to implement simple reconstruction techniques without getting lost in the details.</p>
+</center><p>In Pyxu, this task is greatly simplified by the <code class="docutils literal notranslate"><span class="pre">pinv()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.LinOp.pinv">🔗</a> (pseudoinverse) method provided by <code class="docutils literal notranslate"><span class="pre">LinOp</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.LinOp">🔗</a> instances. The <code class="docutils literal notranslate"><span class="pre">pinv()</span></code> method allows us to implement simple reconstruction techniques without getting lost in the details.</p>
 <p>The following code snippet illustrates its application in our tomographic setting. For the sake of this demonstration, we employ a custom stopping criterion (relative error smaller than <span class="math notranslate nohighlight">\(10^{-3}\)</span> and 500 iterations max) and incorporate a dampening factor of 4 to improve the algorithm’s resilience to noise and numerical instability.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
@@ -607,9 +609,9 @@ setup, the MAP estimate is defined as:</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Gradient()</span></code>: Computes the gradient of an image. The argument <code class="docutils literal notranslate"><span class="pre">arg_shape=phantom.shape</span></code> specifies the shape of the image, i.e., <code class="docutils literal notranslate"><span class="pre">phantom.shape</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Gradient()</span></code><a class="reference external" href="../api/operator/linop.html#pyxu.operator.Gradient">🔗</a>: Computes the gradient of an image. The argument <code class="docutils literal notranslate"><span class="pre">arg_shape=phantom.shape</span></code> specifies the shape of the image, i.e., <code class="docutils literal notranslate"><span class="pre">phantom.shape</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">lambda_</span></code>: Scales the total variation term. It is calculated based on the noise level <code class="docutils literal notranslate"><span class="pre">sigma</span></code> in the observations.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">moreau_envelope(0.01)</span></code>: Applies the Moreau envelope to smooth the TV term, facilitating the downstream MAP estimation process.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">moreau_envelope(0.01)</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.ProxFunc.moreau_envelope">🔗</a>: Applies the Moreau envelope to smooth the TV term, facilitating the downstream MAP estimation process.</p></li>
 </ul>
 <p><strong>Defining the Positivity and L1 Norm Constraints</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Positivity + L1 norm</span>
@@ -617,7 +619,7 @@ setup, the MAP estimate is defined as:</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">PositiveL1Norm()</span></code>: This operator combines a sparsity-promoting <span class="math notranslate nohighlight">\(L_1\)</span> norm and a positivity constraint.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PositiveL1Norm()</span></code><a class="reference external" href="../api/operator/func.html#pyxu.operator.PositiveL1Norm">🔗</a>: This operator combines a sparsity-promoting <span class="math notranslate nohighlight">\(L_1\)</span> norm and a positivity constraint.</p></li>
 </ul>
 <p><strong>Defining the Data Likelihood (Loss)</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Loss</span>
@@ -625,8 +627,8 @@ setup, the MAP estimate is defined as:</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">SquaredL2Norm()</span></code>: Represents the squared L2 norm of the residual between the observed and modeled data, scaled by the noise level <code class="docutils literal notranslate"><span class="pre">sigma</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.asloss(sino.ravel())</span></code>: Sets the observed sinogram as the data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SquaredL2Norm()</span></code><a class="reference external" href="../api/operator/func.html#pyxu.operator.SquaredL2Norm">🔗</a>: Represents the squared L2 norm of the residual between the observed and modeled data, scaled by the noise level <code class="docutils literal notranslate"><span class="pre">sigma</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.asloss(sino.ravel())</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Func.asloss">🔗</a>: Sets the observed sinogram as the data.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">Phi</span></code>: Compose the <span class="math notranslate nohighlight">\(L_2\)</span> norm with <span class="math notranslate nohighlight">\(\Phi\)</span>, the operator modeling the acquisition process.</p></li>
 </ul>
 <p><strong>Defining the Smooth Part of the Posterior</strong></p>
@@ -637,7 +639,7 @@ setup, the MAP estimate is defined as:</p>
 </div>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">smooth_posterior</span></code>: The smooth part of the posterior that combines both the likelihood (loss) and the smoothed <code class="docutils literal notranslate"><span class="pre">tv_prior</span></code>. Will be useful later on.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">estimate_diff_lipschitz()</span></code> allows to compute the Lipschitz constant of the gradient of the differentiable part of the posterior. This value will be used later on to optimally set the step size of the gradient-based optimizer. This step can be time consuming for large scale problems.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">estimate_diff_lipschitz()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.DiffMap.estimate_diff_lipschitz">🔗</a> allows to compute the Lipschitz constant of the gradient of the differentiable part of the posterior. This value will be used later on to optimally set the step size of the gradient-based optimizer. This step can be time consuming for large scale problems.</p></li>
 </ul>
 <p>We are now ready to solve the MAP estimation problem. We do that via proximal gradient descent (PGD), a generic solver for problems of the form</p>
 <div class="math notranslate nohighlight">
@@ -743,7 +745,7 @@ the data, which might not be easily expressed in mathematical terms.</p>
 <div><p><strong>NOTE:</strong> Tweedie’s formula tells us that when <span class="math notranslate nohighlight">\(\text{Denoiser}_{\sigma}\)</span> is an MMSE Gaussian denoiser, we should choose <span class="math notranslate nohighlight">\(\lambda = 1/\sigma\)</span> (where <span class="math notranslate nohighlight">\(\sigma\)</span> is the noise level). The term <span class="math notranslate nohighlight">\(\frac{1}{\sigma}(f^k- \text{Denoiser}_{\sigma}(f^k))\)</span> can then be understood as the approximate score (gradient) of the distribution of natural images convolved with a Gaussian with standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span>.</p>
 </div></blockquote>
 <p>By understanding and applying these principles, one can utilize PnP schemes to achieve high-quality image reconstructions that are both data-consistent and regularized, all while benefiting from the computational and modeling advantages that come with implicit priors.</p>
-<p>In Pyxu, implicit PnP priors can be implemented in both forms via the <code class="docutils literal notranslate"><span class="pre">ProxDiffFunc()</span></code> base class. Here is a simple example with a median filter denoiser.</p>
+<p>In Pyxu, implicit PnP priors can be implemented in both forms via the <code class="docutils literal notranslate"><span class="pre">ProxDiffFunc()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.ProxDiffFunc">🔗</a> base class. Here is a simple example with a median filter denoiser.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
@@ -1070,13 +1072,13 @@ INFO:/tmp/pyxu_h7p7jo96:[2023-09-05 08:44:15.651198] Stopping Criterion satisfie
 <div class="footer-item">
 <p class="copyright">
     
-      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt, Pyxu Developers.
       <br/>
 </p>
 </div>
 <div class="footer-item">
 <p class="sphinx-version">
-     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
 </p>
 </div>

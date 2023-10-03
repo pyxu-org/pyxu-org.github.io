@@ -18,8 +18,8 @@
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
-<link href="../_static/pygments.css?v=b76e3c8a" rel="stylesheet" type="text/css"/>
-<link href="../_static/plot_directive.css?v=7f9a90b1" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../_static/plot_directive.css" rel="stylesheet" type="text/css"/>
 <link href="../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
 <link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
 <link href="../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
@@ -32,7 +32,7 @@
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../_static/documentation_options.js?v=a4a8746c"></script>
+<script src="../_static/documentation_options.js?v=9f51c310"></script>
 <script src="../_static/doctools.js?v=888ff710"></script>
 <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -268,53 +268,58 @@ document.write(`
 <h1>Loss &amp; Regularization Functionals<a class="headerlink" href="#Loss-&amp;-Regularization-Functionals" title="Link to this heading">#</a></h1>
 <section id="What-is-a-Functional?">
 <h2>What is a Functional?<a class="headerlink" href="#What-is-a-Functional?" title="Link to this heading">#</a></h2>
-<p>A “functional” is a special type of function in mathematics and computational science. Unlike typical functions that map from one vector space to another, a functional takes in vectors and maps them to real numbers. Think of it as a way to assign a numerical “score” to any given input. This is particularly useful in optimization problems, where the goal is to find the input that minimizes (or maximizes) this score.</p>
+<p>A <em>functional</em> is a special type of operator in mathematics and computational science. Unlike typical operators which map from one vector space to another, a functional maps vectors to real numbers. Think of it as a way to assign a numerical “score” to any given input. This is particularly useful in optimization problems, where the goal is to find the input that minimizes (or maximizes) this score.</p>
 <p>In the realm of computational imaging, functionals often serve as objective criteria to optimize. These objectives usually consist of two or more parts: a loss term and a regularization term. In Bayesian contexts, the objective functional often signifies the negative log-posterior density, which needs to be either sampled or summarized (e.g. by its moments).</p>
 </section>
 <section id="Functionals-Hierarchy-in-Pyxu">
 <h2>Functionals Hierarchy in Pyxu<a class="headerlink" href="#Functionals-Hierarchy-in-Pyxu" title="Link to this heading">#</a></h2>
 <p>Pyxu provides a versatile and robust class hierarchy to define various types of functionals. This structure aims to offer maximal flexibility for both elementary and complex computational imaging tasks. Below is an exploration of these different classes, complete with (very simplified) example implementations.</p>
 <blockquote>
-<div><p><strong>Important Note</strong>: The base classes described below are designed as abstract base classes. This means they serve as templates or “blueprints” for creating specific functionals that suit your project needs. You’re not supposed to instantiate them directly. Instead, you have two main options:</p>
+<div><p><strong>Important Note</strong>: The classes described below are designed as abstract base classes. This means they serve as templates or “blueprints” for creating specific functionals that suit your project needs. You’re not supposed to instantiate them directly. Instead, you have two main options:</p>
 <ol class="arabic simple">
 <li><p><strong>Subclassing</strong>: Extend these classes to create customized functionals tailored to your problem.</p></li>
-<li><p><strong>Generic Constructor Routine</strong>: Utilize the <code class="docutils literal notranslate"><span class="pre">from_source</span></code><a class="reference external" href="../api/operator.interop.html#general">🔗</a> method to define new functionals from their core methods, like <code class="docutils literal notranslate"><span class="pre">apply()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Map.apply">🔗</a>, <code class="docutils literal notranslate"><span class="pre">grad()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.DiffFunc.grad">🔗</a>, or <code class="docutils literal notranslate"><span class="pre">prox()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.ProxFunc.prox">🔗</a>.</p></li>
+<li><p><strong>Generic Constructor Routine</strong>: Utilize the <code class="docutils literal notranslate"><span class="pre">from_source</span></code><a class="reference external" href="../api/operator.interop.html#pyxu.operator.interop.from_source">🔗</a> function to define new functionals from their core methods, like <code class="docutils literal notranslate"><span class="pre">apply()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Map.apply">🔗</a>, <code class="docutils literal notranslate"><span class="pre">grad()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.DiffFunc.grad">🔗</a>, or <code class="docutils literal notranslate"><span class="pre">prox()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.ProxFunc.prox">🔗</a>.</p></li>
 </ol>
-<p>Additionally, don’t forget to explore our comprehensive Reference API. It features pre-implemented versions of many commonly used functionals, serving as both a shortcut for common tasks and a useful learning resource.</p>
+<p>Additionally, don’t forget to explore our comprehensive <a class="reference external" href="../api/index.html">Reference API</a>. It features pre-implemented versions of many commonly used functionals, serving as both a shortcut for common tasks and a useful learning resource.</p>
 </div></blockquote>
 <section id="Func:-The-Foundation-Stone-🧱">
 <h3><code class="docutils literal notranslate"><span class="pre">Func</span></code>: The Foundation Stone 🧱<a class="headerlink" href="#Func:-The-Foundation-Stone-🧱" title="Link to this heading">#</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">Func</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Func">🔗</a> class is the base class in the functional hierarchy. Its core method is <code class="docutils literal notranslate"><span class="pre">apply()</span></code>, which computes the value of the functional at a given input.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Func</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Func">🔗</a> class is the base class in the functional hierarchy. Its core method is <code class="docutils literal notranslate"><span class="pre">apply()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Map.apply">🔗</a>, which computes the value of the functional at a given input.</p>
 <p>Here’s a simplified example, implementing the squared <span class="math notranslate nohighlight">\(L_2\)</span> norm:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.Func" title="pyxu.abc.operator.Func"><span class="n">Func</span></a>
 
 <span class="k">class</span> <span class="nc">SquaredL2</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.Func" title="pyxu.abc.operator.Func"><span class="n">Func</span></a><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-        <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.norm.html#numpy.linalg.norm" title="numpy.linalg.norm"><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span></a><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">arr</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This base functional can be adapted into a loss functional using the <code class="docutils literal notranslate"><span class="pre">asloss()</span></code> method:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transforms the functional into a loss</span>
-<span class="n">l2_loss</span> <span class="o">=</span> <span class="n">SquaredL2</span><span class="p">()</span><span class="o">.</span><span class="n">asloss</span><span class="p">(</span><span class="n">data_vector</span><span class="p">)</span>
+<p>This base functional can be adapted into a <em>loss functional</em> using the <code class="docutils literal notranslate"><span class="pre">asloss()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Func.asloss">🔗</a> method:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">l2_loss</span> <span class="o">=</span> <span class="n">SquaredL2</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">asloss</span><span class="p">(</span><span class="n">data_vector</span><span class="p">)</span>  <span class="c1"># computes ||&lt;arr&gt; - data_vector||^{2}</span>
 </pre></div>
 </div>
-<p>In this specific example, the <code class="docutils literal notranslate"><span class="pre">asloss()</span></code> method shifts the functional using a given data vector, transforming it into a loss that measures the squared Euclidean distance between the input and the data.</p>
+<p>In this specific example, <code class="docutils literal notranslate"><span class="pre">asloss()</span></code> shifts the functional using a given data vector, transforming it into a loss that measures the squared Euclidean distance between the input and the data.</p>
 <blockquote>
-<div><p><strong>Special Cases</strong>: The <code class="docutils literal notranslate"><span class="pre">asloss()</span></code> method doesn’t always produce a simple shift of the original functional. For instance, when applied to an entropy functional, it transforms it into the relative entropy.</p>
+<div><p><strong>Special Cases</strong>: <code class="docutils literal notranslate"><span class="pre">asloss()</span></code> doesn’t always produce a simple <em>shift</em> of the original functional. For instance, when applied to an entropy functional, it transforms into relative entropy.</p>
 </div></blockquote>
 </section>
 <section id="DiffFunc:-Differentiable-Functionals-🎯">
 <h3><code class="docutils literal notranslate"><span class="pre">DiffFunc</span></code>: Differentiable Functionals 🎯<a class="headerlink" href="#DiffFunc:-Differentiable-Functionals-🎯" title="Link to this heading">#</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">DiffFunc</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.DiffFunc">🔗</a> class extends <code class="docutils literal notranslate"><span class="pre">Func</span></code> for functionals that have a well-defined gradient. It introduces an additional method, <code class="docutils literal notranslate"><span class="pre">grad()</span></code>, for gradient computation.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">DiffFunc</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.DiffFunc">🔗</a> class extends <code class="docutils literal notranslate"><span class="pre">Func</span></code> for functionals that have a well-defined gradient. It introduces an additional method, <code class="docutils literal notranslate"><span class="pre">grad()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.DiffFunc.grad">🔗</a>, for gradient computation.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.operator.DiffFunc"><span class="n">DiffFunc</span></a>
 
 <span class="k">class</span> <span class="nc">SquaredL2</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.operator.DiffFunc"><span class="n">DiffFunc</span></a><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-        <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.norm.html#numpy.linalg.norm" title="numpy.linalg.norm"><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span></a><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
 
-    <span class="k">def</span> <span class="nf">grad</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
+    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">arr</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">grad</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">arr</span>
 </pre></div>
 </div>
 <blockquote>
@@ -323,15 +328,18 @@ document.write(`
 </section>
 <section id="ProxFunc:-Proximable-Functionals-🛡️">
 <h3><code class="docutils literal notranslate"><span class="pre">ProxFunc</span></code>: Proximable Functionals 🛡️<a class="headerlink" href="#ProxFunc:-Proximable-Functionals-🛡️" title="Link to this heading">#</a></h3>
-<p>For functionals with a simple proximal operator, you’ll find <code class="docutils literal notranslate"><span class="pre">ProxFunc</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.ProxFunc">🔗</a> extremely useful. It offers the <code class="docutils literal notranslate"><span class="pre">prox()</span></code> method, which evaluates the proximal operator of the functional. Here’s an example using the <span class="math notranslate nohighlight">\(L_1\)</span> norm:</p>
+<p>For functionals with a simple proximal operator, you’ll find <code class="docutils literal notranslate"><span class="pre">ProxFunc</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.ProxFunc">🔗</a> extremely useful. It offers the <code class="docutils literal notranslate"><span class="pre">prox()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.ProxFunc.prox">🔗</a> method, which evaluates the proximal operator of the functional. Here’s an example using the <span class="math notranslate nohighlight">\(L_1\)</span> norm:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><span class="n">ProxFunc</span></a>
 
 <span class="k">class</span> <span class="nc">L1Norm</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><span class="n">ProxFunc</span></a><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
 
-    <span class="k">def</span> <span class="nf">prox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">tau</span><span class="p">):</span>
-        <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.sign.html#numpy.sign" title="numpy.sign"><span class="n">np</span><span class="o">.</span><span class="n">sign</span></a><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.clip.html#numpy.clip" title="numpy.clip"><span class="n">np</span><span class="o">.</span><span class="n">clip</span></a><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">tau</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">prox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">tau</span><span class="p">):</span>
+        <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.sign.html#numpy.sign" title="numpy.sign"><span class="n">np</span><span class="o">.</span><span class="n">sign</span></a><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.clip.html#numpy.clip" title="numpy.clip"><span class="n">np</span><span class="o">.</span><span class="n">clip</span></a><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">-</span> <span class="n">tau</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
 <section id="Moreau-Envelope-for-Smoothing">
@@ -343,34 +351,37 @@ document.write(`
 </section>
 <section id="Demystifying-the-Proximal-Operator-🎭">
 <h4>Demystifying the Proximal Operator 🎭<a class="headerlink" href="#Demystifying-the-Proximal-Operator-🎭" title="Link to this heading">#</a></h4>
-<p>The proximal operator is a powerful tool, especially in the context of nonsmooth optimization. It allows you to iteratively refine a given point in a way that minimizes a functional. It’s like asking the algorithm to fine-tune a guess toward the actual optimal solution.</p>
-<p>For example, consider the indicator function of a convex set. The proximal operator in this context is simply a projection onto that set. Essentially, it pulls any “off-the-mark” points back into the permissible set, ensuring they comply with the constraints of your problem.</p>
+<p>The proximal operator is a powerful tool, especially in the context of nonsmooth optimization. It allows you to iteratively update a given estimate such that the functional is minimized. It’s like asking the algorithm to fine-tune a guess toward the actual optimal solution.</p>
+<p>For example, consider the indicator function of a convex set. The proximal operator in this context is simply a projection onto that set. Essentially, it pulls any “off-domain” points back into the permissible set, ensuring they comply with the constraints of your problem.</p>
 <p>Mathematically, the proximal operator of a function <span class="math notranslate nohighlight">\(f: \mathbb{R}^n \rightarrow \mathbb{R} \cup \{ +\infty \}\)</span> is defined as:</p>
 <div class="math notranslate nohighlight">
-\[\text{prox}_{\tau f}(x) = \arg \min_{u \in \mathbb{R}^n} \left( f(u) + \frac{1}{2\tau} \| u - x \|^{2} \right)\]</div>
-<p>Here, <span class="math notranslate nohighlight">\(\tau &gt; 0\)</span> is a parameter and <span class="math notranslate nohighlight">\(\| \cdot \|\)</span> is the Euclidean norm. The term <span class="math notranslate nohighlight">\(\frac{1}{2\tau} \| u - x \|^{2}\)</span> is a regularization term that pulls the solution <span class="math notranslate nohighlight">\(u\)</span> closer to <span class="math notranslate nohighlight">\(x\)</span>. The proximal operator <span class="math notranslate nohighlight">\(\text{prox}_{\tau f}(x)\)</span> returns the point <span class="math notranslate nohighlight">\(u\)</span> that minimizes this expression, essentially finding a compromise between minimizing <span class="math notranslate nohighlight">\(f(u)\)</span> and staying close to the original point <span class="math notranslate nohighlight">\(x\)</span>.</p>
+\[\text{prox}_{\tau f}(x) = \arg \min_{u \in \mathbb{R}^n} \left( f(u) + \frac{1}{2\tau} \| u - x \|^{2} \right).\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\tau &gt; 0\)</span> is a parameter and <span class="math notranslate nohighlight">\(\| \cdot \|\)</span> is the Euclidean norm. The term <span class="math notranslate nohighlight">\(\frac{1}{2\tau} \| u - x \|^{2}\)</span> is a <em>regularization</em> term that pulls the solution <span class="math notranslate nohighlight">\(u\)</span> closer to <span class="math notranslate nohighlight">\(x\)</span>. The proximal operator <span class="math notranslate nohighlight">\(\text{prox}_{\tau f}(x)\)</span> returns the point <span class="math notranslate nohighlight">\(u\)</span> that minimizes this expression, essentially finding a compromise between minimizing <span class="math notranslate nohighlight">\(f(u)\)</span> and staying close to the original point <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>This mathematical tool is invaluable for optimization problems, especially those involving nonsmooth or complex functionals. It provides a way to make “smart” steps toward the minimum, even when you can’t directly calculate the gradient for all points.</p>
 </section>
 </section>
 <section id="Specialized-Classes:-ProxDiffFunc,-LinFunc,-QuadraticFunc-🎨">
 <h3>Specialized Classes: <code class="docutils literal notranslate"><span class="pre">ProxDiffFunc</span></code>, <code class="docutils literal notranslate"><span class="pre">LinFunc</span></code>, <code class="docutils literal notranslate"><span class="pre">QuadraticFunc</span></code> 🎨<a class="headerlink" href="#Specialized-Classes:-ProxDiffFunc,-LinFunc,-QuadraticFunc-🎨" title="Link to this heading">#</a></h3>
-<p>These classes are for functionals that offer even more, like being both proximable and differentiable (<code class="docutils literal notranslate"><span class="pre">ProxDiffFunc</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.ProxDiffFunc">🔗</a>), or being linear (<code class="docutils literal notranslate"><span class="pre">LinFunc</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.LinFunc">🔗</a>) or quadratic (<code class="docutils literal notranslate"><span class="pre">QuadraticFunc</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.QuadraticFunc">🔗</a>). Quadratic functionals are especially important in primal-dual methods for faster convergence, so do use them when you can!</p>
+<p>These classes are for functionals with several properties, like being both proximable and differentiable (<code class="docutils literal notranslate"><span class="pre">ProxDiffFunc</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.ProxDiffFunc">🔗</a>), linear (<code class="docutils literal notranslate"><span class="pre">LinFunc</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.LinFunc">🔗</a>), or quadratic (<code class="docutils literal notranslate"><span class="pre">QuadraticFunc</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.QuadraticFunc">🔗</a>). Quadratic functionals are especially important in primal-dual methods for faster convergence, so do use them when you can!</p>
 <blockquote>
-<div><p>Note: when dealing with <code class="docutils literal notranslate"><span class="pre">ProxDiffFunc</span></code> instances, it can be hard to decide whether the gradient or proximal operator should be used for optimization purposes. The general rule-of-thumb is to use the gradient as much as possible, as the latter requires more regularity on the objective functional, which can be leveraged by solvers for fatser convergence.</p>
+<div><p>Note: when dealing with <code class="docutils literal notranslate"><span class="pre">ProxDiffFunc</span></code> instances, it can be hard to decide whether the gradient or proximal operator should be used for optimization purposes. The general rule-of-thumb is to use the gradient as much as possible, as the latter requires more regularity on the objective functional, which can be leveraged by solvers for faster convergence.</p>
 </div></blockquote>
 </section>
 <section id="Implicit-Functionals:-The-Undercover-Agents-🕵️‍♀️">
 <h3>Implicit Functionals: The Undercover Agents 🕵️‍♀️<a class="headerlink" href="#Implicit-Functionals:-The-Undercover-Agents-🕵️‍♀️" title="Link to this heading">#</a></h3>
-<p>In some cases, you may not know the functional itself but you might know its proximal operator or gradient (e.g. for plug-and-play or score-based priors). Pyxu lets you define such “implicit functionals” as follows:</p>
+<p>In some cases, you may not know the functional itself, but you might know its proximal operator or gradient (e.g. for plug-and-play or score-based priors). Pyxu lets you define such “implicit functionals” as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><span class="n">ProxFunc</span></a>
 <span class="kn">from</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/ndimage.html#module-scipy.ndimage" title="scipy.ndimage"><span class="nn">scipy.ndimage</span></a> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.median_filter.html#scipy.ndimage.median_filter" title="scipy.ndimage.median_filter"><span class="n">median_filter</span></a>
 
 <span class="k">class</span> <span class="nc">MedianFilterPrior</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><span class="n">ProxFunc</span></a><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-        <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/constants.html#NotImplemented" title="NotImplemented"><span class="bp">NotImplemented</span></a> <span class="c1"># apply method not provided</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
 
-    <span class="k">def</span> <span class="nf">prox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">tau</span><span class="p">):</span>
-        <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.median_filter.html#scipy.ndimage.median_filter" title="scipy.ndimage.median_filter"><span class="n">median_filter</span></a><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
+        <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/exceptions.html#NotImplementedError" title="NotImplementedError"><span class="ne">NotImplementedError</span></a>  <span class="c1"># apply method not provided</span>
+
+    <span class="k">def</span> <span class="nf">prox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">tau</span><span class="p">):</span>
+        <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.median_filter.html#scipy.ndimage.median_filter" title="scipy.ndimage.median_filter"><span class="n">median_filter</span></a><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -390,7 +401,7 @@ document.write(`
 <span class="n">loss</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">SquaredL2Norm</span></a><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">b</span><span class="o">.</span><span class="n">size</span><span class="p">)</span><span class="o">.</span><span class="n">asloss</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">A</span>
 </pre></div>
 </div>
-<p>What did we do here? We took the squared <span class="math notranslate nohighlight">\(L_2\)</span> norm, which measures the distance between two vectors, and used the <code class="docutils literal notranslate"><span class="pre">.asloss()</span></code> method to turn it into a loss functional specifically tailored to our blurred image <span class="math notranslate nohighlight">\(b\)</span>. The <code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">A</span></code> part then integrates the forward operator <span class="math notranslate nohighlight">\(A\)</span> into this loss, making sure we’re comparing apples to apples—or in this case, blurred images to blurred images.</p>
+<p>What did we do here? We took the squared <span class="math notranslate nohighlight">\(L_2\)</span> norm, which measures the distance between two vectors, and used the <code class="docutils literal notranslate"><span class="pre">.asloss()</span></code> method to turn it into a loss functional tailored to our blurred image <span class="math notranslate nohighlight">\(b\)</span>. The <code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">A</span></code> part then integrates the forward operator <span class="math notranslate nohighlight">\(A\)</span> into this loss, making sure we’re comparing apples to apples—or in this case, blurred images to blurred images.</p>
 </section>
 <section id="The-Benefit:-Automatic-Propagation-🚀">
 <h3>The Benefit: Automatic Propagation 🚀<a class="headerlink" href="#The-Benefit:-Automatic-Propagation-🚀" title="Link to this heading">#</a></h3>
@@ -491,13 +502,13 @@ document.write(`
 <div class="footer-item">
 <p class="copyright">
     
-      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt &amp; Pyxu Developers.
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt, Pyxu Developers.
       <br/>
 </p>
 </div>
 <div class="footer-item">
 <p class="sphinx-version">
-     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
 </p>
 </div>
