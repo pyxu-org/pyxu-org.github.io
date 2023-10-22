@@ -43,7 +43,7 @@
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../../_static/documentation_options.js?v=9f51c310"></script>
+    <script src="../../../../_static/documentation_options.js?v=0b294dfe"></script>
     <script src="../../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -199,7 +199,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v1.1.0 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -341,7 +341,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v1.1.0 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -554,7 +554,7 @@ document.write(`
 <span class="linenos">101</span>
 <span class="linenos">102</span>
 <div class="viewcode-block" id="OnlineMoment">
-<a class="viewcode-back" href="../../../../api/experimental.sampler.html#pyxu.experimental.sampler.OnlineMoment">[docs]</a>
+<a class="viewcode-back" href="../../../../api/experimental/sampler.html#pyxu.experimental.sampler.OnlineMoment">[docs]</a>
 <span class="linenos">103</span><span class="k">class</span> <span class="nc">OnlineMoment</span><span class="p">(</span><span class="n">_OnlineStat</span><span class="p">):</span>
 <span class="linenos">104</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">105</span><span class="sd">    Pointwise online moment.</span>
@@ -568,7 +568,7 @@ document.write(`
 <span class="linenos">113</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_order</span> <span class="o">=</span> <span class="n">order</span>
 <span class="linenos">114</span>
 <div class="viewcode-block" id="OnlineMoment.update">
-<a class="viewcode-back" href="../../../../api/experimental.sampler.html#pyxu.experimental.sampler.OnlineMoment.update">[docs]</a>
+<a class="viewcode-back" href="../../../../api/experimental/sampler.html#pyxu.experimental.sampler.OnlineMoment.update">[docs]</a>
 <span class="linenos">115</span>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">116</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_samples</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
 <span class="linenos">117</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_stat</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_order</span>
@@ -583,7 +583,7 @@ document.write(`
 <span class="linenos">124</span>
 <span class="linenos">125</span>
 <div class="viewcode-block" id="OnlineCenteredMoment">
-<a class="viewcode-back" href="../../../../api/experimental.sampler.html#pyxu.experimental.sampler.OnlineCenteredMoment">[docs]</a>
+<a class="viewcode-back" href="../../../../api/experimental/sampler.html#pyxu.experimental.sampler.OnlineCenteredMoment">[docs]</a>
 <span class="linenos">126</span><span class="k">class</span> <span class="nc">OnlineCenteredMoment</span><span class="p">(</span><span class="n">_OnlineStat</span><span class="p">):</span>
 <span class="linenos">127</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">128</span><span class="sd">    Pointwise online centered moment.</span>
@@ -612,7 +612,7 @@ document.write(`
 <span class="linenos">151</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_mean</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="linenos">152</span>
 <div class="viewcode-block" id="OnlineCenteredMoment.update">
-<a class="viewcode-back" href="../../../../api/experimental.sampler.html#pyxu.experimental.sampler.OnlineCenteredMoment.update">[docs]</a>
+<a class="viewcode-back" href="../../../../api/experimental/sampler.html#pyxu.experimental.sampler.OnlineCenteredMoment.update">[docs]</a>
 <span class="linenos">153</span>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">154</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_samples</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
 <span class="linenos">155</span>            <span class="n">xp</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">get_array_module</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -637,7 +637,7 @@ document.write(`
 <span class="linenos">172</span>
 <span class="linenos">173</span>
 <div class="viewcode-block" id="OnlineVariance">
-<a class="viewcode-back" href="../../../../api/experimental.sampler.html#pyxu.experimental.sampler.OnlineVariance">[docs]</a>
+<a class="viewcode-back" href="../../../../api/experimental/sampler.html#pyxu.experimental.sampler.OnlineVariance">[docs]</a>
 <span class="linenos">174</span><span class="k">def</span> <span class="nf">OnlineVariance</span><span class="p">():</span>
 <span class="linenos">175</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">176</span><span class="sd">    Pointwise online variance.</span>
@@ -651,7 +651,7 @@ document.write(`
 <span class="linenos">183</span>
 <span class="linenos">184</span>
 <div class="viewcode-block" id="OnlineStd">
-<a class="viewcode-back" href="../../../../api/experimental.sampler.html#pyxu.experimental.sampler.OnlineStd">[docs]</a>
+<a class="viewcode-back" href="../../../../api/experimental/sampler.html#pyxu.experimental.sampler.OnlineStd">[docs]</a>
 <span class="linenos">185</span><span class="k">def</span> <span class="nf">OnlineStd</span><span class="p">():</span>
 <span class="linenos">186</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">187</span><span class="sd">    Pointwise online standard deviation.</span>
@@ -665,7 +665,7 @@ document.write(`
 <span class="linenos">194</span>
 <span class="linenos">195</span>
 <div class="viewcode-block" id="OnlineSkewness">
-<a class="viewcode-back" href="../../../../api/experimental.sampler.html#pyxu.experimental.sampler.OnlineSkewness">[docs]</a>
+<a class="viewcode-back" href="../../../../api/experimental/sampler.html#pyxu.experimental.sampler.OnlineSkewness">[docs]</a>
 <span class="linenos">196</span><span class="k">def</span> <span class="nf">OnlineSkewness</span><span class="p">():</span>
 <span class="linenos">197</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">198</span><span class="sd">    Pointwise online skewness.</span>
@@ -683,7 +683,7 @@ document.write(`
 <span class="linenos">209</span>
 <span class="linenos">210</span>
 <div class="viewcode-block" id="OnlineKurtosis">
-<a class="viewcode-back" href="../../../../api/experimental.sampler.html#pyxu.experimental.sampler.OnlineKurtosis">[docs]</a>
+<a class="viewcode-back" href="../../../../api/experimental/sampler.html#pyxu.experimental.sampler.OnlineKurtosis">[docs]</a>
 <span class="linenos">211</span><span class="k">def</span> <span class="nf">OnlineKurtosis</span><span class="p">():</span>
 <span class="linenos">212</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">213</span><span class="sd">    Pointwise online kurtosis.</span>

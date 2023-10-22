@@ -44,7 +44,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../_static/documentation_options.js?v=9f51c310"></script>
+    <script src="../_static/documentation_options.js?v=0b294dfe"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -202,7 +202,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v1.1.0 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -344,7 +344,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v1.1.0 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -505,7 +505,7 @@ unsuitable for the diverse requirements of modern computational imaging.</p>
 <p>Pyxu offers a comprehensive suite of algorithms, including the latest primal-dual splitting methods for hybrid
 optimization.  The feature set is robust and mature, positioning it as a leader in the computational imaging arena.</p>
 <table class="table" id="id2">
-<caption><span class="caption-text">Feature Maturity Comparison</span><a class="headerlink" href="#id2" title="Link to this table">#</a></caption>
+<caption><span class="caption-text">Feature Maturity - Comparison</span><a class="headerlink" href="#id2" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head stub"><p>Package Name 📦</p></th>
 <th class="head"><p>Operator Types 🛠️</p></th>
@@ -517,60 +517,60 @@ optimization.  The feature set is robust and mature, positioning it as a leader 
 </thead>
 <tbody>
 <tr class="row-even"><th class="stub"><p>PyLops</p></th>
-<td><p>🔴 Linear ops</p></td>
+<td><p>🔴 Linear oeprators</p></td>
 <td><p>🟡 Partial</p></td>
-<td><p>🔴 Least-squares &amp; sparse rec.</p></td>
+<td><p>🔴 Least-squares &amp; sparse reconstructions</p></td>
 <td><p>🟡 Wave-processing, geophysics</p></td>
-<td><p>🔴 Linear ops. based on NumPy’s old matrix interface</p></td>
+<td><p>🔴 Linear operators based on NumPy’s old matrix interface</p></td>
 </tr>
 <tr class="row-odd"><th class="stub"><p>PyProximal</p></th>
-<td><p>🔴 Prox. funcs</p></td>
+<td><p>🔴 Proximable functionals</p></td>
 <td><p>🔴 None</p></td>
-<td><p>🔴 Non-smooth cvx opt.</p></td>
+<td><p>🔴 Non-smooth convex optimization</p></td>
 <td><p>🟢 None</p></td>
 <td><p>🔴 Under early development, unstable API</p></td>
 </tr>
 <tr class="row-even"><th class="stub"><p>Operator Discretization Library (ODL)</p></th>
-<td><p>🟡 Linear ops, diff./prox. funcs</p></td>
+<td><p>🟡 Linear operators, differentiable/proximable functionals</p></td>
 <td><p>🟢 Full</p></td>
-<td><p>🟡 Smooth &amp; non-smooth cvx opt.</p></td>
+<td><p>🟡 Smooth &amp; non-smooth convex optimization</p></td>
 <td><p>🟡 Tomography</p></td>
 <td><p>🔴 Domain-specific language for mathematicians</p></td>
 </tr>
 <tr class="row-odd"><th class="stub"><p>GlobalBioIm</p></th>
-<td><p>🟢 (Non)linear ops, diff./prox. funcs</p></td>
+<td><p>🟢 (Non)linear operators, differentiable/proximable functionals</p></td>
 <td><p>🟢 Full</p></td>
-<td><p>🟢 Smooth, non-smooth &amp; hybrid cvx opt.</p></td>
+<td><p>🟢 Smooth, non-smooth &amp; hybrid convex optimization</p></td>
 <td><p>🟢 None</p></td>
-<td><p>🔴 MATLAB-based, unlike most DL fmwks</p></td>
+<td><p>🔴 MATLAB-based, unlike most DL frameworks</p></td>
 </tr>
 <tr class="row-even"><th class="stub"><p>SigPy</p></th>
-<td><p>🟡 Linear ops, prox. funcs</p></td>
+<td><p>🟡 Linear operators, proximable functionals</p></td>
 <td><p>🟡 Partial</p></td>
-<td><p>🟡 Smooth &amp; non-smooth cvx opt.</p></td>
+<td><p>🟡 Smooth &amp; non-smooth convex optimization</p></td>
 <td><p>🔴 MRI</p></td>
-<td><p>🔴 Very limited suite of ops, funcs, algs</p></td>
+<td><p>🔴 Very limited suite of operators, functionals, and algorithms</p></td>
 </tr>
 <tr class="row-odd"><th class="stub"><p>SCICO</p></th>
-<td><p>🟢 (Non)linear ops, diff./prox. funcs</p></td>
+<td><p>🟢 (Non)linear operators, differentiable/proximable functionals</p></td>
 <td><p>🟢 Full</p></td>
-<td><p>🟢 Smooth, non-smooth &amp; hybrid (non)cvx opt.</p></td>
+<td><p>🟢 Smooth, non-smooth &amp; hybrid (non-)convex optimization</p></td>
 <td><p>🟢 None</p></td>
-<td><p>🟡 JAX-based (pure functions only, no mutation, etc)</p></td>
+<td><p>🟡 JAX-based (pure functions only, no mutation, etc.)</p></td>
 </tr>
 <tr class="row-even"><th class="stub"><p>DeepInv</p></th>
-<td><p>🟢 (Non)linear ops, diff./prox. funcs</p></td>
+<td><p>🟢 (Non)linear operators, differentiable/proximable functionals</p></td>
 <td><p>🟡 Partial</p></td>
-<td><p>🟢 Smooth, non-smooth &amp; hybrid (non)cvx opt.</p></td>
+<td><p>🟢 Smooth, non-smooth &amp; hybrid (non-)convex optimization</p></td>
 <td><p>🟡 Deep Learning</p></td>
 <td><p>🟡 PyTorch-based (lots of dependencies)</p></td>
 </tr>
 <tr class="row-odd"><th class="stub"><p>Pyxu</p></th>
-<td><p>🟢 (Non)linear ops, diff./prox. funcs</p></td>
+<td><p>🟢 (Non)linear operators, differentiable/proximable functionals</p></td>
 <td><p>🟢 Full</p></td>
-<td><p>🟢 Smooth, non-smooth, hybrid &amp; stochastic (non)cvx opt.</p></td>
+<td><p>🟢 Smooth, non-smooth &amp; hybrid (non-)convex optimization</p></td>
 <td><p>🟢 None</p></td>
-<td><p>🟢 Very rich suite of ops, funcs, algs &amp; HPC features</p></td>
+<td><p>🟢 Very rich suite of operators, functionals, algorithms &amp; HPC features</p></td>
 </tr>
 </tbody>
 </table>
@@ -586,7 +586,7 @@ contenders either lack comprehensive documentation or have steeper learning curv
 compilation and GPU computing via Numba and CuPy respectively. Most contenders either offer partial support or lack
 these features altogether.</p>
 <table class="table" id="id3">
-<caption><span class="caption-text">HPC Features Comparison</span><a class="headerlink" href="#id3" title="Link to this table">#</a></caption>
+<caption><span class="caption-text">HPC Features - Comparison</span><a class="headerlink" href="#id3" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head stub"><p>Package Name 📦</p></th>
 <th class="head"><p>Auto Diff/Prox ⚙️</p></th>
@@ -628,7 +628,7 @@ these features altogether.</p>
 </tr>
 <tr class="row-odd"><th class="stub"><p>SCICO</p></th>
 <td><p>🟢 Yes</p></td>
-<td><p>🟢 Yes (JAX) (GPU/TPU)</p></td>
+<td><p>🟢 Yes + TPU (JAX)</p></td>
 <td><p>🔴 No</p></td>
 <td><p>🟢 Yes (XLA via JAX)</p></td>
 </tr>
@@ -641,7 +641,7 @@ these features altogether.</p>
 <tr class="row-odd"><th class="stub"><p>Pyxu</p></th>
 <td><p>🟢 Yes</p></td>
 <td><p>🟢 Yes (CuPy)</p></td>
-<td><p>🟢 Yes(Dask)</p></td>
+<td><p>🟢 Yes (Dask)</p></td>
 <td><p>🟢 Yes (LLVM and CUDA via Numba)</p></td>
 </tr>
 </tbody>

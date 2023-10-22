@@ -44,7 +44,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../_static/documentation_options.js?v=9f51c310"></script>
+    <script src="../../_static/documentation_options.js?v=0b294dfe"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -204,7 +204,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v1.1.0 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -346,7 +346,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v1.1.0 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -425,7 +425,11 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../runtime.html">pyxu.runtime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../math.html">pyxu.math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../util.html">pyxu.util</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../experimental.sampler.html">pyxu.experimental.sampler</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../experimental/index.html">pyxu.experimental</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../experimental/sampler.html">pyxu.experimental.sampler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../experimental/xray.html">pyxu.experimental.xray</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../references.html"><strong>References</strong></a></li>
 </ul>
 </div>
@@ -499,7 +503,7 @@ horizontally) blocks of smaller operators <span class="math notranslate nohighli
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> )) – [op1(c1, d1), …, opN(cN, dN)] operators to join.</p></li>
+<li><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> )) – [op1(c1, d1), …, opN(cN, dN)] operators to join.</p></li>
 <li><p><strong>axis</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Integer" title="pyxu.info.ptype.Integer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integer</span></code></a>) – <p>The axis along which operators will be joined, i.e.</p>
 <ul>
 <li><p>0: stack vertically (row-wise)</p></li>
@@ -542,7 +546,7 @@ horizontally) blocks of smaller operators <span class="math notranslate nohighli
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> )) – [op1(c1, d), …, opN(cN, d)] operators to concatenate.</p></li>
+<li><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> )) – [op1(c1, d), …, opN(cN, d)] operators to concatenate.</p></li>
 <li><p><strong>kwargs</strong> – Extra keyword-arguments forwarded to <code class="xref py py-class docutils literal notranslate"><span class="pre">_COOBlock</span></code>.</p></li>
 </ul>
 </dd>
@@ -581,7 +585,7 @@ horizontally) blocks of smaller operators <span class="math notranslate nohighli
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> )) – [op1(c, d1), …, opN(c, dN)] operators to concatenate.</p></li>
+<li><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> )) – [op1(c, d1), …, opN(c, dN)] operators to concatenate.</p></li>
 <li><p><strong>kwargs</strong> – Extra keyword-arguments forwarded to <code class="xref py py-class docutils literal notranslate"><span class="pre">_COOBlock</span></code>.</p></li>
 </ul>
 </dd>
@@ -622,7 +626,7 @@ an operator containing (diagonally) blocks of smaller operators <span class="mat
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> )) – [op1(c1, d1), …, opN(cN, dN)] operators to concatenate.</p></li>
+<li><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> )) – [op1(c1, d1), …, opN(cN, dN)] operators to concatenate.</p></li>
 <li><p><strong>kwargs</strong> – Extra keyword-arguments forwarded to <code class="xref py py-class docutils literal notranslate"><span class="pre">_COOBlock</span></code>.</p></li>
 </ul>
 </dd>
@@ -648,7 +652,7 @@ horizontally/vertically in a user-specified order to obtain the final shape.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> ) )) – 2D nested sequence of (ck, dk)-shaped operators.</p></li>
+<li><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> ) )) – 2D nested sequence of (ck, dk)-shaped operators.</p></li>
 <li><p><strong>order</strong> (<code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>) – <p>Order in which the nested operators are specified/concatenated:</p>
 <ul>
 <li><p>0: concatenate inner-most blocks via <a class="reference internal" href="#pyxu.operator.vstack" title="pyxu.operator.vstack"><code class="xref py py-func docutils literal notranslate"><span class="pre">vstack()</span></code></a>, then <a class="reference internal" href="#pyxu.operator.hstack" title="pyxu.operator.hstack"><code class="xref py py-func docutils literal notranslate"><span class="pre">hstack()</span></code></a>.</p></li>
@@ -705,7 +709,7 @@ akin to the COO format used to define sparse arrays.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><em>Sequence</em></a><em>[</em><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.11)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a><em>]</em><em>]</em><em>]</em>) – <p>(data, (i, j)) sequences defining block placement, i.e.</p>
+<li><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.12)"><em>Sequence</em></a><em>[</em><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.12)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.12)"><em>Integral</em></a><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.12)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.12)"><em>Integral</em></a><em>]</em><em>]</em><em>]</em>) – <p>(data, (i, j)) sequences defining block placement, i.e.</p>
 <ul>
 <li><p><code class="code docutils literal notranslate"><span class="pre">data[:]</span></code> are <a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> instances, in any order.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">i[:]</span></code> are the row indices of the block entries on the coarse grid.</p></li>
@@ -713,7 +717,7 @@ akin to the COO format used to define sparse arrays.</p>
 </ul>
 </p></li>
 <li><p><strong>grid_shape</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpShape" title="pyxu.info.ptype.OpShape"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpShape</span></code></a>) – (M, N) shape of the coarse grid.</p></li>
-<li><p><strong>parallel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – <p>If <code class="docutils literal notranslate"><span class="pre">true</span></code> , use Dask to evaluate the following methods:</p>
+<li><p><strong>parallel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – <p>If <code class="docutils literal notranslate"><span class="pre">true</span></code> , use Dask to evaluate the following methods:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">.apply()</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.prox()</span></code></p></li>

@@ -33,7 +33,7 @@
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../_static/documentation_options.js?v=9f51c310"></script>
+<script src="../_static/documentation_options.js?v=0b294dfe"></script>
 <script src="../_static/doctools.js?v=888ff710"></script>
 <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -52,7 +52,7 @@
 <link href="../_static/favicon.png" rel="icon"/>
 <link href="../genindex.html" rel="index" title="Index"/>
 <link href="../search.html" rel="search" title="Search"/>
-<link href="../examples/index.html" rel="next" title="Example Gallery"/>
+<link href="bayes.html" rel="next" title="Bayesian Computational Imaging with Pyxu"/>
 <link href="hpc.html" rel="prev" title="High Performance Computing Features"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="en" name="docsearch:language"/>
@@ -129,7 +129,7 @@ document.write(`
 `);
 </script>
 </div>
-<div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
+<div class="navbar-item"><strong> Pyxu v1.1.0 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
 <a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
@@ -202,7 +202,7 @@ document.write(`
 </nav></div>
 </div>
 <div class="sidebar-header-items__end">
-<div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
+<div class="navbar-item"><strong> Pyxu v1.1.0 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
 <a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
@@ -233,6 +233,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="lipschitz.html">Lipschitz Constants and Automatic Step Size Tuning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hpc.html">High Performance Computing Features</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Differential Operators in Pyxu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bayes.html">Bayesian Computational Imaging with Pyxu</a></li>
 </ul>
 </div>
 </nav></div>
@@ -281,9 +282,15 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\mathbf{D} f [n] = f[n+1] - f[n]\]</div>
 <p>As we will see below, this is the forward finite difference approximation. This could be implemented in <strong>matrix-form</strong>, in which case it would look like this:</p>
-<center><p><img alt="a6d35ab91338475b91eae0f8dd7e76a8" class="no-scaled-link" src="../_images/matrix-form.png" style="width: 400px;"/></p>
+<center><p><img alt="48b18f145e8049158f4d290293ebad9b" class="no-scaled-link" src="../_images/matrix-form.png" style="width: 400px;"/></p>
 </center><p>Or, it could be instead implemented via a for loop, in which the case of large input signals, would not require storing a large matrix:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">D</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">D</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Computes the partial derivative via forward finite differences.</span>
 
@@ -298,11 +305,12 @@ document.write(`
 <span class="sd">        Derivative</span>
 <span class="sd">    """</span>
 
-    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.zeros_like.html#numpy.zeros_like" title="numpy.zeros_like"><span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span></a><span class="p">(</span><span class="n">f</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#range" title="range"><span class="nb">range</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#len" title="len"><span class="nb">len</span></a><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
         <span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">f</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">y</span>
 </pre></div>
+</div>
 </div>
 <p>Despite Python being very slow when it comes to for-loops, Pyxu leverages existing tools to run them efficiently (see <a class="reference internal" href="hpc.html"><span class="doc">HPC Features</span></a>).</p>
 <!---
@@ -322,32 +330,7 @@ fig.tight_layout()
 fig.savefig("data/images/matrix-form.png", dpi=200)
 ---><section id="Partial-Derivative-Parametrization">
 <h3>Partial Derivative Parametrization<a class="headerlink" href="#Partial-Derivative-Parametrization" title="Link to this heading">#</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">PartialDerivative</span></code> class implements two main approximations to the partial derivatives as methods:<code class="docutils literal notranslate"><span class="pre">finite_difference</span></code> and <code class="docutils literal notranslate"><span class="pre">gaussian_derivative</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">finite_difference</span><span class="p">(</span>
-        <span class="n">arg_shape</span><span class="p">:</span> <span class="n">pyct</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
-        <span class="n">order</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pyct</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
-        <span class="n">scheme</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]]</span> <span class="o">=</span> <span class="s2">"forward"</span><span class="p">,</span>
-        <span class="n">accuracy</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">pyct</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pyct</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="o">...</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="n">mode</span><span class="p">:</span> <span class="n">ModeSpec</span> <span class="o">=</span> <span class="s2">"constant"</span><span class="p">,</span>
-        <span class="n">gpu</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="n">dtype</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pyct</span><span class="o">.</span><span class="n">DType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="n">sampling</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">pyct</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pyct</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="o">...</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pyct</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gaussian_derivative</span><span class="p">(</span>
-        <span class="n">arg_shape</span><span class="p">:</span> <span class="n">pyct</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
-        <span class="n">order</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pyct</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
-        <span class="n">sigma</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">pyct</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pyct</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="o">...</span><span class="p">]]</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
-        <span class="n">truncate</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">pyct</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pyct</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="o">...</span><span class="p">]]</span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">,</span>
-        <span class="n">mode</span><span class="p">:</span> <span class="n">ModeSpec</span> <span class="o">=</span> <span class="s2">"constant"</span><span class="p">,</span>
-        <span class="n">gpu</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="n">dtype</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pyct</span><span class="o">.</span><span class="n">DType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="n">sampling</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">pyct</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pyct</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="o">...</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pyct</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
-</pre></div>
-</div>
-<p>The common arguments are:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">PartialDerivative</span></code> class implements two main approximations to the partial derivatives as methods:<code class="docutils literal notranslate"><span class="pre">finite_difference</span></code> and <code class="docutils literal notranslate"><span class="pre">gaussian_derivative</span></code>. The common arguments are:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">arg_shape</span></code>: Shape of the input image. This is information is necessary in case batch processing is intended.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">order</span></code>: Derivative order in each axis. For example, for a 2D image input:</p>
@@ -411,7 +394,7 @@ fig.savefig("data/images/matrix-form.png", dpi=200)
 <p>Where the coefficients in <strong>bold</strong> indicate the center of the kernel. You can explore different parametrizations with the <a class="reference external" href="https://web.media.mit.edu/~crtaylor/calculator.html">finite difference coefficient calculator</a>, or you can directly create different instantiations and check the coefficients with the <code class="docutils literal notranslate"><span class="pre">PartialDerivative.visualize()</span></code> method.</p>
 <p>Finite differences are simple to compute and do not require any additional assumptions or pre-processing steps:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
@@ -486,7 +469,7 @@ fig.savefig("data/images/matrix-form.png", dpi=200)
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/home/joan/miniconda3/envs/pyxu/lib/python3.11/site-packages/numba/np/ufunc/parallel.py:371: NumbaWarning: <span class="ansi-bold">The TBB threading layer requires TBB version 2021 update 6 or later i.e., TBB_INTERFACE_VERSION &gt;= 12060. Found TBB_INTERFACE_VERSION = 12050. The TBB threading layer is disabled.</span>
+/home/joan/.local/lib/python3.10/site-packages/numba/np/ufunc/parallel.py:371: NumbaWarning: <span class="ansi-bold">The TBB threading layer requires TBB version 2021 update 6 or later i.e., TBB_INTERFACE_VERSION &gt;= 12060. Found TBB_INTERFACE_VERSION = 12050. The TBB threading layer is disabled.</span>
   warnings.warn(problem)
 </pre></div></div>
 </div>
@@ -494,7 +477,7 @@ fig.savefig("data/images/matrix-form.png", dpi=200)
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/guide_diff_ops_3_1.png" src="../_images/guide_diff_ops_3_1.png"/>
+<img alt="../_images/guide_diff_ops_6_1.png" src="../_images/guide_diff_ops_6_1.png"/>
 </div>
 </div>
 <p>These results indicate that finite differences work fine for non-noisy data, but they can be quite <strong>sensitive to noise</strong> in the image and may introduce inaccuracies, especially when the image has high-frequency content. For more detailed information on this topic, check <a class="reference external" href="https://www.crisluengo.net/archives/22/">this great post on Gaussian derivative</a>.</p>
@@ -559,7 +542,7 @@ fig.savefig("data/images/matrix-form.png", dpi=200)
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/guide_diff_ops_9_0.png" src="../_images/guide_diff_ops_9_0.png"/>
+<img alt="../_images/guide_diff_ops_12_0.png" src="../_images/guide_diff_ops_12_0.png"/>
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -601,7 +584,7 @@ fig.savefig("data/images/matrix-form.png", dpi=200)
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/guide_diff_ops_10_0.png" src="../_images/guide_diff_ops_10_0.png"/>
+<img alt="../_images/guide_diff_ops_13_0.png" src="../_images/guide_diff_ops_13_0.png"/>
 </div>
 </div>
 <p>Gaussian derivatives can be computed for different orders of derivatives (e.g., first-order, second-order) and at different scales (by varying the standard deviation of the Gaussian kernel). Higher-order derivatives capture more detailed information about the image’s structure, while larger scales provide a more global representation.</p>
@@ -640,36 +623,7 @@ fig.savefig("data/images/matrix-form.png", dpi=200)
    \end{bmatrix}\end{split}\]</div>
 <section id="Parameters">
 <h3>Parameters<a class="headerlink" href="#Parameters" title="Link to this heading">#</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">Gradient</span></code> and <code class="docutils literal notranslate"><span class="pre">Hessian</span></code> objects are parametrized as:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Gradient</span><span class="p">(</span>
-    <span class="n">arg_shape</span><span class="p">:</span> <span class="n">pyct</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
-    <span class="n">directions</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pyct</span><span class="o">.</span><span class="n">NDArrayAxis</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="n">diff_method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"fd"</span><span class="p">,</span>
-    <span class="n">mode</span><span class="p">:</span> <span class="n">ModeSpec</span> <span class="o">=</span> <span class="s2">"constant"</span><span class="p">,</span>
-    <span class="n">gpu</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-    <span class="n">dtype</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pyct</span><span class="o">.</span><span class="n">DType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="n">parallel</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-    <span class="o">**</span><span class="n">diff_kwargs</span><span class="p">,</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pyct</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Hessian</span><span class="p">(</span>
-    <span class="n">arg_shape</span><span class="p">:</span> <span class="n">pyct</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
-    <span class="n">directions</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span>
-        <span class="nb">str</span><span class="p">,</span>
-        <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pyct</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">pyct</span><span class="o">.</span><span class="n">Integer</span><span class="p">],</span>
-        <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pyct</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">pyct</span><span class="o">.</span><span class="n">Integer</span><span class="p">],</span> <span class="o">...</span><span class="p">],</span>
-    <span class="p">]</span> <span class="o">=</span> <span class="s2">"all"</span><span class="p">,</span>
-    <span class="n">diff_method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"fd"</span><span class="p">,</span>
-    <span class="n">mode</span><span class="p">:</span> <span class="n">ModeSpec</span> <span class="o">=</span> <span class="s2">"constant"</span><span class="p">,</span>
-    <span class="n">gpu</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-    <span class="n">dtype</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pyct</span><span class="o">.</span><span class="n">DType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="n">parallel</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-    <span class="o">**</span><span class="n">diff_kwargs</span><span class="p">,</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pyct</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
-</pre></div>
-</div>
-<p>There are some common arguments that we didn’t see in the previous <code class="docutils literal notranslate"><span class="pre">PartialDerivative</span></code> class:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Gradient</span></code> and <code class="docutils literal notranslate"><span class="pre">Hessian</span></code> objects share some common arguments that we didn’t see in the previous <code class="docutils literal notranslate"><span class="pre">PartialDerivative</span></code> class:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">diff_method</span></code>: This will select between <code class="docutils literal notranslate"><span class="pre">finite_difference</span></code> (‘fd’) or <code class="docutils literal notranslate"><span class="pre">gaussian_derivative</span></code> (‘gd’) type of partial derivatives.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">parallel</span></code>: If <code class="docutils literal notranslate"><span class="pre">True</span></code>, it will compute the different partial derivatives in parrellalel on different threads.</p></li>
@@ -688,7 +642,7 @@ fig.savefig("data/images/matrix-form.png", dpi=200)
     \frac{\partial \mathbf{f}}{\partial y}
     \end{bmatrix} \in \mathbb{R}^{2 \times N_{x} \times N_{y}}\end{split}\]</div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
@@ -740,7 +694,7 @@ fig.savefig("data/images/matrix-form.png", dpi=200)
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/guide_diff_ops_21_0.png" src="../_images/guide_diff_ops_21_0.png"/>
+<img alt="../_images/guide_diff_ops_24_0.png" src="../_images/guide_diff_ops_24_0.png"/>
 </div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                                                        ┌───&gt;  Jacobian
@@ -753,7 +707,7 @@ PartialDerivative   ──────┤
 <section id="Hessian">
 <h3>Hessian<a class="headerlink" href="#Hessian" title="Link to this heading">#</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Hessian" title="pyxu.operator.Hessian"><span class="n">Hessian</span></a>
@@ -812,7 +766,7 @@ PartialDerivative   ──────┤
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/guide_diff_ops_24_0.png" src="../_images/guide_diff_ops_24_0.png"/>
+<img alt="../_images/guide_diff_ops_27_0.png" src="../_images/guide_diff_ops_27_0.png"/>
 </div>
 </div>
 </section>
@@ -830,10 +784,10 @@ PartialDerivative   ──────┤
 <p class="prev-next-title">High Performance Computing Features</p>
 </div>
 </a>
-<a class="right-next" href="../examples/index.html" title="next page">
+<a class="right-next" href="bayes.html" title="next page">
 <div class="prev-next-info">
 <p class="prev-next-subtitle">next</p>
-<p class="prev-next-title">Example Gallery</p>
+<p class="prev-next-title">Bayesian Computational Imaging with Pyxu</p>
 </div>
 <i class="fa-solid fa-angle-right"></i>
 </a>

@@ -4,12 +4,8 @@ Example Gallery
 .. nblinkgallery::
     :name: rst-link-gallery
 
+    ../intro/tomo
+    deblur
+    ../guide/diff_ops
     stencils
-
-.. toctree::
-   :maxdepth: 2
-   :hidden:
-
-   contributing
-   stencils
-
+    contributing

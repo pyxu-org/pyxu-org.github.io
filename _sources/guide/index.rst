@@ -17,3 +17,4 @@ essential aspects of the library, helping you harness its full power for your re
    lipschitz.ipynb
    hpc.ipynb
    diff_ops.ipynb
+   bayes.ipynb

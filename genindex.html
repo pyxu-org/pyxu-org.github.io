@@ -43,7 +43,7 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="_static/documentation_options.js?v=9f51c310"></script>
+    <script src="_static/documentation_options.js?v=0b294dfe"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -199,7 +199,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v1.1.0 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -341,7 +341,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v1.1.0 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -449,6 +449,7 @@ document.write(`
  | <a href="#U"><strong>U</strong></a>
  | <a href="#V"><strong>V</strong></a>
  | <a href="#W"><strong>W</strong></a>
+ | <a href="#X"><strong>X</strong></a>
  
 </div>
 <h2 id="_">_</h2>
@@ -483,7 +484,7 @@ document.write(`
 </li>
         <li><a href="api/opt.stop.html#pyxu.opt.stop.Memorize.__init__">(Memorize method)</a>
 </li>
-        <li><a href="api/experimental.sampler.html#pyxu.experimental.sampler.MYULA.__init__">(MYULA method)</a>
+        <li><a href="api/experimental/sampler.html#pyxu.experimental.sampler.MYULA.__init__">(MYULA method)</a>
 </li>
         <li><a href="api/abc.html#pyxu.abc.Operator.__init__">(Operator method)</a>
 </li>
@@ -503,7 +504,7 @@ document.write(`
 </li>
         <li><a href="api/operator/linop.html#pyxu.operator.SubSample.__init__">(SubSample method)</a>
 </li>
-        <li><a href="api/experimental.sampler.html#pyxu.experimental.sampler.ULA.__init__">(ULA method)</a>
+        <li><a href="api/experimental/sampler.html#pyxu.experimental.sampler.ULA.__init__">(ULA method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -580,6 +581,8 @@ document.write(`
         <li><a href="api/operator/linop.html#pyxu.operator.SubSample.apply">(SubSample method)</a>
 </li>
       </ul></li>
+      <li><a href="api/experimental/xray.html#pyxu.experimental.xray.FSSPulse.applyF">applyF() (FSSPulse method)</a>
+</li>
       <li><a href="api/operator/map.html#pyxu.operator.arccos">arccos() (in module pyxu.operator)</a>
 </li>
   </ul></td>
@@ -639,6 +642,8 @@ document.write(`
       <li><a href="api/operator/blocks.html#pyxu.operator.block">block() (in module pyxu.operator)</a>
 </li>
       <li><a href="api/operator/blocks.html#pyxu.operator.block_diag">block_diag() (in module pyxu.operator)</a>
+</li>
+      <li><a href="api/experimental/xray.html#pyxu.experimental.xray.Box">Box (class in pyxu.experimental.xray)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.Solver.busy">busy() (Solver method)</a>
 </li>
@@ -746,13 +751,15 @@ document.write(`
 </li>
       <li><a href="api/abc.html#pyxu.abc.Property.DIFFERENTIABLE_FUNCTION">DIFFERENTIABLE_FUNCTION (Property attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/abc.html#pyxu.abc.DiffFunc">DiffFunc (class in pyxu.abc)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/abc.html#pyxu.abc.DiffMap">DiffMap (class in pyxu.abc)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.Operator.dim">dim (Operator property)</a>
+</li>
+      <li><a href="api/experimental/xray.html#pyxu.experimental.xray.Dirac">Dirac (class in pyxu.experimental.xray)</a>
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.DirectionalDerivative">DirectionalDerivative() (in module pyxu.operator)</a>
 </li>
@@ -844,6 +851,8 @@ document.write(`
 </li>
       <li><a href="api/operator.interop.html#pyxu.operator.interop.from_torch">from_torch() (in module pyxu.operator.interop)</a>
 </li>
+      <li><a href="api/experimental/xray.html#pyxu.experimental.xray.FSSPulse">FSSPulse (class in pyxu.experimental.xray)</a>
+</li>
       <li><a href="api/abc.html#pyxu.abc.Func">Func (class in pyxu.abc)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.Property.FUNCTIONAL">FUNCTIONAL (Property attribute)</a>
@@ -910,16 +919,20 @@ document.write(`
         <li><a href="api/operator/linop.html#pyxu.operator.SubSample.IndexSpec">(SubSample attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/util.html#pyxu.util.infer_composition_shape">infer_composition_shape() (in module pyxu.util)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/util.html#pyxu.util.infer_sum_shape">infer_sum_shape() (in module pyxu.util)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.StoppingCriterion.info">info() (StoppingCriterion method)</a>
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator._Stencil.init">init() (_Stencil static method)</a>
+
+      <ul>
+        <li><a href="api/experimental/xray.html#pyxu.experimental.xray.XRayTransform.init">(XRayTransform static method)</a>
 </li>
+      </ul></li>
       <li><a href="api/info.ptype.html#pyxu.info.ptype.Integer">Integer (in module pyxu.info.ptype)</a>
 </li>
   </ul></td>
@@ -940,6 +953,8 @@ document.write(`
 <h2 id="K">K</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/experimental/xray.html#pyxu.experimental.xray.KaiserBessel">KaiserBessel (class in pyxu.experimental.xray)</a>
+</li>
       <li><a href="api/operator/linop.html#pyxu.operator.Stencil.kernel">kernel (Stencil property)</a>
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.Stencil.KernelSpec">KernelSpec (Stencil attribute)</a>
@@ -1042,7 +1057,7 @@ document.write(`
     module
 
       <ul>
-        <li><a href="api/experimental.sampler.html#module-pyxu.experimental.sampler">pyxu.experimental.sampler</a>
+        <li><a href="api/experimental/sampler.html#module-pyxu.experimental.sampler">pyxu.experimental.sampler</a>
 </li>
         <li><a href="api/info.deps.html#module-pyxu.info.deps">pyxu.info.deps</a>
 </li>
@@ -1065,7 +1080,7 @@ document.write(`
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.MovingAverage">MovingAverage() (in module pyxu.operator)</a>
 </li>
-      <li><a href="api/experimental.sampler.html#pyxu.experimental.sampler.MYULA">MYULA (class in pyxu.experimental.sampler)</a>
+      <li><a href="api/experimental/sampler.html#pyxu.experimental.sampler.MYULA">MYULA (class in pyxu.experimental.sampler)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1110,22 +1125,22 @@ document.write(`
       <li><a href="api/abc.html#pyxu.abc.Solver.objective_func">objective_func() (Solver method)</a>
 
       <ul>
-        <li><a href="api/experimental.sampler.html#pyxu.experimental.sampler.ULA.objective_func">(ULA method)</a>
+        <li><a href="api/experimental/sampler.html#pyxu.experimental.sampler.ULA.objective_func">(ULA method)</a>
 </li>
       </ul></li>
-      <li><a href="api/experimental.sampler.html#pyxu.experimental.sampler.OnlineCenteredMoment">OnlineCenteredMoment (class in pyxu.experimental.sampler)</a>
+      <li><a href="api/experimental/sampler.html#pyxu.experimental.sampler.OnlineCenteredMoment">OnlineCenteredMoment (class in pyxu.experimental.sampler)</a>
 </li>
-      <li><a href="api/experimental.sampler.html#pyxu.experimental.sampler.OnlineKurtosis">OnlineKurtosis() (in module pyxu.experimental.sampler)</a>
+      <li><a href="api/experimental/sampler.html#pyxu.experimental.sampler.OnlineKurtosis">OnlineKurtosis() (in module pyxu.experimental.sampler)</a>
 </li>
-      <li><a href="api/experimental.sampler.html#pyxu.experimental.sampler.OnlineMoment">OnlineMoment (class in pyxu.experimental.sampler)</a>
+      <li><a href="api/experimental/sampler.html#pyxu.experimental.sampler.OnlineMoment">OnlineMoment (class in pyxu.experimental.sampler)</a>
 </li>
-      <li><a href="api/experimental.sampler.html#pyxu.experimental.sampler.OnlineSkewness">OnlineSkewness() (in module pyxu.experimental.sampler)</a>
+      <li><a href="api/experimental/sampler.html#pyxu.experimental.sampler.OnlineSkewness">OnlineSkewness() (in module pyxu.experimental.sampler)</a>
 </li>
-      <li><a href="api/experimental.sampler.html#pyxu.experimental.sampler.OnlineStd">OnlineStd() (in module pyxu.experimental.sampler)</a>
+      <li><a href="api/experimental/sampler.html#pyxu.experimental.sampler.OnlineStd">OnlineStd() (in module pyxu.experimental.sampler)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/experimental.sampler.html#pyxu.experimental.sampler.OnlineVariance">OnlineVariance() (in module pyxu.experimental.sampler)</a>
+      <li><a href="api/experimental/sampler.html#pyxu.experimental.sampler.OnlineVariance">OnlineVariance() (in module pyxu.experimental.sampler)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.arithmetic.Rule.op">op() (Rule method)</a>
 </li>
@@ -1221,7 +1236,7 @@ document.write(`
     pyxu.experimental.sampler
 
       <ul>
-        <li><a href="api/experimental.sampler.html#module-pyxu.experimental.sampler">module</a>
+        <li><a href="api/experimental/sampler.html#module-pyxu.experimental.sampler">module</a>
 </li>
       </ul></li>
       <li>
@@ -1357,10 +1372,10 @@ document.write(`
 </li>
       <li><a href="api/info.deps.html#pyxu.info.deps.SparseArrayInfo">SparseArrayInfo (class in pyxu.info.deps)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/info.ptype.html#pyxu.info.ptype.SparseModule">SparseModule (class in pyxu.info.ptype)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/operator/map.html#pyxu.operator.sqrt">sqrt() (in module pyxu.operator)</a>
 </li>
       <li><a href="api/operator/map.html#pyxu.operator.square">square() (in module pyxu.operator)</a>
@@ -1401,6 +1416,8 @@ document.write(`
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.Sum">Sum() (in module pyxu.operator)</a>
 </li>
+      <li><a href="api/experimental/xray.html#pyxu.experimental.xray.FSSPulse.support">support() (FSSPulse method)</a>
+</li>
       <li><a href="api/info.deps.html#pyxu.info.deps.supported_array_modules">supported_array_modules() (in module pyxu.info.deps)</a>
 </li>
       <li><a href="api/info.deps.html#pyxu.info.deps.supported_array_types">supported_array_types() (in module pyxu.info.deps)</a>
@@ -1408,6 +1425,8 @@ document.write(`
       <li><a href="api/info.deps.html#pyxu.info.deps.supported_sparse_modules">supported_sparse_modules() (in module pyxu.info.deps)</a>
 </li>
       <li><a href="api/info.deps.html#pyxu.info.deps.supported_sparse_types">supported_sparse_types() (in module pyxu.info.deps)</a>
+</li>
+      <li><a href="api/experimental/xray.html#pyxu.experimental.xray.FSSPulse.supportF">supportF() (FSSPulse method)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.LinOp.svdvals">svdvals() (LinOp method)</a>
 </li>
@@ -1433,13 +1452,15 @@ document.write(`
         <li><a href="api/abc.html#pyxu.abc.SquareOp.trace">(SquareOp method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/abc.html#pyxu.abc.arithmetic.TransposeRule">TransposeRule (class in pyxu.abc.arithmetic)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/operator/linop.html#pyxu.operator.Trim">Trim() (in module pyxu.operator)</a>
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.SubSample.TrimSpec">TrimSpec (SubSample attribute)</a>
+</li>
+      <li><a href="api/experimental/xray.html#pyxu.experimental.xray.TruncatedGaussian">TruncatedGaussian (class in pyxu.experimental.xray)</a>
 </li>
       <li><a href="api/info.deps.html#pyxu.info.deps.NDArrayInfo.type">type() (NDArrayInfo method)</a>
 
@@ -1459,7 +1480,7 @@ document.write(`
 <h2 id="U">U</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/experimental.sampler.html#pyxu.experimental.sampler.ULA">ULA (class in pyxu.experimental.sampler)</a>
+      <li><a href="api/experimental/sampler.html#pyxu.experimental.sampler.ULA">ULA (class in pyxu.experimental.sampler)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.UnitOp">UnitOp (class in pyxu.abc)</a>
 </li>
@@ -1467,10 +1488,10 @@ document.write(`
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/operator/linop.html#pyxu.operator.StructureTensor.unravel">unravel() (StructureTensor method)</a>
 </li>
-      <li><a href="api/experimental.sampler.html#pyxu.experimental.sampler.OnlineCenteredMoment.update">update() (OnlineCenteredMoment method)</a>
+      <li><a href="api/experimental/sampler.html#pyxu.experimental.sampler.OnlineCenteredMoment.update">update() (OnlineCenteredMoment method)</a>
 
       <ul>
-        <li><a href="api/experimental.sampler.html#pyxu.experimental.sampler.OnlineMoment.update">(OnlineMoment method)</a>
+        <li><a href="api/experimental/sampler.html#pyxu.experimental.sampler.OnlineMoment.update">(OnlineMoment method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -1512,6 +1533,14 @@ document.write(`
       <li><a href="api/abc.html#pyxu.abc.Solver.workdir">workdir (Solver property)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.Solver.writeback">writeback() (Solver method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="X">X</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/experimental/xray.html#pyxu.experimental.xray.XRayTransform">XRayTransform (class in pyxu.experimental.xray)</a>
 </li>
   </ul></td>
 </tr></table>

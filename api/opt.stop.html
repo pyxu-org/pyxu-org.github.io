@@ -44,7 +44,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../_static/documentation_options.js?v=9f51c310"></script>
+    <script src="../_static/documentation_options.js?v=0b294dfe"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -202,7 +202,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v1.1.0 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -344,7 +344,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v1.1.0 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -423,7 +423,11 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="runtime.html">pyxu.runtime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="math.html">pyxu.math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="util.html">pyxu.util</a></li>
-<li class="toctree-l1"><a class="reference internal" href="experimental.sampler.html">pyxu.experimental.sampler</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="experimental/index.html">pyxu.experimental</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="experimental/sampler.html">pyxu.experimental.sampler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental/xray.html">pyxu.experimental.xray</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html"><strong>References</strong></a></li>
 </ul>
 </div>
@@ -501,7 +505,7 @@ on the value of another criteria, you can AND <a class="reference internal" href
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>n</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><em>Integral</em></a>) – </p>
+<dd class="field-odd"><p><strong>n</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.12)"><em>Integral</em></a>) – </p>
 </dd>
 </dl>
 <dl class="py method">
@@ -541,7 +545,7 @@ decision to an explicit call by the user, i.e.:</p>
 <p>Stop iterative solver after a specified duration has elapsed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>t</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.timedelta" title="(in Python v3.11)"><em>timedelta</em></a>) – </p>
+<dd class="field-odd"><p><strong>t</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.timedelta" title="(in Python v3.12)"><em>timedelta</em></a>) – </p>
 </dd>
 </dl>
 <dl class="py method">
@@ -549,7 +553,7 @@ decision to an explicit call by the user, i.e.:</p>
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/opt/stop.html#MaxDuration.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.opt.stop.MaxDuration.__init__" title="Link to this definition">#</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>t</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.timedelta" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">timedelta</span></code></a>) – Max runtime allowed.</p>
+<dd class="field-odd"><p><strong>t</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.timedelta" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">timedelta</span></code></a>) – Max runtime allowed.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -571,7 +575,7 @@ independently.  (MacOS-specific: IPG must also have correct security permissions
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>co2</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><em>Real</em></a>) – </p>
+<dd class="field-odd"><p><strong>co2</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a>) – </p>
 </dd>
 </dl>
 <dl class="py method">
@@ -594,7 +598,7 @@ independently.  (MacOS-specific: IPG must also have correct security permissions
 functions in <a class="reference internal" href="abc.html#pyxu.abc.Solver" title="pyxu.abc.Solver"><code class="xref py py-class docutils literal notranslate"><span class="pre">Solver</span></code></a>.)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>var</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Collection" title="(in Python v3.11)"><em>Collection</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>]</em>) – </p>
+<dd class="field-odd"><p><strong>var</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Collection" title="(in Python v3.12)"><em>Collection</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>]</em>) – </p>
 </dd>
 </dl>
 <dl class="py method">
@@ -617,11 +621,11 @@ functions in <a class="reference internal" href="abc.html#pyxu.abc.Solver" title
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>eps</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><em>Real</em></a>) – </p></li>
-<li><p><strong>var</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Collection" title="(in Python v3.11)"><em>Collection</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>]</em>) – </p></li>
-<li><p><strong>f</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.11)"><em>Callable</em></a><em>[</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><em>Real</em></a><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><em>Real</em></a><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.11)"><em>Callable</em></a><em>[</em><em>[</em><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a><em>]</em><em>, </em><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a><em>]</em>) – </p></li>
-<li><p><strong>norm</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><em>Real</em></a>) – </p></li>
-<li><p><strong>satisfy_all</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – </p></li>
+<li><p><strong>eps</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a>) – </p></li>
+<li><p><strong>var</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Collection" title="(in Python v3.12)"><em>Collection</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>]</em>) – </p></li>
+<li><p><strong>f</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.12)"><em>Callable</em></a><em>[</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.12)"><em>Callable</em></a><em>[</em><em>[</em><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a><em>]</em><em>, </em><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a><em>]</em>) – </p></li>
+<li><p><strong>norm</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a>) – </p></li>
+<li><p><strong>satisfy_all</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -633,7 +637,7 @@ functions in <a class="reference internal" href="abc.html#pyxu.abc.Solver" title
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>eps</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Positive threshold.</p></li>
 <li><p><strong>var</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.VarName" title="pyxu.info.ptype.VarName"><code class="xref py py-class docutils literal notranslate"><span class="pre">VarName</span></code></a>) – Variable in <a class="reference internal" href="abc.html#pyxu.abc.Solver._mstate" title="pyxu.abc.Solver._mstate"><code class="xref py py-attr docutils literal notranslate"><span class="pre">pyxu.abc.Solver._mstate</span></code></a> to query.</p></li>
-<li><p><strong>f</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Callable</span></code></a>) – <p>Optional function to pre-apply to <code class="docutils literal notranslate"><span class="pre">_mstate[var]</span></code> before applying the norm.  Defaults to the identity
+<li><p><strong>f</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Callable</span></code></a>) – <p>Optional function to pre-apply to <code class="docutils literal notranslate"><span class="pre">_mstate[var]</span></code> before applying the norm.  Defaults to the identity
 function. The callable should either:</p>
 <ul>
 <li><p>accept a scalar input -&gt; output a scalar, or</p></li>
@@ -641,7 +645,7 @@ function. The callable should either:</p>
 </ul>
 </p></li>
 <li><p><strong>norm</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Integer" title="pyxu.info.ptype.Integer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integer</span></code></a>, <a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Ln norm to use &gt;= 0. (Default: L2.)</p></li>
-<li><p><strong>satisfy_all</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If True (default) and <code class="docutils literal notranslate"><span class="pre">_mstate[var]</span></code> is multi-dimensional, stop if all evaluation points lie below
+<li><p><strong>satisfy_all</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If True (default) and <code class="docutils literal notranslate"><span class="pre">_mstate[var]</span></code> is multi-dimensional, stop if all evaluation points lie below
 threshold.</p></li>
 </ul>
 </dd>
@@ -658,11 +662,11 @@ threshold.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>eps</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><em>Real</em></a>) – </p></li>
-<li><p><strong>var</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Collection" title="(in Python v3.11)"><em>Collection</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>]</em>) – </p></li>
-<li><p><strong>f</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.11)"><em>Callable</em></a><em>[</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><em>Real</em></a><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><em>Real</em></a><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.11)"><em>Callable</em></a><em>[</em><em>[</em><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a><em>]</em><em>, </em><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a><em>]</em>) – </p></li>
-<li><p><strong>norm</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><em>Real</em></a>) – </p></li>
-<li><p><strong>satisfy_all</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – </p></li>
+<li><p><strong>eps</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a>) – </p></li>
+<li><p><strong>var</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Collection" title="(in Python v3.12)"><em>Collection</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>]</em>) – </p></li>
+<li><p><strong>f</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.12)"><em>Callable</em></a><em>[</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.12)"><em>Callable</em></a><em>[</em><em>[</em><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a><em>]</em><em>, </em><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a><em>]</em>) – </p></li>
+<li><p><strong>norm</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a>) – </p></li>
+<li><p><strong>satisfy_all</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -674,7 +678,7 @@ threshold.</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>eps</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Positive threshold.</p></li>
 <li><p><strong>var</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.VarName" title="pyxu.info.ptype.VarName"><code class="xref py py-class docutils literal notranslate"><span class="pre">VarName</span></code></a>) – Variable in <a class="reference internal" href="abc.html#pyxu.abc.Solver._mstate" title="pyxu.abc.Solver._mstate"><code class="xref py py-attr docutils literal notranslate"><span class="pre">pyxu.abc.Solver._mstate</span></code></a> to query.</p></li>
-<li><p><strong>f</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Callable</span></code></a>) – <p>Optional function to pre-apply to <code class="docutils literal notranslate"><span class="pre">_mstate[var]</span></code> before applying the norm.  Defaults to the identity
+<li><p><strong>f</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Callable</span></code></a>) – <p>Optional function to pre-apply to <code class="docutils literal notranslate"><span class="pre">_mstate[var]</span></code> before applying the norm.  Defaults to the identity
 function. The callable should either:</p>
 <ul>
 <li><p>accept a scalar input -&gt; output a scalar, or</p></li>
@@ -682,7 +686,7 @@ function. The callable should either:</p>
 </ul>
 </p></li>
 <li><p><strong>norm</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Integer" title="pyxu.info.ptype.Integer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integer</span></code></a>, <a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Ln norm to use &gt;= 0. (Default: L2.)</p></li>
-<li><p><strong>satisfy_all</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If True (default) and <code class="docutils literal notranslate"><span class="pre">_mstate[var]</span></code> is multi-dimensional, stop if all evaluation points lie below
+<li><p><strong>satisfy_all</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If True (default) and <code class="docutils literal notranslate"><span class="pre">_mstate[var]</span></code> is multi-dimensional, stop if all evaluation points lie below
 threshold.</p></li>
 </ul>
 </dd>

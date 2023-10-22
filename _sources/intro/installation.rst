@@ -16,7 +16,7 @@ Basic Installation
 ------------------
 
 The core of **Pyxu** is lightweight and straightforward to install. You'll need Python (>= 3.9, < 3.12) and a few
-mandatory dependencies. While these dependencies will be automatically installed via ``pip``, we highly recommend
+mandatory Python packages. While these dependencies will be automatically installed via ``pip``, we highly recommend
 installing NumPy and SciPy via ``conda`` to benefit from optimized math libraries.
 
 First, to install NumPy and SciPy from conda-forge:
@@ -41,10 +41,18 @@ For extended features, you can install Pyxu with its optional dependencies:
 .. code-block:: bash
 
    pip install pyxu[complete-cpu]  # full CPU-only user install.
-   pip install pyxu[complete]      # full CPU/GPU  user install. (CUDA 12.* required.)
+   pip install pyxu[complete11]    # full CPU/GPU  user install. (CUDA 11.x)
+   pip install pyxu[complete]      # full CPU/GPU  user install. (CUDA 12.x)
 
 More fine-grained extras can be installed by looking at the ``project.optional-dependencies`` field in
 ``pyproject.toml`` at the root of the repository.
+
+.. warning::
+
+   The host system must have `CUDA 11.x or 12.x <https://docs.nvidia.com/cuda/>`_ installed to use the GPU. Similarly,
+   some Pyxu operators may require extra system dependencies such as `LLVM <https://llvm.org/>`_. If problems arise, we
+   provide `Docker receipes <https://github.com/pyxu-org/pyxu_docker>`_ to easily create Pyxu user/developer
+   environments.
 
 Developer Installation
 ----------------------

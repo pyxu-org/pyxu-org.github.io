@@ -1,0 +1,645 @@
+
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Bayesian Computational Imaging with Pyxu — Pyxu Documentation</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../_static/plot_directive.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
+<link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
+<link href="../_static/sg_gallery.css?v=61a4c737" rel="stylesheet" type="text/css"/>
+<link href="../_static/sg_gallery-binder.css?v=f4aeca0c" rel="stylesheet" type="text/css"/>
+<link href="../_static/sg_gallery-dataframe.css?v=2082cf3c" rel="stylesheet" type="text/css"/>
+<link href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" rel="stylesheet" type="text/css"/>
+<link href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
+<link href="../_static/nbsphinx-code-cells.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css?v=14df3d68" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
+<link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
+<script src="../_static/documentation_options.js?v=0b294dfe"></script>
+<script src="../_static/doctools.js?v=888ff710"></script>
+<script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="../_static/copybutton.js?v=30646c52"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+<script src="../_static/design-tabs.js?v=36754332"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+<script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'guide/bayes';</script>
+<link href="../_static/favicon.png" rel="icon"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="../examples/index.html" rel="next" title="Example Gallery"/>
+<link href="diff_ops.html" rel="prev" title="Differential Operators in Pyxu"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="light" data-offset="180">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search the docs ..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+<label class="sidebar-toggle primary-toggle" for="__primary">
+<span class="fa-solid fa-bars"></span>
+</label>
+<div class="navbar-header-items__start">
+<div class="navbar-item">
+<a class="navbar-brand logo" href="../index.html">
+<img alt="Logo image" class="logo__image only-light" src="../_static/logo.png"/>
+<script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+</a></div>
+</div>
+<div class="col-lg-9 navbar-header-items">
+<div class="me-auto navbar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../intro/index.html">
+                        Getting Started
+                      </a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link nav-internal" href="index.html">
+                        User Guide
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../examples/index.html">
+                        Example Gallery
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../api/index.html">
+                        API Reference
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../fair/index.html">
+                        Extending Pyxu
+                      </a>
+</li>
+</ul>
+</nav></div>
+</div>
+<div class="navbar-header-items__end">
+<div class="navbar-item navbar-persistent--container">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<div class="navbar-item"><strong> Pyxu v1.1.0 </strong></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://pypi.org/project/pyxu/" rel="noopener" target="_blank" title="PyPI"><span><i class="fa-brands fa-python"></i></span>
+<label class="sr-only">PyPI</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="mailto: contact@pyxu.org" rel="noopener" target="_blank" title="Contact"><span><i class="fa-brands fa-telegram"></i></span>
+<label class="sr-only">Contact</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://imaging.epfl.ch/" rel="noopener" target="_blank" title="EPFL Center for Imaging"><img alt="EPFL Center for Imaging" class="icon-link-image" src="../_static/imaging.png"/></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<label class="sidebar-toggle secondary-toggle" for="__secondary">
+<span class="fa-solid fa-outdent"></span>
+</label>
+</div>
+</nav>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+<div class="sidebar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../intro/index.html">
+                        Getting Started
+                      </a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link nav-internal" href="index.html">
+                        User Guide
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../examples/index.html">
+                        Example Gallery
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../api/index.html">
+                        API Reference
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../fair/index.html">
+                        Extending Pyxu
+                      </a>
+</li>
+</ul>
+</nav></div>
+</div>
+<div class="sidebar-header-items__end">
+<div class="navbar-item"><strong> Pyxu v1.1.0 </strong></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://pypi.org/project/pyxu/" rel="noopener" target="_blank" title="PyPI"><span><i class="fa-brands fa-python"></i></span>
+<label class="sr-only">PyPI</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="mailto: contact@pyxu.org" rel="noopener" target="_blank" title="Contact"><span><i class="fa-brands fa-telegram"></i></span>
+<label class="sr-only">Contact</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://imaging.epfl.ch/" rel="noopener" target="_blank" title="EPFL Center for Imaging"><img alt="EPFL Center for Imaging" class="icon-link-image" src="../_static/imaging.png"/></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item"><nav aria-label="Section Navigation" class="bd-docs-nav bd-links">
+<p aria-level="1" class="bd-links__title" role="heading">Section Navigation</p>
+<div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fwdops.html">Forward Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funcs.html">Loss &amp; Regularization Functionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algebra.html">Operator Algebra Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Optimization Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lipschitz.html">Lipschitz Constants and Automatic Step Size Tuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hpc.html">High Performance Computing Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diff_ops.html">Differential Operators in Pyxu</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Bayesian Computational Imaging with Pyxu</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content">
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item">
+<nav aria-label="Breadcrumbs">
+<ul aria-label="Breadcrumb" class="bd-breadcrumbs" role="navigation">
+<li class="breadcrumb-item breadcrumb-home">
+<a aria-label="Home" class="nav-link" href="../index.html">
+<i class="fa-solid fa-home"></i>
+</a>
+</li>
+<li class="breadcrumb-item"><a class="nav-link" href="index.html">User Guide</a></li>
+<li aria-current="page" class="breadcrumb-item active">Bayesian Computational Imaging with Pyxu</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article" role="main">
+<section id="Bayesian-Computational-Imaging-with-Pyxu">
+<h1>Bayesian Computational Imaging with Pyxu<a class="headerlink" href="#Bayesian-Computational-Imaging-with-Pyxu" title="Link to this heading">#</a></h1>
+<p>In this guide we will walk you through how to use Pyxu to solve a MAP estimation problem from a Bayesian definition of an inverse problem. We will go step by step, relating text, equations, and code to provide a clear understanding of the process.</p>
+<section id="Understanding-the-Problem">
+<h2>Understanding the Problem<a class="headerlink" href="#Understanding-the-Problem" title="Link to this heading">#</a></h2>
+<p>From a Bayesian perspective, an inverse problem can be formulated as finding the most credible image <span class="math notranslate nohighlight">\(\hat{\mathbf{x}}\)</span> given the measured (degraded) image <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>, the model of the measurement (a.k.a. the forward model) <span class="math notranslate nohighlight">\(\mathbf{F}\)</span>, and a prior probability over the distribution of <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>. In this scenario, we are trying to find the best possible original image (<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>) given the degraded image we have (<span class="math notranslate nohighlight">\(\mathbf{y}\)</span>). This is known as the
+<em>maximum a posteriori estimate (MAP)</em>, defined by the equation:</p>
+<div class="math notranslate nohighlight">
+\[\hat{\mathbf{x}}_{MAP} = \arg \max_{\mathbf{x}} p(\mathbf{x} | \mathbf{y}) = \arg \max_{\mathbf{x}}
+\frac{p(\mathbf{y}|\mathbf{x}) p(\mathbf{x})}{p(\mathbf{y})},\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p(\mathbf{x}|\mathbf{y})\)</span> is the <em>posterior probability</em>: It gives us a measure of how probable a specific version of the original image <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is, given the degraded image we are observing <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>. Essentially, it helps us estimate the most credible original image considering the information we have from the degraded image.</p></li>
+<li><p><span class="math notranslate nohighlight">\(p(\mathbf{y}|\mathbf{x})\)</span> is the <em>likelihood function</em>: In the process of image degradation, various forms of noise such as salt-and-pepper or Gaussian noise can be introduced, altering the original image <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> and resulting in a degraded version <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>. The noise model is essentially a mathematical representation of how this noise affects the image. The likelihood function models how likely we are to observe the degraded image (<span class="math notranslate nohighlight">\(\mathbf{y}\)</span>) given a
+specific version of the original image (<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>) and the noise model.</p></li>
+<li><p><span class="math notranslate nohighlight">\(p(\mathbf{x})\)</span> defines the <em>prior</em>, our initial belief or assumption about the original image <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> before we even look at the degraded image <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>. For instance, we might assume that the image has smooth regions, sharp edges, or certain statistical properties.</p></li>
+<li><p><span class="math notranslate nohighlight">\(p(\mathbf{y})\)</span>: This term represents the probability of observing the degraded image <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> without considering any information about the original image <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>. In the context of finding the most probable original image, this term does not provide any useful information because it is not influenced by the original image (<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>). Therefore, it does not help in improving our estimate of the original image and can be safely ignored during the
+reconstruction process.</p></li>
+</ul>
+</section>
+<section id="Simplifying-the-Optimization-Problem">
+<h2>Simplifying the Optimization Problem<a class="headerlink" href="#Simplifying-the-Optimization-Problem" title="Link to this heading">#</a></h2>
+<p>To simplify the optimization problem, we take the negative log-transform of the posterior distribution, allowing us to minimize over a sum instead of maximizing over a product:</p>
+<div class="math notranslate nohighlight">
+\[\hat{\mathbf{x}}_{MAP} = \arg \max_{\mathbf{x}} p(\mathbf{x} | \mathbf{y}) = \arg \min_{\mathbf{x}} \left\{ - \log
+p(\mathbf{x} | \mathbf{y}) \right\} = \arg \min_{\mathbf{x}} \left\{- \log p(\mathbf{y}|\mathbf{x})  - \log
+p(\mathbf{x})\right\}.\]</div>
+</section>
+<section id="Defining-the-Likelihood-Function">
+<h2>Defining the Likelihood Function<a class="headerlink" href="#Defining-the-Likelihood-Function" title="Link to this heading">#</a></h2>
+<p>The likelihood function defines how likely a measurement <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> is given a particular scene <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, so it basically models the acquisition process. Imagine that we can model our measurement <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> as the application of a linear operator <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> on the scene of interest <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, i.e., <span class="math notranslate nohighlight">\(\mathbf{y} = \mathbf{F}\mathbf{x}\)</span>. (See also the user guide on <a class="reference external" href="./fwdops.html">Forward Operators</a>.) In every application, there is measurement
+noise in our sensors, and commonly we assume that it follows a Gaussian distribution. In that case, the likelihood function can also be defined by a Gaussian distribution with the same mean and variance as the noise. In this case, the likelihood function is defined as:</p>
+<div class="math notranslate nohighlight">
+\[p(\mathbf{y} | \mathbf{x} )= \prod_{i=0}^{M-1} \frac{1}{\sigma\sqrt{2\pi}} \exp \left\{- \frac{1}{2\sigma^{2}}
+\left(y_{i} - \langle \mathbf{F}_{i}, \mathbf{x} \rangle \right)^{2}  \right\},\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma_{i} = \sigma\)</span> and <span class="math notranslate nohighlight">\(\mu_{i} = \langle \mathbf{F}_{i}, \mathbf{x} \rangle\)</span> define the standard deviation and mean of the Gaussian distribution at each sensor. Applying the negative log-transform, results in a quadratic term plus a constant term <span class="math notranslate nohighlight">\(M \log(2\pi \sigma)\)</span>. Ignoring the latter as it does not affect the optimized variable <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, we obtain the well-known least-squares form:</p>
+<div class="math notranslate nohighlight">
+\[- \log p(\mathbf{y} | \mathbf{x} )= \frac{1}{2\sigma^{2}} \Vert \mathbf{y} -
+\mathbf{F}\mathbf{x} \Vert^{2}_{2}.\]</div>
+<p>For other cost functionals, see the following Table, and take a look at the user guide on <a class="reference external" href="./funcs.html">Loss &amp; Regularization functionals</a>.</p>
+<section id="Table-1:-Choice-of-cost-functional-based-on-noise-modeling">
+<h3>Table 1: Choice of cost functional based on noise modeling<a class="headerlink" href="#Table-1:-Choice-of-cost-functional-based-on-noise-modeling" title="Link to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Noise Type</p></th>
+<th class="head"><p>Likelihood <span class="math notranslate nohighlight">\(p(\mathbf{y}\vert\mathbf{x})\)</span></p></th>
+<th class="head"><p>Cost Functional <span class="math notranslate nohighlight">\(F(\mathbf{y}, \mathbf{G}\mathbf{x}) = - \log p(\mathbf{y}\vert\mathbf{x})\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Gaussian Noise</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{\sqrt{2 \pi \sigma^2}} \exp \left(-\frac{1}{2\sigma^2} \Vert\mathbf{y} - \mathbf{G}\mathbf{x}\Vert_{2}^{2} \right)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Vert\mathbf{y} - \mathbf{G}\mathbf{x}\Vert_{2}^{2}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Laplacian Noise</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{2\sigma}\exp \left( -\frac{\Vert \mathbf{y} - \mathbf{G}\mathbf{x}\Vert_1}{\sigma} \right)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Vert\mathbf{y} - \mathbf{G}\mathbf{x} \Vert_{1}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Poisson Noise</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{e^{-\lambda(\mathbf{x})} \lambda(\mathbf{x})^y}{y!}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-\sum_{i} \left( y_i \log(\lambda_i(\mathbf{x})) - \lambda_i(\mathbf{x}) - \log(y_i!) \right)\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="Defining-the-Prior-Distribution">
+<h2>Defining the Prior Distribution<a class="headerlink" href="#Defining-the-Prior-Distribution" title="Link to this heading">#</a></h2>
+<p>The prior distribution in general defines our assumptions of the unknown scene <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, in order to favour solutions that fullfill those assumptions in our reconstructed scene <span class="math notranslate nohighlight">\(\hat{\mathbf{x}}\)</span>. One common assumption is total variation (TV), in which we assume that the scene is kind of piece-wise constant. This is equivalent as saying that its gradient has only a few peaks, or large values, and is well modeled by the Laplacian probability distribution on the gradient
+coefficients <span class="math notranslate nohighlight">\(\mathbf{D}\mathbf{x}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[p(\mathbf{x}) = \prod_{i=0}^{N-1}\frac{1}{2\beta}  \exp \left\{ - \frac{|\mathbf{D}(\mathbf{x})_{i} |}{\beta}
+\right\},\]</div>
+<p>where <span class="math notranslate nohighlight">\(\beta\)</span> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Scale_parameter">scale parameter</a>, related to the standard deviation. After applying the negative log-transform and ignoring the constant term, results in the <span class="math notranslate nohighlight">\(\ell_ {1}\)</span>-norm:</p>
+<div class="math notranslate nohighlight">
+\[- \log p(\mathbf{x}) = \frac{1}{\beta} \Vert \mathbf{D}\mathbf{x}\Vert_{1}.\]</div>
+<p>For other regularization functionals, see the following Table, and take a look at the user guide on <a class="reference external" href="./funcs.html">Loss &amp; Regularization functionals</a>.</p>
+<section id="Table-2:-Choice-of-regularization-functional-based-on-the-prior-distribution">
+<h3>Table 2: Choice of regularization functional based on the prior distribution<a class="headerlink" href="#Table-2:-Choice-of-regularization-functional-based-on-the-prior-distribution" title="Link to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Regularization Type</p></th>
+<th class="head"><p>Prior distribution <span class="math notranslate nohighlight">\(p (\mathbf{x})\)</span></p></th>
+<th class="head"><p>Regularising Functional <span class="math notranslate nohighlight">\(R(\mathbf{x}) = -\log p(\mathbf{x})\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Tikhonov</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(p (\mathbf{x}) \propto \exp \left( - \Vert \mathbf{x} \Vert_{2}^{2} \right)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Vert \mathbf{x} \Vert_{2}^{2}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Generalised Tikhonov</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(p (\mathbf{x}) \propto \exp \left( - \Vert \mathbf{D} \mathbf{x} \Vert_{2}^{2} \right)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Vert \mathbf{D}\mathbf{x} \Vert_{2}^{2}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\ell_{1}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(p (\mathbf{x}) \propto \exp \left( - \Vert \mathbf{x} \Vert_{1} \right)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Vert \mathbf{x}\Vert_{1}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Total Variation</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(p (\mathbf{x}) \propto \exp \left( - \Vert \mathbf{D} \mathbf{x} \Vert_{1} \right)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Vert \mathbf{D} \mathbf{x} \Vert_{1}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="Combining-the-Likelihood-and-Prior">
+<h2>Combining the Likelihood and Prior<a class="headerlink" href="#Combining-the-Likelihood-and-Prior" title="Link to this heading">#</a></h2>
+<p>Combining the likelihood and prior, we can rewrite the optimization problem as:</p>
+<div class="math notranslate nohighlight">
+\[\hat{\mathbf{x}}_{MAP} = \arg \min_{\mathbf{x}} \frac{1}{2\sigma^{2}} \Vert \mathbf{y} - \mathbf{F}\mathbf{x}
+\Vert^{2}_{2} + \frac{1}{\beta} \Vert \mathbf{D} \mathbf{x}\Vert_{1}.\]</div>
+<p>We can also rewrite the above equation, without changing the value of the minimizer, as:</p>
+<div class="math notranslate nohighlight">
+\[\hat{\mathbf{x}}_{MAP} = \arg \min_{\mathbf{x}} \Vert \mathbf{y} - \mathbf{F}\mathbf{x} \Vert^{2}_{2} +
+\frac{2\sigma^{2}}{\beta} \Vert \mathbf{D}\mathbf{x}\Vert_{1}.\]</div>
+<p>We can now define <span class="math notranslate nohighlight">\(\lambda = \frac{2\sigma^{2}}{\beta}\)</span> as the uncertainty trade-off between the likelihood and the prior, yielding our simplified <em>MAP estimator</em>:</p>
+<div class="math notranslate nohighlight">
+\[\hat{\mathbf{x}}_{MAP} = \arg \min_{\mathbf{x}} \Vert \mathbf{y} - \mathbf{F}\mathbf{x} \Vert^{2}_{2} + \lambda \Vert
+\mathbf{D} \mathbf{x}\Vert_{1}.\]</div>
+</section>
+</section>
+<section id="Implementing-with-Pyxu">
+<h1>Implementing with Pyxu<a class="headerlink" href="#Implementing-with-Pyxu" title="Link to this heading">#</a></h1>
+<p>Now, we will implement the above formulation using Pyxu.</p>
+<p>In this example, we will explore a practical application of the Maximum a Posteriori (MAP) approach to solve the problem of image denoising. The forward model in this case is an identity operator, meaning that we are directly observing the noisy image without any underlying model of transformation. As a prior, we will incorporate a total variation prior and a positivity constraint to improve the quality of the denoised image.</p>
+<section id="First,-import-the-necessary-modules:">
+<h2>First, import the necessary modules:<a class="headerlink" href="#First,-import-the-necessary-modules:" title="Link to this heading">#</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing necessary libraries and modules</span>
+<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.L21Norm" title="pyxu.operator.func.norm.L21Norm"><span class="n">L21Norm</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><span class="n">Gradient</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">SquaredL2Norm</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.PositiveOrthant" title="pyxu.operator.func.indicator.PositiveOrthant"><span class="n">PositiveOrthant</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.IdentityOp" title="pyxu.operator.linop.base.IdentityOp"><span class="n">IdentityOp</span></a>
+<span class="kn">from</span> <span class="nn">pyxu.opt.solver</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/opt.solver.html#pyxu.opt.solver.PD3O" title="pyxu.opt.solver.pds.PD3O"><span class="n">PD3O</span></a>
+<span class="kn">from</span> <span class="nn">pyxu.opt.stop</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/opt.stop.html#pyxu.opt.stop.RelError" title="pyxu.opt.stop.RelError"><span class="n">RelError</span></a>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<br/></pre></div>
+</div>
+</div>
+</section>
+<section id="Loading-and-Preprocessing-the-Image">
+<h2>Loading and Preprocessing the Image<a class="headerlink" href="#Loading-and-Preprocessing-the-Image" title="Link to this heading">#</a></h2>
+<p>We load a sample image and preprocess it to be suitable for the denoising process. The image is converted to a float type and normalized to have pixel values between 0 and 1.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Loading and preprocessing the image</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"../_static/favicon.png"</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s2">"L"</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">(</span><a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.asarray.html#numpy.asarray" title="numpy.asarray"><span class="n">np</span><span class="o">.</span><span class="n">asarray</span></a><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">"float32"</span><span class="p">)</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">)[::</span><span class="mi">4</span><span class="p">,</span> <span class="p">::</span><span class="mi">4</span><span class="p">]</span>
+<br/></pre></div>
+</div>
+</div>
+</section>
+<section id="Adding-Noise-to-the-Image">
+<h2>Adding Noise to the Image<a class="headerlink" href="#Adding-Noise-to-the-Image" title="Link to this heading">#</a></h2>
+<p>We add Gaussian noise to the image to simulate a real-world noisy observation. The identity operator is used as the forward model, indicating that the observed image is directly the noisy image.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adding noise to the image using the identity operator</span>
+<a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.IdentityOp" title="pyxu.operator.linop.base.IdentityOp"><span class="n">id_op</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.IdentityOp" title="pyxu.operator.linop.base.IdentityOp"><span class="n">IdentityOp</span></a><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.05</span>  <span class="c1"># Standard deviation of the Gaussian noise</span>
+<span class="n">y</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.IdentityOp" title="pyxu.operator.linop.base.IdentityOp"><span class="n">id_op</span></a><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html#numpy.random.normal" title="numpy.random.normal"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span></a><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>  <span class="c1"># Adding noise</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Clipping to maintain pixel values between 0 and 1</span>
+<br/></pre></div>
+</div>
+</div>
+</section>
+<section id="MAP-Approach-with-Total-Variation-Prior-and-Positivity-Constraint">
+<h2>MAP Approach with Total Variation Prior and Positivity Constraint<a class="headerlink" href="#MAP-Approach-with-Total-Variation-Prior-and-Positivity-Constraint" title="Link to this heading">#</a></h2>
+<p>We set up the MAP approach to denoise the image. The total variation prior is used to promote piecewise smooth solutions, and the positivity constraint ensures non-negative pixel values. The optimization problem is formulated as:</p>
+<div class="math notranslate nohighlight">
+\[\hat{\mathbf{x}}_{\text{MAP}}=\arg\min_{\mathbf{x} ≥ \mathbf{0}}\Vert
+\mathbf{y}−\mathbf{x}\Vert^{2}_{2}+\lambda\Vert\nabla\mathbf{x}\Vert_{1},\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Vert \mathbf{y}−\mathbf{x}\Vert_{2}^{2}\)</span> is the squared L2 norm corresponding to the (scaled) log-likelihood of the data,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Vert\nabla\mathbf{x}\Vert_{1}\)</span> is the L21 norm representing the total variation prior,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> is the regularization parameter balancing the two terms,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{x}≥\mathbf{0}\)</span> is the positivity constraint ensuring non-negative pixel values.</p></li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setting up the MAP approach with total variation prior and positivity constraint</span>
+<span class="n">sl2</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">SquaredL2Norm</span></a><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">y</span><span class="o">.</span><span class="n">size</span><span class="p">)</span><span class="o">.</span><span class="n">asloss</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
+<span class="n">loss</span> <span class="o">=</span> <span class="n">sl2</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.IdentityOp" title="pyxu.operator.linop.base.IdentityOp"><span class="n">id_op</span></a>  <span class="c1"># Data fidelity term</span>
+
+<span class="n">beta</span> <span class="o">=</span> <span class="mf">0.025</span>  <span class="c1"># Parameter related to the noise level</span>
+<span class="n">lambda_</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sigma</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">beta</span>  <span class="c1"># Regularization parameter</span>
+
+<a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.L21Norm" title="pyxu.operator.func.norm.L21Norm"><span class="n">l21</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.L21Norm" title="pyxu.operator.func.norm.L21Norm"><span class="n">L21Norm</span></a><span class="p">(</span><span class="n">arg_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">*</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="n">l2_axis</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">))</span>  <span class="c1"># Total variation prior</span>
+<span class="n">grad</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><span class="n">Gradient</span></a><span class="p">(</span>
+    <span class="n">arg_shape</span><span class="o">=</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
+    <span class="n">diff_method</span><span class="o">=</span><span class="s2">"fd"</span><span class="p">,</span>
+    <span class="n">scheme</span><span class="o">=</span><span class="s2">"central"</span><span class="p">,</span>
+    <span class="n">accuracy</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+<span class="p">)</span>  <span class="c1"># Gradient operator</span>
+
+<a class="sphinx-codeautolink-a" href="../api/opt.stop.html#pyxu.opt.stop.RelError" title="pyxu.opt.stop.RelError"><span class="n">stop_crit</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/opt.stop.html#pyxu.opt.stop.RelError" title="pyxu.opt.stop.RelError"><span class="n">RelError</span></a><span class="p">(</span>
+    <span class="n">eps</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span>
+    <span class="n">var</span><span class="o">=</span><span class="s2">"x"</span><span class="p">,</span>
+    <span class="n">f</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">norm</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">satisfy_all</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+
+<a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.PositiveOrthant" title="pyxu.operator.func.indicator.PositiveOrthant"><span class="n">positivity</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.PositiveOrthant" title="pyxu.operator.func.indicator.PositiveOrthant"><span class="n">PositiveOrthant</span></a><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">y</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>  <span class="c1"># Positivity constraint</span>
+<a class="sphinx-codeautolink-a" href="../api/opt.solver.html#pyxu.opt.solver.PD3O" title="pyxu.opt.solver.pds.PD3O"><span class="n">solver</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/opt.solver.html#pyxu.opt.solver.PD3O" title="pyxu.opt.solver.pds.PD3O"><span class="n">PD3O</span></a><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">loss</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.PositiveOrthant" title="pyxu.operator.func.indicator.PositiveOrthant"><span class="n">positivity</span></a><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="n">lambda_</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.L21Norm" title="pyxu.operator.func.norm.L21Norm"><span class="n">l21</span></a><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="n">grad</span><span class="p">,</span> <span class="n">show_progress</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="n">y</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">stop_crit</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/opt.stop.html#pyxu.opt.stop.RelError" title="pyxu.opt.stop.RelError"><span class="n">stop_crit</span></a><span class="p">)</span>  <span class="c1"># Solving the optimization problem</span>
+<br/></pre></div>
+</div>
+</div>
+</section>
+<section id="Obtaining-and-Visualizing-the-Denoised-Image">
+<h2>Obtaining and Visualizing the Denoised Image<a class="headerlink" href="#Obtaining-and-Visualizing-the-Denoised-Image" title="Link to this heading">#</a></h2>
+<p>We retrieve the denoised image from the solver and normalize it. We then visualize the original image, the noisy image, and the denoised image side by side for comparison.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtaining the denoised image</span>
+<span class="n">recons</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solution</span><span class="p">()</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">recons</span> <span class="o">=</span> <span class="n">recons</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># clipping to maintain pixel values between 0 and 1</span>
+
+<span class="c1"># Visualizing the images</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'gray'</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Original Image"</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'gray'</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Noisy Image"</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">recons</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'gray'</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Denoised Image"</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+
+<a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout" title="matplotlib.pyplot.tight_layout"><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span></a><span class="p">()</span>
+<a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/guide_bayes_10_0.png" src="../_images/guide_bayes_10_0.png"/>
+</div>
+</div>
+<p>In this final visualization, the original, noisy, and denoised images are displayed for a comprehensive comparison, showcasing the effectiveness of the MAP approach with a total variation prior and positivity constraint in image denoising.</p>
+</section>
+</section>
+</article>
+<footer class="bd-footer-article">
+<div class="footer-article-items footer-article__inner">
+<div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="diff_ops.html" title="previous page">
+<i class="fa-solid fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Differential Operators in Pyxu</p>
+</div>
+</a>
+<a class="right-next" href="../examples/index.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Example Gallery</p>
+</div>
+<i class="fa-solid fa-angle-right"></i>
+</a>
+</div></div>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> On this page
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Bayesian Computational Imaging with Pyxu</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Understanding-the-Problem">Understanding the Problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Simplifying-the-Optimization-Problem">Simplifying the Optimization Problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Defining-the-Likelihood-Function">Defining the Likelihood Function</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Table-1:-Choice-of-cost-functional-based-on-noise-modeling">Table 1: Choice of cost functional based on noise modeling</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Defining-the-Prior-Distribution">Defining the Prior Distribution</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Table-2:-Choice-of-regularization-functional-based-on-the-prior-distribution">Table 2: Choice of regularization functional based on the prior distribution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Combining-the-Likelihood-and-Prior">Combining the Likelihood and Prior</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#Implementing-with-Pyxu">Implementing with Pyxu</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#First,-import-the-necessary-modules:">First, import the necessary modules:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Loading-and-Preprocessing-the-Image">Loading and Preprocessing the Image</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Adding-Noise-to-the-Image">Adding Noise to the Image</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MAP-Approach-with-Total-Variation-Prior-and-Positivity-Constraint">MAP Approach with Total Variation Prior and Positivity Constraint</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Obtaining-and-Visualizing-the-Denoised-Image">Obtaining and Visualizing the Denoised Image</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
+<div class="sidebar-secondary-item">
+<div id="searchbox"></div></div>
+<div class="sidebar-secondary-item">
+<div class="tocsection editthispage">
+<a href="https://github.com/matthieumeo/pyxu/edit/main/doc/guide/bayes.ipynb">
+<i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+</div>
+</div>
+<div class="sidebar-secondary-item">
+<div class="tocsection sourcelink">
+<a href="../_sources/guide/bayes.ipynb">
+<i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+</div>
+</div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+<footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+<div class="footer-items__start">
+<div class="footer-item">
+<p class="copyright">
+    
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt, Pyxu Developers.
+      <br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+    <br/>
+</p>
+</div>
+</div>
+<div class="footer-items__end">
+<div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+</div>
+</div>
+</footer>
+</body>
+</html>

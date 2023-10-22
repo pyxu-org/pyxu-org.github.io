@@ -181,14 +181,14 @@
     }
     </style>
 
-*********
-Catalogue
-*********
+*******
+Catalog
+*******
 
 
 .. raw:: html
 
-    <h2 style="font-size: 60px; font-weight: bold; display: inline"><span>Catalogue</span></h2>
+    <h2 style="font-size: 60px; font-weight: bold; display: inline"><span>Catalog</span></h2>
 
 
 **Total Registered Plugin Packages: 2**
@@ -255,7 +255,7 @@ Catalogue
 
             
                 <li>
-                    <a> Score: 1 % </a>
+                    <a> Score: 100 % </a>
                 </li>
             
             </ul>
@@ -292,7 +292,7 @@ Catalogue
 
             
                 <li>
-                    <a> Score: 1 % </a>
+                    <a> Score: 100 % </a>
                 </li>
             
             </ul>

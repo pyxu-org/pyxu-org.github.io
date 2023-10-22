@@ -44,7 +44,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../_static/documentation_options.js?v=9f51c310"></script>
+    <script src="../_static/documentation_options.js?v=0b294dfe"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -202,7 +202,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v1.1.0 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -344,7 +344,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v1.1.0 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -423,7 +423,11 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="runtime.html">pyxu.runtime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="math.html">pyxu.math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="util.html">pyxu.util</a></li>
-<li class="toctree-l1"><a class="reference internal" href="experimental.sampler.html">pyxu.experimental.sampler</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="experimental/index.html">pyxu.experimental</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="experimental/sampler.html">pyxu.experimental.sampler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental/xray.html">pyxu.experimental.xray</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html"><strong>References</strong></a></li>
 </ul>
 </div>
@@ -535,7 +539,7 @@ document.write(`
 <dl class="py class">
 <dt class="sig sig-object py" id="pyxu.info.ptype.Real">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Real</span></span><a class="reference internal" href="../_modules/numbers.html#Real"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.info.ptype.Real" title="Link to this definition">#</a></dt>
-<dd><p>Alias of <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numbers.Real</span></code></a>.</p>
+<dd><p>Alias of <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numbers.Real</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py data">
@@ -548,55 +552,55 @@ document.write(`
 <dt class="sig sig-object py" id="pyxu.info.ptype.OpC">
 <span class="sig-name descname"><span class="pre">OpC</span></span><a class="headerlink" href="#pyxu.info.ptype.OpC" title="Link to this definition">#</a></dt>
 <dd><p><a class="reference internal" href="abc.html#pyxu.abc.Operator" title="pyxu.abc.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> hierarchy class type.</p>
-<p>alias of <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code></a>[<a class="reference internal" href="#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OpT</span></code></a>]</p>
+<p>alias of <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code></a>[<a class="reference internal" href="#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OpT</span></code></a>]</p>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pyxu.info.ptype.SolverC">
 <span class="sig-name descname"><span class="pre">SolverC</span></span><a class="headerlink" href="#pyxu.info.ptype.SolverC" title="Link to this definition">#</a></dt>
 <dd><p><a class="reference internal" href="abc.html#pyxu.abc.Solver" title="pyxu.abc.Solver"><code class="xref py py-class docutils literal notranslate"><span class="pre">Solver</span></code></a> hierarchy class type.</p>
-<p>alias of <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code></a>[<a class="reference internal" href="#pyxu.info.ptype.SolverT" title="pyxu.info.ptype.SolverT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SolverT</span></code></a>]</p>
+<p>alias of <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code></a>[<a class="reference internal" href="#pyxu.info.ptype.SolverT" title="pyxu.info.ptype.SolverT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SolverT</span></code></a>]</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pyxu.info.ptype.Integer">
 <span class="sig-name descname"><span class="pre">Integer</span></span><a class="headerlink" href="#pyxu.info.ptype.Integer" title="Link to this definition">#</a></dt>
-<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integral</span></code></a></p>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integral</span></code></a></p>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pyxu.info.ptype.OpShape">
 <span class="sig-name descname"><span class="pre">OpShape</span></span><a class="headerlink" href="#pyxu.info.ptype.OpShape" title="Link to this definition">#</a></dt>
 <dd><p><a class="reference internal" href="abc.html#pyxu.abc.Operator" title="pyxu.abc.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> shape specifier.</p>
-<p>alias of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integral</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integral</span></code></a>]</p>
+<p>alias of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integral</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integral</span></code></a>]</p>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pyxu.info.ptype.NDArrayAxis">
 <span class="sig-name descname"><span class="pre">NDArrayAxis</span></span><a class="headerlink" href="#pyxu.info.ptype.NDArrayAxis" title="Link to this definition">#</a></dt>
 <dd><p>Axis/Axes specifier.</p>
-<p>alias of <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integral</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integral</span></code></a>, …]]</p>
+<p>alias of <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integral</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integral</span></code></a>, …]]</p>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pyxu.info.ptype.NDArrayShape">
 <span class="sig-name descname"><span class="pre">NDArrayShape</span></span><a class="headerlink" href="#pyxu.info.ptype.NDArrayShape" title="Link to this definition">#</a></dt>
 <dd><p><a class="reference internal" href="#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a> shape specifier.</p>
-<p>alias of <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integral</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integral</span></code></a>, …]]</p>
+<p>alias of <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integral</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integral</span></code></a>, …]]</p>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pyxu.info.ptype.Path">
 <span class="sig-name descname"><span class="pre">Path</span></span><a class="headerlink" href="#pyxu.info.ptype.Path" title="Link to this definition">#</a></dt>
 <dd><p>Path-like object.</p>
-<p>alias of <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></a>]</p>
+<p>alias of <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></a>]</p>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pyxu.info.ptype.VarName">
 <span class="sig-name descname"><span class="pre">VarName</span></span><a class="headerlink" href="#pyxu.info.ptype.VarName" title="Link to this definition">#</a></dt>
 <dd><p>Variable name(s).</p>
-<p>alias of <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Collection" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Collection</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]]</p>
+<p>alias of <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Collection" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Collection</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]]</p>
 </dd></dl>
 
 </section>

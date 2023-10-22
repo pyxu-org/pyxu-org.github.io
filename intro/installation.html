@@ -44,7 +44,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../_static/documentation_options.js?v=9f51c310"></script>
+    <script src="../_static/documentation_options.js?v=0b294dfe"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -202,7 +202,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v1.1.0 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -344,7 +344,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v1.1.0 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -480,7 +480,7 @@ tested on the latter.</p>
 <section id="basic-installation">
 <h2>Basic Installation<a class="headerlink" href="#basic-installation" title="Link to this heading">#</a></h2>
 <p>The core of <strong>Pyxu</strong> is lightweight and straightforward to install. You’ll need Python (&gt;= 3.9, &lt; 3.12) and a few
-mandatory dependencies. While these dependencies will be automatically installed via <code class="docutils literal notranslate"><span class="pre">pip</span></code>, we highly recommend
+mandatory Python packages. While these dependencies will be automatically installed via <code class="docutils literal notranslate"><span class="pre">pip</span></code>, we highly recommend
 installing NumPy and SciPy via <code class="docutils literal notranslate"><span class="pre">conda</span></code> to benefit from optimized math libraries.</p>
 <p>First, to install NumPy and SciPy from conda-forge:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>numpy<span class="w"> </span>scipy
@@ -496,11 +496,19 @@ installing NumPy and SciPy via <code class="docutils literal notranslate"><span 
 <h2>Installation with Optional Dependencies<a class="headerlink" href="#installation-with-optional-dependencies" title="Link to this heading">#</a></h2>
 <p>For extended features, you can install Pyxu with its optional dependencies:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pyxu<span class="o">[</span>complete-cpu<span class="o">]</span><span class="w">  </span><span class="c1"># full CPU-only user install.</span>
-pip<span class="w"> </span>install<span class="w"> </span>pyxu<span class="o">[</span>complete<span class="o">]</span><span class="w">      </span><span class="c1"># full CPU/GPU  user install. (CUDA 12.* required.)</span>
+pip<span class="w"> </span>install<span class="w"> </span>pyxu<span class="o">[</span>complete11<span class="o">]</span><span class="w">    </span><span class="c1"># full CPU/GPU  user install. (CUDA 11.x)</span>
+pip<span class="w"> </span>install<span class="w"> </span>pyxu<span class="o">[</span>complete<span class="o">]</span><span class="w">      </span><span class="c1"># full CPU/GPU  user install. (CUDA 12.x)</span>
 </pre></div>
 </div>
 <p>More fine-grained extras can be installed by looking at the <code class="docutils literal notranslate"><span class="pre">project.optional-dependencies</span></code> field in
 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> at the root of the repository.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The host system must have <a class="reference external" href="https://docs.nvidia.com/cuda/">CUDA 11.x or 12.x</a> installed to use the GPU. Similarly,
+some Pyxu operators may require extra system dependencies such as <a class="reference external" href="https://llvm.org/">LLVM</a>. If problems arise, we
+provide <a class="reference external" href="https://github.com/pyxu-org/pyxu_docker">Docker receipes</a> to easily create Pyxu user/developer
+environments.</p>
+</div>
 </section>
 <section id="developer-installation">
 <h2>Developer Installation<a class="headerlink" href="#developer-installation" title="Link to this heading">#</a></h2>

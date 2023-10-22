@@ -33,7 +33,7 @@
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../_static/documentation_options.js?v=9f51c310"></script>
+<script src="../_static/documentation_options.js?v=0b294dfe"></script>
 <script src="../_static/doctools.js?v=888ff710"></script>
 <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -129,7 +129,7 @@ document.write(`
 `);
 </script>
 </div>
-<div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
+<div class="navbar-item"><strong> Pyxu v1.1.0 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
 <a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
@@ -202,7 +202,7 @@ document.write(`
 </nav></div>
 </div>
 <div class="sidebar-header-items__end">
-<div class="navbar-item"><strong> Pyxu v1.0.1 </strong></div>
+<div class="navbar-item"><strong> Pyxu v1.1.0 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
 <a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
@@ -383,8 +383,8 @@ document.write(`
 </section>
 <section id="Pyxu's-Modularity-to-the-Rescue">
 <h2>Pyxu’s Modularity to the Rescue<a class="headerlink" href="#Pyxu's-Modularity-to-the-Rescue" title="Link to this heading">#</a></h2>
-<p>We now turn our attention to how Pyxu addresses the limitations encountered when using <code class="docutils literal notranslate"><span class="pre">iradon()</span></code><a class="reference external" href="https://scikit-image.org/docs/stable/api/skimage.transform.html#skimage.transform.iradon">🔗</a> for reconstruction in non-ideal conditions. Unlike monolithic approaches, Pyxu’s microservice architecture thrives on modularity, allowing us to decompose the data model into a sequence of simple linear operators: the Radon transform (<span class="math notranslate nohighlight">\(R\)</span>), followed by filtering (<span class="math notranslate nohighlight">\(F\)</span>), masking
-(<span class="math notranslate nohighlight">\(M\)</span>), and finally tapering (<span class="math notranslate nohighlight">\(T\)</span>).</p>
+<p>We now turn our attention to how Pyxu addresses the limitations encountered when using <code class="docutils literal notranslate"><span class="pre">iradon()</span></code><a class="reference external" href="https://scikit-image.org/docs/stable/api/skimage.transform.html#skimage.transform.iradon">🔗</a> for reconstruction in non-ideal conditions. Unlike monolithic approaches, Pyxu’s microservice architecture thrives on modularity, allowing us to decompose the data model into a sequence of simple linear operators: the Radon transform (<span class="math notranslate nohighlight">\(R\)</span>), followed by filtering (<span class="math notranslate nohighlight">\(F\)</span>), masking (<span class="math notranslate nohighlight">\(M\)</span>),
+and finally tapering (<span class="math notranslate nohighlight">\(T\)</span>).</p>
 <div class="math notranslate nohighlight">
 \[\Phi= T \circ M \circ F \circ R\]</div>
 <p>Here is a code snippet detailing the construction of such an operator with Pyxu:</p>

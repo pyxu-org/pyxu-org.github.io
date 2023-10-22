@@ -43,7 +43,7 @@ Features and Maturity
 Pyxu offers a comprehensive suite of algorithms, including the latest primal-dual splitting methods for hybrid
 optimization.  The feature set is robust and mature, positioning it as a leader in the computational imaging arena.
 
-.. list-table:: Feature Maturity Comparison
+.. list-table:: Feature Maturity - Comparison
     :header-rows: 1
     :stub-columns: 1
     :widths: auto
@@ -56,60 +56,61 @@ optimization.  The feature set is robust and mature, positioning it as a leader 
       - Remarks 💬
 
     * - PyLops
-      - 🔴 Linear ops
+      - 🔴 Linear oeprators
       - 🟡 Partial
-      - 🔴 Least-squares & sparse rec.
+      - 🔴 Least-squares & sparse reconstructions
       - 🟡 Wave-processing, geophysics
-      - 🔴 Linear ops. based on NumPy's old matrix interface
+      - 🔴 Linear operators based on NumPy's old matrix interface
 
     * - PyProximal
-      - 🔴 Prox. funcs
+      - 🔴 Proximable functionals
       - 🔴 None
-      - 🔴 Non-smooth cvx opt.
+      - 🔴 Non-smooth convex optimization
       - 🟢 None
       - 🔴 Under early development, unstable API
 
     * - Operator Discretization Library (ODL)
-      - 🟡 Linear ops, diff./prox. funcs
+      - 🟡 Linear operators, differentiable/proximable functionals
       - 🟢 Full
-      - 🟡 Smooth & non-smooth cvx opt.
+      - 🟡 Smooth & non-smooth convex optimization
       - 🟡 Tomography
       - 🔴 Domain-specific language for mathematicians
 
     * - GlobalBioIm
-      - 🟢 (Non)linear ops, diff./prox. funcs
+      - 🟢 (Non)linear operators, differentiable/proximable functionals
       - 🟢 Full
-      - 🟢 Smooth, non-smooth & hybrid cvx opt.
+      - 🟢 Smooth, non-smooth & hybrid convex optimization
       - 🟢 None
-      - 🔴 MATLAB-based, unlike most DL fmwks
+      - 🔴 MATLAB-based, unlike most DL frameworks
 
     * - SigPy
-      - 🟡 Linear ops, prox. funcs
+      - 🟡 Linear operators, proximable functionals
       - 🟡 Partial
-      - 🟡 Smooth & non-smooth cvx opt.
+      - 🟡 Smooth & non-smooth convex optimization
       - 🔴 MRI
-      - 🔴 Very limited suite of ops, funcs, algs
+      - 🔴 Very limited suite of operators, functionals, and algorithms
 
     * - SCICO
-      - 🟢 (Non)linear ops, diff./prox. funcs
+      - 🟢 (Non)linear operators, differentiable/proximable functionals
       - 🟢 Full
-      - 🟢 Smooth, non-smooth & hybrid (non)cvx opt.
+      - 🟢 Smooth, non-smooth & hybrid (non-)convex optimization
       - 🟢 None
-      - 🟡 JAX-based (pure functions only, no mutation, etc)
+      - 🟡 JAX-based (pure functions only, no mutation, etc.)
 
     * - DeepInv
-      - 🟢 (Non)linear ops, diff./prox. funcs
+      - 🟢 (Non)linear operators, differentiable/proximable functionals
       - 🟡 Partial
-      - 🟢 Smooth, non-smooth & hybrid (non)cvx opt.
+      - 🟢 Smooth, non-smooth & hybrid (non-)convex optimization
       - 🟡 Deep Learning
       - 🟡 PyTorch-based (lots of dependencies)
 
     * - Pyxu
-      - 🟢 (Non)linear ops, diff./prox. funcs
+      - 🟢 (Non)linear operators, differentiable/proximable functionals
       - 🟢 Full
-      - 🟢 Smooth, non-smooth, hybrid & stochastic (non)cvx opt.
+      - 🟢 Smooth, non-smooth & hybrid (non-)convex optimization
       - 🟢 None
-      - 🟢 Very rich suite of ops, funcs, algs & HPC features
+      - 🟢 Very rich suite of operators, functionals, algorithms & HPC features
+      
 
 Ease-of-Use
 +++++++++++
@@ -124,7 +125,7 @@ Pyxu is unique in supporting both out-of-core and distributed computing. Additio
 compilation and GPU computing via Numba and CuPy respectively. Most contenders either offer partial support or lack
 these features altogether.
 
-.. list-table:: HPC Features Comparison
+.. list-table:: HPC Features - Comparison
     :header-rows: 1
     :stub-columns: 1
     :widths: auto
@@ -167,7 +168,7 @@ these features altogether.
 
     * - SCICO
       - 🟢 Yes
-      - 🟢 Yes (JAX) (GPU/TPU)
+      - 🟢 Yes + TPU (JAX)
       - 🔴 No
       - 🟢 Yes (XLA via JAX)
 
@@ -180,9 +181,10 @@ these features altogether.
     * - Pyxu
       - 🟢 Yes
       - 🟢 Yes (CuPy)
-      - 🟢 Yes(Dask)
+      - 🟢 Yes (Dask)
       - 🟢 Yes (LLVM and CUDA via Numba)
 
+      
 SCICO: A Closer Look
 --------------------
 

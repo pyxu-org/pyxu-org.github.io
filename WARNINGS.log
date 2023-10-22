@@ -1,512 +1,224 @@
-[91m/home/sep/Documents/Repositories/pyxu/doc/fair/howto.rst:2: WARNING: Duplicate explicit target name: "catalogue website".[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/fair/howto.rst:33: WARNING: invalid syntax (<unknown>, line 2) in document 'fair/howto'
+[91m/root/HOST/doc/fair/howto.rst:2: WARNING: Duplicate explicit target name: "catalogue website".[39;49;00m
+[91m/root/HOST/doc/fair/howto.rst:33: WARNING: invalid syntax (<unknown>, line 2) in document 'fair/howto'
 Parsed source in `python` block:
 concatenations: from pyxu.opt.solver import GradientDescent
 block source:   ModuleNotFoundError: No module named 'pyxu.opt.solver.GradientDescent'[39;49;00m
-[31m/home/sep/Documents/Repositories/pyxu/doc/fair/plugins/pyxu-eigh.rst:164: ERROR: Content block expected for the "raw" directive; none found.[39;49;00m
-[31m/home/sep/Documents/Repositories/pyxu/doc/fair/plugins/pyxu-gradient-descent.rst:164: ERROR: Content block expected for the "raw" directive; none found.[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:137: WARNING: Title underline too short.
+[31m/root/HOST/doc/fair/plugins/pyxu-eigh.rst:164: ERROR: Content block expected for the "raw" directive; none found.[39;49;00m
+[31m/root/HOST/doc/fair/plugins/pyxu-gradient-descent.rst:164: ERROR: Content block expected for the "raw" directive; none found.[39;49;00m
+[91m/root/HOST/doc/fair/plugins_preview/index.rst:1118: WARNING: toctree contains reference to nonexisting document 'fair/plugins_preview/TokemakRec'[39;49;00m
+[91m/root/HOST/doc/guide/lipschitz.ipynb:81: WARNING: Title underline too short.
 
-Implicit Functionals: The Undercover Agents 🕵️‍♀️
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:137: WARNING: Title underline too short.
+Hands-On Example 🎓
+~~~~~~~~~~~~~~~~~~[39;49;00m
+[91m/root/HOST/doc/guide/lipschitz.ipynb:81: WARNING: Title underline too short.
 
-Implicit Functionals: The Undercover Agents 🕵️‍♀️
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:27: WARNING: File not found: 'api/operator.interop.html#pyxu.operator.interop.from_source'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:27: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:27: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc.grad'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:27: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc.prox'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:29: WARNING: File not found: 'api/index.html'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:34: WARNING: File not found: 'api/abc.html#pyxu.abc.Func'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:34: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:50: WARNING: File not found: 'api/abc.html#pyxu.abc.Func.asloss'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:63: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:63: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc.grad'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:81: WARNING: File not found: 'api/operator.interop.html#pyxu.operator.interop.from_torch'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:81: WARNING: File not found: 'api/operator.interop.html#pyxu.operator.interop.from_jax'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:86: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:86: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc.prox'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:105: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc.moreau_envelope'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:132: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxDiffFunc'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:132: WARNING: File not found: 'api/abc.html#pyxu.abc.LinFunc'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:132: WARNING: File not found: 'api/abc.html#pyxu.abc.QuadraticFunc'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:11: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:17: WARNING: File not found: 'api/operator.interop.html#general'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:17: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:17: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.adjoint'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:17: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.jacobian'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:19: WARNING: File not found: 'api/index.html'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:46: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:46: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:46: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.adjoint'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:55: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:66: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.adjoint'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:100: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:102: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.lipschitz'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:102: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.estimate_lipschitz'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:108: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.svdvals'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:110: WARNING: File not found: 'api/abc.html#pyxu.abc.SquareOp.trace'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:112: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.pinv'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:118: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:118: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.from_array'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:124: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:129: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:134: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:134: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:136: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.jacobian'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:146: WARNING: File not found: 'api/operator.interop.html#pyxu.operator.interop.from_torch'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:146: WARNING: File not found: 'api/operator.interop.html#pyxu.operator.interop.from_jax'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:148: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:153: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:153: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/hpc.ipynb:212: WARNING: File not found: 'api/runtime.html#pyxu.runtime.Precision'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/lipschitz.ipynb:30: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.lipschitz'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/lipschitz.ipynb:30: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.diff_lipschitz'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/lipschitz.ipynb:40: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.estimate_lipschitz'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/lipschitz.ipynb:51: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/lipschitz.ipynb:285: WARNING: File not found: 'api/index.html'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/lipschitz.ipynb:285: WARNING: File not found: 'api/abc/arithmetic.html'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/examples/contributing.ipynb:42: WARNING: invalid syntax (<unknown>, line 5) in document 'examples/contributing'
+Hands-On Example 🎓
+~~~~~~~~~~~~~~~~~~[39;49;00m
+[91m/root/HOST/doc/guide/lipschitz.ipynb:30: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.lipschitz'[39;49;00m
+[91m/root/HOST/doc/guide/lipschitz.ipynb:30: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.diff_lipschitz'[39;49;00m
+[91m/root/HOST/doc/guide/lipschitz.ipynb:40: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.estimate_lipschitz'[39;49;00m
+[91m/root/HOST/doc/guide/lipschitz.ipynb:51: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'[39;49;00m
+[91m/root/HOST/doc/guide/lipschitz.ipynb:285: WARNING: File not found: 'api/index.html'[39;49;00m
+[91m/root/HOST/doc/guide/lipschitz.ipynb:285: WARNING: File not found: 'api/abc/arithmetic.html'[39;49;00m
+[91m/root/HOST/doc/intro/tomo.ipynb:284: WARNING: File not found: 'api/abc.html#pyxu.abc.Operator.expr'[39;49;00m
+[91m/root/HOST/doc/intro/tomo.ipynb:451: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.pinv'[39;49;00m
+[91m/root/HOST/doc/intro/tomo.ipynb:451: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'[39;49;00m
+[91m/root/HOST/doc/intro/tomo.ipynb:666: WARNING: File not found: 'api/operator/linop.html#pyxu.operator.Gradient'[39;49;00m
+[91m/root/HOST/doc/intro/tomo.ipynb:668: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc.moreau_envelope'[39;49;00m
+[91m/root/HOST/doc/intro/tomo.ipynb:677: WARNING: File not found: 'api/operator/func.html#pyxu.operator.PositiveL1Norm'[39;49;00m
+[91m/root/HOST/doc/intro/tomo.ipynb:686: WARNING: File not found: 'api/operator/func.html#pyxu.operator.SquaredL2Norm'[39;49;00m
+[91m/root/HOST/doc/intro/tomo.ipynb:687: WARNING: File not found: 'api/abc.html#pyxu.abc.Func.asloss'[39;49;00m
+[91m/root/HOST/doc/intro/tomo.ipynb:699: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.estimate_diff_lipschitz'[39;49;00m
+[91m/root/HOST/doc/intro/tomo.ipynb:914: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxDiffFunc'[39;49;00m
+[91m/root/HOST/doc/fair/score.rst:29: WARNING: Bullet list ends without a blank line; unexpected unindent.[39;49;00m
+[91m/root/HOST/doc/guide/algebra.ipynb:33: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'[39;49;00m
+[91m/root/HOST/doc/guide/algebra.ipynb:33: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.jacobian'[39;49;00m
+[91m/root/HOST/doc/guide/algebra.ipynb:33: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc.grad'[39;49;00m
+[91m/root/HOST/doc/guide/algebra.ipynb:33: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc.prox'[39;49;00m
+[91m/root/HOST/doc/guide/algebra.ipynb:33: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.adjoint'[39;49;00m
+[91m/root/HOST/doc/guide/algebra.ipynb:39: WARNING: File not found: 'api/abc.html#pyxu-abc-arithmetic'[39;49;00m
+[91m/root/HOST/doc/guide/algebra.ipynb:41: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.Rule'[39;49;00m
+[91m/root/HOST/doc/guide/algebra.ipynb:42: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.ScaleRule'[39;49;00m
+[91m/root/HOST/doc/guide/algebra.ipynb:43: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.ArgScaleRule'[39;49;00m
+[91m/root/HOST/doc/guide/algebra.ipynb:44: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.ArgShiftRule'[39;49;00m
+[91m/root/HOST/doc/guide/algebra.ipynb:45: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.AddRule'[39;49;00m
+[91m/root/HOST/doc/guide/algebra.ipynb:46: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.ChainRule'[39;49;00m
+[91m/root/HOST/doc/guide/algebra.ipynb:47: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.PowerRule'[39;49;00m
+[91m/root/HOST/doc/guide/algebra.ipynb:48: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.TransposeRule'[39;49;00m
+[91m/root/HOST/doc/guide/algebra.ipynb:50: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc'[39;49;00m
+[91m/root/HOST/doc/guide/algebra.ipynb:50: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap'[39;49;00m
+[91m/root/HOST/doc/guide/algebra.ipynb:59: WARNING: File not found: 'api/operator/blocks.html#pyxu.operator.coo_block'[39;49;00m
+[91m/root/HOST/doc/guide/algebra.ipynb:59: WARNING: File not found: 'api/operator/blocks.html#pyxu.operator.block'[39;49;00m
+[91m/root/HOST/doc/guide/algebra.ipynb:59: WARNING: File not found: 'api/operator/blocks.html#pyxu.operator.block_diag'[39;49;00m
+[91m/root/HOST/doc/guide/algebra.ipynb:59: WARNING: File not found: 'api/operator/blocks.html#pyxu.operator.stack'[39;49;00m
+[91m/root/HOST/doc/guide/algebra.ipynb:59: WARNING: File not found: 'api/operator/blocks.html#pyxu.operator.vstack'[39;49;00m
+[91m/root/HOST/doc/guide/algebra.ipynb:59: WARNING: File not found: 'api/operator/blocks.html#pyxu.operator.hstack'[39;49;00m
+[91m/root/HOST/doc/guide/algorithms.ipynb:17: WARNING: Title underline too short.
+
+Conjugate Gradient (CG) `🔗 <../api/opt.solver.html#pyxu.opt.solver.CG>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[39;49;00m
+[91m/root/HOST/doc/guide/algorithms.ipynb:29: WARNING: Title underline too short.
+
+(Accelerated) Proximal Gradient Descent (PGD) `🔗 <../api/opt.solver.html#pyxu.opt.solver.PGD>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[39;49;00m
+[91m/root/HOST/doc/guide/algorithms.ipynb:29: WARNING: Title underline too short.
+
+(Accelerated) Proximal Gradient Descent (PGD) `🔗 <../api/opt.solver.html#pyxu.opt.solver.PGD>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[39;49;00m
+[91m/root/HOST/doc/guide/algorithms.ipynb:17: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.CG'[39;49;00m
+[91m/root/HOST/doc/guide/algorithms.ipynb:29: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.PGD'[39;49;00m
+[91m/root/HOST/doc/guide/algorithms.ipynb:58: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.CondatVu'[39;49;00m
+[91m/root/HOST/doc/guide/algorithms.ipynb:58: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.PD3O'[39;49;00m
+[91m/root/HOST/doc/guide/algorithms.ipynb:58: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.ADMM'[39;49;00m
+[91m/root/HOST/doc/guide/algorithms.ipynb:58: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.ChambollePock'[39;49;00m
+[91m/root/HOST/doc/guide/algorithms.ipynb:77: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.DouglasRachford'[39;49;00m
+[91m/root/HOST/doc/guide/algorithms.ipynb:79: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.Adam'[39;49;00m
+[91m/root/HOST/doc/guide/algorithms.ipynb:131: WARNING: File not found: 'api/opt.stop.html'[39;49;00m
+[91m/root/HOST/doc/guide/algorithms.ipynb:148: WARNING: File not found: 'api/abc.html#pyxu.abc.Solver'[39;49;00m
+[91m/root/HOST/doc/guide/algorithms.ipynb:148: WARNING: File not found: 'api/abc.html#pyxu.abc.Solver.m_init'[39;49;00m
+[91m/root/HOST/doc/guide/algorithms.ipynb:148: WARNING: File not found: 'api/abc.html#pyxu.abc.Solver.m_step'[39;49;00m
+[91m/root/HOST/doc/guide/algorithms.ipynb:152: WARNING: File not found: 'api/abc.html#pyxu.abc.Solver.fit'[39;49;00m
+[91m/root/HOST/doc/guide/bayes.ipynb:47: WARNING: File not found: 'guide/fwdops.html'[39;49;00m
+[91m/root/HOST/doc/guide/bayes.ipynb:62: WARNING: File not found: 'guide/funcs.html'[39;49;00m
+[91m/root/HOST/doc/guide/bayes.ipynb:92: WARNING: File not found: 'guide/funcs.html'[39;49;00m
+[91m/root/HOST/doc/guide/diff_ops.ipynb:11: WARNING: File not found: 'api/operator/linop.html#derivatives'[39;49;00m
+[91m/root/HOST/doc/guide/diff_ops.ipynb:18: WARNING: File not found: 'api/operator/linop.html#pyxu.operator.PartialDerivative'[39;49;00m
+[91m/root/HOST/doc/guide/diff_ops.ipynb:530: WARNING: File not found: 'api/operator/linop.html#pyxu.operator.Gradient'[39;49;00m
+[91m/root/HOST/doc/guide/diff_ops.ipynb:540: WARNING: File not found: 'api/operator/linop.html#pyxu.operator.Hessian'[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:32: WARNING: Title underline too short.
+
+``Func``: The Foundation Stone 🧱
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:61: WARNING: Title underline too short.
+
+``DiffFunc``: Differentiable Functionals 🎯
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:61: WARNING: Title underline too short.
+
+``DiffFunc``: Differentiable Functionals 🎯
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:112: WARNING: Title underline too short.
+
+Demystifying the Proximal Operator 🎭
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:112: WARNING: Title underline too short.
+
+Demystifying the Proximal Operator 🎭
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:130: WARNING: Title underline too short.
+
+Specialized Classes: ``ProxDiffFunc``, ``LinFunc``, ``QuadraticFunc`` 🎨
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:130: WARNING: Title underline too short.
+
+Specialized Classes: ``ProxDiffFunc``, ``LinFunc``, ``QuadraticFunc`` 🎨
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:171: WARNING: Title underline too short.
+
+Practical Example: Deblurring through Least-Squares 🌠
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:184: WARNING: Title underline too short.
+
+The Benefit: Automatic Propagation 🚀
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:184: WARNING: Title underline too short.
+
+The Benefit: Automatic Propagation 🚀
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:189: WARNING: Title underline too short.
+
+The Takeaway: Flexibility and Power 🌈
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:189: WARNING: Title underline too short.
+
+The Takeaway: Flexibility and Power 🌈
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:27: WARNING: File not found: 'api/operator.interop.html#pyxu.operator.interop.from_source'[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:27: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:27: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc.grad'[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:27: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc.prox'[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:29: WARNING: File not found: 'api/index.html'[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:34: WARNING: File not found: 'api/abc.html#pyxu.abc.Func'[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:34: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:50: WARNING: File not found: 'api/abc.html#pyxu.abc.Func.asloss'[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:63: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc'[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:63: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc.grad'[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:81: WARNING: File not found: 'api/operator.interop.html#pyxu.operator.interop.from_torch'[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:81: WARNING: File not found: 'api/operator.interop.html#pyxu.operator.interop.from_jax'[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:86: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc'[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:86: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc.prox'[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:105: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc.moreau_envelope'[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:132: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxDiffFunc'[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:132: WARNING: File not found: 'api/abc.html#pyxu.abc.LinFunc'[39;49;00m
+[91m/root/HOST/doc/guide/funcs.ipynb:132: WARNING: File not found: 'api/abc.html#pyxu.abc.QuadraticFunc'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:142: WARNING: Title underline too short.
+
+A Nod to Deep Learning 🚀
+~~~~~~~~~~~~~~~~~~~~~~~~[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:142: WARNING: Title underline too short.
+
+A Nod to Deep Learning 🚀
+~~~~~~~~~~~~~~~~~~~~~~~~[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:11: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:17: WARNING: File not found: 'api/operator.interop.html#general'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:17: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:17: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.adjoint'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:17: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.jacobian'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:19: WARNING: File not found: 'api/index.html'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:46: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:46: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:46: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.adjoint'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:55: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:66: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.adjoint'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:100: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:102: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.lipschitz'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:102: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.estimate_lipschitz'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:108: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.svdvals'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:110: WARNING: File not found: 'api/abc.html#pyxu.abc.SquareOp.trace'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:112: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.pinv'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:118: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:118: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.from_array'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:124: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:129: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:134: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:134: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:136: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.jacobian'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:146: WARNING: File not found: 'api/operator.interop.html#pyxu.operator.interop.from_torch'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:146: WARNING: File not found: 'api/operator.interop.html#pyxu.operator.interop.from_jax'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:148: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:153: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'[39;49;00m
+[91m/root/HOST/doc/guide/fwdops.ipynb:153: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap'[39;49;00m
+[91m/root/HOST/doc/guide/hpc.ipynb:212: WARNING: File not found: 'api/runtime.html#pyxu.runtime.Precision'[39;49;00m
+[91m/root/HOST/doc/examples/contributing.ipynb:42: WARNING: invalid syntax (<unknown>, line 5) in document 'examples/contributing'
 Parsed source in `python` block:
 concatenations: try:
     from pyxu.opt.solver import GradientDescent
 except ImportError as e:
     print(e)
 block source:   !pip install pyxu-gradient-descent[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/fair/plugins_preview/index.rst:1118: WARNING: toctree contains reference to nonexisting document 'fair/plugins_preview/TokemakRec'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/fair/score.rst:29: WARNING: Bullet list ends without a blank line; unexpected unindent.[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:33: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:33: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.jacobian'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:33: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc.grad'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:33: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc.prox'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:33: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.adjoint'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:39: WARNING: File not found: 'api/abc.html#pyxu-abc-arithmetic'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:41: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.Rule'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:42: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.ScaleRule'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:43: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.ArgScaleRule'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:44: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.ArgShiftRule'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:45: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.AddRule'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:46: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.ChainRule'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:47: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.PowerRule'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:48: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.TransposeRule'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:50: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:50: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:59: WARNING: File not found: 'api/operator/blocks.html#pyxu.operator.coo_block'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:59: WARNING: File not found: 'api/operator/blocks.html#pyxu.operator.block'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:59: WARNING: File not found: 'api/operator/blocks.html#pyxu.operator.block_diag'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:59: WARNING: File not found: 'api/operator/blocks.html#pyxu.operator.stack'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:59: WARNING: File not found: 'api/operator/blocks.html#pyxu.operator.vstack'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:59: WARNING: File not found: 'api/operator/blocks.html#pyxu.operator.hstack'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:17: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.CG'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:29: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.PGD'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:58: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.CondatVu'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:58: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.PD3O'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:58: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.ADMM'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:58: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.ChambollePock'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:77: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.DouglasRachford'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:79: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.Adam'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:131: WARNING: File not found: 'api/opt.stop.html'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:148: WARNING: File not found: 'api/abc.html#pyxu.abc.Solver'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:148: WARNING: File not found: 'api/abc.html#pyxu.abc.Solver.m_init'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:148: WARNING: File not found: 'api/abc.html#pyxu.abc.Solver.m_step'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:152: WARNING: File not found: 'api/abc.html#pyxu.abc.Solver.fit'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/diff_ops.ipynb:11: WARNING: File not found: 'api/operator/linop.html#derivatives'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/diff_ops.ipynb:18: WARNING: File not found: 'api/operator/linop.html#pyxu.operator.PartialDerivative'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/diff_ops.ipynb:535: WARNING: File not found: 'api/operator/linop.html#pyxu.operator.Gradient'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/diff_ops.ipynb:545: WARNING: File not found: 'api/operator/linop.html#pyxu.operator.Hessian'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/diff_ops.ipynb:93: WARNING: expected an indented block after function definition on line 20 (<unknown>, line 29) in document 'guide/diff_ops'
-Parsed source in `python` block:
-concatenations: def D(f):
-    """
-    Computes the partial derivative via forward finite differences.
-
-    Input
-    -----
-    f: vector
-        Input signal
-
-    Output
-    ------
-    y: vector
-        Derivative
-    """
-
-    y = np.zeros_like(f)
-    for n in range(len(f) - 1):
-        y[n] = f[n + 1] - f[n]
-    return y
-block source:   def finite_difference(
-                        arg_shape: pyct.NDArrayShape,
-                        order: cabc.Sequence[pyct.Integer, ...],
-                        scheme: typ.Union[str, cabc.Sequence[str, ...]] = "forward",
-                        accuracy: typ.Union[pyct.Integer, cabc.Sequence[pyct.Integer, ...]] = 1,
-                        mode: ModeSpec = "constant",
-                        gpu: bool = False,
-                        dtype: typ.Optional[pyct.DType] = None,
-                        sampling: typ.Union[pyct.Real, cabc.Sequence[pyct.Real, ...]] = 1,
-                    ) -> pyct.OpT:[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/diff_ops.ipynb:107: WARNING: expected an indented block after function definition on line 20 (<unknown>, line 29) in document 'guide/diff_ops'
-Parsed source in `python` block:
-concatenations: def D(f):
-    """
-    Computes the partial derivative via forward finite differences.
-
-    Input
-    -----
-    f: vector
-        Input signal
-
-    Output
-    ------
-    y: vector
-        Derivative
-    """
-
-    y = np.zeros_like(f)
-    for n in range(len(f) - 1):
-        y[n] = f[n + 1] - f[n]
-    return y
-block source:   def gaussian_derivative(
-                        arg_shape: pyct.NDArrayShape,
-                        order: cabc.Sequence[pyct.Integer, ...],
-                        sigma: typ.Union[pyct.Real, cabc.Sequence[pyct.Real, ...]] = 1.0,
-                        truncate: typ.Union[pyct.Real, cabc.Sequence[pyct.Real, ...]] = 3.0,
-                        mode: ModeSpec = "constant",
-                        gpu: bool = False,
-                        dtype: typ.Optional[pyct.DType] = None,
-                        sampling: typ.Union[pyct.Real, cabc.Sequence[pyct.Real, ...]] = 1,
-                    ) -> pyct.OpT:[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/diff_ops.ipynb:579: WARNING: expected an indented block after function definition on line 139 (<unknown>, line 148) in document 'guide/diff_ops'
-Parsed source in `python` block:
-concatenations: def D(f):
-    """
-    Computes the partial derivative via forward finite differences.
-
-    Input
-    -----
-    f: vector
-        Input signal
-
-    Output
-    ------
-    y: vector
-        Derivative
-    """
-
-    y = np.zeros_like(f)
-    for n in range(len(f) - 1):
-        y[n] = f[n + 1] - f[n]
-    return y
-                import matplotlib.pyplot as plt
-import numpy as np
-
-rng = np.random.default_rng(0)
-
-from pyxu.operator import PartialDerivative
-
-                # 1) Define ground truth signal
-
-N = 500  # number of points
-x_ax = np.linspace(0, 2 * np.pi, N)  # coordinates
-dx = x_ax[1] - x_ax[0]  # sampling or pixel size
-
-arr = np.sin(x_ax)  # ground truth signal
-derivative = np.cos(x_ax)  # ground truth derivative
-
-
-# 2) Define noisy measurements
-noise = rng.normal(scale=0.01, size=N)
-arr_noisy = arr + noise
-
-
-# 3) Instantiate partial derivative operator via finite differences
-finite_difference = PartialDerivative.finite_difference(
-    arg_shape=(N,),
-    order=(1,),
-    scheme="forward",
-    accuracy=1,
-    sampling=dx,  # we should include the pixel size for accurate approximation
-)
-
-# 4) Estimate derivative
-derivative_fd = finite_difference(arr)
-derivative_fd_noisy = finite_difference(arr_noisy)
-
-# 5) Plot results
-
-fig, axs = plt.subplots(1, 2, figsize=(10, 5))
-
-axs[0].plot(x_ax, arr, label="Signal", c="k")
-axs[0].plot(x_ax, arr_noisy, label="Noisy signal", zorder=0, c="C1")
-
-axs[1].plot(x_ax, derivative, label="Derivative of non-noisy signal", c="k")
-axs[1].plot(
-    x_ax, derivative_fd, ls="--", label="Finite difference (non-noisy signal)", c="C2"
-)
-axs[1].plot(
-    x_ax,
-    derivative_fd_noisy,
-    label="Finite difference (noisy signal)",
-    zorder=0,
-    c="C3",
-)
-
-for ax in axs.ravel():
-    ax.set_xlabel("Time [s]")
-    ax.set_ylabel("Amplitude")
-    ax.legend();
-
-                gaussian_derivative = PartialDerivative.gaussian_derivative(
-    arg_shape=(N,), order=(1,), sigma=dx, truncate=1, sampling=(dx,)
-)
-gaussian_derivative.visualize()
-
-                derviative_gd = gaussian_derivative(arr_noisy)
-derviative_fd = finite_difference(arr_noisy)
-
-
-fig, axs = plt.subplots(1, 2, figsize=(10, 5))
-
-axs[0].plot(x_ax, arr, label="Signal", c="k")
-axs[0].plot(x_ax, arr_noisy, label="Noisy signal", zorder=0, c="C1")
-
-axs[1].plot(x_ax, derivative, label="Derivative of non-noisy signal", c="k")
-axs[1].plot(
-    x_ax,
-    derivative_fd_noisy,
-    label="Finite difference (noisy signal)",
-    zorder=0,
-    c="C3",
-)
-axs[1].plot(
-    x_ax, derviative_gd, label="Gaussian derivative (noisy signal)", c="C4", zorder=1
-)
-
-for ax in axs.ravel():
-    ax.set_xlabel("Time [s]")
-    ax.set_ylabel("Amplitude")
-    ax.legend();
-
-                gaussian_derivative_accurate = PartialDerivative.gaussian_derivative(
-    arg_shape=(N,), order=(1,), sigma=dx, truncate=4, sampling=(dx,)
-)
-
-
-derviative_gd_accurate = gaussian_derivative_accurate(arr_noisy)
-
-fig, axs = plt.subplots(1, 2, figsize=(10, 5))
-
-axs[0].plot(x_ax, arr, label="Signal", c="k")
-axs[0].plot(x_ax, arr_noisy, label="Noisy signal", zorder=0, c="C1")
-
-axs[1].plot(x_ax, derivative, label="Derivative of non-noisy signal", c="k")
-axs[1].plot(
-    x_ax, derviative_gd, label="Gaussian derivative (1x$\sigma$)", c="C4", zorder=0
-)
-axs[1].plot(
-    x_ax,
-    derviative_gd_accurate,
-    label="Gaussian derivative (4x$\sigma$)",
-    c="C6",
-    zorder=1,
-)
-
-for ax in axs.ravel():
-    ax.set_xlabel("Time [s]")
-    ax.set_ylabel("Amplitude")
-    ax.legend();
-
-block source:   def Gradient(
-                    arg_shape: pyct.NDArrayShape,
-                    directions: typ.Optional[pyct.NDArrayAxis] = None,
-                    diff_method: str = "fd",
-                    mode: ModeSpec = "constant",
-                    gpu: bool = False,
-                    dtype: typ.Optional[pyct.DType] = None,
-                    parallel: bool = False,
-                    **diff_kwargs,
-                ) -> pyct.OpT:[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/guide/diff_ops.ipynb:593: WARNING: expected an indented block after function definition on line 139 (<unknown>, line 152) in document 'guide/diff_ops'
-Parsed source in `python` block:
-concatenations: def D(f):
-    """
-    Computes the partial derivative via forward finite differences.
-
-    Input
-    -----
-    f: vector
-        Input signal
-
-    Output
-    ------
-    y: vector
-        Derivative
-    """
-
-    y = np.zeros_like(f)
-    for n in range(len(f) - 1):
-        y[n] = f[n + 1] - f[n]
-    return y
-                import matplotlib.pyplot as plt
-import numpy as np
-
-rng = np.random.default_rng(0)
-
-from pyxu.operator import PartialDerivative
-
-                # 1) Define ground truth signal
-
-N = 500  # number of points
-x_ax = np.linspace(0, 2 * np.pi, N)  # coordinates
-dx = x_ax[1] - x_ax[0]  # sampling or pixel size
-
-arr = np.sin(x_ax)  # ground truth signal
-derivative = np.cos(x_ax)  # ground truth derivative
-
-
-# 2) Define noisy measurements
-noise = rng.normal(scale=0.01, size=N)
-arr_noisy = arr + noise
-
-
-# 3) Instantiate partial derivative operator via finite differences
-finite_difference = PartialDerivative.finite_difference(
-    arg_shape=(N,),
-    order=(1,),
-    scheme="forward",
-    accuracy=1,
-    sampling=dx,  # we should include the pixel size for accurate approximation
-)
-
-# 4) Estimate derivative
-derivative_fd = finite_difference(arr)
-derivative_fd_noisy = finite_difference(arr_noisy)
-
-# 5) Plot results
-
-fig, axs = plt.subplots(1, 2, figsize=(10, 5))
-
-axs[0].plot(x_ax, arr, label="Signal", c="k")
-axs[0].plot(x_ax, arr_noisy, label="Noisy signal", zorder=0, c="C1")
-
-axs[1].plot(x_ax, derivative, label="Derivative of non-noisy signal", c="k")
-axs[1].plot(
-    x_ax, derivative_fd, ls="--", label="Finite difference (non-noisy signal)", c="C2"
-)
-axs[1].plot(
-    x_ax,
-    derivative_fd_noisy,
-    label="Finite difference (noisy signal)",
-    zorder=0,
-    c="C3",
-)
-
-for ax in axs.ravel():
-    ax.set_xlabel("Time [s]")
-    ax.set_ylabel("Amplitude")
-    ax.legend();
-
-                gaussian_derivative = PartialDerivative.gaussian_derivative(
-    arg_shape=(N,), order=(1,), sigma=dx, truncate=1, sampling=(dx,)
-)
-gaussian_derivative.visualize()
-
-                derviative_gd = gaussian_derivative(arr_noisy)
-derviative_fd = finite_difference(arr_noisy)
-
-
-fig, axs = plt.subplots(1, 2, figsize=(10, 5))
-
-axs[0].plot(x_ax, arr, label="Signal", c="k")
-axs[0].plot(x_ax, arr_noisy, label="Noisy signal", zorder=0, c="C1")
-
-axs[1].plot(x_ax, derivative, label="Derivative of non-noisy signal", c="k")
-axs[1].plot(
-    x_ax,
-    derivative_fd_noisy,
-    label="Finite difference (noisy signal)",
-    zorder=0,
-    c="C3",
-)
-axs[1].plot(
-    x_ax, derviative_gd, label="Gaussian derivative (noisy signal)", c="C4", zorder=1
-)
-
-for ax in axs.ravel():
-    ax.set_xlabel("Time [s]")
-    ax.set_ylabel("Amplitude")
-    ax.legend();
-
-                gaussian_derivative_accurate = PartialDerivative.gaussian_derivative(
-    arg_shape=(N,), order=(1,), sigma=dx, truncate=4, sampling=(dx,)
-)
-
-
-derviative_gd_accurate = gaussian_derivative_accurate(arr_noisy)
-
-fig, axs = plt.subplots(1, 2, figsize=(10, 5))
-
-axs[0].plot(x_ax, arr, label="Signal", c="k")
-axs[0].plot(x_ax, arr_noisy, label="Noisy signal", zorder=0, c="C1")
-
-axs[1].plot(x_ax, derivative, label="Derivative of non-noisy signal", c="k")
-axs[1].plot(
-    x_ax, derviative_gd, label="Gaussian derivative (1x$\sigma$)", c="C4", zorder=0
-)
-axs[1].plot(
-    x_ax,
-    derviative_gd_accurate,
-    label="Gaussian derivative (4x$\sigma$)",
-    c="C6",
-    zorder=1,
-)
-
-for ax in axs.ravel():
-    ax.set_xlabel("Time [s]")
-    ax.set_ylabel("Amplitude")
-    ax.legend();
-
-block source:   def Hessian(
-                    arg_shape: pyct.NDArrayShape,
-                    directions: typ.Union[
-                        str,
-                        cabc.Sequence[pyct.Integer, pyct.Integer],
-                        cabc.Sequence[cabc.Sequence[pyct.Integer, pyct.Integer], ...],
-                    ] = "all",
-                    diff_method: str = "fd",
-                    mode: ModeSpec = "constant",
-                    gpu: bool = False,
-                    dtype: typ.Optional[pyct.DType] = None,
-                    parallel: bool = False,
-                    **diff_kwargs,
-                ) -> pyct.OpT:[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/intro/tomo.ipynb:284: WARNING: File not found: 'api/abc.html#pyxu.abc.Operator.expr'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/intro/tomo.ipynb:451: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.pinv'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/intro/tomo.ipynb:451: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/intro/tomo.ipynb:666: WARNING: File not found: 'api/operator/linop.html#pyxu.operator.Gradient'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/intro/tomo.ipynb:668: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc.moreau_envelope'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/intro/tomo.ipynb:677: WARNING: File not found: 'api/operator/func.html#pyxu.operator.PositiveL1Norm'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/intro/tomo.ipynb:686: WARNING: File not found: 'api/operator/func.html#pyxu.operator.SquaredL2Norm'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/intro/tomo.ipynb:687: WARNING: File not found: 'api/abc.html#pyxu.abc.Func.asloss'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/intro/tomo.ipynb:699: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.estimate_diff_lipschitz'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/intro/tomo.ipynb:914: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxDiffFunc'[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/fair/plugins_preview/TokamakRec.rst: WARNING: document isn't included in any toctree[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/references.rst:5: WARNING: Citation [ProxAlg] is not referenced.[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/references.rst:8: WARNING: Citation [ProxSplit] is not referenced.[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/references.rst:19: WARNING: Citation [P2] is not referenced.[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/references.rst:20: WARNING: Citation [GaussProcesses] is not referenced.[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/references.rst:21: WARNING: Citation [SubGauss] is not referenced.[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/references.rst:29: WARNING: Citation [UQ_MCMC] is not referenced.[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/interop/jax.py:docstring of pyxu.operator.interop.jax._from_jax:: WARNING: py:class reference target not found: pyxu.operator.interop.jax.JaxArray[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/interop/jax.py:docstring of pyxu.operator.interop.jax._to_jax:: WARNING: py:class reference target not found: pyxu.operator.interop.jax.JaxArray[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/blocks.py:docstring of pyxu.operator.blocks.coo_block:33: WARNING: py:mod reference target not found: pyxu.operator.blocks[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/linop/pad.py:docstring of pyxu.operator.linop.pad.Pad.__init__:10: WARNING: py:class reference target not found: pyxu.operator.linop.pad.Pad.WidthSpec[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.MovingAverage:30: WARNING: py:class reference target not found: pyxu.operator.linop.filter.IndexSpec[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:65: WARNING: py:class reference target not found: (Integer[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:65: WARNING: py:class reference target not found: Integer)[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:65: WARNING: py:class reference target not found: ((Integer[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:65: WARNING: py:class reference target not found: Integer)[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:65: WARNING: py:class reference target not found: (Integer[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:65: WARNING: py:class reference target not found: Integer))[39;49;00m
-[91m/home/sep/Documents/Repositories/pyxu/doc/examples/contributing.ipynb:42: WARNING: Lexing literal_block '!pip install pyxu-gradient-descent' as "python" resulted in an error at token: '!'. Retrying in relaxed mode.[39;49;00m
+[91m/root/HOST/doc/examples/deblur.ipynb:258: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.PD3O'[39;49;00m
+[91m/root/HOST/doc/examples/contributing.ipynb: WARNING: document isn't included in any toctree[39;49;00m
+[91m/root/HOST/doc/examples/deblur.ipynb: WARNING: document isn't included in any toctree[39;49;00m
+[91m/root/HOST/doc/examples/stencils.ipynb: WARNING: document isn't included in any toctree[39;49;00m
+[91m/root/HOST/doc/fair/plugins_preview/TokamakRec.rst: WARNING: document isn't included in any toctree[39;49;00m
+[91m/root/HOST/doc/references.rst:5: WARNING: Citation [ProxAlg] is not referenced.[39;49;00m
+[91m/root/HOST/doc/references.rst:8: WARNING: Citation [ProxSplit] is not referenced.[39;49;00m
+[91m/root/HOST/doc/references.rst:19: WARNING: Citation [P2] is not referenced.[39;49;00m
+[91m/root/HOST/doc/references.rst:20: WARNING: Citation [GaussProcesses] is not referenced.[39;49;00m
+[91m/root/HOST/doc/references.rst:21: WARNING: Citation [SubGauss] is not referenced.[39;49;00m
+[91m/root/HOST/doc/references.rst:29: WARNING: Citation [UQ_MCMC] is not referenced.[39;49;00m
+[91m/root/HOST/src/pyxu/experimental/xray/_xray.py:docstring of pyxu.experimental.xray._xray.XRayTransform.init:34: WARNING: py:class reference target not found: list(dict)[39;49;00m
+[91m/root/HOST/src/pyxu/experimental/xray/_xray.py:docstring of pyxu.experimental.xray._xray.XRayTransform.init:35: WARNING: py:class reference target not found: pyxu.experimental.xray._rt.RayXRT[39;49;00m
+[91m/root/HOST/src/pyxu/experimental/xray/_xray.py:docstring of pyxu.experimental.xray._xray.XRayTransform.init:35: WARNING: py:class reference target not found: pyxu.experimental.xray._fourier.FourierXRT[39;49;00m
+[91m/root/HOST/src/pyxu/operator/interop/jax.py:docstring of pyxu.operator.interop.jax._from_jax:: WARNING: py:class reference target not found: pyxu.operator.interop.jax.JaxArray[39;49;00m
+[91m/root/HOST/src/pyxu/operator/interop/jax.py:docstring of pyxu.operator.interop.jax._to_jax:: WARNING: py:class reference target not found: pyxu.operator.interop.jax.JaxArray[39;49;00m
+[91m/root/HOST/src/pyxu/operator/blocks.py:docstring of pyxu.operator.blocks.coo_block:33: WARNING: py:mod reference target not found: pyxu.operator.blocks[39;49;00m
+[91m/root/HOST/src/pyxu/operator/linop/pad.py:docstring of pyxu.operator.linop.pad.Pad.__init__:10: WARNING: py:class reference target not found: pyxu.operator.linop.pad.Pad.WidthSpec[39;49;00m
+[91m/root/HOST/src/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.MovingAverage:30: WARNING: py:class reference target not found: pyxu.operator.linop.filter.IndexSpec[39;49;00m
+[91m/root/HOST/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:65: WARNING: py:class reference target not found: (Integer[39;49;00m
+[91m/root/HOST/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:65: WARNING: py:class reference target not found: Integer)[39;49;00m
+[91m/root/HOST/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:65: WARNING: py:class reference target not found: ((Integer[39;49;00m
+[91m/root/HOST/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:65: WARNING: py:class reference target not found: Integer)[39;49;00m
+[91m/root/HOST/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:65: WARNING: py:class reference target not found: (Integer[39;49;00m
+[91m/root/HOST/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:65: WARNING: py:class reference target not found: Integer))[39;49;00m
+[91m/root/HOST/doc/examples/contributing.ipynb:42: WARNING: Lexing literal_block '!pip install pyxu-gradient-descent' as "python" resulted in an error at token: '!'. Retrying in relaxed mode.[39;49;00m
