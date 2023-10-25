@@ -1,0 +1,1021 @@
+
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Advanced Computerized Tomography with Pyxu — Pyxu Documentation</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../_static/plot_directive.css?v=7f9a90b1" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
+<link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
+<link href="../_static/sg_gallery.css?v=61a4c737" rel="stylesheet" type="text/css"/>
+<link href="../_static/sg_gallery-binder.css?v=f4aeca0c" rel="stylesheet" type="text/css"/>
+<link href="../_static/sg_gallery-dataframe.css?v=2082cf3c" rel="stylesheet" type="text/css"/>
+<link href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" rel="stylesheet" type="text/css"/>
+<link href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
+<link href="../_static/nbsphinx-code-cells.css?v=2aa19091" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css?v=14df3d68" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
+<link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
+<script src="../_static/documentation_options.js?v=0b294dfe"></script>
+<script src="../_static/doctools.js?v=888ff710"></script>
+<script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="../_static/copybutton.js?v=30646c52"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+<script src="../_static/design-tabs.js?v=36754332"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+<script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'examples/xray';</script>
+<link href="../_static/favicon.png" rel="icon"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="light" data-offset="180">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search the docs ..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+<label class="sidebar-toggle primary-toggle" for="__primary">
+<span class="fa-solid fa-bars"></span>
+</label>
+<div class="navbar-header-items__start">
+<div class="navbar-item">
+<a class="navbar-brand logo" href="../index.html">
+<img alt="Logo image" class="logo__image only-light" src="../_static/logo.png"/>
+<script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+</a></div>
+</div>
+<div class="col-lg-9 navbar-header-items">
+<div class="me-auto navbar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../intro/index.html">
+                        Getting Started
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../guide/index.html">
+                        User Guide
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="index.html">
+                        Example Gallery
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../api/index.html">
+                        API Reference
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../fair/index.html">
+                        Extending Pyxu
+                      </a>
+</li>
+</ul>
+</nav></div>
+</div>
+<div class="navbar-header-items__end">
+<div class="navbar-item navbar-persistent--container">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<div class="navbar-item"><strong> Pyxu v1.1.0 </strong></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://pypi.org/project/pyxu/" rel="noopener" target="_blank" title="PyPI"><span><i class="fa-brands fa-python"></i></span>
+<label class="sr-only">PyPI</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="mailto: contact@pyxu.org" rel="noopener" target="_blank" title="Contact"><span><i class="fa-brands fa-telegram"></i></span>
+<label class="sr-only">Contact</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://imaging.epfl.ch/" rel="noopener" target="_blank" title="EPFL Center for Imaging"><img alt="EPFL Center for Imaging" class="icon-link-image" src="../_static/imaging.png"/></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<label class="sidebar-toggle secondary-toggle" for="__secondary">
+<span class="fa-solid fa-outdent"></span>
+</label>
+</div>
+</nav>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+<div class="sidebar-header-items sidebar-primary__section">
+<div class="sidebar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../intro/index.html">
+                        Getting Started
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../guide/index.html">
+                        User Guide
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="index.html">
+                        Example Gallery
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../api/index.html">
+                        API Reference
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../fair/index.html">
+                        Extending Pyxu
+                      </a>
+</li>
+</ul>
+</nav></div>
+</div>
+<div class="sidebar-header-items__end">
+<div class="navbar-item"><strong> Pyxu v1.1.0 </strong></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://pypi.org/project/pyxu/" rel="noopener" target="_blank" title="PyPI"><span><i class="fa-brands fa-python"></i></span>
+<label class="sr-only">PyPI</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="mailto: contact@pyxu.org" rel="noopener" target="_blank" title="Contact"><span><i class="fa-brands fa-telegram"></i></span>
+<label class="sr-only">Contact</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://imaging.epfl.ch/" rel="noopener" target="_blank" title="EPFL Center for Imaging"><img alt="EPFL Center for Imaging" class="icon-link-image" src="../_static/imaging.png"/></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content">
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item">
+<nav aria-label="Breadcrumbs">
+<ul aria-label="Breadcrumb" class="bd-breadcrumbs" role="navigation">
+<li class="breadcrumb-item breadcrumb-home">
+<a aria-label="Home" class="nav-link" href="../index.html">
+<i class="fa-solid fa-home"></i>
+</a>
+</li>
+<li aria-current="page" class="breadcrumb-item active">Advanced Computerized Tomography with Pyxu</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article" role="main">
+<section id="Advanced-Computerized-Tomography-with-Pyxu">
+<h1>Advanced Computerized Tomography with Pyxu<a class="headerlink" href="#Advanced-Computerized-Tomography-with-Pyxu" title="Link to this heading">#</a></h1>
+<p>The <a class="reference external" href="../intro/tomo.html">introductory tutorial</a> on tomography showed how to simulate a tomographic setup using Pyxu, where we piggy-backed on the <code class="docutils literal notranslate"><span class="pre">radon()</span></code><a class="reference external" href="https://scikit-image.org/docs/stable/api/skimage.transform.html#skimage.transform.radon">🔗</a> and <code class="docutils literal notranslate"><span class="pre">iradon()</span></code><a class="reference external" href="https://scikit-image.org/docs/stable/api/skimage.transform.html#skimage.transform.iradon">🔗</a> functions from <code class="docutils literal notranslate"><span class="pre">scikit-image</span></code> to define the <code class="docutils literal notranslate"><span class="pre">apply</span></code> and <code class="docutils literal notranslate"><span class="pre">adjoint</span></code> methods of the Radon operator.</p>
+<p>While we could obtain good reconstructions with this Radon implementation, scikit’s operator is limited to 2D parallel beam projections: there is no support for alternative scanning geometries such as fan-beam. Moreover 3D transforms are unavailable.</p>
+<p>This notebook is focused around Pyxu’s <code class="docutils literal notranslate"><span class="pre">XRayTransform()</span></code><a class="reference external" href="../api/experimental/xray.html#pyxu.experimental.xray.XRayTransform">🔗</a> class, a flexible frontend to 2 high-performance Radon/XRay implementations for 2D/3D setups. The goal is to show how to create different scanning geometries and their effect on image quality <strong>if we do not perform regularization</strong>.</p>
+<p>Let’s get started!</p>
+<section id="Preliminaries">
+<h2>Preliminaries<a class="headerlink" href="#Preliminaries" title="Link to this heading">#</a></h2>
+<p>The X-Ray Transform (XRT) of a function <span class="math notranslate nohighlight">\(f: \mathbb{R}^{D} \to \mathbb{R}\)</span> is defined as</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{P}[f](\mathbf{n}, \mathbf{t})
+=
+\int_{\mathbb{R}} f(\mathbf{t} + \mathbf{n} \alpha) d\alpha,\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{n}\in \mathbb{S}^{D-1}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{t} \in \mathbf{n}^{\perp}\)</span>. <span class="math notranslate nohighlight">\(\mathcal{P}[f]\)</span> hence denotes the set of <em>line integrals</em> of <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>Two class of algorithms exist to evaluate the XRT:</p>
+<ul class="simple">
+<li><p><strong>Fourier methods</strong> leverage the <a class="reference external" href="https://en.wikipedia.org/wiki/Projection-slice_theorem">Fourier Slice Theorem (FST)</a> to efficiently evaluate the XRT <em>when multiple values of</em> <span class="math notranslate nohighlight">\(\mathbf{t}\)</span> <em>are desired for each</em> <span class="math notranslate nohighlight">\(\mathbf{n}\)</span>.</p></li>
+<li><p><strong>Ray methods</strong> compute estimates of the XRT via quadrature rules by assuming <span class="math notranslate nohighlight">\(f\)</span> is piecewise constant on short intervals.</p></li>
+</ul>
+<p>Pyxu’s <code class="docutils literal notranslate"><span class="pre">XRayTransform()</span></code><a class="reference external" href="../api/experimental.xray.html#pyxu.experimental.xray.XRayTransform">🔗</a> efficiently evaluates samples of the XRT assuming <span class="math notranslate nohighlight">\(f\)</span> is a pixelized image/volume where:</p>
+<ul class="simple">
+<li><p>the lower-left element of <span class="math notranslate nohighlight">\(f\)</span> is located at <span class="math notranslate nohighlight">\(\mathbf{o} \in \mathbb{R}^{D}\)</span>,</p></li>
+<li><p>pixel dimensions are <span class="math notranslate nohighlight">\(\mathbf{\Delta} \in \mathbb{R}_{+}^{D}\)</span>, i.e.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[f(\mathbf{r}) = \sum_{\{\mathbf{q}\} \subset \mathbb{N}^{D}}
+                \alpha_{\mathbf{q}}
+                1_{[\mathbf{0}, \mathbf{\Delta}]}(\mathbf{r} - \mathbf{q} \odot \mathbf{\Delta} - \mathbf{o}),
+\quad
+\alpha_{\mathbf{q}} \in \mathbb{R}.\]</div>
+<p>In the 2D case, the parametrization is best explained by the figure below:</p>
+<center><p><img alt="2D XRay Geometry" class="no-scaled-link" src="../_images/xray_parametrization.svg" width="35%"/></p>
+</center></section>
+<section id="2D-Imaging">
+<h2>2D Imaging<a class="headerlink" href="#2D-Imaging" title="Link to this heading">#</a></h2>
+<p>Let’s try to reconstruct a phantom using different scanning geometries, each having the same number of total rays cast into the medium:</p>
+<ul class="simple">
+<li><p>2D parallel beam with equi-spaced offsets.</p></li>
+<li><p>2D parallel beam with non-uniform offsets.</p></li>
+<li><p>2D fan beam.</p></li>
+</ul>
+<p>We will use the phantom below for all experiments.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_2D_phantom</span><span class="p">(</span><span class="n">shape</span><span class="p">:</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="tuple"><span class="nb">tuple</span></a><span class="p">[</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#int" title="int"><span class="nb">int</span></a><span class="p">],</span> <span class="n">seed</span><span class="p">:</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#int" title="int"><span class="nb">int</span></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="c1"># in: (N_h, N_w) phantom dimensions [px]</span>
+    <span class="c1"># out: (N_h, N_w) phantom</span>
+    <span class="kn">import</span> <span class="nn">xdesign</span> <span class="k">as</span> <span class="nn">xd</span>
+
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">substrate</span> <span class="o">=</span> <span class="n">xd</span><span class="o">.</span><span class="n">Foam</span><span class="p">(</span><span class="n">size_range</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">],</span> <span class="n">gap</span><span class="o">=</span><span class="mf">0.025</span><span class="p">,</span> <span class="n">porosity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="n">xd</span><span class="o">.</span><span class="n">discrete_phantom</span><span class="p">(</span><span class="n">substrate</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#int" title="int"><span class="nb">int</span></a><span class="p">))</span>  <span class="c1"># produce image at average resolution</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#int" title="int"><span class="nb">int</span></a><span class="p">(</span><span class="mf">0.05</span> <span class="o">*</span> <span class="n">I</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>  <span class="c1"># 5% axial pad</span>
+
+    <span class="n">I</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">rescale</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span> <span class="o">/</span> <span class="n">I</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># rescale to user dimensions</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="p">(</span><span class="n">I</span> <span class="o">-</span> <span class="n">I</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="o">/</span> <span class="n">I</span><span class="o">.</span><span class="n">ptp</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">I</span>
+
+<span class="n">N_side</span> <span class="o">=</span> <span class="mi">512</span>  <span class="c1"># N_px = N_side**2</span>
+<span class="n">pitch</span> <span class="o">=</span> <span class="mf">1e-4</span>  <span class="c1"># m/px [can differ per axis]</span>
+<span class="n">phantom</span> <span class="o">=</span> <span class="n">create_2D_phantom</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">N_side</span><span class="p">,</span> <span class="n">N_side</span><span class="p">),</span> <span class="n">seed</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">im_kwargs</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#dict" title="dict"><span class="nb">dict</span></a><span class="p">(</span>
+    <span class="n">origin</span><span class="o">=</span><span class="s2">"lower"</span><span class="p">,</span>
+    <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">N_side</span> <span class="o">*</span> <span class="n">pitch</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">N_side</span> <span class="o">*</span> <span class="n">pitch</span><span class="p">],</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">phantom</span><span class="p">,</span> <span class="o">**</span><span class="n">im_kwargs</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"x [m]"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"y [m]"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Phantom"</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Text(0.5, 1.0, 'Phantom')
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_xray_5_1.png" src="../_images/examples_xray_5_1.png"/>
+</div>
+</div>
+<section id="Parallel-Beam:-Uniform-Offsets">
+<h3>Parallel Beam: Uniform Offsets<a class="headerlink" href="#Parallel-Beam:-Uniform-Offsets" title="Link to this heading">#</a></h3>
+<p>Let’s first look at a baseline setup similar to what <code class="docutils literal notranslate"><span class="pre">scikit-image</span></code>’s <code class="docutils literal notranslate"><span class="pre">radon()</span></code><a class="reference external" href="https://scikit-image.org/docs/stable/api/skimage.transform.html#skimage.transform.radon">🔗</a> and <code class="docutils literal notranslate"><span class="pre">iradon()</span></code><a class="reference external" href="https://scikit-image.org/docs/stable/api/skimage.transform.html#skimage.transform.iradon">🔗</a> functions would produce: a parallel-beam scan with equi-spaced lines and uniformly-distributed scan directions.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N_angle</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">N_offset</span> <span class="o">=</span> <span class="mi">200</span>
+
+<span class="c1"># Let's build the necessary components to instantiate the operator. ========================</span>
+<span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">N_angle</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">n</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>  <span class="c1"># &lt;n, t&gt; = 0</span>
+<span class="n">t_max</span> <span class="o">=</span> <span class="n">pitch</span> <span class="o">*</span> <span class="n">N_side</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="mf">1.1</span>  <span class="c1"># 10% over ball radius</span>
+<span class="n">t_offset</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">t_max</span><span class="p">,</span> <span class="n">t_max</span><span class="p">,</span> <span class="n">N_offset</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">n_spec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast_to</span><span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">N_angle</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">N_angle</span><span class="p">,</span> <span class="n">N_offset</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>  <span class="c1"># (N_angle, N_offset, 2)</span>
+<span class="n">t_spec</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">N_angle</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">t_offset</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">N_offset</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># (N_angle, N_offset, 2)</span>
+<span class="n">t_spec</span> <span class="o">+=</span> <span class="n">pitch</span> <span class="o">*</span> <span class="n">N_side</span> <span class="o">/</span> <span class="mi">2</span>  <span class="c1"># Move anchor point to the center of volume.</span>
+<span class="c1"># ==========================================================================================</span>
+
+<span class="n">op_para_u</span> <span class="o">=</span> <span class="n">pxr</span><span class="o">.</span><span class="n">XRayTransform</span><span class="o">.</span><span class="n">init</span><span class="p">(</span>
+    <span class="n">arg_shape</span><span class="o">=</span><span class="p">(</span><span class="n">N_side</span><span class="p">,</span> <span class="n">N_side</span><span class="p">),</span>
+    <span class="n">origin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>  <span class="c1"># bottom-left corner of volume located at (0, 0)</span>
+    <span class="n">pitch</span><span class="o">=</span><span class="n">pitch</span><span class="p">,</span>  <span class="c1"># pixel dimensions. (Can vary per axis.)</span>
+    <span class="n">method</span><span class="o">=</span><span class="s2">"ray-trace"</span><span class="p">,</span>
+    <span class="n">n_spec</span><span class="o">=</span><span class="n">n_spec</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>  <span class="c1"># (N_ray, 2) directions</span>
+    <span class="n">t_spec</span><span class="o">=</span><span class="n">t_spec</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>  <span class="c1"># (N_ray, 2)</span>
+<span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<p>Now that we created the XRay operator, let’s compute the sinogram and visualize it.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute sinogram</span>
+<span class="n">sinogram</span> <span class="o">=</span> <span class="n">op_para_u</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">N_angle</span><span class="p">,</span> <span class="n">N_offset</span><span class="p">)</span>  <span class="c1"># (N_angle, N_offset)</span>
+
+
+<span class="c1"># And plot it</span>
+<span class="n">N_level</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ANGLE</span><span class="p">,</span> <span class="n">OFFSET</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">t_offset</span><span class="p">,</span> <span class="n">indexing</span><span class="o">=</span><span class="s2">"ij"</span><span class="p">)</span>
+<span class="n">contour</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span>
+    <span class="n">ANGLE</span><span class="p">,</span>
+    <span class="n">OFFSET</span><span class="p">,</span>
+    <span class="n">sinogram</span><span class="p">,</span>
+    <span class="n">levels</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sinogram</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">N_level</span><span class="p">),</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s1">'grey'</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">contour</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\angle \mathbf</span><span class="si">{n}</span><span class="s2">$"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span>
+    <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">],</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">"0"</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"$\frac{\pi}</span><span class="si">{2}</span><span class="s2">$"</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"$\pi$"</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"lateral offset [m]"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span>
+    <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="n">t_offset</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">t_offset</span><span class="o">.</span><span class="n">max</span><span class="p">()],</span>
+    <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="p">);</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_xray_9_0.png" src="../_images/examples_xray_9_0.png"/>
+</div>
+</div>
+<p>Now that we have the sinogram, let’s invert the imaging process to (try to) reconstruct an image which produced it. We will try 2 methods:</p>
+<ul class="simple">
+<li><p>Plain back-projection of the sinogram data into the image domain.</p></li>
+<li><p>Forming the least-squares image. This can be obtained via the Filtered-BackProjection algorithm (FBP), but let’s stick to an undampened CG method to compute the pseudo-inverse for simplicity.</p></li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute backprojected image and LSQ image. =======================</span>
+<span class="n">I_BP</span> <span class="o">=</span> <span class="n">op_para_u</span><span class="o">.</span><span class="n">adjoint</span><span class="p">(</span><span class="n">sinogram</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">I_LSQ</span> <span class="o">=</span> <span class="n">op_para_u</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">sinogram</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">damp</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># Plot the images ==================================================</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">phantom</span><span class="p">,</span> <span class="o">**</span><span class="n">im_kwargs</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">I_BP</span><span class="p">),</span> <span class="o">**</span><span class="n">im_kwargs</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">I_LSQ</span><span class="p">,</span> <span class="o">**</span><span class="n">im_kwargs</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Ground-Truth"</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"log-BackProj"</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"LS"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">_ax</span> <span class="ow">in</span> <span class="n">ax</span><span class="p">:</span>
+    <span class="n">_ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
+
+<span class="c1"># aliases to compare against fan-beam later on.</span>
+<span class="n">I_BP_u</span> <span class="o">=</span> <span class="n">I_BP</span>
+<span class="n">I_LSQ_u</span> <span class="o">=</span> <span class="n">I_LSQ</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:24.719731] Iteration 0
+        iteration: 0
+        AbsError[residual]: 0.0568762221784964
+        N_iter: 1.0
+INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:25.173524] Iteration 1
+        iteration: 1
+        AbsError[residual]: 0.06557013021245907
+        N_iter: 2.0
+INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:25.550767] Iteration 2
+        iteration: 2
+        AbsError[residual]: 0.00599593202323822
+        N_iter: 3.0
+INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:25.910576] Iteration 3
+        iteration: 3
+        AbsError[residual]: 0.0020035581956044774
+        N_iter: 4.0
+INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:26.277650] Iteration 4
+        iteration: 4
+        AbsError[residual]: 0.008520015274191939
+        N_iter: 5.0
+INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:26.644934] Iteration 5
+        iteration: 5
+        AbsError[residual]: 0.0009511971744065829
+        N_iter: 6.0
+INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:27.035085] Iteration 6
+        iteration: 6
+        AbsError[residual]: 0.0005985448490385771
+        N_iter: 7.0
+INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:27.401276] Iteration 7
+        iteration: 7
+        AbsError[residual]: 0.0005452610047946128
+        N_iter: 8.0
+INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:27.809917] Iteration 8
+        iteration: 8
+        AbsError[residual]: 0.0015153082160769854
+        N_iter: 9.0
+INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:28.183754] Iteration 9
+        iteration: 9
+        AbsError[residual]: 0.0003085447941630805
+        N_iter: 10.0
+INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:28.571470] Iteration 10
+        iteration: 10
+        AbsError[residual]: 0.0002228763698616621
+        N_iter: 11.0
+INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:28.925244] Iteration 11
+        iteration: 11
+        AbsError[residual]: 0.0002962809360471156
+        N_iter: 12.0
+INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:29.294388] Iteration 12
+        iteration: 12
+        AbsError[residual]: 0.0005157374911570223
+        N_iter: 13.0
+INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:29.661207] Iteration 13
+        iteration: 13
+        AbsError[residual]: 0.00015538188946271337
+        N_iter: 14.0
+INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:30.047053] Iteration 14
+        iteration: 14
+        AbsError[residual]: 9.810392423657637e-05
+        N_iter: 15.0
+INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:30.047664] Stopping Criterion satisfied -&gt; END
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_xray_11_1.png" src="../_images/examples_xray_11_1.png"/>
+</div>
+</div>
+<p>Some high-level remarks just by looking at these images:</p>
+<ul class="simple">
+<li><p>The backprojected image has very low contrast: we barely can make out the porous structures in the background, even in log-scale.</p></li>
+<li><p>The least-squares image allows us to identify the porous structure more easily. However the peripheral region is significantly more “blurry” than the central region. This is because the ray density is higher in the central region than in the periphery.</p></li>
+</ul>
+</section>
+<section id="Parallel-Beam:-Non-Uniform-Offsets">
+<h3>Parallel Beam: Non-Uniform Offsets<a class="headerlink" href="#Parallel-Beam:-Non-Uniform-Offsets" title="Link to this heading">#</a></h3>
+<p>One option to homogenize radial resolution is to move away from uniformly sampling <span class="math notranslate nohighlight">\(t \in [-t_{\mathrm{offset}}^{\max}, t_{\mathrm{offset}}^{\max}]\)</span>, and instead sample it more densely at the peripheral regions. Let’s define a radius <span class="math notranslate nohighlight">\(r \in ]0, t_{\mathrm{offset}}^{\max}[\)</span> such that the number of offsets inside/outside the boundary are equal. We’ll image the phantom at different <span class="math notranslate nohighlight">\(r\)</span> values and see how the radial resolution changes.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We only need to change `t_spec` to create our non-uniformly sampled XRT.</span>
+<span class="n">radial_threshold</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">]</span>
+
+<span class="n">op_para_nu</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">rt</span> <span class="ow">in</span> <span class="n">radial_threshold</span><span class="p">:</span>
+    <span class="c1"># Let's build the necessary components to instantiate the operator. ========================</span>
+    <span class="n">t_max</span> <span class="o">=</span> <span class="n">pitch</span> <span class="o">*</span> <span class="n">N_side</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># we go until the diagonal max size now.</span>
+    <span class="n">t_offset_inside</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">t_max</span> <span class="o">*</span> <span class="n">rt</span><span class="p">,</span> <span class="n">t_max</span> <span class="o">*</span> <span class="n">rt</span><span class="p">,</span> <span class="n">N_offset</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">t_offset_outside</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">t_max</span> <span class="o">*</span> <span class="n">rt</span><span class="p">,</span> <span class="n">t_max</span><span class="p">,</span> <span class="n">N_offset</span><span class="o">//</span><span class="mi">4</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">t_offset</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="o">-</span><span class="n">t_offset_outside</span><span class="p">,</span> <span class="n">t_offset_inside</span><span class="p">,</span> <span class="n">t_offset_outside</span><span class="p">]</span>
+
+
+    <span class="n">t_spec</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">N_angle</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">t_offset</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">N_offset</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># (N_angle, N_offset, 2)</span>
+    <span class="n">t_spec</span> <span class="o">+=</span> <span class="n">pitch</span> <span class="o">*</span> <span class="n">N_side</span> <span class="o">/</span> <span class="mi">2</span>  <span class="c1"># Move anchor point to the center of volume.</span>
+    <span class="c1"># ==========================================================================================</span>
+
+    <span class="n">op</span> <span class="o">=</span> <span class="n">pxr</span><span class="o">.</span><span class="n">XRayTransform</span><span class="o">.</span><span class="n">init</span><span class="p">(</span>
+        <span class="n">arg_shape</span><span class="o">=</span><span class="p">(</span><span class="n">N_side</span><span class="p">,</span> <span class="n">N_side</span><span class="p">),</span>
+        <span class="n">origin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>  <span class="c1"># bottom-left corner of volume located at (0, 0)</span>
+        <span class="n">pitch</span><span class="o">=</span><span class="n">pitch</span><span class="p">,</span>  <span class="c1"># pixel dimensions. (Can vary per axis.)</span>
+        <span class="n">method</span><span class="o">=</span><span class="s2">"ray-trace"</span><span class="p">,</span>
+        <span class="n">n_spec</span><span class="o">=</span><span class="n">n_spec</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>  <span class="c1"># (N_ray, 2) directions</span>
+        <span class="n">t_spec</span><span class="o">=</span><span class="n">t_spec</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>  <span class="c1"># (N_ray, 2)</span>
+    <span class="p">)</span>
+    <span class="n">op_para_nu</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">rt</span><span class="p">,</span> <span class="n">op</span><span class="p">))</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N_op</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#len" title="len"><span class="nb">len</span></a><span class="p">(</span><span class="n">op_para_nu</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="n">N_op</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Ground-Truth"</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">phantom</span><span class="p">,</span> <span class="o">**</span><span class="n">im_kwargs</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"uniform-offset"</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">I_LSQ</span><span class="p">,</span> <span class="o">**</span><span class="n">im_kwargs</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">op</span><span class="p">)</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#enumerate" title="enumerate"><span class="nb">enumerate</span></a><span class="p">(</span><span class="n">op_para_nu</span><span class="p">):</span>
+    <span class="c1"># Compute LSQ image. ===============================================</span>
+    <span class="n">sinogram</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">N_angle</span><span class="p">,</span> <span class="n">N_offset</span><span class="p">)</span>
+    <span class="n">I_LSQ</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">sinogram</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">damp</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+    <span class="c1"># Plot it ==========================================================</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">I_LSQ</span><span class="p">,</span> <span class="o">**</span><span class="n">im_kwargs</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">"$r=</span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2">$"</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:31.134408] Iteration 0
+        iteration: 0
+        AbsError[residual]: 0.05728057919313109
+        N_iter: 1.0
+INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:31.535639] Iteration 1
+        iteration: 1
+        AbsError[residual]: 0.06475229897888211
+        N_iter: 2.0
+INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:31.929486] Iteration 2
+        iteration: 2
+        AbsError[residual]: 0.0069064066032000744
+        N_iter: 3.0
+INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:32.302857] Iteration 3
+        iteration: 3
+        AbsError[residual]: 0.0023125116657778427
+        N_iter: 4.0
+INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:32.694142] Iteration 4
+        iteration: 4
+        AbsError[residual]: 0.006244983732979188
+        N_iter: 5.0
+INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:33.096623] Iteration 5
+        iteration: 5
+        AbsError[residual]: 0.001221721547160276
+        N_iter: 6.0
+INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:33.490811] Iteration 6
+        iteration: 6
+        AbsError[residual]: 0.0008618007427083471
+        N_iter: 7.0
+INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:33.861880] Iteration 7
+        iteration: 7
+        AbsError[residual]: 0.00069779779682013
+        N_iter: 8.0
+INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:34.228972] Iteration 8
+        iteration: 8
+        AbsError[residual]: 0.0006512579699174248
+        N_iter: 9.0
+INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:34.599533] Iteration 9
+        iteration: 9
+        AbsError[residual]: 0.0004937525530021967
+        N_iter: 10.0
+INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:34.963708] Iteration 10
+        iteration: 10
+        AbsError[residual]: 0.0002218965431171188
+        N_iter: 11.0
+INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:35.329028] Iteration 11
+        iteration: 11
+        AbsError[residual]: 0.00022180148559373163
+        N_iter: 12.0
+INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:35.699571] Iteration 12
+        iteration: 12
+        AbsError[residual]: 0.0003632566159943089
+        N_iter: 13.0
+INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:36.063792] Iteration 13
+        iteration: 13
+        AbsError[residual]: 0.0002543985077318786
+        N_iter: 14.0
+INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:36.416310] Iteration 14
+        iteration: 14
+        AbsError[residual]: 0.0001068658951233657
+        N_iter: 15.0
+INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:36.817029] Iteration 15
+        iteration: 15
+        AbsError[residual]: 7.733485003608704e-05
+        N_iter: 16.0
+INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:36.817541] Stopping Criterion satisfied -&gt; END
+INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:37.340977] Iteration 0
+        iteration: 0
+        AbsError[residual]: 0.05055404033504593
+        N_iter: 1.0
+INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:37.704061] Iteration 1
+        iteration: 1
+        AbsError[residual]: 0.060335270790205627
+        N_iter: 2.0
+INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:38.055689] Iteration 2
+        iteration: 2
+        AbsError[residual]: 0.005110190315083068
+        N_iter: 3.0
+INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:38.416006] Iteration 3
+        iteration: 3
+        AbsError[residual]: 0.0019088745042731415
+        N_iter: 4.0
+INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:38.770654] Iteration 4
+        iteration: 4
+        AbsError[residual]: 0.008821448120204639
+        N_iter: 5.0
+INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:39.137469] Iteration 5
+        iteration: 5
+        AbsError[residual]: 0.0008814012249415186
+        N_iter: 6.0
+INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:39.502187] Iteration 6
+        iteration: 6
+        AbsError[residual]: 0.0005440477597315165
+        N_iter: 7.0
+INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:39.893476] Iteration 7
+        iteration: 7
+        AbsError[residual]: 0.000454633547697322
+        N_iter: 8.0
+INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:40.246875] Iteration 8
+        iteration: 8
+        AbsError[residual]: 0.0008643346408172268
+        N_iter: 9.0
+INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:40.609934] Iteration 9
+        iteration: 9
+        AbsError[residual]: 0.0003043423930593373
+        N_iter: 10.0
+INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:40.952939] Iteration 10
+        iteration: 10
+        AbsError[residual]: 0.00020901076838019297
+        N_iter: 11.0
+INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:41.302381] Iteration 11
+        iteration: 11
+        AbsError[residual]: 0.0002520278501687159
+        N_iter: 12.0
+INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:41.659087] Iteration 12
+        iteration: 12
+        AbsError[residual]: 0.00047022357080805916
+        N_iter: 13.0
+INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:42.025045] Iteration 13
+        iteration: 13
+        AbsError[residual]: 0.00013472618153518562
+        N_iter: 14.0
+INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:42.385869] Iteration 14
+        iteration: 14
+        AbsError[residual]: 8.401869244068868e-05
+        N_iter: 15.0
+INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:42.386422] Stopping Criterion satisfied -&gt; END
+INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:42.889807] Iteration 0
+        iteration: 0
+        AbsError[residual]: 0.04144028087947521
+        N_iter: 1.0
+INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:43.191581] Iteration 1
+        iteration: 1
+        AbsError[residual]: 0.04884479177525473
+        N_iter: 2.0
+INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:43.569224] Iteration 2
+        iteration: 2
+        AbsError[residual]: 0.004874993958431622
+        N_iter: 3.0
+INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:43.914414] Iteration 3
+        iteration: 3
+        AbsError[residual]: 0.0022598123696692084
+        N_iter: 4.0
+INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:44.244886] Iteration 4
+        iteration: 4
+        AbsError[residual]: 0.005354189080136105
+        N_iter: 5.0
+INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:44.725773] Iteration 5
+        iteration: 5
+        AbsError[residual]: 0.0013435662663850944
+        N_iter: 6.0
+INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:45.082818] Iteration 6
+        iteration: 6
+        AbsError[residual]: 0.0006924431803871291
+        N_iter: 7.0
+INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:45.432649] Iteration 7
+        iteration: 7
+        AbsError[residual]: 0.0005355016338636194
+        N_iter: 8.0
+INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:45.749553] Iteration 8
+        iteration: 8
+        AbsError[residual]: 0.0007817799341352981
+        N_iter: 9.0
+INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:46.066084] Iteration 9
+        iteration: 9
+        AbsError[residual]: 0.00035055113083838434
+        N_iter: 10.0
+INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:46.409130] Iteration 10
+        iteration: 10
+        AbsError[residual]: 0.00018697351679171253
+        N_iter: 11.0
+INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:46.757099] Iteration 11
+        iteration: 11
+        AbsError[residual]: 0.00014311793708716912
+        N_iter: 12.0
+INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:47.066925] Iteration 12
+        iteration: 12
+        AbsError[residual]: 0.00032142952178576247
+        N_iter: 13.0
+INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:47.359564] Iteration 13
+        iteration: 13
+        AbsError[residual]: 0.00014581281142271642
+        N_iter: 14.0
+INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:47.675141] Iteration 14
+        iteration: 14
+        AbsError[residual]: 0.00010090305829689804
+        N_iter: 15.0
+INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:47.975194] Iteration 15
+        iteration: 15
+        AbsError[residual]: 0.00011117647596298096
+        N_iter: 16.0
+INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:48.294106] Iteration 16
+        iteration: 16
+        AbsError[residual]: 0.0002960482217990509
+        N_iter: 17.0
+INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:48.612980] Iteration 17
+        iteration: 17
+        AbsError[residual]: 8.876078379409524e-05
+        N_iter: 18.0
+INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:48.613590] Stopping Criterion satisfied -&gt; END
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_xray_15_1.png" src="../_images/examples_xray_15_1.png"/>
+</div>
+</div>
+<p>A few takebacks from this experiment:</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(r\)</span> is small, then the sharp region is limited to a small radius around the image center.</p></li>
+<li><p>As <span class="math notranslate nohighlight">\(r\)</span> increases, we lose sharpness at the center in favor of peripheral regions.</p></li>
+</ul>
+</section>
+<section id="Fan-Beam">
+<h3>Fan Beam<a class="headerlink" href="#Fan-Beam" title="Link to this heading">#</a></h3>
+<p>Another potential solution to improve radial resolution is to employ a fan beam geometry. The advantage of fan beam is potentially more “orientations” being available for the same value of <span class="math notranslate nohighlight">\(N_{\mathrm{angle}}\)</span>.</p>
+<p>We will take the same <span class="math notranslate nohighlight">\(N_{\mathrm{angle}}\)</span> and <span class="math notranslate nohighlight">\(N_{\mathrm{offset}}\)</span> settings as in parallel beam, but where <span class="math notranslate nohighlight">\(N_{\mathrm{angle}}\)</span> refers to the number of “emitter” locations, and <span class="math notranslate nohighlight">\(N_{\mathrm{offset}}\)</span> now corresponds to the number of detectors spread along the edge of the image.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># In the parallel-beam setups above, we had fixed `origin=0` and shifted `t_spec` to be centered at the volume</span>
+<span class="c1"># mid-point, i.e. (N_side * pitch / 2). For fan-beam, it is easier to center the volume at the origin of the reference</span>
+<span class="c1"># system, i.e. `origin = -(N_side * pitch / 2)`, and define `n/t_spec` for one source position. Subsequent src/detector</span>
+<span class="c1"># positions are then obtained by applying a rotation matrix.</span>
+
+<span class="c1"># Let's build the necessary components to instantiate the operator. ========================</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="p">(</span><span class="n">N_side</span> <span class="o">*</span> <span class="n">pitch</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>  <span class="c1"># be at diagonal distance</span>
+<span class="n">tx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">radius</span>  <span class="c1"># (2,)</span>
+<span class="n">t_max</span> <span class="o">=</span> <span class="n">N_side</span> <span class="o">*</span> <span class="n">pitch</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">t_offset</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">t_max</span><span class="p">,</span> <span class="n">t_max</span><span class="p">,</span> <span class="n">N_offset</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">rx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N_offset</span><span class="p">),</span> <span class="n">t_offset</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># (N_offset, 2)</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast_to</span><span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="p">(</span><span class="n">N_offset</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">rx</span> <span class="o">-</span> <span class="n">tx</span>  <span class="c1"># vectors pointing from unique TX to all RX.</span>
+
+<span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">N_angle</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N_angle</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">R</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">R</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+<span class="n">R</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+<span class="n">R</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+
+<span class="n">n_spec</span> <span class="o">=</span> <span class="p">(</span><span class="n">R</span> <span class="o">@</span> <span class="n">n</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># (N_angle, N_offset, 2)</span>
+<span class="n">t_spec</span> <span class="o">=</span> <span class="p">(</span><span class="n">R</span> <span class="o">@</span> <span class="n">t</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># (N_angle, N_offset, 2)</span>
+<span class="c1"># ==========================================================================================</span>
+
+
+<span class="n">op_fan</span> <span class="o">=</span> <span class="n">pxr</span><span class="o">.</span><span class="n">XRayTransform</span><span class="o">.</span><span class="n">init</span><span class="p">(</span>
+    <span class="n">arg_shape</span><span class="o">=</span><span class="p">(</span><span class="n">N_side</span><span class="p">,</span> <span class="n">N_side</span><span class="p">),</span>
+    <span class="n">origin</span><span class="o">=-</span><span class="n">N_side</span> <span class="o">*</span> <span class="n">pitch</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>  <span class="c1"># center of volume located at (0, 0)</span>
+    <span class="n">pitch</span><span class="o">=</span><span class="n">pitch</span><span class="p">,</span>  <span class="c1"># pixel dimensions. (Can vary per axis.)</span>
+    <span class="n">method</span><span class="o">=</span><span class="s2">"ray-trace"</span><span class="p">,</span>
+    <span class="n">n_spec</span><span class="o">=</span><span class="n">n_spec</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>  <span class="c1"># (N_ray, 2) directions</span>
+    <span class="n">t_spec</span><span class="o">=</span><span class="n">t_spec</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>  <span class="c1"># (N_ray, 2)</span>
+<span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<p>Plotting the sinogram is more complex than in the parallel-beam case, so let’s skip that step and instead see what the back-projected and least-squares images look like.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute backprojected image and LSQ image. =======================</span>
+<span class="n">sinogram</span> <span class="o">=</span> <span class="n">op_fan</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">N_angle</span><span class="p">,</span> <span class="n">N_offset</span><span class="p">)</span>
+<span class="n">I_BP</span> <span class="o">=</span> <span class="n">op_fan</span><span class="o">.</span><span class="n">adjoint</span><span class="p">(</span><span class="n">sinogram</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">I_LSQ</span> <span class="o">=</span> <span class="n">op_fan</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">sinogram</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">damp</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># Plot the images ==================================================</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">phantom</span><span class="p">,</span> <span class="o">**</span><span class="n">im_kwargs</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">I_BP</span><span class="p">,</span> <span class="o">**</span><span class="n">im_kwargs</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">I_LSQ</span><span class="p">,</span> <span class="o">**</span><span class="n">im_kwargs</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">I_BP_u</span><span class="p">),</span> <span class="o">**</span><span class="n">im_kwargs</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">I_LSQ_u</span><span class="p">,</span> <span class="o">**</span><span class="n">im_kwargs</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Ground-Truth"</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"BP (Fan)"</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"LSQ (Fan)"</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"log-BP (Par)"</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"LSQ (Par)"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">_ax</span> <span class="ow">in</span> <span class="n">ax</span><span class="p">:</span>
+    <span class="n">_ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO:/tmp/pyxu_fvj2n87s:[2023-10-25 16:16:49.933514] Iteration 0
+        iteration: 0
+        AbsError[residual]: 0.05324659233113284
+        N_iter: 1.0
+INFO:/tmp/pyxu_fvj2n87s:[2023-10-25 16:16:50.316351] Iteration 1
+        iteration: 1
+        AbsError[residual]: 0.0030503966703241477
+        N_iter: 2.0
+INFO:/tmp/pyxu_fvj2n87s:[2023-10-25 16:16:50.685787] Iteration 2
+        iteration: 2
+        AbsError[residual]: 0.002050078046644744
+        N_iter: 3.0
+INFO:/tmp/pyxu_fvj2n87s:[2023-10-25 16:16:51.062835] Iteration 3
+        iteration: 3
+        AbsError[residual]: 0.0008204376702557577
+        N_iter: 4.0
+INFO:/tmp/pyxu_fvj2n87s:[2023-10-25 16:16:51.446991] Iteration 4
+        iteration: 4
+        AbsError[residual]: 0.00043823726059835833
+        N_iter: 5.0
+INFO:/tmp/pyxu_fvj2n87s:[2023-10-25 16:16:51.847155] Iteration 5
+        iteration: 5
+        AbsError[residual]: 0.0002602644190319075
+        N_iter: 6.0
+INFO:/tmp/pyxu_fvj2n87s:[2023-10-25 16:16:52.248460] Iteration 6
+        iteration: 6
+        AbsError[residual]: 0.00015193520335284082
+        N_iter: 7.0
+INFO:/tmp/pyxu_fvj2n87s:[2023-10-25 16:16:52.618990] Iteration 7
+        iteration: 7
+        AbsError[residual]: 0.00010628436629923029
+        N_iter: 8.0
+INFO:/tmp/pyxu_fvj2n87s:[2023-10-25 16:16:53.047513] Iteration 8
+        iteration: 8
+        AbsError[residual]: 6.848762332777297e-05
+        N_iter: 9.0
+INFO:/tmp/pyxu_fvj2n87s:[2023-10-25 16:16:53.048141] Stopping Criterion satisfied -&gt; END
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_xray_20_1.png" src="../_images/examples_xray_20_1.png"/>
+</div>
+</div>
+<p>Based on the plots, we can already see some interesting behaviour:</p>
+<ul class="simple">
+<li><p>At equivalent rays cast into the medium, the back-projected fan-image has much higher contrast than the parallel-beam equivalent. (Linear vs. log-scale plot.)</p></li>
+<li><p>The least-squares fan-beam image appears sharper &amp; higher-contrast than the parallel beam version, but it warps at the borders due to the projection geometry.</p></li>
+</ul>
+<p>A finer analysis is of course possible, but we hope to have shown how the scanning geometry impacts image reconstruction. The versatile <code class="docutils literal notranslate"><span class="pre">XRayTransform()</span></code><a class="reference external" href="../api/experimental/xray.html#pyxu.experimental.xray.XRayTransform">🔗</a> class is therefore a handy tool in the computational scientist’s toolbox!</p>
+</section>
+</section>
+</section>
+</article>
+<footer class="bd-footer-article">
+<div class="footer-article-items footer-article__inner">
+<div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> On this page
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Preliminaries">Preliminaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#2D-Imaging">2D Imaging</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Parallel-Beam:-Uniform-Offsets">Parallel Beam: Uniform Offsets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Parallel-Beam:-Non-Uniform-Offsets">Parallel Beam: Non-Uniform Offsets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Fan-Beam">Fan Beam</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
+<div class="sidebar-secondary-item">
+<div id="searchbox"></div></div>
+<div class="sidebar-secondary-item">
+<div class="tocsection editthispage">
+<a href="https://github.com/matthieumeo/pyxu/edit/main/doc/examples/xray.ipynb">
+<i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+</div>
+</div>
+<div class="sidebar-secondary-item">
+<div class="tocsection sourcelink">
+<a href="../_sources/examples/xray.ipynb">
+<i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+</div>
+</div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+<footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+<div class="footer-items__start">
+<div class="footer-item">
+<p class="copyright">
+    
+      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt, Pyxu Developers.
+      <br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+    <br/>
+</p>
+</div>
+</div>
+<div class="footer-items__end">
+<div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+</div>
+</div>
+</footer>
+</body>
+</html>
