@@ -498,6 +498,7 @@ document.write(`
 <ul class="simple">
 <li><p><a class="reference internal" href="#element-wise-operators" id="id1">Element-wise Operators</a></p></li>
 <li><p><a class="reference internal" href="#misc" id="id2">Misc</a></p></li>
+<li><p><a class="reference internal" href="#pulses" id="id3">Pulses</a></p></li>
 </ul>
 </nav>
 <section id="element-wise-operators">
@@ -1206,6 +1207,177 @@ document.write(`
 </dd></dl>
 
 </section>
+<section id="pulses">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Pulses</a><a class="headerlink" href="#pulses" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.operator.FSSPulse">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FSSPulse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/kernel.html#FSSPulse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.FSSPulse" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../abc.html#pyxu.abc.Map" title="pyxu.abc.operator.Map"><code class="xref py py-class docutils literal notranslate"><span class="pre">Map</span></code></a></p>
+<p>1D Finite-Support Symmetric function <span class="math notranslate nohighlight">\(f: \mathbb{R} \to \mathbb{R}\)</span>, element-wise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dim</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.12)"><em>Integral</em></a>) – </p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.operator.FSSPulse.support">
+<span class="sig-name descname"><span class="pre">support</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/kernel.html#FSSPulse.support"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.FSSPulse.support" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> – Value <span class="math notranslate nohighlight">\(s &gt; 0\)</span> such that <span class="math notranslate nohighlight">\(f(x) = 0, \; \forall |x| &gt; s\)</span>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.operator.FSSPulse.applyF">
+<span class="sig-name descname"><span class="pre">applyF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/kernel.html#FSSPulse.applyF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.FSSPulse.applyF" title="Link to this definition">#</a></dt>
+<dd><p>Evaluate <span class="math notranslate nohighlight">\(f^{\mathcal{F}}(v)\)</span>.</p>
+<p><a class="reference internal" href="#pyxu.operator.FSSPulse.applyF" title="pyxu.operator.FSSPulse.applyF"><code class="xref py py-meth docutils literal notranslate"><span class="pre">applyF()</span></code></a> has the same semantics as <a class="reference internal" href="../abc.html#pyxu.abc.Map.apply" title="pyxu.abc.Map.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply()</span></code></a>.</p>
+<p>The Fourier convention used is</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{F}(f)(v) = \int f(x) e^{-j 2\pi v x} dx\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>arr</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyxu.operator.FSSPulse.supportF">
+<span class="sig-name descname"><span class="pre">supportF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eps</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/kernel.html#FSSPulse.supportF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.FSSPulse.supportF" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>eps</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Energy cutoff threshold <span class="math notranslate nohighlight">\(\epsilon \in [0, 0.05]\)</span>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p><strong>sF</strong> – Value such that</p>
+<div class="math notranslate nohighlight">
+\[\int_{-s^{\mathcal{F}}}^{s^{\mathcal{F}}} |f^{\mathcal{F}}(v)|^{2} dv
+\approx
+(1 - \epsilon) \|f\|_{2}^{2}\]</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.operator.Dirac">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Dirac</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/kernel.html#Dirac"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.Dirac" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.operator.FSSPulse" title="pyxu.operator.map.kernel.FSSPulse"><code class="xref py py-class docutils literal notranslate"><span class="pre">FSSPulse</span></code></a></p>
+<p>Dirac-delta function.</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x) = \delta(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f^{\mathcal{F}}(v) = 1\)</span></p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dim</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.12)"><em>Integral</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.operator.Box">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Box</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/kernel.html#Box"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.Box" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.operator.FSSPulse" title="pyxu.operator.map.kernel.FSSPulse"><code class="xref py py-class docutils literal notranslate"><span class="pre">FSSPulse</span></code></a></p>
+<p>Box function.</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x) = 1_{[-1, 1]}(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f^{\mathcal{F}}(v) = 2 \; \text{sinc}(2 v)\)</span></p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dim</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.12)"><em>Integral</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.operator.Triangle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Triangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/kernel.html#Triangle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.Triangle" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.operator.FSSPulse" title="pyxu.operator.map.kernel.FSSPulse"><code class="xref py py-class docutils literal notranslate"><span class="pre">FSSPulse</span></code></a></p>
+<p>Triangle function.</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x) = (1 - |x|) 1_{[-1, 1]}(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f^{\mathcal{F}}(v) = \text{sinc}^{2}(v)\)</span></p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dim</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.12)"><em>Integral</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.operator.TruncatedGaussian">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TruncatedGaussian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/kernel.html#TruncatedGaussian"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.TruncatedGaussian" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.operator.FSSPulse" title="pyxu.operator.map.kernel.FSSPulse"><code class="xref py py-class docutils literal notranslate"><span class="pre">FSSPulse</span></code></a></p>
+<p>Truncated Gaussian.</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x) = \exp\left[-\frac{1}{2} \left(\frac{x}{\sigma}\right)^{2}\right]
+1_{[-1, 1]}(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f^{\mathcal{F}}(v) =
+\sqrt{2 \pi} \sigma \exp\left[-2 (\pi \sigma v)^{2} \right]
+\Re\left\{
+\text{erf}\left(
+\frac{1}{\sqrt{2} \sigma} +
+j \sqrt{2} \pi \sigma v
+\right)
+\right\}\)</span></p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.12)"><em>Integral</em></a>) – </p></li>
+<li><p><strong>sigma</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyxu.operator.KaiserBessel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">KaiserBessel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/map/kernel.html#KaiserBessel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.KaiserBessel" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyxu.operator.FSSPulse" title="pyxu.operator.map.kernel.FSSPulse"><code class="xref py py-class docutils literal notranslate"><span class="pre">FSSPulse</span></code></a></p>
+<p>Kaiser-Bessel pulse.</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x) = \frac{I_{0}(\beta \sqrt{1 - x^{2}})}{I_{0}(\beta)}
+1_{[-1, 1]}(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f^{\mathcal{F}}(v) =
+\frac{2}{I_{0}(\beta)}
+\frac
+{\sinh\left[\sqrt{\beta^{2} - (2 \pi v)^{2}} \right]}
+{\sqrt{\beta^{2} - (2 \pi v)^{2}}}\)</span></p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.12)"><em>Integral</em></a>) – </p></li>
+<li><p><strong>beta</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
 </section>
 
 
@@ -1287,6 +1459,20 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.ConstantValued"><code class="docutils literal notranslate"><span class="pre">ConstantValued()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.softmax"><code class="docutils literal notranslate"><span class="pre">softmax()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.softplus"><code class="docutils literal notranslate"><span class="pre">softplus()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pulses">Pulses</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.FSSPulse"><code class="docutils literal notranslate"><span class="pre">FSSPulse</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.FSSPulse.support"><code class="docutils literal notranslate"><span class="pre">FSSPulse.support()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.FSSPulse.applyF"><code class="docutils literal notranslate"><span class="pre">FSSPulse.applyF()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.FSSPulse.supportF"><code class="docutils literal notranslate"><span class="pre">FSSPulse.supportF()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.Dirac"><code class="docutils literal notranslate"><span class="pre">Dirac</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.Box"><code class="docutils literal notranslate"><span class="pre">Box</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.Triangle"><code class="docutils literal notranslate"><span class="pre">Triangle</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.TruncatedGaussian"><code class="docutils literal notranslate"><span class="pre">TruncatedGaussian</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.operator.KaiserBessel"><code class="docutils literal notranslate"><span class="pre">KaiserBessel</span></code></a></li>
 </ul>
 </li>
 </ul>

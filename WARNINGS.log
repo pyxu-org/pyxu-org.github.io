@@ -1,7 +1,7 @@
 [91m/root/HOST/doc/examples/xray.ipynb:11: WARNING: File not found: 'intro/tomo.html'[39;49;00m
 [91m/root/HOST/doc/examples/xray.ipynb:15: WARNING: File not found: 'api/experimental/xray.html#pyxu.experimental.xray.XRayTransform'[39;49;00m
 [91m/root/HOST/doc/examples/xray.ipynb:56: WARNING: File not found: 'api/experimental.xray.html#pyxu.experimental.xray.XRayTransform'[39;49;00m
-[91m/root/HOST/doc/examples/xray.ipynb:1524: WARNING: File not found: 'api/experimental/xray.html#pyxu.experimental.xray.XRayTransform'[39;49;00m
+[91m/root/HOST/doc/examples/xray.ipynb:1636: WARNING: File not found: 'api/experimental/xray.html#pyxu.experimental.xray.XRayTransform'[39;49;00m
 [91m/root/HOST/doc/fair/plugins_preview/index.rst:1118: WARNING: toctree contains reference to nonexisting document 'fair/plugins_preview/TokemakRec'[39;49;00m
 [91m/root/HOST/doc/examples/contributing.ipynb: WARNING: document isn't included in any toctree[39;49;00m
 [91m/root/HOST/doc/examples/deblur.ipynb: WARNING: document isn't included in any toctree[39;49;00m
@@ -15,8 +15,6 @@
 [91m/root/HOST/doc/references.rst:21: WARNING: Citation [SubGauss] is not referenced.[39;49;00m
 [91m/root/HOST/doc/references.rst:29: WARNING: Citation [UQ_MCMC] is not referenced.[39;49;00m
 [91m/root/HOST/src/pyxu/experimental/xray/_xray.py:docstring of pyxu.experimental.xray._xray.XRayTransform.init:34: WARNING: py:class reference target not found: list(dict)[39;49;00m
-[91m/root/HOST/src/pyxu/experimental/xray/_xray.py:docstring of pyxu.experimental.xray._xray.XRayTransform.init:35: WARNING: py:class reference target not found: pyxu.experimental.xray._rt.RayXRT[39;49;00m
-[91m/root/HOST/src/pyxu/experimental/xray/_xray.py:docstring of pyxu.experimental.xray._xray.XRayTransform.init:35: WARNING: py:class reference target not found: pyxu.experimental.xray._fourier.FourierXRT[39;49;00m
 [91m/root/HOST/src/pyxu/operator/interop/jax.py:docstring of pyxu.operator.interop.jax._from_jax:: WARNING: py:class reference target not found: pyxu.operator.interop.jax.JaxArray[39;49;00m
 [91m/root/HOST/src/pyxu/operator/interop/jax.py:docstring of pyxu.operator.interop.jax._to_jax:: WARNING: py:class reference target not found: pyxu.operator.interop.jax.JaxArray[39;49;00m
 [91m/root/HOST/src/pyxu/operator/blocks.py:docstring of pyxu.operator.blocks.coo_block:33: WARNING: py:mod reference target not found: pyxu.operator.blocks[39;49;00m

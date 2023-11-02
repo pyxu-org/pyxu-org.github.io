@@ -468,6 +468,8 @@ document.write(`
 </li>
         <li><a href="api/operator/linop.html#pyxu.operator.FFT.__init__">(FFT method)</a>
 </li>
+        <li><a href="api/experimental/xray.html#pyxu.experimental.xray._fourier.FourierXRT.__init__">(FourierXRT method)</a>
+</li>
         <li><a href="api/operator/func.html#pyxu.operator.HyperSlab.__init__">(HyperSlab method)</a>
 </li>
         <li><a href="api/operator/func.html#pyxu.operator.KLDivergence.__init__">(KLDivergence method)</a>
@@ -493,6 +495,8 @@ document.write(`
         <li><a href="api/abc.html#pyxu.abc.QuadraticFunc.__init__">(QuadraticFunc method)</a>
 </li>
         <li><a href="api/operator/func.html#pyxu.operator.RangeSet.__init__">(RangeSet method)</a>
+</li>
+        <li><a href="api/experimental/xray.html#pyxu.experimental.xray._rt.RayXRT.__init__">(RayXRT method)</a>
 </li>
         <li><a href="api/opt.stop.html#pyxu.opt.stop.RelError.__init__">(RelError method)</a>
 </li>
@@ -554,9 +558,13 @@ document.write(`
       <li><a href="api/operator/linop.html#pyxu.operator.FFT.adjoint">adjoint() (FFT method)</a>
 
       <ul>
+        <li><a href="api/experimental/xray.html#pyxu.experimental.xray._fourier.FourierXRT.adjoint">(FourierXRT method)</a>
+</li>
         <li><a href="api/abc.html#pyxu.abc.LinOp.adjoint">(LinOp method)</a>
 </li>
         <li><a href="api/operator/linop.html#pyxu.operator.NUFFT.adjoint">(NUFFT method)</a>
+</li>
+        <li><a href="api/experimental/xray.html#pyxu.experimental.xray._rt.RayXRT.adjoint">(RayXRT method)</a>
 </li>
         <li><a href="api/operator/linop.html#pyxu.operator.SubSample.adjoint">(SubSample method)</a>
 </li>
@@ -572,21 +580,25 @@ document.write(`
       <ul>
         <li><a href="api/operator/linop.html#pyxu.operator.FFT.apply">(FFT method)</a>
 </li>
+        <li><a href="api/experimental/xray.html#pyxu.experimental.xray._fourier.FourierXRT.apply">(FourierXRT method)</a>
+</li>
         <li><a href="api/abc.html#pyxu.abc.Map.apply">(Map method)</a>
 </li>
         <li><a href="api/operator/linop.html#pyxu.operator.NUFFT.apply">(NUFFT method)</a>
+</li>
+        <li><a href="api/experimental/xray.html#pyxu.experimental.xray._rt.RayXRT.apply">(RayXRT method)</a>
 </li>
         <li><a href="api/operator/linop.html#pyxu.operator.StructureTensor.apply">(StructureTensor method)</a>
 </li>
         <li><a href="api/operator/linop.html#pyxu.operator.SubSample.apply">(SubSample method)</a>
 </li>
       </ul></li>
-      <li><a href="api/experimental/xray.html#pyxu.experimental.xray.FSSPulse.applyF">applyF() (FSSPulse method)</a>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/operator/map.html#pyxu.operator.FSSPulse.applyF">applyF() (FSSPulse method)</a>
 </li>
       <li><a href="api/operator/map.html#pyxu.operator.arccos">arccos() (in module pyxu.operator)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/operator/map.html#pyxu.operator.arccosh">arccosh() (in module pyxu.operator)</a>
 </li>
       <li><a href="api/operator/map.html#pyxu.operator.arcsin">arcsin() (in module pyxu.operator)</a>
@@ -643,7 +655,7 @@ document.write(`
 </li>
       <li><a href="api/operator/blocks.html#pyxu.operator.block_diag">block_diag() (in module pyxu.operator)</a>
 </li>
-      <li><a href="api/experimental/xray.html#pyxu.experimental.xray.Box">Box (class in pyxu.experimental.xray)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.Box">Box (class in pyxu.operator)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.Solver.busy">busy() (Solver method)</a>
 </li>
@@ -740,7 +752,11 @@ document.write(`
       <li><a href="api/info.warning.html#pyxu.info.warning.DenseWarning">DenseWarning</a>
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.NUFFT.diagnostic_plot">diagnostic_plot() (NUFFT method)</a>
+
+      <ul>
+        <li><a href="api/experimental/xray.html#pyxu.experimental.xray._rt.RayXRT.diagnostic_plot">(RayXRT method)</a>
 </li>
+      </ul></li>
       <li><a href="api/operator/linop.html#pyxu.operator.DiagonalOp">DiagonalOp() (in module pyxu.operator)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.DiffMap.diff_lipschitz">diff_lipschitz (DiffMap property)</a>
@@ -751,15 +767,15 @@ document.write(`
 </li>
       <li><a href="api/abc.html#pyxu.abc.Property.DIFFERENTIABLE_FUNCTION">DIFFERENTIABLE_FUNCTION (Property attribute)</a>
 </li>
-      <li><a href="api/abc.html#pyxu.abc.DiffFunc">DiffFunc (class in pyxu.abc)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/abc.html#pyxu.abc.DiffFunc">DiffFunc (class in pyxu.abc)</a>
+</li>
       <li><a href="api/abc.html#pyxu.abc.DiffMap">DiffMap (class in pyxu.abc)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.Operator.dim">dim (Operator property)</a>
 </li>
-      <li><a href="api/experimental/xray.html#pyxu.experimental.xray.Dirac">Dirac (class in pyxu.experimental.xray)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.Dirac">Dirac (class in pyxu.operator)</a>
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.DirectionalDerivative">DirectionalDerivative() (in module pyxu.operator)</a>
 </li>
@@ -831,6 +847,8 @@ document.write(`
 </li>
       <li><a href="api/opt.solver.html#pyxu.opt.solver.ForwardBackward">ForwardBackward (class in pyxu.opt.solver)</a>
 </li>
+      <li><a href="api/experimental/xray.html#pyxu.experimental.xray._fourier.FourierXRT">FourierXRT (class in pyxu.experimental.xray._fourier)</a>
+</li>
       <li><a href="api/abc.html#pyxu.abc.LinOp.from_array">from_array() (LinOp class method)</a>
 </li>
       <li><a href="api/info.deps.html#pyxu.info.deps.NDArrayInfo.from_flag">from_flag() (NDArrayInfo class method)</a>
@@ -851,7 +869,7 @@ document.write(`
 </li>
       <li><a href="api/operator.interop.html#pyxu.operator.interop.from_torch">from_torch() (in module pyxu.operator.interop)</a>
 </li>
-      <li><a href="api/experimental/xray.html#pyxu.experimental.xray.FSSPulse">FSSPulse (class in pyxu.experimental.xray)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.FSSPulse">FSSPulse (class in pyxu.operator)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.Func">Func (class in pyxu.abc)</a>
 </li>
@@ -953,7 +971,7 @@ document.write(`
 <h2 id="K">K</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/experimental/xray.html#pyxu.experimental.xray.KaiserBessel">KaiserBessel (class in pyxu.experimental.xray)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.KaiserBessel">KaiserBessel (class in pyxu.operator)</a>
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.Stencil.kernel">kernel (Stencil property)</a>
 </li>
@@ -1298,14 +1316,16 @@ document.write(`
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.StructureTensor.ravel">ravel() (StructureTensor method)</a>
 </li>
+      <li><a href="api/experimental/xray.html#pyxu.experimental.xray._rt.RayXRT">RayXRT (class in pyxu.experimental.xray._rt)</a>
+</li>
       <li><a href="api/util.html#pyxu.util.read_only">read_only() (in module pyxu.util)</a>
 </li>
       <li><a href="api/info.ptype.html#pyxu.info.ptype.Real">Real (class in pyxu.info.ptype)</a>
 </li>
-      <li><a href="api/runtime.html#pyxu.runtime.CWidth.real">real (CWidth property)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/runtime.html#pyxu.runtime.CWidth.real">real (CWidth property)</a>
+</li>
       <li><a href="api/util.html#pyxu.util.redirect">redirect() (in module pyxu.util)</a>
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.Stencil.relative_indices">relative_indices (Stencil property)</a>
@@ -1416,7 +1436,7 @@ document.write(`
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.Sum">Sum() (in module pyxu.operator)</a>
 </li>
-      <li><a href="api/experimental/xray.html#pyxu.experimental.xray.FSSPulse.support">support() (FSSPulse method)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.FSSPulse.support">support() (FSSPulse method)</a>
 </li>
       <li><a href="api/info.deps.html#pyxu.info.deps.supported_array_modules">supported_array_modules() (in module pyxu.info.deps)</a>
 </li>
@@ -1426,7 +1446,7 @@ document.write(`
 </li>
       <li><a href="api/info.deps.html#pyxu.info.deps.supported_sparse_types">supported_sparse_types() (in module pyxu.info.deps)</a>
 </li>
-      <li><a href="api/experimental/xray.html#pyxu.experimental.xray.FSSPulse.supportF">supportF() (FSSPulse method)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.FSSPulse.supportF">supportF() (FSSPulse method)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.LinOp.svdvals">svdvals() (LinOp method)</a>
 </li>
@@ -1456,11 +1476,13 @@ document.write(`
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/operator/map.html#pyxu.operator.Triangle">Triangle (class in pyxu.operator)</a>
+</li>
       <li><a href="api/operator/linop.html#pyxu.operator.Trim">Trim() (in module pyxu.operator)</a>
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.SubSample.TrimSpec">TrimSpec (SubSample attribute)</a>
 </li>
-      <li><a href="api/experimental/xray.html#pyxu.experimental.xray.TruncatedGaussian">TruncatedGaussian (class in pyxu.experimental.xray)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.TruncatedGaussian">TruncatedGaussian (class in pyxu.operator)</a>
 </li>
       <li><a href="api/info.deps.html#pyxu.info.deps.NDArrayInfo.type">type() (NDArrayInfo method)</a>
 

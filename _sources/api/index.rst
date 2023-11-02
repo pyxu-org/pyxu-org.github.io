@@ -119,12 +119,9 @@ Transforms
 
 .. autosummary::
 
-   ~pyxu.experimental.xray.Box
-   ~pyxu.experimental.xray.Dirac
-   ~pyxu.experimental.xray.FSSPulse
-   ~pyxu.experimental.xray.KaiserBessel
-   ~pyxu.experimental.xray.TruncatedGaussian
    ~pyxu.experimental.xray.XRayTransform
+   ~pyxu.experimental.xray._rt.RayXRT
+   ~pyxu.experimental.xray._fourier.FourierXRT
 
 pyxu.info.deps
 --------------
@@ -383,6 +380,18 @@ Element-wise Operators
    ~pyxu.operator.square
    ~pyxu.operator.tan
    ~pyxu.operator.tanh
+
+Pulses
+++++++
+
+.. autosummary::
+
+   ~pyxu.operator.Box
+   ~pyxu.operator.Dirac
+   ~pyxu.operator.FSSPulse
+   ~pyxu.operator.KaiserBessel
+   ~pyxu.operator.Triangle
+   ~pyxu.operator.TruncatedGaussian
 
 pyxu.opt.solver
 ---------------

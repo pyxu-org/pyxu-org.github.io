@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css?v=7f9a90b1" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
@@ -623,14 +623,14 @@ document.write(`
 <span class="linenos">166</span>            <span class="n">xp</span> <span class="o">=</span> <span class="n">ndi_n</span><span class="o">.</span><span class="n">module</span><span class="p">()</span>
 <span class="linenos">167</span>            <span class="n">n_spec</span> <span class="o">=</span> <span class="n">n_spec</span> <span class="o">/</span> <span class="n">xp</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">n_spec</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="linenos">168</span>
-<span class="linenos">169</span>            <span class="c1"># Project `t_spec` to lie in n^{\perp}.</span>
-<span class="linenos">170</span>            <span class="c1"># (Not really required; just to have everything in standardized form.)</span>
-<span class="linenos">171</span>            <span class="n">rng</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
-<span class="linenos">172</span>            <span class="n">U</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">((</span><span class="n">N_l</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">D</span><span class="p">))</span>  <span class="c1"># create reference frames n^{\perp}</span>
-<span class="linenos">173</span>            <span class="n">U</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">n_spec</span>
-<span class="linenos">174</span>            <span class="n">U</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">qr</span><span class="p">(</span><span class="n">U</span><span class="p">)</span>
-<span class="linenos">175</span>            <span class="n">s</span> <span class="o">=</span> <span class="n">U</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">@</span> <span class="n">t_spec</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">N_l</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="linenos">176</span>            <span class="n">t_spec</span> <span class="o">=</span> <span class="p">(</span><span class="n">U</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">:]</span> <span class="o">@</span> <span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">N_l</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
+<span class="linenos">169</span>            <span class="c1">### Project `t_spec` to lie in n^{\perp}.</span>
+<span class="linenos">170</span>            <span class="c1">### (We don&#39;t do this by default since it messes up diagnostic_plot() analysis.)</span>
+<span class="linenos">171</span>            <span class="c1"># rng = xp.random.default_rng()</span>
+<span class="linenos">172</span>            <span class="c1"># U = rng.standard_normal((N_l, D, D))  # create reference frames n^{\perp}</span>
+<span class="linenos">173</span>            <span class="c1"># U[..., 0] = n_spec</span>
+<span class="linenos">174</span>            <span class="c1"># U, _ = xp.linalg.qr(U)</span>
+<span class="linenos">175</span>            <span class="c1"># s = U[..., 1:].transpose(0, 2, 1) @ t_spec.reshape(N_l, D, 1)</span>
+<span class="linenos">176</span>            <span class="c1"># t_spec = (U[..., 1:] @ s).reshape(N_l, D)</span>
 <span class="linenos">177</span>
 <span class="linenos">178</span>            <span class="n">klass</span> <span class="o">=</span> <span class="n">_rt</span><span class="o">.</span><span class="n">RayXRT</span>
 <span class="linenos">179</span>        <span class="k">else</span><span class="p">:</span>  <span class="c1"># method == &quot;fourier&quot;</span>

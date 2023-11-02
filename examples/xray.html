@@ -290,7 +290,7 @@ document.write(`
 </ul>
 <p>We will use the phantom below for all experiments.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_2D_phantom</span><span class="p">(</span><span class="n">shape</span><span class="p">:</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="tuple"><span class="nb">tuple</span></a><span class="p">[</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#int" title="int"><span class="nb">int</span></a><span class="p">],</span> <span class="n">seed</span><span class="p">:</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#int" title="int"><span class="nb">int</span></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
@@ -316,7 +316,8 @@ document.write(`
 <span class="p">)</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">phantom</span><span class="p">,</span> <span class="o">**</span><span class="n">im_kwargs</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">phantom</span><span class="p">,</span> <span class="o">**</span><span class="n">im_kwargs</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"x [m]"</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"y [m]"</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Phantom"</span><span class="p">)</span>
@@ -324,7 +325,7 @@ document.write(`
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -373,9 +374,30 @@ Text(0.5, 1.0, 'Phantom')
 <br/></pre></div>
 </div>
 </div>
+<p>It can be tricky to correctly parametrize the rays. The <code class="docutils literal notranslate"><span class="pre">diagnostic_plot()</span></code> method can be used to verify everything is correct. By default <code class="docutils literal notranslate"><span class="pre">diagnostic_plot()</span></code> shows all rays going through the volume. For visualization purposes, let’s only plot every <span class="math notranslate nohighlight">\(N\)</span>-th angle and <span class="math notranslate nohighlight">\(K\)</span>-th offset.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span><span class="p">,</span> <span class="n">K</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span>
+<span class="n">ray_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N_angle</span> <span class="o">*</span> <span class="n">N_offset</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">N_angle</span><span class="p">,</span> <span class="n">N_offset</span><span class="p">)[::</span><span class="n">N</span><span class="p">,::</span><span class="n">K</span><span class="p">]</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">op_para_u</span><span class="o">.</span><span class="n">diagnostic_plot</span><span class="p">(</span><span class="n">ray_idx</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_xray_9_0.png" src="../_images/examples_xray_9_0.png"/>
+</div>
+</div>
+<p>The construction seems ok for a parallel-beam scan: angles/offsets are distributed uniformily, and we can already see that the lines <em>concentrate</em> in the center of the volume. (More on this later.)</p>
 <p>Now that we created the XRay operator, let’s compute the sinogram and visualize it.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute sinogram</span>
@@ -411,16 +433,16 @@ Text(0.5, 1.0, 'Phantom')
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_xray_9_0.png" src="../_images/examples_xray_9_0.png"/>
+<img alt="../_images/examples_xray_11_0.png" src="../_images/examples_xray_11_0.png"/>
 </div>
 </div>
 <p>Now that we have the sinogram, let’s invert the imaging process to (try to) reconstruct an image which produced it. We will try 2 methods:</p>
 <ul class="simple">
 <li><p>Plain back-projection of the sinogram data into the image domain.</p></li>
-<li><p>Forming the least-squares image. This can be obtained via the Filtered-BackProjection algorithm (FBP), but let’s stick to an undampened CG method to compute the pseudo-inverse for simplicity.</p></li>
+<li><p>Forming the least-squares image. The conventional Filtered-BackProjection algorithm (FBP) should produce similar images, but let’s stick to an undampened CG method to compute the pseudo-inverse for simplicity.</p></li>
 </ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute backprojected image and LSQ image. =======================</span>
@@ -449,74 +471,74 @@ Text(0.5, 1.0, 'Phantom')
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:24.719731] Iteration 0
+INFO:/tmp/pyxu_nqhe46r2:[2023-11-02 15:05:21.625205] Iteration 0
         iteration: 0
-        AbsError[residual]: 0.0568762221784964
+        AbsError[residual]: 0.05687622737895547
         N_iter: 1.0
-INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:25.173524] Iteration 1
+INFO:/tmp/pyxu_nqhe46r2:[2023-11-02 15:05:22.035556] Iteration 1
         iteration: 1
-        AbsError[residual]: 0.06557013021245907
+        AbsError[residual]: 0.06557017379381164
         N_iter: 2.0
-INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:25.550767] Iteration 2
+INFO:/tmp/pyxu_nqhe46r2:[2023-11-02 15:05:22.436203] Iteration 2
         iteration: 2
-        AbsError[residual]: 0.00599593202323822
+        AbsError[residual]: 0.005995962885020177
         N_iter: 3.0
-INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:25.910576] Iteration 3
+INFO:/tmp/pyxu_nqhe46r2:[2023-11-02 15:05:22.821280] Iteration 3
         iteration: 3
-        AbsError[residual]: 0.0020035581956044774
+        AbsError[residual]: 0.00200349375989515
         N_iter: 4.0
-INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:26.277650] Iteration 4
+INFO:/tmp/pyxu_nqhe46r2:[2023-11-02 15:05:23.230381] Iteration 4
         iteration: 4
-        AbsError[residual]: 0.008520015274191939
+        AbsError[residual]: 0.008496910984158959
         N_iter: 5.0
-INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:26.644934] Iteration 5
+INFO:/tmp/pyxu_nqhe46r2:[2023-11-02 15:05:23.617034] Iteration 5
         iteration: 5
-        AbsError[residual]: 0.0009511971744065829
+        AbsError[residual]: 0.0009511932090629814
         N_iter: 6.0
-INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:27.035085] Iteration 6
+INFO:/tmp/pyxu_nqhe46r2:[2023-11-02 15:05:24.036326] Iteration 6
         iteration: 6
-        AbsError[residual]: 0.0005985448490385771
+        AbsError[residual]: 0.0005980549190576326
         N_iter: 7.0
-INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:27.401276] Iteration 7
+INFO:/tmp/pyxu_nqhe46r2:[2023-11-02 15:05:24.479982] Iteration 7
         iteration: 7
-        AbsError[residual]: 0.0005452610047946128
+        AbsError[residual]: 0.0005385074691672622
         N_iter: 8.0
-INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:27.809917] Iteration 8
+INFO:/tmp/pyxu_nqhe46r2:[2023-11-02 15:05:24.922761] Iteration 8
         iteration: 8
-        AbsError[residual]: 0.0015153082160769854
+        AbsError[residual]: 0.0013588506056697075
         N_iter: 9.0
-INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:28.183754] Iteration 9
+INFO:/tmp/pyxu_nqhe46r2:[2023-11-02 15:05:25.344982] Iteration 9
         iteration: 9
-        AbsError[residual]: 0.0003085447941630805
+        AbsError[residual]: 0.00031133777340682607
         N_iter: 10.0
-INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:28.571470] Iteration 10
+INFO:/tmp/pyxu_nqhe46r2:[2023-11-02 15:05:25.724944] Iteration 10
         iteration: 10
-        AbsError[residual]: 0.0002228763698616621
+        AbsError[residual]: 0.0002170788817839002
         N_iter: 11.0
-INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:28.925244] Iteration 11
+INFO:/tmp/pyxu_nqhe46r2:[2023-11-02 15:05:26.103988] Iteration 11
         iteration: 11
-        AbsError[residual]: 0.0002962809360471156
+        AbsError[residual]: 0.00036685570387762087
         N_iter: 12.0
-INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:29.294388] Iteration 12
+INFO:/tmp/pyxu_nqhe46r2:[2023-11-02 15:05:26.482316] Iteration 12
         iteration: 12
-        AbsError[residual]: 0.0005157374911570223
+        AbsError[residual]: 0.0002774264159603471
         N_iter: 13.0
-INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:29.661207] Iteration 13
+INFO:/tmp/pyxu_nqhe46r2:[2023-11-02 15:05:26.858245] Iteration 13
         iteration: 13
-        AbsError[residual]: 0.00015538188946271337
+        AbsError[residual]: 0.00016839394398493801
         N_iter: 14.0
-INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:30.047053] Iteration 14
+INFO:/tmp/pyxu_nqhe46r2:[2023-11-02 15:05:27.237286] Iteration 14
         iteration: 14
-        AbsError[residual]: 9.810392423657637e-05
+        AbsError[residual]: 9.819763790838799e-05
         N_iter: 15.0
-INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:30.047664] Stopping Criterion satisfied -&gt; END
+INFO:/tmp/pyxu_nqhe46r2:[2023-11-02 15:05:27.237929] Stopping Criterion satisfied -&gt; END
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_xray_11_1.png" src="../_images/examples_xray_11_1.png"/>
+<img alt="../_images/examples_xray_13_1.png" src="../_images/examples_xray_13_1.png"/>
 </div>
 </div>
 <p>Some high-level remarks just by looking at these images:</p>
@@ -529,11 +551,11 @@ INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:30.047664] Stopping Criterion satisfie
 <h3>Parallel Beam: Non-Uniform Offsets<a class="headerlink" href="#Parallel-Beam:-Non-Uniform-Offsets" title="Link to this heading">#</a></h3>
 <p>One option to homogenize radial resolution is to move away from uniformly sampling <span class="math notranslate nohighlight">\(t \in [-t_{\mathrm{offset}}^{\max}, t_{\mathrm{offset}}^{\max}]\)</span>, and instead sample it more densely at the peripheral regions. Let’s define a radius <span class="math notranslate nohighlight">\(r \in ]0, t_{\mathrm{offset}}^{\max}[\)</span> such that the number of offsets inside/outside the boundary are equal. We’ll image the phantom at different <span class="math notranslate nohighlight">\(r\)</span> values and see how the radial resolution changes.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We only need to change `t_spec` to create our non-uniformly sampled XRT.</span>
-<span class="n">radial_threshold</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">]</span>
+<span class="n">radial_threshold</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.55</span><span class="p">]</span>
 
 <span class="n">op_para_nu</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">rt</span> <span class="ow">in</span> <span class="n">radial_threshold</span><span class="p">:</span>
@@ -560,12 +582,48 @@ INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:30.047664] Stopping Criterion satisfie
 <br/></pre></div>
 </div>
 </div>
+<p>Let’s look again at <code class="docutils literal notranslate"><span class="pre">diagnostic_plot()</span></code> to make sure the offsets are effectively non-uniform. (We’ll plot one angle only for visualization purposes.)</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ray_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N_angle</span> <span class="o">*</span> <span class="n">N_offset</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">N_angle</span><span class="p">,</span> <span class="n">N_offset</span><span class="p">)[</span><span class="mi">10</span><span class="p">,:]</span>
+
+<span class="k">for</span> <span class="n">rt</span><span class="p">,</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">op_para_nu</span><span class="p">:</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">diagnostic_plot</span><span class="p">(</span><span class="n">ray_idx</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">"$r = </span><span class="si">{</span><span class="n">rt</span><span class="si">}</span><span class="s2">$"</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_xray_18_0.png" src="../_images/examples_xray_18_0.png"/>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_xray_18_1.png" src="../_images/examples_xray_18_1.png"/>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_xray_18_2.png" src="../_images/examples_xray_18_2.png"/>
+</div>
+</div>
+<p>The lines seem about right, so let’s see what the resolution looks like:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N_op</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#len" title="len"><span class="nb">len</span></a><span class="p">(</span><span class="n">op_para_nu</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="n">N_op</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="n">N_op</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Ground-Truth"</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">phantom</span><span class="p">,</span> <span class="o">**</span><span class="n">im_kwargs</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
@@ -590,212 +648,204 @@ INFO:/tmp/pyxu_50nxhnos:[2023-10-25 16:16:30.047664] Stopping Criterion satisfie
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:31.134408] Iteration 0
+INFO:/tmp/pyxu__a3j8z1b:[2023-11-02 15:57:02.085322] Iteration 0
         iteration: 0
-        AbsError[residual]: 0.05728057919313109
+        AbsError[residual]: 0.06083631599882158
         N_iter: 1.0
-INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:31.535639] Iteration 1
+INFO:/tmp/pyxu__a3j8z1b:[2023-11-02 15:57:02.448879] Iteration 1
         iteration: 1
-        AbsError[residual]: 0.06475229897888211
+        AbsError[residual]: 0.06578516446141662
         N_iter: 2.0
-INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:31.929486] Iteration 2
+INFO:/tmp/pyxu__a3j8z1b:[2023-11-02 15:57:02.795919] Iteration 2
         iteration: 2
-        AbsError[residual]: 0.0069064066032000744
+        AbsError[residual]: 0.00798533484005245
         N_iter: 3.0
-INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:32.302857] Iteration 3
+INFO:/tmp/pyxu__a3j8z1b:[2023-11-02 15:57:03.165755] Iteration 3
         iteration: 3
-        AbsError[residual]: 0.0023125116657778427
+        AbsError[residual]: 0.003094276181013245
         N_iter: 4.0
-INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:32.694142] Iteration 4
+INFO:/tmp/pyxu__a3j8z1b:[2023-11-02 15:57:03.519540] Iteration 4
         iteration: 4
-        AbsError[residual]: 0.006244983732979188
+        AbsError[residual]: 0.003677420194809119
         N_iter: 5.0
-INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:33.096623] Iteration 5
+INFO:/tmp/pyxu__a3j8z1b:[2023-11-02 15:57:03.873239] Iteration 5
         iteration: 5
-        AbsError[residual]: 0.001221721547160276
+        AbsError[residual]: 0.00154224789194649
         N_iter: 6.0
-INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:33.490811] Iteration 6
+INFO:/tmp/pyxu__a3j8z1b:[2023-11-02 15:57:04.256761] Iteration 6
         iteration: 6
-        AbsError[residual]: 0.0008618007427083471
+        AbsError[residual]: 0.0011077690459421158
         N_iter: 7.0
-INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:33.861880] Iteration 7
+INFO:/tmp/pyxu__a3j8z1b:[2023-11-02 15:57:04.599026] Iteration 7
         iteration: 7
-        AbsError[residual]: 0.00069779779682013
+        AbsError[residual]: 0.0011478545727175993
         N_iter: 8.0
-INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:34.228972] Iteration 8
+INFO:/tmp/pyxu__a3j8z1b:[2023-11-02 15:57:04.954629] Iteration 8
         iteration: 8
-        AbsError[residual]: 0.0006512579699174248
+        AbsError[residual]: 0.0005351391116486889
         N_iter: 9.0
-INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:34.599533] Iteration 9
+INFO:/tmp/pyxu__a3j8z1b:[2023-11-02 15:57:05.320116] Iteration 9
         iteration: 9
-        AbsError[residual]: 0.0004937525530021967
+        AbsError[residual]: 0.0018568674052228317
         N_iter: 10.0
-INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:34.963708] Iteration 10
+INFO:/tmp/pyxu__a3j8z1b:[2023-11-02 15:57:05.699617] Iteration 10
         iteration: 10
-        AbsError[residual]: 0.0002218965431171188
+        AbsError[residual]: 0.0003912409363852758
         N_iter: 11.0
-INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:35.329028] Iteration 11
+INFO:/tmp/pyxu__a3j8z1b:[2023-11-02 15:57:06.052301] Iteration 11
         iteration: 11
-        AbsError[residual]: 0.00022180148559373163
+        AbsError[residual]: 0.00023032652888550442
         N_iter: 12.0
-INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:35.699571] Iteration 12
+INFO:/tmp/pyxu__a3j8z1b:[2023-11-02 15:57:06.405469] Iteration 12
         iteration: 12
-        AbsError[residual]: 0.0003632566159943089
+        AbsError[residual]: 0.0004925694078794666
         N_iter: 13.0
-INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:36.063792] Iteration 13
+INFO:/tmp/pyxu__a3j8z1b:[2023-11-02 15:57:06.779761] Iteration 13
         iteration: 13
-        AbsError[residual]: 0.0002543985077318786
+        AbsError[residual]: 0.00022321689259305474
         N_iter: 14.0
-INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:36.416310] Iteration 14
+INFO:/tmp/pyxu__a3j8z1b:[2023-11-02 15:57:07.151672] Iteration 14
         iteration: 14
-        AbsError[residual]: 0.0001068658951233657
+        AbsError[residual]: 0.00013802876443840057
         N_iter: 15.0
-INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:36.817029] Iteration 15
+INFO:/tmp/pyxu__a3j8z1b:[2023-11-02 15:57:07.520319] Iteration 15
         iteration: 15
-        AbsError[residual]: 7.733485003608704e-05
+        AbsError[residual]: 0.00018681278195342298
         N_iter: 16.0
-INFO:/tmp/pyxu_1g69kncx:[2023-10-25 16:16:36.817541] Stopping Criterion satisfied -&gt; END
-INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:37.340977] Iteration 0
-        iteration: 0
-        AbsError[residual]: 0.05055404033504593
-        N_iter: 1.0
-INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:37.704061] Iteration 1
-        iteration: 1
-        AbsError[residual]: 0.060335270790205627
-        N_iter: 2.0
-INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:38.055689] Iteration 2
-        iteration: 2
-        AbsError[residual]: 0.005110190315083068
-        N_iter: 3.0
-INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:38.416006] Iteration 3
-        iteration: 3
-        AbsError[residual]: 0.0019088745042731415
-        N_iter: 4.0
-INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:38.770654] Iteration 4
-        iteration: 4
-        AbsError[residual]: 0.008821448120204639
-        N_iter: 5.0
-INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:39.137469] Iteration 5
-        iteration: 5
-        AbsError[residual]: 0.0008814012249415186
-        N_iter: 6.0
-INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:39.502187] Iteration 6
-        iteration: 6
-        AbsError[residual]: 0.0005440477597315165
-        N_iter: 7.0
-INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:39.893476] Iteration 7
-        iteration: 7
-        AbsError[residual]: 0.000454633547697322
-        N_iter: 8.0
-INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:40.246875] Iteration 8
-        iteration: 8
-        AbsError[residual]: 0.0008643346408172268
-        N_iter: 9.0
-INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:40.609934] Iteration 9
-        iteration: 9
-        AbsError[residual]: 0.0003043423930593373
-        N_iter: 10.0
-INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:40.952939] Iteration 10
-        iteration: 10
-        AbsError[residual]: 0.00020901076838019297
-        N_iter: 11.0
-INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:41.302381] Iteration 11
-        iteration: 11
-        AbsError[residual]: 0.0002520278501687159
-        N_iter: 12.0
-INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:41.659087] Iteration 12
-        iteration: 12
-        AbsError[residual]: 0.00047022357080805916
-        N_iter: 13.0
-INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:42.025045] Iteration 13
-        iteration: 13
-        AbsError[residual]: 0.00013472618153518562
-        N_iter: 14.0
-INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:42.385869] Iteration 14
-        iteration: 14
-        AbsError[residual]: 8.401869244068868e-05
-        N_iter: 15.0
-INFO:/tmp/pyxu_2ufdrf_p:[2023-10-25 16:16:42.386422] Stopping Criterion satisfied -&gt; END
-INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:42.889807] Iteration 0
-        iteration: 0
-        AbsError[residual]: 0.04144028087947521
-        N_iter: 1.0
-INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:43.191581] Iteration 1
-        iteration: 1
-        AbsError[residual]: 0.04884479177525473
-        N_iter: 2.0
-INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:43.569224] Iteration 2
-        iteration: 2
-        AbsError[residual]: 0.004874993958431622
-        N_iter: 3.0
-INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:43.914414] Iteration 3
-        iteration: 3
-        AbsError[residual]: 0.0022598123696692084
-        N_iter: 4.0
-INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:44.244886] Iteration 4
-        iteration: 4
-        AbsError[residual]: 0.005354189080136105
-        N_iter: 5.0
-INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:44.725773] Iteration 5
-        iteration: 5
-        AbsError[residual]: 0.0013435662663850944
-        N_iter: 6.0
-INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:45.082818] Iteration 6
-        iteration: 6
-        AbsError[residual]: 0.0006924431803871291
-        N_iter: 7.0
-INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:45.432649] Iteration 7
-        iteration: 7
-        AbsError[residual]: 0.0005355016338636194
-        N_iter: 8.0
-INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:45.749553] Iteration 8
-        iteration: 8
-        AbsError[residual]: 0.0007817799341352981
-        N_iter: 9.0
-INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:46.066084] Iteration 9
-        iteration: 9
-        AbsError[residual]: 0.00035055113083838434
-        N_iter: 10.0
-INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:46.409130] Iteration 10
-        iteration: 10
-        AbsError[residual]: 0.00018697351679171253
-        N_iter: 11.0
-INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:46.757099] Iteration 11
-        iteration: 11
-        AbsError[residual]: 0.00014311793708716912
-        N_iter: 12.0
-INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:47.066925] Iteration 12
-        iteration: 12
-        AbsError[residual]: 0.00032142952178576247
-        N_iter: 13.0
-INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:47.359564] Iteration 13
-        iteration: 13
-        AbsError[residual]: 0.00014581281142271642
-        N_iter: 14.0
-INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:47.675141] Iteration 14
-        iteration: 14
-        AbsError[residual]: 0.00010090305829689804
-        N_iter: 15.0
-INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:47.975194] Iteration 15
-        iteration: 15
-        AbsError[residual]: 0.00011117647596298096
-        N_iter: 16.0
-INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:48.294106] Iteration 16
+INFO:/tmp/pyxu__a3j8z1b:[2023-11-02 15:57:07.888776] Iteration 16
         iteration: 16
-        AbsError[residual]: 0.0002960482217990509
+        AbsError[residual]: 8.945616788750326e-05
         N_iter: 17.0
-INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:48.612980] Iteration 17
-        iteration: 17
-        AbsError[residual]: 8.876078379409524e-05
-        N_iter: 18.0
-INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:48.613590] Stopping Criterion satisfied -&gt; END
+INFO:/tmp/pyxu__a3j8z1b:[2023-11-02 15:57:07.889269] Stopping Criterion satisfied -&gt; END
+INFO:/tmp/pyxu_vzby51qs:[2023-11-02 15:57:08.463660] Iteration 0
+        iteration: 0
+        AbsError[residual]: 0.05587978235963257
+        N_iter: 1.0
+INFO:/tmp/pyxu_vzby51qs:[2023-11-02 15:57:08.878741] Iteration 1
+        iteration: 1
+        AbsError[residual]: 0.06411632865120671
+        N_iter: 2.0
+INFO:/tmp/pyxu_vzby51qs:[2023-11-02 15:57:09.231433] Iteration 2
+        iteration: 2
+        AbsError[residual]: 0.006470451070089179
+        N_iter: 3.0
+INFO:/tmp/pyxu_vzby51qs:[2023-11-02 15:57:09.591149] Iteration 3
+        iteration: 3
+        AbsError[residual]: 0.002110160298811039
+        N_iter: 4.0
+INFO:/tmp/pyxu_vzby51qs:[2023-11-02 15:57:09.943987] Iteration 4
+        iteration: 4
+        AbsError[residual]: 0.007383376206422935
+        N_iter: 5.0
+INFO:/tmp/pyxu_vzby51qs:[2023-11-02 15:57:10.315364] Iteration 5
+        iteration: 5
+        AbsError[residual]: 0.0011452535995901175
+        N_iter: 6.0
+INFO:/tmp/pyxu_vzby51qs:[2023-11-02 15:57:10.671398] Iteration 6
+        iteration: 6
+        AbsError[residual]: 0.0008150197713191819
+        N_iter: 7.0
+INFO:/tmp/pyxu_vzby51qs:[2023-11-02 15:57:11.027916] Iteration 7
+        iteration: 7
+        AbsError[residual]: 0.0006293635897970357
+        N_iter: 8.0
+INFO:/tmp/pyxu_vzby51qs:[2023-11-02 15:57:11.391504] Iteration 8
+        iteration: 8
+        AbsError[residual]: 0.0011972310173951667
+        N_iter: 9.0
+INFO:/tmp/pyxu_vzby51qs:[2023-11-02 15:57:11.758753] Iteration 9
+        iteration: 9
+        AbsError[residual]: 0.00036930096120571835
+        N_iter: 10.0
+INFO:/tmp/pyxu_vzby51qs:[2023-11-02 15:57:12.130178] Iteration 10
+        iteration: 10
+        AbsError[residual]: 0.00019861182883296077
+        N_iter: 11.0
+INFO:/tmp/pyxu_vzby51qs:[2023-11-02 15:57:12.507776] Iteration 11
+        iteration: 11
+        AbsError[residual]: 0.0002665008466789277
+        N_iter: 12.0
+INFO:/tmp/pyxu_vzby51qs:[2023-11-02 15:57:12.862428] Iteration 12
+        iteration: 12
+        AbsError[residual]: 0.0003984004605641113
+        N_iter: 13.0
+INFO:/tmp/pyxu_vzby51qs:[2023-11-02 15:57:13.231427] Iteration 13
+        iteration: 13
+        AbsError[residual]: 0.00016190790722508518
+        N_iter: 14.0
+INFO:/tmp/pyxu_vzby51qs:[2023-11-02 15:57:13.642948] Iteration 14
+        iteration: 14
+        AbsError[residual]: 8.831692053839597e-05
+        N_iter: 15.0
+INFO:/tmp/pyxu_vzby51qs:[2023-11-02 15:57:13.643521] Stopping Criterion satisfied -&gt; END
+INFO:/tmp/pyxu_i3jnsx5v:[2023-11-02 15:57:14.206342] Iteration 0
+        iteration: 0
+        AbsError[residual]: 0.04912049936843101
+        N_iter: 1.0
+INFO:/tmp/pyxu_i3jnsx5v:[2023-11-02 15:57:14.550954] Iteration 1
+        iteration: 1
+        AbsError[residual]: 0.059035901920879576
+        N_iter: 2.0
+INFO:/tmp/pyxu_i3jnsx5v:[2023-11-02 15:57:14.958738] Iteration 2
+        iteration: 2
+        AbsError[residual]: 0.004886593680700907
+        N_iter: 3.0
+INFO:/tmp/pyxu_i3jnsx5v:[2023-11-02 15:57:15.325365] Iteration 3
+        iteration: 3
+        AbsError[residual]: 0.0019312505080778335
+        N_iter: 4.0
+INFO:/tmp/pyxu_i3jnsx5v:[2023-11-02 15:57:15.701409] Iteration 4
+        iteration: 4
+        AbsError[residual]: 0.008737888705976127
+        N_iter: 5.0
+INFO:/tmp/pyxu_i3jnsx5v:[2023-11-02 15:57:16.042200] Iteration 5
+        iteration: 5
+        AbsError[residual]: 0.0008519185620550029
+        N_iter: 6.0
+INFO:/tmp/pyxu_i3jnsx5v:[2023-11-02 15:57:16.397270] Iteration 6
+        iteration: 6
+        AbsError[residual]: 0.0005424006108261304
+        N_iter: 7.0
+INFO:/tmp/pyxu_i3jnsx5v:[2023-11-02 15:57:16.755044] Iteration 7
+        iteration: 7
+        AbsError[residual]: 0.00041813351788701805
+        N_iter: 8.0
+INFO:/tmp/pyxu_i3jnsx5v:[2023-11-02 15:57:17.118268] Iteration 8
+        iteration: 8
+        AbsError[residual]: 0.0008582720432987022
+        N_iter: 9.0
+INFO:/tmp/pyxu_i3jnsx5v:[2023-11-02 15:57:17.478996] Iteration 9
+        iteration: 9
+        AbsError[residual]: 0.00029155498997959523
+        N_iter: 10.0
+INFO:/tmp/pyxu_i3jnsx5v:[2023-11-02 15:57:17.829410] Iteration 10
+        iteration: 10
+        AbsError[residual]: 0.0002089021304178365
+        N_iter: 11.0
+INFO:/tmp/pyxu_i3jnsx5v:[2023-11-02 15:57:18.185754] Iteration 11
+        iteration: 11
+        AbsError[residual]: 0.0003716617961722087
+        N_iter: 12.0
+INFO:/tmp/pyxu_i3jnsx5v:[2023-11-02 15:57:18.546313] Iteration 12
+        iteration: 12
+        AbsError[residual]: 0.0002429203135320249
+        N_iter: 13.0
+INFO:/tmp/pyxu_i3jnsx5v:[2023-11-02 15:57:18.880553] Iteration 13
+        iteration: 13
+        AbsError[residual]: 0.00014315533097738364
+        N_iter: 14.0
+INFO:/tmp/pyxu_i3jnsx5v:[2023-11-02 15:57:19.227251] Iteration 14
+        iteration: 14
+        AbsError[residual]: 8.397651073145921e-05
+        N_iter: 15.0
+INFO:/tmp/pyxu_i3jnsx5v:[2023-11-02 15:57:19.227785] Stopping Criterion satisfied -&gt; END
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_xray_15_1.png" src="../_images/examples_xray_15_1.png"/>
+<img alt="../_images/examples_xray_20_1.png" src="../_images/examples_xray_20_1.png"/>
 </div>
 </div>
 <p>A few takebacks from this experiment:</p>
@@ -809,7 +859,7 @@ INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:48.613590] Stopping Criterion satisfie
 <p>Another potential solution to improve radial resolution is to employ a fan beam geometry. The advantage of fan beam is potentially more “orientations” being available for the same value of <span class="math notranslate nohighlight">\(N_{\mathrm{angle}}\)</span>.</p>
 <p>We will take the same <span class="math notranslate nohighlight">\(N_{\mathrm{angle}}\)</span> and <span class="math notranslate nohighlight">\(N_{\mathrm{offset}}\)</span> settings as in parallel beam, but where <span class="math notranslate nohighlight">\(N_{\mathrm{angle}}\)</span> refers to the number of “emitter” locations, and <span class="math notranslate nohighlight">\(N_{\mathrm{offset}}\)</span> now corresponds to the number of detectors spread along the edge of the image.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># In the parallel-beam setups above, we had fixed `origin=0` and shifted `t_spec` to be centered at the volume</span>
@@ -849,9 +899,29 @@ INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:48.613590] Stopping Criterion satisfie
 <br/></pre></div>
 </div>
 </div>
+<p>Let’s again verify that the rays are instantiated correctly. We’ll limit the visualization to 2 “emitters”, and sub-sample the outgoing beam-count for visualization purposes:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ray_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N_angle</span> <span class="o">*</span> <span class="n">N_offset</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">N_angle</span><span class="p">,</span> <span class="n">N_offset</span><span class="p">)[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">::</span><span class="mi">10</span><span class="p">]</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">op_fan</span><span class="o">.</span><span class="n">diagnostic_plot</span><span class="p">(</span><span class="n">ray_idx</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_xray_25_0.png" src="../_images/examples_xray_25_0.png"/>
+</div>
+</div>
+<p>We can already see an interesting difference with respect to parallel-beam setups: the ray density is higher in the periphery than in the center region.</p>
 <p>Plotting the sinogram is more complex than in the parallel-beam case, so let’s skip that step and instead see what the back-projected and least-squares images look like.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute backprojected image and LSQ image. =======================</span>
@@ -860,7 +930,7 @@ INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:48.613590] Stopping Criterion satisfie
 <span class="n">I_LSQ</span> <span class="o">=</span> <span class="n">op_fan</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">sinogram</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">damp</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
 <span class="c1"># Plot the images ==================================================</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">phantom</span><span class="p">,</span> <span class="o">**</span><span class="n">im_kwargs</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">I_BP</span><span class="p">,</span> <span class="o">**</span><span class="n">im_kwargs</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">I_LSQ</span><span class="p">,</span> <span class="o">**</span><span class="n">im_kwargs</span><span class="p">)</span>
@@ -881,50 +951,50 @@ INFO:/tmp/pyxu_b_570pjp:[2023-10-25 16:16:48.613590] Stopping Criterion satisfie
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-INFO:/tmp/pyxu_fvj2n87s:[2023-10-25 16:16:49.933514] Iteration 0
+INFO:/tmp/pyxu_yxbaj8t3:[2023-11-02 16:02:06.189267] Iteration 0
         iteration: 0
-        AbsError[residual]: 0.05324659233113284
+        AbsError[residual]: 0.05324661981317398
         N_iter: 1.0
-INFO:/tmp/pyxu_fvj2n87s:[2023-10-25 16:16:50.316351] Iteration 1
+INFO:/tmp/pyxu_yxbaj8t3:[2023-11-02 16:02:06.781108] Iteration 1
         iteration: 1
-        AbsError[residual]: 0.0030503966703241477
+        AbsError[residual]: 0.0030504175391676256
         N_iter: 2.0
-INFO:/tmp/pyxu_fvj2n87s:[2023-10-25 16:16:50.685787] Iteration 2
+INFO:/tmp/pyxu_yxbaj8t3:[2023-11-02 16:02:07.174329] Iteration 2
         iteration: 2
-        AbsError[residual]: 0.002050078046644744
+        AbsError[residual]: 0.002050073063966784
         N_iter: 3.0
-INFO:/tmp/pyxu_fvj2n87s:[2023-10-25 16:16:51.062835] Iteration 3
+INFO:/tmp/pyxu_yxbaj8t3:[2023-11-02 16:02:07.579660] Iteration 3
         iteration: 3
-        AbsError[residual]: 0.0008204376702557577
+        AbsError[residual]: 0.0008204494986229778
         N_iter: 4.0
-INFO:/tmp/pyxu_fvj2n87s:[2023-10-25 16:16:51.446991] Iteration 4
+INFO:/tmp/pyxu_yxbaj8t3:[2023-11-02 16:02:07.999506] Iteration 4
         iteration: 4
-        AbsError[residual]: 0.00043823726059835833
+        AbsError[residual]: 0.00043823673093985297
         N_iter: 5.0
-INFO:/tmp/pyxu_fvj2n87s:[2023-10-25 16:16:51.847155] Iteration 5
+INFO:/tmp/pyxu_yxbaj8t3:[2023-11-02 16:02:08.425266] Iteration 5
         iteration: 5
-        AbsError[residual]: 0.0002602644190319075
+        AbsError[residual]: 0.0002602658043562458
         N_iter: 6.0
-INFO:/tmp/pyxu_fvj2n87s:[2023-10-25 16:16:52.248460] Iteration 6
+INFO:/tmp/pyxu_yxbaj8t3:[2023-11-02 16:02:08.884062] Iteration 6
         iteration: 6
-        AbsError[residual]: 0.00015193520335284082
+        AbsError[residual]: 0.0001519355648745462
         N_iter: 7.0
-INFO:/tmp/pyxu_fvj2n87s:[2023-10-25 16:16:52.618990] Iteration 7
+INFO:/tmp/pyxu_yxbaj8t3:[2023-11-02 16:02:09.339093] Iteration 7
         iteration: 7
-        AbsError[residual]: 0.00010628436629923029
+        AbsError[residual]: 0.00010628508829214899
         N_iter: 8.0
-INFO:/tmp/pyxu_fvj2n87s:[2023-10-25 16:16:53.047513] Iteration 8
+INFO:/tmp/pyxu_yxbaj8t3:[2023-11-02 16:02:09.805582] Iteration 8
         iteration: 8
-        AbsError[residual]: 6.848762332777297e-05
+        AbsError[residual]: 6.868850929434216e-05
         N_iter: 9.0
-INFO:/tmp/pyxu_fvj2n87s:[2023-10-25 16:16:53.048141] Stopping Criterion satisfied -&gt; END
+INFO:/tmp/pyxu_yxbaj8t3:[2023-11-02 16:02:09.806236] Stopping Criterion satisfied -&gt; END
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_xray_20_1.png" src="../_images/examples_xray_20_1.png"/>
+<img alt="../_images/examples_xray_27_1.png" src="../_images/examples_xray_27_1.png"/>
 </div>
 </div>
 <p>Based on the plots, we can already see some interesting behaviour:</p>
