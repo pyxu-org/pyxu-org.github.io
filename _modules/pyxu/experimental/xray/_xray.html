@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
@@ -43,7 +43,7 @@
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../../_static/documentation_options.js?v=0b294dfe"></script>
+    <script src="../../../../_static/documentation_options.js?v=afeffd13"></script>
     <script src="../../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -199,7 +199,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v1.1.0 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -341,7 +341,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v1.1.0 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -576,104 +576,109 @@ document.write(`
 <span class="linenos">119</span><span class="sd">            :py:class:`~pyxu.experimental.xray._rt.RayXRT` or</span>
 <span class="linenos">120</span><span class="sd">            :py:class:`~pyxu.experimental.xray._fourier.FourierXRT`.</span>
 <span class="linenos">121</span>
-<span class="linenos">122</span><span class="sd">        Notes</span>
-<span class="linenos">123</span><span class="sd">        -----</span>
-<span class="linenos">124</span><span class="sd">        * :py:class:`~pyxu.experimental.xray.XRayTransform` is not backend-agnostic: :py:class:`~pyxu.abc.Operator`</span>
-<span class="linenos">125</span><span class="sd">          methods of the instantiated object assume inputs have the same array backend as `n_spec`.</span>
-<span class="linenos">126</span><span class="sd">        * `method=&quot;ray-trace&quot;` requires LLVM installed on the system. See the `Dr.Jit documentation</span>
-<span class="linenos">127</span><span class="sd">          &lt;https://drjit.readthedocs.io/en/latest/index.html&gt;`_ for details.</span>
-<span class="linenos">128</span><span class="sd">        * DASK inputs are currently unsupported.</span>
-<span class="linenos">129</span><span class="sd">        * :py:class:`~pyxu.experimental.xray.XRayTransform` is **not** precision-agnostic:</span>
-<span class="linenos">130</span><span class="sd">          fourier methods perform inner computations at the precision of `n_spec`, whereas ray-methods are always done</span>
-<span class="linenos">131</span><span class="sd">          in single-precision.</span>
-<span class="linenos">132</span><span class="sd">        &quot;&quot;&quot;</span>
-<span class="linenos">133</span>        <span class="n">arg_shape</span> <span class="o">=</span> <span class="n">_as_canonical</span><span class="p">(</span><span class="n">arg_shape</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
-<span class="linenos">134</span>        <span class="n">D</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arg_shape</span><span class="p">)</span>
-<span class="linenos">135</span>        <span class="k">assert</span> <span class="n">D</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
-<span class="linenos">136</span>
-<span class="linenos">137</span>        <span class="n">origin</span> <span class="o">=</span> <span class="n">_as_canonical</span><span class="p">(</span><span class="n">origin</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
-<span class="linenos">138</span>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">origin</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="linenos">139</span>            <span class="n">origin</span> <span class="o">=</span> <span class="n">origin</span> <span class="o">*</span> <span class="n">D</span>
-<span class="linenos">140</span>        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">origin</span><span class="p">)</span> <span class="o">==</span> <span class="n">D</span>
+<span class="linenos">122</span><span class="sd">            See</span>
+<span class="linenos">123</span><span class="sd">            :py:class:`~pyxu.experimental.xray._rt.RayXRT`,</span>
+<span class="linenos">124</span><span class="sd">            :py:class:`~pyxu.experimental.xray._fourier.FourierXRT`</span>
+<span class="linenos">125</span><span class="sd">            for more details.</span>
+<span class="linenos">126</span>
+<span class="linenos">127</span><span class="sd">        Notes</span>
+<span class="linenos">128</span><span class="sd">        -----</span>
+<span class="linenos">129</span><span class="sd">        * :py:class:`~pyxu.experimental.xray.XRayTransform` is not backend-agnostic: :py:class:`~pyxu.abc.Operator`</span>
+<span class="linenos">130</span><span class="sd">          methods of the instantiated object assume inputs have the same array backend as `n_spec`.</span>
+<span class="linenos">131</span><span class="sd">        * `method=&quot;ray-trace&quot;` requires LLVM installed on the system. See the `Dr.Jit documentation</span>
+<span class="linenos">132</span><span class="sd">          &lt;https://drjit.readthedocs.io/en/latest/index.html&gt;`_ for details.</span>
+<span class="linenos">133</span><span class="sd">        * DASK inputs are currently unsupported.</span>
+<span class="linenos">134</span><span class="sd">        * :py:class:`~pyxu.experimental.xray.XRayTransform` is **not** precision-agnostic:</span>
+<span class="linenos">135</span><span class="sd">          fourier methods perform inner computations at the precision of `n_spec`, whereas ray-methods are always done</span>
+<span class="linenos">136</span><span class="sd">          in single-precision.</span>
+<span class="linenos">137</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">138</span>        <span class="n">arg_shape</span> <span class="o">=</span> <span class="n">_as_canonical</span><span class="p">(</span><span class="n">arg_shape</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+<span class="linenos">139</span>        <span class="n">D</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arg_shape</span><span class="p">)</span>
+<span class="linenos">140</span>        <span class="k">assert</span> <span class="n">D</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
 <span class="linenos">141</span>
-<span class="linenos">142</span>        <span class="n">pitch</span> <span class="o">=</span> <span class="n">_as_canonical</span><span class="p">(</span><span class="n">pitch</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
-<span class="linenos">143</span>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pitch</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="linenos">144</span>            <span class="n">pitch</span> <span class="o">=</span> <span class="n">pitch</span> <span class="o">*</span> <span class="n">D</span>
-<span class="linenos">145</span>        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">pitch</span><span class="p">)</span> <span class="o">==</span> <span class="n">D</span>
-<span class="linenos">146</span>        <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="n">p</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pitch</span><span class="p">)</span>
-<span class="linenos">147</span>
-<span class="linenos">148</span>        <span class="n">method</span> <span class="o">=</span> <span class="n">method</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-<span class="linenos">149</span>        <span class="k">assert</span> <span class="n">method</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;ray-trace&quot;</span><span class="p">,</span> <span class="s2">&quot;fourier&quot;</span><span class="p">}</span>
-<span class="linenos">150</span>
-<span class="linenos">151</span>        <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;ray-trace&quot;</span><span class="p">:</span>
-<span class="linenos">152</span>            <span class="c1"># Validate `n_spec`</span>
-<span class="linenos">153</span>            <span class="n">ndi_n</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">n_spec</span><span class="p">)</span>
-<span class="linenos">154</span>            <span class="k">assert</span> <span class="n">n_spec</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span>
-<span class="linenos">155</span>            <span class="n">N_l</span> <span class="o">=</span> <span class="n">n_spec</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="linenos">156</span>            <span class="k">assert</span> <span class="n">n_spec</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">N_l</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
-<span class="linenos">157</span>
-<span class="linenos">158</span>            <span class="c1"># Validate `t_spec`</span>
-<span class="linenos">159</span>            <span class="n">ndi_t</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">t_spec</span><span class="p">)</span>
-<span class="linenos">160</span>            <span class="k">assert</span> <span class="n">ndi_n</span> <span class="o">==</span> <span class="n">ndi_t</span><span class="p">,</span> <span class="s2">&quot;(n_spec, t_spec) must lie in same array namespace.&quot;</span>
-<span class="linenos">161</span>            <span class="k">assert</span> <span class="n">t_spec</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span>
-<span class="linenos">162</span>            <span class="k">assert</span> <span class="n">t_spec</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">N_l</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
-<span class="linenos">163</span>
-<span class="linenos">164</span>            <span class="c1"># Scale `n_spec` to unit norm.</span>
-<span class="linenos">165</span>            <span class="c1"># (Not really required; just to have everything in standardized form.)</span>
-<span class="linenos">166</span>            <span class="n">xp</span> <span class="o">=</span> <span class="n">ndi_n</span><span class="o">.</span><span class="n">module</span><span class="p">()</span>
-<span class="linenos">167</span>            <span class="n">n_spec</span> <span class="o">=</span> <span class="n">n_spec</span> <span class="o">/</span> <span class="n">xp</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">n_spec</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">142</span>        <span class="n">origin</span> <span class="o">=</span> <span class="n">_as_canonical</span><span class="p">(</span><span class="n">origin</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<span class="linenos">143</span>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">origin</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="linenos">144</span>            <span class="n">origin</span> <span class="o">=</span> <span class="n">origin</span> <span class="o">*</span> <span class="n">D</span>
+<span class="linenos">145</span>        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">origin</span><span class="p">)</span> <span class="o">==</span> <span class="n">D</span>
+<span class="linenos">146</span>
+<span class="linenos">147</span>        <span class="n">pitch</span> <span class="o">=</span> <span class="n">_as_canonical</span><span class="p">(</span><span class="n">pitch</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<span class="linenos">148</span>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pitch</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="linenos">149</span>            <span class="n">pitch</span> <span class="o">=</span> <span class="n">pitch</span> <span class="o">*</span> <span class="n">D</span>
+<span class="linenos">150</span>        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">pitch</span><span class="p">)</span> <span class="o">==</span> <span class="n">D</span>
+<span class="linenos">151</span>        <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="n">p</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pitch</span><span class="p">)</span>
+<span class="linenos">152</span>
+<span class="linenos">153</span>        <span class="n">method</span> <span class="o">=</span> <span class="n">method</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="linenos">154</span>        <span class="k">assert</span> <span class="n">method</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;ray-trace&quot;</span><span class="p">,</span> <span class="s2">&quot;fourier&quot;</span><span class="p">}</span>
+<span class="linenos">155</span>
+<span class="linenos">156</span>        <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;ray-trace&quot;</span><span class="p">:</span>
+<span class="linenos">157</span>            <span class="c1"># Validate `n_spec`</span>
+<span class="linenos">158</span>            <span class="n">ndi_n</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">n_spec</span><span class="p">)</span>
+<span class="linenos">159</span>            <span class="k">assert</span> <span class="n">n_spec</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="linenos">160</span>            <span class="n">N_l</span> <span class="o">=</span> <span class="n">n_spec</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="linenos">161</span>            <span class="k">assert</span> <span class="n">n_spec</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">N_l</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
+<span class="linenos">162</span>
+<span class="linenos">163</span>            <span class="c1"># Validate `t_spec`</span>
+<span class="linenos">164</span>            <span class="n">ndi_t</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">t_spec</span><span class="p">)</span>
+<span class="linenos">165</span>            <span class="k">assert</span> <span class="n">ndi_n</span> <span class="o">==</span> <span class="n">ndi_t</span><span class="p">,</span> <span class="s2">&quot;(n_spec, t_spec) must lie in same array namespace.&quot;</span>
+<span class="linenos">166</span>            <span class="k">assert</span> <span class="n">t_spec</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="linenos">167</span>            <span class="k">assert</span> <span class="n">t_spec</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">N_l</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
 <span class="linenos">168</span>
-<span class="linenos">169</span>            <span class="c1">### Project `t_spec` to lie in n^{\perp}.</span>
-<span class="linenos">170</span>            <span class="c1">### (We don&#39;t do this by default since it messes up diagnostic_plot() analysis.)</span>
-<span class="linenos">171</span>            <span class="c1"># rng = xp.random.default_rng()</span>
-<span class="linenos">172</span>            <span class="c1"># U = rng.standard_normal((N_l, D, D))  # create reference frames n^{\perp}</span>
-<span class="linenos">173</span>            <span class="c1"># U[..., 0] = n_spec</span>
-<span class="linenos">174</span>            <span class="c1"># U, _ = xp.linalg.qr(U)</span>
-<span class="linenos">175</span>            <span class="c1"># s = U[..., 1:].transpose(0, 2, 1) @ t_spec.reshape(N_l, D, 1)</span>
-<span class="linenos">176</span>            <span class="c1"># t_spec = (U[..., 1:] @ s).reshape(N_l, D)</span>
-<span class="linenos">177</span>
-<span class="linenos">178</span>            <span class="n">klass</span> <span class="o">=</span> <span class="n">_rt</span><span class="o">.</span><span class="n">RayXRT</span>
-<span class="linenos">179</span>        <span class="k">else</span><span class="p">:</span>  <span class="c1"># method == &quot;fourier&quot;</span>
-<span class="linenos">180</span>            <span class="c1"># Validate `n_spec`</span>
-<span class="linenos">181</span>            <span class="n">ndi_n</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">n_spec</span><span class="p">)</span>
-<span class="linenos">182</span>            <span class="k">assert</span> <span class="n">n_spec</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">3</span>
-<span class="linenos">183</span>            <span class="n">N_n</span> <span class="o">=</span> <span class="n">n_spec</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="linenos">184</span>            <span class="k">assert</span> <span class="n">n_spec</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">N_n</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
-<span class="linenos">185</span>            <span class="n">xp</span> <span class="o">=</span> <span class="n">ndi_n</span><span class="o">.</span><span class="n">module</span><span class="p">()</span>
-<span class="linenos">186</span>            <span class="k">assert</span> <span class="n">xp</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span>
-<span class="linenos">187</span>                <span class="n">n_spec</span> <span class="o">@</span> <span class="n">n_spec</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-<span class="linenos">188</span>                <span class="n">xp</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">D</span><span class="p">),</span>
-<span class="linenos">189</span>            <span class="p">),</span> <span class="s2">&quot;Sub-matrices are not orthogonal.&quot;</span>
-<span class="linenos">190</span>
-<span class="linenos">191</span>            <span class="c1"># Validate `t_spec`</span>
-<span class="linenos">192</span>            <span class="k">try</span><span class="p">:</span>
-<span class="linenos">193</span>                <span class="c1"># NDArray case</span>
-<span class="linenos">194</span>                <span class="n">ndi_t</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">t_spec</span><span class="p">)</span>
-<span class="linenos">195</span>                <span class="k">assert</span> <span class="n">t_spec</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span>
-<span class="linenos">196</span>                <span class="n">N_t</span> <span class="o">=</span> <span class="n">t_spec</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="linenos">197</span>                <span class="k">assert</span> <span class="n">t_spec</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">N_t</span><span class="p">,</span> <span class="n">D</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<span class="linenos">198</span>
-<span class="linenos">199</span>                <span class="k">assert</span> <span class="n">ndi_n</span> <span class="o">==</span> <span class="n">ndi_t</span><span class="p">,</span> <span class="s2">&quot;(n_spec, t_spec) must lie in same array namespace.&quot;</span>
-<span class="linenos">200</span>            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-<span class="linenos">201</span>                <span class="c1"># {dict, list[dict]} case</span>
-<span class="linenos">202</span>                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">t_spec</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
-<span class="linenos">203</span>                    <span class="n">t_spec</span> <span class="o">=</span> <span class="p">(</span><span class="n">t_spec</span><span class="p">,)</span> <span class="o">*</span> <span class="p">(</span><span class="n">D</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<span class="linenos">204</span>                <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">t_spec</span><span class="p">)</span> <span class="o">==</span> <span class="n">D</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="linenos">205</span>                <span class="k">for</span> <span class="n">_t</span> <span class="ow">in</span> <span class="n">t_spec</span><span class="p">:</span>
-<span class="linenos">206</span>                    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">M</span> <span class="o">=</span> <span class="n">_t</span><span class="p">[</span><span class="s2">&quot;start&quot;</span><span class="p">],</span> <span class="n">_t</span><span class="p">[</span><span class="s2">&quot;stop&quot;</span><span class="p">],</span> <span class="n">_t</span><span class="p">[</span><span class="s2">&quot;num&quot;</span><span class="p">]</span>
-<span class="linenos">207</span>                    <span class="k">assert</span> <span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">M</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
-<span class="linenos">208</span>
-<span class="linenos">209</span>            <span class="n">klass</span> <span class="o">=</span> <span class="n">_fourier</span><span class="o">.</span><span class="n">FourierXRT</span>
-<span class="linenos">210</span>
-<span class="linenos">211</span>        <span class="n">op</span> <span class="o">=</span> <span class="n">klass</span><span class="p">(</span>
-<span class="linenos">212</span>            <span class="n">arg_shape</span><span class="o">=</span><span class="n">arg_shape</span><span class="p">,</span>
-<span class="linenos">213</span>            <span class="n">origin</span><span class="o">=</span><span class="n">origin</span><span class="p">,</span>
-<span class="linenos">214</span>            <span class="n">pitch</span><span class="o">=</span><span class="n">pitch</span><span class="p">,</span>
-<span class="linenos">215</span>            <span class="n">n_spec</span><span class="o">=</span><span class="n">n_spec</span><span class="p">,</span>
-<span class="linenos">216</span>            <span class="n">t_spec</span><span class="o">=</span><span class="n">t_spec</span><span class="p">,</span>
-<span class="linenos">217</span>            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="linenos">218</span>        <span class="p">)</span>
-<span class="linenos">219</span>        <span class="k">return</span> <span class="n">op</span></div>
+<span class="linenos">169</span>            <span class="c1"># Scale `n_spec` to unit norm.</span>
+<span class="linenos">170</span>            <span class="c1"># (Not really required; just to have everything in standardized form.)</span>
+<span class="linenos">171</span>            <span class="n">xp</span> <span class="o">=</span> <span class="n">ndi_n</span><span class="o">.</span><span class="n">module</span><span class="p">()</span>
+<span class="linenos">172</span>            <span class="n">n_spec</span> <span class="o">=</span> <span class="n">n_spec</span> <span class="o">/</span> <span class="n">xp</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">n_spec</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">173</span>
+<span class="linenos">174</span>            <span class="c1">### Project `t_spec` to lie in n^{\perp}.</span>
+<span class="linenos">175</span>            <span class="c1">### (We don&#39;t do this by default since it messes up diagnostic_plot() analysis.)</span>
+<span class="linenos">176</span>            <span class="c1"># rng = xp.random.default_rng()</span>
+<span class="linenos">177</span>            <span class="c1"># U = rng.standard_normal((N_l, D, D))  # create reference frames n^{\perp}</span>
+<span class="linenos">178</span>            <span class="c1"># U[..., 0] = n_spec</span>
+<span class="linenos">179</span>            <span class="c1"># U, _ = xp.linalg.qr(U)</span>
+<span class="linenos">180</span>            <span class="c1"># s = U[..., 1:].transpose(0, 2, 1) @ t_spec.reshape(N_l, D, 1)</span>
+<span class="linenos">181</span>            <span class="c1"># t_spec = (U[..., 1:] @ s).reshape(N_l, D)</span>
+<span class="linenos">182</span>
+<span class="linenos">183</span>            <span class="n">klass</span> <span class="o">=</span> <span class="n">_rt</span><span class="o">.</span><span class="n">RayXRT</span>
+<span class="linenos">184</span>        <span class="k">else</span><span class="p">:</span>  <span class="c1"># method == &quot;fourier&quot;</span>
+<span class="linenos">185</span>            <span class="c1"># Validate `n_spec`</span>
+<span class="linenos">186</span>            <span class="n">ndi_n</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">n_spec</span><span class="p">)</span>
+<span class="linenos">187</span>            <span class="k">assert</span> <span class="n">n_spec</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">3</span>
+<span class="linenos">188</span>            <span class="n">N_n</span> <span class="o">=</span> <span class="n">n_spec</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="linenos">189</span>            <span class="k">assert</span> <span class="n">n_spec</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">N_n</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
+<span class="linenos">190</span>            <span class="n">xp</span> <span class="o">=</span> <span class="n">ndi_n</span><span class="o">.</span><span class="n">module</span><span class="p">()</span>
+<span class="linenos">191</span>            <span class="k">assert</span> <span class="n">xp</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span>
+<span class="linenos">192</span>                <span class="n">n_spec</span> <span class="o">@</span> <span class="n">n_spec</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+<span class="linenos">193</span>                <span class="n">xp</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">D</span><span class="p">),</span>
+<span class="linenos">194</span>            <span class="p">),</span> <span class="s2">&quot;Sub-matrices are not orthogonal.&quot;</span>
+<span class="linenos">195</span>
+<span class="linenos">196</span>            <span class="c1"># Validate `t_spec`</span>
+<span class="linenos">197</span>            <span class="k">try</span><span class="p">:</span>
+<span class="linenos">198</span>                <span class="c1"># NDArray case</span>
+<span class="linenos">199</span>                <span class="n">ndi_t</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">t_spec</span><span class="p">)</span>
+<span class="linenos">200</span>                <span class="k">assert</span> <span class="n">t_spec</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="linenos">201</span>                <span class="n">N_t</span> <span class="o">=</span> <span class="n">t_spec</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="linenos">202</span>                <span class="k">assert</span> <span class="n">t_spec</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">N_t</span><span class="p">,</span> <span class="n">D</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos">203</span>
+<span class="linenos">204</span>                <span class="k">assert</span> <span class="n">ndi_n</span> <span class="o">==</span> <span class="n">ndi_t</span><span class="p">,</span> <span class="s2">&quot;(n_spec, t_spec) must lie in same array namespace.&quot;</span>
+<span class="linenos">205</span>            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+<span class="linenos">206</span>                <span class="c1"># {dict, list[dict]} case</span>
+<span class="linenos">207</span>                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">t_spec</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="linenos">208</span>                    <span class="n">t_spec</span> <span class="o">=</span> <span class="p">(</span><span class="n">t_spec</span><span class="p">,)</span> <span class="o">*</span> <span class="p">(</span><span class="n">D</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos">209</span>                <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">t_spec</span><span class="p">)</span> <span class="o">==</span> <span class="n">D</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="linenos">210</span>                <span class="k">for</span> <span class="n">_t</span> <span class="ow">in</span> <span class="n">t_spec</span><span class="p">:</span>
+<span class="linenos">211</span>                    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">M</span> <span class="o">=</span> <span class="n">_t</span><span class="p">[</span><span class="s2">&quot;start&quot;</span><span class="p">],</span> <span class="n">_t</span><span class="p">[</span><span class="s2">&quot;stop&quot;</span><span class="p">],</span> <span class="n">_t</span><span class="p">[</span><span class="s2">&quot;num&quot;</span><span class="p">]</span>
+<span class="linenos">212</span>                    <span class="k">assert</span> <span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">M</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos">213</span>
+<span class="linenos">214</span>            <span class="n">klass</span> <span class="o">=</span> <span class="n">_fourier</span><span class="o">.</span><span class="n">FourierXRT</span>
+<span class="linenos">215</span>
+<span class="linenos">216</span>        <span class="n">op</span> <span class="o">=</span> <span class="n">klass</span><span class="p">(</span>
+<span class="linenos">217</span>            <span class="n">arg_shape</span><span class="o">=</span><span class="n">arg_shape</span><span class="p">,</span>
+<span class="linenos">218</span>            <span class="n">origin</span><span class="o">=</span><span class="n">origin</span><span class="p">,</span>
+<span class="linenos">219</span>            <span class="n">pitch</span><span class="o">=</span><span class="n">pitch</span><span class="p">,</span>
+<span class="linenos">220</span>            <span class="n">n_spec</span><span class="o">=</span><span class="n">n_spec</span><span class="p">,</span>
+<span class="linenos">221</span>            <span class="n">t_spec</span><span class="o">=</span><span class="n">t_spec</span><span class="p">,</span>
+<span class="linenos">222</span>            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="linenos">223</span>        <span class="p">)</span>
+<span class="linenos">224</span>        <span class="k">return</span> <span class="n">op</span></div>
 </div>
 
 </pre></div>
