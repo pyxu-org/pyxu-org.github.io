@@ -1,0 +1,81 @@
+name: Daily Plugin Processing
+
+on:
+  schedule:
+    - cron: '0 15 * * 2,5'  # Run every Tuesday and Friday at 15:00 UTC
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  create:
+    tags:
+      - '*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Clean repository
+      run: |
+        find . -maxdepth 1 -mindepth 1 ! -name '_parse_plugins' ! -name '.*' -exec rm -rf {} +
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.12'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests jinja2
+
+    - name: Install pandoc
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y pandoc
+
+    - name: Clone and Install Pyxu repository
+      run: |
+        git clone https://github.com/pyxu-org/pyxu.git
+        python -m pip install pyxu/.[dev]
+
+    - name: Clean pyxu/doc/fair directory
+      run: |
+        rm -rf pyxu/doc/fair/*.rst
+        rm -rf pyxu/doc/fair/plugins/*.rst
+
+    - name: Run parse_pypi.py
+      run: python _parse_plugins/parse_pypi.py
+
+    - name: Run make_pages.py
+      run: python _parse_plugins/make_pages.py
+
+    - name: Build HTML documentation
+      run: |
+        export TZ=UTC
+        sphinx-build -b html -j auto -w build/html/WARNINGS.log pyxu/doc/ ./
+
+    - name: Remove Pyxu repository
+      run: rm -rf pyxu
+
+    - name: Commit changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add -A
+        git commit -m "Update generated HTML files [skip ci]"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Push changes
+      run: |
+        git push "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
