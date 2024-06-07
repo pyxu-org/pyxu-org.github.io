@@ -287,7 +287,7 @@ Key Features & Capabilities
                 <strong> Community driven </strong> <br/>
                 Pyxu is open source, version controlled, and is available to all on <a
                 href="https://pypi.org/project/pyxu/">PyPI</a> and <a
-                href="https://github.com/matthieumeo/pyxu">GitHub</a>.
+                href="https://github.com/pyxu-org/pyxu">GitHub</a>.
                 </p>
 
     .. grid-item-card::
@@ -311,9 +311,9 @@ Ecosystem
 
 Pyxu is highly interoperable with the wider scientific Python ecosystem.
 It is built on a minimal set of foundational and robust scientific computing librairies from the PyData stack.
-Pyxu notably supports multiple array backends --`NumPy <https://numpy.org/>`_, `Dask <https://www.dask.org/>`_, `Sparse
-<https://sparse.pydata.org/en/stable/>`_ and optionally `CuPy <https://cupy.dev/>`_--, allowing users to choose array
-backends that work best for their application/computation.
+Pyxu notably supports multiple array backends --`NumPy <https://numpy.org/>`_, `Dask <https://www.dask.org/>`_, and
+optionally `CuPy <https://cupy.dev/>`_--, allowing users to choose array backends that work best for their
+application/computation.
 Aside from `SciPy <https://scipy.org/>`_ and  `Numba <https://numba.pydata.org/>`_ -- which we use for scientific
 computing and `JIT-compilation <https://numba.readthedocs.io/en/stable/user/5minguide.html#how-does-numba-work>`_
 respectively-- these are Pyxu's **only** dependencies, making the software very easy to ship, install, deploy in
@@ -379,23 +379,6 @@ Our wrappers can moreover leverage the autograd engine to auto-infer gradients o
 
                 <p style="text-align: center;">
                 NumPy-compatible array library for GPU-accelerated computing.
-                </p>
-
-    .. grid-item-card::
-            :shadow: none
-            :class-card: sd-border-0
-
-            .. image:: _static/sparse-logo.png
-               :width: 65%
-               :align: center
-               :alt: Sparse's logo
-               :target: https://sparse.pydata.org/en/stable/
-
-
-            .. raw:: html
-
-                <p style="text-align: center;">
-                Sparse multi-dimensional arrays for the PyData ecosystem.
                 </p>
 
     .. grid-item-card::
@@ -480,17 +463,8 @@ governance.
 Anyone with an interest in the project can join the community, contribute to the project design, and participate in the
 decision-making process.
 
-.. grid:: 1 2 3 3
+.. grid:: 1 2 2 2
     :gutter: 3
-
-    .. grid-item-card::
-            :shadow: none
-            :class-card: sd-border-0
-
-            .. image:: _static/EPFL_Logo_Digital_BLACK_PROD.png
-               :width: 60%
-               :align: center
-               :target: https://www.epfl.ch/en/
 
     .. grid-item-card::
             :shadow: none
@@ -500,18 +474,6 @@ decision-making process.
                :width: 60%
                :align: center
                :target: https://imaging.epfl.ch/
-
-    .. grid-item-card::
-            :shadow: none
-            :class-card: sd-border-0
-
-            .. image:: _static/air.svg
-               :width: 40%
-               :align: center
-
-    .. grid-item-card::
-            :shadow: none
-            :class-card: sd-border-0
 
     .. grid-item-card::
             :shadow: none
@@ -536,24 +498,6 @@ members:
             :shadow: none
             :class-card: sd-border-0
 
-            .. image:: _static/simeoni.png
-               :width: 40%
-               :align: center
-               :target: https://github.com/matthieumeo
-
-
-            .. raw:: html
-
-                <p style="text-align: center;">
-                <strong> Matthieu Simeoni </strong> <br/>
-                Pyxu's creator/architect, project manager & team lead
-                </p>
-
-
-    .. grid-item-card::
-            :shadow: none
-            :class-card: sd-border-0
-
             .. image:: _static/kashani.png
                :width: 40%
                :align: center
@@ -564,7 +508,7 @@ members:
 
                 <p style="text-align: center;">
                 <strong> Sepand Kashani </strong> <br/>
-                Technical lead, software architect & tests
+                Core architect, maintainer
                 </p>
 
     .. grid-item-card::
@@ -581,118 +525,30 @@ members:
 
                 <p style="text-align: center;">
                 <strong> Joan Rué-Queralt </strong> <br/>
-                Technical lead, solution architect & plugins
+                Core architect, maintainer
+                </p>
+
+    .. grid-item-card::
+            :shadow: none
+            :class-card: sd-border-0
+
+            .. image:: _static/simeoni.png
+               :width: 40%
+               :align: center
+               :target: https://github.com/matthieumeo
+
+
+            .. raw:: html
+
+                <p style="text-align: center;">
+                <strong> Matthieu Simeoni </strong> <br/>
+                Core architect, creator
                 </p>
 
 Contributors
 ------------
-In addition to the steering council, the following people are currently (or have been in the past) core contributors to
-Pyxu's development and/or maintenance (alphabetical order, full list available on GitHub):
 
-.. grid:: 2 2 3 3
-    :gutter: 3
-
-    .. grid-item-card::
-            :shadow: none
-            :class-card: sd-border-0
-
-            .. image:: _static/debarre.png
-               :width: 40%
-               :align: center
-               :target: https://github.com/ThomasDeb
-
-
-            .. raw:: html
-
-                <p style="text-align: center;">
-                <strong> Thomas Debarre </strong> <br>
-                Core contributor (Emeritus)
-                </p>
-
-    .. grid-item-card::
-            :shadow: none
-            :class-card: sd-border-0
-
-            .. image:: _static/flowers.png
-               :width: 40%
-               :align: center
-               :target: https://github.com/alec-flowers
-
-
-            .. raw:: html
-
-                <p style="text-align: center;">
-                <strong> Alec Flowers </strong> <br/>
-                Contributor (Emeritus)
-                </p>
-
-    .. grid-item-card::
-            :shadow: none
-            :class-card: sd-border-0
-
-            .. image:: _static/hamm.png
-               :width: 40%
-               :align: center
-               :target: https://github.com/dhamm97
-
-
-            .. raw:: html
-
-                <p style="text-align: center;">
-                <strong> Daniele Hamm </strong> <br/>
-                Contributor
-                </p>
-
-    .. grid-item-card::
-            :shadow: none
-            :class-card: sd-border-0
-
-            .. image:: _static/jarret.png
-               :width: 40%
-               :align: center
-               :target: https://github.com/AdriaJ
-
-
-            .. raw:: html
-
-                <p style="text-align: center;">
-                <strong> Adrian Jarret </strong><br/>
-                Contributor
-                </p>
-
-    .. grid-item-card::
-            :shadow: none
-            :class-card: sd-border-0
-
-            .. image:: _static/salim.png
-               :width: 40%
-               :align: center
-               :target: https://github.com/Dicedead
-
-
-            .. raw:: html
-
-                <p style="text-align: center;">
-                <strong> Salim Najib </strong><br/>
-                Contributor
-                </p>
-
-    .. grid-item-card::
-            :shadow: none
-            :class-card: sd-border-0
-
-            .. image:: _static/okumus.png
-               :width: 40%
-               :align: center
-               :target: https://github.com/okumuskaan
-
-
-            .. raw:: html
-
-                <p style="text-align: center;">
-                <strong> Kaan Okumus </strong> <br/>
-                Contributor (Emeritus)
-                </p>
+In addition to the steering council, you can also check the `full list of contributors <https://github.com/pyxu-org/pyxu/graphs/contributors>`_.
 
 Partners & Sponsors
 ===================
@@ -707,7 +563,7 @@ Partners & Sponsors
     position: relative;
     transform: translate3d(0, 0, 0);
     z-index: 1;">
-    <div class="sponsors-list" style="width: 4000px;
+    <div class="sponsors-list" style="width: 2000px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -718,89 +574,46 @@ Partners & Sponsors
     left: 0;
     bottom: 0;
     transform: translate3d(0, 0, 0);
-    animation: platformsSlideshow 60s linear 0s infinite;
+    animation: platformsSlideshow 15s linear 0s infinite;
     padding: 0 40px;
     box-sizing: border-box;">
 
     <div class="sponsors-list-item">
-
     <img width="100" alt="EPFL Slider" src="_static/EPFL_Logo_Digital_BLACK_PROD.png">
-
     </div>
-    <div class="sponsors-list-item">
 
+    <div class="sponsors-list-item">
     <img width="150" alt="Imaging Slider" src="_static/imaging.png">
-
     </div>
-    <div class="sponsors-list-item">
 
+    <div class="sponsors-list-item">
     <img width="100" alt="LCAV Slider" src="_static/LCAV_LOGO.png">
-
     </div>
-    <div class="sponsors-list-item">
 
+    <div class="sponsors-list-item">
     <img width="130" alt="Meta Slider" src="_static/Meta-Logo.png">
-
     </div>
-    <div class="sponsors-list-item">
 
+    <div class="sponsors-list-item">
+    <img width="130" alt="ZEISS Slider" src="_static/Zeiss_logo.png">
+    </div>
+
+    <div class="sponsors-list-item">
     <img width="130" alt="SKACH Slider" style="padding: 0px 0px 30px 0px;" src="_static/skach.png">
-
     </div>
-    <div class="sponsors-list-item">
 
+    <div class="sponsors-list-item">
     <img width="170" alt="ETH Slider" src="_static/ethr_en_rgb_black.png">
-
     </div>
-    <div class="sponsors-list-item">
 
+    <div class="sponsors-list-item">
     <img width="170" alt="SNF Slider" src="_static/SNF_logo_standard_office_color_pos_e.png">
-
     </div>
-    <div class="sponsors-list-item">
 
+    <div class="sponsors-list-item">
     <img width="170" alt="SPC Slider" src="_static/spc.png">
     </div>
 
-    <div class="sponsors-list-item">
-
-    <img width="100" alt="EPFL Slider" src="_static/EPFL_Logo_Digital_BLACK_PROD.png">
-
-    </div>
-    <div class="sponsors-list-item">
-
-    <img width="150" alt="Imaging Slider" src="_static/imaging.png">
-
-    </div>
-    <div class="sponsors-list-item">
-
-    <img width="100" alt="LCAV Slider" src="_static/LCAV_LOGO.png">
-
-    </div>
-    <div class="sponsors-list-item">
-
-    <img width="130" alt="Meta Slider" src="_static/Meta-Logo.png">
-
-    </div>
-    <div class="sponsors-list-item">
-
-    <img width="130" alt="SKACH Slider" style="padding: 0px 0px 30px 0px;" src="_static/skach.png">
-
-    </div>
-    <div class="sponsors-list-item">
-
-    <img width="170" alt="ETH Slider" src="_static/ethr_en_rgb_black.png">
-
-    </div>
-    <div class="sponsors-list-item">
-
-    <img width="170" alt="SNF Slider" src="_static/SNF_logo_standard_office_color_pos_e.png">
-
-    </div>
-    <div class="sponsors-list-item">
-
-    <img width="170" alt="SPC Slider" src="_static/spc.png">
-    </div>
     </div>
     </div>
 

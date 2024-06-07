@@ -36,15 +36,15 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=14df3d68" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../_static/documentation_options.js?v=afeffd13"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/documentation_options.js?v=eb600d8c"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=30646c52"></script>
@@ -52,7 +52,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
-    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -172,13 +172,6 @@
                       </a>
                     </li>
                 
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../fair/index.html">
-                        Extending Pyxu
-                      </a>
-                    </li>
-                
   </ul>
 </nav></div>
       
@@ -199,7 +192,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -212,7 +205,7 @@ document.write(`
           
           
           
-          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+          <a href="https://github.com/pyxu-org/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -325,13 +318,6 @@ document.write(`
                       </a>
                     </li>
                 
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../fair/index.html">
-                        Extending Pyxu
-                      </a>
-                    </li>
-                
   </ul>
 </nav></div>
         
@@ -341,7 +327,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -354,7 +340,7 @@ document.write(`
           
           
           
-          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+          <a href="https://github.com/pyxu-org/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -456,326 +442,279 @@ document.write(`
 <span class="linenos">  3</span><span class="kn">import</span> <span class="nn">pyxu.runtime</span> <span class="k">as</span> <span class="nn">pxrt</span>
 <span class="linenos">  4</span>
 <span class="linenos">  5</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
-<span class="linenos">  6</span>    <span class="s2">&quot;view_as_real&quot;</span><span class="p">,</span>
-<span class="linenos">  7</span>    <span class="s2">&quot;view_as_complex&quot;</span><span class="p">,</span>
-<span class="linenos">  8</span>    <span class="s2">&quot;view_as_real_mat&quot;</span><span class="p">,</span>
-<span class="linenos">  9</span>    <span class="s2">&quot;view_as_complex_mat&quot;</span><span class="p">,</span>
+<span class="linenos">  6</span>    <span class="s2">&quot;as_real_op&quot;</span><span class="p">,</span>
+<span class="linenos">  7</span>    <span class="s2">&quot;require_viewable&quot;</span><span class="p">,</span>
+<span class="linenos">  8</span>    <span class="s2">&quot;view_as_real&quot;</span><span class="p">,</span>
+<span class="linenos">  9</span>    <span class="s2">&quot;view_as_complex&quot;</span><span class="p">,</span>
 <span class="linenos"> 10</span><span class="p">]</span>
 <span class="linenos"> 11</span>
 <span class="linenos"> 12</span>
+<div class="viewcode-block" id="require_viewable">
+<a class="viewcode-back" href="../../../api/util.html#pyxu.util.require_viewable">[docs]</a>
+<span class="linenos"> 13</span><span class="k">def</span> <span class="nf">require_viewable</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos"> 14</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 15</span><span class="sd">    Copy array if required to do real/complex view manipulations.</span>
+<span class="linenos"> 16</span>
+<span class="linenos"> 17</span><span class="sd">    Real/complex view manipulations are feasible if the last axis is contiguous.</span>
+<span class="linenos"> 18</span>
+<span class="linenos"> 19</span><span class="sd">    Parameters</span>
+<span class="linenos"> 20</span><span class="sd">    ----------</span>
+<span class="linenos"> 21</span><span class="sd">    x: NDArray</span>
+<span class="linenos"> 22</span>
+<span class="linenos"> 23</span><span class="sd">    Returns</span>
+<span class="linenos"> 24</span><span class="sd">    -------</span>
+<span class="linenos"> 25</span><span class="sd">    y: NDArray</span>
+<span class="linenos"> 26</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos"> 27</span>    <span class="n">N</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span>
+<span class="linenos"> 28</span>    <span class="n">ndi</span> <span class="o">=</span> <span class="n">N</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos"> 29</span>    <span class="k">if</span> <span class="n">ndi</span> <span class="o">==</span> <span class="n">N</span><span class="o">.</span><span class="n">DASK</span><span class="p">:</span>
+<span class="linenos"> 30</span>        <span class="c1"># No notion of contiguity for Dask graphs -&gt; always safe.</span>
+<span class="linenos"> 31</span>        <span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+<span class="linenos"> 32</span>    <span class="k">elif</span> <span class="n">ndi</span> <span class="ow">in</span> <span class="p">(</span><span class="n">N</span><span class="o">.</span><span class="n">NUMPY</span><span class="p">,</span> <span class="n">N</span><span class="o">.</span><span class="n">CUPY</span><span class="p">):</span>
+<span class="linenos"> 33</span>        <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strides</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">itemsize</span><span class="p">:</span>
+<span class="linenos"> 34</span>            <span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+<span class="linenos"> 35</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 36</span>            <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>
+<span class="linenos"> 37</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 38</span>        <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;require_viewable() not yet defined for </span><span class="si">{</span><span class="n">ndi</span><span class="si">}</span><span class="s2">.&quot;</span>
+<span class="linenos"> 39</span>        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="linenos"> 40</span>    <span class="k">return</span> <span class="n">y</span></div>
+
+<span class="linenos"> 41</span>
+<span class="linenos"> 42</span>
 <div class="viewcode-block" id="view_as_complex">
 <a class="viewcode-back" href="../../../api/util.html#pyxu.util.view_as_complex">[docs]</a>
-<span class="linenos"> 13</span><span class="k">def</span> <span class="nf">view_as_complex</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
-<span class="linenos"> 14</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos"> 15</span><span class="sd">    View real-valued array as its complex-valued bijection.  (Inverse of :py:func:`~pyxu.util.view_as_real`.)</span>
-<span class="linenos"> 16</span>
-<span class="linenos"> 17</span><span class="sd">    Parameters</span>
-<span class="linenos"> 18</span><span class="sd">    ----------</span>
-<span class="linenos"> 19</span><span class="sd">    x: NDArray</span>
-<span class="linenos"> 20</span><span class="sd">        (..., 2N) real-valued array.</span>
-<span class="linenos"> 21</span>
-<span class="linenos"> 22</span><span class="sd">    Returns</span>
-<span class="linenos"> 23</span><span class="sd">    -------</span>
-<span class="linenos"> 24</span><span class="sd">    y: NDArray</span>
-<span class="linenos"> 25</span><span class="sd">        (..., N) complex-valued array.</span>
-<span class="linenos"> 26</span>
-<span class="linenos"> 27</span><span class="sd">    Examples</span>
-<span class="linenos"> 28</span><span class="sd">    --------</span>
-<span class="linenos"> 29</span>
-<span class="linenos"> 30</span><span class="sd">    .. code-block:: python3</span>
-<span class="linenos"> 31</span>
-<span class="linenos"> 32</span><span class="sd">       from pyxu.util import view_as_real, view_as_complex</span>
-<span class="linenos"> 33</span><span class="sd">       x = np.arange(6.0)      # array([0., 1., 2., 3., 4., 5.])</span>
-<span class="linenos"> 34</span><span class="sd">       y = view_as_complex(x)  # array([0.+1.j, 2.+3.j, 4.+5.j])</span>
-<span class="linenos"> 35</span><span class="sd">       view_as_real(y) == x    # True</span>
-<span class="linenos"> 36</span>
-<span class="linenos"> 37</span><span class="sd">    Notes</span>
-<span class="linenos"> 38</span><span class="sd">    -----</span>
-<span class="linenos"> 39</span><span class="sd">    Complex-valued inputs are returned unchanged.  For real-valued inputs, this function acts on the last axis as:</span>
-<span class="linenos"> 40</span>
-<span class="linenos"> 41</span><span class="sd">    .. math::</span>
-<span class="linenos"> 42</span>
-<span class="linenos"> 43</span><span class="sd">       y_n = x_{2n-1}+j \, x_{2n}, \qquad 1\leq n\leq N.</span>
-<span class="linenos"> 44</span>
-<span class="linenos"> 45</span><span class="sd">    See Also</span>
-<span class="linenos"> 46</span><span class="sd">    --------</span>
-<span class="linenos"> 47</span><span class="sd">    :py:func:`~pyxu.util.view_as_real`,</span>
-<span class="linenos"> 48</span><span class="sd">    :py:func:`~pyxu.util.view_as_real_mat`,</span>
-<span class="linenos"> 49</span><span class="sd">    :py:func:`~pyxu.util.view_as_complex_mat`</span>
-<span class="linenos"> 50</span><span class="sd">    &quot;&quot;&quot;</span>
-<span class="linenos"> 51</span>    <span class="k">if</span> <span class="n">_is_complex</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos"> 52</span>        <span class="k">return</span> <span class="n">x</span>
-<span class="linenos"> 53</span>
-<span class="linenos"> 54</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos"> 55</span>        <span class="n">r_dtype</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">dtype</span>
-<span class="linenos"> 56</span>        <span class="n">r_width</span> <span class="o">=</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="p">(</span><span class="n">r_dtype</span><span class="p">)</span>
-<span class="linenos"> 57</span>        <span class="n">c_dtype</span> <span class="o">=</span> <span class="n">r_width</span><span class="o">.</span><span class="n">complex</span><span class="o">.</span><span class="n">value</span>
-<span class="linenos"> 58</span>    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-<span class="linenos"> 59</span>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported dtype </span><span class="si">{</span><span class="n">r_dtype</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-<span class="linenos"> 60</span>    <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Last array dimension should be even-valued.&quot;</span>
+<span class="linenos"> 43</span><span class="k">def</span> <span class="nf">view_as_complex</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos"> 44</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 45</span><span class="sd">    View real-valued array as its complex-valued bijection.  (Inverse of :py:func:`~pyxu.util.view_as_real`.)</span>
+<span class="linenos"> 46</span>
+<span class="linenos"> 47</span><span class="sd">    Parameters</span>
+<span class="linenos"> 48</span><span class="sd">    ----------</span>
+<span class="linenos"> 49</span><span class="sd">    x: NDArray</span>
+<span class="linenos"> 50</span><span class="sd">        (..., N, 2) real-valued array.</span>
+<span class="linenos"> 51</span>
+<span class="linenos"> 52</span><span class="sd">    Returns</span>
+<span class="linenos"> 53</span><span class="sd">    -------</span>
+<span class="linenos"> 54</span><span class="sd">    y: NDArray</span>
+<span class="linenos"> 55</span><span class="sd">        (..., N) complex-valued array.</span>
+<span class="linenos"> 56</span>
+<span class="linenos"> 57</span><span class="sd">    Examples</span>
+<span class="linenos"> 58</span><span class="sd">    --------</span>
+<span class="linenos"> 59</span>
+<span class="linenos"> 60</span><span class="sd">    .. code-block:: python3</span>
 <span class="linenos"> 61</span>
-<span class="linenos"> 62</span>    <span class="n">c_sh</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
-<span class="linenos"> 63</span>    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">c_dtype</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">c_sh</span><span class="p">)</span>
-<span class="linenos"> 64</span>    <span class="k">return</span> <span class="n">y</span></div>
+<span class="linenos"> 62</span><span class="sd">       from pyxu.util import view_as_real, view_as_complex</span>
+<span class="linenos"> 63</span><span class="sd">       x = np.array([[0., 1],</span>
+<span class="linenos"> 64</span><span class="sd">                     [2 , 3],</span>
+<span class="linenos"> 65</span><span class="sd">                     [4 , 5]])</span>
+<span class="linenos"> 66</span><span class="sd">       y = view_as_complex(x)  # array([0.+1.j, 2.+3.j, 4.+5.j])</span>
+<span class="linenos"> 67</span><span class="sd">       view_as_real(y) == x    # True</span>
+<span class="linenos"> 68</span>
+<span class="linenos"> 69</span><span class="sd">    Notes</span>
+<span class="linenos"> 70</span><span class="sd">    -----</span>
+<span class="linenos"> 71</span><span class="sd">    Complex-valued inputs are returned unchanged.</span>
+<span class="linenos"> 72</span>
+<span class="linenos"> 73</span><span class="sd">    See Also</span>
+<span class="linenos"> 74</span><span class="sd">    --------</span>
+<span class="linenos"> 75</span><span class="sd">    :py:func:`~pyxu.util.as_real_op`,</span>
+<span class="linenos"> 76</span><span class="sd">    :py:func:`~pyxu.util.view_as_real`</span>
+<span class="linenos"> 77</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos"> 78</span>    <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&gt;=</span> <span class="mi">2</span>
+<span class="linenos"> 79</span>    <span class="k">if</span> <span class="n">_is_complex</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos"> 80</span>        <span class="k">return</span> <span class="n">x</span>
+<span class="linenos"> 81</span>
+<span class="linenos"> 82</span>    <span class="k">try</span><span class="p">:</span>
+<span class="linenos"> 83</span>        <span class="n">r_dtype</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">dtype</span>
+<span class="linenos"> 84</span>        <span class="n">r_width</span> <span class="o">=</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="p">(</span><span class="n">r_dtype</span><span class="p">)</span>
+<span class="linenos"> 85</span>        <span class="n">c_dtype</span> <span class="o">=</span> <span class="n">r_width</span><span class="o">.</span><span class="n">complex</span><span class="o">.</span><span class="n">value</span>
+<span class="linenos"> 86</span>    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="linenos"> 87</span>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported dtype </span><span class="si">{</span><span class="n">r_dtype</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="linenos"> 88</span>    <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Last array dimension should contain real/imaginary terms only.&quot;</span>
+<span class="linenos"> 89</span>
+<span class="linenos"> 90</span>    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">c_dtype</span><span class="p">)</span>  <span class="c1"># (..., N, 1)</span>
+<span class="linenos"> 91</span>    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># (..., N)</span>
+<span class="linenos"> 92</span>    <span class="k">return</span> <span class="n">y</span></div>
 
-<span class="linenos"> 65</span>
-<span class="linenos"> 66</span>
+<span class="linenos"> 93</span>
+<span class="linenos"> 94</span>
 <div class="viewcode-block" id="view_as_real">
 <a class="viewcode-back" href="../../../api/util.html#pyxu.util.view_as_real">[docs]</a>
-<span class="linenos"> 67</span><span class="k">def</span> <span class="nf">view_as_real</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
-<span class="linenos"> 68</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos"> 69</span><span class="sd">    View complex-valued array as its real-valued bijection.  (Inverse of :py:func:`~pyxu.util.view_as_complex`.)</span>
-<span class="linenos"> 70</span>
-<span class="linenos"> 71</span><span class="sd">    Parameters</span>
-<span class="linenos"> 72</span><span class="sd">    ----------</span>
-<span class="linenos"> 73</span><span class="sd">    x: NDArray</span>
-<span class="linenos"> 74</span><span class="sd">        (..., N) complex-valued array.</span>
-<span class="linenos"> 75</span>
-<span class="linenos"> 76</span><span class="sd">    Returns</span>
-<span class="linenos"> 77</span><span class="sd">    -------</span>
-<span class="linenos"> 78</span><span class="sd">    y: NDArray</span>
-<span class="linenos"> 79</span><span class="sd">        (..., 2N) real-valued array.</span>
-<span class="linenos"> 80</span>
-<span class="linenos"> 81</span><span class="sd">    Examples</span>
-<span class="linenos"> 82</span><span class="sd">    --------</span>
-<span class="linenos"> 83</span>
-<span class="linenos"> 84</span><span class="sd">    .. code-block:: python3</span>
-<span class="linenos"> 85</span>
-<span class="linenos"> 86</span><span class="sd">       from pyxu.util import view_as_real, view_as_complex</span>
-<span class="linenos"> 87</span><span class="sd">       x = np.r_[:3] + 1j * np.r_[2:5]   # array([0.+2.j, 1.+3.j, 2.+4.j])</span>
-<span class="linenos"> 88</span><span class="sd">       y = view_as_real(x)               # array([0., 2., 1., 3., 2., 4.])</span>
-<span class="linenos"> 89</span><span class="sd">       view_as_complex(y) == x           # True</span>
-<span class="linenos"> 90</span>
-<span class="linenos"> 91</span><span class="sd">    Notes</span>
-<span class="linenos"> 92</span><span class="sd">    -----</span>
-<span class="linenos"> 93</span><span class="sd">    Real-valued inputs are returned unchanged.  For complex-valued inputs, this function acts on the last axis as:</span>
-<span class="linenos"> 94</span>
-<span class="linenos"> 95</span><span class="sd">    .. math::</span>
-<span class="linenos"> 96</span>
-<span class="linenos"> 97</span><span class="sd">        y_{2n-1} = \mathcal{R}(x_n),</span>
-<span class="linenos"> 98</span><span class="sd">        \quad</span>
-<span class="linenos"> 99</span><span class="sd">        y_{2n} = \mathcal{I}(x_n),</span>
-<span class="linenos">100</span><span class="sd">        \quad 1\leq n\leq N,</span>
-<span class="linenos">101</span>
-<span class="linenos">102</span><span class="sd">    where :math:`\mathcal{R}, \mathcal{I}` denote the real/imaginary parts respectively.</span>
+<span class="linenos"> 95</span><span class="k">def</span> <span class="nf">view_as_real</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos"> 96</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 97</span><span class="sd">    View complex-valued array as its real-valued bijection.  (Inverse of :py:func:`~pyxu.util.view_as_complex`.)</span>
+<span class="linenos"> 98</span>
+<span class="linenos"> 99</span><span class="sd">    Parameters</span>
+<span class="linenos">100</span><span class="sd">    ----------</span>
+<span class="linenos">101</span><span class="sd">    x: NDArray</span>
+<span class="linenos">102</span><span class="sd">        (..., N) complex-valued array.</span>
 <span class="linenos">103</span>
-<span class="linenos">104</span><span class="sd">    See Also</span>
-<span class="linenos">105</span><span class="sd">    --------</span>
-<span class="linenos">106</span><span class="sd">    :py:func:`~pyxu.util.view_as_complex`,</span>
-<span class="linenos">107</span><span class="sd">    :py:func:`~pyxu.util.view_as_real_mat`,</span>
-<span class="linenos">108</span><span class="sd">    :py:func:`~pyxu.util.view_as_complex_mat`</span>
-<span class="linenos">109</span><span class="sd">    &quot;&quot;&quot;</span>
-<span class="linenos">110</span>    <span class="k">if</span> <span class="n">_is_real</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos">111</span>        <span class="k">return</span> <span class="n">x</span>
-<span class="linenos">112</span>
-<span class="linenos">113</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos">114</span>        <span class="n">c_dtype</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">dtype</span>
-<span class="linenos">115</span>        <span class="n">c_width</span> <span class="o">=</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">CWidth</span><span class="p">(</span><span class="n">c_dtype</span><span class="p">)</span>
-<span class="linenos">116</span>        <span class="n">r_dtype</span> <span class="o">=</span> <span class="n">c_width</span><span class="o">.</span><span class="n">real</span><span class="o">.</span><span class="n">value</span>
-<span class="linenos">117</span>    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-<span class="linenos">118</span>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported dtype </span><span class="si">{</span><span class="n">c_dtype</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-<span class="linenos">119</span>
-<span class="linenos">120</span>    <span class="n">r_sh</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="linenos">121</span>    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">r_dtype</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">r_sh</span><span class="p">)</span>
-<span class="linenos">122</span>    <span class="k">return</span> <span class="n">y</span></div>
-
-<span class="linenos">123</span>
+<span class="linenos">104</span><span class="sd">    Returns</span>
+<span class="linenos">105</span><span class="sd">    -------</span>
+<span class="linenos">106</span><span class="sd">    y: NDArray</span>
+<span class="linenos">107</span><span class="sd">        (..., N, 2) real-valued array.</span>
+<span class="linenos">108</span>
+<span class="linenos">109</span><span class="sd">    Examples</span>
+<span class="linenos">110</span><span class="sd">    --------</span>
+<span class="linenos">111</span>
+<span class="linenos">112</span><span class="sd">    .. code-block:: python3</span>
+<span class="linenos">113</span>
+<span class="linenos">114</span><span class="sd">       from pyxu.util import view_as_real, view_as_complex</span>
+<span class="linenos">115</span><span class="sd">       x = np.r_[0+1j, 2+3j, 4+5j]</span>
+<span class="linenos">116</span><span class="sd">       y = view_as_real(x)               # array([[0., 1.],</span>
+<span class="linenos">117</span><span class="sd">                                         #        [2., 3.],</span>
+<span class="linenos">118</span><span class="sd">                                         #        [4., 5.]])</span>
+<span class="linenos">119</span><span class="sd">       view_as_complex(y) == x           # True</span>
+<span class="linenos">120</span>
+<span class="linenos">121</span><span class="sd">    Notes</span>
+<span class="linenos">122</span><span class="sd">    -----</span>
+<span class="linenos">123</span><span class="sd">    Real-valued inputs are returned unchanged.</span>
 <span class="linenos">124</span>
-<span class="linenos">125</span><span class="k">def</span> <span class="nf">_is_real</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="linenos">126</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos">127</span>        <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">))</span>
-<span class="linenos">128</span>    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-<span class="linenos">129</span>        <span class="k">return</span> <span class="kc">False</span>
-<span class="linenos">130</span>
-<span class="linenos">131</span>
-<span class="linenos">132</span><span class="k">def</span> <span class="nf">_is_complex</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="linenos">133</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos">134</span>        <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">pxrt</span><span class="o">.</span><span class="n">CWidth</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">))</span>
-<span class="linenos">135</span>    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-<span class="linenos">136</span>        <span class="k">return</span> <span class="kc">False</span>
-<span class="linenos">137</span>
-<span class="linenos">138</span>
-<div class="viewcode-block" id="view_as_real_mat">
-<a class="viewcode-back" href="../../../api/util.html#pyxu.util.view_as_real_mat">[docs]</a>
-<span class="linenos">139</span><span class="k">def</span> <span class="nf">view_as_real_mat</span><span class="p">(</span>
-<span class="linenos">140</span>    <span class="n">cmat</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span>
-<span class="linenos">141</span>    <span class="n">real_input</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-<span class="linenos">142</span>    <span class="n">real_output</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-<span class="linenos">143</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
-<span class="linenos">144</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">145</span><span class="sd">    View complex-valued matrix as its real-valued equivalent.  (Inverse of :py:func:`~pyxu.util.view_as_complex_mat`.)</span>
-<span class="linenos">146</span>
-<span class="linenos">147</span><span class="sd">    Useful to transform complex-valued matrix/vector products to their real-valued counterparts.</span>
-<span class="linenos">148</span>
-<span class="linenos">149</span><span class="sd">    Parameters</span>
-<span class="linenos">150</span><span class="sd">    ----------</span>
-<span class="linenos">151</span><span class="sd">    cmat: NDArray</span>
-<span class="linenos">152</span><span class="sd">        (M, N) complex-valued matrix.</span>
-<span class="linenos">153</span>
-<span class="linenos">154</span><span class="sd">    Returns</span>
-<span class="linenos">155</span><span class="sd">    -------</span>
-<span class="linenos">156</span><span class="sd">    rmat: NDArray</span>
-<span class="linenos">157</span><span class="sd">        The output shape depends on the values of `real_input` and `real_output`::</span>
+<span class="linenos">125</span><span class="sd">    See Also</span>
+<span class="linenos">126</span><span class="sd">    --------</span>
+<span class="linenos">127</span><span class="sd">    :py:func:`~pyxu.util.as_real_op`,</span>
+<span class="linenos">128</span><span class="sd">    :py:func:`~pyxu.util.view_as_complex`</span>
+<span class="linenos">129</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">130</span>    <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&gt;=</span> <span class="mi">1</span>
+<span class="linenos">131</span>    <span class="k">if</span> <span class="n">_is_real</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos">132</span>        <span class="k">return</span> <span class="n">x</span>
+<span class="linenos">133</span>
+<span class="linenos">134</span>    <span class="k">try</span><span class="p">:</span>
+<span class="linenos">135</span>        <span class="n">c_dtype</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">dtype</span>
+<span class="linenos">136</span>        <span class="n">c_width</span> <span class="o">=</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">CWidth</span><span class="p">(</span><span class="n">c_dtype</span><span class="p">)</span>
+<span class="linenos">137</span>        <span class="n">r_dtype</span> <span class="o">=</span> <span class="n">c_width</span><span class="o">.</span><span class="n">real</span><span class="o">.</span><span class="n">value</span>
+<span class="linenos">138</span>    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="linenos">139</span>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported dtype </span><span class="si">{</span><span class="n">c_dtype</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="linenos">140</span>
+<span class="linenos">141</span>    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">r_dtype</span><span class="p">)</span>  <span class="c1"># (..., 2N)</span>
+<span class="linenos">142</span>
+<span class="linenos">143</span>    <span class="n">ndi</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">144</span>    <span class="k">if</span> <span class="n">ndi</span> <span class="o">==</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">DASK</span><span class="p">:</span>
+<span class="linenos">145</span>        <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">map_blocks</span><span class="p">(</span>  <span class="c1"># (..., N, 2)</span>
+<span class="linenos">146</span>            <span class="k">lambda</span> <span class="n">blk</span><span class="p">:</span> <span class="n">blk</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span>
+<span class="linenos">147</span>                <span class="o">*</span><span class="n">blk</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+<span class="linenos">148</span>                <span class="n">blk</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span>
+<span class="linenos">149</span>                <span class="mi">2</span><span class="p">,</span>
+<span class="linenos">150</span>            <span class="p">),</span>
+<span class="linenos">151</span>            <span class="n">chunks</span><span class="o">=</span><span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="o">.</span><span class="n">chunks</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+<span class="linenos">152</span>            <span class="n">new_axis</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">ndim</span><span class="p">,</span>
+<span class="linenos">153</span>            <span class="n">meta</span><span class="o">=</span><span class="n">y</span><span class="o">.</span><span class="n">_meta</span><span class="p">,</span>
+<span class="linenos">154</span>        <span class="p">)</span>
+<span class="linenos">155</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">156</span>        <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># (..., N, 2)</span>
+<span class="linenos">157</span>    <span class="k">return</span> <span class="n">y</span></div>
+
 <span class="linenos">158</span>
-<span class="linenos">159</span><span class="sd">           | real_input | real_output | rmat.shape |</span>
-<span class="linenos">160</span><span class="sd">           |------------|-------------|------------|</span>
-<span class="linenos">161</span><span class="sd">           | False      | False       | (2M, 2N)   |</span>
-<span class="linenos">162</span><span class="sd">           | False      | True        | ( M, 2N)   |</span>
-<span class="linenos">163</span><span class="sd">           | True       | False       | (2M,  N)   |</span>
-<span class="linenos">164</span><span class="sd">           | True       | True        | ( M,  N)   |</span>
+<span class="linenos">159</span>
+<div class="viewcode-block" id="as_real_op">
+<a class="viewcode-back" href="../../../api/util.html#pyxu.util.as_real_op">[docs]</a>
+<span class="linenos">160</span><span class="k">def</span> <span class="nf">as_real_op</span><span class="p">(</span><span class="n">A</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">dim_rank</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">161</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">162</span><span class="sd">    View complex-valued linear operator as its real-valued equivalent.</span>
+<span class="linenos">163</span>
+<span class="linenos">164</span><span class="sd">    Useful to transform complex-valued matrix/vector products to their real-valued counterparts.</span>
 <span class="linenos">165</span>
-<span class="linenos">166</span><span class="sd">    Examples</span>
-<span class="linenos">167</span><span class="sd">    --------</span>
-<span class="linenos">168</span>
-<span class="linenos">169</span><span class="sd">    .. code-block:: python3</span>
-<span class="linenos">170</span>
-<span class="linenos">171</span><span class="sd">       from pyxu.util import view_as_real_mat, view_as_complex_mat</span>
+<span class="linenos">166</span><span class="sd">    Parameters</span>
+<span class="linenos">167</span><span class="sd">    ----------</span>
+<span class="linenos">168</span><span class="sd">    A: NDArray</span>
+<span class="linenos">169</span><span class="sd">        (N1...,NK, M1,...,MD) complex-valued matrix.</span>
+<span class="linenos">170</span><span class="sd">    dim_rank: Integer</span>
+<span class="linenos">171</span><span class="sd">        Dimension rank :math:`D`. (Can be omitted if `A` is 2D.)</span>
 <span class="linenos">172</span>
-<span class="linenos">173</span><span class="sd">       A = np.reshape(</span>
-<span class="linenos">174</span><span class="sd">           np.r_[:6] + 1j * np.r_[2:8], # array([[0.+2.j, 1.+3.j, 2.+4.j],</span>
-<span class="linenos">175</span><span class="sd">           newshape=(2, 3),             #        [3.+5.j, 4.+6.j, 5.+7.j]])</span>
-<span class="linenos">176</span><span class="sd">       )</span>
-<span class="linenos">177</span><span class="sd">       B = view_as_real_mat(A)          # array([[ 0., -2.,  1., -3.,  2., -4.],</span>
-<span class="linenos">178</span><span class="sd">                                        #        [ 2.,  0.,  3.,  1.,  4.,  2.],</span>
-<span class="linenos">179</span><span class="sd">                                        #        [ 3., -5.,  4., -6.,  5., -7.],</span>
-<span class="linenos">180</span><span class="sd">                                        #        [ 5.,  3.,  6.,  4.,  7.,  5.]])</span>
-<span class="linenos">181</span>
-<span class="linenos">182</span><span class="sd">    Notes</span>
-<span class="linenos">183</span><span class="sd">    -----</span>
-<span class="linenos">184</span><span class="sd">    * Real-valued matrices are returned unchanged.</span>
-<span class="linenos">185</span><span class="sd">    * Complex-valued matrices :math:`A\in\mathbb{C}^{M\times N}` are mapped into a real-valued matrix</span>
-<span class="linenos">186</span><span class="sd">      :math:`\hat{A}\in\mathbb{R}^{2M\times 2N}` defined, for :math:`1\leq n \leq N`, :math:`1\leq m\leq M` as</span>
-<span class="linenos">187</span>
-<span class="linenos">188</span><span class="sd">      .. math::</span>
+<span class="linenos">173</span><span class="sd">    Returns</span>
+<span class="linenos">174</span><span class="sd">    -------</span>
+<span class="linenos">175</span><span class="sd">    A_r: NDArray</span>
+<span class="linenos">176</span><span class="sd">        (N1,...,NK,2, M1,...,MD,2) real-valued equivalent.</span>
+<span class="linenos">177</span>
+<span class="linenos">178</span><span class="sd">    Examples</span>
+<span class="linenos">179</span><span class="sd">    --------</span>
+<span class="linenos">180</span>
+<span class="linenos">181</span><span class="sd">    .. code-block:: python3</span>
+<span class="linenos">182</span>
+<span class="linenos">183</span><span class="sd">       import numpy as np</span>
+<span class="linenos">184</span><span class="sd">       import pyxu.util.complex as cpl</span>
+<span class="linenos">185</span>
+<span class="linenos">186</span><span class="sd">       codim_shape = (1,2,3)</span>
+<span class="linenos">187</span><span class="sd">       dim_shape = (4,5,6,7)</span>
+<span class="linenos">188</span><span class="sd">       dim_rank = len(dim_shape)</span>
 <span class="linenos">189</span>
-<span class="linenos">190</span><span class="sd">          \hat{A}_{2m-1,2n-1} = \mathcal{R}(A_{m,n}),</span>
-<span class="linenos">191</span><span class="sd">          &amp; \quad</span>
-<span class="linenos">192</span><span class="sd">          \hat{A}_{2m-1,2n} = -\mathcal{I}(A_{m,n}),\\</span>
-<span class="linenos">193</span><span class="sd">          \hat{A}_{2m,2n-1} = \mathcal{I}(A_{m,n}),</span>
-<span class="linenos">194</span><span class="sd">          &amp; \quad</span>
-<span class="linenos">195</span><span class="sd">          \hat{A}_{2m,2n}=\mathcal{R}(A_{m,n}).</span>
-<span class="linenos">196</span>
-<span class="linenos">197</span><span class="sd">      If ``real_[in|out]put=True``, then even columns/rows (or both) are furthermore dropped.  We have ``view_as_real(A</span>
-<span class="linenos">198</span><span class="sd">      @ x) = view_as_real_mat(A) @ view_as_real(x)``.</span>
-<span class="linenos">199</span>
-<span class="linenos">200</span><span class="sd">    See Also</span>
-<span class="linenos">201</span><span class="sd">    --------</span>
-<span class="linenos">202</span><span class="sd">    :py:func:`~pyxu.util.view_as_real`,</span>
-<span class="linenos">203</span><span class="sd">    :py:func:`~pyxu.util.view_as_complex`,</span>
-<span class="linenos">204</span><span class="sd">    :py:func:`~pyxu.util.view_as_complex_mat`</span>
-<span class="linenos">205</span><span class="sd">    &quot;&quot;&quot;</span>
-<span class="linenos">206</span>    <span class="k">assert</span> <span class="n">cmat</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;cmat: expected a 2D array, got </span><span class="si">{</span><span class="n">cmat</span><span class="o">.</span><span class="n">ndim</span><span class="si">}</span><span class="s2">-D.&quot;</span>
-<span class="linenos">207</span>    <span class="k">if</span> <span class="n">_is_real</span><span class="p">(</span><span class="n">cmat</span><span class="p">):</span>
-<span class="linenos">208</span>        <span class="k">return</span> <span class="n">cmat</span>
-<span class="linenos">209</span>
-<span class="linenos">210</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos">211</span>        <span class="n">c_dtype</span> <span class="o">=</span> <span class="n">cmat</span><span class="o">.</span><span class="n">dtype</span>
-<span class="linenos">212</span>        <span class="n">c_width</span> <span class="o">=</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">CWidth</span><span class="p">(</span><span class="n">c_dtype</span><span class="p">)</span>
-<span class="linenos">213</span>        <span class="n">r_dtype</span> <span class="o">=</span> <span class="n">c_width</span><span class="o">.</span><span class="n">real</span><span class="o">.</span><span class="n">value</span>
-<span class="linenos">214</span>    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-<span class="linenos">215</span>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported dtype </span><span class="si">{</span><span class="n">c_dtype</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="linenos">190</span><span class="sd">       rng = np.random.default_rng(0)</span>
+<span class="linenos">191</span><span class="sd">       A =      rng.standard_normal((*codim_shape, *dim_shape)) \</span>
+<span class="linenos">192</span><span class="sd">         + 1j * rng.standard_normal((*codim_shape, *dim_shape))    # (1,2,3  |4,5,6,7  )</span>
+<span class="linenos">193</span><span class="sd">       A_r = cpl.as_real_op(A, dim_rank=dim_rank)                  # (1,2,3,2|4,5,6,7,2)</span>
+<span class="linenos">194</span>
+<span class="linenos">195</span><span class="sd">       x =      rng.standard_normal(dim_shape) \</span>
+<span class="linenos">196</span><span class="sd">         + 1j * rng.standard_normal(dim_shape)                     # (4,5,6,7  )</span>
+<span class="linenos">197</span><span class="sd">       x_r = cpl.view_as_real(x)                                   # (4,5,6,7,2)</span>
+<span class="linenos">198</span>
+<span class="linenos">199</span><span class="sd">       y = np.tensordot(A, x, axes=dim_rank)                       # (1,2,3  )</span>
+<span class="linenos">200</span><span class="sd">       y_r = np.tensordot(A_r, x_r, axes=dim_rank+1)               # (1,2,3,2)</span>
+<span class="linenos">201</span>
+<span class="linenos">202</span><span class="sd">       np.allclose(y, cpl.view_as_complex(y_r))                    # True</span>
+<span class="linenos">203</span>
+<span class="linenos">204</span>
+<span class="linenos">205</span><span class="sd">    Notes</span>
+<span class="linenos">206</span><span class="sd">    -----</span>
+<span class="linenos">207</span><span class="sd">    Real-valued matrices are returned unchanged.</span>
+<span class="linenos">208</span>
+<span class="linenos">209</span><span class="sd">    See Also</span>
+<span class="linenos">210</span><span class="sd">    --------</span>
+<span class="linenos">211</span><span class="sd">    :py:func:`~pyxu.util.view_as_real`,</span>
+<span class="linenos">212</span><span class="sd">    :py:func:`~pyxu.util.view_as_complex`</span>
+<span class="linenos">213</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">214</span>    <span class="k">if</span> <span class="n">_is_real</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+<span class="linenos">215</span>        <span class="k">return</span> <span class="n">A</span>
 <span class="linenos">216</span>
-<span class="linenos">217</span>    <span class="n">xp</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">cmat</span><span class="p">)</span><span class="o">.</span><span class="n">module</span><span class="p">()</span>
-<span class="linenos">218</span>    <span class="n">rmat</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span> <span class="o">*</span> <span class="n">cmat</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">cmat</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">r_dtype</span><span class="p">)</span>
-<span class="linenos">219</span>    <span class="n">rmat</span><span class="p">[::</span><span class="mi">2</span><span class="p">,</span> <span class="p">::</span><span class="mi">2</span><span class="p">],</span> <span class="n">rmat</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">cmat</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">cmat</span><span class="o">.</span><span class="n">real</span>
-<span class="linenos">220</span>    <span class="n">rmat</span><span class="p">[::</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">],</span> <span class="n">rmat</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">,</span> <span class="p">::</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">cmat</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">cmat</span><span class="o">.</span><span class="n">imag</span>
-<span class="linenos">221</span>    <span class="k">if</span> <span class="n">real_input</span><span class="p">:</span>
-<span class="linenos">222</span>        <span class="n">rmat</span> <span class="o">=</span> <span class="n">rmat</span><span class="p">[:,</span> <span class="p">::</span><span class="mi">2</span><span class="p">]</span>
-<span class="linenos">223</span>    <span class="k">if</span> <span class="n">real_output</span><span class="p">:</span>
-<span class="linenos">224</span>        <span class="n">rmat</span> <span class="o">=</span> <span class="n">rmat</span><span class="p">[::</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span>
-<span class="linenos">225</span>    <span class="k">return</span> <span class="n">rmat</span></div>
+<span class="linenos">217</span>    <span class="k">try</span><span class="p">:</span>
+<span class="linenos">218</span>        <span class="n">c_dtype</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">dtype</span>
+<span class="linenos">219</span>        <span class="n">c_width</span> <span class="o">=</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">CWidth</span><span class="p">(</span><span class="n">c_dtype</span><span class="p">)</span>
+<span class="linenos">220</span>        <span class="n">r_dtype</span> <span class="o">=</span> <span class="n">c_width</span><span class="o">.</span><span class="n">real</span><span class="o">.</span><span class="n">value</span>
+<span class="linenos">221</span>    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="linenos">222</span>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported dtype </span><span class="si">{</span><span class="n">c_dtype</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="linenos">223</span>
+<span class="linenos">224</span>    <span class="k">if</span> <span class="n">A</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+<span class="linenos">225</span>        <span class="n">dim_rank</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># doesn&#39;t matter what the user specified.</span>
+<span class="linenos">226</span>    <span class="k">else</span><span class="p">:</span>  <span class="c1"># rank &gt; 2</span>
+<span class="linenos">227</span>        <span class="c1"># if ND -&gt; mandatory supplied &amp; (1 &lt;= dim_rank &lt; A.ndim)</span>
+<span class="linenos">228</span>        <span class="k">assert</span> <span class="n">dim_rank</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Dimension rank must be specified for ND operators.&quot;</span>
+<span class="linenos">229</span>        <span class="k">assert</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">dim_rank</span> <span class="o">&lt;</span> <span class="n">A</span><span class="o">.</span><span class="n">ndim</span>
+<span class="linenos">230</span>    <span class="n">dim_shape</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="n">dim_rank</span><span class="p">:]</span>
+<span class="linenos">231</span>    <span class="n">codim_shape</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="n">dim_rank</span><span class="p">]</span>
+<span class="linenos">232</span>    <span class="n">codim_rank</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">codim_shape</span><span class="p">)</span>
+<span class="linenos">233</span>
+<span class="linenos">234</span>    <span class="n">xp</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">module</span><span class="p">()</span>
+<span class="linenos">235</span>    <span class="n">A_r</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="o">*</span><span class="n">codim_shape</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">*</span><span class="n">dim_shape</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">r_dtype</span><span class="p">)</span>
+<span class="linenos">236</span>
+<span class="linenos">237</span>    <span class="n">codim_sel</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="p">(</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">),)</span> <span class="o">*</span> <span class="n">codim_rank</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="linenos">238</span>    <span class="n">dim_sel</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="p">(</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">),)</span> <span class="o">*</span> <span class="n">dim_rank</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="linenos">239</span>    <span class="n">A_r</span><span class="p">[</span><span class="o">*</span><span class="n">codim_sel</span><span class="p">,</span> <span class="o">*</span><span class="n">dim_sel</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">real</span>
+<span class="linenos">240</span>
+<span class="linenos">241</span>    <span class="n">codim_sel</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="p">(</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">),)</span> <span class="o">*</span> <span class="n">codim_rank</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="linenos">242</span>    <span class="n">dim_sel</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="p">(</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">),)</span> <span class="o">*</span> <span class="n">dim_rank</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="linenos">243</span>    <span class="n">A_r</span><span class="p">[</span><span class="o">*</span><span class="n">codim_sel</span><span class="p">,</span> <span class="o">*</span><span class="n">dim_sel</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">real</span>
+<span class="linenos">244</span>
+<span class="linenos">245</span>    <span class="n">codim_sel</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="p">(</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">),)</span> <span class="o">*</span> <span class="n">codim_rank</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="linenos">246</span>    <span class="n">dim_sel</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="p">(</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">),)</span> <span class="o">*</span> <span class="n">dim_rank</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="linenos">247</span>    <span class="n">A_r</span><span class="p">[</span><span class="o">*</span><span class="n">codim_sel</span><span class="p">,</span> <span class="o">*</span><span class="n">dim_sel</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">A</span><span class="o">.</span><span class="n">imag</span>
+<span class="linenos">248</span>
+<span class="linenos">249</span>    <span class="n">codim_sel</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="p">(</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">),)</span> <span class="o">*</span> <span class="n">codim_rank</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="linenos">250</span>    <span class="n">dim_sel</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="p">(</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">),)</span> <span class="o">*</span> <span class="n">dim_rank</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="linenos">251</span>    <span class="n">A_r</span><span class="p">[</span><span class="o">*</span><span class="n">codim_sel</span><span class="p">,</span> <span class="o">*</span><span class="n">dim_sel</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">imag</span>
+<span class="linenos">252</span>    <span class="k">return</span> <span class="n">A_r</span></div>
 
-<span class="linenos">226</span>
-<span class="linenos">227</span>
-<div class="viewcode-block" id="view_as_complex_mat">
-<a class="viewcode-back" href="../../../api/util.html#pyxu.util.view_as_complex_mat">[docs]</a>
-<span class="linenos">228</span><span class="k">def</span> <span class="nf">view_as_complex_mat</span><span class="p">(</span>
-<span class="linenos">229</span>    <span class="n">rmat</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span>
-<span class="linenos">230</span>    <span class="n">real_input</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-<span class="linenos">231</span>    <span class="n">real_output</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-<span class="linenos">232</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
-<span class="linenos">233</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">234</span><span class="sd">    View real-valued matrix as its complex-valued equivalent.  (Inverse of :py:func:`~pyxu.util.view_as_real_mat`.)</span>
-<span class="linenos">235</span>
-<span class="linenos">236</span><span class="sd">    Useful to transform real-valued matrix/vector products to their complex-valued counterparts.</span>
-<span class="linenos">237</span>
-<span class="linenos">238</span><span class="sd">    Parameters</span>
-<span class="linenos">239</span><span class="sd">    ----------</span>
-<span class="linenos">240</span><span class="sd">    rmat: NDArray</span>
-<span class="linenos">241</span><span class="sd">        Real-valued matrix.  Accepted dimensions depend on the values of `real_input` and `real_output`::</span>
-<span class="linenos">242</span>
-<span class="linenos">243</span><span class="sd">           | real_input | real_output | rmat.shape |</span>
-<span class="linenos">244</span><span class="sd">           |------------|-------------|------------|</span>
-<span class="linenos">245</span><span class="sd">           | False      | False       | (2M, 2N)   |</span>
-<span class="linenos">246</span><span class="sd">           | False      | True        | ( M, 2N)   |</span>
-<span class="linenos">247</span><span class="sd">           | True       | False       | (2M,  N)   |</span>
-<span class="linenos">248</span><span class="sd">           | True       | True        | ( M,  N)   |</span>
-<span class="linenos">249</span>
-<span class="linenos">250</span><span class="sd">    Returns</span>
-<span class="linenos">251</span><span class="sd">    -------</span>
-<span class="linenos">252</span><span class="sd">    cmat: NDArray</span>
-<span class="linenos">253</span><span class="sd">        (M, N) complex-valued matrix.</span>
+<span class="linenos">253</span>
 <span class="linenos">254</span>
-<span class="linenos">255</span><span class="sd">    Examples</span>
-<span class="linenos">256</span><span class="sd">    --------</span>
-<span class="linenos">257</span>
-<span class="linenos">258</span><span class="sd">    .. code-block:: python3</span>
-<span class="linenos">259</span>
-<span class="linenos">260</span><span class="sd">       from pyxu.util import view_as_real_mat, view_as_complex_mat</span>
+<span class="linenos">255</span><span class="k">def</span> <span class="nf">_is_real</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="linenos">256</span>    <span class="k">try</span><span class="p">:</span>
+<span class="linenos">257</span>        <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">))</span>
+<span class="linenos">258</span>    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="linenos">259</span>        <span class="k">return</span> <span class="kc">False</span>
+<span class="linenos">260</span>
 <span class="linenos">261</span>
-<span class="linenos">262</span><span class="sd">       A = np.array([[ 0., -2.,  1., -3.,  2., -4.],</span>
-<span class="linenos">263</span><span class="sd">                     [ 2.,  0.,  3.,  1.,  4.,  2.],</span>
-<span class="linenos">264</span><span class="sd">                     [ 3., -5.,  4., -6.,  5., -7.],</span>
-<span class="linenos">265</span><span class="sd">                     [ 5.,  3.,  6.,  4.,  7.,  5.]])</span>
-<span class="linenos">266</span>
-<span class="linenos">267</span><span class="sd">       B = view_as_complex(A)  # array([[0.+2.j, 1.+3.j, 2.+4.j],</span>
-<span class="linenos">268</span><span class="sd">                               #        [3.+5.j, 4.+6.j, 5.+7.j]])</span>
-<span class="linenos">269</span>
-<span class="linenos">270</span><span class="sd">    Notes</span>
-<span class="linenos">271</span><span class="sd">    -----</span>
-<span class="linenos">272</span><span class="sd">    * Complex-valued matrices are returned unchanged.</span>
-<span class="linenos">273</span><span class="sd">    * Real-valued matrices are mapped into a complex-valued matrix :math:`{A}\in\mathbb{C}^{M\times N}` as follows:</span>
-<span class="linenos">274</span>
-<span class="linenos">275</span><span class="sd">      * :math:`\hat{A}\in\mathbb{R}^{2M\times 2N}`:  :math:`A_{m,n} = \hat{A}_{2m-1,2n-1} + j \hat{A}_{2m,2n-1}`,</span>
-<span class="linenos">276</span><span class="sd">      * :math:`\hat{A}\in\mathbb{R}^{M\times 2N}`:  :math:`A_{m,n} = \hat{A}_{m,2n-1} - j \hat{A}_{m,2n}`,</span>
-<span class="linenos">277</span><span class="sd">      * :math:`\hat{A}\in\mathbb{R}^{2M\times N}`:  :math:`A_{m,n} = \hat{A}_{2m-1,n} + j \hat{A}_{2m,n}`,</span>
-<span class="linenos">278</span><span class="sd">      * :math:`\hat{A}\in\mathbb{R}^{M\times N}`:  :math:`A_{m,n} = \hat{A}_{m,n} + 0j`,</span>
-<span class="linenos">279</span>
-<span class="linenos">280</span><span class="sd">      for :math:`1\leq n \leq N`, :math:`1\leq m\leq M`.</span>
-<span class="linenos">281</span>
-<span class="linenos">282</span><span class="sd">    See Also</span>
-<span class="linenos">283</span><span class="sd">    --------</span>
-<span class="linenos">284</span><span class="sd">    :py:func:`~pyxu.util.view_as_real`,</span>
-<span class="linenos">285</span><span class="sd">    :py:func:`~pyxu.util.view_as_complex`,</span>
-<span class="linenos">286</span><span class="sd">    :py:func:`~pyxu.util.view_as_real_mat`</span>
-<span class="linenos">287</span><span class="sd">    &quot;&quot;&quot;</span>
-<span class="linenos">288</span>    <span class="k">assert</span> <span class="n">rmat</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;rmat: expected a 2D array, got </span><span class="si">{</span><span class="n">rmat</span><span class="o">.</span><span class="n">ndim</span><span class="si">}</span><span class="s2">-D.&quot;</span>
-<span class="linenos">289</span>    <span class="k">if</span> <span class="n">_is_complex</span><span class="p">(</span><span class="n">rmat</span><span class="p">):</span>
-<span class="linenos">290</span>        <span class="k">return</span> <span class="n">rmat</span>
-<span class="linenos">291</span>
-<span class="linenos">292</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos">293</span>        <span class="n">r_dtype</span> <span class="o">=</span> <span class="n">rmat</span><span class="o">.</span><span class="n">dtype</span>
-<span class="linenos">294</span>        <span class="n">r_width</span> <span class="o">=</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="p">(</span><span class="n">r_dtype</span><span class="p">)</span>
-<span class="linenos">295</span>        <span class="n">c_dtype</span> <span class="o">=</span> <span class="n">r_width</span><span class="o">.</span><span class="n">complex</span><span class="o">.</span><span class="n">value</span>
-<span class="linenos">296</span>    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-<span class="linenos">297</span>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported dtype </span><span class="si">{</span><span class="n">r_dtype</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-<span class="linenos">298</span>
-<span class="linenos">299</span>    <span class="n">N_row</span><span class="p">,</span> <span class="n">N_col</span> <span class="o">=</span> <span class="n">rmat</span><span class="o">.</span><span class="n">shape</span>
-<span class="linenos">300</span>    <span class="n">error_msg</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">_</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">_</span><span class="si">}</span><span class="s2"> array dimension should be even-valued.&quot;</span>
-<span class="linenos">301</span>    <span class="k">if</span> <span class="n">real_input</span> <span class="ow">and</span> <span class="n">real_output</span><span class="p">:</span>
-<span class="linenos">302</span>        <span class="n">cmat</span> <span class="o">=</span> <span class="n">rmat</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">c_dtype</span><span class="p">)</span>
-<span class="linenos">303</span>    <span class="k">elif</span> <span class="n">real_input</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">real_output</span><span class="p">):</span>
-<span class="linenos">304</span>        <span class="k">assert</span> <span class="n">N_row</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">error_msg</span><span class="p">(</span><span class="s2">&quot;First&quot;</span><span class="p">)</span>
-<span class="linenos">305</span>        <span class="n">cmat</span> <span class="o">=</span> <span class="n">rmat</span><span class="p">[::</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">rmat</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">,</span> <span class="p">:])</span>
-<span class="linenos">306</span>    <span class="k">elif</span> <span class="p">(</span><span class="ow">not</span> <span class="n">real_input</span><span class="p">)</span> <span class="ow">and</span> <span class="n">real_output</span><span class="p">:</span>
-<span class="linenos">307</span>        <span class="k">assert</span> <span class="n">N_col</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">error_msg</span><span class="p">(</span><span class="s2">&quot;Last&quot;</span><span class="p">)</span>
-<span class="linenos">308</span>        <span class="n">cmat</span> <span class="o">=</span> <span class="n">rmat</span><span class="p">[:,</span> <span class="p">::</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">rmat</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">])</span>
-<span class="linenos">309</span>    <span class="k">else</span><span class="p">:</span>  <span class="c1"># (not real_input) and (not real_output)</span>
-<span class="linenos">310</span>        <span class="k">assert</span> <span class="n">N_row</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">error_msg</span><span class="p">(</span><span class="s2">&quot;First&quot;</span><span class="p">)</span>
-<span class="linenos">311</span>        <span class="k">assert</span> <span class="n">N_col</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">error_msg</span><span class="p">(</span><span class="s2">&quot;Last&quot;</span><span class="p">)</span>
-<span class="linenos">312</span>        <span class="n">cmat</span> <span class="o">=</span> <span class="n">rmat</span><span class="p">[::</span><span class="mi">2</span><span class="p">,</span> <span class="p">::</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">rmat</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">,</span> <span class="p">::</span><span class="mi">2</span><span class="p">])</span>
-<span class="linenos">313</span>    <span class="k">return</span> <span class="n">cmat</span></div>
-
+<span class="linenos">262</span><span class="k">def</span> <span class="nf">_is_complex</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="linenos">263</span>    <span class="k">try</span><span class="p">:</span>
+<span class="linenos">264</span>        <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">pxrt</span><span class="o">.</span><span class="n">CWidth</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">))</span>
+<span class="linenos">265</span>    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="linenos">266</span>        <span class="k">return</span> <span class="kc">False</span>
 </pre></div>
 
                 </article>
@@ -827,7 +766,7 @@ document.write(`
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt, Pyxu Developers.
+      © Copyright 2024, S. Kashani, J. Rué-Queralt, M. Simeoni, Pyxu Developers.
       <br/>
     
   </p>
@@ -835,7 +774,7 @@ document.write(`
       
         <div class="footer-item">
   <p class="sphinx-version">
-     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>

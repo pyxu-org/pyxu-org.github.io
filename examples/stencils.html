@@ -4,7 +4,7 @@
 <html data-theme="light" lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Convolution with Pyxu — Pyxu Documentation</title>
 <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
@@ -27,14 +27,14 @@
 <link href="../_static/sg_gallery-binder.css?v=f4aeca0c" rel="stylesheet" type="text/css"/>
 <link href="../_static/sg_gallery-dataframe.css?v=2082cf3c" rel="stylesheet" type="text/css"/>
 <link href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" rel="stylesheet" type="text/css"/>
-<link href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-design.min.css?v=87e54e7c" rel="stylesheet" type="text/css"/>
 <link href="../_static/nbsphinx-code-cells.css" rel="stylesheet" type="text/css"/>
-<link href="../_static/css/custom.css?v=14df3d68" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../_static/documentation_options.js?v=afeffd13"></script>
-<script src="../_static/doctools.js?v=888ff710"></script>
+<script src="../_static/documentation_options.js?v=eb600d8c"></script>
+<script src="../_static/doctools.js?v=9a2dae69"></script>
 <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
 <script src="../_static/copybutton.js?v=30646c52"></script>
@@ -42,7 +42,7 @@
 <script>let toggleHintHide = 'Click to hide';</script>
 <script>let toggleOpenOnPrint = 'true';</script>
 <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
-<script src="../_static/design-tabs.js?v=36754332"></script>
+<script src="../_static/design-tabs.js?v=f930bc37"></script>
 <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
 <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
 <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -109,11 +109,6 @@
                         API Reference
                       </a>
 </li>
-<li class="nav-item">
-<a class="nav-link nav-internal" href="../fair/index.html">
-                        Extending Pyxu
-                      </a>
-</li>
 </ul>
 </nav></div>
 </div>
@@ -127,10 +122,10 @@ document.write(`
 `);
 </script>
 </div>
-<div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
+<div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
-<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/pyxu-org/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
 <label class="sr-only">GitHub</label></a>
 </li>
 <li class="nav-item">
@@ -191,19 +186,14 @@ document.write(`
                         API Reference
                       </a>
 </li>
-<li class="nav-item">
-<a class="nav-link nav-internal" href="../fair/index.html">
-                        Extending Pyxu
-                      </a>
-</li>
 </ul>
 </nav></div>
 </div>
 <div class="sidebar-header-items__end">
-<div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
+<div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
-<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/pyxu-org/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
 <label class="sr-only">GitHub</label></a>
 </li>
 <li class="nav-item">
@@ -248,13 +238,13 @@ document.write(`
 <div id="searchbox"></div>
 <article class="bd-article" role="main">
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">skimage</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">Convolve</span>
+<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">Convolve</span></a>
 </pre></div>
 </div>
 </div>
@@ -277,7 +267,7 @@ document.write(`
 <p>We first start creating a 2D binary image of size 128x128 with blobs, where the blobs occupy approximately 20% of the image’s area and are about half the size of the image.</p>
 <p>The resulting binary image is then converted to a floating-point representation.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">npix</span> <span class="o">=</span> <span class="mi">128</span>
@@ -294,7 +284,7 @@ document.write(`
 <section id="Create-blurring-kernel">
 <h3>Create blurring kernel<a class="headerlink" href="#Create-blurring-kernel" title="Link to this heading">#</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sigma</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># Gaussian kernel std</span>
@@ -308,7 +298,7 @@ document.write(`
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
@@ -341,7 +331,7 @@ document.write(`
 <h3>Scipy<a class="headerlink" href="#Scipy" title="Link to this heading">#</a></h3>
 <p>If you want to use <code class="docutils literal notranslate"><span class="pre">scipy.signal.convolve()</span></code> to perform 2D convolutions, it expects the kernel to match the dimensionality of the input data. So, for 2D data, you would generally provide a 2D kernel.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/signal.html#module-scipy.signal" title="scipy.signal"><span class="nn">scipy.signal</span></a> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.convolve.html#scipy.signal.convolve" title="scipy.signal.convolve"><span class="n">convolve</span></a> <span class="k">as</span> <span class="n">conv_scipy</span>
@@ -357,7 +347,7 @@ document.write(`
 <li><p>Then, convolve the result from the first step with the same 1D kernel along the other dimension (e.g., columns).</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Separable convolution ...</span>
@@ -385,17 +375,17 @@ document.write(`
 <h3>Pyxu<a class="headerlink" href="#Pyxu" title="Link to this heading">#</a></h3>
 <p>Pyxu is optimized to handle separable kernels, which enhances performance. When working with such kernels, Pyxu can directly manage the separable convolution. Additionally, Pyxu leverages <a class="reference external" href="https://numba.pydata.org/numba-doc/latest/user/stencil.html">Numba.stencil</a> to just-in-time (JIT) compile the convolution under the hood to make it faster. Here’s how you can use it:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conv</span> <span class="o">=</span> <span class="n">Convolve</span><span class="p">(</span>
-    <span class="n">arg_shape</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">conv</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">Convolve</span></a><span class="p">(</span>
+    <span class="n">dim_shape</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
     <span class="n">kernel</span><span class="o">=</span><span class="p">[</span><span class="n">kernel_1d</span><span class="p">,</span> <span class="n">kernel_1d</span><span class="p">],</span>
     <span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">],</span>
     <span class="n">mode</span><span class="o">=</span><span class="s2">"constant"</span><span class="p">,</span>
     <span class="n">enable_warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">y_pyxu</span> <span class="o">=</span> <span class="n">conv</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">y_pyxu</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">conv</span></a><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
 <span class="k">assert</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.allclose.html#numpy.allclose" title="numpy.allclose"><span class="n">np</span><span class="o">.</span><span class="n">allclose</span></a><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pyxu</span><span class="p">)</span>
 </pre></div>
@@ -405,8 +395,30 @@ document.write(`
 <section id="PyLops">
 <h3>PyLops<a class="headerlink" href="#PyLops" title="Link to this heading">#</a></h3>
 <p>PyLops uses a flattened (raveled) version of your 2D data when applying the linear operator, so you need to flatten and reshape your data as you move between operations. If you want to perform a separable convolution, you need to manually decompose the 2D kernel into two 1D kernels, then apply two separate 1D convolution operations sequentially. This adds an extra layer of complexity in the implementation compared to just using a 2D convolution directly.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pylops
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Collecting pylops
+  Using cached pylops-2.2.0-py3-none-any.whl.metadata (18 kB)
+Requirement already satisfied: numpy&gt;=1.21.0 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from pylops) (1.26.3)
+Requirement already satisfied: scipy&gt;=1.4.0 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from pylops) (1.11.4)
+Using cached pylops-2.2.0-py3-none-any.whl (287 kB)
+Installing collected packages: pylops
+Successfully installed pylops-2.2.0
+</pre></div></div>
+</div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.operator.interop</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/operator.interop.html#pyxu.operator.interop.from_sciop" title="pyxu.operator.interop.from_sciop"><span class="n">from_sciop</span></a>
@@ -431,7 +443,7 @@ document.write(`
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Separable convolution</span>
@@ -466,8 +478,93 @@ document.write(`
 <h3>Scico<a class="headerlink" href="#Scico" title="Link to this heading">#</a></h3>
 <p>Like Pyxu, Scico employs JIT (Just-In-Time) compilation to speed up convolution operations. However, Scico relies on Jax instead of Numba. This necessitates the transition of our array module from NumPy to Jax.</p>
 <p>In a manner similar to PyLops, Scico expects the convolutional kernel to have the same dimensionality as the input image. One can opt for a more efficient combination of two 1D operators or a simpler single 2D operator.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>scico
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Collecting scico
+  Using cached scico-0.0.5.post1-py3-none-any.whl.metadata (3.8 kB)
+Requirement already satisfied: typing-extensions in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from scico) (4.9.0)
+Requirement already satisfied: numpy&gt;=1.20.0 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from scico) (1.26.3)
+Requirement already satisfied: scipy&gt;=1.6.0 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from scico) (1.11.4)
+Requirement already satisfied: imageio&gt;=2.17 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from scico) (2.33.1)
+Requirement already satisfied: matplotlib in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from scico) (3.8.2)
+Collecting jaxlib&lt;=0.4.23,&gt;=0.4.3 (from scico)
+  Using cached jaxlib-0.4.23-cp311-cp311-manylinux2014_x86_64.whl.metadata (2.1 kB)
+Collecting jax&lt;=0.4.23,&gt;=0.4.3 (from scico)
+  Using cached jax-0.4.23-py3-none-any.whl.metadata (24 kB)
+Collecting orbax-checkpoint (from scico)
+  Using cached orbax_checkpoint-0.5.0-py3-none-any.whl.metadata (1.7 kB)
+Collecting flax&lt;=0.7.5,&gt;=0.6.1 (from scico)
+  Using cached flax-0.7.5-py3-none-any.whl.metadata (10 kB)
+Collecting pyabel&gt;=0.9.0 (from scico)
+  Using cached PyAbel-0.9.0-py3-none-any.whl
+Requirement already satisfied: msgpack in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from flax&lt;=0.7.5,&gt;=0.6.1-&gt;scico) (1.0.7)
+Collecting optax (from flax&lt;=0.7.5,&gt;=0.6.1-&gt;scico)
+  Using cached optax-0.1.8-py3-none-any.whl.metadata (14 kB)
+Collecting tensorstore (from flax&lt;=0.7.5,&gt;=0.6.1-&gt;scico)
+  Using cached tensorstore-0.1.52-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.0 kB)
+Requirement already satisfied: rich&gt;=11.1 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from flax&lt;=0.7.5,&gt;=0.6.1-&gt;scico) (13.7.0)
+Requirement already satisfied: PyYAML&gt;=5.4.1 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from flax&lt;=0.7.5,&gt;=0.6.1-&gt;scico) (6.0.1)
+Requirement already satisfied: pillow&gt;=8.3.2 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from imageio&gt;=2.17-&gt;scico) (10.2.0)
+Collecting ml-dtypes&gt;=0.2.0 (from jax&lt;=0.4.23,&gt;=0.4.3-&gt;scico)
+  Using cached ml_dtypes-0.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (20 kB)
+Collecting opt-einsum (from jax&lt;=0.4.23,&gt;=0.4.3-&gt;scico)
+  Using cached opt_einsum-3.3.0-py3-none-any.whl (65 kB)
+Requirement already satisfied: setuptools&gt;=44.0 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from pyabel&gt;=0.9.0-&gt;scico) (68.2.2)
+Requirement already satisfied: six&gt;=1.10.0 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from pyabel&gt;=0.9.0-&gt;scico) (1.16.0)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from matplotlib-&gt;scico) (1.2.0)
+Requirement already satisfied: cycler&gt;=0.10 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from matplotlib-&gt;scico) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from matplotlib-&gt;scico) (4.47.2)
+Requirement already satisfied: kiwisolver&gt;=1.3.1 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from matplotlib-&gt;scico) (1.4.5)
+Requirement already satisfied: packaging&gt;=20.0 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from matplotlib-&gt;scico) (23.2)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from matplotlib-&gt;scico) (3.1.1)
+Requirement already satisfied: python-dateutil&gt;=2.7 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from matplotlib-&gt;scico) (2.8.2)
+Collecting absl-py (from orbax-checkpoint-&gt;scico)
+  Using cached absl_py-2.1.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting etils[epath,epy] (from orbax-checkpoint-&gt;scico)
+  Using cached etils-1.6.0-py3-none-any.whl.metadata (6.4 kB)
+Requirement already satisfied: nest_asyncio in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from orbax-checkpoint-&gt;scico) (1.5.8)
+Collecting protobuf (from orbax-checkpoint-&gt;scico)
+  Using cached protobuf-4.25.2-cp37-abi3-manylinux2014_x86_64.whl.metadata (541 bytes)
+Requirement already satisfied: markdown-it-py&gt;=2.2.0 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from rich&gt;=11.1-&gt;flax&lt;=0.7.5,&gt;=0.6.1-&gt;scico) (3.0.0)
+Requirement already satisfied: pygments&lt;3.0.0,&gt;=2.13.0 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from rich&gt;=11.1-&gt;flax&lt;=0.7.5,&gt;=0.6.1-&gt;scico) (2.17.2)
+Requirement already satisfied: fsspec in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from etils[epath,epy]-&gt;orbax-checkpoint-&gt;scico) (2023.12.2)
+Collecting importlib_resources (from etils[epath,epy]-&gt;orbax-checkpoint-&gt;scico)
+  Using cached importlib_resources-6.1.1-py3-none-any.whl.metadata (4.1 kB)
+Requirement already satisfied: zipp in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from etils[epath,epy]-&gt;orbax-checkpoint-&gt;scico) (3.17.0)
+Collecting chex&gt;=0.1.7 (from optax-&gt;flax&lt;=0.7.5,&gt;=0.6.1-&gt;scico)
+  Using cached chex-0.1.85-py3-none-any.whl.metadata (17 kB)
+Requirement already satisfied: toolz&gt;=0.9.0 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from chex&gt;=0.1.7-&gt;optax-&gt;flax&lt;=0.7.5,&gt;=0.6.1-&gt;scico) (0.12.0)
+Requirement already satisfied: mdurl~=0.1 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from markdown-it-py&gt;=2.2.0-&gt;rich&gt;=11.1-&gt;flax&lt;=0.7.5,&gt;=0.6.1-&gt;scico) (0.1.2)
+Using cached scico-0.0.5.post1-py3-none-any.whl (11.3 MB)
+Using cached flax-0.7.5-py3-none-any.whl (244 kB)
+Using cached jax-0.4.23-py3-none-any.whl (1.7 MB)
+Using cached jaxlib-0.4.23-cp311-cp311-manylinux2014_x86_64.whl (77.2 MB)
+Using cached orbax_checkpoint-0.5.0-py3-none-any.whl (136 kB)
+Using cached ml_dtypes-0.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.2 MB)
+Using cached tensorstore-0.1.52-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (14.1 MB)
+Using cached absl_py-2.1.0-py3-none-any.whl (133 kB)
+Using cached optax-0.1.8-py3-none-any.whl (199 kB)
+Using cached protobuf-4.25.2-cp37-abi3-manylinux2014_x86_64.whl (294 kB)
+Using cached chex-0.1.85-py3-none-any.whl (95 kB)
+Using cached etils-1.6.0-py3-none-any.whl (144 kB)
+Using cached importlib_resources-6.1.1-py3-none-any.whl (33 kB)
+Installing collected packages: protobuf, opt-einsum, ml-dtypes, importlib_resources, etils, absl-py, tensorstore, pyabel, jaxlib, jax, chex, orbax-checkpoint, optax, flax, scico
+Successfully installed absl-py-2.1.0 chex-0.1.85 etils-1.6.0 flax-0.7.5 importlib_resources-6.1.1 jax-0.4.23 jaxlib-0.4.23 ml-dtypes-0.3.2 opt-einsum-3.3.0 optax-0.1.8 orbax-checkpoint-0.5.0 protobuf-4.25.2 pyabel-0.9.0 scico-0.0.5.post1 tensorstore-0.1.52
+</pre></div></div>
+</div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scico.linop</span> <span class="kn">import</span> <span class="n">Convolve</span> <span class="k">as</span> <span class="n">Conv_scico</span>
@@ -493,7 +590,7 @@ document.write(`
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Separable convolution</span>
@@ -525,7 +622,27 @@ document.write(`
 <section id="Separable-1d-convolution">
 <h3>Separable 1d convolution<a class="headerlink" href="#Separable-1d-convolution" title="Link to this heading">#</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>tqdm
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Collecting tqdm
+  Using cached tqdm-4.66.1-py3-none-any.whl.metadata (57 kB)
+Using cached tqdm-4.66.1-py3-none-any.whl (78 kB)
+Installing collected packages: tqdm
+Successfully installed tqdm-4.66.1
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#module-time" title="time"><span class="nn">time</span></a>
@@ -561,21 +678,21 @@ document.write(`
 
                 <span class="c1"># Instantation + first run time</span>
                 <span class="n">tic</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span>
-                <span class="n">conv_pyxu</span> <span class="o">=</span> <span class="n">Convolve</span><span class="p">(</span>
-                    <span class="n">arg_shape</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
+                <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">conv_pyxu</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">Convolve</span></a><span class="p">(</span>
+                    <span class="n">dim_shape</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
                     <span class="n">kernel</span><span class="o">=</span><span class="p">[</span><span class="n">kernel</span><span class="p">,</span> <span class="n">kernel</span><span class="p">],</span>
                     <span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">],</span>
                     <span class="n">mode</span><span class="o">=</span><span class="s2">"constant"</span><span class="p">,</span>
                     <span class="n">enable_warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                 <span class="p">)</span>
-                <span class="n">y</span> <span class="o">=</span> <span class="n">conv_pyxu</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+                <span class="n">y</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">conv_pyxu</span></a><span class="p">(</span><span class="n">data</span><span class="p">)</span>
                 <span class="n">t_pyxu</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span> <span class="o">-</span> <span class="n">tic</span>
 
                 <span class="c1"># Run time</span>
                 <span class="n">times</span> <span class="o">=</span> <span class="mi">0</span>
                 <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#range" title="range"><span class="nb">range</span></a><span class="p">(</span><span class="n">nreps</span><span class="p">):</span>
                     <span class="n">tic</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span>
-                    <span class="n">y</span> <span class="o">=</span> <span class="n">conv_pyxu</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+                    <span class="n">y</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">conv_pyxu</span></a><span class="p">(</span><span class="n">data</span><span class="p">)</span>
                     <span class="n">times</span> <span class="o">+=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#time.perf_counter" title="time.perf_counter"><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span></a><span class="p">()</span> <span class="o">-</span> <span class="n">tic</span>
 
                 <span class="n">t_pyxu</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">times</span> <span class="o">/</span> <span class="n">nreps</span>
@@ -693,11 +810,11 @@ document.write(`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-100%|██████████| 20/20 [00:48&lt;00:00,  2.44s/it]
+100%|██████████| 20/20 [00:24&lt;00:00,  1.24s/it]
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
@@ -753,14 +870,14 @@ document.write(`
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_stencils_26_0.png" src="../_images/examples_stencils_26_0.png"/>
+<img alt="../_images/examples_stencils_29_0.png" src="../_images/examples_stencils_29_0.png"/>
 </div>
 </div>
 </section>
 <section id="Direct-2d-convolution">
 <h3>Direct 2d convolution<a class="headerlink" href="#Direct-2d-convolution" title="Link to this heading">#</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
@@ -817,7 +934,7 @@ document.write(`
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_stencils_28_0.png" src="../_images/examples_stencils_28_0.png"/>
+<img alt="../_images/examples_stencils_31_0.png" src="../_images/examples_stencils_31_0.png"/>
 </div>
 </div>
 </section>
@@ -863,7 +980,7 @@ document.write(`
 <div id="searchbox"></div></div>
 <div class="sidebar-secondary-item">
 <div class="tocsection editthispage">
-<a href="https://github.com/matthieumeo/pyxu/edit/main/doc/examples/stencils.ipynb">
+<a href="https://github.com/pyxu-org/pyxu/edit/main/doc/examples/stencils.ipynb">
 <i class="fa-solid fa-pencil"></i>
       
       
@@ -897,13 +1014,13 @@ document.write(`
 <div class="footer-item">
 <p class="copyright">
     
-      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt, Pyxu Developers.
+      © Copyright 2024, S. Kashani, J. Rué-Queralt, M. Simeoni, Pyxu Developers.
       <br/>
 </p>
 </div>
 <div class="footer-item">
 <p class="sphinx-version">
-     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
 </p>
 </div>

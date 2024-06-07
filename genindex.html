@@ -36,15 +36,15 @@
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=14df3d68" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="_static/documentation_options.js?v=afeffd13"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/documentation_options.js?v=eb600d8c"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=30646c52"></script>
@@ -52,7 +52,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -172,13 +172,6 @@
                       </a>
                     </li>
                 
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="fair/index.html">
-                        Extending Pyxu
-                      </a>
-                    </li>
-                
   </ul>
 </nav></div>
       
@@ -199,7 +192,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -212,7 +205,7 @@ document.write(`
           
           
           
-          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+          <a href="https://github.com/pyxu-org/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -325,13 +318,6 @@ document.write(`
                       </a>
                     </li>
                 
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="fair/index.html">
-                        Extending Pyxu
-                      </a>
-                    </li>
-                
   </ul>
 </nav></div>
         
@@ -341,7 +327,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -354,7 +340,7 @@ document.write(`
           
           
           
-          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+          <a href="https://github.com/pyxu-org/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -449,7 +435,6 @@ document.write(`
  | <a href="#U"><strong>U</strong></a>
  | <a href="#V"><strong>V</strong></a>
  | <a href="#W"><strong>W</strong></a>
- | <a href="#X"><strong>X</strong></a>
  
 </div>
 <h2 id="_">_</h2>
@@ -462,13 +447,15 @@ document.write(`
       <li><a href="api/opt.stop.html#pyxu.opt.stop.AbsError.__init__">__init__() (AbsError method)</a>
 
       <ul>
-        <li><a href="api/operator/func.html#pyxu.operator.AffineSet.__init__">(AffineSet method)</a>
+        <li><a href="api/operator/linop.html#pyxu.operator.Convolve.__init__">(Convolve method)</a>
 </li>
-        <li><a href="api/operator/func.html#pyxu.operator.ConvexSetIntersection.__init__">(ConvexSetIntersection method)</a>
+        <li><a href="api/operator/linop.html#pyxu.operator.CZT.__init__">(CZT method)</a>
 </li>
         <li><a href="api/operator/linop.html#pyxu.operator.FFT.__init__">(FFT method)</a>
 </li>
-        <li><a href="api/experimental/xray.html#pyxu.experimental.xray._fourier.FourierXRT.__init__">(FourierXRT method)</a>
+        <li><a href="api/operator/linop.html#pyxu.operator.FFTConvolve.__init__">(FFTConvolve method)</a>
+</li>
+        <li><a href="api/operator/linop.html#pyxu.operator.FFTCorrelate.__init__">(FFTCorrelate method)</a>
 </li>
         <li><a href="api/operator/func.html#pyxu.operator.HyperSlab.__init__">(HyperSlab method)</a>
 </li>
@@ -477,8 +464,6 @@ document.write(`
         <li><a href="api/operator/func.html#pyxu.operator.L21Norm.__init__">(L21Norm method)</a>
 </li>
         <li><a href="api/opt.stop.html#pyxu.opt.stop.ManualStop.__init__">(ManualStop method)</a>
-</li>
-        <li><a href="api/opt.stop.html#pyxu.opt.stop.MaxCarbon.__init__">(MaxCarbon method)</a>
 </li>
         <li><a href="api/opt.stop.html#pyxu.opt.stop.MaxDuration.__init__">(MaxDuration method)</a>
 </li>
@@ -496,17 +481,21 @@ document.write(`
 </li>
         <li><a href="api/operator/func.html#pyxu.operator.RangeSet.__init__">(RangeSet method)</a>
 </li>
-        <li><a href="api/experimental/xray.html#pyxu.experimental.xray._rt.RayXRT.__init__">(RayXRT method)</a>
-</li>
         <li><a href="api/opt.stop.html#pyxu.opt.stop.RelError.__init__">(RelError method)</a>
 </li>
         <li><a href="api/abc.html#pyxu.abc.Solver.__init__">(Solver method)</a>
 </li>
         <li><a href="api/operator/func.html#pyxu.operator.SquaredL1Norm.__init__">(SquaredL1Norm method)</a>
 </li>
+        <li><a href="api/operator/map.html#pyxu.operator.SqueezeAxes.__init__">(SqueezeAxes method)</a>
+</li>
         <li><a href="api/operator/linop.html#pyxu.operator.Stencil.__init__">(Stencil method)</a>
 </li>
         <li><a href="api/operator/linop.html#pyxu.operator.SubSample.__init__">(SubSample method)</a>
+</li>
+        <li><a href="api/operator/linop.html#pyxu.operator.Sum.__init__">(Sum method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.TransposeAxes.__init__">(TransposeAxes method)</a>
 </li>
         <li><a href="api/experimental/sampler.html#pyxu.experimental.sampler.ULA.__init__">(ULA method)</a>
 </li>
@@ -521,11 +510,7 @@ document.write(`
 </li>
       <li><a href="api/abc.html#pyxu.abc.Operator.__sub__">__sub__() (Operator method)</a>
 </li>
-      <li><a href="api/util.html#pyxu.util.operator._array_ize">_array_ize() (in module pyxu.util.operator)</a>
-</li>
       <li><a href="api/abc.html#pyxu.abc.Solver._astate">_astate (Solver attribute)</a>
-</li>
-      <li><a href="api/util.html#pyxu.util.operator._dask_zip">_dask_zip() (in module pyxu.util.operator)</a>
 </li>
       <li><a href="api/operator.interop.html#pyxu.operator.interop.jax._from_jax">_from_jax() (in module pyxu.operator.interop.jax)</a>
 </li>
@@ -547,7 +532,7 @@ document.write(`
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/operator/map.html#pyxu.operator.abs">abs() (in module pyxu.operator)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.Abs">Abs (class in pyxu.operator)</a>
 </li>
       <li><a href="api/opt.stop.html#pyxu.opt.stop.AbsError">AbsError (class in pyxu.opt.stop)</a>
 </li>
@@ -555,59 +540,99 @@ document.write(`
 </li>
       <li><a href="api/abc.html#pyxu.abc.arithmetic.AddRule">AddRule (class in pyxu.abc.arithmetic)</a>
 </li>
-      <li><a href="api/operator/linop.html#pyxu.operator.FFT.adjoint">adjoint() (FFT method)</a>
+      <li><a href="api/operator/linop.html#pyxu.operator.CZT.adjoint">adjoint() (CZT method)</a>
 
       <ul>
-        <li><a href="api/experimental/xray.html#pyxu.experimental.xray._fourier.FourierXRT.adjoint">(FourierXRT method)</a>
+        <li><a href="api/operator/linop.html#pyxu.operator.FFT.adjoint">(FFT method)</a>
 </li>
         <li><a href="api/abc.html#pyxu.abc.LinOp.adjoint">(LinOp method)</a>
 </li>
-        <li><a href="api/operator/linop.html#pyxu.operator.NUFFT.adjoint">(NUFFT method)</a>
-</li>
-        <li><a href="api/experimental/xray.html#pyxu.experimental.xray._rt.RayXRT.adjoint">(RayXRT method)</a>
-</li>
         <li><a href="api/operator/linop.html#pyxu.operator.SubSample.adjoint">(SubSample method)</a>
+</li>
+        <li><a href="api/operator/linop.html#pyxu.operator.Sum.adjoint">(Sum method)</a>
 </li>
       </ul></li>
       <li><a href="api/opt.solver.html#pyxu.opt.solver.ADMM">ADMM (class in pyxu.opt.solver)</a>
 </li>
-      <li><a href="api/operator/func.html#pyxu.operator.AffineSet">AffineSet (class in pyxu.operator)</a>
-</li>
-      <li><a href="api/operator/linop.html#pyxu.operator.NUFFT.allocate">allocate() (NUFFT method)</a>
-</li>
       <li><a href="api/operator/linop.html#pyxu.operator._Stencil.apply">apply() (_Stencil method)</a>
 
       <ul>
+        <li><a href="api/operator/map.html#pyxu.operator.Abs.apply">(Abs method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.ArcCos.apply">(ArcCos method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.ArcCosh.apply">(ArcCosh method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.ArcSin.apply">(ArcSin method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.ArcSinh.apply">(ArcSinh method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.ArcTan.apply">(ArcTan method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.ArcTanh.apply">(ArcTanh method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.Cbrt.apply">(Cbrt method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.Clip.apply">(Clip method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.Cos.apply">(Cos method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.Cosh.apply">(Cosh method)</a>
+</li>
+        <li><a href="api/operator/linop.html#pyxu.operator.CZT.apply">(CZT method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.Exp.apply">(Exp method)</a>
+</li>
         <li><a href="api/operator/linop.html#pyxu.operator.FFT.apply">(FFT method)</a>
 </li>
-        <li><a href="api/experimental/xray.html#pyxu.experimental.xray._fourier.FourierXRT.apply">(FourierXRT method)</a>
+        <li><a href="api/operator/map.html#pyxu.operator.Gaussian.apply">(Gaussian method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.LeakyReLU.apply">(LeakyReLU method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.Log.apply">(Log method)</a>
 </li>
         <li><a href="api/abc.html#pyxu.abc.Map.apply">(Map method)</a>
 </li>
-        <li><a href="api/operator/linop.html#pyxu.operator.NUFFT.apply">(NUFFT method)</a>
+        <li><a href="api/operator/map.html#pyxu.operator.Sigmoid.apply">(Sigmoid method)</a>
 </li>
-        <li><a href="api/experimental/xray.html#pyxu.experimental.xray._rt.RayXRT.apply">(RayXRT method)</a>
+        <li><a href="api/operator/map.html#pyxu.operator.Sign.apply">(Sign method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.SiLU.apply">(SiLU method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.Sin.apply">(Sin method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.Sinh.apply">(Sinh method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.SoftPlus.apply">(SoftPlus method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.Sqrt.apply">(Sqrt method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.Square.apply">(Square method)</a>
 </li>
         <li><a href="api/operator/linop.html#pyxu.operator.StructureTensor.apply">(StructureTensor method)</a>
 </li>
         <li><a href="api/operator/linop.html#pyxu.operator.SubSample.apply">(SubSample method)</a>
 </li>
+        <li><a href="api/operator/linop.html#pyxu.operator.Sum.apply">(Sum method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.Tan.apply">(Tan method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.Tanh.apply">(Tanh method)</a>
+</li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/operator/map.html#pyxu.operator.FSSPulse.applyF">applyF() (FSSPulse method)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.ArcCos">ArcCos (class in pyxu.operator)</a>
 </li>
-      <li><a href="api/operator/map.html#pyxu.operator.arccos">arccos() (in module pyxu.operator)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.ArcCosh">ArcCosh (class in pyxu.operator)</a>
 </li>
-      <li><a href="api/operator/map.html#pyxu.operator.arccosh">arccosh() (in module pyxu.operator)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.ArcSin">ArcSin (class in pyxu.operator)</a>
 </li>
-      <li><a href="api/operator/map.html#pyxu.operator.arcsin">arcsin() (in module pyxu.operator)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.ArcSinh">ArcSinh (class in pyxu.operator)</a>
 </li>
-      <li><a href="api/operator/map.html#pyxu.operator.arcsinh">arcsinh() (in module pyxu.operator)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.ArcTan">ArcTan (class in pyxu.operator)</a>
 </li>
-      <li><a href="api/operator/map.html#pyxu.operator.arctan">arctan() (in module pyxu.operator)</a>
-</li>
-      <li><a href="api/operator/map.html#pyxu.operator.arctanh">arctanh() (in module pyxu.operator)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.ArcTanh">ArcTanh (class in pyxu.operator)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.Operator.argscale">argscale() (Operator method)</a>
 </li>
@@ -621,19 +646,17 @@ document.write(`
 </li>
       <li><a href="api/info.ptype.html#pyxu.info.ptype.ArrayModule">ArrayModule (class in pyxu.info.ptype)</a>
 </li>
+      <li><a href="api/util.html#pyxu.util.as_canonical_axes">as_canonical_axes() (in module pyxu.util)</a>
+</li>
       <li><a href="api/util.html#pyxu.util.as_canonical_shape">as_canonical_shape() (in module pyxu.util)</a>
 </li>
+      <li><a href="api/util.html#pyxu.util.as_real_op">as_real_op() (in module pyxu.util)</a>
+</li>
       <li><a href="api/abc.html#pyxu.abc.LinOp.asarray">asarray() (LinOp method)</a>
-</li>
-      <li><a href="api/operator/linop.html#pyxu.operator.NUFFT.ascomplexarray">ascomplexarray() (NUFFT method)</a>
-</li>
-      <li><a href="api/abc.html#pyxu.abc.Func.asloss">asloss() (Func method)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.Operator.asop">asop() (Operator method)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.SolverMode.ASYNC">ASYNC (SolverMode attribute)</a>
-</li>
-      <li><a href="api/operator/linop.html#pyxu.operator.NUFFT.auto_chunk">auto_chunk() (NUFFT method)</a>
 </li>
       <li><a href="api/info.warning.html#pyxu.info.warning.AutoInferenceWarning">AutoInferenceWarning</a>
 </li>
@@ -651,11 +674,11 @@ document.write(`
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/operator/blocks.html#pyxu.operator.block">block() (in module pyxu.operator)</a>
-</li>
       <li><a href="api/operator/blocks.html#pyxu.operator.block_diag">block_diag() (in module pyxu.operator)</a>
 </li>
-      <li><a href="api/operator/map.html#pyxu.operator.Box">Box (class in pyxu.operator)</a>
+      <li><a href="api/abc.html#pyxu.abc.Operator.broadcast_to">broadcast_to() (Operator method)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.BroadcastAxes">BroadcastAxes (class in pyxu.operator)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.Solver.busy">busy() (Solver method)</a>
 </li>
@@ -667,7 +690,7 @@ document.write(`
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/abc.html#pyxu.abc.Property.CAN_EVAL">CAN_EVAL (Property attribute)</a>
 </li>
-      <li><a href="api/operator/map.html#pyxu.operator.cbrt">cbrt() (in module pyxu.operator)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.Cbrt">Cbrt (class in pyxu.operator)</a>
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.Stencil.center">center (Stencil property)</a>
 </li>
@@ -679,41 +702,49 @@ document.write(`
 </li>
       <li><a href="api/abc.html#pyxu.abc.StoppingCriterion.clear">clear() (StoppingCriterion method)</a>
 </li>
-      <li><a href="api/operator/map.html#pyxu.operator.clip">clip() (in module pyxu.operator)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.Clip">Clip (class in pyxu.operator)</a>
 </li>
-      <li><a href="api/abc.html#pyxu.abc.Operator.codim">codim (Operator property)</a>
+      <li><a href="api/abc.html#pyxu.abc.Operator.codim_rank">codim_rank (Operator property)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.Operator.codim_shape">codim_shape (Operator property)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.Operator.codim_size">codim_size (Operator property)</a>
 </li>
       <li><a href="api/runtime.html#pyxu.runtime.coerce">coerce() (in module pyxu.runtime)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.LinOp.cogram">cogram() (LinOp method)</a>
+
+      <ul>
+        <li><a href="api/operator/map.html#pyxu.operator.ReshapeAxes.cogram">(ReshapeAxes method)</a>
 </li>
+      </ul></li>
       <li><a href="api/runtime.html#pyxu.runtime.Width.complex">complex (Width property)</a>
 </li>
       <li><a href="api/util.html#pyxu.util.compute">compute() (in module pyxu.util)</a>
 </li>
-      <li><a href="api/opt.solver.html#pyxu.opt.solver.CondatVu">CondatVu (class in pyxu.opt.solver)</a>
-</li>
-      <li><a href="api/operator/linop.html#pyxu.operator.Stencil.configure_dispatcher">configure_dispatcher() (Stencil method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/opt.solver.html#pyxu.opt.solver.CondatVu">CondatVu (class in pyxu.opt.solver)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.FFTCorrelate.configure_dispatcher">configure_dispatcher() (FFTCorrelate method)</a>
+
+      <ul>
+        <li><a href="api/operator/linop.html#pyxu.operator.Stencil.configure_dispatcher">(Stencil method)</a>
+</li>
+      </ul></li>
       <li><a href="api/operator/map.html#pyxu.operator.ConstantValued">ConstantValued() (in module pyxu.operator)</a>
 </li>
       <li><a href="api/info.warning.html#pyxu.info.warning.ContributionWarning">ContributionWarning</a>
 </li>
-      <li><a href="api/operator/func.html#pyxu.operator.ConvexSetIntersection">ConvexSetIntersection (class in pyxu.operator)</a>
-</li>
-      <li><a href="api/operator/linop.html#pyxu.operator.Convolve">Convolve() (in module pyxu.operator)</a>
-</li>
-      <li><a href="api/operator/blocks.html#pyxu.operator.coo_block">coo_block() (in module pyxu.operator)</a>
+      <li><a href="api/operator/linop.html#pyxu.operator.Convolve">Convolve (class in pyxu.operator)</a>
 </li>
       <li><a href="api/util.html#pyxu.util.copy_if_unsafe">copy_if_unsafe() (in module pyxu.util)</a>
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.Correlate">Correlate (in module pyxu.operator)</a>
 </li>
-      <li><a href="api/operator/map.html#pyxu.operator.cos">cos() (in module pyxu.operator)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.Cos">Cos (class in pyxu.operator)</a>
 </li>
-      <li><a href="api/operator/map.html#pyxu.operator.cosh">cosh() (in module pyxu.operator)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.Cosh">Cosh (class in pyxu.operator)</a>
 </li>
       <li><a href="api/opt.solver.html#pyxu.opt.solver.CP">CP() (in module pyxu.opt.solver)</a>
 </li>
@@ -727,14 +758,20 @@ document.write(`
 </li>
       <li><a href="api/runtime.html#pyxu.runtime.CWidth">CWidth (class in pyxu.runtime)</a>
 </li>
+      <li><a href="api/operator/linop.html#pyxu.operator.CZT">CZT (class in pyxu.operator)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/abc.html#pyxu.abc.LinOp.dagger">dagger() (LinOp method)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.BroadcastAxes.dagger">dagger() (BroadcastAxes method)</a>
+
+      <ul>
+        <li><a href="api/abc.html#pyxu.abc.LinOp.dagger">(LinOp method)</a>
 </li>
+      </ul></li>
       <li><a href="api/info.deps.html#pyxu.info.deps.NDArrayInfo.DASK">DASK (NDArrayInfo attribute)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.Solver.datafile">datafile (Solver property)</a>
@@ -751,12 +788,6 @@ document.write(`
 </li>
       <li><a href="api/info.warning.html#pyxu.info.warning.DenseWarning">DenseWarning</a>
 </li>
-      <li><a href="api/operator/linop.html#pyxu.operator.NUFFT.diagnostic_plot">diagnostic_plot() (NUFFT method)</a>
-
-      <ul>
-        <li><a href="api/experimental/xray.html#pyxu.experimental.xray._rt.RayXRT.diagnostic_plot">(RayXRT method)</a>
-</li>
-      </ul></li>
       <li><a href="api/operator/linop.html#pyxu.operator.DiagonalOp">DiagonalOp() (in module pyxu.operator)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.DiffMap.diff_lipschitz">diff_lipschitz (DiffMap property)</a>
@@ -767,15 +798,17 @@ document.write(`
 </li>
       <li><a href="api/abc.html#pyxu.abc.Property.DIFFERENTIABLE_FUNCTION">DIFFERENTIABLE_FUNCTION (Property attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/abc.html#pyxu.abc.DiffFunc">DiffFunc (class in pyxu.abc)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/abc.html#pyxu.abc.DiffMap">DiffMap (class in pyxu.abc)</a>
 </li>
-      <li><a href="api/abc.html#pyxu.abc.Operator.dim">dim (Operator property)</a>
+      <li><a href="api/abc.html#pyxu.abc.Operator.dim_rank">dim_rank (Operator property)</a>
 </li>
-      <li><a href="api/operator/map.html#pyxu.operator.Dirac">Dirac (class in pyxu.operator)</a>
+      <li><a href="api/abc.html#pyxu.abc.Operator.dim_shape">dim_shape (Operator property)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.Operator.dim_size">dim_size (Operator property)</a>
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.DirectionalDerivative">DirectionalDerivative() (in module pyxu.operator)</a>
 </li>
@@ -817,15 +850,19 @@ document.write(`
 </li>
       <li><a href="api/abc.html#pyxu.abc.DiffMap.estimate_diff_lipschitz">estimate_diff_lipschitz() (DiffMap method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/abc.html#pyxu.abc.LinOp.estimate_lipschitz">estimate_lipschitz() (LinOp method)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.BroadcastAxes.estimate_lipschitz">estimate_lipschitz() (BroadcastAxes method)</a>
 
       <ul>
+        <li><a href="api/abc.html#pyxu.abc.LinOp.estimate_lipschitz">(LinOp method)</a>
+</li>
         <li><a href="api/abc.html#pyxu.abc.Map.estimate_lipschitz">(Map method)</a>
 </li>
+        <li><a href="api/operator/linop.html#pyxu.operator.Sum.estimate_lipschitz">(Sum method)</a>
+</li>
       </ul></li>
-      <li><a href="api/operator/map.html#pyxu.operator.exp">exp() (in module pyxu.operator)</a>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/operator/map.html#pyxu.operator.Exp">Exp (class in pyxu.operator)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.Operator.expr">expr() (Operator method)</a>
 </li>
@@ -841,20 +878,22 @@ document.write(`
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.FFT">FFT (class in pyxu.operator)</a>
 </li>
+      <li><a href="api/operator/linop.html#pyxu.operator.FFTConvolve">FFTConvolve (class in pyxu.operator)</a>
+</li>
+      <li><a href="api/operator/linop.html#pyxu.operator.FFTCorrelate">FFTCorrelate (class in pyxu.operator)</a>
+</li>
       <li><a href="api/operator/linop.html#pyxu.operator.PartialDerivative.finite_difference">finite_difference() (PartialDerivative static method)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.Solver.fit">fit() (Solver method)</a>
 </li>
       <li><a href="api/opt.solver.html#pyxu.opt.solver.ForwardBackward">ForwardBackward (class in pyxu.opt.solver)</a>
 </li>
-      <li><a href="api/experimental/xray.html#pyxu.experimental.xray._fourier.FourierXRT">FourierXRT (class in pyxu.experimental.xray._fourier)</a>
-</li>
       <li><a href="api/abc.html#pyxu.abc.LinOp.from_array">from_array() (LinOp class method)</a>
-</li>
-      <li><a href="api/info.deps.html#pyxu.info.deps.NDArrayInfo.from_flag">from_flag() (NDArrayInfo class method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/info.deps.html#pyxu.info.deps.NDArrayInfo.from_flag">from_flag() (NDArrayInfo class method)</a>
+</li>
       <li><a href="api/operator.interop.html#pyxu.operator.interop.from_jax">from_jax() (in module pyxu.operator.interop)</a>
 </li>
       <li><a href="api/info.deps.html#pyxu.info.deps.NDArrayInfo.from_obj">from_obj() (NDArrayInfo class method)</a>
@@ -869,8 +908,6 @@ document.write(`
 </li>
       <li><a href="api/operator.interop.html#pyxu.operator.interop.from_torch">from_torch() (in module pyxu.operator.interop)</a>
 </li>
-      <li><a href="api/operator/map.html#pyxu.operator.FSSPulse">FSSPulse (class in pyxu.operator)</a>
-</li>
       <li><a href="api/abc.html#pyxu.abc.Func">Func (class in pyxu.abc)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.Property.FUNCTIONAL">FUNCTIONAL (Property attribute)</a>
@@ -881,26 +918,30 @@ document.write(`
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/operator/linop.html#pyxu.operator.Gaussian">Gaussian() (in module pyxu.operator)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.Gaussian">Gaussian (class in pyxu.operator)</a>
 </li>
-      <li><a href="api/operator/map.html#pyxu.operator.gaussian">gaussian() (in module pyxu.operator)</a>
+      <li><a href="api/operator/linop.html#pyxu.operator.Gaussian">Gaussian() (in module pyxu.operator)</a>
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.PartialDerivative.gaussian_derivative">gaussian_derivative() (PartialDerivative static method)</a>
 </li>
       <li><a href="api/util.html#pyxu.util.get_array_module">get_array_module() (in module pyxu.util)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/runtime.html#pyxu.runtime.getCoerceState">getCoerceState() (in module pyxu.runtime)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/runtime.html#pyxu.runtime.getPrecision">getPrecision() (in module pyxu.runtime)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.DiffFunc.grad">grad() (DiffFunc method)</a>
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.Gradient">Gradient() (in module pyxu.operator)</a>
 </li>
-      <li><a href="api/abc.html#pyxu.abc.LinOp.gram">gram() (LinOp method)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.BroadcastAxes.gram">gram() (BroadcastAxes method)</a>
+
+      <ul>
+        <li><a href="api/abc.html#pyxu.abc.LinOp.gram">(LinOp method)</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -911,11 +952,9 @@ document.write(`
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.Hessian">Hessian() (in module pyxu.operator)</a>
 </li>
-      <li><a href="api/operator/linop.html#pyxu.operator.HomothetyOp">HomothetyOp() (in module pyxu.operator)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/operator/blocks.html#pyxu.operator.hstack">hstack() (in module pyxu.operator)</a>
+      <li><a href="api/operator/linop.html#pyxu.operator.HomothetyOp">HomothetyOp() (in module pyxu.operator)</a>
 </li>
       <li><a href="api/math.html#pyxu.math.hutchpp">hutchpp() (in module pyxu.math)</a>
 </li>
@@ -937,20 +976,12 @@ document.write(`
         <li><a href="api/operator/linop.html#pyxu.operator.SubSample.IndexSpec">(SubSample attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/util.html#pyxu.util.infer_composition_shape">infer_composition_shape() (in module pyxu.util)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/util.html#pyxu.util.infer_sum_shape">infer_sum_shape() (in module pyxu.util)</a>
-</li>
       <li><a href="api/abc.html#pyxu.abc.StoppingCriterion.info">info() (StoppingCriterion method)</a>
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator._Stencil.init">init() (_Stencil static method)</a>
-
-      <ul>
-        <li><a href="api/experimental/xray.html#pyxu.experimental.xray.XRayTransform.init">(XRayTransform static method)</a>
 </li>
-      </ul></li>
       <li><a href="api/info.ptype.html#pyxu.info.ptype.Integer">Integer (in module pyxu.info.ptype)</a>
 </li>
   </ul></td>
@@ -959,20 +990,64 @@ document.write(`
 <h2 id="J">J</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/abc.html#pyxu.abc.DiffMap.jacobian">jacobian() (DiffMap method)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.ArcCos.jacobian">jacobian() (ArcCos method)</a>
+
+      <ul>
+        <li><a href="api/operator/map.html#pyxu.operator.ArcCosh.jacobian">(ArcCosh method)</a>
 </li>
+        <li><a href="api/operator/map.html#pyxu.operator.ArcSin.jacobian">(ArcSin method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.ArcSinh.jacobian">(ArcSinh method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.ArcTan.jacobian">(ArcTan method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.ArcTanh.jacobian">(ArcTanh method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.Cbrt.jacobian">(Cbrt method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.Cos.jacobian">(Cos method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.Cosh.jacobian">(Cosh method)</a>
+</li>
+        <li><a href="api/abc.html#pyxu.abc.DiffMap.jacobian">(DiffMap method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.Exp.jacobian">(Exp method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.Gaussian.jacobian">(Gaussian method)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/operator/linop.html#pyxu.operator.Jacobian">Jacobian() (in module pyxu.operator)</a>
 </li>
+      <li><a href="api/operator/map.html#pyxu.operator.Log.jacobian">jacobian() (Log method)</a>
+
+      <ul>
+        <li><a href="api/operator/map.html#pyxu.operator.Sigmoid.jacobian">(Sigmoid method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.SiLU.jacobian">(SiLU method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.Sin.jacobian">(Sin method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.Sinh.jacobian">(Sinh method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.SoftPlus.jacobian">(SoftPlus method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.Sqrt.jacobian">(Sqrt method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.Square.jacobian">(Square method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.Tan.jacobian">(Tan method)</a>
+</li>
+        <li><a href="api/operator/map.html#pyxu.operator.Tanh.jacobian">(Tanh method)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
 <h2 id="K">K</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/operator/map.html#pyxu.operator.KaiserBessel">KaiserBessel (class in pyxu.operator)</a>
-</li>
       <li><a href="api/operator/linop.html#pyxu.operator.Stencil.kernel">kernel (Stencil property)</a>
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.Stencil.KernelSpec">KernelSpec (Stencil attribute)</a>
@@ -1005,7 +1080,7 @@ document.write(`
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.Laplacian">Laplacian() (in module pyxu.operator)</a>
 </li>
-      <li><a href="api/operator/map.html#pyxu.operator.leakyrelu">leakyrelu() (in module pyxu.operator)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.LeakyReLU">LeakyReLU (class in pyxu.operator)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.Property.LINEAR">LINEAR (Property attribute)</a>
 </li>
@@ -1033,7 +1108,7 @@ document.write(`
 </li>
       <li><a href="api/abc.html#pyxu.abc.Map.lipschitz">lipschitz (Map property)</a>
 </li>
-      <li><a href="api/operator/map.html#pyxu.operator.log">log() (in module pyxu.operator)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.Log">Log (class in pyxu.operator)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.Solver.logfile">logfile (Solver property)</a>
 </li>
@@ -1057,20 +1132,14 @@ document.write(`
 </li>
       <li><a href="api/abc.html#pyxu.abc.Map">Map (class in pyxu.abc)</a>
 </li>
-      <li><a href="api/opt.stop.html#pyxu.opt.stop.MaxCarbon">MaxCarbon (class in pyxu.opt.stop)</a>
-</li>
       <li><a href="api/opt.stop.html#pyxu.opt.stop.MaxDuration">MaxDuration (class in pyxu.opt.stop)</a>
 </li>
       <li><a href="api/opt.stop.html#pyxu.opt.stop.MaxIter">MaxIter (class in pyxu.opt.stop)</a>
 </li>
       <li><a href="api/opt.stop.html#pyxu.opt.stop.Memorize">Memorize (class in pyxu.opt.stop)</a>
 </li>
-      <li><a href="api/operator/linop.html#pyxu.operator.NUFFT.mesh">mesh() (NUFFT method)</a>
-</li>
       <li><a href="api/operator/linop.html#pyxu.operator.Pad.ModeSpec">ModeSpec (Pad attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     module
 
@@ -1088,6 +1157,8 @@ document.write(`
         <li><a href="api/runtime.html#module-pyxu.runtime">pyxu.runtime</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/info.deps.html#pyxu.info.deps.NDArrayInfo.module">module() (NDArrayInfo method)</a>
 
       <ul>
@@ -1114,19 +1185,13 @@ document.write(`
 </li>
       <li><a href="api/info.ptype.html#pyxu.info.ptype.NDArrayShape">NDArrayShape (in module pyxu.info.ptype)</a>
 </li>
-      <li><a href="api/util.html#pyxu.util.next_fast_len">next_fast_len() (in module pyxu.util)</a>
-</li>
       <li><a href="api/opt.solver.html#pyxu.opt.solver.NLCG">NLCG (class in pyxu.opt.solver)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/info.warning.html#pyxu.info.warning.NonTransparentWarning">NonTransparentWarning</a>
 </li>
-      <li><a href="api/math.html#pyxu.math.norm">norm() (in module pyxu.math)</a>
-</li>
       <li><a href="api/abc.html#pyxu.abc.NormalOp">NormalOp (class in pyxu.abc)</a>
-</li>
-      <li><a href="api/operator/linop.html#pyxu.operator.NUFFT">NUFFT (class in pyxu.operator)</a>
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.NullFunc">NullFunc() (in module pyxu.operator)</a>
 </li>
@@ -1154,10 +1219,10 @@ document.write(`
 </li>
       <li><a href="api/experimental/sampler.html#pyxu.experimental.sampler.OnlineSkewness">OnlineSkewness() (in module pyxu.experimental.sampler)</a>
 </li>
-      <li><a href="api/experimental/sampler.html#pyxu.experimental.sampler.OnlineStd">OnlineStd() (in module pyxu.experimental.sampler)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/experimental/sampler.html#pyxu.experimental.sampler.OnlineStd">OnlineStd() (in module pyxu.experimental.sampler)</a>
+</li>
       <li><a href="api/experimental/sampler.html#pyxu.experimental.sampler.OnlineVariance">OnlineVariance() (in module pyxu.experimental.sampler)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.arithmetic.Rule.op">op() (Rule method)</a>
@@ -1165,8 +1230,6 @@ document.write(`
       <li><a href="api/info.ptype.html#pyxu.info.ptype.OpC">OpC (in module pyxu.info.ptype)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.Operator">Operator (class in pyxu.abc)</a>
-</li>
-      <li><a href="api/info.ptype.html#pyxu.info.ptype.OpShape">OpShape (in module pyxu.info.ptype)</a>
 </li>
       <li><a href="api/info.ptype.html#pyxu.info.ptype.OpT">OpT (class in pyxu.info.ptype)</a>
 </li>
@@ -1179,8 +1242,6 @@ document.write(`
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/operator/linop.html#pyxu.operator.Pad">Pad (class in pyxu.operator)</a>
-</li>
-      <li><a href="api/operator/linop.html#pyxu.operator.NUFFT.params">params() (NUFFT method)</a>
 </li>
       <li><a href="api/util.html#pyxu.util.parse_params">parse_params() (in module pyxu.util)</a>
 </li>
@@ -1196,17 +1257,17 @@ document.write(`
 </li>
       <li><a href="api/opt.solver.html#pyxu.opt.solver.PGD">PGD (class in pyxu.opt.solver)</a>
 </li>
-      <li><a href="api/abc.html#pyxu.abc.LinOp.pinv">pinv() (LinOp method)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.BroadcastAxes.pinv">pinv() (BroadcastAxes method)</a>
+
+      <ul>
+        <li><a href="api/abc.html#pyxu.abc.LinOp.pinv">(LinOp method)</a>
 </li>
-      <li><a href="api/operator/linop.html#pyxu.operator.NUFFT.plot_kernel">plot_kernel() (NUFFT method)</a>
-</li>
+      </ul></li>
       <li><a href="api/abc.html#pyxu.abc.PosDefOp">PosDefOp (class in pyxu.abc)</a>
 </li>
       <li><a href="api/operator/func.html#pyxu.operator.PositiveL1Norm">PositiveL1Norm (class in pyxu.operator)</a>
 </li>
       <li><a href="api/operator/func.html#pyxu.operator.PositiveOrthant">PositiveOrthant (class in pyxu.operator)</a>
-</li>
-      <li><a href="api/abc.html#pyxu.abc.arithmetic.PowerRule">PowerRule (class in pyxu.abc.arithmetic)</a>
 </li>
       <li><a href="api/opt.solver.html#pyxu.opt.solver.PP">PP() (in module pyxu.opt.solver)</a>
 </li>
@@ -1232,11 +1293,9 @@ document.write(`
         <li><a href="api/info.ptype.html#pyxu.info.ptype.Property">(in module pyxu.info.ptype)</a>
 </li>
       </ul></li>
-      <li><a href="api/operator/func.html#pyxu.operator.ConvexSetIntersection.prox">prox() (ConvexSetIntersection method)</a>
+      <li><a href="api/abc.html#pyxu.abc.ProxFunc.prox">prox() (ProxFunc method)</a>
 
       <ul>
-        <li><a href="api/abc.html#pyxu.abc.ProxFunc.prox">(ProxFunc method)</a>
-</li>
         <li><a href="api/operator/func.html#pyxu.operator.SquaredL1Norm.prox">(SquaredL1Norm method)</a>
 </li>
       </ul></li>
@@ -1247,8 +1306,6 @@ document.write(`
       <li><a href="api/abc.html#pyxu.abc.Property.PROXIMABLE">PROXIMABLE (Property attribute)</a>
 </li>
       <li><a href="api/opt.solver.html#pyxu.opt.solver.ProximalPoint">ProximalPoint() (in module pyxu.opt.solver)</a>
-</li>
-      <li><a href="api/info.deps.html#pyxu.info.deps.SparseArrayInfo.PYDATA_SPARSE">PYDATA_SPARSE (SparseArrayInfo attribute)</a>
 </li>
       <li>
     pyxu.experimental.sampler
@@ -1314,25 +1371,29 @@ document.write(`
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/operator/func.html#pyxu.operator.RangeSet">RangeSet (class in pyxu.operator)</a>
 </li>
-      <li><a href="api/operator/linop.html#pyxu.operator.StructureTensor.ravel">ravel() (StructureTensor method)</a>
-</li>
-      <li><a href="api/experimental/xray.html#pyxu.experimental.xray._rt.RayXRT">RayXRT (class in pyxu.experimental.xray._rt)</a>
-</li>
       <li><a href="api/util.html#pyxu.util.read_only">read_only() (in module pyxu.util)</a>
 </li>
       <li><a href="api/info.ptype.html#pyxu.info.ptype.Real">Real (class in pyxu.info.ptype)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/runtime.html#pyxu.runtime.CWidth.real">real (CWidth property)</a>
 </li>
-      <li><a href="api/util.html#pyxu.util.redirect">redirect() (in module pyxu.util)</a>
+      <li><a href="api/abc.html#pyxu.abc.Operator.rechunk">rechunk() (Operator method)</a>
 </li>
-      <li><a href="api/operator/linop.html#pyxu.operator.Stencil.relative_indices">relative_indices (Stencil property)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.RechunkAxes">RechunkAxes() (in module pyxu.operator)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/util.html#pyxu.util.redirect">redirect() (in module pyxu.util)</a>
 </li>
       <li><a href="api/opt.stop.html#pyxu.opt.stop.RelError">RelError (class in pyxu.opt.stop)</a>
 </li>
-      <li><a href="api/operator/map.html#pyxu.operator.relu">relu() (in module pyxu.operator)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.ReLU">ReLU (class in pyxu.operator)</a>
+</li>
+      <li><a href="api/util.html#pyxu.util.require_viewable">require_viewable() (in module pyxu.util)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.Operator.reshape">reshape() (Operator method)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.ReshapeAxes">ReshapeAxes (class in pyxu.operator)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.arithmetic.Rule">Rule (class in pyxu.abc.arithmetic)</a>
 </li>
@@ -1350,17 +1411,13 @@ document.write(`
 </li>
       <li><a href="api/abc.html#pyxu.abc.SelfAdjointOp">SelfAdjointOp (class in pyxu.abc)</a>
 </li>
-      <li><a href="api/abc.html#pyxu.abc.Operator.shape">shape (Operator property)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.Sigmoid">Sigmoid (class in pyxu.operator)</a>
 </li>
-      <li><a href="api/operator/func.html#pyxu.operator.shift_loss">shift_loss() (in module pyxu.operator)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.Sign">Sign (class in pyxu.operator)</a>
 </li>
-      <li><a href="api/operator/map.html#pyxu.operator.sigmoid">sigmoid() (in module pyxu.operator)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.SiLU">SiLU (class in pyxu.operator)</a>
 </li>
-      <li><a href="api/operator/map.html#pyxu.operator.sign">sign() (in module pyxu.operator)</a>
-</li>
-      <li><a href="api/operator/map.html#pyxu.operator.silu">silu() (in module pyxu.operator)</a>
-</li>
-      <li><a href="api/operator/map.html#pyxu.operator.sin">sin() (in module pyxu.operator)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.Sin">Sin (class in pyxu.operator)</a>
 </li>
       <li><a href="api/runtime.html#pyxu.runtime.CWidth.SINGLE">SINGLE (CWidth attribute)</a>
 
@@ -1368,13 +1425,11 @@ document.write(`
         <li><a href="api/runtime.html#pyxu.runtime.Width.SINGLE">(Width attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/operator/map.html#pyxu.operator.sinh">sinh() (in module pyxu.operator)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.Sinh">Sinh (class in pyxu.operator)</a>
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.Sobel">Sobel() (in module pyxu.operator)</a>
 </li>
-      <li><a href="api/operator/map.html#pyxu.operator.softmax">softmax() (in module pyxu.operator)</a>
-</li>
-      <li><a href="api/operator/map.html#pyxu.operator.softplus">softplus() (in module pyxu.operator)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.SoftPlus">SoftPlus (class in pyxu.operator)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.Solver.solution">solution() (Solver method)</a>
 </li>
@@ -1394,11 +1449,11 @@ document.write(`
 </li>
       <li><a href="api/info.ptype.html#pyxu.info.ptype.SparseModule">SparseModule (class in pyxu.info.ptype)</a>
 </li>
+      <li><a href="api/operator/map.html#pyxu.operator.Sqrt">Sqrt (class in pyxu.operator)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/operator/map.html#pyxu.operator.sqrt">sqrt() (in module pyxu.operator)</a>
-</li>
-      <li><a href="api/operator/map.html#pyxu.operator.square">square() (in module pyxu.operator)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.Square">Square (class in pyxu.operator)</a>
 </li>
       <li><a href="api/operator/func.html#pyxu.operator.SquaredL1Norm">SquaredL1Norm (class in pyxu.operator)</a>
 </li>
@@ -1408,16 +1463,14 @@ document.write(`
 </li>
       <li><a href="api/abc.html#pyxu.abc.Operator.squeeze">squeeze() (Operator method)</a>
 </li>
+      <li><a href="api/operator/map.html#pyxu.operator.SqueezeAxes">SqueezeAxes (class in pyxu.operator)</a>
+</li>
       <li><a href="api/operator/blocks.html#pyxu.operator.stack">stack() (in module pyxu.operator)</a>
 </li>
       <li><a href="api/util.html#pyxu.util.misc.star_like_sample">star_like_sample() (in module pyxu.util.misc)</a>
 </li>
-      <li><a href="api/operator/linop.html#pyxu.operator.NUFFT.stats">stats() (NUFFT method)</a>
-
-      <ul>
-        <li><a href="api/abc.html#pyxu.abc.Solver.stats">(Solver method)</a>
+      <li><a href="api/abc.html#pyxu.abc.Solver.stats">stats() (Solver method)</a>
 </li>
-      </ul></li>
       <li><a href="api/operator/linop.html#pyxu.operator.Stencil">Stencil (class in pyxu.operator)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.Solver.steps">steps() (Solver method)</a>
@@ -1434,9 +1487,9 @@ document.write(`
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.SubSample">SubSample (class in pyxu.operator)</a>
 </li>
-      <li><a href="api/operator/linop.html#pyxu.operator.Sum">Sum() (in module pyxu.operator)</a>
+      <li><a href="api/abc.html#pyxu.abc.Operator.subsample">subsample() (Operator method)</a>
 </li>
-      <li><a href="api/operator/map.html#pyxu.operator.FSSPulse.support">support() (FSSPulse method)</a>
+      <li><a href="api/operator/linop.html#pyxu.operator.Sum">Sum (class in pyxu.operator)</a>
 </li>
       <li><a href="api/info.deps.html#pyxu.info.deps.supported_array_modules">supported_array_modules() (in module pyxu.info.deps)</a>
 </li>
@@ -1446,10 +1499,12 @@ document.write(`
 </li>
       <li><a href="api/info.deps.html#pyxu.info.deps.supported_sparse_types">supported_sparse_types() (in module pyxu.info.deps)</a>
 </li>
-      <li><a href="api/operator/map.html#pyxu.operator.FSSPulse.supportF">supportF() (FSSPulse method)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.BroadcastAxes.svdvals">svdvals() (BroadcastAxes method)</a>
+
+      <ul>
+        <li><a href="api/abc.html#pyxu.abc.LinOp.svdvals">(LinOp method)</a>
 </li>
-      <li><a href="api/abc.html#pyxu.abc.LinOp.svdvals">svdvals() (LinOp method)</a>
-</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -1458,13 +1513,11 @@ document.write(`
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/abc.html#pyxu.abc.LinOp.T">T (LinOp property)</a>
 </li>
-      <li><a href="api/operator/map.html#pyxu.operator.tan">tan() (in module pyxu.operator)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.Tan">Tan (class in pyxu.operator)</a>
 </li>
-      <li><a href="api/operator/map.html#pyxu.operator.tanh">tanh() (in module pyxu.operator)</a>
+      <li><a href="api/operator/map.html#pyxu.operator.Tanh">Tanh (class in pyxu.operator)</a>
 </li>
       <li><a href="api/util.html#pyxu.util.to_NUMPY">to_NUMPY() (in module pyxu.util)</a>
-</li>
-      <li><a href="api/abc.html#pyxu.abc.LinOp.to_sciop">to_sciop() (LinOp method)</a>
 </li>
       <li><a href="api/math.html#pyxu.math.trace">trace() (in module pyxu.math)</a>
 
@@ -1472,17 +1525,17 @@ document.write(`
         <li><a href="api/abc.html#pyxu.abc.SquareOp.trace">(SquareOp method)</a>
 </li>
       </ul></li>
-      <li><a href="api/abc.html#pyxu.abc.arithmetic.TransposeRule">TransposeRule (class in pyxu.abc.arithmetic)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/operator/map.html#pyxu.operator.Triangle">Triangle (class in pyxu.operator)</a>
+      <li><a href="api/abc.html#pyxu.abc.Operator.transpose">transpose() (Operator method)</a>
+</li>
+      <li><a href="api/operator/map.html#pyxu.operator.TransposeAxes">TransposeAxes (class in pyxu.operator)</a>
+</li>
+      <li><a href="api/abc.html#pyxu.abc.arithmetic.TransposeRule">TransposeRule (class in pyxu.abc.arithmetic)</a>
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.Trim">Trim() (in module pyxu.operator)</a>
 </li>
       <li><a href="api/operator/linop.html#pyxu.operator.SubSample.TrimSpec">TrimSpec (SubSample attribute)</a>
-</li>
-      <li><a href="api/operator/map.html#pyxu.operator.TruncatedGaussian">TruncatedGaussian (class in pyxu.operator)</a>
 </li>
       <li><a href="api/info.deps.html#pyxu.info.deps.NDArrayInfo.type">type() (NDArrayInfo method)</a>
 
@@ -1490,12 +1543,6 @@ document.write(`
         <li><a href="api/info.deps.html#pyxu.info.deps.SparseArrayInfo.type">(SparseArrayInfo method)</a>
 </li>
       </ul></li>
-      <li><a href="api/operator/linop.html#pyxu.operator.NUFFT.type1">type1() (NUFFT static method)</a>
-</li>
-      <li><a href="api/operator/linop.html#pyxu.operator.NUFFT.type2">type2() (NUFFT static method)</a>
-</li>
-      <li><a href="api/operator/linop.html#pyxu.operator.NUFFT.type3">type3() (NUFFT static method)</a>
-</li>
   </ul></td>
 </tr></table>
 
@@ -1508,8 +1555,6 @@ document.write(`
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/operator/linop.html#pyxu.operator.StructureTensor.unravel">unravel() (StructureTensor method)</a>
-</li>
       <li><a href="api/experimental/sampler.html#pyxu.experimental.sampler.OnlineCenteredMoment.update">update() (OnlineCenteredMoment method)</a>
 
       <ul>
@@ -1526,19 +1571,13 @@ document.write(`
 </li>
       <li><a href="api/util.html#pyxu.util.vectorize">vectorize() (in module pyxu.util)</a>
 </li>
-      <li><a href="api/util.html#pyxu.util.view_as_complex">view_as_complex() (in module pyxu.util)</a>
-</li>
-      <li><a href="api/util.html#pyxu.util.view_as_complex_mat">view_as_complex_mat() (in module pyxu.util)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/util.html#pyxu.util.view_as_complex">view_as_complex() (in module pyxu.util)</a>
+</li>
       <li><a href="api/util.html#pyxu.util.view_as_real">view_as_real() (in module pyxu.util)</a>
 </li>
-      <li><a href="api/util.html#pyxu.util.view_as_real_mat">view_as_real_mat() (in module pyxu.util)</a>
-</li>
       <li><a href="api/operator/linop.html#pyxu.operator.Stencil.visualize">visualize() (Stencil method)</a>
-</li>
-      <li><a href="api/operator/blocks.html#pyxu.operator.vstack">vstack() (in module pyxu.operator)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1546,23 +1585,17 @@ document.write(`
 <h2 id="W">W</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/runtime.html#pyxu.runtime.Width">Width (class in pyxu.runtime)</a>
+      <li><a href="api/info.warning.html#pyxu.info.warning.warn_dask_perf">warn_dask_perf() (in module pyxu.info.warning)</a>
 </li>
-      <li><a href="api/operator/linop.html#pyxu.operator.Pad.WidthSpec">WidthSpec (Pad attribute)</a>
+      <li><a href="api/runtime.html#pyxu.runtime.Width">Width (class in pyxu.runtime)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/operator/linop.html#pyxu.operator.Pad.WidthSpec">WidthSpec (Pad attribute)</a>
+</li>
       <li><a href="api/abc.html#pyxu.abc.Solver.workdir">workdir (Solver property)</a>
 </li>
       <li><a href="api/abc.html#pyxu.abc.Solver.writeback">writeback() (Solver method)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="X">X</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/experimental/xray.html#pyxu.experimental.xray.XRayTransform">XRayTransform (class in pyxu.experimental.xray)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1618,7 +1651,7 @@ document.write(`
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt, Pyxu Developers.
+      © Copyright 2024, S. Kashani, J. Rué-Queralt, M. Simeoni, Pyxu Developers.
       <br/>
     
   </p>
@@ -1626,7 +1659,7 @@ document.write(`
       
         <div class="footer-item">
   <p class="sphinx-version">
-     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>

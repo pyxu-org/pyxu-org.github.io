@@ -36,15 +36,15 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=14df3d68" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../../_static/documentation_options.js?v=afeffd13"></script>
-    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/documentation_options.js?v=eb600d8c"></script>
+    <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../../_static/copybutton.js?v=30646c52"></script>
@@ -52,7 +52,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../../_static/togglebutton.js?v=4a39c7ea"></script>
-    <script src="../../../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -172,13 +172,6 @@
                       </a>
                     </li>
                 
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../../fair/index.html">
-                        Extending Pyxu
-                      </a>
-                    </li>
-                
   </ul>
 </nav></div>
       
@@ -199,7 +192,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -212,7 +205,7 @@ document.write(`
           
           
           
-          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+          <a href="https://github.com/pyxu-org/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -325,13 +318,6 @@ document.write(`
                       </a>
                     </li>
                 
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../../fair/index.html">
-                        Extending Pyxu
-                      </a>
-                    </li>
-                
   </ul>
 </nav></div>
         
@@ -341,7 +327,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -354,7 +340,7 @@ document.write(`
           
           
           
-          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+          <a href="https://github.com/pyxu-org/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -451,127 +437,117 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <h1>Source code for pyxu.operator.func.loss</h1><div class="highlight"><pre>
-<span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">pyxu.abc</span> <span class="k">as</span> <span class="nn">pxa</span>
-<span class="linenos">  2</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
-<span class="linenos">  3</span><span class="kn">import</span> <span class="nn">pyxu.runtime</span> <span class="k">as</span> <span class="nn">pxrt</span>
-<span class="linenos">  4</span><span class="kn">import</span> <span class="nn">pyxu.util</span> <span class="k">as</span> <span class="nn">pxu</span>
-<span class="linenos">  5</span>
-<span class="linenos">  6</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
-<span class="linenos">  7</span>    <span class="s2">&quot;shift_loss&quot;</span><span class="p">,</span>
-<span class="linenos">  8</span>    <span class="s2">&quot;KLDivergence&quot;</span><span class="p">,</span>
-<span class="linenos">  9</span><span class="p">]</span>
-<span class="linenos"> 10</span>
-<span class="linenos"> 11</span>
-<div class="viewcode-block" id="shift_loss">
-<a class="viewcode-back" href="../../../../api/operator/func.html#pyxu.operator.shift_loss">[docs]</a>
-<span class="linenos"> 12</span><span class="k">def</span> <span class="nf">shift_loss</span><span class="p">(</span>
-<span class="linenos"> 13</span>    <span class="n">op</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">,</span>
-<span class="linenos"> 14</span>    <span class="n">data</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="linenos"> 15</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
-<span class="linenos"> 16</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos"> 17</span><span class="sd">    Shift a functional :math:`f(x)` to a loss functional.</span>
-<span class="linenos"> 18</span>
-<span class="linenos"> 19</span><span class="sd">    .. math::</span>
-<span class="linenos"> 20</span>
-<span class="linenos"> 21</span><span class="sd">       g(x; c) = f(x - c)</span>
-<span class="linenos"> 22</span>
-<span class="linenos"> 23</span><span class="sd">    Parameters</span>
-<span class="linenos"> 24</span><span class="sd">    ----------</span>
-<span class="linenos"> 25</span><span class="sd">    data: NDArray</span>
-<span class="linenos"> 26</span><span class="sd">        (M,) input data.</span>
-<span class="linenos"> 27</span>
-<span class="linenos"> 28</span><span class="sd">    Returns</span>
-<span class="linenos"> 29</span><span class="sd">    -------</span>
-<span class="linenos"> 30</span><span class="sd">    op: OpT</span>
-<span class="linenos"> 31</span><span class="sd">        (1, M) Loss functionial.  If `data` is omitted, then this function is a no-op.</span>
-<span class="linenos"> 32</span><span class="sd">    &quot;&quot;&quot;</span>
-<span class="linenos"> 33</span>    <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="linenos"> 34</span>        <span class="k">return</span> <span class="n">op</span>
-<span class="linenos"> 35</span>    <span class="k">else</span><span class="p">:</span>
-<span class="linenos"> 36</span>        <span class="k">return</span> <span class="n">op</span><span class="o">.</span><span class="n">argshift</span><span class="p">(</span><span class="o">-</span><span class="n">data</span><span class="p">)</span></div>
-
-<span class="linenos"> 37</span>
-<span class="linenos"> 38</span>
+<span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos">  2</span>
+<span class="linenos">  3</span><span class="kn">import</span> <span class="nn">pyxu.abc</span> <span class="k">as</span> <span class="nn">pxa</span>
+<span class="linenos">  4</span><span class="kn">import</span> <span class="nn">pyxu.info.deps</span> <span class="k">as</span> <span class="nn">pxd</span>
+<span class="linenos">  5</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
+<span class="linenos">  6</span><span class="kn">import</span> <span class="nn">pyxu.runtime</span> <span class="k">as</span> <span class="nn">pxrt</span>
+<span class="linenos">  7</span><span class="kn">import</span> <span class="nn">pyxu.util</span> <span class="k">as</span> <span class="nn">pxu</span>
+<span class="linenos">  8</span>
+<span class="linenos">  9</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos"> 10</span>    <span class="s2">&quot;KLDivergence&quot;</span><span class="p">,</span>
+<span class="linenos"> 11</span><span class="p">]</span>
+<span class="linenos"> 12</span>
+<span class="linenos"> 13</span>
 <div class="viewcode-block" id="KLDivergence">
 <a class="viewcode-back" href="../../../../api/operator/func.html#pyxu.operator.KLDivergence">[docs]</a>
-<span class="linenos"> 39</span><span class="k">class</span> <span class="nc">KLDivergence</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">ProxFunc</span><span class="p">):</span>
-<span class="linenos"> 40</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos"> 41</span><span class="sd">    Generalised Kullback-Leibler divergence :math:`D_{KL}(\mathbf{y}||\mathbf{x}):=\sum_{i=1}^N y_i\log(y_i/x_i) -y_i</span>
-<span class="linenos"> 42</span><span class="sd">    +x_i`.</span>
-<span class="linenos"> 43</span><span class="sd">    &quot;&quot;&quot;</span>
-<span class="linenos"> 44</span>
+<span class="linenos"> 14</span><span class="k">class</span> <span class="nc">KLDivergence</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">ProxFunc</span><span class="p">):</span>
+<span class="linenos"> 15</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 16</span><span class="sd">    Generalised Kullback-Leibler divergence</span>
+<span class="linenos"> 17</span><span class="sd">    :math:`D_{KL}(\mathbf{y}||\mathbf{x}) := \sum_{i} y_{i} \log(y_{i} / x_{i}) - y_{i} + x_{i}`.</span>
+<span class="linenos"> 18</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos"> 19</span>
 <div class="viewcode-block" id="KLDivergence.__init__">
 <a class="viewcode-back" href="../../../../api/operator/func.html#pyxu.operator.KLDivergence.__init__">[docs]</a>
-<span class="linenos"> 45</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
-<span class="linenos"> 46</span>        <span class="bp">self</span><span class="p">,</span>
-<span class="linenos"> 47</span>        <span class="n">dim</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span>
-<span class="linenos"> 48</span>        <span class="n">data</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span>
-<span class="linenos"> 49</span>    <span class="p">):</span>
-<span class="linenos"> 50</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos"> 51</span><span class="sd">        Parameters</span>
-<span class="linenos"> 52</span><span class="sd">        ----------</span>
-<span class="linenos"> 53</span><span class="sd">        dim: Integer</span>
-<span class="linenos"> 54</span><span class="sd">        data: NDArray</span>
-<span class="linenos"> 55</span><span class="sd">            (M,) strictly positive input data.</span>
-<span class="linenos"> 56</span>
-<span class="linenos"> 57</span><span class="sd">        Examples</span>
-<span class="linenos"> 58</span><span class="sd">        --------</span>
-<span class="linenos"> 59</span><span class="sd">        .. code-block:: python3</span>
+<span class="linenos"> 20</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">):</span>
+<span class="linenos"> 21</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 22</span><span class="sd">        Parameters</span>
+<span class="linenos"> 23</span><span class="sd">        ----------</span>
+<span class="linenos"> 24</span><span class="sd">        data: NDArray</span>
+<span class="linenos"> 25</span><span class="sd">            (M1,...,MD) non-negative input data.</span>
+<span class="linenos"> 26</span>
+<span class="linenos"> 27</span><span class="sd">        Examples</span>
+<span class="linenos"> 28</span><span class="sd">        --------</span>
+<span class="linenos"> 29</span><span class="sd">        .. code-block:: python3</span>
+<span class="linenos"> 30</span>
+<span class="linenos"> 31</span><span class="sd">           import numpy as np</span>
+<span class="linenos"> 32</span><span class="sd">           from pyxu.operator import KLDivergence</span>
+<span class="linenos"> 33</span>
+<span class="linenos"> 34</span><span class="sd">           y = np.arange(5)</span>
+<span class="linenos"> 35</span><span class="sd">           loss = KLDivergence(y)</span>
+<span class="linenos"> 36</span>
+<span class="linenos"> 37</span><span class="sd">           loss(2 * y)  # [3.06852819]</span>
+<span class="linenos"> 38</span><span class="sd">           np.round(loss.prox(2 * y, tau=1))  # [0. 2. 4. 6. 8.]</span>
+<span class="linenos"> 39</span>
+<span class="linenos"> 40</span><span class="sd">        Notes</span>
+<span class="linenos"> 41</span><span class="sd">        -----</span>
+<span class="linenos"> 42</span><span class="sd">        * When :math:`\mathbf{y}` and :math:`\mathbf{x}` sum to one, and hence can be interpreted as discrete</span>
+<span class="linenos"> 43</span><span class="sd">          probability distributions, the KL-divergence corresponds to the relative entropy of :math:`\mathbf{y}` w.r.t.</span>
+<span class="linenos"> 44</span><span class="sd">          :math:`\mathbf{x}`, i.e. the amount of information lost when using :math:`\mathbf{x}` to approximate</span>
+<span class="linenos"> 45</span><span class="sd">          :math:`\mathbf{y}`. It is particularly useful in the context of count data with Poisson distribution; the</span>
+<span class="linenos"> 46</span><span class="sd">          KL-divergence then corresponds (up to an additive constant) to the likelihood of :math:`\mathbf{y}` where each</span>
+<span class="linenos"> 47</span><span class="sd">          component is independent with Poisson distribution and respective intensities given by :math:`\mathbf{x}`. See</span>
+<span class="linenos"> 48</span><span class="sd">          [FuncSphere]_ Chapter 7, Section 5 for the computation of its proximal operator.</span>
+<span class="linenos"> 49</span><span class="sd">        * :py:class:`~pyxu.operator.KLDivergence` is not backend-agnostic: inputs to arithmetic methods must have the</span>
+<span class="linenos"> 50</span><span class="sd">          same backend as `data`.</span>
+<span class="linenos"> 51</span><span class="sd">        * If `data` is a DASK array, it&#39;s entries are assumed non-negative de-facto.  Reason: the operator should be</span>
+<span class="linenos"> 52</span><span class="sd">          quick to build under all circumstances, and this is not guaranteed if we have to check that all entries are positive for out-of-core arrays.</span>
+<span class="linenos"> 53</span><span class="sd">        * If `data` is a DASK array, the core-dimensions of arrays supplied to arithmetic methods **must** have the</span>
+<span class="linenos"> 54</span><span class="sd">          same chunk-size as `data`.</span>
+<span class="linenos"> 55</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos"> 56</span>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+<span class="linenos"> 57</span>            <span class="n">dim_shape</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
+<span class="linenos"> 58</span>            <span class="n">codim_shape</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos"> 59</span>        <span class="p">)</span>
 <span class="linenos"> 60</span>
-<span class="linenos"> 61</span><span class="sd">           import numpy as np</span>
-<span class="linenos"> 62</span><span class="sd">           from pyxu.operator import KLDivergence</span>
-<span class="linenos"> 63</span>
-<span class="linenos"> 64</span><span class="sd">           y = np.arange(10)</span>
-<span class="linenos"> 65</span><span class="sd">           loss = KLDivergence(dim=y.size, data=y)</span>
-<span class="linenos"> 66</span><span class="sd">           x = 2 * np.arange(10)</span>
-<span class="linenos"> 67</span><span class="sd">           loss(x)</span>
-<span class="linenos"> 68</span><span class="sd">           # 13.80837687480246</span>
-<span class="linenos"> 69</span><span class="sd">           np.round(loss.prox(x, tau=1))</span>
-<span class="linenos"> 70</span><span class="sd">           # array([ 0.,  2.,  4.,  6.,  8., 10., 12., 14., 16., 18.])</span>
-<span class="linenos"> 71</span>
-<span class="linenos"> 72</span><span class="sd">        Notes</span>
-<span class="linenos"> 73</span><span class="sd">        -----</span>
-<span class="linenos"> 74</span><span class="sd">        In information theory, and in the case where :math:`\mathbf{y}` and :math:`\mathbf{x}`  sum to one  --and hence</span>
-<span class="linenos"> 75</span><span class="sd">        can be interpreted as discrete probability distributions, the KL-divergence can be interpreted as the relative</span>
-<span class="linenos"> 76</span><span class="sd">        entropy of :math:`\mathbf{y}` w.r.t. :math:`\mathbf{x}`, i.e. the amount of information lost when using</span>
-<span class="linenos"> 77</span><span class="sd">        :math:`\mathbf{x}` to approximate :math:`\mathbf{y}`. It is particularly useful in the context of count data</span>
-<span class="linenos"> 78</span><span class="sd">        with Poisson distribution. Indeed, the KL-divergence corresponds –up to an additive constant– to the likelihood</span>
-<span class="linenos"> 79</span><span class="sd">        of the data :math:`\mathbf{y}` where each component is independent with Poisson distribution and respective</span>
-<span class="linenos"> 80</span><span class="sd">        intensities given by the entries of :math:`\mathbf{x}`. See [FuncSphere]_ Section 5 of Chapter 7 for the</span>
-<span class="linenos"> 81</span><span class="sd">        computation of its proximal operator.</span>
-<span class="linenos"> 82</span><span class="sd">        &quot;&quot;&quot;</span>
-<span class="linenos"> 83</span>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
-<span class="linenos"> 84</span>
-<span class="linenos"> 85</span>        <span class="n">xp</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">get_array_module</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="linenos"> 86</span>        <span class="k">assert</span> <span class="n">data</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;`data` must have 1 axis only.&quot;</span>
-<span class="linenos"> 87</span>        <span class="k">assert</span> <span class="n">data</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="n">dim</span><span class="p">,</span> <span class="s2">&quot;`data` must have the same size as the domain dimension.&quot;</span>
-<span class="linenos"> 88</span>        <span class="k">assert</span> <span class="n">xp</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">data</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">&quot;KL Divergence only defined for positive-valued arguments.&quot;</span>
-<span class="linenos"> 89</span>        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span></div>
+<span class="linenos"> 61</span>        <span class="n">ndi</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="linenos"> 62</span>        <span class="k">if</span> <span class="n">ndi</span> <span class="o">!=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">DASK</span><span class="p">:</span>
+<span class="linenos"> 63</span>            <span class="k">assert</span> <span class="p">(</span><span class="n">data</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(),</span> <span class="s2">&quot;KL Divergence only defined for non-negative arguments.&quot;</span>
+<span class="linenos"> 64</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">data</span></div>
 
-<span class="linenos"> 90</span>
-<span class="linenos"> 91</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">)</span>
-<span class="linenos"> 92</span>    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
-<span class="linenos"> 93</span>        <span class="n">xp</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">get_array_module</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
-<span class="linenos"> 94</span>        <span class="k">assert</span> <span class="n">xp</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">arr</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">&quot;KL Divergence only defined for positive-valued arguments.&quot;</span>
-<span class="linenos"> 95</span>        <span class="n">sh</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="linenos"> 96</span>        <span class="n">arr</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
-<span class="linenos"> 97</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">true_divide</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span>
-<span class="linenos"> 98</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
-<span class="linenos"> 99</span>        <span class="n">out</span> <span class="o">*=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
-<span class="linenos">100</span>        <span class="n">out</span> <span class="o">-=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
-<span class="linenos">101</span>        <span class="n">out</span> <span class="o">+=</span> <span class="n">arr</span>
-<span class="linenos">102</span>        <span class="k">return</span> <span class="n">xp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">*</span><span class="n">sh</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="linenos">103</span>
-<span class="linenos">104</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;arr&quot;</span><span class="p">,</span> <span class="s2">&quot;tau&quot;</span><span class="p">))</span>
-<span class="linenos">105</span>    <span class="k">def</span> <span class="nf">prox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">tau</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
-<span class="linenos">106</span>        <span class="n">xp</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">get_array_module</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
-<span class="linenos">107</span>        <span class="n">sh</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="linenos">108</span>        <span class="n">arr</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
-<span class="linenos">109</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">arr</span> <span class="o">-</span> <span class="n">tau</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">tau</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
-<span class="linenos">110</span>        <span class="n">out</span> <span class="o">+=</span> <span class="n">arr</span>
-<span class="linenos">111</span>        <span class="n">out</span> <span class="o">-=</span> <span class="n">tau</span>
-<span class="linenos">112</span>        <span class="n">out</span> <span class="o">/=</span> <span class="mi">2</span>
-<span class="linenos">113</span>        <span class="k">return</span> <span class="n">out</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">*</span><span class="n">sh</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span></div>
+<span class="linenos"> 65</span>
+<span class="linenos"> 66</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">)</span>
+<span class="linenos"> 67</span>    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos"> 68</span>        <span class="n">axis</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_rank</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="linenos"> 69</span>        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kl_div</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span>
+<span class="linenos"> 70</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">out</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+<span class="linenos"> 71</span>        <span class="k">return</span> <span class="n">out</span>
+<span class="linenos"> 72</span>
+<span class="linenos"> 73</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;arr&quot;</span><span class="p">,</span> <span class="s2">&quot;tau&quot;</span><span class="p">))</span>
+<span class="linenos"> 74</span>    <span class="k">def</span> <span class="nf">prox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">tau</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos"> 75</span>        <span class="n">xp</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">get_array_module</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="linenos"> 76</span>        <span class="n">x</span> <span class="o">=</span> <span class="n">arr</span> <span class="o">-</span> <span class="n">tau</span>
+<span class="linenos"> 77</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">xp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="mi">4</span> <span class="o">*</span> <span class="n">tau</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">))</span>
+<span class="linenos"> 78</span>        <span class="n">out</span> <span class="o">*=</span> <span class="mf">0.5</span>
+<span class="linenos"> 79</span>        <span class="k">return</span> <span class="n">out</span>
+<span class="linenos"> 80</span>
+<span class="linenos"> 81</span>    <span class="nd">@staticmethod</span>
+<span class="linenos"> 82</span>    <span class="k">def</span> <span class="nf">_kl_div</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos"> 83</span>        <span class="c1"># Element-wise KL-divergence</span>
+<span class="linenos"> 84</span>        <span class="n">N</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span>  <span class="c1"># short-hand</span>
+<span class="linenos"> 85</span>        <span class="n">ndi</span> <span class="o">=</span> <span class="n">N</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos"> 86</span>
+<span class="linenos"> 87</span>        <span class="k">if</span> <span class="n">ndi</span> <span class="o">==</span> <span class="n">N</span><span class="o">.</span><span class="n">NUMPY</span><span class="p">:</span>
+<span class="linenos"> 88</span>            <span class="n">sp</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s2">&quot;scipy.special&quot;</span><span class="p">)</span>
+<span class="linenos"> 89</span>            <span class="n">out</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">kl_div</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="linenos"> 90</span>        <span class="k">elif</span> <span class="n">ndi</span> <span class="o">==</span> <span class="n">N</span><span class="o">.</span><span class="n">CUPY</span><span class="p">:</span>
+<span class="linenos"> 91</span>            <span class="n">sp</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s2">&quot;cupyx.scipy.special&quot;</span><span class="p">)</span>
+<span class="linenos"> 92</span>            <span class="n">out</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">kl_div</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="linenos"> 93</span>        <span class="k">elif</span> <span class="n">ndi</span> <span class="o">==</span> <span class="n">N</span><span class="o">.</span><span class="n">DASK</span><span class="p">:</span>
+<span class="linenos"> 94</span>            <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">chunks</span><span class="p">[</span><span class="o">-</span><span class="n">data</span><span class="o">.</span><span class="n">ndim</span> <span class="p">:]</span> <span class="o">==</span> <span class="n">data</span><span class="o">.</span><span class="n">chunks</span>
+<span class="linenos"> 95</span>            <span class="n">xp</span> <span class="o">=</span> <span class="n">ndi</span><span class="o">.</span><span class="n">module</span><span class="p">()</span>
+<span class="linenos"> 96</span>
+<span class="linenos"> 97</span>            <span class="n">out</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">map_blocks</span><span class="p">(</span>
+<span class="linenos"> 98</span>                <span class="n">KLDivergence</span><span class="o">.</span><span class="n">_kl_div</span><span class="p">,</span>
+<span class="linenos"> 99</span>                <span class="n">x</span><span class="p">,</span>
+<span class="linenos">100</span>                <span class="n">data</span><span class="p">,</span>
+<span class="linenos">101</span>                <span class="n">dtype</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span>
+<span class="linenos">102</span>                <span class="n">meta</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">_meta</span><span class="p">,</span>
+<span class="linenos">103</span>            <span class="p">)</span>
+<span class="linenos">104</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">105</span>            <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+<span class="linenos">106</span>        <span class="k">return</span> <span class="n">out</span></div>
 
 </pre></div>
 
@@ -624,7 +600,7 @@ document.write(`
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt, Pyxu Developers.
+      © Copyright 2024, S. Kashani, J. Rué-Queralt, M. Simeoni, Pyxu Developers.
       <br/>
     
   </p>
@@ -632,7 +608,7 @@ document.write(`
       
         <div class="footer-item">
   <p class="sphinx-version">
-     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>

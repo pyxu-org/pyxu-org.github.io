@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Operator Algebra Logic &#8212; Pyxu Documentation</title>
   
@@ -37,15 +37,15 @@
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=14df3d68" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../_static/documentation_options.js?v=afeffd13"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/documentation_options.js?v=eb600d8c"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=30646c52"></script>
@@ -53,7 +53,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -177,13 +177,6 @@
                       </a>
                     </li>
                 
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../fair/index.html">
-                        Extending Pyxu
-                      </a>
-                    </li>
-                
   </ul>
 </nav></div>
       
@@ -204,7 +197,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -217,7 +210,7 @@ document.write(`
           
           
           
-          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+          <a href="https://github.com/pyxu-org/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -330,13 +323,6 @@ document.write(`
                       </a>
                     </li>
                 
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../fair/index.html">
-                        Extending Pyxu
-                      </a>
-                    </li>
-                
   </ul>
 </nav></div>
         
@@ -346,7 +332,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -359,7 +345,7 @@ document.write(`
           
           
           
-          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+          <a href="https://github.com/pyxu-org/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -482,7 +468,6 @@ document.write(`
 <p>In Pyxu, you can use a variety of arithmetic operations to combine basic operators into more complex ones. Here are some simple but powerful commands you can use:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>op1 + op2       # Addition of two operators
 op1 * op2       # Composition of two operators
-op ** 3         # Exponentiation of an operator
 op.argscale(c)  # Dilation by a scalar &#39;c&#39;
 op.argshift(x)  # Shifting by a vector &#39;x&#39;
 4 * op          # Scaling by a scalar
@@ -493,7 +478,7 @@ op.T            # Transposing
 <h3>How Does it Work? 🛠️<a class="headerlink" href="#How-Does-it-Work?-🛠️" title="Link to this heading">#</a></h3>
 <p>Every time you perform an arithmetic operation, Pyxu automatically infers the output type based on the properties of the operators involved in the operation. This type inference is super convenient because it saves you from manual calculations!</p>
 <p>For example, Pyxu takes care of updating as needed methods like <code class="docutils literal notranslate"><span class="pre">apply()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Map.apply">🔗</a>, <code class="docutils literal notranslate"><span class="pre">jacobian()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.DiffMap.jacobian">🔗</a>, <code class="docutils literal notranslate"><span class="pre">grad()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.DiffFunc.grad">🔗</a>, <code class="docutils literal notranslate"><span class="pre">prox()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.ProxFunc.prox">🔗</a>, and <code class="docutils literal notranslate"><span class="pre">adjoint()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.LinOp.adjoint">🔗</a> according to arithmetic rules. This means you can plug these composite operators directly into proximal gradient algorithms
-without havng to implement manually gradients or proximal steps yourself.</p>
+without having to implement manually gradients or proximal steps yourself.</p>
 </section>
 </section>
 <section id="Behind-the-Scenes:-Arithmetic-Rules">
@@ -506,7 +491,6 @@ without havng to implement manually gradients or proximal steps yourself.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">ArgShiftRule</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.arithmetic.ArgShiftRule">🔗</a>: Takes care of shifting operator parameters.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">AddRule</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.arithmetic.AddRule">🔗</a>: Manages the addition of two operators.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ChainRule</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.arithmetic.ChainRule">🔗</a>: Deals with the composition of two operators.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PowerRule</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.arithmetic.PowerRule">🔗</a>: Handles operator exponentiation..</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">TransposeRule</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.arithmetic.TransposeRule">🔗</a>: Takes care of transposing a linear operator.</p></li>
 </ul>
 <p>Rules are described in detail in the docstrings of the classes above. As an example, consider the composition of a <code class="docutils literal notranslate"><span class="pre">DiffFunc</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.DiffFunc">🔗</a> <code class="docutils literal notranslate"><span class="pre">f</span></code> with a <code class="docutils literal notranslate"><span class="pre">DiffMap</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.DiffMap">🔗</a> <code class="docutils literal notranslate"><span class="pre">L</span></code>. Then their composition <code class="docutils literal notranslate"><span class="pre">h</span> <span class="pre">=</span> <span class="pre">f</span> <span class="pre">*</span> <span class="pre">L</span></code> is also a <code class="docutils literal notranslate"><span class="pre">DiffFunc</span></code>, with gradient given by:</p>
@@ -516,51 +500,21 @@ without havng to implement manually gradients or proximal steps yourself.</p>
 </section>
 <section id="Building-Block-Operators">
 <h2>Building Block-Operators<a class="headerlink" href="#Building-Block-Operators" title="Link to this heading">#</a></h2>
-<p>You can even define block-operators using <code class="docutils literal notranslate"><span class="pre">coo_block</span></code><a class="reference external" href="../api/operator/blocks.html#pyxu.operator.coo_block">🔗</a>. Alternatively, higher-level functions like <code class="docutils literal notranslate"><span class="pre">block</span></code><a class="reference external" href="../api/operator/blocks.html#pyxu.operator.block">🔗</a>, <code class="docutils literal notranslate"><span class="pre">block_diag</span></code><a class="reference external" href="../api/operator/blocks.html#pyxu.operator.block_diag">🔗</a>, <code class="docutils literal notranslate"><span class="pre">stack</span></code><a class="reference external" href="../api/operator/blocks.html#pyxu.operator.stack">🔗</a>, <code class="docutils literal notranslate"><span class="pre">vstack</span></code><a class="reference external" href="../api/operator/blocks.html#pyxu.operator.vstack">🔗</a>, and
-<code class="docutils literal notranslate"><span class="pre">hstack</span></code><a class="reference external" href="../api/operator/blocks.html#pyxu.operator.hstack">🔗</a> can also be used.</p>
-<p>For example, the code below:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>coo_block(
-    ([A(500,1000), B(1,1000), C(500,500), D(1,3)],  # data
-     [
-      [0, 1, 0, 2],  # i
-      [0, 0, 2, 1],  # j
-     ]),
-    grid_shape=(3, 3),
-)
+<p>Block-operators, created using high-level functions like <code class="docutils literal notranslate"><span class="pre">block_diag</span></code><a class="reference external" href="../api/operator/blocks.html#pyxu.operator.block_diag">🔗</a> and <code class="docutils literal notranslate"><span class="pre">stack</span></code><a class="reference external" href="../api/operator/blocks.html#pyxu.operator.stack">🔗</a>, are powerful tools in Pyxu for constructing complex operators from simpler components. They allow for flexible and efficient manipulation of operator structures.</p>
+<p>For instance, consider the following example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import pyxu.operator as pxo
+
+# Define a Sum operator with dimension shape and codimension shape
+op = pxo.Sum(dim_shape=(3, 4), axis=-1)  # (3,4)      -&gt;   (3,1)
+
+# Stack two instances of &#39;op&#39;, one being scaled by 2
+A = pxo.stack([op, 2*op])                # (3,4)      -&gt;   (2,3,1)
+
+# Create a block diagonal operator using &#39;op&#39; and &#39;2*op&#39;
+B = pxo.block_diag([op, 2*op])           # (2,3,4)    -&gt;   (2,3,1)
 </pre></div>
 </div>
-<p>results in a block sparse composite operator of the form:</p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>coarse_idx</p></th>
-<th class="head"><p>0</p></th>
-<th class="head"><p>1</p></th>
-<th class="head"><p>2</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>0</p></td>
-<td><p>A(500, 1000)</p></td>
-<td></td>
-<td><p>C(500, 500)</p></td>
-</tr>
-<tr class="row-odd"><td><p>1</p></td>
-<td><p>B(1, 1000)</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>2</p></td>
-<td></td>
-<td><p>D(1, 3)</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>Similarly, a functional <span class="math notranslate nohighlight">\(h(x) = \sum_{i=1}^{3} f_i(K_ix)\)</span>, can be constructed as follows:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>f = hstack([f_1, f_2, f_3]) * vstack([K_1, K_2, K_3])
-</pre></div>
-</div>
-<p>Again, Pyxu takes care of all the heavy lifting by automatically inferring the output type and arithmetic methods of the block-operator from its building blocks.</p>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> are two distinct block sparse operators. <code class="docutils literal notranslate"><span class="pre">A</span></code> is a stacked operator combining <code class="docutils literal notranslate"><span class="pre">op</span></code> and <code class="docutils literal notranslate"><span class="pre">2*op</span></code>, while <code class="docutils literal notranslate"><span class="pre">B</span></code> forms a block diagonal operator with the same components. Pyxu simplifies the creation of such complex operators by automatically inferring the output type and arithmetic methods from its building blocks, enabling efficient and expressive operator design.</p>
 </section>
 </section>
 
@@ -626,7 +580,7 @@ without havng to implement manually gradients or proximal steps yourself.</p>
   <div class="sidebar-secondary-item">
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/matthieumeo/pyxu/edit/main/doc/guide/algebra.ipynb">
+    <a href="https://github.com/pyxu-org/pyxu/edit/main/doc/guide/algebra.ipynb">
       <i class="fa-solid fa-pencil"></i>
       
       
@@ -670,7 +624,7 @@ without havng to implement manually gradients or proximal steps yourself.</p>
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt, Pyxu Developers.
+      © Copyright 2024, S. Kashani, J. Rué-Queralt, M. Simeoni, Pyxu Developers.
       <br/>
     
   </p>
@@ -678,7 +632,7 @@ without havng to implement manually gradients or proximal steps yourself.</p>
       
         <div class="footer-item">
   <p class="sphinx-version">
-     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>

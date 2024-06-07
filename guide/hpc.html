@@ -4,7 +4,7 @@
 <html data-theme="light" lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>High Performance Computing Features — Pyxu Documentation</title>
 <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
@@ -27,14 +27,14 @@
 <link href="../_static/sg_gallery-binder.css?v=f4aeca0c" rel="stylesheet" type="text/css"/>
 <link href="../_static/sg_gallery-dataframe.css?v=2082cf3c" rel="stylesheet" type="text/css"/>
 <link href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" rel="stylesheet" type="text/css"/>
-<link href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-design.min.css?v=87e54e7c" rel="stylesheet" type="text/css"/>
 <link href="../_static/nbsphinx-code-cells.css" rel="stylesheet" type="text/css"/>
-<link href="../_static/css/custom.css?v=14df3d68" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../_static/documentation_options.js?v=afeffd13"></script>
-<script src="../_static/doctools.js?v=888ff710"></script>
+<script src="../_static/documentation_options.js?v=eb600d8c"></script>
+<script src="../_static/doctools.js?v=9a2dae69"></script>
 <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
 <script src="../_static/copybutton.js?v=30646c52"></script>
@@ -42,7 +42,7 @@
 <script>let toggleHintHide = 'Click to hide';</script>
 <script>let toggleOpenOnPrint = 'true';</script>
 <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
-<script src="../_static/design-tabs.js?v=36754332"></script>
+<script src="../_static/design-tabs.js?v=f930bc37"></script>
 <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
 <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
 <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -111,11 +111,6 @@
                         API Reference
                       </a>
 </li>
-<li class="nav-item">
-<a class="nav-link nav-internal" href="../fair/index.html">
-                        Extending Pyxu
-                      </a>
-</li>
 </ul>
 </nav></div>
 </div>
@@ -129,10 +124,10 @@ document.write(`
 `);
 </script>
 </div>
-<div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
+<div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
-<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/pyxu-org/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
 <label class="sr-only">GitHub</label></a>
 </li>
 <li class="nav-item">
@@ -193,19 +188,14 @@ document.write(`
                         API Reference
                       </a>
 </li>
-<li class="nav-item">
-<a class="nav-link nav-internal" href="../fair/index.html">
-                        Extending Pyxu
-                      </a>
-</li>
 </ul>
 </nav></div>
 </div>
 <div class="sidebar-header-items__end">
-<div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
+<div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
-<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/pyxu-org/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
 <label class="sr-only">GitHub</label></a>
 </li>
 <li class="nav-item">
@@ -314,7 +304,7 @@ the lack of modularity becomes a bottleneck.</p>
 </section>
 <section id="Vectorization-&amp;-Just-in-Time-Operations">
 <h3>Vectorization &amp; Just-in-Time Operations<a class="headerlink" href="#Vectorization-&amp;-Just-in-Time-Operations" title="Link to this heading">#</a></h3>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Array_programming">Vectorization</a> denotes the parallel processing of multiple data elements rather than iterating over them. It’s a strategy to exploit data-level parallelism in lieu of task-level parallelism, a.k.a <code class="docutils literal notranslate"><span class="pre">SIMD</span> <span class="pre">&lt;https://en.wikipedia.org/wiki/Single_instruction,_multiple_data&gt;</span></code>_. Pyxu’s operators are intrinsically vectorized, meaning they are optimized to process stacks of inputs in parallel. This design strategy significantly enhances efficiency
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Array_programming">Vectorization</a> denotes the parallel processing of multiple data elements rather than iterating over them. It’s a strategy to exploit data-level parallelism in lieu of task-level parallelism, a.k.a <a class="reference external" href="https://en.wikipedia.org/wiki/Single_instruction,_multiple_data%3E">SIMD</a>. Pyxu’s operators are intrinsically vectorized, meaning they are optimized to process stacks of inputs in parallel. This design strategy significantly enhances efficiency
 for tasks involving data batches, as frequently seen in imaging.</p>
 <p>Similarly, compute-intensive Pyxu operators leverage <a class="reference external" href="https://numba.pydata.org/">Numba</a> to Just-in-Time (JIT) compile their codes, side-stepping the Python interpreter entirely. This methodology yields near-native performance, making Python as performant as statically-typed languages for computational imaging tasks.</p>
 </section>
@@ -338,7 +328,7 @@ with pxrt.Precision(pxrt.Width.SINGLE):
 <h2>Hands-on Example:<a class="headerlink" href="#Hands-on-Example:" title="Link to this heading">#</a></h2>
 <p>As an example, consider the following code snippet, defining the median operator:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyxu.abc</span> <span class="k">as</span> <span class="nn">pxa</span>
@@ -346,22 +336,24 @@ with pxrt.Precision(pxrt.Width.SINGLE):
 <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/runtime.html#module-pyxu.runtime" title="pyxu.runtime"><span class="nn">pyxu.runtime</span></a> <span class="k">as</span> <span class="nn">pxrt</span>
 
 <span class="k">class</span> <span class="nc">Median</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.Func" title="pyxu.abc.operator.Func"><span class="n">pxa</span><span class="o">.</span><span class="n">Func</span></a><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
-        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">(</span><span class="n">Median</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim_shape</span><span class="p">):</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">(</span><span class="n">Median</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">,</span> <span class="n">codim_shape</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="c1"># Enforce input/output precision.</span>
     <a class="sphinx-codeautolink-a" href="../api/runtime.html#pyxu.runtime.enforce_precision" title="pyxu.runtime.enforce_precision"><span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span></a><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">"arr"</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
         <span class="n">xp</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/util.html#pyxu.util.get_array_module" title="pyxu.util.get_array_module"><span class="n">pxu</span><span class="o">.</span><span class="n">get_array_module</span></a><span class="p">(</span><span class="n">arr</span><span class="p">)</span>   <span class="c1"># Find the array module.</span>
+        <span class="c1"># Calculate over the last dimensions to support batching dimensions.</span>
+        <span class="n">axis</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="tuple"><span class="nb">tuple</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#range" title="range"><span class="nb">range</span></a><span class="p">(</span><span class="o">-</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#len" title="len"><span class="nb">len</span></a><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">),</span> <span class="mi">0</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">xp</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span>            <span class="c1"># Dispatch the median call to the right backend.</span>
-                         <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>        <span class="c1"># Allow for batch dimensions.</span>
+                         <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>        <span class="c1"># Allow for batch dimensions.</span>
                          <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <p>This operator can then be fed various arrays as inputs:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#module-time" title="time"><span class="nn">time</span></a> <span class="k">as</span> <span class="nn">t</span>
@@ -369,12 +361,12 @@ with pxrt.Precision(pxrt.Width.SINGLE):
 <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/info.deps.html#module-pyxu.info.deps" title="pyxu.info.deps"><span class="nn">pyxu.info.deps</span></a> <span class="k">as</span> <span class="nn">pxd</span>
 
 <span class="n">timings</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#dict" title="dict"><span class="nb">dict</span></a><span class="p">()</span>
-<span class="n">dim</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">m</span> <span class="o">=</span> <span class="n">Median</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span>
+<span class="n">dim_shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">)</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">Median</span><span class="p">(</span><span class="n">dim_shape</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">xp</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="../api/info.deps.html#pyxu.info.deps.supported_array_modules" title="pyxu.info.deps.supported_array_modules"><span class="n">pxd</span><span class="o">.</span><span class="n">supported_array_modules</span></a><span class="p">():</span>  <span class="c1"># Loops over supported array backends</span>
     <span class="c1"># Apply the operator in turn on a various array types.</span>
     <span class="n">rng</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
-    <span class="n">arr</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">dim</span><span class="p">,))</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">)</span>
     <span class="n">out</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
     <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#type" title="type"><span class="nb">type</span></a><span class="p">(</span><span class="n">out</span><span class="p">),</span> <span class="n">out</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/util.html#pyxu.util.compute" title="pyxu.util.compute"><span class="n">pxu</span><span class="o">.</span><span class="n">compute</span></a><span class="p">(</span><span class="n">out</span><span class="p">))</span>  <span class="c1"># we use compute() to evaluate Dask arrays.</span>
 </pre></div>
@@ -385,20 +377,20 @@ with pxrt.Precision(pxrt.Width.SINGLE):
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;class 'cupy.ndarray'&gt; float64 [0.15318864]
-&lt;class 'dask.array.core.Array'&gt; float64 [1.44176931]
-&lt;class 'numpy.ndarray'&gt; float64 [-0.28534482]
+&lt;class 'cupy.ndarray'&gt; float64 [0.76218535]
+&lt;class 'numpy.ndarray'&gt; float64 [0.4494688]
+&lt;class 'dask.array.core.Array'&gt; float64 [-0.02792517]
 </pre></div></div>
 </div>
 <p>If called from within the <code class="docutils literal notranslate"><span class="pre">Precision</span></code><a class="reference external" href="../api/runtime.html#pyxu.runtime.Precision">🔗</a> context manager, the decorated <code class="docutils literal notranslate"><span class="pre">apply()</span></code> method will automatically coerce the input/output to the user-specified precision:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
 <span class="k">with</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">Precision</span><span class="p">(</span><span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="o">.</span><span class="n">SINGLE</span><span class="p">):</span>
     <span class="c1"># Single precision is used for the computation</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">26</span><span class="o">*</span><span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">26</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">dim_shape</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="o">*</span><span class="n">dim_shape</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -407,17 +399,17 @@ with pxrt.Precision(pxrt.Width.SINGLE):
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-61.1 µs ± 298 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+43.4 µs ± 1.23 µs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
 <span class="k">with</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">Precision</span><span class="p">(</span><span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="o">.</span><span class="n">DOUBLE</span><span class="p">):</span>
     <span class="c1"># Double precision is used for the computation</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">26</span><span class="o">*</span><span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">26</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">dim_shape</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="o">*</span><span class="n">dim_shape</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -426,17 +418,17 @@ with pxrt.Precision(pxrt.Width.SINGLE):
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-61.5 µs ± 266 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+46.1 µs ± 2.52 µs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div></div>
 </div>
-<p>The support for Dask array inputs also allows to trivially parallelize computations. Consider for example the hierarchical median operator below:</p>
+<p>The support for Dask array inputs also allows to trivially parallelize computations. Consider for example the hierarchical median operator below (in 1D for simplification):</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">HierarchicalMedian</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.Func" title="pyxu.abc.operator.Func"><span class="n">pxa</span><span class="o">.</span><span class="n">Func</span></a><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
-        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim_shape</span><span class="p">):</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">,</span> <span class="n">codim_shape</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
         <span class="n">xp</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/util.html#pyxu.util.get_array_module" title="pyxu.util.get_array_module"><span class="n">pxu</span><span class="o">.</span><span class="n">get_array_module</span></a><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
@@ -455,7 +447,7 @@ with pxrt.Precision(pxrt.Width.SINGLE):
 </div>
 <p>There is obviously huge opportunity for parallelism, as shown by the underlying Dask compute graph:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dask.array</span> <span class="k">as</span> <span class="nn">da</span>
@@ -467,7 +459,7 @@ with pxrt.Precision(pxrt.Width.SINGLE):
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -476,7 +468,7 @@ with pxrt.Precision(pxrt.Width.SINGLE):
 </div>
 <p>Feeding the operator with Dask arrays will automatically distribute the computation for us (note that in this case this does not provide any speed up):</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">timings</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#dict" title="dict"><span class="nb">dict</span></a><span class="p">()</span>
@@ -493,7 +485,7 @@ with pxrt.Precision(pxrt.Width.SINGLE):
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-{'cupy': 0.8727676868438721, 'dask.array': 0.014710187911987305, 'numpy': 0.00039696693420410156}
+{'cupy': 0.025810718536376953, 'numpy': 0.0003535747528076172, 'dask.array': 0.012542724609375}
 </pre></div></div>
 </div>
 <p>This is very convenient for the developer, who can focus on the functionality and defer parallelism concerns to Dask.</p>
@@ -556,7 +548,7 @@ with pxrt.Precision(pxrt.Width.SINGLE):
 <div id="searchbox"></div></div>
 <div class="sidebar-secondary-item">
 <div class="tocsection editthispage">
-<a href="https://github.com/matthieumeo/pyxu/edit/main/doc/guide/hpc.ipynb">
+<a href="https://github.com/pyxu-org/pyxu/edit/main/doc/guide/hpc.ipynb">
 <i class="fa-solid fa-pencil"></i>
       
       
@@ -590,13 +582,13 @@ with pxrt.Precision(pxrt.Width.SINGLE):
 <div class="footer-item">
 <p class="copyright">
     
-      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt, Pyxu Developers.
+      © Copyright 2024, S. Kashani, J. Rué-Queralt, M. Simeoni, Pyxu Developers.
       <br/>
 </p>
 </div>
 <div class="footer-item">
 <p class="sphinx-version">
-     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
 </p>
 </div>

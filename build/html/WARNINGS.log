@@ -1,0 +1,320 @@
+WARNING: html_static_path entry '_static' is placed inside outdir
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/plugins_preview/index.rst:1118: WARNING: toctree contains reference to nonexisting document 'fair/plugins_preview/TokemakRec'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.jacobian'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc.grad'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc.prox'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.adjoint'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:38: WARNING: File not found: 'api/abc.html#pyxu-abc-arithmetic'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:40: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.Rule'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:41: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.ScaleRule'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:42: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.ArgScaleRule'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:43: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.ArgShiftRule'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:44: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.AddRule'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:45: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.ChainRule'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:46: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.TransposeRule'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:48: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:48: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:57: WARNING: File not found: 'api/operator/blocks.html#pyxu.operator.block_diag'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:57: WARNING: File not found: 'api/operator/blocks.html#pyxu.operator.stack'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:284: WARNING: File not found: 'api/abc.html#pyxu.abc.Operator.expr'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:451: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.pinv'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:451: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:666: WARNING: File not found: 'api/operator/linop.html#pyxu.operator.Gradient'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:668: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc.moreau_envelope'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:677: WARNING: File not found: 'api/operator/func.html#pyxu.operator.PositiveL1Norm'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:686: WARNING: File not found: 'api/operator/func.html#pyxu.operator.SquaredL2Norm'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:687: WARNING: File not found: 'api/abc.html#pyxu.abc.Func.asloss'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:699: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.estimate_diff_lipschitz'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:914: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxDiffFunc'
+WARNING: missing attribute to_sciop in object pyxu.abc.LinOp
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.asarray:8: WARNING: Inline emphasis start-string without end-string.
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.asarray:8: WARNING: Inline emphasis start-string without end-string.
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.from_array:3: WARNING: Inline emphasis start-string without end-string.
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.from_array:3: WARNING: Inline emphasis start-string without end-string.
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/experimental/sampler/_sampler.py:docstring of pyxu.experimental.sampler._sampler.ULA:106: WARNING: Exception occurred in plotting sampler-1
+ from /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/experimental/sampler.rst:
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/matplotlib/sphinxext/plot_directive.py", line 552, in _run_code
+    exec(code, ns)
+  File "<string>", line 7, in <module>
+TypeError: SquaredL2Norm.__init__() got an unexpected keyword argument 'dim'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algorithms.ipynb:17: WARNING: Title underline too short.
+
+Conjugate Gradient (CG) `🔗 <../api/opt.solver.html#pyxu.opt.solver.CG>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algorithms.ipynb:29: WARNING: Title underline too short.
+
+(Accelerated) Proximal Gradient Descent (PGD) `🔗 <../api/opt.solver.html#pyxu.opt.solver.PGD>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algorithms.ipynb:29: WARNING: Title underline too short.
+
+(Accelerated) Proximal Gradient Descent (PGD) `🔗 <../api/opt.solver.html#pyxu.opt.solver.PGD>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algorithms.ipynb:17: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.CG'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algorithms.ipynb:29: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.PGD'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algorithms.ipynb:58: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.CondatVu'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algorithms.ipynb:58: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.PD3O'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algorithms.ipynb:58: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.ADMM'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algorithms.ipynb:58: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.ChambollePock'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algorithms.ipynb:97: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.DouglasRachford'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algorithms.ipynb:99: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.Adam'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algorithms.ipynb:151: WARNING: File not found: 'api/opt.stop.html'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algorithms.ipynb:168: WARNING: File not found: 'api/abc.html#pyxu.abc.Solver'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algorithms.ipynb:168: WARNING: File not found: 'api/abc.html#pyxu.abc.Solver.m_init'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algorithms.ipynb:168: WARNING: File not found: 'api/abc.html#pyxu.abc.Solver.m_step'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algorithms.ipynb:172: WARNING: File not found: 'api/abc.html#pyxu.abc.Solver.fit'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/bayes.ipynb:47: WARNING: File not found: 'guide/fwdops.html'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/bayes.ipynb:62: WARNING: File not found: 'guide/funcs.html'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/bayes.ipynb:92: WARNING: File not found: 'guide/funcs.html'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/diff_ops.ipynb:11: WARNING: File not found: 'api/operator/linop.html#derivatives'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/diff_ops.ipynb:18: WARNING: File not found: 'api/operator/linop.html#pyxu.operator.PartialDerivative'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/diff_ops.ipynb:501: WARNING: File not found: 'api/operator/linop.html#pyxu.operator.Gradient'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/diff_ops.ipynb:511: WARNING: File not found: 'api/operator/linop.html#pyxu.operator.Hessian'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:32: WARNING: Title underline too short.
+
+``Func``: The Foundation Stone 🧱
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:64: WARNING: Title underline too short.
+
+``DiffFunc``: Differentiable Functionals 🎯
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:64: WARNING: Title underline too short.
+
+``DiffFunc``: Differentiable Functionals 🎯
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:117: WARNING: Title underline too short.
+
+Demystifying the Proximal Operator 🎭
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:117: WARNING: Title underline too short.
+
+Demystifying the Proximal Operator 🎭
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:135: WARNING: Title underline too short.
+
+Specialized Classes: ``ProxDiffFunc``, ``LinFunc``, ``QuadraticFunc`` 🎨
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:135: WARNING: Title underline too short.
+
+Specialized Classes: ``ProxDiffFunc``, ``LinFunc``, ``QuadraticFunc`` 🎨
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:176: WARNING: Title underline too short.
+
+Practical Example: Deblurring through Least-Squares 🌠
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:189: WARNING: Title underline too short.
+
+The Benefit: Automatic Propagation 🚀
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:189: WARNING: Title underline too short.
+
+The Benefit: Automatic Propagation 🚀
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:194: WARNING: Title underline too short.
+
+The Takeaway: Flexibility and Power 🌈
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:194: WARNING: Title underline too short.
+
+The Takeaway: Flexibility and Power 🌈
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:27: WARNING: File not found: 'api/operator.interop.html#pyxu.operator.interop.from_source'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:27: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:27: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc.grad'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:27: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc.prox'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:29: WARNING: File not found: 'api/index.html'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:34: WARNING: File not found: 'api/abc.html#pyxu.abc.Func'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:34: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:53: WARNING: File not found: 'api/abc.html#pyxu.abc.Operator.argshift'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:66: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:66: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc.grad'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:85: WARNING: File not found: 'api/operator.interop.html#pyxu.operator.interop.from_torch'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:85: WARNING: File not found: 'api/operator.interop.html#pyxu.operator.interop.from_jax'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:90: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:90: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc.prox'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:110: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc.moreau_envelope'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:137: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxDiffFunc'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:137: WARNING: File not found: 'api/abc.html#pyxu.abc.LinFunc'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/funcs.ipynb:137: WARNING: File not found: 'api/abc.html#pyxu.abc.QuadraticFunc'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:142: WARNING: Title underline too short.
+
+A Nod to Deep Learning 🚀
+~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:142: WARNING: Title underline too short.
+
+A Nod to Deep Learning 🚀
+~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:11: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:17: WARNING: File not found: 'api/operator.interop.html#general'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:17: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:17: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.adjoint'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:17: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.jacobian'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:19: WARNING: File not found: 'api/index.html'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:46: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:46: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:46: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.adjoint'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:55: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:66: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.adjoint'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:100: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:102: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.lipschitz'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:102: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.estimate_lipschitz'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:108: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.svdvals'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:110: WARNING: File not found: 'api/abc.html#pyxu.abc.SquareOp.trace'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:112: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.pinv'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:118: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:118: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.from_array'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:124: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:129: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:134: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:134: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:136: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.jacobian'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:146: WARNING: File not found: 'api/operator.interop.html#pyxu.operator.interop.from_torch'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:146: WARNING: File not found: 'api/operator.interop.html#pyxu.operator.interop.from_jax'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:148: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:153: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/fwdops.ipynb:153: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/hpc.ipynb:214: WARNING: File not found: 'api/runtime.html#pyxu.runtime.Precision'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/lipschitz.ipynb:81: WARNING: Title underline too short.
+
+Hands-On Example 🎓
+~~~~~~~~~~~~~~~~~~
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/lipschitz.ipynb:81: WARNING: Title underline too short.
+
+Hands-On Example 🎓
+~~~~~~~~~~~~~~~~~~
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/lipschitz.ipynb:30: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.lipschitz'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/lipschitz.ipynb:30: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.diff_lipschitz'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/lipschitz.ipynb:40: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.estimate_lipschitz'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/lipschitz.ipynb:51: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/lipschitz.ipynb:285: WARNING: File not found: 'api/index.html'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/lipschitz.ipynb:285: WARNING: File not found: 'api/abc/arithmetic.html'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/index.rst:620: WARNING: toctree contains reference to nonexisting document 'fair/index'
+WARNING: missing attribute relative_indices in object pyxu.operator.Stencil
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Divergence:77: WARNING: Exception occurred in plotting linop-12
+ from /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/matplotlib/sphinxext/plot_directive.py", line 552, in _run_code
+    exec(code, ns)
+  File "<string>", line 14, in <module>
+  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/abc/operator.py", line 337, in __mul__
+    return arithmetic.ChainRule(lhs=self, rhs=other).op()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/abc/arithmetic.py", line 1015, in __init__
+    assert lhs.dim_shape == rhs.codim_shape, "Operator dimensions are not compatible."
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Operator dimensions are not compatible.
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.DirectionalDerivative:105: WARNING: Exception occurred in plotting linop-15
+ from /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/matplotlib/sphinxext/plot_directive.py", line 552, in _run_code
+    exec(code, ns)
+  File "<string>", line 12, in <module>
+  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py", line 2136, in DirectionalDerivative
+    op = sop * dop * diff
+         ~~~~^~~~~
+  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/abc/operator.py", line 337, in __mul__
+    return arithmetic.ChainRule(lhs=self, rhs=other).op()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/abc/arithmetic.py", line 1015, in __init__
+    assert lhs.dim_shape == rhs.codim_shape, "Operator dimensions are not compatible."
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Operator dimensions are not compatible.
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.DirectionalGradient:60: WARNING: Exception occurred in plotting linop-16
+ from /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/matplotlib/sphinxext/plot_directive.py", line 552, in _run_code
+    exec(code, ns)
+  File "<string>", line 16, in <module>
+  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py", line 2302, in DirectionalGradient
+    op = sop * dop * grad
+         ~~~~^~~~~
+  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/abc/operator.py", line 337, in __mul__
+    return arithmetic.ChainRule(lhs=self, rhs=other).op()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/abc/arithmetic.py", line 1015, in __init__
+    assert lhs.dim_shape == rhs.codim_shape, "Operator dimensions are not compatible."
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Operator dimensions are not compatible.
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.DirectionalLaplacian:60: WARNING: Exception occurred in plotting linop-17
+ from /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/matplotlib/sphinxext/plot_directive.py", line 552, in _run_code
+    exec(code, ns)
+  File "<string>", line 16, in <module>
+  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py", line 2483, in DirectionalLaplacian
+    op = sop * dop * hess
+         ~~~~^~~~~
+  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/abc/operator.py", line 337, in __mul__
+    return arithmetic.ChainRule(lhs=self, rhs=other).op()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/abc/arithmetic.py", line 1015, in __init__
+    assert lhs.dim_shape == rhs.codim_shape, "Operator dimensions are not compatible."
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Operator dimensions are not compatible.
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.DirectionalHessian:69: WARNING: Exception occurred in plotting linop-18
+ from /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/matplotlib/sphinxext/plot_directive.py", line 552, in _run_code
+    exec(code, ns)
+  File "<string>", line 16, in <module>
+  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py", line 2678, in DirectionalHessian
+    op = sop * dop * hess
+         ~~~~^~~~~
+  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/abc/operator.py", line 337, in __mul__
+    return arithmetic.ChainRule(lhs=self, rhs=other).op()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/abc/arithmetic.py", line 1015, in __init__
+    assert lhs.dim_shape == rhs.codim_shape, "Operator dimensions are not compatible."
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Operator dimensions are not compatible.
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/ufunc.py:docstring of pyxu.operator.ufunc.Gaussian:1: WARNING: duplicate object description of pyxu.operator.Gaussian, other instance in api/operator/linop, use :no-index: for one of them
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ADMM:152: WARNING: Exception occurred in plotting opt-solver-3
+ from /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/opt.solver.rst:
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/matplotlib/sphinxext/plot_directive.py", line 552, in _run_code
+    exec(code, ns)
+  File "<string>", line 29, in <module>
+TypeError: SquaredL2Norm.__init__() got an unexpected keyword argument 'dim'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/contributing.ipynb:42: WARNING: invalid syntax (<unknown>, line 5) in document 'examples/contributing'
+Parsed source in `python` block:
+concatenations: try:
+    from pyxu.opt.solver import GradientDescent
+except ImportError as e:
+    print(e)
+block source:   !pip install pyxu-gradient-descent
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/deblur.ipynb:278: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.PD3O'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/xray.ipynb:11: WARNING: File not found: 'intro/tomo.html'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/contributing.ipynb: WARNING: document isn't included in any toctree
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/deblur.ipynb: WARNING: document isn't included in any toctree
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/stencils.ipynb: WARNING: document isn't included in any toctree
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/xray.ipynb: WARNING: document isn't included in any toctree
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/plugins/index.rst: WARNING: document isn't included in any toctree
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/plugins_preview/TokamakRec.rst: WARNING: document isn't included in any toctree
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/plugins_preview/index.rst: WARNING: document isn't included in any toctree
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/references.rst:5: WARNING: Citation [ProxAlg] is not referenced.
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/references.rst:6: WARNING: Citation [FirstOrd] is not referenced.
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/references.rst:7: WARNING: Citation [OnKerLearn] is not referenced.
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/references.rst:8: WARNING: Citation [ProxSplit] is not referenced.
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/references.rst:19: WARNING: Citation [P2] is not referenced.
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/references.rst:20: WARNING: Citation [GaussProcesses] is not referenced.
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/references.rst:21: WARNING: Citation [SubGauss] is not referenced.
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/references.rst:22: WARNING: Citation [FINUFFT] is not referenced.
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/references.rst:23: WARNING: Citation [cuFINUFFT] is not referenced.
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/references.rst:25: WARNING: Citation [PoCS_Dykstra] is not referenced.
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/references.rst:29: WARNING: Citation [UQ_MCMC] is not referenced.
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/interop/jax.py:docstring of pyxu.operator.interop.jax._from_jax:: WARNING: py:class reference target not found: pyxu.operator.interop.jax.JaxArray
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/interop/jax.py:docstring of pyxu.operator.interop.jax._to_jax:: WARNING: py:class reference target not found: pyxu.operator.interop.jax.JaxArray
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/linop/pad.py:docstring of pyxu.operator.linop.pad.Pad.__init__:10: WARNING: py:class reference target not found: pyxu.operator.linop.pad.Pad.WidthSpec
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/linop/fft/czt.py:docstring of pyxu.operator.linop.fft.czt.CZT.__init__:6: WARNING: py:class reference target not found: list(int)
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/linop/fft/czt.py:docstring of pyxu.operator.linop.fft.czt.CZT.__init__:8: WARNING: py:class reference target not found: list(complex)
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/linop/fft/czt.py:docstring of pyxu.operator.linop.fft.czt.CZT.__init__:10: WARNING: py:class reference target not found: list(complex)
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.MovingAverage:30: WARNING: py:class reference target not found: pyxu.operator.linop.filter.IndexSpec
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.MovingAverage:76: WARNING: py:class reference target not found: pyxu.operator.GaussianFilter
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: (Integer
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: Integer)
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: ((Integer
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: Integer)
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: (Integer
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: Integer))
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/contributing.ipynb:42: WARNING: Lexing literal_block '!pip install pyxu-gradient-descent' as "python" resulted in an error at token: '!'. Retrying in relaxed mode.

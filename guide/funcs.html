@@ -4,7 +4,7 @@
 <html data-theme="light" lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Loss &amp; Regularization Functionals — Pyxu Documentation</title>
 <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
@@ -27,13 +27,13 @@
 <link href="../_static/sg_gallery-binder.css?v=f4aeca0c" rel="stylesheet" type="text/css"/>
 <link href="../_static/sg_gallery-dataframe.css?v=2082cf3c" rel="stylesheet" type="text/css"/>
 <link href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" rel="stylesheet" type="text/css"/>
-<link href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
-<link href="../_static/css/custom.css?v=14df3d68" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-design.min.css?v=87e54e7c" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../_static/documentation_options.js?v=afeffd13"></script>
-<script src="../_static/doctools.js?v=888ff710"></script>
+<script src="../_static/documentation_options.js?v=eb600d8c"></script>
+<script src="../_static/doctools.js?v=9a2dae69"></script>
 <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
 <script src="../_static/copybutton.js?v=30646c52"></script>
@@ -41,7 +41,7 @@
 <script>let toggleHintHide = 'Click to hide';</script>
 <script>let toggleOpenOnPrint = 'true';</script>
 <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
-<script src="../_static/design-tabs.js?v=36754332"></script>
+<script src="../_static/design-tabs.js?v=f930bc37"></script>
 <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
 <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
 <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -110,11 +110,6 @@
                         API Reference
                       </a>
 </li>
-<li class="nav-item">
-<a class="nav-link nav-internal" href="../fair/index.html">
-                        Extending Pyxu
-                      </a>
-</li>
 </ul>
 </nav></div>
 </div>
@@ -128,10 +123,10 @@ document.write(`
 `);
 </script>
 </div>
-<div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
+<div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
-<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/pyxu-org/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
 <label class="sr-only">GitHub</label></a>
 </li>
 <li class="nav-item">
@@ -192,19 +187,14 @@ document.write(`
                         API Reference
                       </a>
 </li>
-<li class="nav-item">
-<a class="nav-link nav-internal" href="../fair/index.html">
-                        Extending Pyxu
-                      </a>
-</li>
 </ul>
 </nav></div>
 </div>
 <div class="sidebar-header-items__end">
-<div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
+<div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
-<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/pyxu-org/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
 <label class="sr-only">GitHub</label></a>
 </li>
 <li class="nav-item">
@@ -291,20 +281,23 @@ document.write(`
 <span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.Func" title="pyxu.abc.operator.Func"><span class="n">Func</span></a>
 
 <span class="k">class</span> <span class="nc">SquaredL2</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.Func" title="pyxu.abc.operator.Func"><span class="n">Func</span></a><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
-        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim_shape</span><span class="p">):</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">,</span> <span class="n">codim_shape</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">arr</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="c1"># Calculate over the last dimensions to support batching dimensions.</span>
+        <span class="c1"># This ensures the squared L2 norm is applied in parallel across batches.</span>
+        <span class="n">axis</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="tuple"><span class="nb">tuple</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#range" title="range"><span class="nb">range</span></a><span class="p">(</span><span class="o">-</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#len" title="len"><span class="nb">len</span></a><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">),</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">arr</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>This base functional can be adapted into a <em>loss functional</em> using the <code class="docutils literal notranslate"><span class="pre">asloss()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Func.asloss">🔗</a> method:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">l2_loss</span> <span class="o">=</span> <span class="n">SquaredL2</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">asloss</span><span class="p">(</span><span class="n">data_vector</span><span class="p">)</span>  <span class="c1"># computes ||&lt;arr&gt; - data_vector||^{2}</span>
+<p>This base functional can be adapted into a <em>loss functional</em> using the <code class="docutils literal notranslate"><span class="pre">argshift()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Operator.argshift">🔗</a> method:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">l2_loss</span> <span class="o">=</span> <span class="n">SquaredL2</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span><span class="o">.</span><span class="n">argshift</span><span class="p">(</span><span class="o">-</span><span class="n">data</span><span class="p">)</span>  <span class="c1"># computes ||&lt;arr&gt; - data||^{2}</span>
 </pre></div>
 </div>
-<p>In this specific example, <code class="docutils literal notranslate"><span class="pre">asloss()</span></code> shifts the functional using a given data vector, transforming it into a loss that measures the squared Euclidean distance between the input and the data.</p>
+<p>In this specific example, <code class="docutils literal notranslate"><span class="pre">argshift()</span></code> shifts the functional using a given data array, transforming it into a loss that measures the squared Euclidean distance between the input and the data.</p>
 <blockquote>
-<div><p><strong>Special Cases</strong>: <code class="docutils literal notranslate"><span class="pre">asloss()</span></code> doesn’t always produce a simple <em>shift</em> of the original functional. For instance, when applied to an entropy functional, it transforms into relative entropy.</p>
+<div><p><strong>Special Cases</strong>: <code class="docutils literal notranslate"><span class="pre">argshift()</span></code> doesn’t always produce a simple <em>shift</em> of the original functional. For instance, when applied to an entropy functional, it transforms into relative entropy.</p>
 </div></blockquote>
 </section>
 <section id="DiffFunc:-Differentiable-Functionals-🎯">
@@ -313,11 +306,12 @@ document.write(`
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.operator.DiffFunc"><span class="n">DiffFunc</span></a>
 
 <span class="k">class</span> <span class="nc">SquaredL2</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.operator.DiffFunc"><span class="n">DiffFunc</span></a><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
-        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim_shape</span><span class="p">):</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">,</span> <span class="n">codim_shape</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">arr</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">axis</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="tuple"><span class="nb">tuple</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#range" title="range"><span class="nb">range</span></a><span class="p">(</span><span class="o">-</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#len" title="len"><span class="nb">len</span></a><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">),</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">arr</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="nf">grad</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
         <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">arr</span>
@@ -333,11 +327,12 @@ document.write(`
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.abc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><span class="n">ProxFunc</span></a>
 
 <span class="k">class</span> <span class="nc">L1Norm</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><span class="n">ProxFunc</span></a><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
-        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim_shape</span><span class="p">):</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">,</span> <span class="n">codim_shape</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">axis</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="tuple"><span class="nb">tuple</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#range" title="range"><span class="nb">range</span></a><span class="p">(</span><span class="o">-</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#len" title="len"><span class="nb">len</span></a><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">),</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">prox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">tau</span><span class="p">):</span>
         <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.sign.html#numpy.sign" title="numpy.sign"><span class="n">np</span><span class="o">.</span><span class="n">sign</span></a><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.clip.html#numpy.clip" title="numpy.clip"><span class="n">np</span><span class="o">.</span><span class="n">clip</span></a><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">-</span> <span class="n">tau</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
@@ -346,7 +341,7 @@ document.write(`
 <section id="Moreau-Envelope-for-Smoothing">
 <h4>Moreau Envelope for Smoothing<a class="headerlink" href="#Moreau-Envelope-for-Smoothing" title="Link to this heading">#</a></h4>
 <p>You can also smooth out a proximable functional using the <code class="docutils literal notranslate"><span class="pre">moreau_envelope()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.ProxFunc.moreau_envelope">🔗</a> method. For example, you can smooth the L1 norm to create the <a class="reference external" href="https://www.wikiwand.com/en/Huber_loss">Huber loss function</a> as follows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">huber</span> <span class="o">=</span> <span class="n">L1Norm</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span><span class="o">.</span><span class="n">moreau_envelope</span><span class="p">(</span><span class="n">mu</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">huber</span> <span class="o">=</span> <span class="n">L1Norm</span><span class="p">(</span><span class="n">dim_shape</span><span class="p">)</span><span class="o">.</span><span class="n">moreau_envelope</span><span class="p">(</span><span class="n">mu</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -375,8 +370,8 @@ document.write(`
 <span class="kn">from</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/ndimage.html#module-scipy.ndimage" title="scipy.ndimage"><span class="nn">scipy.ndimage</span></a> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.median_filter.html#scipy.ndimage.median_filter" title="scipy.ndimage.median_filter"><span class="n">median_filter</span></a>
 
 <span class="k">class</span> <span class="nc">MedianFilterPrior</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><span class="n">ProxFunc</span></a><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
-        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim_shape</span><span class="p">):</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">,</span> <span class="n">codim_shape</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
         <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/exceptions.html#NotImplementedError" title="NotImplementedError"><span class="ne">NotImplementedError</span></a>  <span class="c1"># apply method not provided</span>
@@ -399,10 +394,10 @@ document.write(`
 <p>A common strategy to solve this problem is to minimize the least-squares difference between <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(A x\)</span>. In Pyxu, you can create a composite loss functional for this exact problem like so:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">SquaredL2Norm</span></a>
 
-<span class="n">loss</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">SquaredL2Norm</span></a><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">b</span><span class="o">.</span><span class="n">size</span><span class="p">)</span><span class="o">.</span><span class="n">asloss</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">A</span>
+<span class="n">loss</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">SquaredL2Norm</span></a><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="n">b</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span><span class="o">.</span><span class="n">argshift</span><span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">A</span>
 </pre></div>
 </div>
-<p>What did we do here? We took the squared <span class="math notranslate nohighlight">\(L_2\)</span> norm, which measures the distance between two vectors, and used the <code class="docutils literal notranslate"><span class="pre">.asloss()</span></code> method to turn it into a loss functional tailored to our blurred image <span class="math notranslate nohighlight">\(b\)</span>. The <code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">A</span></code> part then integrates the forward operator <span class="math notranslate nohighlight">\(A\)</span> into this loss, making sure we’re comparing apples to apples—or in this case, blurred images to blurred images.</p>
+<p>What did we do here? We took the squared <span class="math notranslate nohighlight">\(L_2\)</span> norm, which measures the distance between two vectors, and used the <code class="docutils literal notranslate"><span class="pre">.argshift()</span></code> method to turn it into a loss functional tailored to our blurred image <span class="math notranslate nohighlight">\(b\)</span>. The <code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">A</span></code> part then integrates the forward operator <span class="math notranslate nohighlight">\(A\)</span> into this loss, making sure we’re comparing apples to apples—or in this case, blurred images to blurred images.</p>
 </section>
 <section id="The-Benefit:-Automatic-Propagation-🚀">
 <h3>The Benefit: Automatic Propagation 🚀<a class="headerlink" href="#The-Benefit:-Automatic-Propagation-🚀" title="Link to this heading">#</a></h3>
@@ -469,7 +464,7 @@ document.write(`
 <div id="searchbox"></div></div>
 <div class="sidebar-secondary-item">
 <div class="tocsection editthispage">
-<a href="https://github.com/matthieumeo/pyxu/edit/main/doc/guide/funcs.ipynb">
+<a href="https://github.com/pyxu-org/pyxu/edit/main/doc/guide/funcs.ipynb">
 <i class="fa-solid fa-pencil"></i>
       
       
@@ -503,13 +498,13 @@ document.write(`
 <div class="footer-item">
 <p class="copyright">
     
-      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt, Pyxu Developers.
+      © Copyright 2024, S. Kashani, J. Rué-Queralt, M. Simeoni, Pyxu Developers.
       <br/>
 </p>
 </div>
 <div class="footer-item">
 <p class="sphinx-version">
-     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
 </p>
 </div>

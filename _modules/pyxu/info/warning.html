@@ -36,15 +36,15 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=14df3d68" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../_static/documentation_options.js?v=afeffd13"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/documentation_options.js?v=eb600d8c"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=30646c52"></script>
@@ -52,7 +52,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
-    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -172,13 +172,6 @@
                       </a>
                     </li>
                 
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../fair/index.html">
-                        Extending Pyxu
-                      </a>
-                    </li>
-                
   </ul>
 </nav></div>
       
@@ -199,7 +192,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -212,7 +205,7 @@ document.write(`
           
           
           
-          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+          <a href="https://github.com/pyxu-org/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -325,13 +318,6 @@ document.write(`
                       </a>
                     </li>
                 
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../fair/index.html">
-                        Extending Pyxu
-                      </a>
-                    </li>
-                
   </ul>
 </nav></div>
         
@@ -341,7 +327,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -354,7 +340,7 @@ document.write(`
           
           
           
-          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+          <a href="https://github.com/pyxu-org/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -452,16 +438,16 @@ document.write(`
                   
   <h1>Source code for pyxu.info.warning</h1><div class="highlight"><pre>
 <span></span><span class="linenos"> 1</span><span class="c1"># Custom warnings used inside Pyxu.</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">inspect</span>
+<span class="linenos"> 3</span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span>
 <div class="viewcode-block" id="PyxuWarning">
 <a class="viewcode-back" href="../../../api/info.warning.html#pyxu.info.warning.PyxuWarning">[docs]</a>
-<span class="linenos"> 4</span><span class="k">class</span> <span class="nc">PyxuWarning</span><span class="p">(</span><span class="ne">UserWarning</span><span class="p">):</span>
-<span class="linenos"> 5</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos"> 6</span><span class="sd">    Parent class of all warnings raised in Pyxu.</span>
-<span class="linenos"> 7</span><span class="sd">    &quot;&quot;&quot;</span>
-<span class="linenos"> 8</span>
-<span class="linenos"> 9</span>    <span class="k">pass</span></div>
+<span class="linenos"> 6</span><span class="k">class</span> <span class="nc">PyxuWarning</span><span class="p">(</span><span class="ne">UserWarning</span><span class="p">):</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 8</span><span class="sd">    Parent class of all warnings raised in Pyxu.</span>
+<span class="linenos"> 9</span><span class="sd">    &quot;&quot;&quot;</span></div>
 
 <span class="linenos">10</span>
 <span class="linenos">11</span>
@@ -470,63 +456,87 @@ document.write(`
 <span class="linenos">12</span><span class="k">class</span> <span class="nc">AutoInferenceWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
 <span class="linenos">13</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">14</span><span class="sd">    Use when a quantity was auto-inferenced with possible caveats.</span>
-<span class="linenos">15</span><span class="sd">    &quot;&quot;&quot;</span>
-<span class="linenos">16</span>
-<span class="linenos">17</span>    <span class="k">pass</span></div>
+<span class="linenos">15</span><span class="sd">    &quot;&quot;&quot;</span></div>
 
-<span class="linenos">18</span>
-<span class="linenos">19</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span>
 <div class="viewcode-block" id="PerformanceWarning">
 <a class="viewcode-back" href="../../../api/info.warning.html#pyxu.info.warning.PerformanceWarning">[docs]</a>
-<span class="linenos">20</span><span class="k">class</span> <span class="nc">PerformanceWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
-<span class="linenos">21</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">22</span><span class="sd">    Use for performance-related warnings.</span>
-<span class="linenos">23</span><span class="sd">    &quot;&quot;&quot;</span></div>
+<span class="linenos">18</span><span class="k">class</span> <span class="nc">PerformanceWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
+<span class="linenos">19</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">20</span><span class="sd">    Use for performance-related warnings.</span>
+<span class="linenos">21</span><span class="sd">    &quot;&quot;&quot;</span></div>
 
-<span class="linenos">24</span>
-<span class="linenos">25</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span>
+<div class="viewcode-block" id="warn_dask_perf">
+<a class="viewcode-back" href="../../../api/info.warning.html#pyxu.info.warning.warn_dask_perf">[docs]</a>
+<span class="linenos">24</span><span class="k">def</span> <span class="nf">warn_dask_perf</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="linenos">25</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">26</span><span class="sd">    Issue a warning for DASK-related performance issues.</span>
+<span class="linenos">27</span>
+<span class="linenos">28</span><span class="sd">    This method is aware of its context and prints the name of the enclosing function/method which invoked it.</span>
+<span class="linenos">29</span>
+<span class="linenos">30</span><span class="sd">    Parameters</span>
+<span class="linenos">31</span><span class="sd">    ----------</span>
+<span class="linenos">32</span><span class="sd">    msg: str</span>
+<span class="linenos">33</span><span class="sd">        Custom warning message.</span>
+<span class="linenos">34</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">35</span>    <span class="k">if</span> <span class="n">msg</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">36</span>        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Sub-optimal performance for DASK inputs.&quot;</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span>    <span class="c1"># Get context</span>
+<span class="linenos">39</span>    <span class="n">my_frame</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">currentframe</span><span class="p">()</span>
+<span class="linenos">40</span>    <span class="n">up_frame</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getouterframes</span><span class="p">(</span><span class="n">my_frame</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<span class="linenos">41</span>    <span class="n">header</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">up_frame</span><span class="o">.</span><span class="n">filename</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">up_frame</span><span class="o">.</span><span class="n">function</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="linenos">42</span>
+<span class="linenos">43</span>    <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">header</span><span class="si">}</span><span class="s2">] </span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="linenos">44</span>    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">PerformanceWarning</span><span class="p">)</span></div>
+
+<span class="linenos">45</span>
+<span class="linenos">46</span>
 <div class="viewcode-block" id="PrecisionWarning">
 <a class="viewcode-back" href="../../../api/info.warning.html#pyxu.info.warning.PrecisionWarning">[docs]</a>
-<span class="linenos">26</span><span class="k">class</span> <span class="nc">PrecisionWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
-<span class="linenos">27</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">28</span><span class="sd">    Use for precision-related warnings.</span>
-<span class="linenos">29</span><span class="sd">    &quot;&quot;&quot;</span></div>
+<span class="linenos">47</span><span class="k">class</span> <span class="nc">PrecisionWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
+<span class="linenos">48</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">49</span><span class="sd">    Use for precision-related warnings.</span>
+<span class="linenos">50</span><span class="sd">    &quot;&quot;&quot;</span></div>
 
-<span class="linenos">30</span>
-<span class="linenos">31</span>
+<span class="linenos">51</span>
+<span class="linenos">52</span>
 <div class="viewcode-block" id="DenseWarning">
 <a class="viewcode-back" href="../../../api/info.warning.html#pyxu.info.warning.DenseWarning">[docs]</a>
-<span class="linenos">32</span><span class="k">class</span> <span class="nc">DenseWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
-<span class="linenos">33</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">34</span><span class="sd">    Use for sparse-based algos which revert to dense arrays.</span>
-<span class="linenos">35</span><span class="sd">    &quot;&quot;&quot;</span></div>
+<span class="linenos">53</span><span class="k">class</span> <span class="nc">DenseWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
+<span class="linenos">54</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">55</span><span class="sd">    Use for sparse-based algos which revert to dense arrays.</span>
+<span class="linenos">56</span><span class="sd">    &quot;&quot;&quot;</span></div>
 
-<span class="linenos">36</span>
-<span class="linenos">37</span>
+<span class="linenos">57</span>
+<span class="linenos">58</span>
 <div class="viewcode-block" id="NonTransparentWarning">
 <a class="viewcode-back" href="../../../api/info.warning.html#pyxu.info.warning.NonTransparentWarning">[docs]</a>
-<span class="linenos">38</span><span class="k">class</span> <span class="nc">NonTransparentWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
-<span class="linenos">39</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">40</span><span class="sd">    Inform test suite runner of (safe) non-transparent function call.</span>
-<span class="linenos">41</span><span class="sd">    &quot;&quot;&quot;</span></div>
+<span class="linenos">59</span><span class="k">class</span> <span class="nc">NonTransparentWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
+<span class="linenos">60</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">61</span><span class="sd">    Inform test suite runner of (safe) non-transparent function call.</span>
+<span class="linenos">62</span><span class="sd">    &quot;&quot;&quot;</span></div>
 
-<span class="linenos">42</span>
-<span class="linenos">43</span>
+<span class="linenos">63</span>
+<span class="linenos">64</span>
 <div class="viewcode-block" id="BackendWarning">
 <a class="viewcode-back" href="../../../api/info.warning.html#pyxu.info.warning.BackendWarning">[docs]</a>
-<span class="linenos">44</span><span class="k">class</span> <span class="nc">BackendWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
-<span class="linenos">45</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">46</span><span class="sd">    Inform user of a backend-specific problem to be aware of.</span>
-<span class="linenos">47</span><span class="sd">    &quot;&quot;&quot;</span></div>
+<span class="linenos">65</span><span class="k">class</span> <span class="nc">BackendWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
+<span class="linenos">66</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">67</span><span class="sd">    Inform user of a backend-specific problem to be aware of.</span>
+<span class="linenos">68</span><span class="sd">    &quot;&quot;&quot;</span></div>
 
-<span class="linenos">48</span>
-<span class="linenos">49</span>
+<span class="linenos">69</span>
+<span class="linenos">70</span>
 <div class="viewcode-block" id="ContributionWarning">
 <a class="viewcode-back" href="../../../api/info.warning.html#pyxu.info.warning.ContributionWarning">[docs]</a>
-<span class="linenos">50</span><span class="k">class</span> <span class="nc">ContributionWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
-<span class="linenos">51</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">52</span><span class="sd">    Use for warnings related to Pyxu plugins.</span>
-<span class="linenos">53</span><span class="sd">    &quot;&quot;&quot;</span></div>
+<span class="linenos">71</span><span class="k">class</span> <span class="nc">ContributionWarning</span><span class="p">(</span><span class="n">PyxuWarning</span><span class="p">):</span>
+<span class="linenos">72</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">73</span><span class="sd">    Use for warnings related to Pyxu plugins.</span>
+<span class="linenos">74</span><span class="sd">    &quot;&quot;&quot;</span></div>
 
 </pre></div>
 
@@ -579,7 +589,7 @@ document.write(`
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt, Pyxu Developers.
+      © Copyright 2024, S. Kashani, J. Rué-Queralt, M. Simeoni, Pyxu Developers.
       <br/>
     
   </p>
@@ -587,7 +597,7 @@ document.write(`
       
         <div class="footer-item">
   <p class="sphinx-version">
-     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>

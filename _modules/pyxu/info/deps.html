@@ -36,15 +36,15 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=14df3d68" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../_static/documentation_options.js?v=afeffd13"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/documentation_options.js?v=eb600d8c"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=30646c52"></script>
@@ -52,7 +52,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
-    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -172,13 +172,6 @@
                       </a>
                     </li>
                 
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../fair/index.html">
-                        Extending Pyxu
-                      </a>
-                    </li>
-                
   </ul>
 </nav></div>
       
@@ -199,7 +192,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -212,7 +205,7 @@ document.write(`
           
           
           
-          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+          <a href="https://github.com/pyxu-org/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -325,13 +318,6 @@ document.write(`
                       </a>
                     </li>
                 
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../fair/index.html">
-                        Extending Pyxu
-                      </a>
-                    </li>
-                
   </ul>
 </nav></div>
         
@@ -341,7 +327,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -354,7 +340,7 @@ document.write(`
           
           
           
-          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+          <a href="https://github.com/pyxu-org/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -460,17 +446,17 @@ document.write(`
 <span class="linenos">  7</span><span class="kn">import</span> <span class="nn">numpy</span>
 <span class="linenos">  8</span><span class="kn">import</span> <span class="nn">packaging.version</span> <span class="k">as</span> <span class="nn">pkgv</span>
 <span class="linenos">  9</span><span class="kn">import</span> <span class="nn">scipy.sparse</span>
-<span class="linenos"> 10</span><span class="kn">import</span> <span class="nn">sparse</span>
-<span class="linenos"> 11</span>
-<span class="linenos"> 12</span><span class="c1">#: Show if CuPy-based backends are available.</span>
-<span class="linenos"> 13</span><span class="n">CUPY_ENABLED</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">find_spec</span><span class="p">(</span><span class="s2">&quot;cupy&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="linenos"> 14</span><span class="k">if</span> <span class="n">CUPY_ENABLED</span><span class="p">:</span>
-<span class="linenos"> 15</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos"> 16</span>        <span class="kn">import</span> <span class="nn">cupy</span>
-<span class="linenos"> 17</span>        <span class="kn">import</span> <span class="nn">cupyx.scipy.sparse</span>
-<span class="linenos"> 18</span>        <span class="kn">import</span> <span class="nn">cupyx.scipy.sparse.linalg</span>
-<span class="linenos"> 19</span>    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-<span class="linenos"> 20</span>        <span class="c1"># CuPy is installed, but GPU drivers probably missing.</span>
+<span class="linenos"> 10</span>
+<span class="linenos"> 11</span><span class="c1">#: Show if CuPy-based backends are available.</span>
+<span class="linenos"> 12</span><span class="n">CUPY_ENABLED</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">find_spec</span><span class="p">(</span><span class="s2">&quot;cupy&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="linenos"> 13</span><span class="k">if</span> <span class="n">CUPY_ENABLED</span><span class="p">:</span>
+<span class="linenos"> 14</span>    <span class="k">try</span><span class="p">:</span>
+<span class="linenos"> 15</span>        <span class="kn">import</span> <span class="nn">cupy</span>
+<span class="linenos"> 16</span>        <span class="kn">import</span> <span class="nn">cupyx.scipy.sparse</span>
+<span class="linenos"> 17</span>        <span class="kn">import</span> <span class="nn">cupyx.scipy.sparse.linalg</span>
+<span class="linenos"> 18</span>
+<span class="linenos"> 19</span>        <span class="n">cupy</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span>  <span class="c1"># will fail if hardware/drivers/runtime missing</span>
+<span class="linenos"> 20</span>    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
 <span class="linenos"> 21</span>        <span class="n">CUPY_ENABLED</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="linenos"> 22</span>
 <span class="linenos"> 23</span>
@@ -567,139 +553,133 @@ document.write(`
 <span class="linenos"> 94</span><span class="sd">    &quot;&quot;&quot;</span>
 <span class="linenos"> 95</span>
 <span class="linenos"> 96</span>    <span class="n">SCIPY_SPARSE</span> <span class="o">=</span> <span class="n">enum</span><span class="o">.</span><span class="n">auto</span><span class="p">()</span>
-<span class="linenos"> 97</span>    <span class="n">PYDATA_SPARSE</span> <span class="o">=</span> <span class="n">enum</span><span class="o">.</span><span class="n">auto</span><span class="p">()</span>
-<span class="linenos"> 98</span>    <span class="n">CUPY_SPARSE</span> <span class="o">=</span> <span class="n">enum</span><span class="o">.</span><span class="n">auto</span><span class="p">()</span>
-<span class="linenos"> 99</span>
+<span class="linenos"> 97</span>    <span class="n">CUPY_SPARSE</span> <span class="o">=</span> <span class="n">enum</span><span class="o">.</span><span class="n">auto</span><span class="p">()</span>
+<span class="linenos"> 98</span>
 <div class="viewcode-block" id="SparseArrayInfo.default">
 <a class="viewcode-back" href="../../../api/info.deps.html#pyxu.info.deps.SparseArrayInfo.default">[docs]</a>
-<span class="linenos">100</span>    <span class="nd">@classmethod</span>
-<span class="linenos">101</span>    <span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;SparseArrayInfo&quot;</span><span class="p">:</span>
-<span class="linenos">102</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Default array backend to use.&quot;&quot;&quot;</span>
-<span class="linenos">103</span>        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">PYDATA_SPARSE</span></div>
+<span class="linenos"> 99</span>    <span class="nd">@classmethod</span>
+<span class="linenos">100</span>    <span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;SparseArrayInfo&quot;</span><span class="p">:</span>
+<span class="linenos">101</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Default array backend to use.&quot;&quot;&quot;</span>
+<span class="linenos">102</span>        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">SCIPY_SPARSE</span></div>
 
-<span class="linenos">104</span>
+<span class="linenos">103</span>
 <div class="viewcode-block" id="SparseArrayInfo.type">
 <a class="viewcode-back" href="../../../api/info.deps.html#pyxu.info.deps.SparseArrayInfo.type">[docs]</a>
-<span class="linenos">105</span>    <span class="k">def</span> <span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">type</span><span class="p">:</span>
-<span class="linenos">106</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Array type associated to a backend.&quot;&quot;&quot;</span>
-<span class="linenos">107</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;SCIPY_SPARSE&quot;</span><span class="p">:</span>
-<span class="linenos">108</span>            <span class="c1"># All `*matrix` classes descend from `spmatrix`.</span>
-<span class="linenos">109</span>            <span class="k">return</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">spmatrix</span>
-<span class="linenos">110</span>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;PYDATA_SPARSE&quot;</span><span class="p">:</span>
-<span class="linenos">111</span>            <span class="k">return</span> <span class="n">sparse</span><span class="o">.</span><span class="n">SparseArray</span>
-<span class="linenos">112</span>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;CUPY_SPARSE&quot;</span><span class="p">:</span>
-<span class="linenos">113</span>            <span class="k">return</span> <span class="n">cupyx</span><span class="o">.</span><span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">spmatrix</span> <span class="k">if</span> <span class="n">CUPY_ENABLED</span> <span class="k">else</span> <span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
-<span class="linenos">114</span>        <span class="k">else</span><span class="p">:</span>
-<span class="linenos">115</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No known array type for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span></div>
+<span class="linenos">104</span>    <span class="k">def</span> <span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">type</span><span class="p">:</span>
+<span class="linenos">105</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Array type associated to a backend.&quot;&quot;&quot;</span>
+<span class="linenos">106</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;SCIPY_SPARSE&quot;</span><span class="p">:</span>
+<span class="linenos">107</span>            <span class="c1"># All `*matrix` classes descend from `spmatrix`.</span>
+<span class="linenos">108</span>            <span class="k">return</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">spmatrix</span>
+<span class="linenos">109</span>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;CUPY_SPARSE&quot;</span><span class="p">:</span>
+<span class="linenos">110</span>            <span class="k">return</span> <span class="n">cupyx</span><span class="o">.</span><span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">spmatrix</span> <span class="k">if</span> <span class="n">CUPY_ENABLED</span> <span class="k">else</span> <span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="linenos">111</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">112</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No known array type for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span></div>
 
-<span class="linenos">116</span>
+<span class="linenos">113</span>
 <div class="viewcode-block" id="SparseArrayInfo.from_obj">
 <a class="viewcode-back" href="../../../api/info.deps.html#pyxu.info.deps.SparseArrayInfo.from_obj">[docs]</a>
-<span class="linenos">117</span>    <span class="nd">@classmethod</span>
-<span class="linenos">118</span>    <span class="k">def</span> <span class="nf">from_obj</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;SparseArrayInfo&quot;</span><span class="p">:</span>
-<span class="linenos">119</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Find array backend associated to `obj`.&quot;&quot;&quot;</span>
-<span class="linenos">120</span>        <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="linenos">121</span>            <span class="k">for</span> <span class="n">sai</span> <span class="ow">in</span> <span class="bp">cls</span><span class="p">:</span>
-<span class="linenos">122</span>                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">sai</span><span class="o">.</span><span class="n">type</span><span class="p">()):</span>
-<span class="linenos">123</span>                    <span class="k">return</span> <span class="n">sai</span>
-<span class="linenos">124</span>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No known array type to match </span><span class="si">{</span><span class="n">sai</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span></div>
+<span class="linenos">114</span>    <span class="nd">@classmethod</span>
+<span class="linenos">115</span>    <span class="k">def</span> <span class="nf">from_obj</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;SparseArrayInfo&quot;</span><span class="p">:</span>
+<span class="linenos">116</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Find array backend associated to `obj`.&quot;&quot;&quot;</span>
+<span class="linenos">117</span>        <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">118</span>            <span class="k">for</span> <span class="n">sai</span> <span class="ow">in</span> <span class="bp">cls</span><span class="p">:</span>
+<span class="linenos">119</span>                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">sai</span><span class="o">.</span><span class="n">type</span><span class="p">()):</span>
+<span class="linenos">120</span>                    <span class="k">return</span> <span class="n">sai</span>
+<span class="linenos">121</span>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No known array type to match </span><span class="si">{</span><span class="n">sai</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span></div>
 
-<span class="linenos">125</span>
+<span class="linenos">122</span>
 <div class="viewcode-block" id="SparseArrayInfo.module">
 <a class="viewcode-back" href="../../../api/info.deps.html#pyxu.info.deps.SparseArrayInfo.module">[docs]</a>
-<span class="linenos">126</span>    <span class="k">def</span> <span class="nf">module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">linalg</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">:</span>
-<span class="linenos">127</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">128</span><span class="sd">        Python module associated to an array backend.</span>
-<span class="linenos">129</span>
-<span class="linenos">130</span><span class="sd">        Parameters</span>
-<span class="linenos">131</span><span class="sd">        ----------</span>
-<span class="linenos">132</span><span class="sd">        linalg: bool</span>
-<span class="linenos">133</span><span class="sd">            Return the linear-algebra submodule with identical API to :py:mod:`scipy.sparse.linalg`.</span>
-<span class="linenos">134</span><span class="sd">        &quot;&quot;&quot;</span>
-<span class="linenos">135</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;SCIPY_SPARSE&quot;</span><span class="p">:</span>
-<span class="linenos">136</span>            <span class="n">xp</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span>
-<span class="linenos">137</span>            <span class="n">xpl</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">linalg</span>
-<span class="linenos">138</span>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;PYDATA_SPARSE&quot;</span><span class="p">:</span>
-<span class="linenos">139</span>            <span class="n">xp</span> <span class="o">=</span> <span class="n">sparse</span>
-<span class="linenos">140</span>            <span class="n">xpl</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">linalg</span>
-<span class="linenos">141</span>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;CUPY_SPARSE&quot;</span><span class="p">:</span>
-<span class="linenos">142</span>            <span class="n">xp</span> <span class="o">=</span> <span class="n">cupyx</span><span class="o">.</span><span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span> <span class="k">if</span> <span class="n">CUPY_ENABLED</span> <span class="k">else</span> <span class="kc">None</span>
-<span class="linenos">143</span>            <span class="n">xpl</span> <span class="o">=</span> <span class="n">xp</span> <span class="k">if</span> <span class="p">(</span><span class="n">xp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="k">else</span> <span class="n">cupyx</span><span class="o">.</span><span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">linalg</span>
-<span class="linenos">144</span>        <span class="k">else</span><span class="p">:</span>
-<span class="linenos">145</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No known array module for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-<span class="linenos">146</span>        <span class="k">return</span> <span class="n">xpl</span> <span class="k">if</span> <span class="n">linalg</span> <span class="k">else</span> <span class="n">xp</span></div>
+<span class="linenos">123</span>    <span class="k">def</span> <span class="nf">module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">linalg</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">:</span>
+<span class="linenos">124</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">125</span><span class="sd">        Python module associated to an array backend.</span>
+<span class="linenos">126</span>
+<span class="linenos">127</span><span class="sd">        Parameters</span>
+<span class="linenos">128</span><span class="sd">        ----------</span>
+<span class="linenos">129</span><span class="sd">        linalg: bool</span>
+<span class="linenos">130</span><span class="sd">            Return the linear-algebra submodule with identical API to :py:mod:`scipy.sparse.linalg`.</span>
+<span class="linenos">131</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">132</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;SCIPY_SPARSE&quot;</span><span class="p">:</span>
+<span class="linenos">133</span>            <span class="n">xp</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span>
+<span class="linenos">134</span>            <span class="n">xpl</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">linalg</span>
+<span class="linenos">135</span>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;CUPY_SPARSE&quot;</span><span class="p">:</span>
+<span class="linenos">136</span>            <span class="n">xp</span> <span class="o">=</span> <span class="n">cupyx</span><span class="o">.</span><span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span> <span class="k">if</span> <span class="n">CUPY_ENABLED</span> <span class="k">else</span> <span class="kc">None</span>
+<span class="linenos">137</span>            <span class="n">xpl</span> <span class="o">=</span> <span class="n">xp</span> <span class="k">if</span> <span class="p">(</span><span class="n">xp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="k">else</span> <span class="n">cupyx</span><span class="o">.</span><span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">linalg</span>
+<span class="linenos">138</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">139</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No known array module for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="linenos">140</span>        <span class="k">return</span> <span class="n">xpl</span> <span class="k">if</span> <span class="n">linalg</span> <span class="k">else</span> <span class="n">xp</span></div>
 </div>
 
-<span class="linenos">147</span>
-<span class="linenos">148</span>
+<span class="linenos">141</span>
+<span class="linenos">142</span>
 <div class="viewcode-block" id="supported_array_types">
 <a class="viewcode-back" href="../../../api/info.deps.html#pyxu.info.deps.supported_array_types">[docs]</a>
-<span class="linenos">149</span><span class="k">def</span> <span class="nf">supported_array_types</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Collection</span><span class="p">[</span><span class="nb">type</span><span class="p">]:</span>
-<span class="linenos">150</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;List of all supported dense array types in current Pyxu install.&quot;&quot;&quot;</span>
-<span class="linenos">151</span>    <span class="n">data</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-<span class="linenos">152</span>    <span class="k">for</span> <span class="n">ndi</span> <span class="ow">in</span> <span class="n">NDArrayInfo</span><span class="p">:</span>
-<span class="linenos">153</span>        <span class="k">if</span> <span class="p">(</span><span class="n">ndi</span> <span class="o">!=</span> <span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">CUPY</span><span class="p">)</span> <span class="ow">or</span> <span class="n">CUPY_ENABLED</span><span class="p">:</span>
-<span class="linenos">154</span>            <span class="n">data</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ndi</span><span class="o">.</span><span class="n">type</span><span class="p">())</span>
-<span class="linenos">155</span>    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
+<span class="linenos">143</span><span class="k">def</span> <span class="nf">supported_array_types</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Collection</span><span class="p">[</span><span class="nb">type</span><span class="p">]:</span>
+<span class="linenos">144</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;List of all supported dense array types in current Pyxu install.&quot;&quot;&quot;</span>
+<span class="linenos">145</span>    <span class="n">data</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="linenos">146</span>    <span class="k">for</span> <span class="n">ndi</span> <span class="ow">in</span> <span class="n">NDArrayInfo</span><span class="p">:</span>
+<span class="linenos">147</span>        <span class="k">if</span> <span class="p">(</span><span class="n">ndi</span> <span class="o">!=</span> <span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">CUPY</span><span class="p">)</span> <span class="ow">or</span> <span class="n">CUPY_ENABLED</span><span class="p">:</span>
+<span class="linenos">148</span>            <span class="n">data</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ndi</span><span class="o">.</span><span class="n">type</span><span class="p">())</span>
+<span class="linenos">149</span>    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
 
-<span class="linenos">156</span>
-<span class="linenos">157</span>
+<span class="linenos">150</span>
+<span class="linenos">151</span>
 <div class="viewcode-block" id="supported_array_modules">
 <a class="viewcode-back" href="../../../api/info.deps.html#pyxu.info.deps.supported_array_modules">[docs]</a>
-<span class="linenos">158</span><span class="k">def</span> <span class="nf">supported_array_modules</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Collection</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">]:</span>
-<span class="linenos">159</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;List of all supported dense array modules in current Pyxu install.&quot;&quot;&quot;</span>
-<span class="linenos">160</span>    <span class="n">data</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-<span class="linenos">161</span>    <span class="k">for</span> <span class="n">ndi</span> <span class="ow">in</span> <span class="n">NDArrayInfo</span><span class="p">:</span>
-<span class="linenos">162</span>        <span class="k">if</span> <span class="p">(</span><span class="n">ndi</span> <span class="o">!=</span> <span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">CUPY</span><span class="p">)</span> <span class="ow">or</span> <span class="n">CUPY_ENABLED</span><span class="p">:</span>
-<span class="linenos">163</span>            <span class="n">data</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ndi</span><span class="o">.</span><span class="n">module</span><span class="p">())</span>
-<span class="linenos">164</span>    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
+<span class="linenos">152</span><span class="k">def</span> <span class="nf">supported_array_modules</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Collection</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">]:</span>
+<span class="linenos">153</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;List of all supported dense array modules in current Pyxu install.&quot;&quot;&quot;</span>
+<span class="linenos">154</span>    <span class="n">data</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="linenos">155</span>    <span class="k">for</span> <span class="n">ndi</span> <span class="ow">in</span> <span class="n">NDArrayInfo</span><span class="p">:</span>
+<span class="linenos">156</span>        <span class="k">if</span> <span class="p">(</span><span class="n">ndi</span> <span class="o">!=</span> <span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">CUPY</span><span class="p">)</span> <span class="ow">or</span> <span class="n">CUPY_ENABLED</span><span class="p">:</span>
+<span class="linenos">157</span>            <span class="n">data</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ndi</span><span class="o">.</span><span class="n">module</span><span class="p">())</span>
+<span class="linenos">158</span>    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
 
-<span class="linenos">165</span>
-<span class="linenos">166</span>
+<span class="linenos">159</span>
+<span class="linenos">160</span>
 <div class="viewcode-block" id="supported_sparse_types">
 <a class="viewcode-back" href="../../../api/info.deps.html#pyxu.info.deps.supported_sparse_types">[docs]</a>
-<span class="linenos">167</span><span class="k">def</span> <span class="nf">supported_sparse_types</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Collection</span><span class="p">[</span><span class="nb">type</span><span class="p">]:</span>
-<span class="linenos">168</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;List of all supported sparse array types in current Pyxu install.&quot;&quot;&quot;</span>
-<span class="linenos">169</span>    <span class="n">data</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-<span class="linenos">170</span>    <span class="k">for</span> <span class="n">sai</span> <span class="ow">in</span> <span class="n">SparseArrayInfo</span><span class="p">:</span>
-<span class="linenos">171</span>        <span class="k">if</span> <span class="p">(</span><span class="n">sai</span> <span class="o">!=</span> <span class="n">SparseArrayInfo</span><span class="o">.</span><span class="n">CUPY_SPARSE</span><span class="p">)</span> <span class="ow">or</span> <span class="n">CUPY_ENABLED</span><span class="p">:</span>
-<span class="linenos">172</span>            <span class="n">data</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sai</span><span class="o">.</span><span class="n">type</span><span class="p">())</span>
-<span class="linenos">173</span>    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
+<span class="linenos">161</span><span class="k">def</span> <span class="nf">supported_sparse_types</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Collection</span><span class="p">[</span><span class="nb">type</span><span class="p">]:</span>
+<span class="linenos">162</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;List of all supported sparse array types in current Pyxu install.&quot;&quot;&quot;</span>
+<span class="linenos">163</span>    <span class="n">data</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="linenos">164</span>    <span class="k">for</span> <span class="n">sai</span> <span class="ow">in</span> <span class="n">SparseArrayInfo</span><span class="p">:</span>
+<span class="linenos">165</span>        <span class="k">if</span> <span class="p">(</span><span class="n">sai</span> <span class="o">!=</span> <span class="n">SparseArrayInfo</span><span class="o">.</span><span class="n">CUPY_SPARSE</span><span class="p">)</span> <span class="ow">or</span> <span class="n">CUPY_ENABLED</span><span class="p">:</span>
+<span class="linenos">166</span>            <span class="n">data</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sai</span><span class="o">.</span><span class="n">type</span><span class="p">())</span>
+<span class="linenos">167</span>    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
 
-<span class="linenos">174</span>
-<span class="linenos">175</span>
+<span class="linenos">168</span>
+<span class="linenos">169</span>
 <div class="viewcode-block" id="supported_sparse_modules">
 <a class="viewcode-back" href="../../../api/info.deps.html#pyxu.info.deps.supported_sparse_modules">[docs]</a>
-<span class="linenos">176</span><span class="k">def</span> <span class="nf">supported_sparse_modules</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Collection</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">]:</span>
-<span class="linenos">177</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;List of all supported sparse array modules in current Pyxu install.&quot;&quot;&quot;</span>
-<span class="linenos">178</span>    <span class="n">data</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-<span class="linenos">179</span>    <span class="k">for</span> <span class="n">sai</span> <span class="ow">in</span> <span class="n">SparseArrayInfo</span><span class="p">:</span>
-<span class="linenos">180</span>        <span class="k">if</span> <span class="p">(</span><span class="n">sai</span> <span class="o">!=</span> <span class="n">SparseArrayInfo</span><span class="o">.</span><span class="n">CUPY_SPARSE</span><span class="p">)</span> <span class="ow">or</span> <span class="n">CUPY_ENABLED</span><span class="p">:</span>
-<span class="linenos">181</span>            <span class="n">data</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sai</span><span class="o">.</span><span class="n">module</span><span class="p">())</span>
-<span class="linenos">182</span>    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
+<span class="linenos">170</span><span class="k">def</span> <span class="nf">supported_sparse_modules</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Collection</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">]:</span>
+<span class="linenos">171</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;List of all supported sparse array modules in current Pyxu install.&quot;&quot;&quot;</span>
+<span class="linenos">172</span>    <span class="n">data</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="linenos">173</span>    <span class="k">for</span> <span class="n">sai</span> <span class="ow">in</span> <span class="n">SparseArrayInfo</span><span class="p">:</span>
+<span class="linenos">174</span>        <span class="k">if</span> <span class="p">(</span><span class="n">sai</span> <span class="o">!=</span> <span class="n">SparseArrayInfo</span><span class="o">.</span><span class="n">CUPY_SPARSE</span><span class="p">)</span> <span class="ow">or</span> <span class="n">CUPY_ENABLED</span><span class="p">:</span>
+<span class="linenos">175</span>            <span class="n">data</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sai</span><span class="o">.</span><span class="n">module</span><span class="p">())</span>
+<span class="linenos">176</span>    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
 
-<span class="linenos">183</span>
-<span class="linenos">184</span>
-<span class="linenos">185</span><span class="n">JAX_SUPPORT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-<span class="linenos">186</span>    <span class="nb">min</span><span class="o">=</span><span class="n">pkgv</span><span class="o">.</span><span class="n">Version</span><span class="p">(</span><span class="s2">&quot;0.4.8&quot;</span><span class="p">),</span>
-<span class="linenos">187</span>    <span class="nb">max</span><span class="o">=</span><span class="n">pkgv</span><span class="o">.</span><span class="n">Version</span><span class="p">(</span><span class="s2">&quot;1.0&quot;</span><span class="p">),</span>
-<span class="linenos">188</span><span class="p">)</span>
-<span class="linenos">189</span><span class="n">PYTORCH_SUPPORT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-<span class="linenos">190</span>    <span class="nb">min</span><span class="o">=</span><span class="n">pkgv</span><span class="o">.</span><span class="n">Version</span><span class="p">(</span><span class="s2">&quot;2.0&quot;</span><span class="p">),</span>
-<span class="linenos">191</span>    <span class="nb">max</span><span class="o">=</span><span class="n">pkgv</span><span class="o">.</span><span class="n">Version</span><span class="p">(</span><span class="s2">&quot;3.0&quot;</span><span class="p">),</span>
-<span class="linenos">192</span><span class="p">)</span>
-<span class="linenos">193</span>
-<span class="linenos">194</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
-<span class="linenos">195</span>    <span class="s2">&quot;CUPY_ENABLED&quot;</span><span class="p">,</span>
-<span class="linenos">196</span>    <span class="s2">&quot;NDArrayInfo&quot;</span><span class="p">,</span>
-<span class="linenos">197</span>    <span class="s2">&quot;SparseArrayInfo&quot;</span><span class="p">,</span>
-<span class="linenos">198</span>    <span class="s2">&quot;supported_array_types&quot;</span><span class="p">,</span>
-<span class="linenos">199</span>    <span class="s2">&quot;supported_array_modules&quot;</span><span class="p">,</span>
-<span class="linenos">200</span>    <span class="s2">&quot;supported_sparse_types&quot;</span><span class="p">,</span>
-<span class="linenos">201</span>    <span class="s2">&quot;supported_sparse_modules&quot;</span><span class="p">,</span>
-<span class="linenos">202</span>    <span class="s2">&quot;JAX_SUPPORT&quot;</span><span class="p">,</span>
-<span class="linenos">203</span>    <span class="s2">&quot;PYTORCH_SUPPORT&quot;</span><span class="p">,</span>
-<span class="linenos">204</span><span class="p">]</span>
+<span class="linenos">177</span>
+<span class="linenos">178</span>
+<span class="linenos">179</span><span class="n">JAX_SUPPORT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+<span class="linenos">180</span>    <span class="nb">min</span><span class="o">=</span><span class="n">pkgv</span><span class="o">.</span><span class="n">Version</span><span class="p">(</span><span class="s2">&quot;0.4.8&quot;</span><span class="p">),</span>
+<span class="linenos">181</span>    <span class="nb">max</span><span class="o">=</span><span class="n">pkgv</span><span class="o">.</span><span class="n">Version</span><span class="p">(</span><span class="s2">&quot;1.0&quot;</span><span class="p">),</span>
+<span class="linenos">182</span><span class="p">)</span>
+<span class="linenos">183</span><span class="n">PYTORCH_SUPPORT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+<span class="linenos">184</span>    <span class="nb">min</span><span class="o">=</span><span class="n">pkgv</span><span class="o">.</span><span class="n">Version</span><span class="p">(</span><span class="s2">&quot;2.0&quot;</span><span class="p">),</span>
+<span class="linenos">185</span>    <span class="nb">max</span><span class="o">=</span><span class="n">pkgv</span><span class="o">.</span><span class="n">Version</span><span class="p">(</span><span class="s2">&quot;3.0&quot;</span><span class="p">),</span>
+<span class="linenos">186</span><span class="p">)</span>
+<span class="linenos">187</span>
+<span class="linenos">188</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos">189</span>    <span class="s2">&quot;CUPY_ENABLED&quot;</span><span class="p">,</span>
+<span class="linenos">190</span>    <span class="s2">&quot;NDArrayInfo&quot;</span><span class="p">,</span>
+<span class="linenos">191</span>    <span class="s2">&quot;SparseArrayInfo&quot;</span><span class="p">,</span>
+<span class="linenos">192</span>    <span class="s2">&quot;supported_array_types&quot;</span><span class="p">,</span>
+<span class="linenos">193</span>    <span class="s2">&quot;supported_array_modules&quot;</span><span class="p">,</span>
+<span class="linenos">194</span>    <span class="s2">&quot;supported_sparse_types&quot;</span><span class="p">,</span>
+<span class="linenos">195</span>    <span class="s2">&quot;supported_sparse_modules&quot;</span><span class="p">,</span>
+<span class="linenos">196</span>    <span class="s2">&quot;JAX_SUPPORT&quot;</span><span class="p">,</span>
+<span class="linenos">197</span>    <span class="s2">&quot;PYTORCH_SUPPORT&quot;</span><span class="p">,</span>
+<span class="linenos">198</span><span class="p">]</span>
 </pre></div>
 
                 </article>
@@ -751,7 +731,7 @@ document.write(`
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt, Pyxu Developers.
+      © Copyright 2024, S. Kashani, J. Rué-Queralt, M. Simeoni, Pyxu Developers.
       <br/>
     
   </p>
@@ -759,7 +739,7 @@ document.write(`
       
         <div class="footer-item">
   <p class="sphinx-version">
-     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>

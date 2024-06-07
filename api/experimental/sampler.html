@@ -4,7 +4,7 @@
 <html data-theme="light" lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>pyxu.experimental.sampler — Pyxu Documentation</title>
 <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
@@ -27,13 +27,13 @@
 <link href="../../_static/sg_gallery-binder.css?v=f4aeca0c" rel="stylesheet" type="text/css"/>
 <link href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" rel="stylesheet" type="text/css"/>
 <link href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" rel="stylesheet" type="text/css"/>
-<link href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
-<link href="../../_static/css/custom.css?v=14df3d68" rel="stylesheet" type="text/css"/>
+<link href="../../_static/sphinx-design.min.css?v=87e54e7c" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/custom.css" rel="stylesheet" type="text/css"/>
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../../_static/documentation_options.js?v=afeffd13"></script>
-<script src="../../_static/doctools.js?v=888ff710"></script>
+<script src="../../_static/documentation_options.js?v=eb600d8c"></script>
+<script src="../../_static/doctools.js?v=9a2dae69"></script>
 <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
 <script src="../../_static/copybutton.js?v=30646c52"></script>
@@ -41,7 +41,7 @@
 <script>let toggleHintHide = 'Click to hide';</script>
 <script>let toggleOpenOnPrint = 'true';</script>
 <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
-<script src="../../_static/design-tabs.js?v=36754332"></script>
+<script src="../../_static/design-tabs.js?v=f930bc37"></script>
 <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
 <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
 <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -51,7 +51,7 @@
 <link href="../../_static/favicon.png" rel="icon"/>
 <link href="../../genindex.html" rel="index" title="Index"/>
 <link href="../../search.html" rel="search" title="Search"/>
-<link href="xray.html" rel="next" title="pyxu.experimental.xray"/>
+<link href="../../references.html" rel="next" title="References"/>
 <link href="index.html" rel="prev" title="pyxu.experimental"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="en" name="docsearch:language"/>
@@ -110,11 +110,6 @@
                         API Reference
                       </a>
 </li>
-<li class="nav-item">
-<a class="nav-link nav-internal" href="../../fair/index.html">
-                        Extending Pyxu
-                      </a>
-</li>
 </ul>
 </nav></div>
 </div>
@@ -128,10 +123,10 @@ document.write(`
 `);
 </script>
 </div>
-<div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
+<div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
-<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/pyxu-org/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
 <label class="sr-only">GitHub</label></a>
 </li>
 <li class="nav-item">
@@ -192,19 +187,14 @@ document.write(`
                         API Reference
                       </a>
 </li>
-<li class="nav-item">
-<a class="nav-link nav-internal" href="../../fair/index.html">
-                        Extending Pyxu
-                      </a>
-</li>
 </ul>
 </nav></div>
 </div>
 <div class="sidebar-header-items__end">
-<div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
+<div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
-<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/pyxu-org/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
 <label class="sr-only">GitHub</label></a>
 </li>
 <li class="nav-item">
@@ -244,7 +234,6 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../util.html">pyxu.util</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">pyxu.experimental</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">pyxu.experimental.sampler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xray.html">pyxu.experimental.xray</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../references.html"><strong>References</strong></a></li>
@@ -326,10 +315,10 @@ is well balanced.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>f</strong> (<a class="reference internal" href="../abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.operator.DiffFunc"><em>DiffFunc</em></a>) – </p></li>
-<li><p><strong>g</strong> (<a class="reference internal" href="../abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><em>ProxFunc</em></a>) – </p></li>
-<li><p><strong>gamma</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a>) – </p></li>
-<li><p><strong>lamb</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a>) – </p></li>
+<li><p><strong>f</strong> (<a class="reference internal" href="../abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.operator.DiffFunc"><em>DiffFunc</em></a>)</p></li>
+<li><p><strong>g</strong> (<a class="reference internal" href="../abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><em>ProxFunc</em></a>)</p></li>
+<li><p><strong>gamma</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a>)</p></li>
+<li><p><strong>lamb</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -367,7 +356,7 @@ precisely, the array <code class="docutils literal notranslate"><span class="pre
 \sum_{k=1}^K (\mathbf{x}_k-\boldsymbol{\mu})^{i+2}\)</span> for <span class="math notranslate nohighlight">\(0 \leq i \leq d-2\)</span>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>order</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a>) – </p>
+<dd class="field-odd"><p><strong>order</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a>)</p>
 </dd>
 </dl>
 <dl class="py method">
@@ -406,7 +395,7 @@ particular, the kurtosis of a Gaussian distribution is always 3.</p>
 k \leq K}\)</span> is given by <span class="math notranslate nohighlight">\(\frac{1}{K}\sum_{k=1}^K \mathbf{x}_k^d\)</span>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>order</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a>) – </p>
+<dd class="field-odd"><p><strong>order</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a>)</p>
 </dd>
 </dl>
 <dl class="py method">
@@ -590,13 +579,8 @@ Mises criterion), which illustrates the aforementioned bias-variance tradeoff fo
 <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.sqrt.html#numpy.sqrt" title="numpy.sqrt"><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span></a><span class="p">(</span><span class="n">biased_var</span><span class="p">)),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">"$p_{\gamma_1}(x)$"</span><span class="p">)</span>
 <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html#matplotlib.pyplot.legend" title="matplotlib.pyplot.legend"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span></a><span class="p">()</span>
 <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
-</pre></div>
-</div>
-<p>(<a class="reference download internal" download="" href="../../_downloads/04e83de47f5d056942bb5cceec88f033/sampler-1.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/88a3f16ef7fce8fdb35fd4edf3b6ace4/sampler-1_00_00.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/c604d2df9d37527a80c0dc91b76cf5db/sampler-1_00_00.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/8186afc1cad5ba418c82646f4dc4c85a/sampler-1_00_00.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
-<figure class="align-default">
-<img alt="../../_images/sampler-1_00_00.png" class="plot-directive" src="../../_images/sampler-1_00_00.png"/>
-</figure>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
+
+<a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
 <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="matplotlib.pyplot.title"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span>
     <span class="sa">f</span><span class="s2">"ULA samples (small step size) </span><span class="se">\n</span><span class="s2"> Empirical mean: </span><span class="si">{</span><span class="n">mean_lb</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> (theoretical: 0) </span><span class="se">\n</span><span class="s2"> "</span>
     <span class="sa">f</span><span class="s2">"Empirical variance: </span><span class="si">{</span><span class="n">var_lb</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> (theoretical: </span><span class="si">{</span><span class="n">biased_var_lb</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">) </span><span class="se">\n</span><span class="s2">"</span>
@@ -609,10 +593,7 @@ Mises criterion), which illustrates the aforementioned bias-variance tradeoff fo
 <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p>(<a class="reference download internal" download="" href="../../_downloads/6f030212e1ed44374360d96af1b8bb08/sampler-1_01_00.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/9c4ebc29020e065ee3bc3d0953afc0cb/sampler-1_01_00.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/38abfa68484834f661723510290a9594/sampler-1_01_00.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
-<figure class="align-default">
-<img alt="../../_images/sampler-1_01_00.png" class="plot-directive" src="../../_images/sampler-1_01_00.png"/>
-</figure>
+<p>(<a class="reference download internal" download="" href="../../_downloads/ba091a3aa67dd515ac298cd9084f19e7/sampler-1.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>)</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyxu.experimental.sampler.ULA.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/experimental/sampler/_sampler.html#ULA.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.experimental.sampler.ULA.__init__" title="Link to this definition">#</a></dt>
@@ -643,8 +624,8 @@ samples should accumulate around the modes of the target distribution, i.e., tow
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>f</strong> (<a class="reference internal" href="../abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.operator.DiffFunc"><em>DiffFunc</em></a>) – </p></li>
-<li><p><strong>gamma</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a>) – </p></li>
+<li><p><strong>f</strong> (<a class="reference internal" href="../abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.operator.DiffFunc"><em>DiffFunc</em></a>)</p></li>
+<li><p><strong>gamma</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -662,10 +643,10 @@ samples should accumulate around the modes of the target distribution, i.e., tow
 <p class="prev-next-title">pyxu.experimental</p>
 </div>
 </a>
-<a class="right-next" href="xray.html" title="next page">
+<a class="right-next" href="../../references.html" title="next page">
 <div class="prev-next-info">
 <p class="prev-next-subtitle">next</p>
-<p class="prev-next-title">pyxu.experimental.xray</p>
+<p class="prev-next-title"><strong>References</strong></p>
 </div>
 <i class="fa-solid fa-angle-right"></i>
 </a>
@@ -707,7 +688,7 @@ samples should accumulate around the modes of the target distribution, i.e., tow
 <div id="searchbox"></div></div>
 <div class="sidebar-secondary-item">
 <div class="tocsection editthispage">
-<a href="https://github.com/matthieumeo/pyxu/edit/main/doc/api/experimental/sampler.rst">
+<a href="https://github.com/pyxu-org/pyxu/edit/main/doc/api/experimental/sampler.rst">
 <i class="fa-solid fa-pencil"></i>
       
       
@@ -741,13 +722,13 @@ samples should accumulate around the modes of the target distribution, i.e., tow
 <div class="footer-item">
 <p class="copyright">
     
-      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt, Pyxu Developers.
+      © Copyright 2024, S. Kashani, J. Rué-Queralt, M. Simeoni, Pyxu Developers.
       <br/>
 </p>
 </div>
 <div class="footer-item">
 <p class="sphinx-version">
-     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
 </p>
 </div>

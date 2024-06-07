@@ -36,15 +36,15 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=14df3d68" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../_static/documentation_options.js?v=afeffd13"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/documentation_options.js?v=eb600d8c"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=30646c52"></script>
@@ -52,7 +52,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
-    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -172,13 +172,6 @@
                       </a>
                     </li>
                 
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../fair/index.html">
-                        Extending Pyxu
-                      </a>
-                    </li>
-                
   </ul>
 </nav></div>
       
@@ -199,7 +192,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -212,7 +205,7 @@ document.write(`
           
           
           
-          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+          <a href="https://github.com/pyxu-org/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -325,13 +318,6 @@ document.write(`
                       </a>
                     </li>
                 
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../fair/index.html">
-                        Extending Pyxu
-                      </a>
-                    </li>
-                
   </ul>
 </nav></div>
         
@@ -341,7 +327,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -354,7 +340,7 @@ document.write(`
           
           
           
-          <a href="https://github.com/matthieumeo/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
+          <a href="https://github.com/pyxu-org/pyxu" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -602,49 +588,50 @@ document.write(`
 <span class="linenos">141</span><span class="sd">        Evaluated objects. Non-dask arguments are passed through unchanged.</span>
 <span class="linenos">142</span><span class="sd">    &quot;&quot;&quot;</span>
 <span class="linenos">143</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos">144</span>        <span class="n">func</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">compute</span><span class="o">=</span><span class="n">dask</span><span class="o">.</span><span class="n">compute</span><span class="p">,</span> <span class="n">persist</span><span class="o">=</span><span class="n">dask</span><span class="o">.</span><span class="n">persist</span><span class="p">)[</span><span class="n">mode</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
-<span class="linenos">145</span>    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-<span class="linenos">146</span>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;mode: expected compute/persist, got </span><span class="si">{</span><span class="n">mode</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-<span class="linenos">147</span>
-<span class="linenos">148</span>    <span class="n">cargs</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="linenos">149</span>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="linenos">150</span>        <span class="n">cargs</span> <span class="o">=</span> <span class="n">cargs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="linenos">151</span>    <span class="k">return</span> <span class="n">cargs</span></div>
+<span class="linenos">144</span>        <span class="n">mode</span> <span class="o">=</span> <span class="n">mode</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="linenos">145</span>        <span class="n">func</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">compute</span><span class="o">=</span><span class="n">dask</span><span class="o">.</span><span class="n">compute</span><span class="p">,</span> <span class="n">persist</span><span class="o">=</span><span class="n">dask</span><span class="o">.</span><span class="n">persist</span><span class="p">)[</span><span class="n">mode</span><span class="p">]</span>
+<span class="linenos">146</span>    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="linenos">147</span>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;mode: expected compute/persist, got </span><span class="si">{</span><span class="n">mode</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="linenos">148</span>
+<span class="linenos">149</span>    <span class="n">cargs</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="linenos">150</span>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="linenos">151</span>        <span class="n">cargs</span> <span class="o">=</span> <span class="n">cargs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="linenos">152</span>    <span class="k">return</span> <span class="n">cargs</span></div>
 
-<span class="linenos">152</span>
 <span class="linenos">153</span>
+<span class="linenos">154</span>
 <div class="viewcode-block" id="to_NUMPY">
 <a class="viewcode-back" href="../../../api/util.html#pyxu.util.to_NUMPY">[docs]</a>
-<span class="linenos">154</span><span class="k">def</span> <span class="nf">to_NUMPY</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
-<span class="linenos">155</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">156</span><span class="sd">    Convert an array from a specific backend to NUMPY.</span>
-<span class="linenos">157</span>
-<span class="linenos">158</span><span class="sd">    Parameters</span>
-<span class="linenos">159</span><span class="sd">    ----------</span>
-<span class="linenos">160</span><span class="sd">    x: NDArray</span>
-<span class="linenos">161</span><span class="sd">        Array to be converted.</span>
-<span class="linenos">162</span>
-<span class="linenos">163</span><span class="sd">    Returns</span>
-<span class="linenos">164</span><span class="sd">    -------</span>
-<span class="linenos">165</span><span class="sd">    y: NDArray</span>
-<span class="linenos">166</span><span class="sd">        Array with NumPy backend.</span>
-<span class="linenos">167</span>
-<span class="linenos">168</span><span class="sd">    Notes</span>
-<span class="linenos">169</span><span class="sd">    -----</span>
-<span class="linenos">170</span><span class="sd">    This function is a no-op if the array is already a NumPy array.</span>
-<span class="linenos">171</span><span class="sd">    &quot;&quot;&quot;</span>
-<span class="linenos">172</span>    <span class="n">N</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span>
-<span class="linenos">173</span>    <span class="n">ndi</span> <span class="o">=</span> <span class="n">N</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="linenos">174</span>    <span class="k">if</span> <span class="n">ndi</span> <span class="o">==</span> <span class="n">N</span><span class="o">.</span><span class="n">NUMPY</span><span class="p">:</span>
-<span class="linenos">175</span>        <span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
-<span class="linenos">176</span>    <span class="k">elif</span> <span class="n">ndi</span> <span class="o">==</span> <span class="n">N</span><span class="o">.</span><span class="n">DASK</span><span class="p">:</span>
-<span class="linenos">177</span>        <span class="n">y</span> <span class="o">=</span> <span class="n">compute</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="linenos">178</span>    <span class="k">elif</span> <span class="n">ndi</span> <span class="o">==</span> <span class="n">N</span><span class="o">.</span><span class="n">CUPY</span><span class="p">:</span>
-<span class="linenos">179</span>        <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-<span class="linenos">180</span>    <span class="k">else</span><span class="p">:</span>
-<span class="linenos">181</span>        <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Dev-action required: define behaviour for </span><span class="si">{</span><span class="n">ndi</span><span class="si">}</span><span class="s2">.&quot;</span>
-<span class="linenos">182</span>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="linenos">183</span>    <span class="k">return</span> <span class="n">y</span></div>
+<span class="linenos">155</span><span class="k">def</span> <span class="nf">to_NUMPY</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">156</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">157</span><span class="sd">    Convert an array from a specific backend to NUMPY.</span>
+<span class="linenos">158</span>
+<span class="linenos">159</span><span class="sd">    Parameters</span>
+<span class="linenos">160</span><span class="sd">    ----------</span>
+<span class="linenos">161</span><span class="sd">    x: NDArray</span>
+<span class="linenos">162</span><span class="sd">        Array to be converted.</span>
+<span class="linenos">163</span>
+<span class="linenos">164</span><span class="sd">    Returns</span>
+<span class="linenos">165</span><span class="sd">    -------</span>
+<span class="linenos">166</span><span class="sd">    y: NDArray</span>
+<span class="linenos">167</span><span class="sd">        Array with NumPy backend.</span>
+<span class="linenos">168</span>
+<span class="linenos">169</span><span class="sd">    Notes</span>
+<span class="linenos">170</span><span class="sd">    -----</span>
+<span class="linenos">171</span><span class="sd">    This function is a no-op if the array is already a NumPy array.</span>
+<span class="linenos">172</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">173</span>    <span class="n">N</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span>
+<span class="linenos">174</span>    <span class="n">ndi</span> <span class="o">=</span> <span class="n">N</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">175</span>    <span class="k">if</span> <span class="n">ndi</span> <span class="o">==</span> <span class="n">N</span><span class="o">.</span><span class="n">NUMPY</span><span class="p">:</span>
+<span class="linenos">176</span>        <span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+<span class="linenos">177</span>    <span class="k">elif</span> <span class="n">ndi</span> <span class="o">==</span> <span class="n">N</span><span class="o">.</span><span class="n">DASK</span><span class="p">:</span>
+<span class="linenos">178</span>        <span class="n">y</span> <span class="o">=</span> <span class="n">compute</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">179</span>    <span class="k">elif</span> <span class="n">ndi</span> <span class="o">==</span> <span class="n">N</span><span class="o">.</span><span class="n">CUPY</span><span class="p">:</span>
+<span class="linenos">180</span>        <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+<span class="linenos">181</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">182</span>        <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Dev-action required: define behaviour for </span><span class="si">{</span><span class="n">ndi</span><span class="si">}</span><span class="s2">.&quot;</span>
+<span class="linenos">183</span>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="linenos">184</span>    <span class="k">return</span> <span class="n">y</span></div>
 
 </pre></div>
 
@@ -697,7 +684,7 @@ document.write(`
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt, Pyxu Developers.
+      © Copyright 2024, S. Kashani, J. Rué-Queralt, M. Simeoni, Pyxu Developers.
       <br/>
     
   </p>
@@ -705,7 +692,7 @@ document.write(`
       
         <div class="footer-item">
   <p class="sphinx-version">
-     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
   </p>
 </div>

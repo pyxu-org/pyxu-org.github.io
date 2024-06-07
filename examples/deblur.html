@@ -4,7 +4,7 @@
 <html data-theme="light" lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Total-Variation based Bayesian Image Deblurring — Pyxu Documentation</title>
 <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
@@ -27,14 +27,14 @@
 <link href="../_static/sg_gallery-binder.css?v=f4aeca0c" rel="stylesheet" type="text/css"/>
 <link href="../_static/sg_gallery-dataframe.css?v=2082cf3c" rel="stylesheet" type="text/css"/>
 <link href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" rel="stylesheet" type="text/css"/>
-<link href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-design.min.css?v=87e54e7c" rel="stylesheet" type="text/css"/>
 <link href="../_static/nbsphinx-code-cells.css" rel="stylesheet" type="text/css"/>
-<link href="../_static/css/custom.css?v=14df3d68" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../_static/documentation_options.js?v=afeffd13"></script>
-<script src="../_static/doctools.js?v=888ff710"></script>
+<script src="../_static/documentation_options.js?v=eb600d8c"></script>
+<script src="../_static/doctools.js?v=9a2dae69"></script>
 <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
 <script src="../_static/copybutton.js?v=30646c52"></script>
@@ -42,7 +42,7 @@
 <script>let toggleHintHide = 'Click to hide';</script>
 <script>let toggleOpenOnPrint = 'true';</script>
 <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
-<script src="../_static/design-tabs.js?v=36754332"></script>
+<script src="../_static/design-tabs.js?v=f930bc37"></script>
 <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
 <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
 <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -109,11 +109,6 @@
                         API Reference
                       </a>
 </li>
-<li class="nav-item">
-<a class="nav-link nav-internal" href="../fair/index.html">
-                        Extending Pyxu
-                      </a>
-</li>
 </ul>
 </nav></div>
 </div>
@@ -127,10 +122,10 @@ document.write(`
 `);
 </script>
 </div>
-<div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
+<div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
-<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/pyxu-org/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
 <label class="sr-only">GitHub</label></a>
 </li>
 <li class="nav-item">
@@ -191,19 +186,14 @@ document.write(`
                         API Reference
                       </a>
 </li>
-<li class="nav-item">
-<a class="nav-link nav-internal" href="../fair/index.html">
-                        Extending Pyxu
-                      </a>
-</li>
 </ul>
 </nav></div>
 </div>
 <div class="sidebar-header-items__end">
-<div class="navbar-item"><strong> Pyxu v1.2.0 </strong></div>
+<div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
-<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/matthieumeo/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/pyxu-org/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
 <label class="sr-only">GitHub</label></a>
 </li>
 <li class="nav-item">
@@ -268,7 +258,7 @@ document.write(`
 <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">skimage</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">Convolve</span><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.L21Norm" title="pyxu.operator.func.norm.L21Norm"><span class="n">L21Norm</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><span class="n">Gradient</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">SquaredL2Norm</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.PositiveOrthant" title="pyxu.operator.func.indicator.PositiveOrthant"><span class="n">PositiveOrthant</span></a>
+<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">Convolve</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.L21Norm" title="pyxu.operator.func.norm.L21Norm"><span class="n">L21Norm</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><span class="n">Gradient</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">SquaredL2Norm</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.PositiveOrthant" title="pyxu.operator.func.indicator.PositiveOrthant"><span class="n">PositiveOrthant</span></a>
 <span class="kn">from</span> <span class="nn">pyxu.opt.solver</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/opt.solver.html#pyxu.opt.solver.PD3O" title="pyxu.opt.solver.pds.PD3O"><span class="n">PD3O</span></a>
 <span class="kn">from</span> <span class="nn">pyxu.opt.stop</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/opt.stop.html#pyxu.opt.stop.RelError" title="pyxu.opt.stop.RelError"><span class="n">RelError</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/opt.stop.html#pyxu.opt.stop.MaxIter" title="pyxu.opt.stop.MaxIter"><span class="n">MaxIter</span></a>
 
@@ -284,13 +274,29 @@ document.write(`
 <section id="Loading-and-Preprocessing-the-Image">
 <h2>Loading and Preprocessing the Image<a class="headerlink" href="#Loading-and-Preprocessing-the-Image" title="Link to this heading">#</a></h2>
 <p>We will use a sample image from the <code class="docutils literal notranslate"><span class="pre">skimage.data</span></code> module and preprocess it to be suitable for the deblurring process. The image is converted to a float type and normalized to have pixel values between 0 and 1.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>scikit-image
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Requirement already satisfied: scikit-image in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (0.22.0)
+Requirement already satisfied: numpy&gt;=1.22 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from scikit-image) (1.26.3)
+Requirement already satisfied: scipy&gt;=1.8 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from scikit-image) (1.11.4)
+Requirement already satisfied: networkx&gt;=2.8 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from scikit-image) (3.2.1)
+Requirement already satisfied: pillow&gt;=9.0.1 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from scikit-image) (10.2.0)
+Requirement already satisfied: imageio&gt;=2.27 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from scikit-image) (2.33.1)
+Requirement already satisfied: tifffile&gt;=2022.8.12 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from scikit-image) (2023.12.9)
+Requirement already satisfied: packaging&gt;=21 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from scikit-image) (23.2)
+Requirement already satisfied: lazy_loader&gt;=0.3 in /home/ruequera/miniconda3/envs/pyxu/lib/python3.11/site-packages (from scikit-image) (0.3)
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -350,14 +356,14 @@ document.write(`
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Applying the blurring and adding noise</span>
-<span class="n">conv</span> <span class="o">=</span> <span class="n">Convolve</span><span class="p">(</span>
-    <span class="n">arg_shape</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
+<a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">conv</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">Convolve</span></a><span class="p">(</span>
+    <span class="n">dim_shape</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
     <span class="n">kernel</span><span class="o">=</span><span class="p">[</span><a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="numpy.array"><span class="n">xp</span><span class="o">.</span><span class="n">array</span></a><span class="p">([</span><span class="mi">1</span><span class="p">]),</span> <span class="n">kernel_1d</span><span class="p">,</span> <span class="n">kernel_1d</span><span class="p">],</span>
     <span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">],</span>
     <span class="n">mode</span><span class="o">=</span><span class="s2">"reflect"</span><span class="p">,</span>
     <span class="n">enable_warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">conv</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">conv</span></a><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html#numpy.random.normal" title="numpy.random.normal"><span class="n">xp</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span></a><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">skimage</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
@@ -365,28 +371,19 @@ document.write(`
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-/home/joan/.local/lib/python3.10/site-packages/numba/np/ufunc/parallel.py:371: NumbaWarning: <span class="ansi-bold">The TBB threading layer requires TBB version 2021 update 6 or later i.e., TBB_INTERFACE_VERSION &gt;= 12060. Found TBB_INTERFACE_VERSION = 12050. The TBB threading layer is disabled.</span>
-  warnings.warn(problem)
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.image.AxesImage at 0x7fa21c9c4cd0&gt;
+&lt;matplotlib.image.AxesImage at 0x7f61bc597610&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_deblur_8_2.png" src="../_images/examples_deblur_8_2.png"/>
+<img alt="../_images/examples_deblur_8_1.png" src="../_images/examples_deblur_8_1.png"/>
 </div>
 </div>
 </section>
@@ -419,13 +416,13 @@ PD3O, which is significantly faster than the CPU version (e.g., this example run
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setting up the MAP approach with total variation prior and positivity constraint</span>
-<span class="n">sl2</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">SquaredL2Norm</span></a><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">y</span><span class="o">.</span><span class="n">size</span><span class="p">)</span><span class="o">.</span><span class="n">asloss</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
-<span class="n">loss</span> <span class="o">=</span> <span class="n">sl2</span> <span class="o">*</span> <span class="n">conv</span>
+<span class="n">sl2</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">SquaredL2Norm</span></a><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span><span class="o">.</span><span class="n">argshift</span><span class="p">(</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
+<span class="n">loss</span> <span class="o">=</span> <span class="n">sl2</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">conv</span></a>
 
-<a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.L21Norm" title="pyxu.operator.func.norm.L21Norm"><span class="n">l21</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.L21Norm" title="pyxu.operator.func.norm.L21Norm"><span class="n">L21Norm</span></a><span class="p">(</span><span class="n">arg_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">*</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="n">l2_axis</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.L21Norm" title="pyxu.operator.func.norm.L21Norm"><span class="n">l21</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.L21Norm" title="pyxu.operator.func.norm.L21Norm"><span class="n">L21Norm</span></a><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">*</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="n">l2_axis</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 
 <span class="n">grad</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><span class="n">Gradient</span></a><span class="p">(</span>
-    <span class="n">arg_shape</span><span class="o">=</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
+    <span class="n">dim_shape</span><span class="o">=</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
     <span class="n">directions</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
     <span class="n">gpu</span><span class="o">=</span><span class="n">GPU</span><span class="p">,</span>
     <span class="n">diff_method</span><span class="o">=</span><span class="s2">"fd"</span><span class="p">,</span>
@@ -441,14 +438,14 @@ PD3O, which is significantly faster than the CPU version (e.g., this example run
             <span class="n">satisfy_all</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="p">)</span> <span class="o">|</span> <a class="sphinx-codeautolink-a" href="../api/opt.stop.html#pyxu.opt.stop.MaxIter" title="pyxu.opt.stop.MaxIter"><span class="n">MaxIter</span></a><span class="p">(</span><span class="mi">5000</span><span class="p">)</span>
 
-<a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.PositiveOrthant" title="pyxu.operator.func.indicator.PositiveOrthant"><span class="n">positivity</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.PositiveOrthant" title="pyxu.operator.func.indicator.PositiveOrthant"><span class="n">PositiveOrthant</span></a><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">y</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.PositiveOrthant" title="pyxu.operator.func.indicator.PositiveOrthant"><span class="n">positivity</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.PositiveOrthant" title="pyxu.operator.func.indicator.PositiveOrthant"><span class="n">PositiveOrthant</span></a><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <a class="sphinx-codeautolink-a" href="../api/opt.solver.html#pyxu.opt.solver.PD3O" title="pyxu.opt.solver.pds.PD3O"><span class="n">solver</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/opt.solver.html#pyxu.opt.solver.PD3O" title="pyxu.opt.solver.pds.PD3O"><span class="n">PD3O</span></a><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">loss</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.PositiveOrthant" title="pyxu.operator.func.indicator.PositiveOrthant"><span class="n">positivity</span></a><span class="p">,</span> <span class="n">h</span><span class="o">=</span> <span class="mf">3e-2</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.L21Norm" title="pyxu.operator.func.norm.L21Norm"><span class="n">l21</span></a><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="n">grad</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
-<span class="n">solver</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="n">y</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">stop_crit</span><span class="o">=</span><span class="n">stop_crit</span><span class="p">)</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">stop_crit</span><span class="o">=</span><span class="n">stop_crit</span><span class="p">)</span>
 
 <span class="c1"># Getting the deblurred image</span>
-<span class="n">recons</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solution</span><span class="p">()</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">recons</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solution</span><span class="p">()</span>
 <span class="n">recons</span> <span class="o">/=</span> <span class="n">recons</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-<br/></pre></div>
+</pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -456,55 +453,66 @@ PD3O, which is significantly faster than the CPU version (e.g., this example run
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-INFO -- [2023-10-17 07:05:35.239986] Iteration 0
+INFO -- [2024-01-22 14:28:13.738989] Iteration 0
         iteration: 0
-        RelError[x]: 0.0
+        RelError[x]_min: 0.0
+        RelError[x]_max: 0.0
         N_iter: 1.0
-INFO -- [2023-10-17 07:06:08.411195] Iteration 500
+INFO -- [2024-01-22 14:28:45.480630] Iteration 500
         iteration: 500
-        RelError[x]: 4.904123121813688e-05
+        RelError[x]_min: 2.1463056687136675e-05
+        RelError[x]_max: 0.0002371174821658186
         N_iter: 501.0
-INFO -- [2023-10-17 07:06:43.122985] Iteration 1_000
+INFO -- [2024-01-22 14:29:13.765350] Iteration 1_000
         iteration: 1000
-        RelError[x]: 2.2254227486883125e-05
+        RelError[x]_min: 1.0265662707898284e-05
+        RelError[x]_max: 9.260373619317948e-05
         N_iter: 1001.0
-INFO -- [2023-10-17 07:07:18.052272] Iteration 1_500
+INFO -- [2024-01-22 14:29:43.150160] Iteration 1_500
         iteration: 1500
-        RelError[x]: 1.2434739751099225e-05
+        RelError[x]_min: 5.754197670719021e-06
+        RelError[x]_max: 3.9057447293453106e-05
         N_iter: 1501.0
-INFO -- [2023-10-17 07:07:53.556897] Iteration 2_000
+INFO -- [2024-01-22 14:30:12.316289] Iteration 2_000
         iteration: 2000
-        RelError[x]: 7.486998979265033e-06
+        RelError[x]_min: 3.521467637599543e-06
+        RelError[x]_max: 2.4793145552207834e-05
         N_iter: 2001.0
-INFO -- [2023-10-17 07:08:28.714765] Iteration 2_500
+INFO -- [2024-01-22 14:30:41.225232] Iteration 2_500
         iteration: 2500
-        RelError[x]: 4.698671387686982e-06
+        RelError[x]_min: 2.2467183596185825e-06
+        RelError[x]_max: 1.5925763889832436e-05
         N_iter: 2501.0
-INFO -- [2023-10-17 07:09:05.089385] Iteration 3_000
+INFO -- [2024-01-22 14:31:12.145661] Iteration 3_000
         iteration: 3000
-        RelError[x]: 3.0566844199002705e-06
+        RelError[x]_min: 1.5176150918584405e-06
+        RelError[x]_max: 1.0421491878747986e-05
         N_iter: 3001.0
-INFO -- [2023-10-17 07:09:43.665496] Iteration 3_500
+INFO -- [2024-01-22 14:31:45.814587] Iteration 3_500
         iteration: 3500
-        RelError[x]: 2.079001212186548e-06
+        RelError[x]_min: 9.627250926429347e-07
+        RelError[x]_max: 6.997584971108367e-06
         N_iter: 3501.0
-INFO -- [2023-10-17 07:10:22.235798] Iteration 4_000
+INFO -- [2024-01-22 14:32:20.288293] Iteration 4_000
         iteration: 4000
-        RelError[x]: 1.5005422175831568e-06
+        RelError[x]_min: 6.378460211537794e-07
+        RelError[x]_max: 4.870775876383907e-06
         N_iter: 4001.0
-INFO -- [2023-10-17 07:10:59.459907] Iteration 4_500
+INFO -- [2024-01-22 14:32:50.245085] Iteration 4_500
         iteration: 4500
-        RelError[x]: 1.1630126923856954e-06
+        RelError[x]_min: 4.491191080567554e-07
+        RelError[x]_max: 3.561359334501216e-06
         N_iter: 4501.0
-INFO -- [2023-10-17 07:11:26.781627] Iteration 4_896
-        iteration: 4896
-        RelError[x]: 9.998430997189881e-07
-        N_iter: 4897.0
-INFO -- [2023-10-17 07:11:26.782357] Stopping Criterion satisfied -&gt; END
+INFO -- [2024-01-22 14:33:20.736452] Iteration 5_000
+        iteration: 5000
+        RelError[x]_min: 3.444939944215334e-07
+        RelError[x]_max: 3.110409030527646e-06
+        N_iter: 5001.0
+INFO -- [2024-01-22 14:33:20.738288] Stopping Criterion satisfied -&gt; END
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">skimage</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">recons</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
@@ -512,12 +520,12 @@ INFO -- [2023-10-17 07:11:26.782357] Stopping Criterion satisfied -&gt; END
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.image.AxesImage at 0x7fa0fc2135b0&gt;
+&lt;matplotlib.image.AxesImage at 0x7f61ae575a50&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -528,7 +536,7 @@ INFO -- [2023-10-17 07:11:26.782357] Stopping Criterion satisfied -&gt; END
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Evaluating the deblurred image</span>
@@ -560,7 +568,7 @@ INFO -- [2023-10-17 07:11:26.782357] Stopping Criterion satisfied -&gt; END
 <h2>Visualizing the Results<a class="headerlink" href="#Visualizing-the-Results" title="Link to this heading">#</a></h2>
 <p>Finally, let’s visualize the original image, the blurred and noisy image, and the deblurred image obtained using the MAP approach with a total variation prior and positivity constraint. We will also display the evaluation metrics for a comprehensive comparison.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualizing the results</span>
@@ -623,7 +631,7 @@ INFO -- [2023-10-17 07:11:26.782357] Stopping Criterion satisfied -&gt; END
 <div id="searchbox"></div></div>
 <div class="sidebar-secondary-item">
 <div class="tocsection editthispage">
-<a href="https://github.com/matthieumeo/pyxu/edit/main/doc/examples/deblur.ipynb">
+<a href="https://github.com/pyxu-org/pyxu/edit/main/doc/examples/deblur.ipynb">
 <i class="fa-solid fa-pencil"></i>
       
       
@@ -657,13 +665,13 @@ INFO -- [2023-10-17 07:11:26.782357] Stopping Criterion satisfied -&gt; END
 <div class="footer-item">
 <p class="copyright">
     
-      © Copyright 2023, M. Simeoni, S. Kashani, J. Rué-Queralt, Pyxu Developers.
+      © Copyright 2024, S. Kashani, J. Rué-Queralt, M. Simeoni, Pyxu Developers.
       <br/>
 </p>
 </div>
 <div class="footer-item">
 <p class="sphinx-version">
-     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
     <br/>
 </p>
 </div>
