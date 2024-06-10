@@ -51,7 +51,6 @@ jobs:
 
     - name: Clean pyxu/doc/fair directory
       run: |
-        rm -rf pyxu/doc/fair/*.rst
         rm -rf pyxu/doc/fair/plugins/*.rst
 
     - name: Run parse_pypi.py
