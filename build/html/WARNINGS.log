@@ -1,5 +1,20 @@
-WARNING: html_static_path entry '_static' is placed inside outdir
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/howto.rst:2: WARNING: Duplicate explicit target name: "catalogue website".
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/howto.rst:33: WARNING: invalid syntax (<unknown>, line 2) in document 'fair/howto'
+Parsed source in `python` block:
+concatenations: from pyxu.opt.solver import GradientDescent
+block source:   ModuleNotFoundError: No module named 'pyxu.opt.solver.GradientDescent'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/plugins_preview/index.rst:1118: WARNING: toctree contains reference to nonexisting document 'fair/plugins_preview/TokemakRec'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/score.rst:29: WARNING: Bullet list ends without a blank line; unexpected unindent.
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:284: WARNING: File not found: 'api/abc.html#pyxu.abc.Operator.expr'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:451: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.pinv'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:451: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:666: WARNING: File not found: 'api/operator/linop.html#pyxu.operator.Gradient'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:668: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc.moreau_envelope'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:677: WARNING: File not found: 'api/operator/func.html#pyxu.operator.PositiveL1Norm'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:686: WARNING: File not found: 'api/operator/func.html#pyxu.operator.SquaredL2Norm'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:687: WARNING: File not found: 'api/abc.html#pyxu.abc.Func.asloss'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:699: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.estimate_diff_lipschitz'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:914: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxDiffFunc'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.jacobian'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc.grad'
@@ -17,28 +32,6 @@ WARNING: html_static_path entry '_static' is placed inside outdir
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:48: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:57: WARNING: File not found: 'api/operator/blocks.html#pyxu.operator.block_diag'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:57: WARNING: File not found: 'api/operator/blocks.html#pyxu.operator.stack'
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:284: WARNING: File not found: 'api/abc.html#pyxu.abc.Operator.expr'
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:451: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.pinv'
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:451: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:666: WARNING: File not found: 'api/operator/linop.html#pyxu.operator.Gradient'
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:668: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc.moreau_envelope'
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:677: WARNING: File not found: 'api/operator/func.html#pyxu.operator.PositiveL1Norm'
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:686: WARNING: File not found: 'api/operator/func.html#pyxu.operator.SquaredL2Norm'
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:687: WARNING: File not found: 'api/abc.html#pyxu.abc.Func.asloss'
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:699: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.estimate_diff_lipschitz'
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:914: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxDiffFunc'
-WARNING: missing attribute to_sciop in object pyxu.abc.LinOp
-/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.asarray:8: WARNING: Inline emphasis start-string without end-string.
-/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.asarray:8: WARNING: Inline emphasis start-string without end-string.
-/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.from_array:3: WARNING: Inline emphasis start-string without end-string.
-/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.from_array:3: WARNING: Inline emphasis start-string without end-string.
-/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/experimental/sampler/_sampler.py:docstring of pyxu.experimental.sampler._sampler.ULA:106: WARNING: Exception occurred in plotting sampler-1
- from /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/experimental/sampler.rst:
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/matplotlib/sphinxext/plot_directive.py", line 552, in _run_code
-    exec(code, ns)
-  File "<string>", line 7, in <module>
-TypeError: SquaredL2Norm.__init__() got an unexpected keyword argument 'dim'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algorithms.ipynb:17: WARNING: Title underline too short.
 
 Conjugate Gradient (CG) `🔗 <../api/opt.solver.html#pyxu.opt.solver.CG>`__
@@ -189,7 +182,34 @@ Hands-On Example 🎓
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/lipschitz.ipynb:51: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/lipschitz.ipynb:285: WARNING: File not found: 'api/index.html'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/lipschitz.ipynb:285: WARNING: File not found: 'api/abc/arithmetic.html'
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/index.rst:620: WARNING: toctree contains reference to nonexisting document 'fair/index'
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ADMM:152: WARNING: Exception occurred in plotting opt-solver-3
+ from /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/opt.solver.rst:
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/matplotlib/sphinxext/plot_directive.py", line 552, in _run_code
+    exec(code, ns)
+  File "<string>", line 29, in <module>
+TypeError: SquaredL2Norm.__init__() got an unexpected keyword argument 'dim'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/contributing.ipynb:42: WARNING: invalid syntax (<unknown>, line 5) in document 'examples/contributing'
+Parsed source in `python` block:
+concatenations: try:
+    from pyxu.opt.solver import GradientDescent
+except ImportError as e:
+    print(e)
+block source:   !pip install pyxu-gradient-descent
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/deblur.ipynb:278: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.PD3O'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/xray.ipynb:11: WARNING: File not found: 'intro/tomo.html'
+WARNING: missing attribute to_sciop in object pyxu.abc.LinOp
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.asarray:8: WARNING: Inline emphasis start-string without end-string.
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.asarray:8: WARNING: Inline emphasis start-string without end-string.
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.from_array:3: WARNING: Inline emphasis start-string without end-string.
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.from_array:3: WARNING: Inline emphasis start-string without end-string.
+/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/experimental/sampler/_sampler.py:docstring of pyxu.experimental.sampler._sampler.ULA:106: WARNING: Exception occurred in plotting sampler-1
+ from /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/experimental/sampler.rst:
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/matplotlib/sphinxext/plot_directive.py", line 552, in _run_code
+    exec(code, ns)
+  File "<string>", line 7, in <module>
+TypeError: SquaredL2Norm.__init__() got an unexpected keyword argument 'dim'
 WARNING: missing attribute relative_indices in object pyxu.operator.Stencil
 /opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Divergence:77: WARNING: Exception occurred in plotting linop-12
  from /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:
@@ -268,30 +288,11 @@ Traceback (most recent call last):
     assert lhs.dim_shape == rhs.codim_shape, "Operator dimensions are not compatible."
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AssertionError: Operator dimensions are not compatible.
-/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/operator/ufunc.py:docstring of pyxu.operator.ufunc.Gaussian:1: WARNING: duplicate object description of pyxu.operator.Gaussian, other instance in api/operator/linop, use :no-index: for one of them
-/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ADMM:152: WARNING: Exception occurred in plotting opt-solver-3
- from /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/opt.solver.rst:
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/matplotlib/sphinxext/plot_directive.py", line 552, in _run_code
-    exec(code, ns)
-  File "<string>", line 29, in <module>
-TypeError: SquaredL2Norm.__init__() got an unexpected keyword argument 'dim'
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/contributing.ipynb:42: WARNING: invalid syntax (<unknown>, line 5) in document 'examples/contributing'
-Parsed source in `python` block:
-concatenations: try:
-    from pyxu.opt.solver import GradientDescent
-except ImportError as e:
-    print(e)
-block source:   !pip install pyxu-gradient-descent
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/deblur.ipynb:278: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.PD3O'
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/xray.ipynb:11: WARNING: File not found: 'intro/tomo.html'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/contributing.ipynb: WARNING: document isn't included in any toctree
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/deblur.ipynb: WARNING: document isn't included in any toctree
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/stencils.ipynb: WARNING: document isn't included in any toctree
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/xray.ipynb: WARNING: document isn't included in any toctree
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/plugins/index.rst: WARNING: document isn't included in any toctree
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/plugins_preview/TokamakRec.rst: WARNING: document isn't included in any toctree
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/plugins_preview/index.rst: WARNING: document isn't included in any toctree
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/references.rst:5: WARNING: Citation [ProxAlg] is not referenced.
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/references.rst:6: WARNING: Citation [FirstOrd] is not referenced.
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/references.rst:7: WARNING: Citation [OnKerLearn] is not referenced.

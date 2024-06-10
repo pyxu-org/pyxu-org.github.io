@@ -38,7 +38,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=14df3d68" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -61,6 +61,8 @@
     <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="TVDenoiser" href="TVDenoiser.html" />
+    <link rel="prev" title="pycWavelet" href="pycWavelet.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,6 +175,13 @@
                       </a>
                     </li>
                 
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Extending Pyxu
+                      </a>
+                    </li>
+                
   </ul>
 </nav></div>
       
@@ -274,7 +283,7 @@ document.write(`
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -316,6 +325,13 @@ document.write(`
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../api/index.html">
                         API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Extending Pyxu
                       </a>
                     </li>
                 
@@ -385,6 +401,46 @@ document.write(`
     
   </div>
   
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../howto.html">How to use plugins in Pyxu?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">Contributing to the Pyxu-FAIR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_notes.html">Developer Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../score.html">Pyxu Score Explained</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../plugins/index.html">Catalogue</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/pyxu_eigh.html">pyxu_eigh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/pyxu_finufft.html">pyxu_finufft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/pyxu_gradient_descent.html">pyxu_gradient_descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/pyxu_xrt.html">pyxu_xrt</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Plugin Preview Catalog</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="CSEEG.html">CSEEG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DSP-Notebooks.html">DSP-Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EnvironTracker.html">EnvironTracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HoughDetector.html">HoughDetector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HVOX.html">HVOX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OrientationPy.html">OrientationPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Palentologist.html">Palentologist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PhaseRet.html">PhaseRet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PycGSP.html">PycGSP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pycNUFFT.html">pycNUFFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PycSphere.html">PycSphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pycWavelet.html">pycWavelet</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">PYFW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TVDenoiser.html">TVDenoiser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UncertaintyQuant.html">UncertaintyQuant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WaveProp.html">WaveProp</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
@@ -417,6 +473,12 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Extending Pyxu</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Plugin Preview Catalog</a></li>
+    
     <li class="breadcrumb-item active" aria-current="page">PYFW</li>
   </ul>
 </nav>
@@ -706,6 +768,24 @@ Quisquam labore dolorem est tempora dolorem neque neque. Ut ut non modi sit volu
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="pycWavelet.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">pycWavelet</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="TVDenoiser.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">TVDenoiser</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>

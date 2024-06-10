@@ -38,7 +38,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=14df3d68" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -174,6 +174,13 @@
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="#">
                         API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fair/index.html">
+                        Extending Pyxu
                       </a>
                     </li>
                 
@@ -320,6 +327,13 @@ document.write(`
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="#">
                         API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fair/index.html">
+                        Extending Pyxu
                       </a>
                     </li>
                 
@@ -1028,7 +1042,7 @@ the former and must be imported explicitly:</p>
 <tr class="row-even"><td><p><a class="reference internal" href="operator/linop.html#pyxu.operator.DoG" title="pyxu.operator.DoG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DoG</span></code></a>(dim_shape[, low_sigma, high_sigma, ...])</p></td>
 <td><p>Alias of <a class="reference internal" href="operator/linop.html#pyxu.operator.DifferenceOfGaussians" title="pyxu.operator.DifferenceOfGaussians"><code class="xref py py-func docutils literal notranslate"><span class="pre">DifferenceOfGaussians()</span></code></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="operator/map.html#pyxu.operator.Gaussian" title="pyxu.operator.Gaussian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Gaussian</span></code></a>(dim_shape)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="operator/linop.html#pyxu.operator.Gaussian" title="pyxu.operator.Gaussian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Gaussian</span></code></a>(dim_shape)</p></td>
 <td><p>Gaussian, element-wise.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="operator/linop.html#pyxu.operator.Laplace" title="pyxu.operator.Laplace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Laplace</span></code></a>(dim_shape[, mode, sampling, gpu, dtype])</p></td>
@@ -1181,7 +1195,7 @@ the former and must be imported explicitly:</p>
 <tr class="row-even"><td><p><a class="reference internal" href="operator/map.html#pyxu.operator.Exp" title="pyxu.operator.Exp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Exp</span></code></a>(dim_shape[, base])</p></td>
 <td><p>Exponential, element-wise.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="operator/map.html#pyxu.operator.Gaussian" title="pyxu.operator.Gaussian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Gaussian</span></code></a>(dim_shape)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="operator/linop.html#pyxu.operator.Gaussian" title="pyxu.operator.Gaussian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Gaussian</span></code></a>(dim_shape)</p></td>
 <td><p>Gaussian, element-wise.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="operator/map.html#pyxu.operator.LeakyReLU" title="pyxu.operator.LeakyReLU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LeakyReLU</span></code></a>(dim_shape, alpha)</p></td>
