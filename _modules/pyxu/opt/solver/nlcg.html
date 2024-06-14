@@ -43,7 +43,7 @@
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../../_static/documentation_options.js?v=eb600d8c"></script>
+    <script src="../../../../_static/documentation_options.js?v=6a217bc0"></script>
     <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -199,7 +199,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v2.0b2 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -341,7 +341,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v2.0b2 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -473,7 +473,7 @@ document.write(`
 <span class="linenos"> 18</span>
 <span class="linenos"> 19</span><span class="sd">    .. math::</span>
 <span class="linenos"> 20</span>
-<span class="linenos"> 21</span><span class="sd">       \min_{\mathbf{x}\in\mathbb{R}^{N}} f(\mathbf{x}),</span>
+<span class="linenos"> 21</span><span class="sd">       \min_{x\in\mathbb{R}^{N}} f(x),</span>
 <span class="linenos"> 22</span>
 <span class="linenos"> 23</span><span class="sd">    where :math:`f: \mathbb{R}^{N} \to \mathbb{R}` is a *differentiable* functional.  When :math:`f` is quadratic, NLCG</span>
 <span class="linenos"> 24</span><span class="sd">    is equivalent to the Conjugate Gradient (CG) method.  NLCG hence has similar convergence behaviour to CG if</span>
@@ -481,7 +481,7 @@ document.write(`
 <span class="linenos"> 26</span><span class="sd">    [NumOpt_NocWri]_.</span>
 <span class="linenos"> 27</span>
 <span class="linenos"> 28</span><span class="sd">    The norm of the `gradient &lt;https://www.wikiwand.com/en/Nonlinear_conjugate_gradient_method&gt;`_ :math:`\nabla f_k =</span>
-<span class="linenos"> 29</span><span class="sd">    \nabla f(\mathbf{x}_k)` is used as the default stopping criterion.  By default, the iterations stop when the norm of the</span>
+<span class="linenos"> 29</span><span class="sd">    \nabla f(x_k)` is used as the default stopping criterion.  By default, the iterations stop when the norm of the</span>
 <span class="linenos"> 30</span><span class="sd">    gradient is smaller than 1e-4.</span>
 <span class="linenos"> 31</span>
 <span class="linenos"> 32</span><span class="sd">    Multiple variants of NLCG exist.  They differ mainly in how the weights applied to conjugate directions are updated.</span>

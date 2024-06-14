@@ -32,7 +32,7 @@
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../_static/documentation_options.js?v=eb600d8c"></script>
+<script src="../_static/documentation_options.js?v=6a217bc0"></script>
 <script src="../_static/doctools.js?v=9a2dae69"></script>
 <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -128,7 +128,7 @@ document.write(`
 `);
 </script>
 </div>
-<div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
+<div class="navbar-item"><strong> Pyxu v2.0b2 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
 <a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/pyxu-org/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
@@ -201,7 +201,7 @@ document.write(`
 </nav></div>
 </div>
 <div class="sidebar-header-items__end">
-<div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
+<div class="navbar-item"><strong> Pyxu v2.0b2 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
 <a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/pyxu-org/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
@@ -371,7 +371,7 @@ Other keyword parameters passed on to <a class="reference internal" href="abc.ht
 <p>Conjugate Gradient Method.</p>
 <p>The Conjugate Gradient method solves the minimization problem</p>
 <div class="math notranslate nohighlight">
-\[\min_{\mathbf{x}\in\mathbb{R}^{M_{1} \times\cdots\times M_{D}}}
+\[\min_{x\in\mathbb{R}^{M_{1} \times\cdots\times M_{D}}}
 \frac{1}{2} \langle \mathbf{x}, \mathbf{A} \mathbf{x} \rangle - \langle \mathbf{x}, \mathbf{b} \rangle,\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathbf{A}: \mathbb{R}^{{M_{1} \times\cdots\times M_{D}}} \to \mathbb{R}^{{M_{1} \times\cdots\times
 M_{D}}}\)</span> is a <em>symmetric</em> <em>positive definite</em> operator, and <span class="math notranslate nohighlight">\(\mathbf{b} \in \mathbb{R}^{{M_{1}
@@ -428,13 +428,13 @@ Other keyword parameters passed on to <a class="reference internal" href="abc.ht
 <p>Nonlinear Conjugate Gradient Method (NLCG).</p>
 <p>The Nonlinear Conjugate Gradient method finds a local minimum of the problem</p>
 <div class="math notranslate nohighlight">
-\[\min_{\mathbf{x}\in\mathbb{R}^{N}} f(\mathbf{x}),\]</div>
+\[\min_{x\in\mathbb{R}^{N}} f(x),\]</div>
 <p>where <span class="math notranslate nohighlight">\(f: \mathbb{R}^{N} \to \mathbb{R}\)</span> is a <em>differentiable</em> functional.  When <span class="math notranslate nohighlight">\(f\)</span> is quadratic, NLCG
 is equivalent to the Conjugate Gradient (CG) method.  NLCG hence has similar convergence behaviour to CG if
 <span class="math notranslate nohighlight">\(f\)</span> is locally-quadratic.  The converge speed may be slower however due to its line-search overhead
 <a class="reference internal" href="../references.html#numopt-nocwri" id="id5"><span>[NumOpt_NocWri]</span></a>.</p>
 <p>The norm of the <a class="reference external" href="https://www.wikiwand.com/en/Nonlinear_conjugate_gradient_method">gradient</a> <span class="math notranslate nohighlight">\(\nabla f_k =
-\nabla f(\mathbf{x}_k)\)</span> is used as the default stopping criterion.  By default, the iterations stop when the norm of the
+\nabla f(x_k)\)</span> is used as the default stopping criterion.  By default, the iterations stop when the norm of the
 gradient is smaller than 1e-4.</p>
 <p>Multiple variants of NLCG exist.  They differ mainly in how the weights applied to conjugate directions are updated.
 Two popular variants are implemented:</p>

@@ -32,7 +32,7 @@
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../../_static/documentation_options.js?v=eb600d8c"></script>
+<script src="../../_static/documentation_options.js?v=6a217bc0"></script>
 <script src="../../_static/doctools.js?v=9a2dae69"></script>
 <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -128,7 +128,7 @@ document.write(`
 `);
 </script>
 </div>
-<div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
+<div class="navbar-item"><strong> Pyxu v2.0b2 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
 <a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/pyxu-org/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
@@ -201,7 +201,7 @@ document.write(`
 </nav></div>
 </div>
 <div class="sidebar-header-items__end">
-<div class="navbar-item"><strong> Pyxu v2.0b3.dev2 </strong></div>
+<div class="navbar-item"><strong> Pyxu v2.0b2 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
 <a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/pyxu-org/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
@@ -931,14 +931,14 @@ non-chunked NUMPY version (assuming it fits in memory).</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dim_shape</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArrayShape" title="pyxu.info.ptype.NDArrayShape"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArrayShape</span></code></a>) – (M1,…,MD) dimensions of the input <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{C}^{M_{1} \times\cdots\times M_{D}}\)</span>.</p></li>
 <li><p><strong>axes</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArrayAxis" title="pyxu.info.ptype.NDArrayAxis"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArrayAxis</span></code></a>) – Axes over which to compute the FFT. If not given, all axes are used.</p></li>
-<li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – <p>Extra kwargs passed to <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.fftn.html#scipy.fft.fftn" title="(in SciPy v1.13.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.fftn()</span></code></a> or <a class="reference external" href="https://docs.cupy.dev/en/latest/reference/generated/cupyx.scipy.fft.fftn.html#cupyx.scipy.fft.fftn" title="(in CuPy v14.0.0a0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">cupyx.scipy.fft.fftn()</span></code></a>.</p>
+<li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – <p>Extra kwargs passed to <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.fftn.html#scipy.fft.fftn" title="(in SciPy v1.13.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.fftn()</span></code></a> or <a class="reference external" href="https://docs.cupy.dev/en/latest/reference/generated/cupyx.scipy.fft.fftn.html#cupyx.scipy.fft.fftn" title="(in CuPy v14.0.0a1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">cupyx.scipy.fft.fftn()</span></code></a>.</p>
 <p>Supported parameters for <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.fftn.html#scipy.fft.fftn" title="(in SciPy v1.13.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.fftn()</span></code></a> are:</p>
 <blockquote>
 <div><ul>
 <li><p>workers: int = None</p></li>
 </ul>
 </div></blockquote>
-<p>Supported parameters for <a class="reference external" href="https://docs.cupy.dev/en/latest/reference/generated/cupyx.scipy.fft.fftn.html#cupyx.scipy.fft.fftn" title="(in CuPy v14.0.0a0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">cupyx.scipy.fft.fftn()</span></code></a> are:</p>
+<p>Supported parameters for <a class="reference external" href="https://docs.cupy.dev/en/latest/reference/generated/cupyx.scipy.fft.fftn.html#cupyx.scipy.fft.fftn" title="(in CuPy v14.0.0a1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">cupyx.scipy.fft.fftn()</span></code></a> are:</p>
 <blockquote>
 <div><ul>
 <li><p>NOT SUPPORTED FOR NOW</p></li>
