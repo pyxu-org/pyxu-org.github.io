@@ -47,7 +47,12 @@ jobs:
     - name: Clone and Install Pyxu repository
       run: |
         git clone https://github.com/pyxu-org/pyxu.git
-        python -m pip install pyxu/.[dev]
+        cd pyxu
+        git fetch --tags
+        latest_tag=$(git describe --tags `git rev-list --tags --max-count=1`)
+        git checkout $latest_tag
+        python -m pip install .[dev]
+        cd ../
 
     - name: Clean pyxu/doc/fair directory
       run: |
