@@ -1,10 +1,9 @@
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/xray.ipynb:11: WARNING: File not found: 'intro/tomo.html'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/howto.rst:2: WARNING: Duplicate explicit target name: "catalogue website".
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/howto.rst:33: WARNING: invalid syntax (<unknown>, line 2) in document 'fair/howto'
 Parsed source in `python` block:
 concatenations: from pyxu.opt.solver import GradientDescent
 block source:   ModuleNotFoundError: No module named 'pyxu.opt.solver.GradientDescent'
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/plugins_preview/index.rst:1118: WARNING: toctree contains reference to nonexisting document 'fair/plugins_preview/TokemakRec'
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/score.rst:29: WARNING: Bullet list ends without a blank line; unexpected unindent.
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:284: WARNING: File not found: 'api/abc.html#pyxu.abc.Operator.expr'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:451: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.pinv'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:451: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
@@ -15,6 +14,8 @@ block source:   ModuleNotFoundError: No module named 'pyxu.opt.solver.GradientDe
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:687: WARNING: File not found: 'api/abc.html#pyxu.abc.Func.asloss'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:699: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.estimate_diff_lipschitz'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:914: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxDiffFunc'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/plugins_preview/index.rst:1118: WARNING: toctree contains reference to nonexisting document 'fair/plugins_preview/TokemakRec'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/score.rst:29: WARNING: Bullet list ends without a blank line; unexpected unindent.
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.jacobian'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc.grad'
@@ -197,7 +198,6 @@ except ImportError as e:
     print(e)
 block source:   !pip install pyxu-gradient-descent
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/deblur.ipynb:278: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.PD3O'
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/xray.ipynb:11: WARNING: File not found: 'intro/tomo.html'
 WARNING: missing attribute to_sciop in object pyxu.abc.LinOp
 /opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.asarray:8: WARNING: Inline emphasis start-string without end-string.
 /opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.asarray:8: WARNING: Inline emphasis start-string without end-string.
@@ -288,8 +288,10 @@ Traceback (most recent call last):
     assert lhs.dim_shape == rhs.codim_shape, "Operator dimensions are not compatible."
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AssertionError: Operator dimensions are not compatible.
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/GALLERY_HEADER.rst: WARNING: document isn't included in any toctree
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/contributing.ipynb: WARNING: document isn't included in any toctree
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/deblur.ipynb: WARNING: document isn't included in any toctree
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/images/GALLERY_HEADER.rst: WARNING: document isn't included in any toctree
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/stencils.ipynb: WARNING: document isn't included in any toctree
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/xray.ipynb: WARNING: document isn't included in any toctree
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/plugins_preview/TokamakRec.rst: WARNING: document isn't included in any toctree
@@ -319,3 +321,5 @@ AssertionError: Operator dimensions are not compatible.
 /opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: (Integer
 /opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: Integer))
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/contributing.ipynb:42: WARNING: Lexing literal_block '!pip install pyxu-gradient-descent' as "python" resulted in an error at token: '!'. Retrying in relaxed mode.
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/index.rst:46: WARNING: toctree contains reference to document 'examples/images/index' that doesn't have a title: no link will be generated
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/index.rst:46: WARNING: toctree contains reference to document 'examples/images/index' that doesn't have a title: no link will be generated
