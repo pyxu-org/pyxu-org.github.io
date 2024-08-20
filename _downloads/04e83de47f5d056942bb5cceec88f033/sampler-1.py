@@ -4,7 +4,7 @@ import pyxu.experimental.sampler as pxe_sampler
 import pyxu.operator as pxo
 import scipy as sp
 
-f = pxo.SquaredL2Norm(dim=1) / 2  # To sample 1D normal distribution (mean 0, variance 1)
+f = pxo.SquaredL2Norm(dim_shape=1) / 2  # To sample 1D normal distribution (mean 0, variance 1)
 ula = pxe_sampler.ULA(f=f)  # Sampler with maximum step size
 ula_lb = pxe_sampler.ULA(f=f, gamma=1e-1)  # Sampler with small step size
 

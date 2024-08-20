@@ -43,7 +43,7 @@
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../../_static/documentation_options.js?v=372c36bd"></script>
+    <script src="../../../../_static/documentation_options.js?v=c0e92808"></script>
     <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -199,7 +199,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v2.0b4 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v2.0b5 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -341,7 +341,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v2.0b4 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v2.0b5 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -514,7 +514,7 @@ document.write(`
 <span class="linenos">  61</span>    <span class="n">ndim</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dim_shape</span><span class="p">)</span>
 <span class="linenos">  62</span>
 <span class="linenos">  63</span>    <span class="k">if</span> <span class="n">dtype</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="linenos">  64</span>        <span class="n">dtype</span> <span class="o">=</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">getPrecision</span><span class="p">()</span><span class="o">.</span><span class="n">value</span>
+<span class="linenos">  64</span>        <span class="n">dtype</span> <span class="o">=</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="o">.</span><span class="n">DOUBLE</span><span class="o">.</span><span class="n">value</span>
 <span class="linenos">  65</span>
 <span class="linenos">  66</span>    <span class="k">if</span> <span class="n">gpu</span><span class="p">:</span>
 <span class="linenos">  67</span>        <span class="k">assert</span> <span class="n">pxd</span><span class="o">.</span><span class="n">CUPY_ENABLED</span>
@@ -988,7 +988,7 @@ document.write(`
 <span class="linenos"> 527</span>    <span class="n">sampling</span> <span class="o">=</span> <span class="n">_to_canonical_form</span><span class="p">(</span><span class="n">sampling</span><span class="p">,</span> <span class="n">dim_shape</span><span class="p">)</span>
 <span class="linenos"> 528</span>    <span class="n">centers</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">dim</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ndim</span><span class="p">)]</span> <span class="k">for</span> <span class="n">dim</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ndim</span><span class="p">)]</span>
 <span class="linenos"> 529</span>    <span class="n">kernels</span> <span class="o">=</span> <span class="p">[</span>
-<span class="linenos"> 530</span>        <span class="n">xp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">dim</span> <span class="k">else</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ndim</span><span class="p">)])</span> <span class="o">/</span> <span class="n">sampling</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span>
+<span class="linenos"> 530</span>        <span class="n">xp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">dim</span> <span class="k">else</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ndim</span><span class="p">)])</span> <span class="o">/</span> <span class="n">sampling</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span>
 <span class="linenos"> 531</span>        <span class="k">for</span> <span class="n">dim</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ndim</span><span class="p">)</span>
 <span class="linenos"> 532</span>    <span class="p">]</span>
 <span class="linenos"> 533</span>    <span class="n">ops</span> <span class="o">=</span> <span class="p">[</span><span class="n">pxls</span><span class="o">.</span><span class="n">Stencil</span><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">,</span> <span class="n">kernel</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">kernels</span><span class="p">,</span> <span class="n">centers</span><span class="p">)]</span>
@@ -1468,45 +1468,46 @@ document.write(`
 <span class="linenos"> 995</span>
 <span class="linenos"> 996</span>        <span class="k">if</span> <span class="n">diff_method</span> <span class="o">==</span> <span class="s2">&quot;fd&quot;</span><span class="p">:</span>
 <span class="linenos"> 997</span>            <span class="n">diff_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;scheme&quot;</span><span class="p">:</span> <span class="n">diff_kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;scheme&quot;</span><span class="p">,</span> <span class="s2">&quot;central&quot;</span><span class="p">)})</span>
-<span class="linenos"> 998</span>            <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">=</span> <span class="n">pxld</span><span class="o">.</span><span class="n">Gradient</span><span class="p">(</span>
-<span class="linenos"> 999</span>                <span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">,</span>
-<span class="linenos">1000</span>                <span class="n">directions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-<span class="linenos">1001</span>                <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
-<span class="linenos">1002</span>                <span class="n">gpu</span><span class="o">=</span><span class="n">gpu</span><span class="p">,</span>
-<span class="linenos">1003</span>                <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span>
-<span class="linenos">1004</span>                <span class="n">sampling</span><span class="o">=</span><span class="n">sampling</span><span class="p">,</span>
-<span class="linenos">1005</span>                <span class="n">parallel</span><span class="o">=</span><span class="n">parallel</span><span class="p">,</span>
-<span class="linenos">1006</span>                <span class="o">**</span><span class="n">diff_kwargs</span><span class="p">,</span>
-<span class="linenos">1007</span>            <span class="p">)</span>
-<span class="linenos">1008</span>
-<span class="linenos">1009</span>        <span class="k">if</span> <span class="n">smooth_sigma</span><span class="p">:</span>
-<span class="linenos">1010</span>            <span class="bp">self</span><span class="o">.</span><span class="n">smooth</span> <span class="o">=</span> <span class="n">GaussianFilter</span><span class="p">(</span>
-<span class="linenos">1011</span>                <span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">,</span>
-<span class="linenos">1012</span>                <span class="n">sigma</span><span class="o">=</span><span class="n">smooth_sigma</span><span class="p">,</span>
-<span class="linenos">1013</span>                <span class="n">truncate</span><span class="o">=</span><span class="n">smooth_truncate</span><span class="p">,</span>
-<span class="linenos">1014</span>                <span class="n">order</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-<span class="linenos">1015</span>                <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
-<span class="linenos">1016</span>                <span class="n">sampling</span><span class="o">=</span><span class="n">sampling</span><span class="p">,</span>
-<span class="linenos">1017</span>                <span class="n">gpu</span><span class="o">=</span><span class="n">gpu</span><span class="p">,</span>
-<span class="linenos">1018</span>                <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span>
-<span class="linenos">1019</span>            <span class="p">)</span>
-<span class="linenos">1020</span>        <span class="k">else</span><span class="p">:</span>
-<span class="linenos">1021</span>            <span class="bp">self</span><span class="o">.</span><span class="n">smooth</span> <span class="o">=</span> <span class="n">pxlb</span><span class="o">.</span><span class="n">IdentityOp</span><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">)</span>
-<span class="linenos">1022</span>
+<span class="linenos"> 998</span>
+<span class="linenos"> 999</span>        <span class="bp">self</span><span class="o">.</span><span class="n">grad</span> <span class="o">=</span> <span class="n">pxld</span><span class="o">.</span><span class="n">Gradient</span><span class="p">(</span>
+<span class="linenos">1000</span>            <span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">,</span>
+<span class="linenos">1001</span>            <span class="n">directions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="linenos">1002</span>            <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
+<span class="linenos">1003</span>            <span class="n">gpu</span><span class="o">=</span><span class="n">gpu</span><span class="p">,</span>
+<span class="linenos">1004</span>            <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span>
+<span class="linenos">1005</span>            <span class="n">sampling</span><span class="o">=</span><span class="n">sampling</span><span class="p">,</span>
+<span class="linenos">1006</span>            <span class="n">parallel</span><span class="o">=</span><span class="n">parallel</span><span class="p">,</span>
+<span class="linenos">1007</span>            <span class="o">**</span><span class="n">diff_kwargs</span><span class="p">,</span>
+<span class="linenos">1008</span>        <span class="p">)</span>
+<span class="linenos">1009</span>
+<span class="linenos">1010</span>        <span class="k">if</span> <span class="n">smooth_sigma</span><span class="p">:</span>
+<span class="linenos">1011</span>            <span class="bp">self</span><span class="o">.</span><span class="n">smooth</span> <span class="o">=</span> <span class="n">GaussianFilter</span><span class="p">(</span>
+<span class="linenos">1012</span>                <span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">,</span>
+<span class="linenos">1013</span>                <span class="n">sigma</span><span class="o">=</span><span class="n">smooth_sigma</span><span class="p">,</span>
+<span class="linenos">1014</span>                <span class="n">truncate</span><span class="o">=</span><span class="n">smooth_truncate</span><span class="p">,</span>
+<span class="linenos">1015</span>                <span class="n">order</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">1016</span>                <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
+<span class="linenos">1017</span>                <span class="n">sampling</span><span class="o">=</span><span class="n">sampling</span><span class="p">,</span>
+<span class="linenos">1018</span>                <span class="n">gpu</span><span class="o">=</span><span class="n">gpu</span><span class="p">,</span>
+<span class="linenos">1019</span>                <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span>
+<span class="linenos">1020</span>            <span class="p">)</span>
+<span class="linenos">1021</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">1022</span>            <span class="bp">self</span><span class="o">.</span><span class="n">smooth</span> <span class="o">=</span> <span class="n">pxlb</span><span class="o">.</span><span class="n">IdentityOp</span><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">)</span>
+<span class="linenos">1023</span>
 <div class="viewcode-block" id="StructureTensor.apply">
 <a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.StructureTensor.apply">[docs]</a>
-<span class="linenos">1023</span>    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
-<span class="linenos">1024</span>        <span class="n">xp</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">get_array_module</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
-<span class="linenos">1025</span>        <span class="n">sh</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_rank</span><span class="p">]</span>
-<span class="linenos">1026</span>        <span class="n">grad</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
-<span class="linenos">1027</span>
-<span class="linenos">1028</span>        <span class="k">def</span> <span class="nf">slice_</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
-<span class="linenos">1029</span>            <span class="k">return</span> <span class="p">(</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">),)</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">sh</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="nb">slice</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">ax</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),)</span>
-<span class="linenos">1030</span>
-<span class="linenos">1031</span>        <span class="k">return</span> <span class="n">xp</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
-<span class="linenos">1032</span>            <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">smooth</span><span class="p">((</span><span class="n">grad</span><span class="p">[</span><span class="n">slice_</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">*</span> <span class="n">grad</span><span class="p">[</span><span class="n">slice_</span><span class="p">(</span><span class="n">j</span><span class="p">)]))</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">directions</span><span class="p">],</span>
-<span class="linenos">1033</span>            <span class="n">axis</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">sh</span><span class="p">),</span>
-<span class="linenos">1034</span>        <span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">*</span><span class="n">sh</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">directions</span><span class="p">),</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">)</span></div>
+<span class="linenos">1024</span>    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
+<span class="linenos">1025</span>        <span class="n">xp</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">get_array_module</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="linenos">1026</span>        <span class="n">sh</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_rank</span><span class="p">]</span>
+<span class="linenos">1027</span>        <span class="n">grad</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="linenos">1028</span>
+<span class="linenos">1029</span>        <span class="k">def</span> <span class="nf">slice_</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
+<span class="linenos">1030</span>            <span class="k">return</span> <span class="p">(</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">),)</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">sh</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="nb">slice</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">ax</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),)</span>
+<span class="linenos">1031</span>
+<span class="linenos">1032</span>        <span class="k">return</span> <span class="n">xp</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
+<span class="linenos">1033</span>            <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">smooth</span><span class="p">((</span><span class="n">grad</span><span class="p">[</span><span class="n">slice_</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">*</span> <span class="n">grad</span><span class="p">[</span><span class="n">slice_</span><span class="p">(</span><span class="n">j</span><span class="p">)]))</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">directions</span><span class="p">],</span>
+<span class="linenos">1034</span>            <span class="n">axis</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">sh</span><span class="p">),</span>
+<span class="linenos">1035</span>        <span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">*</span><span class="n">sh</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">directions</span><span class="p">),</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">)</span></div>
 </div>
 
 </pre></div>

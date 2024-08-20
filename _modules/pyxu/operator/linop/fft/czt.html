@@ -43,7 +43,7 @@
   <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../../../_static/documentation_options.js?v=372c36bd"></script>
+    <script src="../../../../../_static/documentation_options.js?v=c0e92808"></script>
     <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -199,7 +199,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v2.0b4 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v2.0b5 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -341,7 +341,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v2.0b4 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v2.0b5 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -545,269 +545,267 @@ document.write(`
 <span class="linenos"> 87</span>
 <div class="viewcode-block" id="CZT.apply">
 <a class="viewcode-back" href="../../../../../api/operator/linop.html#pyxu.operator.CZT.apply">[docs]</a>
-<span class="linenos"> 88</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">)</span>
-<span class="linenos"> 89</span>    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
-<span class="linenos"> 90</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos"> 91</span><span class="sd">        Parameters</span>
-<span class="linenos"> 92</span><span class="sd">        ----------</span>
-<span class="linenos"> 93</span><span class="sd">        arr: NDArray</span>
-<span class="linenos"> 94</span><span class="sd">            (..., N1,...,ND,2) inputs :math:`\mathbf{x} \in \mathbb{C}^{N_{1} \times\cdots\times N_{D}}` viewed as a</span>
-<span class="linenos"> 95</span><span class="sd">            real array. (See :py:func:`~pyxu.util.view_as_real`.)</span>
-<span class="linenos"> 96</span>
-<span class="linenos"> 97</span><span class="sd">        Returns</span>
-<span class="linenos"> 98</span><span class="sd">        -------</span>
-<span class="linenos"> 99</span><span class="sd">        out: NDArray</span>
-<span class="linenos">100</span><span class="sd">            (..., M1,...,MD,2) outputs :math:`\hat{\mathbf{x}} \in \mathbb{C}^{M_{1} \times\cdots\times M_{D}}` viewed</span>
-<span class="linenos">101</span><span class="sd">            as a real array. (See :py:func:`~pyxu.util.view_as_real`.)</span>
-<span class="linenos">102</span><span class="sd">        &quot;&quot;&quot;</span>
-<span class="linenos">103</span>        <span class="n">x</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">view_as_complex</span><span class="p">(</span><span class="n">pxu</span><span class="o">.</span><span class="n">require_viewable</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
-<span class="linenos">104</span>        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">capply</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="linenos">105</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">view_as_real</span><span class="p">(</span><span class="n">pxu</span><span class="o">.</span><span class="n">require_viewable</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
-<span class="linenos">106</span>        <span class="k">return</span> <span class="n">out</span></div>
+<span class="linenos"> 88</span>    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos"> 89</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 90</span><span class="sd">        Parameters</span>
+<span class="linenos"> 91</span><span class="sd">        ----------</span>
+<span class="linenos"> 92</span><span class="sd">        arr: NDArray</span>
+<span class="linenos"> 93</span><span class="sd">            (..., N1,...,ND,2) inputs :math:`\mathbf{x} \in \mathbb{C}^{N_{1} \times\cdots\times N_{D}}` viewed as a</span>
+<span class="linenos"> 94</span><span class="sd">            real array. (See :py:func:`~pyxu.util.view_as_real`.)</span>
+<span class="linenos"> 95</span>
+<span class="linenos"> 96</span><span class="sd">        Returns</span>
+<span class="linenos"> 97</span><span class="sd">        -------</span>
+<span class="linenos"> 98</span><span class="sd">        out: NDArray</span>
+<span class="linenos"> 99</span><span class="sd">            (..., M1,...,MD,2) outputs :math:`\hat{\mathbf{x}} \in \mathbb{C}^{M_{1} \times\cdots\times M_{D}}` viewed</span>
+<span class="linenos">100</span><span class="sd">            as a real array. (See :py:func:`~pyxu.util.view_as_real`.)</span>
+<span class="linenos">101</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">102</span>        <span class="n">x</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">view_as_complex</span><span class="p">(</span><span class="n">pxu</span><span class="o">.</span><span class="n">require_viewable</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+<span class="linenos">103</span>        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">capply</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">104</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">view_as_real</span><span class="p">(</span><span class="n">pxu</span><span class="o">.</span><span class="n">require_viewable</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="linenos">105</span>        <span class="k">return</span> <span class="n">out</span></div>
 
-<span class="linenos">107</span>
-<span class="linenos">108</span>    <span class="k">def</span> <span class="nf">capply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
-<span class="linenos">109</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">110</span><span class="sd">        Parameters</span>
-<span class="linenos">111</span><span class="sd">        ----------</span>
-<span class="linenos">112</span><span class="sd">        arr: NDArray</span>
-<span class="linenos">113</span><span class="sd">            (..., N1,...,ND) inputs :math:`\mathbf{x} \in \mathbb{C}^{N_{1} \times\cdots\times N_{D}}`.</span>
-<span class="linenos">114</span>
-<span class="linenos">115</span><span class="sd">        Returns</span>
-<span class="linenos">116</span><span class="sd">        -------</span>
-<span class="linenos">117</span><span class="sd">        out: NDArray</span>
-<span class="linenos">118</span><span class="sd">            (..., M1,...,MD) outputs :math:`\hat{\mathbf{x}} \in \mathbb{C}^{M_{1} \times\cdots\times M_{D}}`.</span>
-<span class="linenos">119</span><span class="sd">        &quot;&quot;&quot;</span>
-<span class="linenos">120</span>        <span class="n">AWk2</span><span class="p">,</span> <span class="n">FWk2</span><span class="p">,</span> <span class="n">Wk2</span><span class="p">,</span> <span class="n">extract</span><span class="p">,</span> <span class="n">fft</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_meta</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
-<span class="linenos">121</span>        <span class="n">arr</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># for in-place updates</span>
-<span class="linenos">122</span>        <span class="k">for</span> <span class="n">_AWk2</span> <span class="ow">in</span> <span class="n">AWk2</span><span class="p">:</span>
-<span class="linenos">123</span>            <span class="n">arr</span> <span class="o">*=</span> <span class="n">_AWk2</span>
-<span class="linenos">124</span>        <span class="n">y</span> <span class="o">=</span> <span class="n">fft</span><span class="o">.</span><span class="n">capply</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
-<span class="linenos">125</span>        <span class="k">for</span> <span class="n">_FWk2</span> <span class="ow">in</span> <span class="n">FWk2</span><span class="p">:</span>
-<span class="linenos">126</span>            <span class="n">y</span> <span class="o">*=</span> <span class="n">_FWk2</span>
-<span class="linenos">127</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">fft</span><span class="o">.</span><span class="n">cpinv</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">damp</span><span class="o">=</span><span class="mi">0</span><span class="p">)[</span><span class="n">extract</span><span class="p">]</span>
-<span class="linenos">128</span>        <span class="k">for</span> <span class="n">_Wk2</span> <span class="ow">in</span> <span class="n">Wk2</span><span class="p">:</span>
-<span class="linenos">129</span>            <span class="n">out</span> <span class="o">*=</span> <span class="n">_Wk2</span>
-<span class="linenos">130</span>        <span class="k">return</span> <span class="n">out</span>
-<span class="linenos">131</span>
+<span class="linenos">106</span>
+<span class="linenos">107</span>    <span class="k">def</span> <span class="nf">capply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">108</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">109</span><span class="sd">        Parameters</span>
+<span class="linenos">110</span><span class="sd">        ----------</span>
+<span class="linenos">111</span><span class="sd">        arr: NDArray</span>
+<span class="linenos">112</span><span class="sd">            (..., N1,...,ND) inputs :math:`\mathbf{x} \in \mathbb{C}^{N_{1} \times\cdots\times N_{D}}`.</span>
+<span class="linenos">113</span>
+<span class="linenos">114</span><span class="sd">        Returns</span>
+<span class="linenos">115</span><span class="sd">        -------</span>
+<span class="linenos">116</span><span class="sd">        out: NDArray</span>
+<span class="linenos">117</span><span class="sd">            (..., M1,...,MD) outputs :math:`\hat{\mathbf{x}} \in \mathbb{C}^{M_{1} \times\cdots\times M_{D}}`.</span>
+<span class="linenos">118</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">119</span>        <span class="n">AWk2</span><span class="p">,</span> <span class="n">FWk2</span><span class="p">,</span> <span class="n">Wk2</span><span class="p">,</span> <span class="n">extract</span><span class="p">,</span> <span class="n">fft</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_meta</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="linenos">120</span>        <span class="n">arr</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># for in-place updates</span>
+<span class="linenos">121</span>        <span class="k">for</span> <span class="n">_AWk2</span> <span class="ow">in</span> <span class="n">AWk2</span><span class="p">:</span>
+<span class="linenos">122</span>            <span class="n">arr</span> <span class="o">*=</span> <span class="n">_AWk2</span>
+<span class="linenos">123</span>        <span class="n">y</span> <span class="o">=</span> <span class="n">fft</span><span class="o">.</span><span class="n">capply</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="linenos">124</span>        <span class="k">for</span> <span class="n">_FWk2</span> <span class="ow">in</span> <span class="n">FWk2</span><span class="p">:</span>
+<span class="linenos">125</span>            <span class="n">y</span> <span class="o">*=</span> <span class="n">_FWk2</span>
+<span class="linenos">126</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">fft</span><span class="o">.</span><span class="n">cpinv</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">damp</span><span class="o">=</span><span class="mi">0</span><span class="p">)[</span><span class="n">extract</span><span class="p">]</span>
+<span class="linenos">127</span>        <span class="k">for</span> <span class="n">_Wk2</span> <span class="ow">in</span> <span class="n">Wk2</span><span class="p">:</span>
+<span class="linenos">128</span>            <span class="n">out</span> <span class="o">*=</span> <span class="n">_Wk2</span>
+<span class="linenos">129</span>        <span class="k">return</span> <span class="n">out</span>
+<span class="linenos">130</span>
 <div class="viewcode-block" id="CZT.adjoint">
 <a class="viewcode-back" href="../../../../../api/operator/linop.html#pyxu.operator.CZT.adjoint">[docs]</a>
-<span class="linenos">132</span>    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">)</span>
-<span class="linenos">133</span>    <span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
-<span class="linenos">134</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">135</span><span class="sd">        Parameters</span>
-<span class="linenos">136</span><span class="sd">        ----------</span>
-<span class="linenos">137</span><span class="sd">        arr: NDArray</span>
-<span class="linenos">138</span><span class="sd">            (..., M1,...,MD,2) inputs :math:`\hat{\mathbf{x}} \in \mathbb{C}^{M_{1} \times\cdots\times M_{D}}` viewed</span>
-<span class="linenos">139</span><span class="sd">            as a real array. (See :py:func:`~pyxu.util.view_as_real`.)</span>
-<span class="linenos">140</span>
-<span class="linenos">141</span><span class="sd">        Returns</span>
-<span class="linenos">142</span><span class="sd">        -------</span>
-<span class="linenos">143</span><span class="sd">        out: NDArray</span>
-<span class="linenos">144</span><span class="sd">            (..., N1,...,ND,2) outputs :math:`\mathbf{x} \in \mathbb{C}^{N_{1} \times\cdots\times N_{D}}` viewed as a</span>
-<span class="linenos">145</span><span class="sd">            real array. (See :py:func:`~pyxu.util.view_as_real`.)</span>
-<span class="linenos">146</span><span class="sd">        &quot;&quot;&quot;</span>
-<span class="linenos">147</span>        <span class="n">x</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">view_as_complex</span><span class="p">(</span><span class="n">pxu</span><span class="o">.</span><span class="n">require_viewable</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
-<span class="linenos">148</span>        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cadjoint</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="linenos">149</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">view_as_real</span><span class="p">(</span><span class="n">pxu</span><span class="o">.</span><span class="n">require_viewable</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
-<span class="linenos">150</span>        <span class="k">return</span> <span class="n">out</span></div>
+<span class="linenos">131</span>    <span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">132</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">133</span><span class="sd">        Parameters</span>
+<span class="linenos">134</span><span class="sd">        ----------</span>
+<span class="linenos">135</span><span class="sd">        arr: NDArray</span>
+<span class="linenos">136</span><span class="sd">            (..., M1,...,MD,2) inputs :math:`\hat{\mathbf{x}} \in \mathbb{C}^{M_{1} \times\cdots\times M_{D}}` viewed</span>
+<span class="linenos">137</span><span class="sd">            as a real array. (See :py:func:`~pyxu.util.view_as_real`.)</span>
+<span class="linenos">138</span>
+<span class="linenos">139</span><span class="sd">        Returns</span>
+<span class="linenos">140</span><span class="sd">        -------</span>
+<span class="linenos">141</span><span class="sd">        out: NDArray</span>
+<span class="linenos">142</span><span class="sd">            (..., N1,...,ND,2) outputs :math:`\mathbf{x} \in \mathbb{C}^{N_{1} \times\cdots\times N_{D}}` viewed as a</span>
+<span class="linenos">143</span><span class="sd">            real array. (See :py:func:`~pyxu.util.view_as_real`.)</span>
+<span class="linenos">144</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">145</span>        <span class="n">x</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">view_as_complex</span><span class="p">(</span><span class="n">pxu</span><span class="o">.</span><span class="n">require_viewable</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+<span class="linenos">146</span>        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cadjoint</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">147</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">view_as_real</span><span class="p">(</span><span class="n">pxu</span><span class="o">.</span><span class="n">require_viewable</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="linenos">148</span>        <span class="k">return</span> <span class="n">out</span></div>
 
-<span class="linenos">151</span>
-<span class="linenos">152</span>    <span class="k">def</span> <span class="nf">cadjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
-<span class="linenos">153</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">154</span><span class="sd">        Parameters</span>
-<span class="linenos">155</span><span class="sd">        ----------</span>
-<span class="linenos">156</span><span class="sd">        arr: NDArray</span>
-<span class="linenos">157</span><span class="sd">            (..., M1,...,MD) inputs :math:`\hat{\mathbf{x}} \in \mathbb{C}^{M_{1} \times\cdots\times M_{D}}`.</span>
-<span class="linenos">158</span>
-<span class="linenos">159</span><span class="sd">        Returns</span>
-<span class="linenos">160</span><span class="sd">        -------</span>
-<span class="linenos">161</span><span class="sd">        out: NDArray</span>
-<span class="linenos">162</span><span class="sd">            (..., N1,...,ND) outputs :math:`\mathbf{x} \in \mathbb{C}^{N_{1} \times\cdots\times N_{D}}`.</span>
-<span class="linenos">163</span><span class="sd">        &quot;&quot;&quot;</span>
-<span class="linenos">164</span>        <span class="c1"># CZT^{*}(y,M,A,W)[n] = CZT(y,N,A=1,W=W*)[n] * A^{n}</span>
-<span class="linenos">165</span>        <span class="n">czt</span> <span class="o">=</span> <span class="n">CZT</span><span class="p">(</span>
-<span class="linenos">166</span>            <span class="n">dim_shape</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">codim_shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
-<span class="linenos">167</span>            <span class="n">axes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_axes</span><span class="p">,</span>
-<span class="linenos">168</span>            <span class="n">M</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span> <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_axes</span><span class="p">],</span>
-<span class="linenos">169</span>            <span class="n">A</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-<span class="linenos">170</span>            <span class="n">W</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_W</span><span class="p">),</span>
-<span class="linenos">171</span>            <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">,</span>
-<span class="linenos">172</span>        <span class="p">)</span>
-<span class="linenos">173</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">czt</span><span class="o">.</span><span class="n">capply</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
-<span class="linenos">174</span>
-<span class="linenos">175</span>        <span class="c1"># Re-scale outputs per axis.</span>
-<span class="linenos">176</span>        <span class="n">xp</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">get_array_module</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
-<span class="linenos">177</span>        <span class="n">cdtype</span> <span class="o">=</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">CWidth</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
-<span class="linenos">178</span>        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_axes</span><span class="p">):</span>
-<span class="linenos">179</span>            <span class="n">A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-<span class="linenos">180</span>            <span class="n">N</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span>
-<span class="linenos">181</span>            <span class="n">expand</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,)</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_rank</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">ax</span><span class="p">)</span>
-<span class="linenos">182</span>
-<span class="linenos">183</span>            <span class="n">An</span> <span class="o">=</span> <span class="n">A</span> <span class="o">**</span> <span class="n">xp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="o">*</span><span class="n">expand</span><span class="p">]</span>
-<span class="linenos">184</span>            <span class="n">out</span> <span class="o">*=</span> <span class="n">An</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">cdtype</span><span class="p">)</span>
-<span class="linenos">185</span>        <span class="k">return</span> <span class="n">out</span>
-<span class="linenos">186</span>
-<span class="linenos">187</span>    <span class="k">def</span> <span class="nf">estimate_lipschitz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">:</span>
-<span class="linenos">188</span>        <span class="n">no_eval</span> <span class="o">=</span> <span class="s2">&quot;__rule&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span>
-<span class="linenos">189</span>        <span class="k">if</span> <span class="n">no_eval</span><span class="p">:</span>
-<span class="linenos">190</span>            <span class="c1"># We know that</span>
-<span class="linenos">191</span>            <span class="c1">#     L^{2} = \sigma_{max}^{2}(C) = \lambda_{max}(C.gram) = \lambda_{max}(C.cogram)</span>
-<span class="linenos">192</span>            <span class="c1"># We know that C.[co]gram correspond to linear convolution of the input with a Dirichlet kernel, i.e.</span>
-<span class="linenos">193</span>            <span class="c1">#     ( Gx)[n] = \sum_{q=0}^{N-1} x[q] h1[n-q],  h1[n] = A^{n} W^{-(M-1)/2 n} \sin[p M/2 n] / \sin[p 1/2 n]</span>
-<span class="linenos">194</span>            <span class="c1">#     (CGy)[n] = \sum_{q=0}^{M-1} y[q] h2[n-q],  h2[n] =       W^{ (N-1)/2 n} \sin[p N/2 n] / \sin[p 1/2 n]</span>
-<span class="linenos">195</span>            <span class="c1">#                                                    p = \arg{W}</span>
-<span class="linenos">196</span>            <span class="c1"># From Young&#39;s convolution inequality, we have the upper bound</span>
-<span class="linenos">197</span>            <span class="c1">#     \norm{x \ast h}{2} \le \norm{x}{2}\norm{h}{1}</span>
-<span class="linenos">198</span>            <span class="c1"># Therefore</span>
-<span class="linenos">199</span>            <span class="c1">#     L^{2} &lt;= max(\norm{h1}{1}, \norm{h2}{1})</span>
-<span class="linenos">200</span>            <span class="n">L2</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="linenos">201</span>            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_axes</span><span class="p">):</span>
-<span class="linenos">202</span>                <span class="n">N</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span>
-<span class="linenos">203</span>                <span class="n">M</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">codim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span>
-<span class="linenos">204</span>                <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_W</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-<span class="linenos">205</span>
-<span class="linenos">206</span>                <span class="n">h1</span> <span class="o">=</span> <span class="n">sps</span><span class="o">.</span><span class="n">diric</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="n">M</span><span class="p">)</span> <span class="o">*</span> <span class="n">M</span>
-<span class="linenos">207</span>                <span class="n">norm1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="n">h1</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="linenos">208</span>
-<span class="linenos">209</span>                <span class="n">h2</span> <span class="o">=</span> <span class="n">sps</span><span class="o">.</span><span class="n">diric</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">M</span><span class="p">,</span> <span class="n">M</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="n">N</span><span class="p">)</span> <span class="o">*</span> <span class="n">N</span>
-<span class="linenos">210</span>                <span class="n">norm2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="n">h2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="linenos">211</span>
-<span class="linenos">212</span>                <span class="n">L2</span> <span class="o">*=</span> <span class="nb">max</span><span class="p">(</span><span class="n">norm1</span><span class="p">,</span> <span class="n">norm2</span><span class="p">)</span>
-<span class="linenos">213</span>            <span class="n">L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">L2</span><span class="p">)</span>
-<span class="linenos">214</span>        <span class="k">else</span><span class="p">:</span>
-<span class="linenos">215</span>            <span class="n">L</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">estimate_lipschitz</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="linenos">216</span>        <span class="k">return</span> <span class="n">L</span>
-<span class="linenos">217</span>
-<span class="linenos">218</span>    <span class="k">def</span> <span class="nf">asarray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
-<span class="linenos">219</span>        <span class="c1"># We compute 1D transforms per axis, then Kronecker product them.</span>
-<span class="linenos">220</span>
-<span class="linenos">221</span>        <span class="c1"># Since non-NP backends may be faulty, we do everything in NUMPY ...</span>
-<span class="linenos">222</span>        <span class="n">A_1D</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">D</span> <span class="o">:=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim_rank</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<span class="linenos">223</span>        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">224</span>        <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">D</span><span class="p">):</span>
-<span class="linenos">225</span>            <span class="n">N</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span>
-<span class="linenos">226</span>            <span class="n">M</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">codim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span>
-<span class="linenos">227</span>            <span class="k">if</span> <span class="n">ax</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_axes</span><span class="p">:</span>
-<span class="linenos">228</span>                <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
-<span class="linenos">229</span>                <span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
-<span class="linenos">230</span>                <span class="n">_A</span><span class="p">,</span> <span class="n">_W</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_A</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">_W</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-<span class="linenos">231</span>                <span class="n">A_1D</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">_W</span> <span class="o">**</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">_A</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="n">n</span><span class="p">))</span>
-<span class="linenos">232</span>                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="linenos">233</span>            <span class="k">else</span><span class="p">:</span>
-<span class="linenos">234</span>                <span class="n">A_1D</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
-<span class="linenos">235</span>
-<span class="linenos">236</span>        <span class="n">A_ND</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="o">.</span><span class="n">outer</span><span class="p">,</span> <span class="n">A_1D</span><span class="p">)</span>
-<span class="linenos">237</span>        <span class="n">B_ND</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span>
-<span class="linenos">238</span>            <span class="n">A_ND</span><span class="p">,</span>
-<span class="linenos">239</span>            <span class="n">axes</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span>
-<span class="linenos">240</span>                <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">D</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
-<span class="linenos">241</span>                <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">D</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
-<span class="linenos">242</span>            <span class="p">],</span>
-<span class="linenos">243</span>        <span class="p">)</span>
-<span class="linenos">244</span>
-<span class="linenos">245</span>        <span class="c1"># ... then use the backend/precision user asked for.</span>
-<span class="linenos">246</span>        <span class="n">xp</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;xp&quot;</span><span class="p">,</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">default</span><span class="p">()</span><span class="o">.</span><span class="n">module</span><span class="p">())</span>
-<span class="linenos">247</span>        <span class="n">dtype</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;dtype&quot;</span><span class="p">,</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">getPrecision</span><span class="p">()</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
-<span class="linenos">248</span>        <span class="n">C</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
-<span class="linenos">249</span>            <span class="n">pxu</span><span class="o">.</span><span class="n">as_real_op</span><span class="p">(</span><span class="n">B_ND</span><span class="p">,</span> <span class="n">dim_rank</span><span class="o">=</span><span class="n">D</span><span class="p">),</span>
-<span class="linenos">250</span>            <span class="n">dtype</span><span class="o">=</span><span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
-<span class="linenos">251</span>        <span class="p">)</span>
-<span class="linenos">252</span>        <span class="k">return</span> <span class="n">C</span>
-<span class="linenos">253</span>
-<span class="linenos">254</span>    <span class="c1"># Helper routines (internal) ----------------------------------------------</span>
-<span class="linenos">255</span>    <span class="nd">@staticmethod</span>
-<span class="linenos">256</span>    <span class="k">def</span> <span class="nf">_canonical_repr</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">W</span><span class="p">):</span>
-<span class="linenos">257</span>        <span class="c1"># Create canonical representations</span>
-<span class="linenos">258</span>        <span class="c1">#   * `_M`: tuple(int)</span>
-<span class="linenos">259</span>        <span class="c1">#   * `_A`: tuple(complex)</span>
-<span class="linenos">260</span>        <span class="c1">#   * `_W`: tuple(complex)</span>
-<span class="linenos">261</span>        <span class="c1">#</span>
-<span class="linenos">262</span>        <span class="c1"># `axes` is already assumed in tuple-form.</span>
-<span class="linenos">263</span>        <span class="k">def</span> <span class="nf">as_seq</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">_type</span><span class="p">):</span>
-<span class="linenos">264</span>            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">):</span>
-<span class="linenos">265</span>                <span class="n">_x</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="linenos">266</span>            <span class="k">else</span><span class="p">:</span>
-<span class="linenos">267</span>                <span class="n">_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,)</span>
-<span class="linenos">268</span>            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="linenos">269</span>                <span class="n">_x</span> <span class="o">*=</span> <span class="n">N</span>  <span class="c1"># broadcast</span>
-<span class="linenos">270</span>            <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">_x</span><span class="p">)</span> <span class="o">==</span> <span class="n">N</span>
+<span class="linenos">149</span>
+<span class="linenos">150</span>    <span class="k">def</span> <span class="nf">cadjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">151</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">152</span><span class="sd">        Parameters</span>
+<span class="linenos">153</span><span class="sd">        ----------</span>
+<span class="linenos">154</span><span class="sd">        arr: NDArray</span>
+<span class="linenos">155</span><span class="sd">            (..., M1,...,MD) inputs :math:`\hat{\mathbf{x}} \in \mathbb{C}^{M_{1} \times\cdots\times M_{D}}`.</span>
+<span class="linenos">156</span>
+<span class="linenos">157</span><span class="sd">        Returns</span>
+<span class="linenos">158</span><span class="sd">        -------</span>
+<span class="linenos">159</span><span class="sd">        out: NDArray</span>
+<span class="linenos">160</span><span class="sd">            (..., N1,...,ND) outputs :math:`\mathbf{x} \in \mathbb{C}^{N_{1} \times\cdots\times N_{D}}`.</span>
+<span class="linenos">161</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">162</span>        <span class="c1"># CZT^{*}(y,M,A,W)[n] = CZT(y,N,A=1,W=W*)[n] * A^{n}</span>
+<span class="linenos">163</span>        <span class="n">czt</span> <span class="o">=</span> <span class="n">CZT</span><span class="p">(</span>
+<span class="linenos">164</span>            <span class="n">dim_shape</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">codim_shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+<span class="linenos">165</span>            <span class="n">axes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_axes</span><span class="p">,</span>
+<span class="linenos">166</span>            <span class="n">M</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span> <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_axes</span><span class="p">],</span>
+<span class="linenos">167</span>            <span class="n">A</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">168</span>            <span class="n">W</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_W</span><span class="p">),</span>
+<span class="linenos">169</span>            <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">,</span>
+<span class="linenos">170</span>        <span class="p">)</span>
+<span class="linenos">171</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">czt</span><span class="o">.</span><span class="n">capply</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="linenos">172</span>
+<span class="linenos">173</span>        <span class="c1"># Re-scale outputs per axis.</span>
+<span class="linenos">174</span>        <span class="n">xp</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">get_array_module</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+<span class="linenos">175</span>        <span class="n">cdtype</span> <span class="o">=</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">CWidth</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+<span class="linenos">176</span>        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_axes</span><span class="p">):</span>
+<span class="linenos">177</span>            <span class="n">A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="linenos">178</span>            <span class="n">N</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span>
+<span class="linenos">179</span>            <span class="n">expand</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,)</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_rank</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">ax</span><span class="p">)</span>
+<span class="linenos">180</span>
+<span class="linenos">181</span>            <span class="n">An</span> <span class="o">=</span> <span class="n">A</span> <span class="o">**</span> <span class="n">xp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="o">*</span><span class="n">expand</span><span class="p">]</span>
+<span class="linenos">182</span>            <span class="n">out</span> <span class="o">*=</span> <span class="n">An</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">cdtype</span><span class="p">)</span>
+<span class="linenos">183</span>        <span class="k">return</span> <span class="n">out</span>
+<span class="linenos">184</span>
+<span class="linenos">185</span>    <span class="k">def</span> <span class="nf">estimate_lipschitz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">:</span>
+<span class="linenos">186</span>        <span class="n">no_eval</span> <span class="o">=</span> <span class="s2">&quot;__rule&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span>
+<span class="linenos">187</span>        <span class="k">if</span> <span class="n">no_eval</span><span class="p">:</span>
+<span class="linenos">188</span>            <span class="c1"># We know that</span>
+<span class="linenos">189</span>            <span class="c1">#     L^{2} = \sigma_{max}^{2}(C) = \lambda_{max}(C.gram) = \lambda_{max}(C.cogram)</span>
+<span class="linenos">190</span>            <span class="c1"># We know that C.[co]gram correspond to linear convolution of the input with a Dirichlet kernel, i.e.</span>
+<span class="linenos">191</span>            <span class="c1">#     ( Gx)[n] = \sum_{q=0}^{N-1} x[q] h1[n-q],  h1[n] = A^{n} W^{-(M-1)/2 n} \sin[p M/2 n] / \sin[p 1/2 n]</span>
+<span class="linenos">192</span>            <span class="c1">#     (CGy)[n] = \sum_{q=0}^{M-1} y[q] h2[n-q],  h2[n] =       W^{ (N-1)/2 n} \sin[p N/2 n] / \sin[p 1/2 n]</span>
+<span class="linenos">193</span>            <span class="c1">#                                                    p = \arg{W}</span>
+<span class="linenos">194</span>            <span class="c1"># From Young&#39;s convolution inequality, we have the upper bound</span>
+<span class="linenos">195</span>            <span class="c1">#     \norm{x \ast h}{2} \le \norm{x}{2}\norm{h}{1}</span>
+<span class="linenos">196</span>            <span class="c1"># Therefore</span>
+<span class="linenos">197</span>            <span class="c1">#     L^{2} &lt;= max(\norm{h1}{1}, \norm{h2}{1})</span>
+<span class="linenos">198</span>            <span class="n">L2</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">199</span>            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_axes</span><span class="p">):</span>
+<span class="linenos">200</span>                <span class="n">N</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span>
+<span class="linenos">201</span>                <span class="n">M</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">codim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span>
+<span class="linenos">202</span>                <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_W</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="linenos">203</span>
+<span class="linenos">204</span>                <span class="n">h1</span> <span class="o">=</span> <span class="n">sps</span><span class="o">.</span><span class="n">diric</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="n">M</span><span class="p">)</span> <span class="o">*</span> <span class="n">M</span>
+<span class="linenos">205</span>                <span class="n">norm1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="n">h1</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="linenos">206</span>
+<span class="linenos">207</span>                <span class="n">h2</span> <span class="o">=</span> <span class="n">sps</span><span class="o">.</span><span class="n">diric</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">M</span><span class="p">,</span> <span class="n">M</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="n">N</span><span class="p">)</span> <span class="o">*</span> <span class="n">N</span>
+<span class="linenos">208</span>                <span class="n">norm2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="n">h2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="linenos">209</span>
+<span class="linenos">210</span>                <span class="n">L2</span> <span class="o">*=</span> <span class="nb">max</span><span class="p">(</span><span class="n">norm1</span><span class="p">,</span> <span class="n">norm2</span><span class="p">)</span>
+<span class="linenos">211</span>            <span class="n">L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">L2</span><span class="p">)</span>
+<span class="linenos">212</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">213</span>            <span class="n">L</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">estimate_lipschitz</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="linenos">214</span>        <span class="k">return</span> <span class="n">L</span>
+<span class="linenos">215</span>
+<span class="linenos">216</span>    <span class="k">def</span> <span class="nf">asarray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">217</span>        <span class="c1"># We compute 1D transforms per axis, then Kronecker product them.</span>
+<span class="linenos">218</span>
+<span class="linenos">219</span>        <span class="c1"># Since non-NP backends may be faulty, we do everything in NUMPY ...</span>
+<span class="linenos">220</span>        <span class="n">A_1D</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">D</span> <span class="o">:=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim_rank</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos">221</span>        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">222</span>        <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">D</span><span class="p">):</span>
+<span class="linenos">223</span>            <span class="n">N</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span>
+<span class="linenos">224</span>            <span class="n">M</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">codim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span>
+<span class="linenos">225</span>            <span class="k">if</span> <span class="n">ax</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_axes</span><span class="p">:</span>
+<span class="linenos">226</span>                <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="linenos">227</span>                <span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<span class="linenos">228</span>                <span class="n">_A</span><span class="p">,</span> <span class="n">_W</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_A</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">_W</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="linenos">229</span>                <span class="n">A_1D</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">_W</span> <span class="o">**</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">_A</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="n">n</span><span class="p">))</span>
+<span class="linenos">230</span>                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="linenos">231</span>            <span class="k">else</span><span class="p">:</span>
+<span class="linenos">232</span>                <span class="n">A_1D</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="linenos">233</span>
+<span class="linenos">234</span>        <span class="n">A_ND</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="o">.</span><span class="n">outer</span><span class="p">,</span> <span class="n">A_1D</span><span class="p">)</span>
+<span class="linenos">235</span>        <span class="n">B_ND</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span>
+<span class="linenos">236</span>            <span class="n">A_ND</span><span class="p">,</span>
+<span class="linenos">237</span>            <span class="n">axes</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span>
+<span class="linenos">238</span>                <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">D</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+<span class="linenos">239</span>                <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">D</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+<span class="linenos">240</span>            <span class="p">],</span>
+<span class="linenos">241</span>        <span class="p">)</span>
+<span class="linenos">242</span>
+<span class="linenos">243</span>        <span class="c1"># ... then use the backend/precision user asked for.</span>
+<span class="linenos">244</span>        <span class="n">xp</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;xp&quot;</span><span class="p">,</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">default</span><span class="p">()</span><span class="o">.</span><span class="n">module</span><span class="p">())</span>
+<span class="linenos">245</span>        <span class="n">dtype</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;dtype&quot;</span><span class="p">,</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="o">.</span><span class="n">DOUBLE</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+<span class="linenos">246</span>        <span class="n">C</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+<span class="linenos">247</span>            <span class="n">pxu</span><span class="o">.</span><span class="n">as_real_op</span><span class="p">(</span><span class="n">B_ND</span><span class="p">,</span> <span class="n">dim_rank</span><span class="o">=</span><span class="n">D</span><span class="p">),</span>
+<span class="linenos">248</span>            <span class="n">dtype</span><span class="o">=</span><span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+<span class="linenos">249</span>        <span class="p">)</span>
+<span class="linenos">250</span>        <span class="k">return</span> <span class="n">C</span>
+<span class="linenos">251</span>
+<span class="linenos">252</span>    <span class="c1"># Helper routines (internal) ----------------------------------------------</span>
+<span class="linenos">253</span>    <span class="nd">@staticmethod</span>
+<span class="linenos">254</span>    <span class="k">def</span> <span class="nf">_canonical_repr</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">W</span><span class="p">):</span>
+<span class="linenos">255</span>        <span class="c1"># Create canonical representations</span>
+<span class="linenos">256</span>        <span class="c1">#   * `_M`: tuple(int)</span>
+<span class="linenos">257</span>        <span class="c1">#   * `_A`: tuple(complex)</span>
+<span class="linenos">258</span>        <span class="c1">#   * `_W`: tuple(complex)</span>
+<span class="linenos">259</span>        <span class="c1">#</span>
+<span class="linenos">260</span>        <span class="c1"># `axes` is already assumed in tuple-form.</span>
+<span class="linenos">261</span>        <span class="k">def</span> <span class="nf">as_seq</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">_type</span><span class="p">):</span>
+<span class="linenos">262</span>            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">):</span>
+<span class="linenos">263</span>                <span class="n">_x</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">264</span>            <span class="k">else</span><span class="p">:</span>
+<span class="linenos">265</span>                <span class="n">_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,)</span>
+<span class="linenos">266</span>            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="linenos">267</span>                <span class="n">_x</span> <span class="o">*=</span> <span class="n">N</span>  <span class="c1"># broadcast</span>
+<span class="linenos">268</span>            <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">_x</span><span class="p">)</span> <span class="o">==</span> <span class="n">N</span>
+<span class="linenos">269</span>
+<span class="linenos">270</span>            <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">_type</span><span class="p">,</span> <span class="n">_x</span><span class="p">))</span>
 <span class="linenos">271</span>
-<span class="linenos">272</span>            <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">_type</span><span class="p">,</span> <span class="n">_x</span><span class="p">))</span>
-<span class="linenos">273</span>
-<span class="linenos">274</span>        <span class="n">_M</span> <span class="o">=</span> <span class="n">as_seq</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">axes</span><span class="p">),</span> <span class="nb">int</span><span class="p">)</span>
-<span class="linenos">275</span>        <span class="n">_A</span> <span class="o">=</span> <span class="n">as_seq</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">axes</span><span class="p">),</span> <span class="nb">complex</span><span class="p">)</span>
-<span class="linenos">276</span>        <span class="n">_W</span> <span class="o">=</span> <span class="n">as_seq</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">axes</span><span class="p">),</span> <span class="nb">complex</span><span class="p">)</span>
-<span class="linenos">277</span>        <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="n">m</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">_M</span><span class="p">)</span>
-<span class="linenos">278</span>        <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">_A</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
-<span class="linenos">279</span>        <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">_W</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
-<span class="linenos">280</span>        <span class="k">return</span> <span class="n">_M</span><span class="p">,</span> <span class="n">_A</span><span class="p">,</span> <span class="n">_W</span>
-<span class="linenos">281</span>
-<span class="linenos">282</span>    <span class="k">def</span> <span class="nf">_get_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">):</span>
-<span class="linenos">283</span>        <span class="c1"># x: (..., M1,...,MD) [complex]</span>
-<span class="linenos">284</span>        <span class="c1">#</span>
-<span class="linenos">285</span>        <span class="c1"># Computes/Initializes (per axis):</span>
-<span class="linenos">286</span>        <span class="c1"># * `AWk2`: list[NDArray] pre-FFT modulation vectors.</span>
-<span class="linenos">287</span>        <span class="c1"># * `FWk2`: list[NDArray] FFT of convolution filters.</span>
-<span class="linenos">288</span>        <span class="c1"># * `Wk2`: list[NDArray] post-FFT modulation vectors.</span>
-<span class="linenos">289</span>        <span class="c1"># * `extract`: tuple[slice] FFT interval to extract.</span>
-<span class="linenos">290</span>        <span class="c1"># * `fft`: FFT object to transform the input.</span>
-<span class="linenos">291</span>        <span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">FFT</span>
-<span class="linenos">292</span>
-<span class="linenos">293</span>        <span class="n">ndi</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="linenos">294</span>        <span class="k">if</span> <span class="n">ndi</span> <span class="o">==</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">DASK</span><span class="p">:</span>
-<span class="linenos">295</span>            <span class="n">xp</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">get_array_module</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">_meta</span><span class="p">)</span>
-<span class="linenos">296</span>        <span class="k">else</span><span class="p">:</span>
-<span class="linenos">297</span>            <span class="n">xp</span> <span class="o">=</span> <span class="n">ndi</span><span class="o">.</span><span class="n">module</span><span class="p">()</span>
-<span class="linenos">298</span>        <span class="n">xpf</span> <span class="o">=</span> <span class="n">FFT</span><span class="o">.</span><span class="n">fft_backend</span><span class="p">(</span><span class="n">xp</span><span class="p">)</span>
-<span class="linenos">299</span>        <span class="n">cdtype</span> <span class="o">=</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">CWidth</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
-<span class="linenos">300</span>
-<span class="linenos">301</span>        <span class="c1"># Initialize FFT to transform inputs.</span>
-<span class="linenos">302</span>        <span class="n">fft_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="linenos">303</span>        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_axes</span><span class="p">):</span>
-<span class="linenos">304</span>            <span class="n">fft_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">codim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="linenos">305</span>        <span class="n">fft_shape</span> <span class="o">=</span> <span class="n">FFT</span><span class="o">.</span><span class="n">next_fast_len</span><span class="p">(</span><span class="n">fft_shape</span><span class="p">)</span>
-<span class="linenos">306</span>        <span class="n">fft</span> <span class="o">=</span> <span class="n">FFT</span><span class="p">(</span>
-<span class="linenos">307</span>            <span class="n">dim_shape</span><span class="o">=</span><span class="n">fft_shape</span><span class="p">,</span>
-<span class="linenos">308</span>            <span class="n">axes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_axes</span><span class="p">,</span>
-<span class="linenos">309</span>            <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">,</span>
-<span class="linenos">310</span>        <span class="p">)</span>
-<span class="linenos">311</span>
-<span class="linenos">312</span>        <span class="c1"># Build modulation vectors (Wk2, AWk2, FWk2).</span>
-<span class="linenos">313</span>        <span class="n">Wk2</span><span class="p">,</span> <span class="n">AWk2</span><span class="p">,</span> <span class="n">FWk2</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
-<span class="linenos">314</span>        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_axes</span><span class="p">):</span>
-<span class="linenos">315</span>            <span class="n">A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-<span class="linenos">316</span>            <span class="n">W</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_W</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-<span class="linenos">317</span>            <span class="n">N</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span>
-<span class="linenos">318</span>            <span class="n">M</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">codim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span>
-<span class="linenos">319</span>            <span class="n">L</span> <span class="o">=</span> <span class="n">fft</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span>
-<span class="linenos">320</span>
-<span class="linenos">321</span>            <span class="n">k</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">N</span><span class="p">))</span>
-<span class="linenos">322</span>            <span class="n">_Wk2</span> <span class="o">=</span> <span class="n">W</span> <span class="o">**</span> <span class="p">((</span><span class="n">k</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
-<span class="linenos">323</span>            <span class="n">_AWk2</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span> <span class="o">**</span> <span class="o">-</span><span class="n">k</span><span class="p">[:</span><span class="n">N</span><span class="p">])</span> <span class="o">*</span> <span class="n">_Wk2</span><span class="p">[:</span><span class="n">N</span><span class="p">]</span>
-<span class="linenos">324</span>            <span class="n">_FWk2</span> <span class="o">=</span> <span class="n">xpf</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span>
-<span class="linenos">325</span>                <span class="n">xp</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">_Wk2</span><span class="p">[(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">:</span> <span class="mi">0</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">_Wk2</span><span class="p">[:</span><span class="n">M</span><span class="p">]])</span><span class="o">.</span><span class="n">conj</span><span class="p">(),</span>
-<span class="linenos">326</span>                <span class="n">n</span><span class="o">=</span><span class="n">L</span><span class="p">,</span>
-<span class="linenos">327</span>            <span class="p">)</span>
-<span class="linenos">328</span>            <span class="n">_Wk2</span> <span class="o">=</span> <span class="n">_Wk2</span><span class="p">[:</span><span class="n">M</span><span class="p">]</span>
-<span class="linenos">329</span>
-<span class="linenos">330</span>            <span class="n">expand</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,)</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_rank</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">ax</span><span class="p">)</span>
-<span class="linenos">331</span>            <span class="n">Wk2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_Wk2</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">cdtype</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="o">*</span><span class="n">expand</span><span class="p">])</span>
-<span class="linenos">332</span>            <span class="n">AWk2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_AWk2</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">cdtype</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="o">*</span><span class="n">expand</span><span class="p">])</span>
-<span class="linenos">333</span>            <span class="n">FWk2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_FWk2</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">cdtype</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="o">*</span><span class="n">expand</span><span class="p">])</span>
-<span class="linenos">334</span>
-<span class="linenos">335</span>        <span class="c1"># Build (extract,)</span>
-<span class="linenos">336</span>        <span class="n">N_stack</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">ndim</span> <span class="o">-</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_rank</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<span class="linenos">337</span>        <span class="n">extract</span> <span class="o">=</span> <span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">)]</span> <span class="o">*</span> <span class="n">x</span><span class="o">.</span><span class="n">ndim</span>
-<span class="linenos">338</span>        <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_axes</span><span class="p">:</span>
-<span class="linenos">339</span>            <span class="n">N</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span>
-<span class="linenos">340</span>            <span class="n">M</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">codim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span>
-<span class="linenos">341</span>            <span class="n">L</span> <span class="o">=</span> <span class="n">fft</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span>
-<span class="linenos">342</span>
-<span class="linenos">343</span>            <span class="n">extract</span><span class="p">[</span><span class="n">N_stack</span> <span class="o">+</span> <span class="n">ax</span><span class="p">]</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span> <span class="o">+</span> <span class="n">M</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<span class="linenos">344</span>        <span class="n">extract</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">extract</span><span class="p">)</span>
-<span class="linenos">345</span>
-<span class="linenos">346</span>        <span class="k">return</span> <span class="n">AWk2</span><span class="p">,</span> <span class="n">FWk2</span><span class="p">,</span> <span class="n">Wk2</span><span class="p">,</span> <span class="n">extract</span><span class="p">,</span> <span class="n">fft</span></div>
+<span class="linenos">272</span>        <span class="n">_M</span> <span class="o">=</span> <span class="n">as_seq</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">axes</span><span class="p">),</span> <span class="nb">int</span><span class="p">)</span>
+<span class="linenos">273</span>        <span class="n">_A</span> <span class="o">=</span> <span class="n">as_seq</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">axes</span><span class="p">),</span> <span class="nb">complex</span><span class="p">)</span>
+<span class="linenos">274</span>        <span class="n">_W</span> <span class="o">=</span> <span class="n">as_seq</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">axes</span><span class="p">),</span> <span class="nb">complex</span><span class="p">)</span>
+<span class="linenos">275</span>        <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="n">m</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">_M</span><span class="p">)</span>
+<span class="linenos">276</span>        <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">_A</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos">277</span>        <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">_W</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos">278</span>        <span class="k">return</span> <span class="n">_M</span><span class="p">,</span> <span class="n">_A</span><span class="p">,</span> <span class="n">_W</span>
+<span class="linenos">279</span>
+<span class="linenos">280</span>    <span class="k">def</span> <span class="nf">_get_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">):</span>
+<span class="linenos">281</span>        <span class="c1"># x: (..., M1,...,MD) [complex]</span>
+<span class="linenos">282</span>        <span class="c1">#</span>
+<span class="linenos">283</span>        <span class="c1"># Computes/Initializes (per axis):</span>
+<span class="linenos">284</span>        <span class="c1"># * `AWk2`: list[NDArray] pre-FFT modulation vectors.</span>
+<span class="linenos">285</span>        <span class="c1"># * `FWk2`: list[NDArray] FFT of convolution filters.</span>
+<span class="linenos">286</span>        <span class="c1"># * `Wk2`: list[NDArray] post-FFT modulation vectors.</span>
+<span class="linenos">287</span>        <span class="c1"># * `extract`: tuple[slice] FFT interval to extract.</span>
+<span class="linenos">288</span>        <span class="c1"># * `fft`: FFT object to transform the input.</span>
+<span class="linenos">289</span>        <span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">FFT</span>
+<span class="linenos">290</span>
+<span class="linenos">291</span>        <span class="n">ndi</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">292</span>        <span class="k">if</span> <span class="n">ndi</span> <span class="o">==</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">DASK</span><span class="p">:</span>
+<span class="linenos">293</span>            <span class="n">xp</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">get_array_module</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">_meta</span><span class="p">)</span>
+<span class="linenos">294</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">295</span>            <span class="n">xp</span> <span class="o">=</span> <span class="n">ndi</span><span class="o">.</span><span class="n">module</span><span class="p">()</span>
+<span class="linenos">296</span>        <span class="n">xpf</span> <span class="o">=</span> <span class="n">FFT</span><span class="o">.</span><span class="n">fft_backend</span><span class="p">(</span><span class="n">xp</span><span class="p">)</span>
+<span class="linenos">297</span>        <span class="n">cdtype</span> <span class="o">=</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">CWidth</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+<span class="linenos">298</span>
+<span class="linenos">299</span>        <span class="c1"># Initialize FFT to transform inputs.</span>
+<span class="linenos">300</span>        <span class="n">fft_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos">301</span>        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_axes</span><span class="p">):</span>
+<span class="linenos">302</span>            <span class="n">fft_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">codim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="linenos">303</span>        <span class="n">fft_shape</span> <span class="o">=</span> <span class="n">FFT</span><span class="o">.</span><span class="n">next_fast_len</span><span class="p">(</span><span class="n">fft_shape</span><span class="p">)</span>
+<span class="linenos">304</span>        <span class="n">fft</span> <span class="o">=</span> <span class="n">FFT</span><span class="p">(</span>
+<span class="linenos">305</span>            <span class="n">dim_shape</span><span class="o">=</span><span class="n">fft_shape</span><span class="p">,</span>
+<span class="linenos">306</span>            <span class="n">axes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_axes</span><span class="p">,</span>
+<span class="linenos">307</span>            <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">,</span>
+<span class="linenos">308</span>        <span class="p">)</span>
+<span class="linenos">309</span>
+<span class="linenos">310</span>        <span class="c1"># Build modulation vectors (Wk2, AWk2, FWk2).</span>
+<span class="linenos">311</span>        <span class="n">Wk2</span><span class="p">,</span> <span class="n">AWk2</span><span class="p">,</span> <span class="n">FWk2</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+<span class="linenos">312</span>        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_axes</span><span class="p">):</span>
+<span class="linenos">313</span>            <span class="n">A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="linenos">314</span>            <span class="n">W</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_W</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="linenos">315</span>            <span class="n">N</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span>
+<span class="linenos">316</span>            <span class="n">M</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">codim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span>
+<span class="linenos">317</span>            <span class="n">L</span> <span class="o">=</span> <span class="n">fft</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span>
+<span class="linenos">318</span>
+<span class="linenos">319</span>            <span class="n">k</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">N</span><span class="p">))</span>
+<span class="linenos">320</span>            <span class="n">_Wk2</span> <span class="o">=</span> <span class="n">W</span> <span class="o">**</span> <span class="p">((</span><span class="n">k</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="linenos">321</span>            <span class="n">_AWk2</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span> <span class="o">**</span> <span class="o">-</span><span class="n">k</span><span class="p">[:</span><span class="n">N</span><span class="p">])</span> <span class="o">*</span> <span class="n">_Wk2</span><span class="p">[:</span><span class="n">N</span><span class="p">]</span>
+<span class="linenos">322</span>            <span class="n">_FWk2</span> <span class="o">=</span> <span class="n">xpf</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span>
+<span class="linenos">323</span>                <span class="n">xp</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">_Wk2</span><span class="p">[(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">:</span> <span class="mi">0</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">_Wk2</span><span class="p">[:</span><span class="n">M</span><span class="p">]])</span><span class="o">.</span><span class="n">conj</span><span class="p">(),</span>
+<span class="linenos">324</span>                <span class="n">n</span><span class="o">=</span><span class="n">L</span><span class="p">,</span>
+<span class="linenos">325</span>            <span class="p">)</span>
+<span class="linenos">326</span>            <span class="n">_Wk2</span> <span class="o">=</span> <span class="n">_Wk2</span><span class="p">[:</span><span class="n">M</span><span class="p">]</span>
+<span class="linenos">327</span>
+<span class="linenos">328</span>            <span class="n">expand</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,)</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_rank</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">ax</span><span class="p">)</span>
+<span class="linenos">329</span>            <span class="n">Wk2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_Wk2</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">cdtype</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="o">*</span><span class="n">expand</span><span class="p">])</span>
+<span class="linenos">330</span>            <span class="n">AWk2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_AWk2</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">cdtype</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="o">*</span><span class="n">expand</span><span class="p">])</span>
+<span class="linenos">331</span>            <span class="n">FWk2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_FWk2</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">cdtype</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="o">*</span><span class="n">expand</span><span class="p">])</span>
+<span class="linenos">332</span>
+<span class="linenos">333</span>        <span class="c1"># Build (extract,)</span>
+<span class="linenos">334</span>        <span class="n">N_stack</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">ndim</span> <span class="o">-</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_rank</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos">335</span>        <span class="n">extract</span> <span class="o">=</span> <span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">)]</span> <span class="o">*</span> <span class="n">x</span><span class="o">.</span><span class="n">ndim</span>
+<span class="linenos">336</span>        <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_axes</span><span class="p">:</span>
+<span class="linenos">337</span>            <span class="n">N</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span>
+<span class="linenos">338</span>            <span class="n">M</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">codim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span>
+<span class="linenos">339</span>            <span class="n">L</span> <span class="o">=</span> <span class="n">fft</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span>
+<span class="linenos">340</span>
+<span class="linenos">341</span>            <span class="n">extract</span><span class="p">[</span><span class="n">N_stack</span> <span class="o">+</span> <span class="n">ax</span><span class="p">]</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span> <span class="o">+</span> <span class="n">M</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos">342</span>        <span class="n">extract</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">extract</span><span class="p">)</span>
+<span class="linenos">343</span>
+<span class="linenos">344</span>        <span class="k">return</span> <span class="n">AWk2</span><span class="p">,</span> <span class="n">FWk2</span><span class="p">,</span> <span class="n">Wk2</span><span class="p">,</span> <span class="n">extract</span><span class="p">,</span> <span class="n">fft</span></div>
 
 </pre></div>
 

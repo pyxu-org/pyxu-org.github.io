@@ -33,7 +33,7 @@
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../_static/documentation_options.js?v=372c36bd"></script>
+<script src="../_static/documentation_options.js?v=c0e92808"></script>
 <script src="../_static/doctools.js?v=9a2dae69"></script>
 <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -129,7 +129,7 @@ document.write(`
 `);
 </script>
 </div>
-<div class="navbar-item"><strong> Pyxu v2.0b4 </strong></div>
+<div class="navbar-item"><strong> Pyxu v2.0b5 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
 <a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/pyxu-org/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
@@ -202,7 +202,7 @@ document.write(`
 </nav></div>
 </div>
 <div class="sidebar-header-items__end">
-<div class="navbar-item"><strong> Pyxu v2.0b4 </strong></div>
+<div class="navbar-item"><strong> Pyxu v2.0b5 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
 <a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/pyxu-org/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
@@ -350,7 +350,7 @@ with pxrt.Precision(pxrt.Width.SINGLE):
         <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">(</span><span class="n">Median</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">,</span> <span class="n">codim_shape</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="c1"># Enforce input/output precision.</span>
-    <a class="sphinx-codeautolink-a" href="../api/runtime.html#pyxu.runtime.enforce_precision" title="pyxu.runtime.enforce_precision"><span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span></a><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">"arr"</span><span class="p">)</span>
+    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">"arr"</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
         <span class="n">xp</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/util.html#pyxu.util.get_array_module" title="pyxu.util.get_array_module"><span class="n">pxu</span><span class="o">.</span><span class="n">get_array_module</span></a><span class="p">(</span><span class="n">arr</span><span class="p">)</span>   <span class="c1"># Find the array module.</span>
         <span class="c1"># Calculate over the last dimensions to support batching dimensions.</span>

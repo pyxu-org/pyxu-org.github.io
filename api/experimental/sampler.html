@@ -32,7 +32,7 @@
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../../_static/documentation_options.js?v=372c36bd"></script>
+<script src="../../_static/documentation_options.js?v=c0e92808"></script>
 <script src="../../_static/doctools.js?v=9a2dae69"></script>
 <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -128,7 +128,7 @@ document.write(`
 `);
 </script>
 </div>
-<div class="navbar-item"><strong> Pyxu v2.0b4 </strong></div>
+<div class="navbar-item"><strong> Pyxu v2.0b5 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
 <a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/pyxu-org/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
@@ -201,7 +201,7 @@ document.write(`
 </nav></div>
 </div>
 <div class="sidebar-header-items__end">
-<div class="navbar-item"><strong> Pyxu v2.0b4 </strong></div>
+<div class="navbar-item"><strong> Pyxu v2.0b5 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
 <a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/pyxu-org/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
@@ -537,7 +537,7 @@ Mises criterion), which illustrates the aforementioned bias-variance tradeoff fo
 <span class="kn">import</span> <span class="nn">pyxu.operator</span> <span class="k">as</span> <span class="nn">pxo</span>
 <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/index.html#module-scipy" title="scipy"><span class="nn">scipy</span></a> <span class="k">as</span> <span class="nn">sp</span>
 
-<span class="n">f</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../../api/operator/func.html#pyxu.operator.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">pxo</span><span class="o">.</span><span class="n">SquaredL2Norm</span></a><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>  <span class="c1"># To sample 1D normal distribution (mean 0, variance 1)</span>
+<span class="n">f</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../../api/operator/func.html#pyxu.operator.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">pxo</span><span class="o">.</span><span class="n">SquaredL2Norm</span></a><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>  <span class="c1"># To sample 1D normal distribution (mean 0, variance 1)</span>
 <a class="sphinx-codeautolink-a" href="../../api/experimental/sampler.html#pyxu.experimental.sampler.ULA" title="pyxu.experimental.sampler._sampler.ULA"><span class="n">ula</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../../api/experimental/sampler.html#pyxu.experimental.sampler.ULA" title="pyxu.experimental.sampler._sampler.ULA"><span class="n">pxe_sampler</span><span class="o">.</span><span class="n">ULA</span></a><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>  <span class="c1"># Sampler with maximum step size</span>
 <a class="sphinx-codeautolink-a" href="../../api/experimental/sampler.html#pyxu.experimental.sampler.ULA" title="pyxu.experimental.sampler._sampler.ULA"><span class="n">ula_lb</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../../api/experimental/sampler.html#pyxu.experimental.sampler.ULA" title="pyxu.experimental.sampler._sampler.ULA"><span class="n">pxe_sampler</span><span class="o">.</span><span class="n">ULA</span></a><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mf">1e-1</span><span class="p">)</span>  <span class="c1"># Sampler with small step size</span>
 
@@ -589,8 +589,13 @@ Mises criterion), which illustrates the aforementioned bias-variance tradeoff fo
 <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.sqrt.html#numpy.sqrt" title="numpy.sqrt"><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span></a><span class="p">(</span><span class="n">biased_var</span><span class="p">)),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">"$p_{\gamma_1}(x)$"</span><span class="p">)</span>
 <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html#matplotlib.pyplot.legend" title="matplotlib.pyplot.legend"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span></a><span class="p">()</span>
 <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
-
-<a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<p>(<a class="reference download internal" download="" href="../../_downloads/04e83de47f5d056942bb5cceec88f033/sampler-1.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/88a3f16ef7fce8fdb35fd4edf3b6ace4/sampler-1_00_00.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/c604d2df9d37527a80c0dc91b76cf5db/sampler-1_00_00.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/8186afc1cad5ba418c82646f4dc4c85a/sampler-1_00_00.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../../_images/sampler-1_00_00.png" class="plot-directive" src="../../_images/sampler-1_00_00.png"/>
+</figure>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
 <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="matplotlib.pyplot.title"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span>
     <span class="sa">f</span><span class="s2">"ULA samples (small step size) </span><span class="se">\n</span><span class="s2"> Empirical mean: </span><span class="si">{</span><span class="n">mean_lb</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> (theoretical: 0) </span><span class="se">\n</span><span class="s2"> "</span>
     <span class="sa">f</span><span class="s2">"Empirical variance: </span><span class="si">{</span><span class="n">var_lb</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> (theoretical: </span><span class="si">{</span><span class="n">biased_var_lb</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">) </span><span class="se">\n</span><span class="s2">"</span>
@@ -603,7 +608,10 @@ Mises criterion), which illustrates the aforementioned bias-variance tradeoff fo
 <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p>(<a class="reference download internal" download="" href="../../_downloads/04e83de47f5d056942bb5cceec88f033/sampler-1.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>)</p>
+<p>(<a class="reference download internal" download="" href="../../_downloads/6f030212e1ed44374360d96af1b8bb08/sampler-1_01_00.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/9c4ebc29020e065ee3bc3d0953afc0cb/sampler-1_01_00.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/38abfa68484834f661723510290a9594/sampler-1_01_00.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../../_images/sampler-1_01_00.png" class="plot-directive" src="../../_images/sampler-1_01_00.png"/>
+</figure>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyxu.experimental.sampler.ULA.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/experimental/sampler/_sampler.html#ULA.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.experimental.sampler.ULA.__init__" title="Link to this definition">#</a></dt>

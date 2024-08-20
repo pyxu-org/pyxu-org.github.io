@@ -44,7 +44,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../_static/documentation_options.js?v=372c36bd"></script>
+    <script src="../_static/documentation_options.js?v=c0e92808"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -202,7 +202,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v2.0b4 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v2.0b5 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -344,7 +344,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v2.0b4 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v2.0b5 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -507,10 +507,10 @@ abide by the following set of rules:</p>
 dimensions of the input array should be considered as stacking dimensions, i.e. the method is applied along the last
 axis.</p></li>
 <li><p>In the case of N-D inputs, the output should have the same number of dimensions as the input.</p></li>
-<li><p>It should be decorated with <a class="reference internal" href="../api/runtime.html#pyxu.runtime.enforce_precision" title="pyxu.runtime.enforce_precision"><code class="xref py py-func docutils literal notranslate"><span class="pre">enforce_precision()</span></code></a>. Together with the
-<a class="reference internal" href="../api/runtime.html#pyxu.runtime.Precision" title="pyxu.runtime.Precision"><code class="xref py py-class docutils literal notranslate"><span class="pre">Precision</span></code></a> context manager, the former controls the numerical precision (e.g. <em>single</em>,
+<li><p>It should be decorated with <code class="xref py py-func docutils literal notranslate"><span class="pre">enforce_precision()</span></code>. Together with the
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Precision</span></code> context manager, the former controls the numerical precision (e.g. <em>single</em>,
 <em>double</em>) of the inputs/outputs. If possible, the computation performed by the method itself should also be carried
-out at the user-specified precision, accessible via <a class="reference internal" href="../api/runtime.html#pyxu.runtime.getPrecision" title="pyxu.runtime.getPrecision"><code class="xref py py-func docutils literal notranslate"><span class="pre">getPrecision()</span></code></a>.</p></li>
+out at the user-specified precision, accessible via <code class="xref py py-func docutils literal notranslate"><span class="pre">getPrecision()</span></code>.</p></li>
 <li><p>Whenever possible, it should be compatible with the array modules supported by Pyxu. (Use
 <a class="reference internal" href="../api/info.deps.html#pyxu.info.deps.supported_array_modules" title="pyxu.info.deps.supported_array_modules"><code class="xref py py-func docutils literal notranslate"><span class="pre">supported_array_modules()</span></code></a> for an up-to-date list).  <a class="reference internal" href="../api/util.html#pyxu.util.get_array_module" title="pyxu.util.get_array_module"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_array_module()</span></code></a>
 can be used to write <a class="reference external" href="https://docs.cupy.dev/en/stable/user_guide/basic.html#how-to-write-cpu-gpu-agnostic-code">module-agnostic</a> code easily.</p></li>
@@ -542,7 +542,7 @@ can be used to write <a class="reference external" href="https://docs.cupy.dev/e
     <span class="n">out</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">xp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">N</span><span class="p">))</span>  <span class="c1"># apply the operator to various array types.</span>
 </pre></div>
 </div>
-<p>If called from within the <a class="reference internal" href="../api/runtime.html#pyxu.runtime.Precision" title="pyxu.runtime.Precision"><code class="xref py py-class docutils literal notranslate"><span class="pre">Precision</span></code></a> context manager, the decorated <code class="docutils literal notranslate"><span class="pre">apply()</span></code> method will
+<p>If called from within the <code class="xref py py-class docutils literal notranslate"><span class="pre">Precision</span></code> context manager, the decorated <code class="docutils literal notranslate"><span class="pre">apply()</span></code> method will
 automatically <em>coerce</em> the input/output to the user-specified precision:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">Precision</span><span class="p">(</span><span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="o">.</span><span class="n">SINGLE</span><span class="p">):</span>
     <span class="n">out</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>  <span class="c1"># float32 computation</span>

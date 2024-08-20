@@ -32,7 +32,7 @@
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../../_static/documentation_options.js?v=372c36bd"></script>
+<script src="../../_static/documentation_options.js?v=c0e92808"></script>
 <script src="../../_static/doctools.js?v=9a2dae69"></script>
 <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -128,7 +128,7 @@ document.write(`
 `);
 </script>
 </div>
-<div class="navbar-item"><strong> Pyxu v2.0b4 </strong></div>
+<div class="navbar-item"><strong> Pyxu v2.0b5 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
 <a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/pyxu-org/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
@@ -201,7 +201,7 @@ document.write(`
 </nav></div>
 </div>
 <div class="sidebar-header-items__end">
-<div class="navbar-item"><strong> Pyxu v2.0b4 </strong></div>
+<div class="navbar-item"><strong> Pyxu v2.0b5 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
 <a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/pyxu-org/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
@@ -285,16 +285,16 @@ document.write(`
 <nav class="contents local" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#basic-operators" id="id22">Basic Operators</a></p></li>
-<li><p><a class="reference internal" href="#transforms" id="id23">Transforms</a></p></li>
-<li><p><a class="reference internal" href="#stencils-convolutions" id="id24">Stencils &amp; Convolutions</a></p></li>
-<li><p><a class="reference internal" href="#filters" id="id25">Filters</a></p></li>
-<li><p><a class="reference internal" href="#derivatives" id="id26">Derivatives</a></p></li>
-<li><p><a class="reference internal" href="#tensor-products" id="id27">Tensor Products</a></p></li>
+<li><p><a class="reference internal" href="#basic-operators" id="id31">Basic Operators</a></p></li>
+<li><p><a class="reference internal" href="#transforms" id="id32">Transforms</a></p></li>
+<li><p><a class="reference internal" href="#stencils-convolutions" id="id33">Stencils &amp; Convolutions</a></p></li>
+<li><p><a class="reference internal" href="#filters" id="id34">Filters</a></p></li>
+<li><p><a class="reference internal" href="#derivatives" id="id35">Derivatives</a></p></li>
+<li><p><a class="reference internal" href="#tensor-products" id="id36">Tensor Products</a></p></li>
 </ul>
 </nav>
 <section id="basic-operators">
-<h2><a class="toc-backref" href="#id22" role="doc-backlink">Basic Operators</a><a class="headerlink" href="#basic-operators" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id31" role="doc-backlink">Basic Operators</a><a class="headerlink" href="#basic-operators" title="Link to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pyxu.operator.SubSample">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SubSample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim_shape</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/linop/select.html#SubSample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.SubSample" title="Link to this definition">#</a></dt>
@@ -808,7 +808,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: pad dimension[k] using <code class="code docutils literal notranslate"><span class="pre">mode[k]</span></code>.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 </ul>
 </dd>
@@ -817,7 +817,7 @@ Must be one of:</p>
 </dd></dl>
 </section>
 <section id="transforms">
-<h2><a class="toc-backref" href="#id23" role="doc-backlink">Transforms</a><a class="headerlink" href="#transforms" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id32" role="doc-backlink">Transforms</a><a class="headerlink" href="#transforms" title="Link to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pyxu.operator.FFT">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FFT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/linop/fft/fft.html#FFT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.FFT" title="Link to this definition">#</a></dt>
@@ -1065,7 +1065,7 @@ real array. (See <a class="reference internal" href="../util.html#pyxu.util.view
 </dd></dl>
 </section>
 <section id="stencils-convolutions">
-<h2><a class="toc-backref" href="#id24" role="doc-backlink">Stencils &amp; Convolutions</a><a class="headerlink" href="#stencils-convolutions" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id33" role="doc-backlink">Stencils &amp; Convolutions</a><a class="headerlink" href="#stencils-convolutions" title="Link to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pyxu.operator._Stencil">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_Stencil</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kernel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/linop/stencil/_stencil.html#_Stencil"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator._Stencil" title="Link to this definition">#</a></dt>
@@ -1512,7 +1512,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: dimension[k] uses <code class="code docutils literal notranslate"><span class="pre">mode[k]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>enable_warnings</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, emit a warning in case of precision mis-match issues.</p></li>
 </ul>
@@ -1713,6 +1713,7 @@ environment.</p>
 <p class="rubric">Implementation Notes</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#pyxu.operator.FFTCorrelate" title="pyxu.operator.FFTCorrelate"><code class="xref py py-class docutils literal notranslate"><span class="pre">FFTCorrelate</span></code></a> can scale to much larger kernels than <a class="reference internal" href="#pyxu.operator.Stencil" title="pyxu.operator.Stencil"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stencil</span></code></a>.</p></li>
+<li><p>This implementation is most efficient with “constant” boundary conditions (default).</p></li>
 <li><p>Kernels must be small enough to fit in memory, i.e. unbounded kernels are not allowed.</p></li>
 <li><p>Kernels should be supplied an NUMPY/CUPY arrays. DASK arrays will be evaluated if provided.</p></li>
 <li><p><a class="reference internal" href="#pyxu.operator.FFTCorrelate" title="pyxu.operator.FFTCorrelate"><code class="xref py py-class docutils literal notranslate"><span class="pre">FFTCorrelate</span></code></a> instances are <strong>not arraymodule-agnostic</strong>: they will only work with
@@ -1774,7 +1775,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: dimension[k] uses <code class="code docutils literal notranslate"><span class="pre">mode[k]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>enable_warnings</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, emit a warning in case of precision mis-match issues.</p></li>
 <li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – Extra kwargs forwarded to <a class="reference internal" href="#pyxu.operator.FFT" title="pyxu.operator.FFT"><code class="xref py py-class docutils literal notranslate"><span class="pre">FFT</span></code></a>.</p></li>
@@ -1852,7 +1853,7 @@ Must be one of:</p>
 </dd></dl>
 </section>
 <section id="filters">
-<h2><a class="toc-backref" href="#id25" role="doc-backlink">Filters</a><a class="headerlink" href="#filters" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id34" role="doc-backlink">Filters</a><a class="headerlink" href="#filters" title="Link to this heading">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyxu.operator.MovingAverage">
 <span class="sig-name descname"><span class="pre">MovingAverage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'constant'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gpu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/linop/filter.html#MovingAverage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.MovingAverage" title="Link to this definition">#</a></dt>
@@ -1895,7 +1896,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="code docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Input NDArray type (<code class="code docutils literal notranslate"><span class="pre">True</span></code> for GPU, <code class="code docutils literal notranslate"><span class="pre">False</span></code> for CPU). Defaults to <code class="code docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
 <li><p><strong>dtype</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.DType" title="pyxu.info.ptype.DType"><code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code></a>) – Working precision of the linear operator.</p></li>
@@ -2013,7 +2014,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="code docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>sampling</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">list[Real]</span></code>) – Sampling step (i.e. distance between two consecutive elements of an array).
 Defaults to 1.</p></li>
@@ -2068,7 +2069,7 @@ Defaults to 1.</p></li>
 <li><p><strong>mode</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.12)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>]</em>)</p></li>
 <li><p><strong>sampling</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.12)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a><em>, </em><em>...</em><em>]</em>)</p></li>
 <li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>)</p></li>
-<li><p><strong>dtype</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v2.0)"><em>dtype</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>] </em><em>| </em><em>None</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.12)"><em>type</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>] </em><em>| </em><em>_SupportsDType</em><em>[</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v2.0)"><em>dtype</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>]</em><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.12)"><em>SupportsIndex</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.12)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.12)"><em>SupportsIndex</em></a><em>]</em><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>] </em><em>| </em><em>_DTypeDict</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>]</em>)</p></li>
+<li><p><strong>dtype</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v2.1)"><em>dtype</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>] </em><em>| </em><em>None</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.12)"><em>type</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>] </em><em>| </em><em>_SupportsDType</em><em>[</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v2.1)"><em>dtype</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>]</em><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.12)"><em>SupportsIndex</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.12)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.12)"><em>SupportsIndex</em></a><em>]</em><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>] </em><em>| </em><em>_DTypeDict</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>]</em>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -2102,7 +2103,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="code docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>sampling</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">list[Real]</span></code>) – Sampling step (i.e. distance between two consecutive elements of an array).
 Defaults to 1.</p></li>
@@ -2179,7 +2180,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="code docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>sampling</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">list[Real]</span></code>) – Sampling step (i.e. distance between two consecutive elements of an array).
 Defaults to 1.</p></li>
@@ -2256,7 +2257,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="code docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>sampling</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">list[Real]</span></code>) – Sampling step (i.e. distance between two consecutive elements of an array).
 Defaults to 1.</p></li>
@@ -2333,7 +2334,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="code docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>sampling</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">list[Real]</span></code>) – Sampling step (i.e. distance between two consecutive elements of an array).
 Defaults to 1.</p></li>
@@ -2523,7 +2524,7 @@ with standard variation <span class="math notranslate nohighlight">\(\sigma\)</s
 <li><p><strong>mode</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.12)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>]</em>)</p></li>
 <li><p><strong>sampling</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a><em>, </em><em>...</em><em>]</em>)</p></li>
 <li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>)</p></li>
-<li><p><strong>dtype</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v2.0)"><em>dtype</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>] </em><em>| </em><em>None</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.12)"><em>type</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>] </em><em>| </em><em>_SupportsDType</em><em>[</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v2.0)"><em>dtype</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>]</em><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.12)"><em>SupportsIndex</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.12)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.12)"><em>SupportsIndex</em></a><em>]</em><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>] </em><em>| </em><em>_DTypeDict</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>]</em>)</p></li>
+<li><p><strong>dtype</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v2.1)"><em>dtype</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>] </em><em>| </em><em>None</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.12)"><em>type</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>] </em><em>| </em><em>_SupportsDType</em><em>[</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v2.1)"><em>dtype</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>]</em><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.12)"><em>SupportsIndex</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.12)"><em>Sequence</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.SupportsIndex" title="(in Python v3.12)"><em>SupportsIndex</em></a><em>]</em><em>] </em><em>| </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>] </em><em>| </em><em>_DTypeDict</em><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a><em>]</em>)</p></li>
 <li><p><strong>parallel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>)</p></li>
 </ul>
 </dd>
@@ -2531,7 +2532,7 @@ with standard variation <span class="math notranslate nohighlight">\(\sigma\)</s
 </dd></dl>
 </section>
 <section id="derivatives">
-<h2><a class="toc-backref" href="#id26" role="doc-backlink">Derivatives</a><a class="headerlink" href="#derivatives" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id35" role="doc-backlink">Derivatives</a><a class="headerlink" href="#derivatives" title="Link to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pyxu.operator.PartialDerivative">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PartialDerivative</span></span><a class="reference internal" href="../../_modules/pyxu/operator/linop/diff.html#PartialDerivative"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.PartialDerivative" title="Link to this definition">#</a></dt>
@@ -2612,7 +2613,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Input NDArray type (<code class="code docutils literal notranslate"><span class="pre">True</span></code> for GPU, <code class="code docutils literal notranslate"><span class="pre">False</span></code> for CPU).
 Defaults to <code class="code docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
@@ -2794,7 +2795,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Input NDArray type (<code class="code docutils literal notranslate"><span class="pre">True</span></code> for GPU, <code class="code docutils literal notranslate"><span class="pre">False</span></code> for CPU).
 Defaults to <code class="code docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
@@ -2943,7 +2944,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Input NDArray type (<code class="code docutils literal notranslate"><span class="pre">True</span></code> for GPU, <code class="code docutils literal notranslate"><span class="pre">False</span></code> for CPU).
 Defaults to <code class="code docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
@@ -3057,7 +3058,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Input NDArray type (<code class="code docutils literal notranslate"><span class="pre">True</span></code> for GPU, <code class="code docutils literal notranslate"><span class="pre">False</span></code> for CPU).
 Defaults to <code class="code docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
@@ -3157,7 +3158,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Input NDArray type (<code class="code docutils literal notranslate"><span class="pre">True</span></code> for GPU, <code class="code docutils literal notranslate"><span class="pre">False</span></code> for CPU).
 Defaults to <code class="code docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
@@ -3280,7 +3281,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Input NDArray type (<code class="code docutils literal notranslate"><span class="pre">True</span></code> for GPU, <code class="code docutils literal notranslate"><span class="pre">False</span></code> for CPU).
 Defaults to <code class="code docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
@@ -3389,7 +3390,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>gpu</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Input NDArray type (<code class="code docutils literal notranslate"><span class="pre">True</span></code> for GPU, <code class="code docutils literal notranslate"><span class="pre">False</span></code> for CPU).
 Defaults to <code class="code docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
@@ -3532,7 +3533,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>diff_kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – Keyword arguments to parametrize partial derivatives (see
 <a class="reference internal" href="#pyxu.operator.PartialDerivative.finite_difference" title="pyxu.operator.PartialDerivative.finite_difference"><code class="xref py py-meth docutils literal notranslate"><span class="pre">finite_difference()</span></code></a> and
@@ -3578,7 +3579,10 @@ Must be one of:</p>
 <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Second-order directional derivative"</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>(<a class="reference download internal" download="" href="../../_downloads/3766306ab40d62f49982f6cbfd2d4ac7/linop-15.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>)</p>
+<p>(<a class="reference download internal" download="" href="../../_downloads/3766306ab40d62f49982f6cbfd2d4ac7/linop-15.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/b625b60b9c2ea7c0965d290b09d2a43a/linop-15.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/78c81f9d963b95deb1d660029ac521fd/linop-15.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/5ebda40b456c165df2ad890040597b6f/linop-15.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="../../_images/linop-15.png" class="plot-directive" src="../../_images/linop-15.png"/>
+</figure>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><code class="xref py py-func docutils literal notranslate"><span class="pre">Gradient()</span></code></a>, <a class="reference internal" href="#pyxu.operator.DirectionalGradient" title="pyxu.operator.DirectionalGradient"><code class="xref py py-func docutils literal notranslate"><span class="pre">DirectionalGradient()</span></code></a></p>
@@ -3631,7 +3635,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>diff_kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – Keyword arguments to parametrize partial derivatives (see
 <a class="reference internal" href="#pyxu.operator.PartialDerivative.finite_difference" title="pyxu.operator.PartialDerivative.finite_difference"><code class="xref py py-meth docutils literal notranslate"><span class="pre">finite_difference()</span></code></a> and
@@ -3680,6 +3684,24 @@ Must be one of:</p>
 </pre></div>
 </div>
 <p>(<a class="reference download internal" download="" href="../../_downloads/a57efbda9e1e769c7f98f7198c6a45f3/linop-16.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>)</p>
+<figure class="align-default" id="id22">
+<img alt="../../_images/linop-16_00.png" class="plot-directive" src="../../_images/linop-16_00.png"/>
+<figcaption>
+<p><span class="caption-text">(<a class="reference download internal" download="" href="../../_downloads/95f954393f30d769019fe629c409b27a/linop-16_00.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/93d7fbf987ac45ea5ff58f9e3dfc79cb/linop-16_00.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/d722bee71da109d7780d99550eacebb8/linop-16_00.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</span><a class="headerlink" href="#id22" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id23">
+<img alt="../../_images/linop-16_01.png" class="plot-directive" src="../../_images/linop-16_01.png"/>
+<figcaption>
+<p><span class="caption-text">(<a class="reference download internal" download="" href="../../_downloads/1e79eee504d81ae39657426844ad48d5/linop-16_01.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/8236ef67ed964a386981f196b541c46b/linop-16_01.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/20331cddc327a7a39c725a1390312abd/linop-16_01.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</span><a class="headerlink" href="#id23" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id24">
+<img alt="../../_images/linop-16_02.png" class="plot-directive" src="../../_images/linop-16_02.png"/>
+<figcaption>
+<p><span class="caption-text">(<a class="reference download internal" download="" href="../../_downloads/698be0be7ddfa92422a11d452940584b/linop-16_02.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/eb62eb6bb8cbef6b289c9e095efaf519/linop-16_02.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/82d6d7024b395a55bfdcd60ed84361df/linop-16_02.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</span><a class="headerlink" href="#id24" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><code class="xref py py-func docutils literal notranslate"><span class="pre">Gradient()</span></code></a>, <a class="reference internal" href="#pyxu.operator.DirectionalDerivative" title="pyxu.operator.DirectionalDerivative"><code class="xref py py-func docutils literal notranslate"><span class="pre">DirectionalDerivative()</span></code></a></p>
@@ -3730,7 +3752,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>diff_kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – Keyword arguments to parametrize partial derivatives (see
 <a class="reference internal" href="#pyxu.operator.PartialDerivative.finite_difference" title="pyxu.operator.PartialDerivative.finite_difference"><code class="xref py py-meth docutils literal notranslate"><span class="pre">finite_difference()</span></code></a> and
@@ -3775,6 +3797,18 @@ Must be one of:</p>
 </pre></div>
 </div>
 <p>(<a class="reference download internal" download="" href="../../_downloads/a6b72438f1f4eeb8e21f26d89762a34f/linop-17.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>)</p>
+<figure class="align-default" id="id25">
+<img alt="../../_images/linop-17_00.png" class="plot-directive" src="../../_images/linop-17_00.png"/>
+<figcaption>
+<p><span class="caption-text">(<a class="reference download internal" download="" href="../../_downloads/f7d56a0567cff2735995dc3e8d7f3444/linop-17_00.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/bfc0c57c33300bd5c84a79fcb1727013/linop-17_00.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/8149e23614b7c5de54fdf55f5a7a75c5/linop-17_00.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</span><a class="headerlink" href="#id25" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id26">
+<img alt="../../_images/linop-17_01.png" class="plot-directive" src="../../_images/linop-17_01.png"/>
+<figcaption>
+<p><span class="caption-text">(<a class="reference download internal" download="" href="../../_downloads/6d0530dbf0a447e4badb980334097d46/linop-17_01.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/588c012f2f879fd5b770601941d612c6/linop-17_01.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/2d83951329e9139d2f457f163ef557ff/linop-17_01.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</span><a class="headerlink" href="#id26" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="#pyxu.operator.Laplacian" title="pyxu.operator.Laplacian"><code class="xref py py-func docutils literal notranslate"><span class="pre">Laplacian()</span></code></a>, <a class="reference internal" href="#pyxu.operator.DirectionalDerivative" title="pyxu.operator.DirectionalDerivative"><code class="xref py py-func docutils literal notranslate"><span class="pre">DirectionalDerivative()</span></code></a></p>
@@ -3833,7 +3867,7 @@ Must be one of:</p>
 </li>
 <li><p>tuple[str, …]: the <code class="code docutils literal notranslate"><span class="pre">d</span></code>-th dimension uses <code class="docutils literal notranslate"><span class="pre">mode[d]</span></code> as boundary condition.</p></li>
 </ul>
-<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
+<p>(See <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.pad()</span></code></a> for details.)</p>
 </p></li>
 <li><p><strong>diff_kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – Keyword arguments to parametrize partial derivatives (see
 <a class="reference internal" href="#pyxu.operator.PartialDerivative.finite_difference" title="pyxu.operator.PartialDerivative.finite_difference"><code class="xref py py-meth docutils literal notranslate"><span class="pre">finite_difference()</span></code></a> and
@@ -3886,6 +3920,30 @@ Must be one of:</p>
 </pre></div>
 </div>
 <p>(<a class="reference download internal" download="" href="../../_downloads/d9532a31cab2ae0a0aead1ef9ce35695/linop-18.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>)</p>
+<figure class="align-default" id="id27">
+<img alt="../../_images/linop-18_00.png" class="plot-directive" src="../../_images/linop-18_00.png"/>
+<figcaption>
+<p><span class="caption-text">(<a class="reference download internal" download="" href="../../_downloads/a1eb0d0feeac8d6b57df7a183ccc2b4a/linop-18_00.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/4b69e03f228cdd74b69a7b6f87572dd9/linop-18_00.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/ce02986c52568fc946d170be6555d837/linop-18_00.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</span><a class="headerlink" href="#id27" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id28">
+<img alt="../../_images/linop-18_01.png" class="plot-directive" src="../../_images/linop-18_01.png"/>
+<figcaption>
+<p><span class="caption-text">(<a class="reference download internal" download="" href="../../_downloads/04866143cf4156bbd2959a11374f23c1/linop-18_01.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/25401358737840a44612d39ab2e92e84/linop-18_01.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/7f5f34fa22392f9857f5e4557ab603eb/linop-18_01.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</span><a class="headerlink" href="#id28" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id29">
+<img alt="../../_images/linop-18_02.png" class="plot-directive" src="../../_images/linop-18_02.png"/>
+<figcaption>
+<p><span class="caption-text">(<a class="reference download internal" download="" href="../../_downloads/9e52db9f4d3f9479087c6ce00d32d704/linop-18_02.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/e6a1a95a7b60c79c0ab7469bb4ab532c/linop-18_02.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/274c9a03963857bb2702dadde78475d6/linop-18_02.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</span><a class="headerlink" href="#id29" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id30">
+<img alt="../../_images/linop-18_03.png" class="plot-directive" src="../../_images/linop-18_03.png"/>
+<figcaption>
+<p><span class="caption-text">(<a class="reference download internal" download="" href="../../_downloads/ea211e4df676760504d9cca14d64681e/linop-18_03.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/9c908178b29c81a73157d9f158f77444/linop-18_03.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../../_downloads/502950988dae13ff01ed4781361cfe4d/linop-18_03.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</span><a class="headerlink" href="#id30" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="#pyxu.operator.Hessian" title="pyxu.operator.Hessian"><code class="xref py py-func docutils literal notranslate"><span class="pre">Hessian()</span></code></a>, <a class="reference internal" href="#pyxu.operator.DirectionalDerivative" title="pyxu.operator.DirectionalDerivative"><code class="xref py py-func docutils literal notranslate"><span class="pre">DirectionalDerivative()</span></code></a></p>
@@ -3893,7 +3951,7 @@ Must be one of:</p>
 </dd></dl>
 </section>
 <section id="tensor-products">
-<h2><a class="toc-backref" href="#id27" role="doc-backlink">Tensor Products</a><a class="headerlink" href="#tensor-products" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id36" role="doc-backlink">Tensor Products</a><a class="headerlink" href="#tensor-products" title="Link to this heading">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyxu.operator.kron">
 <span class="sig-name descname"><span class="pre">kron</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyxu/operator/linop/kron.html#kron"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.kron" title="Link to this definition">#</a></dt>

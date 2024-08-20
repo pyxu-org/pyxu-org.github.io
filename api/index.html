@@ -44,7 +44,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../_static/documentation_options.js?v=372c36bd"></script>
+    <script src="../_static/documentation_options.js?v=c0e92808"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -204,7 +204,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v2.0b4 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v2.0b5 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -346,7 +346,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v2.0b4 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v2.0b5 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -890,7 +890,7 @@ the former and must be imported explicitly:</p>
 <tr class="row-even"><td><p><a class="reference internal" href="operator.interop.html#pyxu.operator.interop.torch._to_torch" title="pyxu.operator.interop.torch._to_torch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_to_torch</span></code></a>(arr[, requires_grad])</p></td>
 <td><p>NumPy/CuPy -&gt; PyTorch conversion.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="operator.interop.html#pyxu.operator.interop.from_torch" title="pyxu.operator.interop.from_torch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_torch</span></code></a>(apply, dim_shape, codim_shape[, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="operator.interop.html#pyxu.operator.interop.from_torch" title="pyxu.operator.interop.from_torch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_torch</span></code></a>(cls, dim_shape, codim_shape[, ...])</p></td>
 <td><p>Define an <a class="reference internal" href="abc.html#pyxu.abc.Operator" title="pyxu.abc.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> from PyTorch functions.</p></td>
 </tr>
 </tbody>
@@ -1266,7 +1266,7 @@ the former and must be imported explicitly:</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="opt.solver.html#pyxu.opt.solver.CV" title="pyxu.opt.solver.CV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CV</span></code></a></p></td>
 <td><p>alias of <a class="reference internal" href="opt.solver.html#pyxu.opt.solver.CondatVu" title="pyxu.opt.solver.pds.CondatVu"><code class="xref py py-class docutils literal notranslate"><span class="pre">CondatVu</span></code></a></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="opt.solver.html#pyxu.opt.solver.DavisYin" title="pyxu.opt.solver.DavisYin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DavisYin</span></code></a>(f[, g, h, beta])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="opt.solver.html#pyxu.opt.solver.DavisYin" title="pyxu.opt.solver.DavisYin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DavisYin</span></code></a>(f[, g, h])</p></td>
 <td><p>Davis-Yin primal-dual splitting method.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="opt.solver.html#pyxu.opt.solver.DouglasRachford" title="pyxu.opt.solver.DouglasRachford"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DouglasRachford</span></code></a>([g, h, base])</p></td>
@@ -1281,10 +1281,10 @@ the former and must be imported explicitly:</p>
 <tr class="row-even"><td><p><a class="reference internal" href="opt.solver.html#pyxu.opt.solver.FB" title="pyxu.opt.solver.FB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FB</span></code></a></p></td>
 <td><p>alias of <a class="reference internal" href="opt.solver.html#pyxu.opt.solver.ForwardBackward" title="pyxu.opt.solver.pds.ForwardBackward"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForwardBackward</span></code></a></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="opt.solver.html#pyxu.opt.solver.ForwardBackward" title="pyxu.opt.solver.ForwardBackward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ForwardBackward</span></code></a>([f, g, beta])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="opt.solver.html#pyxu.opt.solver.ForwardBackward" title="pyxu.opt.solver.ForwardBackward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ForwardBackward</span></code></a>([f, g])</p></td>
 <td><p>Forward-backward splitting algorithm.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="opt.solver.html#pyxu.opt.solver.LorisVerhoeven" title="pyxu.opt.solver.LorisVerhoeven"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LorisVerhoeven</span></code></a>([f, h, K, beta])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="opt.solver.html#pyxu.opt.solver.LorisVerhoeven" title="pyxu.opt.solver.LorisVerhoeven"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LorisVerhoeven</span></code></a>([f, h, K])</p></td>
 <td><p>Loris-Verhoeven splitting algorithm.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="opt.solver.html#pyxu.opt.solver.LV" title="pyxu.opt.solver.LV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LV</span></code></a></p></td>
@@ -1337,26 +1337,8 @@ the former and must be imported explicitly:</p>
 <h2><a class="toc-backref" href="#id27" role="doc-backlink">pyxu.runtime</a><a class="headerlink" href="#pyxu-runtime" title="Link to this heading">#</a></h2>
 <table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="runtime.html#pyxu.runtime.coerce" title="pyxu.runtime.coerce"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coerce</span></code></a>(x)</p></td>
-<td><p>Transform input to match runtime FP-precision.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="runtime.html#pyxu.runtime.CWidth" title="pyxu.runtime.CWidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CWidth</span></code></a>(value[, names, module, qualname, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="runtime.html#pyxu.runtime.CWidth" title="pyxu.runtime.CWidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CWidth</span></code></a>(value[, names, module, qualname, ...])</p></td>
 <td><p>Machine-dependent complex-valued floating-point types.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="runtime.html#pyxu.runtime.enforce_precision" title="pyxu.runtime.enforce_precision"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enforce_precision</span></code></a>([i, o, allow_None])</p></td>
-<td><p>Decorator to pre/post-process function parameters to enforce runtime FP-precision.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="runtime.html#pyxu.runtime.EnforcePrecision" title="pyxu.runtime.EnforcePrecision"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EnforcePrecision</span></code></a>(state)</p></td>
-<td><p>Context Manager to locally disable effect of <a class="reference internal" href="runtime.html#pyxu.runtime.enforce_precision" title="pyxu.runtime.enforce_precision"><code class="xref py py-func docutils literal notranslate"><span class="pre">enforce_precision()</span></code></a>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="runtime.html#pyxu.runtime.getCoerceState" title="pyxu.runtime.getCoerceState"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCoerceState</span></code></a>()</p></td>
-<td><p>Query if <a class="reference internal" href="runtime.html#pyxu.runtime.coerce" title="pyxu.runtime.coerce"><code class="xref py py-func docutils literal notranslate"><span class="pre">coerce()</span></code></a> is (currently) a no-op.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="runtime.html#pyxu.runtime.getPrecision" title="pyxu.runtime.getPrecision"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPrecision</span></code></a>()</p></td>
-<td><p>Query current FP precision.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="runtime.html#pyxu.runtime.Precision" title="pyxu.runtime.Precision"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Precision</span></code></a>(width)</p></td>
-<td><p>Context Manager to locally redefine floating-point precision.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="runtime.html#pyxu.runtime.Width" title="pyxu.runtime.Width"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Width</span></code></a>(value[, names, module, qualname, ...])</p></td>
 <td><p>Machine-dependent floating-point types.</p></td>

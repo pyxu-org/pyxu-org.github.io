@@ -43,7 +43,7 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../_static/documentation_options.js?v=372c36bd"></script>
+    <script src="../../../_static/documentation_options.js?v=c0e92808"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -199,7 +199,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v2.0b4 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v2.0b5 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -341,7 +341,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v2.0b4 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v2.0b5 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -454,116 +454,111 @@ document.write(`
 <span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">pyxu.abc</span> <span class="k">as</span> <span class="nn">pxa</span>
 <span class="linenos">  2</span><span class="kn">import</span> <span class="nn">pyxu.info.deps</span> <span class="k">as</span> <span class="nn">pxd</span>
 <span class="linenos">  3</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
-<span class="linenos">  4</span><span class="kn">import</span> <span class="nn">pyxu.runtime</span> <span class="k">as</span> <span class="nn">pxrt</span>
-<span class="linenos">  5</span>
-<span class="linenos">  6</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
-<span class="linenos">  7</span>    <span class="s2">&quot;backtracking_linesearch&quot;</span><span class="p">,</span>
-<span class="linenos">  8</span><span class="p">]</span>
+<span class="linenos">  4</span>
+<span class="linenos">  5</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos">  6</span>    <span class="s2">&quot;backtracking_linesearch&quot;</span><span class="p">,</span>
+<span class="linenos">  7</span><span class="p">]</span>
+<span class="linenos">  8</span>
 <span class="linenos">  9</span>
-<span class="linenos"> 10</span>
-<span class="linenos"> 11</span><span class="n">LINESEARCH_DEFAULT_R</span> <span class="o">=</span> <span class="mf">0.5</span>
-<span class="linenos"> 12</span><span class="n">LINESEARCH_DEFAULT_C</span> <span class="o">=</span> <span class="mf">1e-4</span>
-<span class="linenos"> 13</span><span class="n">newaxis</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Since we don&#39;t import NumPy</span>
+<span class="linenos"> 10</span><span class="n">LINESEARCH_DEFAULT_R</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="linenos"> 11</span><span class="n">LINESEARCH_DEFAULT_C</span> <span class="o">=</span> <span class="mf">1e-4</span>
+<span class="linenos"> 12</span><span class="n">newaxis</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Since we don&#39;t import NumPy</span>
+<span class="linenos"> 13</span>
 <span class="linenos"> 14</span>
-<span class="linenos"> 15</span>
 <div class="viewcode-block" id="backtracking_linesearch">
 <a class="viewcode-back" href="../../../api/math.html#pyxu.math.backtracking_linesearch">[docs]</a>
-<span class="linenos"> 16</span><span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span>
-<span class="linenos"> 17</span>    <span class="n">i</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;direction&quot;</span><span class="p">,</span> <span class="s2">&quot;gradient&quot;</span><span class="p">,</span> <span class="s2">&quot;a0&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">),</span>
-<span class="linenos"> 18</span>    <span class="n">allow_None</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="linenos"> 19</span><span class="p">)</span>
-<span class="linenos"> 20</span><span class="k">def</span> <span class="nf">backtracking_linesearch</span><span class="p">(</span>
-<span class="linenos"> 21</span>    <span class="n">f</span><span class="p">:</span> <span class="n">pxa</span><span class="o">.</span><span class="n">DiffFunc</span><span class="p">,</span>
-<span class="linenos"> 22</span>    <span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span>
-<span class="linenos"> 23</span>    <span class="n">direction</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span>
-<span class="linenos"> 24</span>    <span class="n">gradient</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="linenos"> 25</span>    <span class="n">a0</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="linenos"> 26</span>    <span class="n">r</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span> <span class="o">=</span> <span class="n">LINESEARCH_DEFAULT_R</span><span class="p">,</span>
-<span class="linenos"> 27</span>    <span class="n">c</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span> <span class="o">=</span> <span class="n">LINESEARCH_DEFAULT_C</span><span class="p">,</span>
-<span class="linenos"> 28</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
-<span class="linenos"> 29</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos"> 30</span><span class="sd">    Backtracking line search algorithm based on the `Armijo-Goldstein condition</span>
-<span class="linenos"> 31</span><span class="sd">    &lt;https://www.wikiwand.com/en/Backtracking_line_search&gt;`_.</span>
-<span class="linenos"> 32</span>
-<span class="linenos"> 33</span><span class="sd">    Parameters</span>
-<span class="linenos"> 34</span><span class="sd">    ----------</span>
-<span class="linenos"> 35</span><span class="sd">    f: ~pyxu.abc.operator.DiffFunc</span>
-<span class="linenos"> 36</span><span class="sd">        Differentiable functional.</span>
-<span class="linenos"> 37</span><span class="sd">    x: NDArray</span>
-<span class="linenos"> 38</span><span class="sd">        (..., M1,...,MD) initial search point(s).</span>
-<span class="linenos"> 39</span><span class="sd">    direction: NDArray</span>
-<span class="linenos"> 40</span><span class="sd">        (..., M1,...,MD) search direction(s) corresponding to initial point(s).</span>
-<span class="linenos"> 41</span><span class="sd">    gradient: NDArray</span>
-<span class="linenos"> 42</span><span class="sd">        (..., M1,...,MD) gradient of `f` at initial search point(s).</span>
+<span class="linenos"> 15</span><span class="k">def</span> <span class="nf">backtracking_linesearch</span><span class="p">(</span>
+<span class="linenos"> 16</span>    <span class="n">f</span><span class="p">:</span> <span class="n">pxa</span><span class="o">.</span><span class="n">DiffFunc</span><span class="p">,</span>
+<span class="linenos"> 17</span>    <span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span>
+<span class="linenos"> 18</span>    <span class="n">direction</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span>
+<span class="linenos"> 19</span>    <span class="n">gradient</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="linenos"> 20</span>    <span class="n">a0</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="linenos"> 21</span>    <span class="n">r</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span> <span class="o">=</span> <span class="n">LINESEARCH_DEFAULT_R</span><span class="p">,</span>
+<span class="linenos"> 22</span>    <span class="n">c</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span> <span class="o">=</span> <span class="n">LINESEARCH_DEFAULT_C</span><span class="p">,</span>
+<span class="linenos"> 23</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos"> 24</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 25</span><span class="sd">    Backtracking line search algorithm based on the `Armijo-Goldstein condition</span>
+<span class="linenos"> 26</span><span class="sd">    &lt;https://www.wikiwand.com/en/Backtracking_line_search&gt;`_.</span>
+<span class="linenos"> 27</span>
+<span class="linenos"> 28</span><span class="sd">    Parameters</span>
+<span class="linenos"> 29</span><span class="sd">    ----------</span>
+<span class="linenos"> 30</span><span class="sd">    f: ~pyxu.abc.operator.DiffFunc</span>
+<span class="linenos"> 31</span><span class="sd">        Differentiable functional.</span>
+<span class="linenos"> 32</span><span class="sd">    x: NDArray</span>
+<span class="linenos"> 33</span><span class="sd">        (..., M1,...,MD) initial search point(s).</span>
+<span class="linenos"> 34</span><span class="sd">    direction: NDArray</span>
+<span class="linenos"> 35</span><span class="sd">        (..., M1,...,MD) search direction(s) corresponding to initial point(s).</span>
+<span class="linenos"> 36</span><span class="sd">    gradient: NDArray</span>
+<span class="linenos"> 37</span><span class="sd">        (..., M1,...,MD) gradient of `f` at initial search point(s).</span>
+<span class="linenos"> 38</span>
+<span class="linenos"> 39</span><span class="sd">        Specifying `gradient` when known is an optimization: it will be autocomputed via</span>
+<span class="linenos"> 40</span><span class="sd">        :py:meth:`~pyxu.abc.DiffFunc.grad` if unspecified.</span>
+<span class="linenos"> 41</span><span class="sd">    a0: Real</span>
+<span class="linenos"> 42</span><span class="sd">        Initial step size.</span>
 <span class="linenos"> 43</span>
-<span class="linenos"> 44</span><span class="sd">        Specifying `gradient` when known is an optimization: it will be autocomputed via</span>
-<span class="linenos"> 45</span><span class="sd">        :py:meth:`~pyxu.abc.DiffFunc.grad` if unspecified.</span>
-<span class="linenos"> 46</span><span class="sd">    a0: Real</span>
-<span class="linenos"> 47</span><span class="sd">        Initial step size.</span>
-<span class="linenos"> 48</span>
-<span class="linenos"> 49</span><span class="sd">        If unspecified and :math:`\nabla f` is :math:`\beta`-Lipschitz continuous, then `a0` is auto-chosen as</span>
-<span class="linenos"> 50</span><span class="sd">        :math:`\frac{1}{\beta}`.</span>
-<span class="linenos"> 51</span><span class="sd">    r: Real</span>
-<span class="linenos"> 52</span><span class="sd">        Step reduction factor.</span>
-<span class="linenos"> 53</span><span class="sd">    c: Real</span>
-<span class="linenos"> 54</span><span class="sd">        Bound reduction factor.</span>
+<span class="linenos"> 44</span><span class="sd">        If unspecified and :math:`\nabla f` is :math:`\beta`-Lipschitz continuous, then `a0` is auto-chosen as</span>
+<span class="linenos"> 45</span><span class="sd">        :math:`\frac{1}{\beta}`.</span>
+<span class="linenos"> 46</span><span class="sd">    r: Real</span>
+<span class="linenos"> 47</span><span class="sd">        Step reduction factor.</span>
+<span class="linenos"> 48</span><span class="sd">    c: Real</span>
+<span class="linenos"> 49</span><span class="sd">        Bound reduction factor.</span>
+<span class="linenos"> 50</span>
+<span class="linenos"> 51</span><span class="sd">    Returns</span>
+<span class="linenos"> 52</span><span class="sd">    -------</span>
+<span class="linenos"> 53</span><span class="sd">    a: NDArray</span>
+<span class="linenos"> 54</span><span class="sd">        (..., 1) step sizes.</span>
 <span class="linenos"> 55</span>
-<span class="linenos"> 56</span><span class="sd">    Returns</span>
-<span class="linenos"> 57</span><span class="sd">    -------</span>
-<span class="linenos"> 58</span><span class="sd">    a: NDArray</span>
-<span class="linenos"> 59</span><span class="sd">        (..., 1) step sizes.</span>
-<span class="linenos"> 60</span>
-<span class="linenos"> 61</span><span class="sd">    Notes</span>
-<span class="linenos"> 62</span><span class="sd">    -----</span>
-<span class="linenos"> 63</span><span class="sd">    * Performing a line-search with DASK inputs is inefficient due to iterative nature of algorithm.</span>
-<span class="linenos"> 64</span><span class="sd">    &quot;&quot;&quot;</span>
-<span class="linenos"> 65</span>    <span class="n">ndi</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="linenos"> 66</span>    <span class="n">xp</span> <span class="o">=</span> <span class="n">ndi</span><span class="o">.</span><span class="n">module</span><span class="p">()</span>
-<span class="linenos"> 67</span>
-<span class="linenos"> 68</span>    <span class="k">assert</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="mi">1</span>
-<span class="linenos"> 69</span>    <span class="k">assert</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="mi">1</span>
-<span class="linenos"> 70</span>    <span class="k">if</span> <span class="n">a0</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="linenos"> 71</span>        <span class="n">a0</span> <span class="o">=</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">coerce</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">f</span><span class="o">.</span><span class="n">diff_lipschitz</span><span class="p">)</span>
-<span class="linenos"> 72</span>        <span class="k">assert</span> <span class="n">a0</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;a0: cannot auto-set step size.&quot;</span>
-<span class="linenos"> 73</span>    <span class="k">else</span><span class="p">:</span>
-<span class="linenos"> 74</span>        <span class="k">assert</span> <span class="n">a0</span> <span class="o">&gt;</span> <span class="mi">0</span>
-<span class="linenos"> 75</span>
-<span class="linenos"> 76</span>    <span class="k">if</span> <span class="n">gradient</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="linenos"> 77</span>        <span class="n">gradient</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="linenos"> 78</span>
-<span class="linenos"> 79</span>    <span class="n">f_x</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># (..., 1)</span>
-<span class="linenos"> 80</span>    <span class="n">d_f</span> <span class="o">=</span> <span class="p">(</span>  <span class="c1"># \delta f  (..., 1)</span>
-<span class="linenos"> 81</span>        <span class="n">c</span>
-<span class="linenos"> 82</span>        <span class="o">*</span> <span class="n">xp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
-<span class="linenos"> 83</span>            <span class="n">gradient</span> <span class="o">*</span> <span class="n">direction</span><span class="p">,</span>
-<span class="linenos"> 84</span>            <span class="n">axis</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">f</span><span class="o">.</span><span class="n">dim_rank</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
-<span class="linenos"> 85</span>        <span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="n">newaxis</span><span class="p">]</span>
-<span class="linenos"> 86</span>    <span class="p">)</span>
-<span class="linenos"> 87</span>
-<span class="linenos"> 88</span>    <span class="k">def</span> <span class="nf">refine</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
-<span class="linenos"> 89</span>        <span class="c1"># Do one iteration of the algorithm.</span>
+<span class="linenos"> 56</span><span class="sd">    Notes</span>
+<span class="linenos"> 57</span><span class="sd">    -----</span>
+<span class="linenos"> 58</span><span class="sd">    * Performing a line-search with DASK inputs is inefficient due to iterative nature of algorithm.</span>
+<span class="linenos"> 59</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos"> 60</span>    <span class="n">ndi</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos"> 61</span>    <span class="n">xp</span> <span class="o">=</span> <span class="n">ndi</span><span class="o">.</span><span class="n">module</span><span class="p">()</span>
+<span class="linenos"> 62</span>
+<span class="linenos"> 63</span>    <span class="k">assert</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="mi">1</span>
+<span class="linenos"> 64</span>    <span class="k">assert</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="mi">1</span>
+<span class="linenos"> 65</span>    <span class="k">if</span> <span class="n">a0</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos"> 66</span>        <span class="n">a0</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">f</span><span class="o">.</span><span class="n">diff_lipschitz</span>
+<span class="linenos"> 67</span>        <span class="k">assert</span> <span class="n">a0</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;a0: cannot auto-set step size.&quot;</span>
+<span class="linenos"> 68</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 69</span>        <span class="k">assert</span> <span class="n">a0</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="linenos"> 70</span>
+<span class="linenos"> 71</span>    <span class="k">if</span> <span class="n">gradient</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos"> 72</span>        <span class="n">gradient</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos"> 73</span>
+<span class="linenos"> 74</span>    <span class="n">f_x</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># (..., 1)</span>
+<span class="linenos"> 75</span>    <span class="n">d_f</span> <span class="o">=</span> <span class="p">(</span>  <span class="c1"># \delta f  (..., 1)</span>
+<span class="linenos"> 76</span>        <span class="n">c</span>
+<span class="linenos"> 77</span>        <span class="o">*</span> <span class="n">xp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+<span class="linenos"> 78</span>            <span class="n">gradient</span> <span class="o">*</span> <span class="n">direction</span><span class="p">,</span>
+<span class="linenos"> 79</span>            <span class="n">axis</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">f</span><span class="o">.</span><span class="n">dim_rank</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+<span class="linenos"> 80</span>        <span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="n">newaxis</span><span class="p">]</span>
+<span class="linenos"> 81</span>    <span class="p">)</span>
+<span class="linenos"> 82</span>
+<span class="linenos"> 83</span>    <span class="k">def</span> <span class="nf">refine</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos"> 84</span>        <span class="c1"># Do one iteration of the algorithm.</span>
+<span class="linenos"> 85</span>        <span class="c1">#</span>
+<span class="linenos"> 86</span>        <span class="c1"># Parameters</span>
+<span class="linenos"> 87</span>        <span class="c1"># ----------</span>
+<span class="linenos"> 88</span>        <span class="c1"># a : NDArray</span>
+<span class="linenos"> 89</span>        <span class="c1">#     (..., 1) current step size(s).</span>
 <span class="linenos"> 90</span>        <span class="c1">#</span>
-<span class="linenos"> 91</span>        <span class="c1"># Parameters</span>
-<span class="linenos"> 92</span>        <span class="c1"># ----------</span>
-<span class="linenos"> 93</span>        <span class="c1"># a : NDArray</span>
-<span class="linenos"> 94</span>        <span class="c1">#     (..., 1) current step size(s).</span>
-<span class="linenos"> 95</span>        <span class="c1">#</span>
-<span class="linenos"> 96</span>        <span class="c1"># Returns</span>
-<span class="linenos"> 97</span>        <span class="c1"># -------</span>
-<span class="linenos"> 98</span>        <span class="c1"># mask : NDArray[bool]</span>
-<span class="linenos"> 99</span>        <span class="c1">#     (..., 1) refinement points</span>
-<span class="linenos">100</span>        <span class="n">a_D</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="o">*</span><span class="p">((</span><span class="n">newaxis</span><span class="p">,)</span> <span class="o">*</span> <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">dim_rank</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))]</span>  <span class="c1"># (..., 1,...,1)</span>
-<span class="linenos">101</span>        <span class="n">lhs</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">a_D</span> <span class="o">*</span> <span class="n">direction</span><span class="p">)</span>  <span class="c1"># (..., 1)</span>
-<span class="linenos">102</span>        <span class="n">rhs</span> <span class="o">=</span> <span class="n">f_x</span> <span class="o">+</span> <span class="n">a</span> <span class="o">*</span> <span class="n">d_f</span>  <span class="c1"># (..., 1)</span>
-<span class="linenos">103</span>        <span class="k">return</span> <span class="n">lhs</span> <span class="o">&gt;</span> <span class="n">rhs</span>  <span class="c1"># mask</span>
-<span class="linenos">104</span>
-<span class="linenos">105</span>    <span class="n">a</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">full_like</span><span class="p">(</span><span class="n">d_f</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">a0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-<span class="linenos">106</span>    <span class="k">while</span> <span class="n">xp</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">mask</span> <span class="o">:=</span> <span class="n">refine</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
-<span class="linenos">107</span>        <span class="n">a</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">*=</span> <span class="n">r</span>
-<span class="linenos">108</span>
-<span class="linenos">109</span>        <span class="k">if</span> <span class="n">ndi</span> <span class="o">==</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">DASK</span><span class="p">:</span>
-<span class="linenos">110</span>            <span class="n">a</span><span class="o">.</span><span class="n">compute_chunk_sizes</span><span class="p">()</span>
-<span class="linenos">111</span>    <span class="k">return</span> <span class="n">a</span></div>
+<span class="linenos"> 91</span>        <span class="c1"># Returns</span>
+<span class="linenos"> 92</span>        <span class="c1"># -------</span>
+<span class="linenos"> 93</span>        <span class="c1"># mask : NDArray[bool]</span>
+<span class="linenos"> 94</span>        <span class="c1">#     (..., 1) refinement points</span>
+<span class="linenos"> 95</span>        <span class="n">a_D</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="o">*</span><span class="p">((</span><span class="n">newaxis</span><span class="p">,)</span> <span class="o">*</span> <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">dim_rank</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))]</span>  <span class="c1"># (..., 1,...,1)</span>
+<span class="linenos"> 96</span>        <span class="n">lhs</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">a_D</span> <span class="o">*</span> <span class="n">direction</span><span class="p">)</span>  <span class="c1"># (..., 1)</span>
+<span class="linenos"> 97</span>        <span class="n">rhs</span> <span class="o">=</span> <span class="n">f_x</span> <span class="o">+</span> <span class="n">a</span> <span class="o">*</span> <span class="n">d_f</span>  <span class="c1"># (..., 1)</span>
+<span class="linenos"> 98</span>        <span class="k">return</span> <span class="n">lhs</span> <span class="o">&gt;</span> <span class="n">rhs</span>  <span class="c1"># mask</span>
+<span class="linenos"> 99</span>
+<span class="linenos">100</span>    <span class="n">a</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">full_like</span><span class="p">(</span><span class="n">d_f</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">a0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<span class="linenos">101</span>    <span class="k">while</span> <span class="n">xp</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">mask</span> <span class="o">:=</span> <span class="n">refine</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
+<span class="linenos">102</span>        <span class="n">a</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">*=</span> <span class="n">r</span>
+<span class="linenos">103</span>
+<span class="linenos">104</span>        <span class="k">if</span> <span class="n">ndi</span> <span class="o">==</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">DASK</span><span class="p">:</span>
+<span class="linenos">105</span>            <span class="n">a</span><span class="o">.</span><span class="n">compute_chunk_sizes</span><span class="p">()</span>
+<span class="linenos">106</span>    <span class="k">return</span> <span class="n">a</span></div>
 
 </pre></div>
 

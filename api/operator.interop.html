@@ -44,7 +44,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../_static/documentation_options.js?v=372c36bd"></script>
+    <script src="../_static/documentation_options.js?v=c0e92808"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -204,7 +204,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v2.0b4 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v2.0b5 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -346,7 +346,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v2.0b4 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v2.0b5 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -492,17 +492,17 @@ document.write(`
 <nav class="contents local" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#general" id="id1">General</a></p></li>
-<li><p><a class="reference internal" href="#scipy" id="id2">SciPy</a></p></li>
-<li><p><a class="reference internal" href="#jax" id="id3">JAX</a></p></li>
-<li><p><a class="reference internal" href="#pytorch" id="id4">PyTorch</a></p></li>
+<li><p><a class="reference internal" href="#general" id="id3">General</a></p></li>
+<li><p><a class="reference internal" href="#scipy" id="id4">SciPy</a></p></li>
+<li><p><a class="reference internal" href="#jax" id="id5">JAX</a></p></li>
+<li><p><a class="reference internal" href="#pytorch" id="id6">PyTorch</a></p></li>
 </ul>
 </nav>
 <section id="general">
-<h2><a class="toc-backref" href="#id1" role="doc-backlink">General</a><a class="headerlink" href="#general" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">General</a><a class="headerlink" href="#general" title="Link to this heading">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyxu.operator.interop.from_source">
-<span class="sig-name descname"><span class="pre">from_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">embed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vectorize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">frozenset({})</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enforce_precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">frozenset({})</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/operator/interop/source.html#from_source"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.interop.from_source" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">from_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">embed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vectorize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">frozenset({})</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/operator/interop/source.html#from_source"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.interop.from_source" title="Link to this definition">#</a></dt>
 <dd><p>Define an <a class="reference internal" href="abc.html#pyxu.abc.Operator" title="pyxu.abc.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> from low-level constructs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -521,10 +521,6 @@ methods.</p>
 <li><p><strong>vectorize</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.VarName" title="pyxu.info.ptype.VarName"><code class="xref py py-class docutils literal notranslate"><span class="pre">VarName</span></code></a>) – <p>Arithmetic methods to vectorize.</p>
 <p><code class="code docutils literal notranslate"><span class="pre">vectorize</span></code> is useful if an arithmetic method provided to <code class="code docutils literal notranslate"><span class="pre">kwargs</span></code> (ex: <a class="reference internal" href="abc.html#pyxu.abc.Map.apply" title="pyxu.abc.Map.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply()</span></code></a>) does not
 support stacking dimensions.</p>
-</p></li>
-<li><p><strong>enforce_precision</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.VarName" title="pyxu.info.ptype.VarName"><code class="xref py py-class docutils literal notranslate"><span class="pre">VarName</span></code></a>) – <p>Arithmetic methods to make compliant with Pyxu’s runtime FP-precision.</p>
-<p><code class="code docutils literal notranslate"><span class="pre">enforce_precision</span></code> is useful if an arithmetic method provided to <code class="code docutils literal notranslate"><span class="pre">kwargs</span></code> (ex: <a class="reference internal" href="abc.html#pyxu.abc.Map.apply" title="pyxu.abc.Map.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply()</span></code></a>)
-is unaware of Pyxu’s runtime FP context.</p>
 </p></li>
 </ul>
 </dd>
@@ -553,9 +549,6 @@ populating <code class="code docutils literal notranslate"><span class="pre">vec
 <li><p>Auto-vectorization consists in decorating <code class="code docutils literal notranslate"><span class="pre">kwargs</span></code>-specified arithmetic methods with
 <a class="reference internal" href="util.html#pyxu.util.vectorize" title="pyxu.util.vectorize"><code class="xref py py-func docutils literal notranslate"><span class="pre">vectorize()</span></code></a>.  Auto-vectorization may be less efficient than explicitly providing a vectorized
 implementation.</p></li>
-<li><p>Enforcing precision consists in decorating <code class="code docutils literal notranslate"><span class="pre">kwargs</span></code>-specified arithmetic methods with
-<a class="reference internal" href="runtime.html#pyxu.runtime.enforce_precision" title="pyxu.runtime.enforce_precision"><code class="xref py py-func docutils literal notranslate"><span class="pre">enforce_precision()</span></code></a>.  Not all arithmetic methods can be made runtime FP-precision
-compliant.  It is thus recommended to make arithmetic methods precision-compliant manually.</p></li>
 </ul>
 <p class="rubric">Examples</p>
 <p>Creation of the custom element-wise differential operator <span class="math notranslate nohighlight">\(f(\mathbf{x}) = \mathbf{x}^{2}\)</span>.</p>
@@ -593,7 +586,7 @@ too when instantiating via <code class="docutils literal notranslate"><span clas
 
 </section>
 <section id="scipy">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">SciPy</a><a class="headerlink" href="#scipy" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">SciPy</a><a class="headerlink" href="#scipy" title="Link to this heading">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyxu.operator.interop.from_sciop">
 <span class="sig-name descname"><span class="pre">from_sciop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sp_op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/operator/interop/sciop.html#from_sciop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.interop.from_sciop" title="Link to this definition">#</a></dt>
@@ -621,7 +614,7 @@ too when instantiating via <code class="docutils literal notranslate"><span clas
 
 </section>
 <section id="jax">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">JAX</a><a class="headerlink" href="#jax" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">JAX</a><a class="headerlink" href="#jax" title="Link to this heading">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyxu.operator.interop.from_jax">
 <span class="sig-name descname"><span class="pre">from_jax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vectorize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">frozenset({})</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_warnings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/operator/interop/jax.html#from_jax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.interop.from_jax" title="Link to this definition">#</a></dt>
@@ -669,13 +662,9 @@ populating <code class="code docutils literal notranslate"><span class="pre">vec
 </li>
 <li><p>Auto-vectorization consists in decorating <code class="code docutils literal notranslate"><span class="pre">kwargs</span></code>-specified arithmetic methods with
 <a class="reference external" href="https://jax.readthedocs.io/en/latest/_autosummary/jax.numpy.vectorize.html#jax.numpy.vectorize" title="(in JAX)"><code class="xref py py-func docutils literal notranslate"><span class="pre">jax.numpy.vectorize()</span></code></a>.</p></li>
-<li><p>All arithmetic methods provided in <code class="code docutils literal notranslate"><span class="pre">kwargs</span></code> are decorated using <a class="reference internal" href="runtime.html#pyxu.runtime.enforce_precision" title="pyxu.runtime.enforce_precision"><code class="xref py py-func docutils literal notranslate"><span class="pre">enforce_precision()</span></code></a> to
-abide by Pyxu’s FP-runtime semantics.  Note however that JAX enforces <a class="reference external" href="https://jax.readthedocs.io/en/latest/notebooks/Common_Gotchas_in_JAX.html#double-64bit-precision">32-bit arithmetic</a> by default,
+<li><p>Note that JAX enforces <a class="reference external" href="https://jax.readthedocs.io/en/latest/notebooks/Common_Gotchas_in_JAX.html#double-64bit-precision">32-bit arithmetic</a> by default,
 and this constraint cannot be changed at runtime.  As such, to allow zero-copy transfers between JAX and
-NumPy/CuPy arrays, it is advised to perform computations in single-precision mode.  This can be achieved locally
-using the <a class="reference internal" href="runtime.html#pyxu.runtime.Precision" title="pyxu.runtime.Precision"><code class="xref py py-class docutils literal notranslate"><span class="pre">Precision</span></code></a> context manager.  (See example.) Alternatively,
-precision/copy-related warnings can be silenced via the <code class="code docutils literal notranslate"><span class="pre">enable_warnings</span></code> option of
-<a class="reference internal" href="#pyxu.operator.interop.from_jax" title="pyxu.operator.interop.from_jax"><code class="xref py py-func docutils literal notranslate"><span class="pre">from_jax()</span></code></a>.</p></li>
+NumPy/CuPy arrays, it is advised to perform computations in single-precision mode.</p></li>
 <li><p>Inferred arithmetic methods are not JIT-ed by default since the operation is error-prone depending on how
 <a class="reference internal" href="abc.html#pyxu.abc.Map.apply" title="pyxu.abc.Map.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply()</span></code></a> is defined.  If <a class="reference internal" href="abc.html#pyxu.abc.Map.apply" title="pyxu.abc.Map.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply()</span></code></a> supplied to
 <a class="reference internal" href="#pyxu.operator.interop.from_jax" title="pyxu.operator.interop.from_jax"><code class="xref py py-func docutils literal notranslate"><span class="pre">from_jax()</span></code></a> is JIT-friendly, then consider enabling <code class="code docutils literal notranslate"><span class="pre">jit</span></code>.</p></li>
@@ -712,18 +701,18 @@ precision/copy-related warnings can be silenced via the <code class="code docuti
                         <span class="c1"># --&gt; let JAX figure it out automatically.</span>
     <span class="n">apply</span><span class="o">=</span><span class="n">j_apply</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="k">with</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">Precision</span><span class="p">(</span><span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="o">.</span><span class="n">SINGLE</span><span class="p">):</span>
-    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-    <span class="n">y1</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># (5,3,4,3)</span>
 
-    <span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,))</span>
-    <span class="n">opJ</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">jacobian</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># JAX auto-infers the Jacobian for you.</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># (5,3,4,3)</span>
 
-    <span class="n">v</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-    <span class="n">w</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-    <span class="n">y2</span> <span class="o">=</span> <span class="n">opJ</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>  <span class="c1"># (5,3)</span>
-    <span class="n">y3</span> <span class="o">=</span> <span class="n">opJ</span><span class="o">.</span><span class="n">adjoint</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>  <span class="c1"># (4,2)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,))</span>
+<span class="n">opJ</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">jacobian</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># JAX auto-infers the Jacobian for you.</span>
+
+<span class="n">v</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">opJ</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>  <span class="c1"># (5,3)</span>
+<span class="n">y3</span> <span class="o">=</span> <span class="n">opJ</span><span class="o">.</span><span class="n">adjoint</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>  <span class="c1"># (4,2)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -769,103 +758,69 @@ views, etc.) and backends (NUMPY, CUPY).</p>
 
 </section>
 <section id="pytorch">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">PyTorch</a><a class="headerlink" href="#pytorch" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">PyTorch</a><a class="headerlink" href="#pytorch" title="Link to this heading">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyxu.operator.interop.from_torch">
-<span class="sig-name descname"><span class="pre">from_torch</span></span><span class="sig-paren">(</span>
-
-<dl>
-<dd><em class="sig-param"><span class="n"><span class="pre">apply</span></span></em>,</dd>
-<dd><em class="sig-param"><span class="n"><span class="pre">dim_shape</span></span></em>,</dd>
-<dd><em class="sig-param"><span class="n"><span class="pre">codim_shape</span></span></em>,</dd>
-<dd><em class="sig-param"><span class="n"><span class="pre">cls=&lt;class</span> <span class="pre">'pyxu.abc.operator.Map'&gt;</span></span></em>,</dd>
-<dd><em class="sig-param"><span class="n"><span class="pre">vectorize=frozenset({})</span></span></em>,</dd>
-<dd><em class="sig-param"><span class="n"><span class="pre">batch_size=None</span></span></em>,</dd>
-<dd><em class="sig-param"><span class="n"><span class="pre">jit=False</span></span></em>,</dd>
-<dd><em class="sig-param"><span class="n"><span class="pre">dtype=None</span></span></em>,</dd>
-<dd><em class="sig-param"><span class="n"><span class="pre">enable_warnings=True</span></span></em>,</dd>
-<dd><em class="sig-param"><span class="n"><span class="pre">name='TorchOp'</span></span></em>,</dd>
-<dd><em class="sig-param"><span class="n"><span class="pre">meta=None</span></span></em>,</dd>
-<dd><em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em>,</dd>
-</dl>
-
-<span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/operator/interop/torch.html#from_torch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.interop.from_torch" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">from_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codim_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vectorize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">frozenset({})</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_warnings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/operator/interop/torch.html#from_torch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.interop.from_torch" title="Link to this definition">#</a></dt>
 <dd><p>Define an <a class="reference internal" href="abc.html#pyxu.abc.Operator" title="pyxu.abc.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> from PyTorch functions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>apply</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Callable</span></code></a>) – A Python function with single-element Tensor input/output. Defines the <a class="reference internal" href="abc.html#pyxu.abc.Map.apply" title="pyxu.abc.Map.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply()</span></code></a> method of
-the operator: <code class="docutils literal notranslate"><span class="pre">apply(x)==op.apply(x)</span></code>.</p></li>
+<li><p><strong>cls</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.OpC" title="pyxu.info.ptype.OpC"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpC</span></code></a>) – Operator sub-class to instantiate.</p></li>
 <li><p><strong>dim_shape</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArrayShape" title="pyxu.info.ptype.NDArrayShape"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArrayShape</span></code></a>) – Operator domain shape (M1,…,MD).</p></li>
 <li><p><strong>codim_shape</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArrayShape" title="pyxu.info.ptype.NDArrayShape"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArrayShape</span></code></a>) – Operator co-domain shape (N1,…,NK).</p></li>
-<li><p><strong>cls</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a>) – Pyxu abstract base class to instantiate from.</p></li>
-<li><p><strong>vectorize</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.VarName" title="pyxu.info.ptype.VarName"><code class="xref py py-class docutils literal notranslate"><span class="pre">VarName</span></code></a>) – <p>Arithmetic methods to vectorize.</p>
-<p><code class="code docutils literal notranslate"><span class="pre">vectorize</span></code> is useful if an arithmetic method provided to <code class="code docutils literal notranslate"><span class="pre">kwargs</span></code> does not support stacking dimensions.</p>
-</p></li>
-<li><p><strong>batch_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – If None (default), vectorized methods are applied as a single map over all inputs.  If not None, then compute
-the vectorized methods <code class="code docutils literal notranslate"><span class="pre">batch_size</span></code> samples at a time.  Note that <code class="docutils literal notranslate"><span class="pre">batch_size=1</span></code> is equivalent to computing
-the vectorization with a for-loop.  If you run into memory issues applying your vectorized methods over stacked
-inputs, try a non-None <code class="code docutils literal notranslate"><span class="pre">batch_size</span></code>.</p></li>
-<li><p><strong>jit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Currently has no effect (for future-compatibility only). In the future, if <code class="docutils literal notranslate"><span class="pre">True</span></code>, then Torch-backed
-arithmetic methods will be JIT-compiled for better performance.</p></li>
-<li><p><strong>dtype</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.DType" title="pyxu.info.ptype.DType"><code class="xref py py-class docutils literal notranslate"><span class="pre">DType</span></code></a>) – Assumed <code class="code docutils literal notranslate"><span class="pre">dtype</span></code> of the Torch-defined arithmetic methods. If <code class="code docutils literal notranslate"><span class="pre">None</span></code> the arithmetic methods are assumed
-precision-agnostic.</p></li>
-<li><p><strong>enable_warnings</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, emit warnings in case of precision/zero-copy issues.</p></li>
-<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Name of the operator.</p></li>
-<li><p><strong>meta</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Any</span></code>) – Meta information to be provided as tail to <code class="xref py py-class docutils literal notranslate"><span class="pre">_expr</span></code>.</p></li>
-<li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – <p>Optional   (k[str], v[value | callable]) pairs to use as arithmetic methods.</p>
+<li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – <p>(k[str], v[callable]) pairs to use as arithmetic methods.</p>
 <p>Keys are restricted to the following arithmetic methods:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">grad</span><span class="p">(),</span> <span class="n">prox</span><span class="p">(),</span> <span class="n">pinv</span><span class="p">(),</span> <span class="n">adjoint</span><span class="p">()</span>  <span class="c1"># methods</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">apply</span><span class="p">(),</span> <span class="n">grad</span><span class="p">(),</span> <span class="n">prox</span><span class="p">(),</span> <span class="n">pinv</span><span class="p">(),</span> <span class="n">adjoint</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Omitted arithmetic methods default to those provided by <code class="code docutils literal notranslate"><span class="pre">cls</span></code>, or are auto-inferred via auto-diff rules.</p>
 </p></li>
+<li><p><strong>vectorize</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.VarName" title="pyxu.info.ptype.VarName"><code class="xref py py-class docutils literal notranslate"><span class="pre">VarName</span></code></a>) – <p>Arithmetic methods to vectorize.</p>
+<p><code class="code docutils literal notranslate"><span class="pre">vectorize</span></code> is useful if an arithmetic method provided to <code class="code docutils literal notranslate"><span class="pre">kwargs</span></code> does not support stacking dimensions.</p>
+</p></li>
+<li><p><strong>jit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Currently has no effect (for future-compatibility only). In the future, if <code class="docutils literal notranslate"><span class="pre">True</span></code>, then Torch-backed
+arithmetic methods will be JIT-compiled for better performance.</p></li>
+<li><p><strong>enable_warnings</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, emit warnings in case of precision/zero-copy issues.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>op</strong> – (N, M) Pyxu-compliant operator.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a></p>
+<dd class="field-even"><p><ul>
+<li><dl class="simple">
+<dt><strong>op</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpT</span></code></a>) –    Pyxu-compliant operator :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>A: mathbb{R}^{M_{1} timescdotstimes M_{D}} to mathbb{R}^{N_{1}</dt><dd><p>timescdotstimes N_{K}}`.</p>
 </dd>
 </dl>
-<p class="rubric">Notes</p>
-<ul>
-<li><p>If provided, arithmetic methods must abide exactly to the interface below:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="n">tensor</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span>
-<span class="k">def</span> <span class="nf">grad</span><span class="p">(</span><span class="n">tensor</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span>
-<span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="n">tensor</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span>
-<span class="k">def</span> <span class="nf">prox</span><span class="p">(</span><span class="n">tensor</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">tau</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span>
-<span class="k">def</span> <span class="nf">pinv</span><span class="p">(</span><span class="n">tensor</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">damp</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span>
+<p>Notes</p>
+</li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">-----</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">*</span> <span class="pre">If</span> <span class="pre">provided</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">arithmetic</span> <span class="pre">methods</span> <span class="pre">must</span> <span class="pre">abide</span> <span class="pre">exactly</span></code> to <code class="xref py py-class docutils literal notranslate"><span class="pre">the</span> <span class="pre">interface</span> <span class="pre">below</span></code> –</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span>                  <span class="c1"># (..., M1,...,MD) -&gt; (..., N1,...,NK)</span>
+<span class="k">def</span> <span class="nf">grad</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span>                   <span class="c1"># (..., M1,...,MD) -&gt; (..., M1,...,MD)</span>
+<span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span>                <span class="c1"># (..., N1,...,NK) -&gt; (..., M1,...,MD)</span>
+<span class="k">def</span> <span class="nf">prox</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">tau</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span>    <span class="c1"># (..., M1,...,MD) -&gt; (..., M1,...,MD)</span>
+<span class="k">def</span> <span class="nf">pinv</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">damp</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span>   <span class="c1"># (..., N1,...,NK) -&gt; (..., M1,...,MD)</span>
 </pre></div>
 </div>
-<p>The arithmetic methods <code class="code docutils literal notranslate"><span class="pre">apply</span></code>, <code class="code docutils literal notranslate"><span class="pre">grad</span></code>, <code class="code docutils literal notranslate"><span class="pre">prox</span></code> <strong>must</strong> accept <code class="docutils literal notranslate"><span class="pre">(-1,</span> <span class="pre">M)</span></code>-shaped inputs for <code class="docutils literal notranslate"><span class="pre">tensor</span></code>, that is a
-core dimension of size <code class="code docutils literal notranslate"><span class="pre">M</span></code> and an optional stacking/batching dimension of arbitrary size.  The arithmetic methods
-<code class="code docutils literal notranslate"><span class="pre">adjoint</span></code>, <code class="code docutils literal notranslate"><span class="pre">pinv</span></code> <strong>must</strong> accept <code class="docutils literal notranslate"><span class="pre">(-1,</span> <span class="pre">N)</span></code>-shaped inputs for <code class="docutils literal notranslate"><span class="pre">tensor</span></code>, that is a core dimension of size <code class="code docutils literal notranslate"><span class="pre">N</span></code>
-and an optional stacking/batching dimension of arbitrary size.  If stacking/batching dimensions are not supported
-for some methods, consider populating <code class="code docutils literal notranslate"><span class="pre">vectorize</span></code> accordingly.</p>
+<p>Moreover, the methods above <strong>must</strong> accept stacking dimensions in <code class="docutils literal notranslate"><span class="pre">arr</span></code>.  If this does not hold, consider
+populating <code class="code docutils literal notranslate"><span class="pre">vectorize</span></code>.</p>
 </li>
-<li><p>Auto-vectorization consists in decorating <code class="code docutils literal notranslate"><span class="pre">kwargs</span></code>-specified arithmetic methods with <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.vmap.html#torch.vmap" title="(in PyTorch v2.4)"><code class="xref py py-func docutils literal notranslate"><span class="pre">torch.vmap()</span></code></a>.  See
-the <a class="reference external" href="https://pytorch.org/docs/stable/func.ux_limitations.html#vmap-limitations">PyTorch documentation</a> for known
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">*</span> <span class="pre">Auto-vectorization</span> <span class="pre">consists</span> <span class="pre">in</span> <span class="pre">decorating</span> <span class="pre">`kwargs</span></code>-specified arithmetic methods with <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.vmap.html#torch.vmap" title="(in PyTorch v2.4)"><code class="xref py py-func docutils literal notranslate"><span class="pre">torch.vmap()</span></code></a>.  See` – the <a class="reference external" href="https://pytorch.org/docs/stable/func.ux_limitations.html#vmap-limitations">PyTorch documentation</a> for known
 limitations.</p></li>
-<li><p>All arithmetic methods provided in <code class="code docutils literal notranslate"><span class="pre">kwargs</span></code> are decorated using <a class="reference internal" href="runtime.html#pyxu.runtime.enforce_precision" title="pyxu.runtime.enforce_precision"><code class="xref py py-func docutils literal notranslate"><span class="pre">enforce_precision()</span></code></a> to
-abide by Pyxu’s FP-runtime semantics.  Note however that Torch does not allow mixed-precision computation, so this
-wrapper will coerce the input if its precision does not comply with the specified <code class="code docutils literal notranslate"><span class="pre">dtype</span></code>.  This triggers a
-warning by default, which can be silenced via the <code class="code docutils literal notranslate"><span class="pre">enable_warnings</span></code>.</p></li>
-<li><p>Arithmetic methods are <strong>not currently JIT-ed</strong> even if <code class="code docutils literal notranslate"><span class="pre">jit</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code>.  This is because of the
-undocumented and currently poor interaction between <a class="reference external" href="https://pytorch.org/docs/stable/func.api.html#module-torch.func" title="(in PyTorch v2.4)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">torch.func</span></code></a> transforms and <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.compile.html#torch.compile" title="(in PyTorch v2.4)"><code class="xref py py-func docutils literal notranslate"><span class="pre">torch.compile()</span></code></a>.
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">*</span> <span class="pre">Arithmetic</span> <span class="pre">methods</span> <span class="pre">are</span> <span class="pre">**not</span> <span class="pre">currently</span> <span class="pre">JIT-ed**</span> <span class="pre">even</span> <span class="pre">if</span> <span class="pre">`jit</span></code> is set` to <code class="docutils literal notranslate"><span class="pre">True</span></code>.  This is because of <code class="xref py py-class docutils literal notranslate"><span class="pre">the</span></code> – undocumented and currently poor interaction between <a class="reference external" href="https://pytorch.org/docs/stable/func.api.html#module-torch.func" title="(in PyTorch v2.4)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">torch.func</span></code></a> transforms and <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.compile.html#torch.compile" title="(in PyTorch v2.4)"><code class="xref py py-func docutils literal notranslate"><span class="pre">torch.compile()</span></code></a>.
 See <a class="reference external" href="https://github.com/pytorch/pytorch/issues/98822">this issue</a> for additional details.</p></li>
-<li><p>For <a class="reference internal" href="abc.html#pyxu.abc.DiffMap" title="pyxu.abc.DiffMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffMap</span></code></a> (or subclasses thereof), the methods <a class="reference internal" href="abc.html#pyxu.abc.DiffMap.jacobian" title="pyxu.abc.DiffMap.jacobian"><code class="xref py py-meth docutils literal notranslate"><span class="pre">jacobian()</span></code></a>,
-<a class="reference internal" href="abc.html#pyxu.abc.DiffFunc.grad" title="pyxu.abc.DiffFunc.grad"><code class="xref py py-meth docutils literal notranslate"><span class="pre">grad()</span></code></a> and <a class="reference internal" href="abc.html#pyxu.abc.LinOp.adjoint" title="pyxu.abc.LinOp.adjoint"><code class="xref py py-meth docutils literal notranslate"><span class="pre">adjoint()</span></code></a> are defined implicitly if not provided
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">*</span> <span class="pre">For</span> <span class="pre">:py:class:`~pyxu.abc.DiffMap</span></code> (or subclasses thereof)`, <code class="xref py py-class docutils literal notranslate"><span class="pre">the</span> <span class="pre">methods</span> <span class="pre">:py:meth:`~pyxu.abc.DiffMap.jacobian</span></code>,` – <a class="reference internal" href="abc.html#pyxu.abc.DiffFunc.grad" title="pyxu.abc.DiffFunc.grad"><code class="xref py py-meth docutils literal notranslate"><span class="pre">grad()</span></code></a> and <a class="reference internal" href="abc.html#pyxu.abc.LinOp.adjoint" title="pyxu.abc.LinOp.adjoint"><code class="xref py py-meth docutils literal notranslate"><span class="pre">adjoint()</span></code></a> are defined implicitly if not provided
 using the auto-differentiation transforms from <a class="reference external" href="https://pytorch.org/docs/stable/func.api.html#module-torch.func" title="(in PyTorch v2.4)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">torch.func</span></code></a>.  As detailed <a class="reference external" href="https://pytorch.org/docs/stable/func.ux_limitations.html">on this page</a>, such transforms work well on pure functions (that
 is, functions where the output is completely determined by the input and that do not involve side effects like
 mutation), but may fail on more complex functions.  Moreover, <a class="reference external" href="https://pytorch.org/docs/stable/func.api.html#module-torch.func" title="(in PyTorch v2.4)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">torch.func</span></code></a> does not yet have full coverage
 over PyTorch operations.  For functions that call a <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module" title="(in PyTorch v2.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.Module</span></code></a>, see <a class="reference external" href="https://pytorch.org/docs/stable/func.api.html#utilities-for-working-with-torch-nn-modules">here</a> for some utilities.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"> <span class="pre">Warning::</span></code> – Operators created with this wrapper do not support Dask inputs for now.</p></li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Operators created with this wrapper do not support Dask inputs for now.</p>
-</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">

@@ -44,7 +44,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../_static/documentation_options.js?v=372c36bd"></script>
+    <script src="../_static/documentation_options.js?v=c0e92808"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -202,7 +202,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v2.0b4 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v2.0b5 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -344,7 +344,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v2.0b4 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v2.0b5 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -545,130 +545,6 @@ document.write(`
 
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="pyxu.runtime.coerce">
-<span class="sig-name descname"><span class="pre">coerce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/runtime.html#coerce"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.runtime.coerce" title="Link to this definition">#</a></dt>
-<dd><p>Transform input to match runtime FP-precision.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>)</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>y</strong> – Input cast to the runtime FP-precision.  Fails if operation is impossible or unsafe. (I.e. casting
-complex-valued data.)</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a></p>
-</dd>
-</dl>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This method is a NO-OP if <a class="reference internal" href="#pyxu.runtime.getCoerceState" title="pyxu.runtime.getCoerceState"><code class="xref py py-func docutils literal notranslate"><span class="pre">getCoerceState()</span></code></a> returns <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pyxu.runtime.enforce_precision">
-<span class="sig-name descname"><span class="pre">enforce_precision</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">frozenset({})</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">o</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_None</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/runtime.html#enforce_precision"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.runtime.enforce_precision" title="Link to this definition">#</a></dt>
-<dd><p>Decorator to pre/post-process function parameters to enforce runtime FP-precision.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>i</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.VarName" title="pyxu.info.ptype.VarName"><code class="xref py py-class docutils literal notranslate"><span class="pre">VarName</span></code></a>) – Function parameters for which precision must be enforced to runtime’s FP-precision.  Function parameter values
-must have a NumPy API, or be scalars.  None-valued parameters are allowed if <code class="code docutils literal notranslate"><span class="pre">allow_None</span></code> is True (default).</p></li>
-<li><p><strong>o</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If True (default), ensure function’s output (if any) has runtime’s FP-precision.  If function’s output does not
-have a NumPy API or is not scalar-valued, set <code class="code docutils literal notranslate"><span class="pre">o</span></code> explicitly to False.</p></li>
-<li><p><strong>allow_None</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>)</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.12)"><em>Callable</em></a></p>
-</dd>
-</dl>
-<p class="rubric">Example</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyxu.runtime</span> <span class="k">as</span> <span class="nn">pxrt</span>
-
-<span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">o</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># `i` can process multiple args: `i=(&#39;x&#39;,&#39;y&#39;)`.</span>
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span>
-
-<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mf">0.5</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>  <span class="c1"># int64, float64</span>
-
-<span class="k">with</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">Precision</span><span class="p">(</span><span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="o">.</span><span class="n">SINGLE</span><span class="p">):</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>                         <span class="c1"># (int64, float32) [printed inside f-call.]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>                         <span class="c1"># float64 [would have been float32 if `o=True`.]</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="pyxu.runtime.EnforcePrecision">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EnforcePrecision</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/runtime.html#EnforcePrecision"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.runtime.EnforcePrecision" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/contextlib.html#contextlib.AbstractContextManager" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractContextManager</span></code></a></p>
-<p>Context Manager to locally disable effect of <a class="reference internal" href="#pyxu.runtime.enforce_precision" title="pyxu.runtime.enforce_precision"><code class="xref py py-func docutils literal notranslate"><span class="pre">enforce_precision()</span></code></a>.  [Default: enabled.]</p>
-<p>Use this object via a with-block.</p>
-<p class="rubric">Example</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyxu.runtime</span> <span class="k">as</span> <span class="nn">pxrt</span>
-
-<span class="n">pxrt</span><span class="o">.</span><span class="n">getCoerceState</span><span class="p">()</span>                    <span class="c1"># True</span>
-<span class="k">with</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">EnforcePrecision</span><span class="p">(</span><span class="kc">False</span><span class="p">):</span>
-    <span class="n">pxrt</span><span class="o">.</span><span class="n">getCoerceState</span><span class="p">()</span>                <span class="c1"># False</span>
-<span class="n">pxrt</span><span class="o">.</span><span class="n">getCoerceState</span><span class="p">()</span>                    <span class="c1"># True</span>
-</pre></div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>state</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pyxu.runtime.getCoerceState">
-<span class="sig-name descname"><span class="pre">getCoerceState</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/runtime.html#getCoerceState"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.runtime.getCoerceState" title="Link to this definition">#</a></dt>
-<dd><p>Query if <a class="reference internal" href="#pyxu.runtime.coerce" title="pyxu.runtime.coerce"><code class="xref py py-func docutils literal notranslate"><span class="pre">coerce()</span></code></a> is (currently) a no-op.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)">bool</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pyxu.runtime.getPrecision">
-<span class="sig-name descname"><span class="pre">getPrecision</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/runtime.html#getPrecision"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.runtime.getPrecision" title="Link to this definition">#</a></dt>
-<dd><p>Query current FP precision.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#pyxu.runtime.Width" title="pyxu.runtime.Width"><em>Width</em></a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="pyxu.runtime.Precision">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Precision</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/runtime.html#Precision"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.runtime.Precision" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/contextlib.html#contextlib.AbstractContextManager" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractContextManager</span></code></a></p>
-<p>Context Manager to locally redefine floating-point precision.</p>
-<p>Use this object via a with-block.</p>
-<p class="rubric">Example</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyxu.runtime</span> <span class="k">as</span> <span class="nn">pxrt</span>
-
-<span class="n">pxrt</span><span class="o">.</span><span class="n">getPrecision</span><span class="p">()</span>                      <span class="c1"># Width.DOUBLE</span>
-<span class="k">with</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">Precision</span><span class="p">(</span><span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="o">.</span><span class="n">SINGLE</span><span class="p">):</span>
-    <span class="n">pxrt</span><span class="o">.</span><span class="n">getPrecision</span><span class="p">()</span>                  <span class="c1"># Width.SINGLE</span>
-<span class="n">pxrt</span><span class="o">.</span><span class="n">getPrecision</span><span class="p">()</span>                      <span class="c1"># Width.DOUBLE</span>
-</pre></div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>width</strong> (<a class="reference internal" href="#pyxu.runtime.Width" title="pyxu.runtime.Width"><em>Width</em></a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
 </section>
 
 
@@ -731,12 +607,6 @@ have a NumPy API or is not scalar-valued, set <code class="code docutils literal
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.runtime.CWidth.real"><code class="docutils literal notranslate"><span class="pre">CWidth.real</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.runtime.coerce"><code class="docutils literal notranslate"><span class="pre">coerce()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.runtime.enforce_precision"><code class="docutils literal notranslate"><span class="pre">enforce_precision()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.runtime.EnforcePrecision"><code class="docutils literal notranslate"><span class="pre">EnforcePrecision</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.runtime.getCoerceState"><code class="docutils literal notranslate"><span class="pre">getCoerceState()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.runtime.getPrecision"><code class="docutils literal notranslate"><span class="pre">getPrecision()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyxu.runtime.Precision"><code class="docutils literal notranslate"><span class="pre">Precision</span></code></a></li>
 </ul>
   </nav></div>
 
