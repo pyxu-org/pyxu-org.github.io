@@ -44,7 +44,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../_static/documentation_options.js?v=c0e92808"></script>
+    <script src="../_static/documentation_options.js?v=89f91371"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -182,6 +182,13 @@
                       </a>
                     </li>
                 
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../migration_guide.html">
+                        Migrating from v1 to v2
+                      </a>
+                    </li>
+                
   </ul>
 </nav></div>
       
@@ -202,7 +209,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v2.0b5 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v2.0 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -335,6 +342,13 @@ document.write(`
                       </a>
                     </li>
                 
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../migration_guide.html">
+                        Migrating from v1 to v2
+                      </a>
+                    </li>
+                
   </ul>
 </nav></div>
         
@@ -344,7 +358,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v2.0b5 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v2.0 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -507,10 +521,9 @@ abide by the following set of rules:</p>
 dimensions of the input array should be considered as stacking dimensions, i.e. the method is applied along the last
 axis.</p></li>
 <li><p>In the case of N-D inputs, the output should have the same number of dimensions as the input.</p></li>
-<li><p>It should be decorated with <code class="xref py py-func docutils literal notranslate"><span class="pre">enforce_precision()</span></code>. Together with the
-<code class="xref py py-class docutils literal notranslate"><span class="pre">Precision</span></code> context manager, the former controls the numerical precision (e.g. <em>single</em>,
+<li><p>It should control the numerical precision (e.g. <em>single</em>,
 <em>double</em>) of the inputs/outputs. If possible, the computation performed by the method itself should also be carried
-out at the user-specified precision, accessible via <code class="xref py py-func docutils literal notranslate"><span class="pre">getPrecision()</span></code>.</p></li>
+out at the input array’s precision.</p></li>
 <li><p>Whenever possible, it should be compatible with the array modules supported by Pyxu. (Use
 <a class="reference internal" href="../api/info.deps.html#pyxu.info.deps.supported_array_modules" title="pyxu.info.deps.supported_array_modules"><code class="xref py py-func docutils literal notranslate"><span class="pre">supported_array_modules()</span></code></a> for an up-to-date list).  <a class="reference internal" href="../api/util.html#pyxu.util.get_array_module" title="pyxu.util.get_array_module"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_array_module()</span></code></a>
 can be used to write <a class="reference external" href="https://docs.cupy.dev/en/stable/user_guide/basic.html#how-to-write-cpu-gpu-agnostic-code">module-agnostic</a> code easily.</p></li>
@@ -524,28 +537,25 @@ can be used to write <a class="reference external" href="https://docs.cupy.dev/e
 <span class="kn">import</span> <span class="nn">pyxu.util</span> <span class="k">as</span> <span class="nn">pxu</span>
 
 <span class="k">class</span> <span class="nc">Median</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">Map</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim_shape</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">,</span> <span class="n">codim_shape</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-    <span class="nd">@pxrt</span><span class="o">.</span><span class="n">enforce_precision</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">)</span>  <span class="c1"># enforce input/output precision.</span>
     <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
         <span class="n">xp</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">get_array_module</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>  <span class="c1"># find array module of `arr`.</span>
-        <span class="k">return</span> <span class="n">xp</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># median() is applied to the last axis.</span>
+        <span class="n">axis</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">),</span> <span class="mi">0</span><span class="p">))</span> <span class="c1"># apply median to core dimensions</span>
+        <span class="k">return</span> <span class="n">xp</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># apply is vectorized to batch dimensions</span>
 </pre></div>
 </div>
 <p>This operator can then be fed various arrays as inputs:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyxu.info.deps</span> <span class="k">as</span> <span class="nn">pxd</span>
 
-<span class="n">N</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">op</span> <span class="o">=</span> <span class="n">Median</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="p">()</span> <span class="c1"># batch size</span>
+<span class="n">dim_shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">op</span> <span class="o">=</span> <span class="n">Median</span><span class="p">(</span><span class="n">dim_shape</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">xp</span> <span class="ow">in</span> <span class="n">pxd</span><span class="o">.</span><span class="n">supported_array_modules</span><span class="p">():</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">xp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">N</span><span class="p">))</span>  <span class="c1"># apply the operator to various array types.</span>
-</pre></div>
-</div>
-<p>If called from within the <code class="xref py py-class docutils literal notranslate"><span class="pre">Precision</span></code> context manager, the decorated <code class="docutils literal notranslate"><span class="pre">apply()</span></code> method will
-automatically <em>coerce</em> the input/output to the user-specified precision:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">Precision</span><span class="p">(</span><span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="o">.</span><span class="n">SINGLE</span><span class="p">):</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>  <span class="c1"># float32 computation</span>
+    <span class="k">for</span> <span class="n">width</span> <span class="ow">in</span> <span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="p">:</span>
+        <span class="n">arr</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">N</span> <span class="o">+</span> <span class="n">dim_shape</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">width</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>  <span class="c1"># apply the operator to various array types.</span>
 </pre></div>
 </div>
 </section>

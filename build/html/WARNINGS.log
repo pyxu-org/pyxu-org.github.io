@@ -203,36 +203,6 @@ WARNING: missing attribute to_sciop in object pyxu.abc.LinOp
 /opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.asarray:8: WARNING: Inline emphasis start-string without end-string.
 /opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.from_array:3: WARNING: Inline emphasis start-string without end-string.
 /opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.from_array:3: WARNING: Inline emphasis start-string without end-string.
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/index.rst:412: WARNING: autosummary: failed to import pyxu.runtime.coerce.
-Possible hints:
-* AttributeError: module 'pyxu.runtime' has no attribute 'coerce'
-* ModuleNotFoundError: No module named 'pyxu.runtime.coerce'; 'pyxu.runtime' is not a package
-* ImportError: 
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/index.rst:412: WARNING: autosummary: failed to import pyxu.runtime.enforce_precision.
-Possible hints:
-* ModuleNotFoundError: No module named 'pyxu.runtime.enforce_precision'; 'pyxu.runtime' is not a package
-* AttributeError: module 'pyxu.runtime' has no attribute 'enforce_precision'
-* ImportError: 
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/index.rst:412: WARNING: autosummary: failed to import pyxu.runtime.EnforcePrecision.
-Possible hints:
-* ImportError: 
-* ModuleNotFoundError: No module named 'pyxu.runtime.EnforcePrecision'; 'pyxu.runtime' is not a package
-* AttributeError: module 'pyxu.runtime' has no attribute 'EnforcePrecision'
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/index.rst:412: WARNING: autosummary: failed to import pyxu.runtime.getCoerceState.
-Possible hints:
-* ModuleNotFoundError: No module named 'pyxu.runtime.getCoerceState'; 'pyxu.runtime' is not a package
-* AttributeError: module 'pyxu.runtime' has no attribute 'getCoerceState'
-* ImportError: 
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/index.rst:412: WARNING: autosummary: failed to import pyxu.runtime.getPrecision.
-Possible hints:
-* ImportError: 
-* AttributeError: module 'pyxu.runtime' has no attribute 'getPrecision'
-* ModuleNotFoundError: No module named 'pyxu.runtime.getPrecision'; 'pyxu.runtime' is not a package
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/index.rst:412: WARNING: autosummary: failed to import pyxu.runtime.Precision.
-Possible hints:
-* ModuleNotFoundError: No module named 'pyxu.runtime.Precision'; 'pyxu.runtime' is not a package
-* AttributeError: module 'pyxu.runtime' has no attribute 'Precision'
-* ImportError: 
 /opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:29: WARNING: Inline interpreted text or phrase reference start-string without end-string.
 WARNING: missing attribute relative_indices in object pyxu.operator.Stencil
 /opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Divergence:77: WARNING: Exception occurred in plotting linop-12
@@ -290,10 +260,6 @@ AssertionError: Operator dimensions are not compatible.
 /opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: Integer)
 /opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: (Integer
 /opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: Integer))
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/dev_notes.rst:19: WARNING: py:func reference target not found: pyxu.runtime.enforce_precision
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/dev_notes.rst:19: WARNING: py:class reference target not found: pyxu.runtime.Precision
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/dev_notes.rst:19: WARNING: py:func reference target not found: pyxu.runtime.getPrecision
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/dev_notes.rst:61: WARNING: py:class reference target not found: pyxu.runtime.Precision
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/contributing.ipynb:42: WARNING: Lexing literal_block '!pip install pyxu-gradient-descent' as "python" resulted in an error at token: '!'. Retrying in relaxed mode.
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/index.rst:46: WARNING: toctree contains reference to document 'examples/images/index' that doesn't have a title: no link will be generated
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/index.rst:46: WARNING: toctree contains reference to document 'examples/images/index' that doesn't have a title: no link will be generated

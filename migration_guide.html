@@ -1,0 +1,463 @@
+
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Migrating from v1 to v2 — Pyxu Documentation</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="_static/plot_directive.css" rel="stylesheet" type="text/css"/>
+<link href="_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
+<link href="_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
+<link href="_static/sg_gallery.css?v=d2d258e8" rel="stylesheet" type="text/css"/>
+<link href="_static/sg_gallery-binder.css?v=f4aeca0c" rel="stylesheet" type="text/css"/>
+<link href="_static/sg_gallery-dataframe.css?v=2082cf3c" rel="stylesheet" type="text/css"/>
+<link href="_static/sg_gallery-rendered-html.css?v=1277b6f3" rel="stylesheet" type="text/css"/>
+<link href="_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
+<link href="_static/css/custom.css?v=14df3d68" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
+<link as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
+<script src="_static/documentation_options.js?v=89f91371"></script>
+<script src="_static/doctools.js?v=9a2dae69"></script>
+<script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="_static/copybutton.js?v=30646c52"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="_static/togglebutton.js?v=4a39c7ea"></script>
+<script src="_static/design-tabs.js?v=f930bc37"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'migration_guide';</script>
+<link href="_static/favicon.png" rel="icon"/>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="fair/plugins_preview/WaveProp.html" rel="prev" title="WaveProp"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="light" data-offset="180">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search the docs ..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+<label class="sidebar-toggle primary-toggle" for="__primary">
+<span class="fa-solid fa-bars"></span>
+</label>
+<div class="navbar-header-items__start">
+<div class="navbar-item">
+<a class="navbar-brand logo" href="index.html">
+<img alt="Logo image" class="logo__image only-light" src="_static/logo.png"/>
+<script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+</a></div>
+</div>
+<div class="col-lg-9 navbar-header-items">
+<div class="me-auto navbar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="intro/index.html">
+                        Getting Started
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="guide/index.html">
+                        User Guide
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="examples/index.html">
+                        Example Gallery
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="api/index.html">
+                        API Reference
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="fair/index.html">
+                        Extending Pyxu
+                      </a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link nav-internal" href="#">
+                        Migrating from v1 to v2
+                      </a>
+</li>
+</ul>
+</nav></div>
+</div>
+<div class="navbar-header-items__end">
+<div class="navbar-item navbar-persistent--container">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<div class="navbar-item"><strong> Pyxu v2.0 </strong></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/pyxu-org/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://pypi.org/project/pyxu/" rel="noopener" target="_blank" title="PyPI"><span><i class="fa-brands fa-python"></i></span>
+<label class="sr-only">PyPI</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="mailto: contact@pyxu.org" rel="noopener" target="_blank" title="Contact"><span><i class="fa-brands fa-telegram"></i></span>
+<label class="sr-only">Contact</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://imaging.epfl.ch/" rel="noopener" target="_blank" title="EPFL Center for Imaging"><img alt="EPFL Center for Imaging" class="icon-link-image" src="_static/imaging.png"/></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<label class="sidebar-toggle secondary-toggle" for="__secondary">
+<span class="fa-solid fa-outdent"></span>
+</label>
+</div>
+</nav>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+<div class="sidebar-header-items sidebar-primary__section">
+<div class="sidebar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="intro/index.html">
+                        Getting Started
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="guide/index.html">
+                        User Guide
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="examples/index.html">
+                        Example Gallery
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="api/index.html">
+                        API Reference
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="fair/index.html">
+                        Extending Pyxu
+                      </a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link nav-internal" href="#">
+                        Migrating from v1 to v2
+                      </a>
+</li>
+</ul>
+</nav></div>
+</div>
+<div class="sidebar-header-items__end">
+<div class="navbar-item"><strong> Pyxu v2.0 </strong></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/pyxu-org/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://pypi.org/project/pyxu/" rel="noopener" target="_blank" title="PyPI"><span><i class="fa-brands fa-python"></i></span>
+<label class="sr-only">PyPI</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="mailto: contact@pyxu.org" rel="noopener" target="_blank" title="Contact"><span><i class="fa-brands fa-telegram"></i></span>
+<label class="sr-only">Contact</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://imaging.epfl.ch/" rel="noopener" target="_blank" title="EPFL Center for Imaging"><img alt="EPFL Center for Imaging" class="icon-link-image" src="_static/imaging.png"/></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content">
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item">
+<nav aria-label="Breadcrumbs">
+<ul aria-label="Breadcrumb" class="bd-breadcrumbs" role="navigation">
+<li class="breadcrumb-item breadcrumb-home">
+<a aria-label="Home" class="nav-link" href="index.html">
+<i class="fa-solid fa-home"></i>
+</a>
+</li>
+<li aria-current="page" class="breadcrumb-item active">Migrating from v1 to v2</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article" role="main">
+<section id="migrating-from-v1-to-v2">
+<span id="migration-guide"></span><h1>Migrating from v1 to v2<a class="headerlink" href="#migrating-from-v1-to-v2" title="Link to this heading">#</a></h1>
+<p>With the release of <code class="code docutils literal notranslate"><span class="pre">Pyxu</span> <span class="pre">v2</span></code>, several major improvements and changes have been introduced. This guide will help you smoothly transition your code from <code class="code docutils literal notranslate"><span class="pre">v1</span></code> to <code class="code docutils literal notranslate"><span class="pre">v2</span></code>.</p>
+<p>The most significant change is that <code class="code docutils literal notranslate"><span class="pre">Pyxu</span> <span class="pre">v2</span></code> no longer vectorizes <strong>N-dimensional</strong> signals. In <code class="code docutils literal notranslate"><span class="pre">v1</span></code>, vectorizing <strong>N-dimensional</strong> arrays caused Dask arrays to rechunk into 1-dimensional chunks, which required computing the array in a single node, thus breaking the distributed nature of Dask. In <code class="code docutils literal notranslate"><span class="pre">v2</span></code>, the arrays remain <strong>N-dimensional</strong> throughout, and Dask arrays are not “computed” at any point, preserving the benefits of distributed computing.</p>
+<section id="key-changes">
+<h2>Key Changes<a class="headerlink" href="#key-changes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Signal Handling</strong>: Operators and solvers now work directly with <strong>N-dimensional</strong> data without needing to flatten and reshape.</p></li>
+<li><p><strong>Functionals and Losses</strong>: In <code class="code docutils literal notranslate"><span class="pre">v1</span></code>, loss functionals could be defined from functionals with the <code class="code docutils literal notranslate"><span class="pre">asloss</span></code> method. We have changed this method to <code class="code docutils literal notranslate"><span class="pre">argshift</span></code> for clarity, avoiding ambiguity around sign usage.</p></li>
+<li><p><strong>Stopping Criteria</strong>: The stopping criteria have been updated to use <code class="code docutils literal notranslate"><span class="pre">dim_rank</span></code>, which specifies the rank of the signal dimensions.</p></li>
+</ul>
+</section>
+<section id="example-conversion">
+<h2>Example Conversion<a class="headerlink" href="#example-conversion" title="Link to this heading">#</a></h2>
+<p>Below is an example showing how to convert code from <code class="code docutils literal notranslate"><span class="pre">v1</span></code> to <code class="code docutils literal notranslate"><span class="pre">v2</span></code>.</p>
+<p><strong>Common Setup for v1 and v2</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">skimage</span>
+<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="api/operator/linop.html#pyxu.operator.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">Convolve</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="api/operator/func.html#pyxu.operator.L21Norm" title="pyxu.operator.func.norm.L21Norm"><span class="n">L21Norm</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="api/operator/linop.html#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><span class="n">Gradient</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="api/operator/func.html#pyxu.operator.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">SquaredL2Norm</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="api/operator/func.html#pyxu.operator.PositiveOrthant" title="pyxu.operator.func.indicator.PositiveOrthant"><span class="n">PositiveOrthant</span></a>
+<span class="kn">from</span> <span class="nn">pyxu.opt.solver</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="api/opt.solver.html#pyxu.opt.solver.PD3O" title="pyxu.opt.solver.pds.PD3O"><span class="n">PD3O</span></a>
+<span class="kn">from</span> <span class="nn">pyxu.opt.stop</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="api/opt.stop.html#pyxu.opt.stop.RelError" title="pyxu.opt.stop.RelError"><span class="n">RelError</span></a>
+
+<span class="c1"># Load and preprocess the data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">skimage</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">cat</span><span class="p">()</span>  <span class="c1"># shape (300, 451, 3)</span>
+<span class="n">data</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.asarray.html#numpy.asarray" title="numpy.asarray"><span class="n">np</span><span class="o">.</span><span class="n">asarray</span></a><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">"float32"</span><span class="p">)</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># shape (3, 300, 451)</span>
+
+<span class="c1"># Create the Gaussian blurring kernel</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">width</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">gauss</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/constants.html#numpy.pi" title="numpy.pi"><span class="n">np</span><span class="o">.</span><span class="n">pi</span></a> <span class="o">*</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.exp.html#numpy.exp" title="numpy.exp"><span class="n">np</span><span class="o">.</span><span class="n">exp</span></a><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">kernel_1d</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.fromfunction.html#numpy.fromfunction" title="numpy.fromfunction"><span class="n">np</span><span class="o">.</span><span class="n">fromfunction</span></a><span class="p">(</span><span class="n">gauss</span><span class="p">,</span> <span class="p">(</span><span class="n">width</span><span class="p">,))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># The shape of the input array will be used to define operators</span>
+<span class="n">dim_shape</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+<p><strong>v1 Code</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Applying the blurring and adding noise</span>
+<a class="sphinx-codeautolink-a" href="api/operator/linop.html#pyxu.operator.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">conv</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/operator/linop.html#pyxu.operator.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">Convolve</span></a><span class="p">(</span>
+    <span class="n">arg_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">,</span>  <span class="c1"># v1: using `arg_shape`</span>
+    <span class="n">kernel</span><span class="o">=</span><span class="p">[</span><a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="numpy.array"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">([</span><span class="mi">1</span><span class="p">]),</span> <span class="n">kernel_1d</span><span class="p">,</span> <span class="n">kernel_1d</span><span class="p">],</span>
+    <span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/operator/linop.html#pyxu.operator.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">conv</span></a><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">dim_shape</span><span class="p">)</span>  <span class="c1"># Flattening and reshaping required in v1</span>
+<span class="n">y</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html#numpy.random.normal" title="numpy.random.normal"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span></a><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+
+<span class="c1"># Setting up the MAP approach with total variation prior and positivity constraint</span>
+<span class="n">sl2</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/operator/func.html#pyxu.operator.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">SquaredL2Norm</span></a><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">y</span><span class="o">.</span><span class="n">size</span><span class="p">)</span><span class="o">.</span><span class="n">asloss</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>  <span class="c1"># v1: `dim` used with `.asloss()`</span>
+<span class="n">loss</span> <span class="o">=</span> <span class="n">sl2</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="api/operator/linop.html#pyxu.operator.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">conv</span></a>
+
+<a class="sphinx-codeautolink-a" href="api/operator/func.html#pyxu.operator.L21Norm" title="pyxu.operator.func.norm.L21Norm"><span class="n">l21</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/operator/func.html#pyxu.operator.L21Norm" title="pyxu.operator.func.norm.L21Norm"><span class="n">L21Norm</span></a><span class="p">(</span><span class="n">arg_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">*</span><span class="n">dim_shape</span><span class="p">),</span> <span class="n">l2_axis</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  <span class="c1"># v1: `arg_shape` used</span>
+
+<span class="n">grad</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/operator/linop.html#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><span class="n">Gradient</span></a><span class="p">(</span>
+    <span class="n">arg_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">,</span>  <span class="c1"># v1: `arg_shape`</span>
+    <span class="n">directions</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+<span class="p">)</span>
+
+<a class="sphinx-codeautolink-a" href="api/opt.stop.html#pyxu.opt.stop.RelError" title="pyxu.opt.stop.RelError"><span class="n">stop_crit</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/opt.stop.html#pyxu.opt.stop.RelError" title="pyxu.opt.stop.RelError"><span class="n">RelError</span></a><span class="p">(</span>
+    <span class="n">eps</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span>
+<span class="p">)</span>
+
+<a class="sphinx-codeautolink-a" href="api/operator/func.html#pyxu.operator.PositiveOrthant" title="pyxu.operator.func.indicator.PositiveOrthant"><span class="n">positivity</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/operator/func.html#pyxu.operator.PositiveOrthant" title="pyxu.operator.func.indicator.PositiveOrthant"><span class="n">PositiveOrthant</span></a><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">y</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>  <span class="c1"># v1: `dim` used</span>
+<a class="sphinx-codeautolink-a" href="api/opt.solver.html#pyxu.opt.solver.PD3O" title="pyxu.opt.solver.pds.PD3O"><span class="n">solver</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/opt.solver.html#pyxu.opt.solver.PD3O" title="pyxu.opt.solver.pds.PD3O"><span class="n">PD3O</span></a><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">loss</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="api/operator/func.html#pyxu.operator.PositiveOrthant" title="pyxu.operator.func.indicator.PositiveOrthant"><span class="n">positivity</span></a><span class="p">,</span> <span class="n">h</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="api/operator/func.html#pyxu.operator.L21Norm" title="pyxu.operator.func.norm.L21Norm"><span class="n">l21</span></a><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="n">grad</span><span class="p">)</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="n">y</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">stop_crit</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="api/opt.stop.html#pyxu.opt.stop.RelError" title="pyxu.opt.stop.RelError"><span class="n">stop_crit</span></a><span class="p">)</span>  <span class="c1"># Flattening required in v1</span>
+
+<span class="c1"># Getting the deblurred image</span>
+<span class="n">recons</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solution</span><span class="p">()</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">dim_shape</span><span class="p">)</span>
+<span class="n">recons</span> <span class="o">/=</span> <span class="n">recons</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>v2 Code</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Applying the blurring and adding noise</span>
+<a class="sphinx-codeautolink-a" href="api/operator/linop.html#pyxu.operator.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">conv</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/operator/linop.html#pyxu.operator.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">Convolve</span></a><span class="p">(</span>
+    <span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">,</span>  <span class="c1"># v2: `dim_shape` replaces `arg_shape`</span>
+    <span class="n">kernel</span><span class="o">=</span><span class="p">[</span><a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="numpy.array"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">([</span><span class="mi">1</span><span class="p">]),</span> <span class="n">kernel_1d</span><span class="p">,</span> <span class="n">kernel_1d</span><span class="p">],</span>
+    <span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/operator/linop.html#pyxu.operator.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">conv</span></a><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1"># No need to flatten or reshape in v2</span>
+<span class="n">y</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html#numpy.random.normal" title="numpy.random.normal"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span></a><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+
+<span class="c1"># Setting up the MAP approach with total variation prior and positivity constraint</span>
+<span class="n">sl2</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/operator/func.html#pyxu.operator.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">SquaredL2Norm</span></a><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">)</span><span class="o">.</span><span class="n">argshift</span><span class="p">(</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>  <span class="c1"># v2: `dim_shape` replaces `dim`, `.argshift()` replaces `.asloss()`</span>
+<span class="n">loss</span> <span class="o">=</span> <span class="n">sl2</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="api/operator/linop.html#pyxu.operator.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">conv</span></a>
+
+<a class="sphinx-codeautolink-a" href="api/operator/func.html#pyxu.operator.L21Norm" title="pyxu.operator.func.norm.L21Norm"><span class="n">l21</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/operator/func.html#pyxu.operator.L21Norm" title="pyxu.operator.func.norm.L21Norm"><span class="n">L21Norm</span></a><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">*</span><span class="n">dim_shape</span><span class="p">),</span> <span class="n">l2_axis</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  <span class="c1"># v2: `dim_shape` replaces `arg_shape`</span>
+
+<span class="n">grad</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/operator/linop.html#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><span class="n">Gradient</span></a><span class="p">(</span>
+    <span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">,</span>  <span class="c1"># v2: `dim_shape` replaces `arg_shape`</span>
+    <span class="n">directions</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+<span class="p">)</span>
+
+<a class="sphinx-codeautolink-a" href="api/opt.stop.html#pyxu.opt.stop.RelError" title="pyxu.opt.stop.RelError"><span class="n">stop_crit</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/opt.stop.html#pyxu.opt.stop.RelError" title="pyxu.opt.stop.RelError"><span class="n">RelError</span></a><span class="p">(</span>
+    <span class="n">eps</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span>
+    <span class="n">dim_rank</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#len" title="len"><span class="nb">len</span></a><span class="p">(</span><span class="n">dim_shape</span><span class="p">),</span>  <span class="c1"># v2: New `dim_rank` parameter for dimensional rank</span>
+<span class="p">)</span>
+
+<a class="sphinx-codeautolink-a" href="api/operator/func.html#pyxu.operator.PositiveOrthant" title="pyxu.operator.func.indicator.PositiveOrthant"><span class="n">positivity</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/operator/func.html#pyxu.operator.PositiveOrthant" title="pyxu.operator.func.indicator.PositiveOrthant"><span class="n">PositiveOrthant</span></a><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">)</span>  <span class="c1"># v2: `dim_shape` replaces `dim`</span>
+<a class="sphinx-codeautolink-a" href="api/opt.solver.html#pyxu.opt.solver.PD3O" title="pyxu.opt.solver.pds.PD3O"><span class="n">solver</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="api/opt.solver.html#pyxu.opt.solver.PD3O" title="pyxu.opt.solver.pds.PD3O"><span class="n">PD3O</span></a><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">loss</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="api/operator/func.html#pyxu.operator.PositiveOrthant" title="pyxu.operator.func.indicator.PositiveOrthant"><span class="n">positivity</span></a><span class="p">,</span> <span class="n">h</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="api/operator/func.html#pyxu.operator.L21Norm" title="pyxu.operator.func.norm.L21Norm"><span class="n">l21</span></a><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="n">grad</span><span class="p">)</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">stop_crit</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="api/opt.stop.html#pyxu.opt.stop.RelError" title="pyxu.opt.stop.RelError"><span class="n">stop_crit</span></a><span class="p">)</span>  <span class="c1"># No flattening required in v2</span>
+</pre></div>
+</div>
+</section>
+<section id="migration-tips">
+<h2>Migration Tips<a class="headerlink" href="#migration-tips" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>dim_shape vs. dim</strong>: In <code class="code docutils literal notranslate"><span class="pre">v2</span></code>, wherever <code class="code docutils literal notranslate"><span class="pre">dim</span></code> was used in <code class="code docutils literal notranslate"><span class="pre">v1</span></code>, you now use <code class="code docutils literal notranslate"><span class="pre">dim_shape</span></code> to work with the full <strong>N-dimensional</strong> structure of the data.</p></li>
+<li><p><strong>arg_shape vs. dim_shape</strong>: Similarly, <code class="code docutils literal notranslate"><span class="pre">arg_shape</span></code> is replaced by <code class="code docutils literal notranslate"><span class="pre">dim_shape</span></code> to emphasize the full shape of the data.</p></li>
+<li><p><strong>argshift replaces asloss</strong>: <code class="code docutils literal notranslate"><span class="pre">argshift</span></code> is introduced in place of <code class="code docutils literal notranslate"><span class="pre">asloss</span></code> to avoid ambiguity around signs and provide a more intuitive interface.</p></li>
+<li><p><strong>Flattening/Reshaping</strong>: In <code class="code docutils literal notranslate"><span class="pre">v2</span></code>, there is no need to flatten and reshape data when using operators like <code class="code docutils literal notranslate"><span class="pre">Convolve</span></code> and solvers like <code class="code docutils literal notranslate"><span class="pre">PD3O</span></code>. You can work directly with n-dimensional data.</p></li>
+<li><p><strong>dim_rank</strong>: In stopping criteria, <code class="code docutils literal notranslate"><span class="pre">dim_rank</span></code> now specifies the rank of the signal dimensions, which was not explicitly required in <code class="code docutils literal notranslate"><span class="pre">v1</span></code>.</p></li>
+</ul>
+</section>
+<section id="further-help">
+<h2>Further Help<a class="headerlink" href="#further-help" title="Link to this heading">#</a></h2>
+<p>If you encounter any issues during your migration, please consult the <code class="code docutils literal notranslate"><span class="pre">API</span> <span class="pre">Reference</span></code> and <code class="code docutils literal notranslate"><span class="pre">Example</span> <span class="pre">Gallery</span></code> or reach out to the community via our support channels.</p>
+</section>
+</section>
+</article>
+<footer class="bd-footer-article">
+<div class="footer-article-items footer-article__inner">
+<div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="fair/plugins_preview/WaveProp.html" title="previous page">
+<i class="fa-solid fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">WaveProp</p>
+</div>
+</a>
+</div></div>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> On this page
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-changes">Key Changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-conversion">Example Conversion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#migration-tips">Migration Tips</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-help">Further Help</a></li>
+</ul>
+</nav></div>
+<div class="sidebar-secondary-item">
+<div id="searchbox"></div></div>
+<div class="sidebar-secondary-item">
+<div class="tocsection editthispage">
+<a href="https://github.com/pyxu-org/pyxu/edit/main/doc/migration_guide.rst">
+<i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+</div>
+</div>
+<div class="sidebar-secondary-item">
+<div class="tocsection sourcelink">
+<a href="_sources/migration_guide.rst">
+<i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+</div>
+</div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+<footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+<div class="footer-items__start">
+<div class="footer-item">
+<p class="copyright">
+    
+      © Copyright 2024, S. Kashani, J. Rué-Queralt, M. Simeoni, Pyxu Developers.
+      <br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+     Created with <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7, with some help from <a href="https://chat.openai.com/"> ChatGPT</a> (GPT 4).
+    <br/>
+</p>
+</div>
+</div>
+<div class="footer-items__end">
+<div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+</div>
+</div>
+</footer>
+</body>
+</html>
