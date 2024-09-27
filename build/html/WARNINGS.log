@@ -14,6 +14,21 @@ block source:   ModuleNotFoundError: No module named 'pyxu.opt.solver.GradientDe
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:687: WARNING: File not found: 'api/abc.html#pyxu.abc.Func.asloss'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:699: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.estimate_diff_lipschitz'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:914: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxDiffFunc'
+/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ADMM:152: WARNING: Exception occurred in plotting opt-solver-3
+ from /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/opt.solver.rst:
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/matplotlib/sphinxext/plot_directive.py", line 552, in _run_code
+    exec(code, ns)
+  File "<string>", line 29, in <module>
+TypeError: SquaredL2Norm.__init__() got an unexpected keyword argument 'dim'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/contributing.ipynb:42: WARNING: invalid syntax (<unknown>, line 5) in document 'examples/contributing'
+Parsed source in `python` block:
+concatenations: try:
+    from pyxu.opt.solver import GradientDescent
+except ImportError as e:
+    print(e)
+block source:   !pip install pyxu-gradient-descent
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/deblur.ipynb:278: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.PD3O'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/plugins_preview/index.rst:1118: WARNING: toctree contains reference to nonexisting document 'fair/plugins_preview/TokemakRec'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/score.rst:29: WARNING: Bullet list ends without a blank line; unexpected unindent.
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'
@@ -183,21 +198,6 @@ Hands-On Example 🎓
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/lipschitz.ipynb:51: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/lipschitz.ipynb:285: WARNING: File not found: 'api/index.html'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/lipschitz.ipynb:285: WARNING: File not found: 'api/abc/arithmetic.html'
-/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ADMM:152: WARNING: Exception occurred in plotting opt-solver-3
- from /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/opt.solver.rst:
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/matplotlib/sphinxext/plot_directive.py", line 552, in _run_code
-    exec(code, ns)
-  File "<string>", line 29, in <module>
-TypeError: SquaredL2Norm.__init__() got an unexpected keyword argument 'dim'
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/contributing.ipynb:42: WARNING: invalid syntax (<unknown>, line 5) in document 'examples/contributing'
-Parsed source in `python` block:
-concatenations: try:
-    from pyxu.opt.solver import GradientDescent
-except ImportError as e:
-    print(e)
-block source:   !pip install pyxu-gradient-descent
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/deblur.ipynb:278: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.PD3O'
 WARNING: missing attribute to_sciop in object pyxu.abc.LinOp
 /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.asarray:8: WARNING: Inline emphasis start-string without end-string.
 /opt/hostedtoolcache/Python/3.12.6/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.asarray:8: WARNING: Inline emphasis start-string without end-string.
