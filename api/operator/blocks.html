@@ -527,7 +527,7 @@ O_{q}: \mathbb{R}^{M_{1} \times\cdots\times M_{D}} \to \mathbb{R}^{N_{1} \times\
 zero-th axis.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> )) – (Q,) identically-shaped operators to map over inputs.</p>
+<dd class="field-odd"><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> )) – (Q,) identically-shaped operators to map over inputs.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>op</strong> – Stacked (M1,…,MD) -&gt; (Q, N1,…,NK) operator.</p>
@@ -582,7 +582,7 @@ N_{1} \times\cdots\times N_{K}}\)</span> is an operator containing (diagonally) 
 <p>Each sub-operator <span class="math notranslate nohighlight">\(O_{q}\)</span> acts on the <span class="math notranslate nohighlight">\(q\)</span>-th slice of the inputs along the zero-th axis.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> )) – (Q,) identically-shaped operators to zip over inputs.</p>
+<dd class="field-odd"><p><strong>ops</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a> ( <a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">OpT</span></code></a> )) – (Q,) identically-shaped operators to zip over inputs.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>op</strong> – Block-diagonal (Q, M1,…,MD) -&gt; (Q, N1,…,NK) operator.</p>

@@ -309,7 +309,7 @@ document.write(`
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a>) – Any object compatible with the interface of NumPy arrays.</p></li>
+<li><p><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a>) – Any object compatible with the interface of NumPy arrays.</p></li>
 <li><p><strong>fallback</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.ArrayModule" title="pyxu.info.ptype.ArrayModule"><code class="xref py py-class docutils literal notranslate"><span class="pre">ArrayModule</span></code></a>) – Fallback module if <code class="code docutils literal notranslate"><span class="pre">x</span></code> is not a NumPy-like array.  Default behaviour: raise error if fallback used.</p></li>
 </ul>
 </dd>
@@ -336,15 +336,15 @@ below:</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>i</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.VarName" title="pyxu.info.ptype.VarName"><code class="xref py py-class docutils literal notranslate"><span class="pre">VarName</span></code></a>) – name of the array-like variable in <code class="code docutils literal notranslate"><span class="pre">f</span></code> to base dispatch on.</p></li>
-<li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>) – <ul>
-<li><p>key[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]: array backend short-name as defined in <a class="reference internal" href="info.deps.html#pyxu.info.deps.NDArrayInfo" title="pyxu.info.deps.NDArrayInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArrayInfo</span></code></a>.</p></li>
-<li><p>value[<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.Callable</span></code></a>]: function/method to dispatch to.</p></li>
+<li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>) – <ul>
+<li><p>key[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]: array backend short-name as defined in <a class="reference internal" href="info.deps.html#pyxu.info.deps.NDArrayInfo" title="pyxu.info.deps.NDArrayInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArrayInfo</span></code></a>.</p></li>
+<li><p>value[<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.Callable</span></code></a>]: function/method to dispatch to.</p></li>
 </ul>
 </p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.12)"><em>Callable</em></a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.13)"><em>Callable</em></a></p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -376,18 +376,18 @@ staticmethod)</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>*args</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – Any number of objects.  If it is a dask object, it is evaluated and the result is returned.  Non-dask arguments
+<li><p><strong>*args</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – Any number of objects.  If it is a dask object, it is evaluated and the result is returned.  Non-dask arguments
 are passed through unchanged.  Python collections are traversed to find/evaluate dask objects within.  (Use
 <code class="code docutils literal notranslate"><span class="pre">traverse</span></code> =False to disable this behavior.)</p></li>
-<li><p><strong>mode</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Dask evaluation strategy: compute or persist.</p></li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – Extra keyword parameters forwarded to <a class="reference external" href="https://docs.dask.org/en/stable/api.html#dask.compute" title="(in Dask)"><code class="xref py py-func docutils literal notranslate"><span class="pre">dask.compute()</span></code></a> or <a class="reference external" href="https://docs.dask.org/en/stable/api.html#dask.persist" title="(in Dask)"><code class="xref py py-func docutils literal notranslate"><span class="pre">dask.persist()</span></code></a>.</p></li>
+<li><p><strong>mode</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Dask evaluation strategy: compute or persist.</p></li>
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – Extra keyword parameters forwarded to <a class="reference external" href="https://docs.dask.org/en/stable/api.html#dask.compute" title="(in Dask)"><code class="xref py py-func docutils literal notranslate"><span class="pre">dask.compute()</span></code></a> or <a class="reference external" href="https://docs.dask.org/en/stable/api.html#dask.persist" title="(in Dask)"><code class="xref py py-func docutils literal notranslate"><span class="pre">dask.persist()</span></code></a>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>*cargs</strong> – Evaluated objects. Non-dask arguments are passed through unchanged.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -571,12 +571,12 @@ are passed through unchanged.  Python collections are traversed to find/evaluate
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>)</p></li>
-<li><p><strong>fail_on_error</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>)</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>)</p></li>
+<li><p><strong>fail_on_error</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/types.html#types.ModuleType" title="(in Python v3.12)"><em>ModuleType</em></a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/types.html#types.ModuleType" title="(in Python v3.13)"><em>ModuleType</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -589,7 +589,7 @@ are passed through unchanged.  Python collections are traversed to find/evaluate
 <dd class="field-odd"><p><strong>params</strong> – (key, value) params as seen in body of <code class="code docutils literal notranslate"><span class="pre">func</span></code> when called via <code class="code docutils literal notranslate"><span class="pre">func(*args,</span> <span class="pre">**kwargs)</span></code>.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -698,11 +698,11 @@ useful for testing purposes as it contains high-frequency information.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>rank</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Integer" title="pyxu.info.ptype.Integer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integer</span></code></a>) – Rank of the NDArray. (Required to make all entries positive.)</p></li>
-<li><p><strong>axes</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.12)"><em>Integral</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.12)"><em>Integral</em></a><em>, </em><em>...</em><em>]</em>)</p></li>
+<li><p><strong>axes</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.13)"><em>Integral</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.13)"><em>Integral</em></a><em>, </em><em>...</em><em>]</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.12)"><em>Integral</em></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)">tuple</a>[<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.12)"><em>Integral</em></a>, …]</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.13)"><em>Integral</em></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)">tuple</a>[<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.13)"><em>Integral</em></a>, …]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -712,10 +712,10 @@ useful for testing purposes as it contains high-frequency information.</p>
 <dd><p>Transform a lone integer into a valid tuple-based shape specifier.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.12)"><em>Integral</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.12)"><em>Integral</em></a><em>, </em><em>...</em><em>]</em>)</p>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.13)"><em>Integral</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.13)"><em>Integral</em></a><em>, </em><em>...</em><em>]</em>)</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.12)"><em>Integral</em></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)">tuple</a>[<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.12)"><em>Integral</em></a>, …]</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.13)"><em>Integral</em></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)">tuple</a>[<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.13)"><em>Integral</em></a>, …]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -736,7 +736,7 @@ useful for testing purposes as it contains high-frequency information.</p>
 <dd class="field-even"><p><strong>g</strong> – Function/Method with signature <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">M1,...,MD)</span> <span class="pre">-&gt;</span> <span class="pre">(...,</span> <span class="pre">N1,...,NK)</span></code> in parameter <code class="code docutils literal notranslate"><span class="pre">i</span></code>.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Callable</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Callable</span></code></a></p>
 </dd>
 </dl>
 <p class="rubric">Example</p>

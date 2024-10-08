@@ -337,8 +337,8 @@ is well balanced.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>f</strong> (<a class="reference internal" href="../abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.operator.DiffFunc"><em>DiffFunc</em></a>)</p></li>
 <li><p><strong>g</strong> (<a class="reference internal" href="../abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><em>ProxFunc</em></a>)</p></li>
-<li><p><strong>gamma</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a>)</p></li>
-<li><p><strong>lamb</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a>)</p></li>
+<li><p><strong>gamma</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.13)"><em>Real</em></a>)</p></li>
+<li><p><strong>lamb</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.13)"><em>Real</em></a>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -348,8 +348,8 @@ is well balanced.</p>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>f</strong> (<a class="reference internal" href="../abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.DiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>) – Differentiable functional.</p></li>
-<li><p><strong>g</strong> (<a class="reference internal" href="../abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>) – Proximable functional.</p></li>
+<li><p><strong>f</strong> (<a class="reference internal" href="../abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.DiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>) – Differentiable functional.</p></li>
+<li><p><strong>g</strong> (<a class="reference internal" href="../abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>) – Proximable functional.</p></li>
 <li><p><strong>gamma</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Euler-Maruyama discretization step of the Langevin equation (see <code class="code docutils literal notranslate"><span class="pre">Notes</span></code> of
 <a class="reference internal" href="#pyxu.experimental.sampler.ULA" title="pyxu.experimental.sampler.ULA"><code class="xref py py-class docutils literal notranslate"><span class="pre">ULA</span></code></a> documentation).</p></li>
 <li><p><strong>lamb</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Moreau-Yosida envelope parameter for <code class="code docutils literal notranslate"><span class="pre">g</span></code>.</p></li>
@@ -376,7 +376,7 @@ precisely, the array <code class="docutils literal notranslate"><span class="pre
 \sum_{k=1}^K (\mathbf{x}_k-\boldsymbol{\mu})^{i+2}\)</span> for <span class="math notranslate nohighlight">\(0 \leq i \leq d-2\)</span>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>order</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a>)</p>
+<dd class="field-odd"><p><strong>order</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.13)"><em>Real</em></a>)</p>
 </dd>
 </dl>
 <dl class="py method">
@@ -415,7 +415,7 @@ particular, the kurtosis of a Gaussian distribution is always 3.</p>
 k \leq K}\)</span> is given by <span class="math notranslate nohighlight">\(\frac{1}{K}\sum_{k=1}^K \mathbf{x}_k^d\)</span>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>order</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a>)</p>
+<dd class="field-odd"><p><strong>order</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.13)"><em>Real</em></a>)</p>
 </dd>
 </dl>
 <dl class="py method">
@@ -644,7 +644,7 @@ samples should accumulate around the modes of the target distribution, i.e., tow
 <span class="math notranslate nohighlight">\(\mathcal{F}\)</span>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.13)"><em>Real</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -653,7 +653,7 @@ samples should accumulate around the modes of the target distribution, i.e., tow
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>f</strong> (<a class="reference internal" href="../abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.operator.DiffFunc"><em>DiffFunc</em></a>)</p></li>
-<li><p><strong>gamma</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.12)"><em>Real</em></a>)</p></li>
+<li><p><strong>gamma</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.13)"><em>Real</em></a>)</p></li>
 </ul>
 </dd>
 </dl>

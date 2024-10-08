@@ -333,13 +333,13 @@ algorithm stops when the norm of the difference between two consecutive PGD iter
 <section id="parameters-init">
 <h2>Parameters (<code class="docutils literal notranslate"><span class="pre">__init__()</span></code>)<a class="headerlink" href="#parameters-init" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>f</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.DiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>f</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.DiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Differentiable function <span class="math notranslate nohighlight">\(\mathcal{F}\)</span>.</p></li>
-<li><p><strong>g</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>g</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Proximable function <span class="math notranslate nohighlight">\(\mathcal{G}\)</span>.</p></li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.__init__" title="pyxu.abc.Solver.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.__init__()</span></code></a>.</p></li>
 </ul>
@@ -350,17 +350,17 @@ Other keyword parameters passed on to <a class="reference internal" href="abc.ht
 <li><p><strong>x0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>)
 –
 (…, M1,…,MD) initial point(s).</p></li>
-<li><p><strong>tau</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>tau</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Gradient step size.  Defaults to <span class="math notranslate nohighlight">\(1 / \beta\)</span> if unspecified.</p></li>
-<li><p><strong>acceleration</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>)
+<li><p><strong>acceleration</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>)
 –
 If True (default), then use Chambolle &amp; Dossal acceleration scheme.</p></li>
 <li><p><strong>d</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>)
 –
 Chambolle &amp; Dossal acceleration parameter <span class="math notranslate nohighlight">\(d\)</span>.  Should be greater than 2.  Only meaningful if <code class="code docutils literal notranslate"><span class="pre">acceleration</span></code>
 is True.  Defaults to 75 in unspecified.</p></li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.fit" title="pyxu.abc.Solver.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.fit()</span></code></a>.</p></li>
 </ul>
@@ -397,7 +397,7 @@ when the norm of the explicit residual is smaller than 1e-4.</p>
 –
 Positive-definite operator <span class="math notranslate nohighlight">\(\mathbf{A}: \mathbb{R}^{M_{1} \times\cdots\times M_{D}} \to \mathbb{R}^{M_{1}
 \times\cdots\times M_{D}}\)</span>.</p></li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.__init__" title="pyxu.abc.Solver.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.__init__()</span></code></a>.</p></li>
 </ul>
@@ -410,7 +410,7 @@ Other keyword parameters passed on to <a class="reference internal" href="abc.ht
 (…, M1,…,MD) <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> terms in the CG cost function.</p>
 <p>All problems are solved in parallel.</p>
 </li>
-<li><p><strong>x0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>x0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 (…, M1,…,MD) initial point(s).</p>
 <p>Must be broadcastable with <code class="code docutils literal notranslate"><span class="pre">b</span></code> if provided.  Defaults to 0.</p>
@@ -420,7 +420,7 @@ Other keyword parameters passed on to <a class="reference internal" href="abc.ht
 Number of iterations after which restart is applied.</p>
 <p>By default, a restart is done after ‘n’ iterations, where ‘n’ corresponds to the dimension of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>.</p>
 </li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.fit" title="pyxu.abc.Solver.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.fit()</span></code></a>.</p></li>
 </ul>
@@ -479,7 +479,7 @@ Two popular variants are implemented:</p>
 <li><p><strong>f</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.DiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffFunc</span></code></a>)
 –
 Differentiable function <span class="math notranslate nohighlight">\(\mathcal{F}\)</span>.</p></li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.__init__" title="pyxu.abc.Solver.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.__init__()</span></code></a>.</p></li>
 </ul>
@@ -498,12 +498,12 @@ Name of the NLCG variant to use:</p>
 <li><p>“FR”: Fletcher-Reeves variant.</p></li>
 </ul>
 </li>
-<li><p><strong>restart_rate</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Integer" title="pyxu.info.ptype.Integer"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Integer</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>restart_rate</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Integer" title="pyxu.info.ptype.Integer"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Integer</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Number of iterations after which restart is applied.</p>
 <p>By default, restart is done after <span class="math notranslate nohighlight">\(N\)</span> iterations.</p>
 </li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Optional parameters forwarded to <a class="reference internal" href="math.html#pyxu.math.backtracking_linesearch" title="pyxu.math.backtracking_linesearch"><code class="xref py py-func docutils literal notranslate"><span class="pre">backtracking_linesearch()</span></code></a>.</p>
 <p>If <code class="code docutils literal notranslate"><span class="pre">a0</span></code> is unspecified and <span class="math notranslate nohighlight">\(\nabla f\)</span> is <span class="math notranslate nohighlight">\(\beta\)</span>-Lipschitz continuous, then <code class="code docutils literal notranslate"><span class="pre">a0</span></code> is auto-chosen as
@@ -625,7 +625,7 @@ criterion when using the PAdam and AMSGrad variants to avoid premature stops.</p
 <li><p><strong>f</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.DiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffFunc</span></code></a>)
 –
 Differentiable function <span class="math notranslate nohighlight">\(\mathcal{F}\)</span>.</p></li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.__init__" title="pyxu.abc.Solver.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.__init__()</span></code></a>.</p></li>
 </ul>
@@ -639,7 +639,7 @@ Other keyword parameters passed on to <a class="reference internal" href="abc.ht
 <li><p><strong>variant</strong> (“adam”, “amsgrad”, “padam”)
 –
 Name of the Adam variant to use.  Defaults to “adam”.</p></li>
-<li><p><strong>a</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>a</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Max normalized gradient step size.  Defaults to <span class="math notranslate nohighlight">\(1 / \beta\)</span> if unspecified.</p></li>
 <li><p><strong>b1</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>)
@@ -648,11 +648,11 @@ Max normalized gradient step size.  Defaults to <span class="math notranslate no
 <li><p><strong>b2</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>)
 –
 2nd-order gradient exponential decay <span class="math notranslate nohighlight">\(\beta_{2} \in [0, 1)\)</span>.</p></li>
-<li><p><strong>m0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>m0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 (…, N) initial 1st-order gradient estimate corresponding to each initial point.  Defaults to the null vector if
 unspecified.</p></li>
-<li><p><strong>v0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>v0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 (…, N) initial 2nd-order gradient estimate corresponding to each initial point.  Defaults to the null vector if
 unspecified.</p></li>
@@ -665,7 +665,7 @@ Adam noise parameter <span class="math notranslate nohighlight">\(\epsilon\)</sp
 <li><p><strong>eps_var</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>)
 –
 Avoids division by zero if estimated gradient variance is too small.  Defaults to 1e-6.</p></li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.fit" title="pyxu.abc.Solver.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.fit()</span></code></a>.</p></li>
 </ul>
@@ -767,19 +767,19 @@ respectively, i.e.</p>
 <section id="id17">
 <h2>Parameters (<code class="docutils literal notranslate"><span class="pre">__init__()</span></code>)<a class="headerlink" href="#id17" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>f</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.DiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>f</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.DiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Differentiable function <span class="math notranslate nohighlight">\(\mathcal{F}\)</span>.</p></li>
-<li><p><strong>g</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>g</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Proximable function <span class="math notranslate nohighlight">\(\mathcal{G}\)</span>.</p></li>
-<li><p><strong>h</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>h</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Proximable function <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>.</p></li>
-<li><p><strong>K</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffMap" title="pyxu.abc.DiffMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffMap</span></code></a>, <a class="reference internal" href="abc.html#pyxu.abc.LinOp" title="pyxu.abc.LinOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinOp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>K</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffMap" title="pyxu.abc.DiffMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffMap</span></code></a>, <a class="reference internal" href="abc.html#pyxu.abc.LinOp" title="pyxu.abc.LinOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinOp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Differentiable map or linear operator <span class="math notranslate nohighlight">\(\mathcal{K}\)</span>.</p></li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.__init__" title="pyxu.abc.Solver.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.__init__()</span></code></a>.</p></li>
 </ul>
@@ -790,20 +790,20 @@ Other keyword parameters passed on to <a class="reference internal" href="abc.ht
 <li><p><strong>x0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>)
 –
 (…, N) initial point(s) for the primal variable.</p></li>
-<li><p><strong>z0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>z0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 (…, M) initial point(s) for the dual variable.
 If <code class="docutils literal notranslate"><span class="pre">None</span></code> (default), then use <code class="docutils literal notranslate"><span class="pre">K(x0)</span></code> as the initial point for the dual variable.</p></li>
-<li><p><strong>tau</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>tau</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Primal step size.</p></li>
-<li><p><strong>sigma</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>sigma</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Dual step size.</p></li>
-<li><p><strong>rho</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>rho</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Momentum parameter.</p></li>
-<li><p><strong>beta</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>beta</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Lipschitz constant <span class="math notranslate nohighlight">\(\beta\)</span> of <span class="math notranslate nohighlight">\(\nabla\mathcal{F}\)</span>.
 If not provided, it will be automatically estimated.</p></li>
@@ -811,7 +811,7 @@ If not provided, it will be automatically estimated.</p></li>
 –
 Strategy to be employed when setting the hyperparameters (default to 1).
 See section below for more details.</p></li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.fit" title="pyxu.abc.Solver.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.fit()</span></code></a>.</p></li>
 </ul>
@@ -979,19 +979,19 @@ respectively (Theorem 8.2 of <a class="reference internal" href="../references.h
 <section id="id25">
 <h2>Parameters (<code class="docutils literal notranslate"><span class="pre">__init__()</span></code>)<a class="headerlink" href="#id25" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>f</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.DiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>f</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.DiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Differentiable function <span class="math notranslate nohighlight">\(\mathcal{F}\)</span>.</p></li>
-<li><p><strong>g</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>g</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Proximable function <span class="math notranslate nohighlight">\(\mathcal{G}\)</span>.</p></li>
-<li><p><strong>h</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>h</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Proximable function <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>.</p></li>
-<li><p><strong>K</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffMap" title="pyxu.abc.DiffMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffMap</span></code></a>, <a class="reference internal" href="abc.html#pyxu.abc.LinOp" title="pyxu.abc.LinOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinOp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>K</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffMap" title="pyxu.abc.DiffMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffMap</span></code></a>, <a class="reference internal" href="abc.html#pyxu.abc.LinOp" title="pyxu.abc.LinOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinOp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Differentiable map or linear operator <span class="math notranslate nohighlight">\(\mathcal{K}\)</span>.</p></li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.__init__" title="pyxu.abc.Solver.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.__init__()</span></code></a>.</p></li>
 </ul>
@@ -1002,20 +1002,20 @@ Other keyword parameters passed on to <a class="reference internal" href="abc.ht
 <li><p><strong>x0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>)
 –
 (…, N) initial point(s) for the primal variable.</p></li>
-<li><p><strong>z0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>z0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 (…, M) initial point(s) for the dual variable.
 If <code class="docutils literal notranslate"><span class="pre">None</span></code> (default), then use <code class="docutils literal notranslate"><span class="pre">K(x0)</span></code> as the initial point for the dual variable.</p></li>
-<li><p><strong>tau</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>tau</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Primal step size.</p></li>
-<li><p><strong>sigma</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>sigma</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Dual step size.</p></li>
-<li><p><strong>rho</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>rho</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Momentum parameter.</p></li>
-<li><p><strong>beta</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>beta</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Lipschitz constant <span class="math notranslate nohighlight">\(\beta\)</span> of <span class="math notranslate nohighlight">\(\nabla\mathcal{F}\)</span>.
 If not provided, it will be automatically estimated.</p></li>
@@ -1023,7 +1023,7 @@ If not provided, it will be automatically estimated.</p></li>
 –
 Strategy to be employed when setting the hyperparameters (default to 1).
 See section below for more details.</p></li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.fit" title="pyxu.abc.Solver.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.fit()</span></code></a>.</p></li>
 </ul>
@@ -1129,12 +1129,12 @@ and <span class="math notranslate nohighlight">\(\mathbf{K}=\mathbf{D}\)</span>.
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>g</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>) – Proximable function <span class="math notranslate nohighlight">\(\mathcal{G}\)</span>.</p></li>
-<li><p><strong>h</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>) – Proximable function <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>.</p></li>
-<li><p><strong>K</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffMap" title="pyxu.abc.DiffMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffMap</span></code></a>, <a class="reference internal" href="abc.html#pyxu.abc.LinOp" title="pyxu.abc.LinOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinOp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>) – Differentiable map or linear operator <span class="math notranslate nohighlight">\(\mathcal{K}\)</span>.</p></li>
+<li><p><strong>g</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>) – Proximable function <span class="math notranslate nohighlight">\(\mathcal{G}\)</span>.</p></li>
+<li><p><strong>h</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>) – Proximable function <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>.</p></li>
+<li><p><strong>K</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffMap" title="pyxu.abc.DiffMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffMap</span></code></a>, <a class="reference internal" href="abc.html#pyxu.abc.LinOp" title="pyxu.abc.LinOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinOp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>) – Differentiable map or linear operator <span class="math notranslate nohighlight">\(\mathcal{K}\)</span>.</p></li>
 <li><p><strong>base</strong> (<a class="reference internal" href="#pyxu.opt.solver.CondatVu" title="pyxu.opt.solver.CondatVu"><code class="xref py py-class docutils literal notranslate"><span class="pre">CondatVu</span></code></a>, <a class="reference internal" href="#pyxu.opt.solver.PD3O" title="pyxu.opt.solver.PD3O"><code class="xref py py-class docutils literal notranslate"><span class="pre">PD3O</span></code></a>) – Specifies the base primal-dual algorithm.
 (Default = <a class="reference internal" href="#pyxu.opt.solver.CondatVu" title="pyxu.opt.solver.CondatVu"><code class="xref py py-class docutils literal notranslate"><span class="pre">CondatVu</span></code></a>)</p></li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>) – Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.__init__" title="pyxu.abc.Solver.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.__init__()</span></code></a>.</p></li>
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>) – Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.__init__" title="pyxu.abc.Solver.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.__init__()</span></code></a>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1171,24 +1171,24 @@ algorithm.  It can be seen as a preconditionned ADMM method <a class="reference 
 <li><p><strong>x0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>)
 –
 (…, N) initial point(s) for the primal variable.</p></li>
-<li><p><strong>z0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>z0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 (…, M) initial point(s) for the dual variable.
 If <code class="docutils literal notranslate"><span class="pre">None</span></code> (default), then use <code class="docutils literal notranslate"><span class="pre">K(x0)</span></code> as the initial point for the dual variable.</p></li>
-<li><p><strong>tau</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>tau</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Primal step size.</p></li>
-<li><p><strong>sigma</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>sigma</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Dual step size.</p></li>
-<li><p><strong>rho</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>rho</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Momentum parameter.</p></li>
 <li><p><strong>tuning_strategy</strong> (1, 2, 3)
 –
 Strategy to be employed when setting the hyperparameters (default to 1).
 See <code class="code docutils literal notranslate"><span class="pre">base</span></code> for more details.</p></li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.fit" title="pyxu.abc.Solver.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.fit()</span></code></a>.</p></li>
 </ul>
@@ -1208,7 +1208,7 @@ Other keyword parameters passed on to <a class="reference internal" href="abc.ht
 <li><p><strong>g</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><em>ProxFunc</em></a><em> | </em><em>None</em>)</p></li>
 <li><p><strong>h</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><em>ProxFunc</em></a><em> | </em><em>None</em>)</p></li>
 <li><p><strong>K</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffMap" title="pyxu.abc.operator.DiffMap"><em>DiffMap</em></a><em> | </em><em>None</em>)</p></li>
-<li><p><strong>base</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><em>Type</em></a><em>[</em><em>_PrimalDualSplitting</em><em>]</em>)</p></li>
+<li><p><strong>base</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.13)"><em>Type</em></a><em>[</em><em>_PrimalDualSplitting</em><em>]</em>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -1249,20 +1249,20 @@ Other keyword parameters passed on to <a class="reference internal" href="abc.ht
 <section id="id35">
 <h2>Parameters (<code class="docutils literal notranslate"><span class="pre">__init__()</span></code>)<a class="headerlink" href="#id35" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>f</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.DiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>f</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.DiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Differentiable function <span class="math notranslate nohighlight">\(\mathcal{F}\)</span>.</p></li>
-<li><p><strong>h</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>h</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Proximable function <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>.</p></li>
-<li><p><strong>K</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffMap" title="pyxu.abc.DiffMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffMap</span></code></a>, <a class="reference internal" href="abc.html#pyxu.abc.LinOp" title="pyxu.abc.LinOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinOp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>K</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffMap" title="pyxu.abc.DiffMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffMap</span></code></a>, <a class="reference internal" href="abc.html#pyxu.abc.LinOp" title="pyxu.abc.LinOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinOp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Differentiable map or linear operator <span class="math notranslate nohighlight">\(\mathcal{K}\)</span>.</p></li>
-<li><p><strong>beta</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>beta</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Lipschitz constant <span class="math notranslate nohighlight">\(\beta\)</span> of <span class="math notranslate nohighlight">\(\nabla\mathcal{F}\)</span>.
 If not provided, it will be automatically estimated.</p></li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.__init__" title="pyxu.abc.Solver.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.__init__()</span></code></a>.</p></li>
 </ul>
@@ -1273,24 +1273,24 @@ Other keyword parameters passed on to <a class="reference internal" href="abc.ht
 <li><p><strong>x0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>)
 –
 (…, N) initial point(s) for the primal variable.</p></li>
-<li><p><strong>z0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>z0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 (…, M) initial point(s) for the dual variable.
 If <code class="docutils literal notranslate"><span class="pre">None</span></code> (default), then use <code class="docutils literal notranslate"><span class="pre">K(x0)</span></code> as the initial point for the dual variable.</p></li>
-<li><p><strong>tau</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>tau</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Primal step size.</p></li>
-<li><p><strong>sigma</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>sigma</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Dual step size.</p></li>
-<li><p><strong>rho</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>rho</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Momentum parameter.</p></li>
 <li><p><strong>tuning_strategy</strong> (1, 2, 3)
 –
 Strategy to be employed when setting the hyperparameters (default to 1).
 See <a class="reference internal" href="#pyxu.opt.solver.PD3O" title="pyxu.opt.solver.PD3O"><code class="xref py py-class docutils literal notranslate"><span class="pre">PD3O</span></code></a> for more details.</p></li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.fit" title="pyxu.abc.Solver.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.fit()</span></code></a>.</p></li>
 </ul>
@@ -1346,17 +1346,17 @@ and <span class="math notranslate nohighlight">\(\tau=1/\sigma\)</span> in <a cl
 <li><p><strong>f</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.DiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffFunc</span></code></a>)
 –
 Differentiable function <span class="math notranslate nohighlight">\(\mathcal{F}\)</span>.</p></li>
-<li><p><strong>g</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>g</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Proximable function <span class="math notranslate nohighlight">\(\mathcal{G}\)</span>.</p></li>
-<li><p><strong>h</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>h</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Proximable function <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>.</p></li>
-<li><p><strong>beta</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>beta</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Lipschitz constant <span class="math notranslate nohighlight">\(\beta\)</span> of <span class="math notranslate nohighlight">\(\nabla\mathcal{F}\)</span>.
 If not provided, it will be automatically estimated.</p></li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.__init__" title="pyxu.abc.Solver.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.__init__()</span></code></a>.</p></li>
 </ul>
@@ -1367,24 +1367,24 @@ Other keyword parameters passed on to <a class="reference internal" href="abc.ht
 <li><p><strong>x0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>)
 –
 (…, N) initial point(s) for the primal variable.</p></li>
-<li><p><strong>z0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>z0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 (…, N) initial point(s) for the dual variable.
 If <code class="docutils literal notranslate"><span class="pre">None</span></code> (default), then use <code class="docutils literal notranslate"><span class="pre">x0</span></code> as the initial point for the dual variable.</p></li>
-<li><p><strong>tau</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>tau</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Primal step size.</p></li>
-<li><p><strong>sigma</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>sigma</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Dual step size.</p></li>
-<li><p><strong>rho</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>rho</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Momentum parameter.</p></li>
 <li><p><strong>tuning_strategy</strong> (1, 2, 3)
 –
 Strategy to be employed when setting the hyperparameters (default to 1).
 See <a class="reference internal" href="#pyxu.opt.solver.PD3O" title="pyxu.opt.solver.PD3O"><code class="xref py py-class docutils literal notranslate"><span class="pre">PD3O</span></code></a> for more details.</p></li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.fit" title="pyxu.abc.Solver.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.fit()</span></code></a>.</p></li>
 </ul>
@@ -1415,11 +1415,11 @@ Other keyword parameters passed on to <a class="reference internal" href="abc.ht
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>g</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>) – Proximable function <span class="math notranslate nohighlight">\(\mathcal{G}\)</span>.</p></li>
-<li><p><strong>h</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>) – Proximable function <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>.</p></li>
+<li><p><strong>g</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>) – Proximable function <span class="math notranslate nohighlight">\(\mathcal{G}\)</span>.</p></li>
+<li><p><strong>h</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>) – Proximable function <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>.</p></li>
 <li><p><strong>base</strong> (<a class="reference internal" href="#pyxu.opt.solver.CondatVu" title="pyxu.opt.solver.CondatVu"><code class="xref py py-class docutils literal notranslate"><span class="pre">CondatVu</span></code></a>, <a class="reference internal" href="#pyxu.opt.solver.PD3O" title="pyxu.opt.solver.PD3O"><code class="xref py py-class docutils literal notranslate"><span class="pre">PD3O</span></code></a>) – Specifies the base primal-dual algorithm.
 (Default = <a class="reference internal" href="#pyxu.opt.solver.CondatVu" title="pyxu.opt.solver.CondatVu"><code class="xref py py-class docutils literal notranslate"><span class="pre">CondatVu</span></code></a>)</p></li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>) – Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.__init__" title="pyxu.abc.Solver.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.__init__()</span></code></a>.</p></li>
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>) – Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.__init__" title="pyxu.abc.Solver.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.__init__()</span></code></a>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1448,14 +1448,14 @@ derivation).</p></li>
 <li><p><strong>x0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>)
 –
 (…, N) initial point(s) for the primal variable.</p></li>
-<li><p><strong>z0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>z0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 (…, N) initial point(s) for the dual variable.
 If <code class="docutils literal notranslate"><span class="pre">None</span></code> (default), then use <code class="docutils literal notranslate"><span class="pre">x0</span></code> as the initial point for the dual variable.</p></li>
-<li><p><strong>tau</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>tau</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Primal step size. Defaults to 1.</p></li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.fit" title="pyxu.abc.Solver.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.fit()</span></code></a>.</p></li>
 </ul>
@@ -1474,7 +1474,7 @@ Other keyword parameters passed on to <a class="reference internal" href="abc.ht
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>g</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><em>ProxFunc</em></a><em> | </em><em>None</em>)</p></li>
 <li><p><strong>h</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><em>ProxFunc</em></a><em> | </em><em>None</em>)</p></li>
-<li><p><strong>base</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><em>Type</em></a><em>[</em><em>_PrimalDualSplitting</em><em>]</em>)</p></li>
+<li><p><strong>base</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.13)"><em>Type</em></a><em>[</em><em>_PrimalDualSplitting</em><em>]</em>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -1510,17 +1510,17 @@ also known as the <em>Proximal Gradient Descent (PGD)</em> algorithm.  For the a
 <section id="id48">
 <h2>Parameters (<code class="docutils literal notranslate"><span class="pre">__init__()</span></code>)<a class="headerlink" href="#id48" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>f</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.DiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>f</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.DiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Differentiable function <span class="math notranslate nohighlight">\(\mathcal{F}\)</span>.</p></li>
-<li><p><strong>g</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>g</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Proximable function <span class="math notranslate nohighlight">\(\mathcal{G}\)</span>.</p></li>
-<li><p><strong>beta</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>beta</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Lipschitz constant <span class="math notranslate nohighlight">\(\beta\)</span> of <span class="math notranslate nohighlight">\(\nabla\mathcal{F}\)</span>.
 If not provided, it will be automatically estimated.</p></li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.__init__" title="pyxu.abc.Solver.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.__init__()</span></code></a>.</p></li>
 </ul>
@@ -1531,21 +1531,21 @@ Other keyword parameters passed on to <a class="reference internal" href="abc.ht
 <li><p><strong>x0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>)
 –
 (…, N) initial point(s) for the primal variable.</p></li>
-<li><p><strong>z0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>z0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 (…, N) initial point(s) for the dual variable.
 If <code class="docutils literal notranslate"><span class="pre">None</span></code> (default), then use <code class="docutils literal notranslate"><span class="pre">x0</span></code> as the initial point for the dual variable.</p></li>
-<li><p><strong>tau</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>tau</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Primal step size.</p></li>
-<li><p><strong>rho</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>rho</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Momentum parameter.</p></li>
 <li><p><strong>tuning_strategy</strong> (1, 2, 3)
 –
 Strategy to be employed when setting the hyperparameters (default to 1).
 See <a class="reference internal" href="#pyxu.opt.solver.CondatVu" title="pyxu.opt.solver.CondatVu"><code class="xref py py-class docutils literal notranslate"><span class="pre">CondatVu</span></code></a> for more details.</p></li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.fit" title="pyxu.abc.Solver.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.fit()</span></code></a>.</p></li>
 </ul>
@@ -1578,7 +1578,7 @@ Other keyword parameters passed on to <a class="reference internal" href="abc.ht
 <li><p><strong>g</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>) – Proximable function <span class="math notranslate nohighlight">\(\mathcal{G}\)</span>.</p></li>
 <li><p><strong>base</strong> (<a class="reference internal" href="#pyxu.opt.solver.CondatVu" title="pyxu.opt.solver.CondatVu"><code class="xref py py-class docutils literal notranslate"><span class="pre">CondatVu</span></code></a>, <a class="reference internal" href="#pyxu.opt.solver.PD3O" title="pyxu.opt.solver.PD3O"><code class="xref py py-class docutils literal notranslate"><span class="pre">PD3O</span></code></a>) – Specifies the base primal-dual algorithm from which mathematical updates are inherited.
 (Default = <a class="reference internal" href="#pyxu.opt.solver.CondatVu" title="pyxu.opt.solver.CondatVu"><code class="xref py py-class docutils literal notranslate"><span class="pre">CondatVu</span></code></a>)</p></li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>) – Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.__init__" title="pyxu.abc.Solver.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.__init__()</span></code></a>.</p></li>
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>) – Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.__init__" title="pyxu.abc.Solver.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.__init__()</span></code></a>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1602,13 +1602,13 @@ was introduced without relaxation (<span class="math notranslate nohighlight">\(
 <li><p><strong>x0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>)
 –
 (…, N) initial point(s) for the primal variable.</p></li>
-<li><p><strong>tau</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>tau</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Primal step size.</p></li>
-<li><p><strong>rho</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>rho</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Momentum parameter.</p></li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.fit" title="pyxu.abc.Solver.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.fit()</span></code></a>.</p></li>
 </ul>
@@ -1699,27 +1699,27 @@ above-mentioned cases is met.</p>
 <section id="id58">
 <h2>Parameters (<code class="docutils literal notranslate"><span class="pre">__init__()</span></code>)<a class="headerlink" href="#id58" title="Link to this heading">#</a></h2>
 <ul>
-<li><p><strong>f</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.DiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffFunc</span></code></a>, <a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>f</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffFunc" title="pyxu.abc.DiffFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiffFunc</span></code></a>, <a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Differentiable or proximable function <span class="math notranslate nohighlight">\(\mathcal{F}\)</span>.</p></li>
-<li><p><strong>h</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>h</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.ProxFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxFunc</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Proximable function <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>.</p></li>
-<li><p><strong>K</strong> (<a class="reference internal" href="abc.html#pyxu.abc.LinOp" title="pyxu.abc.LinOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinOp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>K</strong> (<a class="reference internal" href="abc.html#pyxu.abc.LinOp" title="pyxu.abc.LinOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinOp</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Linear operator <span class="math notranslate nohighlight">\(\mathbf{K}\)</span>.</p></li>
-<li><p><strong>solver</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Callable</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>solver</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Callable</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Custom callable to solve the <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>-minimization step <a class="reference internal" href="#equation-eq-x-minimization">(1)</a>.</p>
 <p>If provided, <code class="code docutils literal notranslate"><span class="pre">solver</span></code> must have the <a class="reference external" href="https://numpy.org/neps/nep-0020-gufunc-signature-enhancement.html">NumPy signature</a> <code class="docutils literal notranslate"><span class="pre">(n),</span> <span class="pre">(1)</span> <span class="pre">-&gt;</span> <span class="pre">(n)</span></code>.</p>
 </li>
-<li><p><strong>solver_kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>solver_kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Keyword parameters passed to the <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method of sub-iterative <a class="reference internal" href="#pyxu.opt.solver.CG" title="pyxu.opt.solver.CG"><code class="xref py py-class docutils literal notranslate"><span class="pre">CG</span></code></a> or
 <a class="reference internal" href="#pyxu.opt.solver.NLCG" title="pyxu.opt.solver.NLCG"><code class="xref py py-class docutils literal notranslate"><span class="pre">NLCG</span></code></a> solvers.</p>
 <p><code class="code docutils literal notranslate"><span class="pre">solver_kwargs</span></code> is ignored if <code class="code docutils literal notranslate"><span class="pre">solver</span></code> provided.</p>
 </li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.__init__" title="pyxu.abc.Solver.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.__init__()</span></code></a>.</p></li>
 </ul>
@@ -1730,27 +1730,27 @@ Other keyword parameters passed on to <a class="reference internal" href="abc.ht
 <li><p><strong>x0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>)
 –
 (…, N) initial point(s) for the primal variable.</p></li>
-<li><p><strong>z0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>z0</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-attr docutils literal notranslate"><span class="pre">NDArray</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 (…, M) initial point(s) for the dual variable.
 If <code class="docutils literal notranslate"><span class="pre">None</span></code> (default), then use <code class="docutils literal notranslate"><span class="pre">K(x0)</span></code> as the initial point for the dual variable.</p></li>
-<li><p><strong>tau</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>tau</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Primal step size.</p></li>
-<li><p><strong>rho</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
+<li><p><strong>rho</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Real</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>)
 –
 Momentum parameter for relaxation.</p></li>
 <li><p><strong>tuning_strategy</strong> (1, 2, 3)
 –
 Strategy to be employed when setting the hyperparameters (default to 1).
 See base class for more details.</p></li>
-<li><p><strong>solver_kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>solver_kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Keyword parameters passed to the <code class="docutils literal notranslate"><span class="pre">fit()</span></code> method of sub-iterative
 <a class="reference internal" href="#pyxu.opt.solver.CG" title="pyxu.opt.solver.CG"><code class="xref py py-class docutils literal notranslate"><span class="pre">CG</span></code></a> or <a class="reference internal" href="#pyxu.opt.solver.NLCG" title="pyxu.opt.solver.NLCG"><code class="xref py py-class docutils literal notranslate"><span class="pre">NLCG</span></code></a> solvers.</p>
 <p><code class="code docutils literal notranslate"><span class="pre">solver_kwargs</span></code> is ignored if <code class="code docutils literal notranslate"><span class="pre">solver</span></code> was provided in <code class="docutils literal notranslate"><span class="pre">__init__()</span></code>.</p>
 </li>
-<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
+<li><p><strong>**kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a>)
 –
 Other keyword parameters passed on to <a class="reference internal" href="abc.html#pyxu.abc.Solver.fit" title="pyxu.abc.Solver.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyxu.abc.Solver.fit()</span></code></a>.</p></li>
 </ul>
@@ -1842,8 +1842,8 @@ which consists in applying a matrix inverse, for this step.  Otherwise, a sub-it
 <li><p><strong>f</strong> (<a class="reference internal" href="abc.html#pyxu.abc.Func" title="pyxu.abc.operator.Func"><em>Func</em></a><em> | </em><em>None</em>)</p></li>
 <li><p><strong>h</strong> (<a class="reference internal" href="abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><em>ProxFunc</em></a><em> | </em><em>None</em>)</p></li>
 <li><p><strong>K</strong> (<a class="reference internal" href="abc.html#pyxu.abc.DiffMap" title="pyxu.abc.operator.DiffMap"><em>DiffMap</em></a><em> | </em><em>None</em>)</p></li>
-<li><p><strong>solver</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.12)"><em>Callable</em></a><em>[</em><em>[</em><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><em>float</em></a><em>]</em><em>, </em><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a><em>]</em>)</p></li>
-<li><p><strong>solver_kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><em>dict</em></a><em> | </em><em>None</em>)</p></li>
+<li><p><strong>solver</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.13)"><em>Callable</em></a><em>[</em><em>[</em><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>]</em><em>, </em><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a><em>]</em>)</p></li>
+<li><p><strong>solver_kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><em>dict</em></a><em> | </em><em>None</em>)</p></li>
 </ul>
 </dd>
 </dl>
