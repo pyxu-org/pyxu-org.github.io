@@ -181,17 +181,17 @@
     }
     </style>
 
-*********
-Catalogue
-*********
+*******
+Catalog
+*******
 
 
 .. raw:: html
 
-    <h2 style="font-size: 60px; font-weight: bold; display: inline"><span>Catalogue</span></h2>
+    <h2 style="font-size: 60px; font-weight: bold; display: inline"><span>Catalog</span></h2>
 
 
-**Total Registered Plugin Packages: 4**
+**Total Registered Plugin Packages: 2**
 
 .. raw:: html
 
@@ -200,7 +200,7 @@ Catalogue
             
             <span class="badge" style="display: table-row; line-height: 2;">
                 <span style="display: table-cell; float: none; text-align: right;"><span class="badge-left blue" style="float: none; display: inline; text-align: right; border: none">Operator</span></span>
-                <span style="display: table-cell; float: none; text-align: left;"><span class="badge-right" style="float: none; display: inline; text-align: left; border: none">5 plugins in 2 packages </span></span>
+                <span style="display: table-cell; float: none; text-align: left;"><span class="badge-right" style="float: none; display: inline; text-align: left; border: none">0 plugins in 0 packages </span></span>
             </span>
         
             <span class="badge" style="display: table-row; line-height: 2;">
@@ -237,20 +237,26 @@ Catalogue
 
         .. raw:: html
 
-            <h2 style="font-size: 30px;"><a href="pyxu_eigh.html">pyxu_eigh</a></h2>
+            <h2 style="font-size: 30px;"><a href="pyxu-eigh.html">pyxu-eigh</a></h2>
 
             <p class="currentstate">
                 
-                <img class="svg-badge" src="../../_static/plugins/status/status-beta-d6af23.svg" title="Beta: Adds new functionality, not yet ready for production. Testing welcome!">&nbsp;<img class="svg-badge" title="Compatible with Pyxu 2" src="https://img.shields.io/badge/Pyxu-2-007ec6.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAHpAAAB6QHzJ3XIAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAzpJREFUSImtlU1oXFUUx3/nzVemWq1pbQXXIpSaEiPUtiCSTdK4qAhVLFh0VXChKAbSVbCiUFFxoSAB3ZmKH2C0aivigBpR/AJxERS1hGATg9F2JhN999x7XMx7Ly/TaQmZHvhzLoc793e+eCNmxuVsYXT/9vLmwhNRNXqUqpSlGiFVSRQhFWldNAY2DZ7+vtMbUafgWx9/dt/cYt3mFutWFFkwz2jwVsYD3mj55JzmKHzXrA3bSm1oz2UhJ0/Vnvl5dtH29ve/AVAZHyb/sHnDMr96zpshX63UDsx1hEyeqtmeW3cf21TtYX7+XCs5b7nM233u3GaG3ZgHRQlgvlgoUC6VODh8Jw/efw+//n42ybStAgXUEiXn0BnUrA0NABST2I59t/UDcGz8ae69e4Tfzs6yM30oFkLdQwEoCVISpJIoXYCeVjzaWkCqkg7qW0Ciyfdr7+YzuH3vfmYXzlMulSASzEFoBsxoDTlVyPlcJeGCJyz5bFaNz0eujxAOXlws7Np58+rEDEhX3SwREJJWWW7L0p80WzHR8EsUQsA5pd5YXnNpZmaGl2463N7ovOasINNW4SMry5SU+JrSWpT9ZwhcK6+9fdpCCIQQODB4R3bhi+lpAJaW/uHv8xfYtvU6jh45JKzTlj+86wZEz0lFKKoqKSSOHeVyKemKIUBv7xZ6e7fgnM6vFwBw1cgH84CsfDq0L1JVVBV1yntnPskuRVGEmWHJDFTjuUs/eWmrDp75MvJeH1CnuAQ2+c4U3/zwI7v7+hARSEA9PdWBjUAAxMx4buJkMhdP8K3W+RCIm3VEJNPxsUfWPZO8FQFU3Z8h2PbgfQZIt04EQBK/MYsAxh4+skNdq10uNyPnHLFzOOdwsdswJP2s4FR/CsHvCiFkLVNVDOiiiNVKAJ4aPXpLWkG6cS6rSHHOxruGAGisY2sA6nHaatsrL4wfvyKQ5598/EQKWFluZBVpsL82CoDcTFJzzrsQfCmOYywEzIzXJ57d1g3kov94r3pYVfHqUe/p8cVrugFAh0qi5h9TjXA13nsolvtfnThRv+KQRqG3z7t/oeo2v/nyi41uAQDZRzDVoYcea7bHutX/c3lfgmmbsZoAAAAASUVORK5CYII="></p>
+                <img class="svg-badge" src="../../_static/plugins/status/status-planning-d9644d.svg" title="Planning: Not yet ready to use. Developers welcome!">&nbsp;<img class="svg-badge" title="Compatible with Pyxu 1" src="https://img.shields.io/badge/Pyxu-1-007ec6.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAHpAAAB6QHzJ3XIAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAzpJREFUSImtlU1oXFUUx3/nzVemWq1pbQXXIpSaEiPUtiCSTdK4qAhVLFh0VXChKAbSVbCiUFFxoSAB3ZmKH2C0aivigBpR/AJxERS1hGATg9F2JhN999x7XMx7Ly/TaQmZHvhzLoc793e+eCNmxuVsYXT/9vLmwhNRNXqUqpSlGiFVSRQhFWldNAY2DZ7+vtMbUafgWx9/dt/cYt3mFutWFFkwz2jwVsYD3mj55JzmKHzXrA3bSm1oz2UhJ0/Vnvl5dtH29ve/AVAZHyb/sHnDMr96zpshX63UDsx1hEyeqtmeW3cf21TtYX7+XCs5b7nM233u3GaG3ZgHRQlgvlgoUC6VODh8Jw/efw+//n42ybStAgXUEiXn0BnUrA0NABST2I59t/UDcGz8ae69e4Tfzs6yM30oFkLdQwEoCVISpJIoXYCeVjzaWkCqkg7qW0Ciyfdr7+YzuH3vfmYXzlMulSASzEFoBsxoDTlVyPlcJeGCJyz5bFaNz0eujxAOXlws7Np58+rEDEhX3SwREJJWWW7L0p80WzHR8EsUQsA5pd5YXnNpZmaGl2463N7ovOasINNW4SMry5SU+JrSWpT9ZwhcK6+9fdpCCIQQODB4R3bhi+lpAJaW/uHv8xfYtvU6jh45JKzTlj+86wZEz0lFKKoqKSSOHeVyKemKIUBv7xZ6e7fgnM6vFwBw1cgH84CsfDq0L1JVVBV1yntnPskuRVGEmWHJDFTjuUs/eWmrDp75MvJeH1CnuAQ2+c4U3/zwI7v7+hARSEA9PdWBjUAAxMx4buJkMhdP8K3W+RCIm3VEJNPxsUfWPZO8FQFU3Z8h2PbgfQZIt04EQBK/MYsAxh4+skNdq10uNyPnHLFzOOdwsdswJP2s4FR/CsHvCiFkLVNVDOiiiNVKAJ4aPXpLWkG6cS6rSHHOxruGAGisY2sA6nHaatsrL4wfvyKQ5598/EQKWFluZBVpsL82CoDcTFJzzrsQfCmOYywEzIzXJ57d1g3kov94r3pYVfHqUe/p8cVrugFAh0qi5h9TjXA13nsolvtfnThRv+KQRqG3z7t/oeo2v/nyi41uAQDZRzDVoYcea7bHutX/c3lfgmmbsZoAAAAASUVORK5CYII="></p>
 
             <ul class="plugin-info">
 
             
                 <li>
-                    <a href="https://github.com/joanrue/pyxu-eigh" target="_blank">Home page</a>
+                    <a href="https://github.com/AIR-Hub/pyxu-eigh" target="_blank">Home page</a>
                 </li>
             
 
+            
+
+            
+                <li>
+                    <a> Score: 100 % </a>
+                </li>
             
             </ul>
 
@@ -268,42 +274,11 @@ Catalogue
 
         .. raw:: html
 
-            <h2 style="font-size: 30px;"><a href="pyxu_finufft.html">pyxu_finufft</a></h2>
+            <h2 style="font-size: 30px;"><a href="pyxu-gradient-descent.html">pyxu-gradient-descent</a></h2>
 
             <p class="currentstate">
                 
-                <img class="svg-badge" src="../../_static/plugins/status/status-beta-d6af23.svg" title="Beta: Adds new functionality, not yet ready for production. Testing welcome!">&nbsp;<img class="svg-badge" title="Compatible with Pyxu 2" src="https://img.shields.io/badge/Pyxu-2-007ec6.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAHpAAAB6QHzJ3XIAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAzpJREFUSImtlU1oXFUUx3/nzVemWq1pbQXXIpSaEiPUtiCSTdK4qAhVLFh0VXChKAbSVbCiUFFxoSAB3ZmKH2C0aivigBpR/AJxERS1hGATg9F2JhN999x7XMx7Ly/TaQmZHvhzLoc793e+eCNmxuVsYXT/9vLmwhNRNXqUqpSlGiFVSRQhFWldNAY2DZ7+vtMbUafgWx9/dt/cYt3mFutWFFkwz2jwVsYD3mj55JzmKHzXrA3bSm1oz2UhJ0/Vnvl5dtH29ve/AVAZHyb/sHnDMr96zpshX63UDsx1hEyeqtmeW3cf21TtYX7+XCs5b7nM233u3GaG3ZgHRQlgvlgoUC6VODh8Jw/efw+//n42ybStAgXUEiXn0BnUrA0NABST2I59t/UDcGz8ae69e4Tfzs6yM30oFkLdQwEoCVISpJIoXYCeVjzaWkCqkg7qW0Ciyfdr7+YzuH3vfmYXzlMulSASzEFoBsxoDTlVyPlcJeGCJyz5bFaNz0eujxAOXlws7Np58+rEDEhX3SwREJJWWW7L0p80WzHR8EsUQsA5pd5YXnNpZmaGl2463N7ovOasINNW4SMry5SU+JrSWpT9ZwhcK6+9fdpCCIQQODB4R3bhi+lpAJaW/uHv8xfYtvU6jh45JKzTlj+86wZEz0lFKKoqKSSOHeVyKemKIUBv7xZ6e7fgnM6vFwBw1cgH84CsfDq0L1JVVBV1yntnPskuRVGEmWHJDFTjuUs/eWmrDp75MvJeH1CnuAQ2+c4U3/zwI7v7+hARSEA9PdWBjUAAxMx4buJkMhdP8K3W+RCIm3VEJNPxsUfWPZO8FQFU3Z8h2PbgfQZIt04EQBK/MYsAxh4+skNdq10uNyPnHLFzOOdwsdswJP2s4FR/CsHvCiFkLVNVDOiiiNVKAJ4aPXpLWkG6cS6rSHHOxruGAGisY2sA6nHaatsrL4wfvyKQ5598/EQKWFluZBVpsL82CoDcTFJzzrsQfCmOYywEzIzXJ57d1g3kov94r3pYVfHqUe/p8cVrugFAh0qi5h9TjXA13nsolvtfnThRv+KQRqG3z7t/oeo2v/nyi41uAQDZRzDVoYcea7bHutX/c3lfgmmbsZoAAAAASUVORK5CYII="></p>
-
-            <ul class="plugin-info">
-
-            
-                <li>
-                    <a href="https://github.com/pyxu-org/pyxu_finufft" target="_blank">Home page</a>
-                </li>
-            
-
-            
-            </ul>
-
-            <p class="summaryinfo">
-                
-                <span class="badge">
-                    <span class="badge-left blue">Operator</span>
-                    <span class="badge-right">3</span>
-                </span>
-                
-            </p>
-
-    
-    .. grid-item-card::
-
-        .. raw:: html
-
-            <h2 style="font-size: 30px;"><a href="pyxu_gradient_descent.html">pyxu_gradient_descent</a></h2>
-
-            <p class="currentstate">
-                
-                <img class="svg-badge" src="../../_static/plugins/status/status-beta-d6af23.svg" title="Beta: Adds new functionality, not yet ready for production. Testing welcome!">&nbsp;<img class="svg-badge" title="Compatible with Pyxu 2" src="https://img.shields.io/badge/Pyxu-2-007ec6.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAHpAAAB6QHzJ3XIAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAzpJREFUSImtlU1oXFUUx3/nzVemWq1pbQXXIpSaEiPUtiCSTdK4qAhVLFh0VXChKAbSVbCiUFFxoSAB3ZmKH2C0aivigBpR/AJxERS1hGATg9F2JhN999x7XMx7Ly/TaQmZHvhzLoc793e+eCNmxuVsYXT/9vLmwhNRNXqUqpSlGiFVSRQhFWldNAY2DZ7+vtMbUafgWx9/dt/cYt3mFutWFFkwz2jwVsYD3mj55JzmKHzXrA3bSm1oz2UhJ0/Vnvl5dtH29ve/AVAZHyb/sHnDMr96zpshX63UDsx1hEyeqtmeW3cf21TtYX7+XCs5b7nM233u3GaG3ZgHRQlgvlgoUC6VODh8Jw/efw+//n42ybStAgXUEiXn0BnUrA0NABST2I59t/UDcGz8ae69e4Tfzs6yM30oFkLdQwEoCVISpJIoXYCeVjzaWkCqkg7qW0Ciyfdr7+YzuH3vfmYXzlMulSASzEFoBsxoDTlVyPlcJeGCJyz5bFaNz0eujxAOXlws7Np58+rEDEhX3SwREJJWWW7L0p80WzHR8EsUQsA5pd5YXnNpZmaGl2463N7ovOasINNW4SMry5SU+JrSWpT9ZwhcK6+9fdpCCIQQODB4R3bhi+lpAJaW/uHv8xfYtvU6jh45JKzTlj+86wZEz0lFKKoqKSSOHeVyKemKIUBv7xZ6e7fgnM6vFwBw1cgH84CsfDq0L1JVVBV1yntnPskuRVGEmWHJDFTjuUs/eWmrDp75MvJeH1CnuAQ2+c4U3/zwI7v7+hARSEA9PdWBjUAAxMx4buJkMhdP8K3W+RCIm3VEJNPxsUfWPZO8FQFU3Z8h2PbgfQZIt04EQBK/MYsAxh4+skNdq10uNyPnHLFzOOdwsdswJP2s4FR/CsHvCiFkLVNVDOiiiNVKAJ4aPXpLWkG6cS6rSHHOxruGAGisY2sA6nHaatsrL4wfvyKQ5598/EQKWFluZBVpsL82CoDcTFJzzrsQfCmOYywEzIzXJ57d1g3kov94r3pYVfHqUe/p8cVrugFAh0qi5h9TjXA13nsolvtfnThRv+KQRqG3z7t/oeo2v/nyi41uAQDZRzDVoYcea7bHutX/c3lfgmmbsZoAAAAASUVORK5CYII="></p>
+                <img class="svg-badge" src="../../_static/plugins/status/status-planning-d9644d.svg" title="Planning: Not yet ready to use. Developers welcome!">&nbsp;<img class="svg-badge" title="Compatible with Pyxu 1" src="https://img.shields.io/badge/Pyxu-1-007ec6.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAHpAAAB6QHzJ3XIAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAzpJREFUSImtlU1oXFUUx3/nzVemWq1pbQXXIpSaEiPUtiCSTdK4qAhVLFh0VXChKAbSVbCiUFFxoSAB3ZmKH2C0aivigBpR/AJxERS1hGATg9F2JhN999x7XMx7Ly/TaQmZHvhzLoc793e+eCNmxuVsYXT/9vLmwhNRNXqUqpSlGiFVSRQhFWldNAY2DZ7+vtMbUafgWx9/dt/cYt3mFutWFFkwz2jwVsYD3mj55JzmKHzXrA3bSm1oz2UhJ0/Vnvl5dtH29ve/AVAZHyb/sHnDMr96zpshX63UDsx1hEyeqtmeW3cf21TtYX7+XCs5b7nM233u3GaG3ZgHRQlgvlgoUC6VODh8Jw/efw+//n42ybStAgXUEiXn0BnUrA0NABST2I59t/UDcGz8ae69e4Tfzs6yM30oFkLdQwEoCVISpJIoXYCeVjzaWkCqkg7qW0Ciyfdr7+YzuH3vfmYXzlMulSASzEFoBsxoDTlVyPlcJeGCJyz5bFaNz0eujxAOXlws7Np58+rEDEhX3SwREJJWWW7L0p80WzHR8EsUQsA5pd5YXnNpZmaGl2463N7ovOasINNW4SMry5SU+JrSWpT9ZwhcK6+9fdpCCIQQODB4R3bhi+lpAJaW/uHv8xfYtvU6jh45JKzTlj+86wZEz0lFKKoqKSSOHeVyKemKIUBv7xZ6e7fgnM6vFwBw1cgH84CsfDq0L1JVVBV1yntnPskuRVGEmWHJDFTjuUs/eWmrDp75MvJeH1CnuAQ2+c4U3/zwI7v7+hARSEA9PdWBjUAAxMx4buJkMhdP8K3W+RCIm3VEJNPxsUfWPZO8FQFU3Z8h2PbgfQZIt04EQBK/MYsAxh4+skNdq10uNyPnHLFzOOdwsdswJP2s4FR/CsHvCiFkLVNVDOiiiNVKAJ4aPXpLWkG6cS6rSHHOxruGAGisY2sA6nHaatsrL4wfvyKQ5598/EQKWFluZBVpsL82CoDcTFJzzrsQfCmOYywEzIzXJ57d1g3kov94r3pYVfHqUe/p8cVrugFAh0qi5h9TjXA13nsolvtfnThRv+KQRqG3z7t/oeo2v/nyi41uAQDZRzDVoYcea7bHutX/c3lfgmmbsZoAAAAASUVORK5CYII="></p>
 
             <ul class="plugin-info">
 
@@ -313,6 +288,12 @@ Catalogue
                 </li>
             
 
+            
+
+            
+                <li>
+                    <a> Score: 100 % </a>
+                </li>
             
             </ul>
 
@@ -326,37 +307,6 @@ Catalogue
             </p>
 
     
-    .. grid-item-card::
-
-        .. raw:: html
-
-            <h2 style="font-size: 30px;"><a href="pyxu_xrt.html">pyxu_xrt</a></h2>
-
-            <p class="currentstate">
-                
-                <img class="svg-badge" src="../../_static/plugins/status/status-beta-d6af23.svg" title="Beta: Adds new functionality, not yet ready for production. Testing welcome!">&nbsp;<img class="svg-badge" title="Compatible with Pyxu 2" src="https://img.shields.io/badge/Pyxu-2-007ec6.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAHpAAAB6QHzJ3XIAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAzpJREFUSImtlU1oXFUUx3/nzVemWq1pbQXXIpSaEiPUtiCSTdK4qAhVLFh0VXChKAbSVbCiUFFxoSAB3ZmKH2C0aivigBpR/AJxERS1hGATg9F2JhN999x7XMx7Ly/TaQmZHvhzLoc793e+eCNmxuVsYXT/9vLmwhNRNXqUqpSlGiFVSRQhFWldNAY2DZ7+vtMbUafgWx9/dt/cYt3mFutWFFkwz2jwVsYD3mj55JzmKHzXrA3bSm1oz2UhJ0/Vnvl5dtH29ve/AVAZHyb/sHnDMr96zpshX63UDsx1hEyeqtmeW3cf21TtYX7+XCs5b7nM233u3GaG3ZgHRQlgvlgoUC6VODh8Jw/efw+//n42ybStAgXUEiXn0BnUrA0NABST2I59t/UDcGz8ae69e4Tfzs6yM30oFkLdQwEoCVISpJIoXYCeVjzaWkCqkg7qW0Ciyfdr7+YzuH3vfmYXzlMulSASzEFoBsxoDTlVyPlcJeGCJyz5bFaNz0eujxAOXlws7Np58+rEDEhX3SwREJJWWW7L0p80WzHR8EsUQsA5pd5YXnNpZmaGl2463N7ovOasINNW4SMry5SU+JrSWpT9ZwhcK6+9fdpCCIQQODB4R3bhi+lpAJaW/uHv8xfYtvU6jh45JKzTlj+86wZEz0lFKKoqKSSOHeVyKemKIUBv7xZ6e7fgnM6vFwBw1cgH84CsfDq0L1JVVBV1yntnPskuRVGEmWHJDFTjuUs/eWmrDp75MvJeH1CnuAQ2+c4U3/zwI7v7+hARSEA9PdWBjUAAxMx4buJkMhdP8K3W+RCIm3VEJNPxsUfWPZO8FQFU3Z8h2PbgfQZIt04EQBK/MYsAxh4+skNdq10uNyPnHLFzOOdwsdswJP2s4FR/CsHvCiFkLVNVDOiiiNVKAJ4aPXpLWkG6cS6rSHHOxruGAGisY2sA6nHaatsrL4wfvyKQ5598/EQKWFluZBVpsL82CoDcTFJzzrsQfCmOYywEzIzXJ57d1g3kov94r3pYVfHqUe/p8cVrugFAh0qi5h9TjXA13nsolvtfnThRv+KQRqG3z7t/oeo2v/nyi41uAQDZRzDVoYcea7bHutX/c3lfgmmbsZoAAAAASUVORK5CYII="></p>
-
-            <ul class="plugin-info">
-
-            
-                <li>
-                    <a href="https://github.com/pyxu-org/pyxu_xrt" target="_blank">Home page</a>
-                </li>
-            
-
-            
-            </ul>
-
-            <p class="summaryinfo">
-                
-                <span class="badge">
-                    <span class="badge-left blue">Operator</span>
-                    <span class="badge-right">2</span>
-                </span>
-                
-            </p>
-
-    
 
 
 
@@ -364,8 +314,6 @@ Catalogue
    :maxdepth: 1
    :hidden:
 
-   pyxu_eigh
-   pyxu_finufft
-   pyxu_gradient_descent
-   pyxu_xrt
+   pyxu-eigh
+   pyxu-gradient-descent
    

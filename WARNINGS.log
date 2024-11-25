@@ -1,0 +1,200 @@
+/home/sep/Documents/Repositories/pyxu/doc/fair/plugins/pyxu-eigh.rst:164: ERROR: Content block expected for the "raw" directive; none found.
+/home/sep/Documents/Repositories/pyxu/doc/fair/plugins/pyxu-gradient-descent.rst:164: ERROR: Content block expected for the "raw" directive; none found.
+/home/sep/Documents/Repositories/pyxu/doc/fair/howto.rst:2: WARNING: Duplicate explicit target name: "catalogue website".
+/home/sep/Documents/Repositories/pyxu/doc/fair/howto.rst:33: WARNING: invalid syntax (<unknown>, line 2) in document 'fair/howto'
+Parsed source in `python` block:
+concatenations: from pyxu.opt.solver import GradientDescent
+block source:   ModuleNotFoundError: No module named 'pyxu.opt.solver.GradientDescent'
+/home/sep/Documents/Repositories/pyxu/doc/fair/plugins_preview/index.rst:1118: WARNING: toctree contains reference to nonexisting document 'fair/plugins_preview/TokemakRec'
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:29: WARNING: Inline interpreted text or phrase reference start-string without end-string.
+/home/sep/Documents/Repositories/pyxu/doc/fair/score.rst:29: WARNING: Bullet list ends without a blank line; unexpected unindent.
+/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.jacobian'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc.grad'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc.prox'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.adjoint'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:38: WARNING: File not found: 'api/abc.html#pyxu-abc-arithmetic'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:40: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.Rule'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:41: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.ScaleRule'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:42: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.ArgScaleRule'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:43: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.ArgShiftRule'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:44: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.AddRule'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:45: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.ChainRule'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:46: WARNING: File not found: 'api/abc.html#pyxu.abc.arithmetic.TransposeRule'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:48: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:48: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:57: WARNING: File not found: 'api/operator/blocks.html#pyxu.operator.block_diag'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algebra.ipynb:57: WARNING: File not found: 'api/operator/blocks.html#pyxu.operator.stack'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:17: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.CG'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:29: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.PGD'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:58: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.CondatVu'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:58: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.PD3O'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:58: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.ADMM'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:58: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.ChambollePock'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:97: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.DouglasRachford'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:99: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.Adam'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:151: WARNING: File not found: 'api/opt.stop.html'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:168: WARNING: File not found: 'api/abc.html#pyxu.abc.Solver'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:168: WARNING: File not found: 'api/abc.html#pyxu.abc.Solver.m_init'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:168: WARNING: File not found: 'api/abc.html#pyxu.abc.Solver.m_step'
+/home/sep/Documents/Repositories/pyxu/doc/guide/algorithms.ipynb:172: WARNING: File not found: 'api/abc.html#pyxu.abc.Solver.fit'
+/home/sep/Documents/Repositories/pyxu/doc/examples/contributing.ipynb:42: WARNING: invalid syntax (<unknown>, line 5) in document 'examples/contributing'
+Parsed source in `python` block:
+concatenations: try:
+    from pyxu.opt.solver import GradientDescent
+except ImportError as e:
+    print(e)
+block source:   !pip install pyxu-gradient-descent
+/home/sep/Documents/Repositories/pyxu/doc/examples/deblur.ipynb:278: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.PD3O'
+WARNING: missing attribute to_sciop in object pyxu.abc.LinOp
+/home/sep/Documents/Repositories/pyxu/src/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.asarray:8: WARNING: Inline emphasis start-string without end-string.
+/home/sep/Documents/Repositories/pyxu/src/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.asarray:8: WARNING: Inline emphasis start-string without end-string.
+/home/sep/Documents/Repositories/pyxu/src/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.from_array:3: WARNING: Inline emphasis start-string without end-string.
+/home/sep/Documents/Repositories/pyxu/src/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.from_array:3: WARNING: Inline emphasis start-string without end-string.
+/home/sep/Documents/Repositories/pyxu/doc/guide/hpc.ipynb:214: WARNING: File not found: 'api/runtime.html#pyxu.runtime.Precision'
+/home/sep/Documents/Repositories/pyxu/doc/guide/lipschitz.ipynb:30: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.lipschitz'
+/home/sep/Documents/Repositories/pyxu/doc/guide/lipschitz.ipynb:30: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.diff_lipschitz'
+/home/sep/Documents/Repositories/pyxu/doc/guide/lipschitz.ipynb:40: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.estimate_lipschitz'
+/home/sep/Documents/Repositories/pyxu/doc/guide/lipschitz.ipynb:51: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
+/home/sep/Documents/Repositories/pyxu/doc/guide/lipschitz.ipynb:285: WARNING: File not found: 'api/index.html'
+/home/sep/Documents/Repositories/pyxu/doc/guide/lipschitz.ipynb:285: WARNING: File not found: 'api/abc/arithmetic.html'
+/home/sep/Documents/Repositories/pyxu/doc/examples/xray.ipynb:11: WARNING: File not found: 'intro/tomo.html'
+/home/sep/Documents/Repositories/pyxu/doc/guide/bayes.ipynb:47: WARNING: File not found: 'guide/fwdops.html'
+/home/sep/Documents/Repositories/pyxu/doc/guide/bayes.ipynb:62: WARNING: File not found: 'guide/funcs.html'
+/home/sep/Documents/Repositories/pyxu/doc/guide/bayes.ipynb:92: WARNING: File not found: 'guide/funcs.html'
+/home/sep/Documents/Repositories/pyxu/doc/guide/diff_ops.ipynb:11: WARNING: File not found: 'api/operator/linop.html#derivatives'
+/home/sep/Documents/Repositories/pyxu/doc/guide/diff_ops.ipynb:18: WARNING: File not found: 'api/operator/linop.html#pyxu.operator.PartialDerivative'
+/home/sep/Documents/Repositories/pyxu/doc/guide/diff_ops.ipynb:501: WARNING: File not found: 'api/operator/linop.html#pyxu.operator.Gradient'
+/home/sep/Documents/Repositories/pyxu/doc/guide/diff_ops.ipynb:511: WARNING: File not found: 'api/operator/linop.html#pyxu.operator.Hessian'
+/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:142: WARNING: Title underline too short.
+
+Implicit Functionals: The Undercover Agents 🕵️‍♀️
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:142: WARNING: Title underline too short.
+
+Implicit Functionals: The Undercover Agents 🕵️‍♀️
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:27: WARNING: File not found: 'api/operator.interop.html#pyxu.operator.interop.from_source'
+/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:27: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'
+/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:27: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc.grad'
+/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:27: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc.prox'
+/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:29: WARNING: File not found: 'api/index.html'
+/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:34: WARNING: File not found: 'api/abc.html#pyxu.abc.Func'
+/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:34: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'
+/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:53: WARNING: File not found: 'api/abc.html#pyxu.abc.Operator.argshift'
+/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:66: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc'
+/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:66: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc.grad'
+/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:85: WARNING: File not found: 'api/operator.interop.html#pyxu.operator.interop.from_torch'
+/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:85: WARNING: File not found: 'api/operator.interop.html#pyxu.operator.interop.from_jax'
+/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:90: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc'
+/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:90: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc.prox'
+/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:110: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc.moreau_envelope'
+/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:137: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxDiffFunc'
+/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:137: WARNING: File not found: 'api/abc.html#pyxu.abc.LinFunc'
+/home/sep/Documents/Repositories/pyxu/doc/guide/funcs.ipynb:137: WARNING: File not found: 'api/abc.html#pyxu.abc.QuadraticFunc'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:11: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:17: WARNING: File not found: 'api/operator.interop.html#general'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:17: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:17: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.adjoint'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:17: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.jacobian'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:19: WARNING: File not found: 'api/index.html'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:46: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:46: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:46: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.adjoint'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:55: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:66: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.adjoint'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:100: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:102: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.lipschitz'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:102: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.estimate_lipschitz'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:108: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.svdvals'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:110: WARNING: File not found: 'api/abc.html#pyxu.abc.SquareOp.trace'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:112: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.pinv'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:118: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:118: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.from_array'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:124: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:129: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:134: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:134: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:136: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.jacobian'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:146: WARNING: File not found: 'api/operator.interop.html#pyxu.operator.interop.from_torch'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:146: WARNING: File not found: 'api/operator.interop.html#pyxu.operator.interop.from_jax'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:148: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:153: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
+/home/sep/Documents/Repositories/pyxu/doc/guide/fwdops.ipynb:153: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap'
+/home/sep/Documents/Repositories/pyxu/doc/intro/tomo.ipynb:292: WARNING: File not found: 'api/abc.html#pyxu.abc.Operator.expr'
+/home/sep/Documents/Repositories/pyxu/doc/intro/tomo.ipynb:459: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.pinv'
+/home/sep/Documents/Repositories/pyxu/doc/intro/tomo.ipynb:459: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
+/home/sep/Documents/Repositories/pyxu/doc/intro/tomo.ipynb:689: WARNING: File not found: 'api/operator/linop.html#pyxu.operator.Gradient'
+/home/sep/Documents/Repositories/pyxu/doc/intro/tomo.ipynb:691: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxFunc.moreau_envelope'
+/home/sep/Documents/Repositories/pyxu/doc/intro/tomo.ipynb:700: WARNING: File not found: 'api/operator/func.html#pyxu.operator.PositiveL1Norm'
+/home/sep/Documents/Repositories/pyxu/doc/intro/tomo.ipynb:709: WARNING: File not found: 'api/operator/func.html#pyxu.operator.SquaredL2Norm'
+/home/sep/Documents/Repositories/pyxu/doc/intro/tomo.ipynb:710: WARNING: File not found: 'api/abc.html#pyxu.abc.Operator.argshift'
+/home/sep/Documents/Repositories/pyxu/doc/intro/tomo.ipynb:722: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.estimate_diff_lipschitz'
+/home/sep/Documents/Repositories/pyxu/doc/intro/tomo.ipynb:946: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxDiffFunc'
+WARNING: missing attribute relative_indices in object pyxu.operator.Stencil
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Divergence:77: WARNING: Exception occurred in plotting linop-12
+ from /home/sep/Documents/Repositories/pyxu/doc/api/operator/linop.rst:
+Traceback (most recent call last):
+  File "/home/sep/tools/miniconda3/envs/pyxu/lib/python3.12/site-packages/matplotlib/sphinxext/plot_directive.py", line 552, in _run_code
+    exec(code, ns)
+  File "<string>", line 14, in <module>
+  File "/home/sep/Documents/Repositories/pyxu/src/pyxu/abc/operator.py", line 337, in __mul__
+    return arithmetic.ChainRule(lhs=self, rhs=other).op()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sep/Documents/Repositories/pyxu/src/pyxu/abc/arithmetic.py", line 991, in __init__
+    assert lhs.dim_shape == rhs.codim_shape, "Operator dimensions are not compatible."
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Operator dimensions are not compatible.
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/ufunc.py:docstring of pyxu.operator.ufunc.Gaussian:1: WARNING: duplicate object description of pyxu.operator.Gaussian, other instance in api/operator/linop, use :no-index: for one of them
+/home/sep/Documents/Repositories/pyxu/src/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ADMM:152: WARNING: Exception occurred in plotting opt-solver-3
+ from /home/sep/Documents/Repositories/pyxu/doc/api/opt.solver.rst:
+Traceback (most recent call last):
+  File "/home/sep/tools/miniconda3/envs/pyxu/lib/python3.12/site-packages/matplotlib/sphinxext/plot_directive.py", line 552, in _run_code
+    exec(code, ns)
+  File "<string>", line 29, in <module>
+TypeError: SquaredL2Norm.__init__() got an unexpected keyword argument 'dim'
+/home/sep/Documents/Repositories/pyxu/doc/examples/GALLERY_HEADER.rst: WARNING: document isn't included in any toctree
+/home/sep/Documents/Repositories/pyxu/doc/examples/contributing.ipynb: WARNING: document isn't included in any toctree
+/home/sep/Documents/Repositories/pyxu/doc/examples/deblur.ipynb: WARNING: document isn't included in any toctree
+/home/sep/Documents/Repositories/pyxu/doc/examples/images/GALLERY_HEADER.rst: WARNING: document isn't included in any toctree
+/home/sep/Documents/Repositories/pyxu/doc/examples/stencils.ipynb: WARNING: document isn't included in any toctree
+/home/sep/Documents/Repositories/pyxu/doc/examples/xray.ipynb: WARNING: document isn't included in any toctree
+/home/sep/Documents/Repositories/pyxu/doc/fair/plugins_preview/TokamakRec.rst: WARNING: document isn't included in any toctree
+/home/sep/Documents/Repositories/pyxu/doc/references.rst:5: WARNING: Citation [ProxAlg] is not referenced.
+/home/sep/Documents/Repositories/pyxu/doc/references.rst:6: WARNING: Citation [FirstOrd] is not referenced.
+/home/sep/Documents/Repositories/pyxu/doc/references.rst:7: WARNING: Citation [OnKerLearn] is not referenced.
+/home/sep/Documents/Repositories/pyxu/doc/references.rst:8: WARNING: Citation [ProxSplit] is not referenced.
+/home/sep/Documents/Repositories/pyxu/doc/references.rst:19: WARNING: Citation [P2] is not referenced.
+/home/sep/Documents/Repositories/pyxu/doc/references.rst:20: WARNING: Citation [GaussProcesses] is not referenced.
+/home/sep/Documents/Repositories/pyxu/doc/references.rst:21: WARNING: Citation [SubGauss] is not referenced.
+/home/sep/Documents/Repositories/pyxu/doc/references.rst:22: WARNING: Citation [FINUFFT] is not referenced.
+/home/sep/Documents/Repositories/pyxu/doc/references.rst:23: WARNING: Citation [cuFINUFFT] is not referenced.
+/home/sep/Documents/Repositories/pyxu/doc/references.rst:25: WARNING: Citation [PoCS_Dykstra] is not referenced.
+/home/sep/Documents/Repositories/pyxu/doc/references.rst:29: WARNING: Citation [UQ_MCMC] is not referenced.
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/interop/jax.py:docstring of pyxu.operator.interop.jax._from_jax:: WARNING: py:class reference target not found: pyxu.operator.interop.jax.JaxArray
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/interop/jax.py:docstring of pyxu.operator.interop.jax._to_jax:: WARNING: py:class reference target not found: pyxu.operator.interop.jax.JaxArray
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:33: WARNING: py:class reference target not found: -----
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:34: WARNING: py:class reference target not found: * If provided
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:34: WARNING: py:class reference target not found: arithmetic methods must abide exactly
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:34: WARNING: py:class reference target not found: the interface below
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:46: WARNING: py:class reference target not found: * Auto-vectorization consists in decorating `kwargs
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:48: WARNING: py:class reference target not found: * Arithmetic methods are **not currently JIT-ed** even if `jit
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:48: WARNING: py:class reference target not found: the
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:50: WARNING: py:class reference target not found: * For :py:class:`~pyxu.abc.DiffMap
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:50: WARNING: py:class reference target not found: the methods :py:meth:`~pyxu.abc.DiffMap.jacobian
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:57: WARNING: py:class reference target not found: . Warning::
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/linop/pad.py:docstring of pyxu.operator.linop.pad.Pad.__init__:10: WARNING: py:class reference target not found: pyxu.operator.linop.pad.Pad.WidthSpec
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/linop/fft/czt.py:docstring of pyxu.operator.linop.fft.czt.CZT.__init__:6: WARNING: py:class reference target not found: list(int)
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/linop/fft/czt.py:docstring of pyxu.operator.linop.fft.czt.CZT.__init__:8: WARNING: py:class reference target not found: list(complex)
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/linop/fft/czt.py:docstring of pyxu.operator.linop.fft.czt.CZT.__init__:10: WARNING: py:class reference target not found: list(complex)
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.MovingAverage:30: WARNING: py:class reference target not found: pyxu.operator.linop.filter.IndexSpec
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.MovingAverage:76: WARNING: py:class reference target not found: pyxu.operator.GaussianFilter
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: (Integer
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: Integer)
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: ((Integer
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: Integer)
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: (Integer
+/home/sep/Documents/Repositories/pyxu/src/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: Integer))
+/home/sep/Documents/Repositories/pyxu/doc/examples/index.rst:46: WARNING: toctree contains reference to document 'examples/images/index' that doesn't have a title: no link will be generated
+/home/sep/Documents/Repositories/pyxu/doc/examples/index.rst:46: WARNING: toctree contains reference to document 'examples/images/index' that doesn't have a title: no link will be generated
+/home/sep/Documents/Repositories/pyxu/doc/examples/contributing.ipynb:42: WARNING: Lexing literal_block '!pip install pyxu-gradient-descent' as "python" resulted in an error at token: '!'. Retrying in relaxed mode.

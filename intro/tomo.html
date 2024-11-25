@@ -33,7 +33,7 @@
 <!-- Pre-loaded scripts that we'll load fully later -->
 <link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
 <link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
-<script src="../_static/documentation_options.js?v=89f91371"></script>
+<script src="../_static/documentation_options.js?v=bfe059fb"></script>
 <script src="../_static/doctools.js?v=9a2dae69"></script>
 <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
 <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -134,7 +134,7 @@ document.write(`
 `);
 </script>
 </div>
-<div class="navbar-item"><strong> Pyxu v2.0 </strong></div>
+<div class="navbar-item"><strong> Pyxu v2.0.1 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
 <a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/pyxu-org/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
@@ -212,7 +212,7 @@ document.write(`
 </nav></div>
 </div>
 <div class="sidebar-header-items__end">
-<div class="navbar-item"><strong> Pyxu v2.0 </strong></div>
+<div class="navbar-item"><strong> Pyxu v2.0.1 </strong></div>
 <div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
 <li class="nav-item">
 <a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/pyxu-org/pyxu" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-github"></i></span>
@@ -299,7 +299,7 @@ document.write(`
 </ul>
 <p>The figure below juxtaposes two types of sinograms for a specific test object, known as a phantom: one represents the idealized sinogram that Radon-based reconstruction algorithms typically assume, and the other illustrates the non-idealized sinogram as captured by the instrument.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seed</span> <span class="o">=</span> <span class="mi">0</span>
@@ -353,7 +353,7 @@ document.write(`
 <p>In this section, we explore what happens when we naively apply <code class="docutils literal notranslate"><span class="pre">iradon()</span></code><a class="reference external" href="https://scikit-image.org/docs/stable/api/skimage.transform.html#skimage.transform.iradon">🔗</a> from <code class="docutils literal notranslate"><span class="pre">scikit-image</span></code>, which implements the <em>Filtered Back Projection (FBP)</em> algorithm, without accounting for the non-idealities inherent to our tomographic setup. Despite the algorithm’s effectiveness in idealized scenarios, we observe that our reconstructed image is riddled with severe artifacts.</p>
 <p>We attempt to mitigate these artifacts by filling in the gaps in the sinogram through matched filtering. However, as can be seen below, this approach proves insufficient for handling the complex distortions caused by the non-ideal conditions in our setup. This section serves as a poignant illustration of the limitations of using off-the-shelf Radon transform methods in scenarios that deviate from their underlying assumptions.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fbp_ideal</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">iradon</span><span class="p">(</span><span class="n">radon_image</span><span class="o">=</span><span class="n">ideal_sino</span><span class="p">,</span> <span class="n">filter_name</span><span class="o">=</span><span class="s2">"hamming"</span><span class="p">)</span>
@@ -393,13 +393,13 @@ document.write(`
 </section>
 <section id="Pyxu's-Modularity-to-the-Rescue">
 <h2>Pyxu’s Modularity to the Rescue<a class="headerlink" href="#Pyxu's-Modularity-to-the-Rescue" title="Link to this heading">#</a></h2>
-<p>We now turn our attention to how Pyxu addresses the limitations encountered when using <code class="docutils literal notranslate"><span class="pre">iradon()</span></code><a class="reference external" href="https://scikit-image.org/docs/stable/api/skimage.transform.html#skimage.transform.iradon">🔗</a> for reconstruction in non-ideal conditions. Unlike monolithic approaches, Pyxu’s microservice architecture thrives on modularity, allowing us to decompose the data model into a sequence of simple linear operators: the Radon transform (<span class="math notranslate nohighlight">\(R\)</span>), followed by filtering (<span class="math notranslate nohighlight">\(F\)</span>), masking (<span class="math notranslate nohighlight">\(M\)</span>),
-and finally tapering (<span class="math notranslate nohighlight">\(T\)</span>).</p>
+<p>We now turn our attention to how Pyxu addresses the limitations encountered when using <code class="docutils literal notranslate"><span class="pre">iradon()</span></code><a class="reference external" href="https://scikit-image.org/docs/stable/api/skimage.transform.html#skimage.transform.iradon">🔗</a> for reconstruction in non-ideal conditions. Unlike monolithic approaches, Pyxu’s microservice architecture thrives on modularity, allowing us to decompose the data model into a sequence of simple linear operators: the Radon transform (<span class="math notranslate nohighlight">\(R\)</span>), followed by filtering (<span class="math notranslate nohighlight">\(F\)</span>), masking
+(<span class="math notranslate nohighlight">\(M\)</span>), and finally tapering (<span class="math notranslate nohighlight">\(T\)</span>).</p>
 <div class="math notranslate nohighlight">
 \[\Phi= T \circ M \circ F \circ R\]</div>
 <p>Here is a code snippet detailing the construction of such an operator with Pyxu:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyxu.abc</span> <span class="k">as</span> <span class="nn">pxa</span>
@@ -408,28 +408,36 @@ and finally tapering (<span class="math notranslate nohighlight">\(T\)</span>).<
 <span class="kn">import</span> <span class="nn">skimage.transform</span> <span class="k">as</span> <span class="nn">skt</span>
 
 <span class="c1"># Radon Operator (imported from `skt` since Pyxu did not ship with a Radon transform at the time of this writing.)</span>
-<span class="n">Radon</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator.interop.html#pyxu.operator.interop.from_source" title="pyxu.operator.interop.from_source"><span class="n">from_source</span></a><span class="p">(</span><span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
-                    <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">sino</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">phantom</span><span class="o">.</span><span class="n">size</span><span class="p">),</span>
-                    <span class="n">apply</span><span class="o">=</span><span class="k">lambda</span> <span class="n">_</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">skt</span><span class="o">.</span><span class="n">radon</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span>
-                                                   <span class="n">theta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="n">angles</span><span class="p">),</span>
-                                                   <span class="n">circle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span>
-                    <span class="n">adjoint</span><span class="o">=</span><span class="k">lambda</span> <span class="n">_</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">skt</span><span class="o">.</span><span class="n">iradon</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">sino</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span>
-                                                      <span class="n">filter_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                                                      <span class="n">circle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span>
-                    <span class="n">vectorize</span><span class="o">=</span><span class="p">[</span><span class="s2">"apply"</span><span class="p">,</span> <span class="s2">"adjoint"</span><span class="p">],</span>
-                    <span class="n">vmethod</span><span class="o">=</span><span class="s2">"scan"</span><span class="p">,</span>
-                    <span class="n">enforce_precision</span><span class="o">=</span><span class="p">[</span><span class="s2">"apply"</span><span class="p">,</span> <span class="s2">"adjoint"</span><span class="p">])</span>
+<span class="n">Radon</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator.interop.html#pyxu.operator.interop.from_source" title="pyxu.operator.interop.from_source"><span class="n">from_source</span></a><span class="p">(</span>
+    <span class="bp">cls</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.LinOp" title="pyxu.abc.operator.LinOp"><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span></a><span class="p">,</span>
+    <span class="n">dim_shape</span><span class="o">=</span><span class="n">phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
+    <span class="n">codim_shape</span><span class="o">=</span><span class="n">sino</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
+    <span class="n">apply</span><span class="o">=</span><span class="k">lambda</span> <span class="n">_</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">skt</span><span class="o">.</span><span class="n">radon</span><span class="p">(</span>
+        <span class="n">arr</span><span class="p">,</span>
+        <span class="n">theta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="n">angles</span><span class="p">),</span>
+        <span class="n">circle</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="n">adjoint</span><span class="o">=</span><span class="k">lambda</span> <span class="n">_</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">skt</span><span class="o">.</span><span class="n">iradon</span><span class="p">(</span>
+        <span class="n">arr</span><span class="p">,</span>
+        <span class="n">filter_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">circle</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="n">vectorize</span><span class="o">=</span><span class="p">[</span><span class="s2">"apply"</span><span class="p">,</span> <span class="s2">"adjoint"</span><span class="p">],</span>
+<span class="p">)</span>
 
 <span class="c1"># 1D Filtering</span>
-<span class="n">boxcar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">signal</span><span class="o">.</span><span class="n">get_window</span><span class="p">(</span><span class="s2">"boxcar"</span><span class="p">,</span> <span class="n">wsize</span><span class="p">));</span> <span class="n">boxcar</span> <span class="o">/=</span> <span class="n">wsize</span>
-<a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Stencil" title="pyxu.operator.linop.stencil.stencil.Stencil"><span class="n">BoxCar1D</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Stencil" title="pyxu.operator.linop.stencil.stencil.Stencil"><span class="n">pxo</span><span class="o">.</span><span class="n">Stencil</span></a><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="p">[</span><span class="n">boxcar</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">])],</span> <span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="n">wsize</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">arg_shape</span><span class="o">=</span><span class="n">sino</span><span class="o">.</span><span class="n">shape</span><span class="p">,)</span>
+<span class="n">boxcar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">signal</span><span class="o">.</span><span class="n">get_window</span><span class="p">(</span><span class="s2">"boxcar"</span><span class="p">,</span> <span class="n">wsize</span><span class="p">))</span>
+<span class="n">boxcar</span> <span class="o">/=</span> <span class="n">wsize</span>
+<a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Stencil" title="pyxu.operator.linop.stencil.stencil.Stencil"><span class="n">BoxCar1D</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Stencil" title="pyxu.operator.linop.stencil.stencil.Stencil"><span class="n">pxo</span><span class="o">.</span><span class="n">Stencil</span></a><span class="p">(</span>
+    <span class="n">dim_shape</span><span class="o">=</span><span class="n">sino</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
+    <span class="n">kernel</span><span class="o">=</span><span class="p">[</span><span class="n">boxcar</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">])],</span>
+    <span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="n">wsize</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+<span class="p">)</span>
 
 <span class="c1"># Partial Masking</span>
-<span class="n">Mask</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.DiagonalOp" title="pyxu.operator.DiagonalOp"><span class="n">pxo</span><span class="o">.</span><span class="n">DiagonalOp</span></a><span class="p">(</span><span class="n">mask</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
+<span class="n">Mask</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.DiagonalOp" title="pyxu.operator.DiagonalOp"><span class="n">pxo</span><span class="o">.</span><span class="n">DiagonalOp</span></a><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
 
 <span class="c1"># Tapering</span>
 <span class="n">taper</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">signal</span><span class="o">.</span><span class="n">get_window</span><span class="p">(</span><span class="s2">"hamming"</span><span class="p">,</span> <span class="n">sino</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">sino</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-<span class="n">Taper</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.DiagonalOp" title="pyxu.operator.DiagonalOp"><span class="n">pxo</span><span class="o">.</span><span class="n">DiagonalOp</span></a><span class="p">(</span><span class="n">taper</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
+<span class="n">Taper</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.DiagonalOp" title="pyxu.operator.DiagonalOp"><span class="n">pxo</span><span class="o">.</span><span class="n">DiagonalOp</span></a><span class="p">(</span><span class="n">taper</span><span class="p">)</span>
 
 <span class="c1"># Compose operators</span>
 <span class="n">Phi</span> <span class="o">=</span> <span class="n">Taper</span> <span class="o">*</span> <span class="n">Mask</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Stencil" title="pyxu.operator.linop.stencil.stencil.Stencil"><span class="n">BoxCar1D</span></a> <span class="o">*</span> <span class="n">Radon</span>
@@ -442,7 +450,7 @@ and finally tapering (<span class="math notranslate nohighlight">\(T\)</span>).<
 libraries when available. Pyxu is designed to stitch these disparate elements together into a seamless, modular workflow.</p>
 <p>Internally, Pyxu maintains a detailed record of the composition chains and arithmetic operations that define each operator. This comprehensive tracking is made accessible through the operator’s <code class="docutils literal notranslate"><span class="pre">expr()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Operator.expr">🔗</a> method, which can reveal the intricate web of calculations and transformations that the operator encompasses.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><span class="n">Phi</span><span class="o">.</span><span class="n">expr</span><span class="p">())</span>
@@ -454,26 +462,26 @@ libraries when available. Pyxu is designed to stitch these disparate elements to
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[compose, ==&gt; LinOp(18000, 40000)
-.[compose, ==&gt; SquareOp(18000, 18000)
-..[compose, ==&gt; SquareOp(18000, 18000)
-...DiagonalOp(18000, 18000),
-...DiagonalOp(18000, 18000)],
-..Stencil(18000, 18000)],
-.LinOp(18000, 40000)]
+[compose, ==&gt; LinOp(dim=(200, 200), codim=(200, 90))
+.[compose, ==&gt; SquareOp(dim=(200, 90), codim=(200, 90))
+..[compose, ==&gt; SquareOp(dim=(200, 90), codim=(200, 90))
+...DiagonalOp(dim=(200, 90), codim=(200, 90)),
+...DiagonalOp(dim=(200, 90), codim=(200, 90))],
+..Stencil(dim=(200, 90), codim=(200, 90))],
+.LinOp(dim=(200, 200), codim=(200, 90))]
 </pre></div></div>
 </div>
 <p>We can now assess the effectiveness of our composite operator <span class="math notranslate nohighlight">\(\Phi\)</span> in replicating the real-world acquisition setup. By juxtaposing the sinogram predicted by <span class="math notranslate nohighlight">\(\Phi\)</span> with the one actually measured, we find that the two are nearly indistinguishable, aside from minor noise variations. This close resemblance provides strong validation for the accuracy of our custom tomographic system model.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predicted_sino</span> <span class="o">=</span> <span class="n">Phi</span><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">sino</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predicted_sino</span> <span class="o">=</span> <span class="n">Phi</span><span class="p">(</span><span class="n">phantom</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
@@ -512,13 +520,14 @@ libraries when available. Pyxu is designed to stitch these disparate elements to
 </center><p>In Pyxu, this task is greatly simplified by the <code class="docutils literal notranslate"><span class="pre">pinv()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.LinOp.pinv">🔗</a> (pseudoinverse) method provided by <code class="docutils literal notranslate"><span class="pre">LinOp</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.LinOp">🔗</a> instances. The <code class="docutils literal notranslate"><span class="pre">pinv()</span></code> method allows us to implement simple reconstruction techniques without getting lost in the details.</p>
 <p>The following code snippet illustrates its application in our tomographic setting. For the sake of this demonstration, we employ a custom stopping criterion (relative error smaller than <span class="math notranslate nohighlight">\(10^{-3}\)</span> and 500 iterations max) and incorporate a dampening factor of 4 to improve the algorithm’s resilience to noise and numerical instability.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyxu.opt.stop</span> <span class="k">as</span> <span class="nn">pxst</span>
 
 <span class="n">stop_crit</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/opt.stop.html#pyxu.opt.stop.RelError" title="pyxu.opt.stop.RelError"><span class="n">pxst</span><span class="o">.</span><span class="n">RelError</span></a><span class="p">(</span><span class="n">eps</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">var</span><span class="o">=</span><span class="s2">"x"</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">satisfy_all</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">|</span> <a class="sphinx-codeautolink-a" href="../api/opt.stop.html#pyxu.opt.stop.MaxIter" title="pyxu.opt.stop.MaxIter"><span class="n">pxst</span><span class="o">.</span><span class="n">MaxIter</span></a><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
-<span class="n">pinv_solution</span> <span class="o">=</span> <span class="n">Phi</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">sino</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">damp</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="n">pinv_solution</span> <span class="o">=</span> <span class="n">Phi</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">sino</span><span class="p">,</span>
+                         <span class="n">damp</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
                          <span class="n">kwargs_init</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#dict" title="dict"><span class="nb">dict</span></a><span class="p">(</span><span class="n">show_progress</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">50</span><span class="p">),</span>
                          <span class="n">kwargs_fit</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#dict" title="dict"><span class="nb">dict</span></a><span class="p">(</span><span class="n">stop_crit</span><span class="o">=</span><span class="n">stop_crit</span><span class="p">))</span>
 </pre></div>
@@ -529,19 +538,21 @@ libraries when available. Pyxu is designed to stitch these disparate elements to
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-INFO:/tmp/pyxu_wigw3osu:[2023-09-05 08:18:58.882946] Iteration 0
+INFO:/tmp/pyxu_qc5r9mhj:[2024-11-25 10:02:56.525450] Iteration 0
         iteration: 0
-        RelError[x]: 0.0
+        RelError[x]_min: 0.0
+        RelError[x]_max: 0.0
         N_iter: 1.0
-INFO:/tmp/pyxu_wigw3osu:[2023-09-05 08:19:01.037832] Iteration 18
-        iteration: 18
-        RelError[x]: 0.0008930069037400444
-        N_iter: 19.0
-INFO:/tmp/pyxu_wigw3osu:[2023-09-05 08:19:01.038596] Stopping Criterion satisfied -&gt; END
+INFO:/tmp/pyxu_qc5r9mhj:[2024-11-25 10:03:00.025760] Iteration 41
+        iteration: 41
+        RelError[x]_min: 3.835706964580823e-06
+        RelError[x]_max: 0.0009977133948278233
+        N_iter: 42.0
+INFO:/tmp/pyxu_qc5r9mhj:[2024-11-25 10:03:00.026403] Stopping Criterion satisfied -&gt; END
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
@@ -586,22 +597,26 @@ setup, the MAP estimate is defined as:</p>
 \[\hat{f} \in \arg\min_{f\geq 0} \frac{1}{2\sigma^2}\|g - \Phi(f)\|_2^2 +  \lambda\|\nabla f\|_{1} + \mu \|f\|_1.\]</div>
 <p>In Pyxu, the MAP estimate can be obtained as follows. (For simplicity, we smooth the TV term.)</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><span class="n">Gradient</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">SquaredL2Norm</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.L1Norm" title="pyxu.operator.func.norm.L1Norm"><span class="n">L1Norm</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.PositiveL1Norm" title="pyxu.operator.func.norm.PositiveL1Norm"><span class="n">PositiveL1Norm</span></a>
 
 <span class="c1"># TV prior</span>
-<span class="n">grad</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><span class="n">Gradient</span></a><span class="p">(</span><span class="n">arg_shape</span><span class="o">=</span><span class="n">phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">accuracy</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'constant'</span><span class="p">,</span> <span class="n">diff_method</span><span class="o">=</span><span class="s1">'fd'</span><span class="p">)</span>
+<span class="n">grad</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><span class="n">Gradient</span></a><span class="p">(</span>
+    <span class="n">dim_shape</span><span class="o">=</span><span class="n">phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
+    <span class="n">accuracy</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s1">'constant'</span><span class="p">,</span>
+    <span class="n">diff_method</span><span class="o">=</span><span class="s1">'fd'</span><span class="p">)</span>
 <span class="n">lambda_</span><span class="o">=</span> <span class="mf">0.05</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">huber_norm</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.L1Norm" title="pyxu.operator.func.norm.L1Norm"><span class="n">L1Norm</span></a><span class="p">(</span><span class="n">grad</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">moreau_envelope</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>  <span class="c1"># We smooth the L1 norm to facilitate optimisation</span>
+<span class="n">huber_norm</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.L1Norm" title="pyxu.operator.func.norm.L1Norm"><span class="n">L1Norm</span></a><span class="p">(</span><span class="n">grad</span><span class="o">.</span><span class="n">codim_shape</span><span class="p">)</span><span class="o">.</span><span class="n">moreau_envelope</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>  <span class="c1"># We smooth the L1 norm to facilitate optimisation</span>
 <span class="n">tv_prior</span> <span class="o">=</span> <span class="n">lambda_</span> <span class="o">*</span> <span class="n">huber_norm</span> <span class="o">*</span> <span class="n">grad</span>
 
 <span class="c1"># Positivity + L1 norm</span>
-<span class="n">posL1</span> <span class="o">=</span> <span class="mf">0.05</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.PositiveL1Norm" title="pyxu.operator.func.norm.PositiveL1Norm"><span class="n">PositiveL1Norm</span></a><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<span class="n">posL1</span> <span class="o">=</span> <span class="mf">0.05</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.PositiveL1Norm" title="pyxu.operator.func.norm.PositiveL1Norm"><span class="n">PositiveL1Norm</span></a><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
 <span class="c1"># Loss</span>
-<span class="n">loss</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">SquaredL2Norm</span></a><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">sino</span><span class="o">.</span><span class="n">size</span><span class="p">)</span><span class="o">.</span><span class="n">asloss</span><span class="p">(</span><span class="n">sino</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span> <span class="o">*</span> <span class="n">Phi</span>
+<span class="n">loss</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">SquaredL2Norm</span></a><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="n">sino</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span><span class="o">.</span><span class="n">argshift</span><span class="p">(</span><span class="o">-</span><span class="n">sino</span><span class="p">)</span> <span class="o">*</span> <span class="n">Phi</span>
 
 <span class="c1"># Smooth part of the posterior</span>
 <span class="n">smooth_posterior</span> <span class="o">=</span> <span class="n">loss</span> <span class="o">+</span> <span class="n">tv_prior</span>
@@ -612,20 +627,24 @@ setup, the MAP estimate is defined as:</p>
 <p>The code can be broken down as follows:</p>
 <p><strong>Defining the Total Variation (TV) Prior</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TV prior</span>
-<span class="n">grad</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><span class="n">Gradient</span></a><span class="p">(</span><span class="n">arg_shape</span><span class="o">=</span><span class="n">phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">accuracy</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'constant'</span><span class="p">,</span> <span class="n">diff_method</span><span class="o">=</span><span class="s1">'fd'</span><span class="p">)</span>
+<span class="n">grad</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><span class="n">Gradient</span></a><span class="p">(</span>
+    <span class="n">dim_shape</span><span class="o">=</span><span class="n">phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
+    <span class="n">accuracy</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s1">'constant'</span><span class="p">,</span>
+    <span class="n">diff_method</span><span class="o">=</span><span class="s1">'fd'</span><span class="p">)</span>
 <span class="n">lambda_</span><span class="o">=</span> <span class="mf">0.05</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">huber_norm</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.L1Norm" title="pyxu.operator.func.norm.L1Norm"><span class="n">L1Norm</span></a><span class="p">(</span><span class="n">grad</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">moreau_envelope</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">huber_norm</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.L1Norm" title="pyxu.operator.func.norm.L1Norm"><span class="n">L1Norm</span></a><span class="p">(</span><span class="n">grad</span><span class="o">.</span><span class="n">codim_shape</span><span class="p">)</span><span class="o">.</span><span class="n">moreau_envelope</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>  <span class="c1"># We smooth the L1 norm to facilitate optimisation</span>
 <span class="n">tv_prior</span> <span class="o">=</span> <span class="n">lambda_</span> <span class="o">*</span> <span class="n">huber_norm</span> <span class="o">*</span> <span class="n">grad</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Gradient()</span></code><a class="reference external" href="../api/operator/linop.html#pyxu.operator.Gradient">🔗</a>: Computes the gradient of an image. The argument <code class="docutils literal notranslate"><span class="pre">arg_shape=phantom.shape</span></code> specifies the shape of the image, i.e., <code class="docutils literal notranslate"><span class="pre">phantom.shape</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Gradient()</span></code><a class="reference external" href="../api/operator/linop.html#pyxu.operator.Gradient">🔗</a>: Computes the gradient of an image. The argument <code class="docutils literal notranslate"><span class="pre">dim_shape=phantom.shape</span></code> specifies the shape of the image, i.e., <code class="docutils literal notranslate"><span class="pre">phantom.shape</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">lambda_</span></code>: Scales the total variation term. It is calculated based on the noise level <code class="docutils literal notranslate"><span class="pre">sigma</span></code> in the observations.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">moreau_envelope(0.01)</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.ProxFunc.moreau_envelope">🔗</a>: Applies the Moreau envelope to smooth the TV term, facilitating the downstream MAP estimation process.</p></li>
 </ul>
 <p><strong>Defining the Positivity and L1 Norm Constraints</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Positivity + L1 norm</span>
-<span class="n">posL1</span> <span class="o">=</span> <span class="mf">0.05</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.PositiveL1Norm" title="pyxu.operator.func.norm.PositiveL1Norm"><span class="n">PositiveL1Norm</span></a><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<span class="n">posL1</span> <span class="o">=</span> <span class="mf">0.05</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.PositiveL1Norm" title="pyxu.operator.func.norm.PositiveL1Norm"><span class="n">PositiveL1Norm</span></a><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -633,13 +652,13 @@ setup, the MAP estimate is defined as:</p>
 </ul>
 <p><strong>Defining the Data Likelihood (Loss)</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Loss</span>
-<span class="n">loss</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">SquaredL2Norm</span></a><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">sino</span><span class="o">.</span><span class="n">size</span><span class="p">)</span><span class="o">.</span><span class="n">asloss</span><span class="p">(</span><span class="n">sino</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span> <span class="o">*</span> <span class="n">Phi</span>
+<span class="n">loss</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">SquaredL2Norm</span></a><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="n">sino</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span><span class="o">.</span><span class="n">argshift</span><span class="p">(</span><span class="o">-</span><span class="n">sino</span><span class="p">)</span> <span class="o">*</span> <span class="n">Phi</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">SquaredL2Norm()</span></code><a class="reference external" href="../api/operator/func.html#pyxu.operator.SquaredL2Norm">🔗</a>: Represents the squared L2 norm of the residual between the observed and modeled data, scaled by the noise level <code class="docutils literal notranslate"><span class="pre">sigma</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.asloss(sino.ravel())</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Func.asloss">🔗</a>: Sets the observed sinogram as the data.</p></li>
-<li><p>`* Phi`: Compose the <span class="math notranslate nohighlight">\(L_2\)</span> norm with <span class="math notranslate nohighlight">\(\Phi\)</span>, the operator modeling the acquisition process.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.argshift(-sino)</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Operator.argshift">🔗</a>: Sets the observed sinogram as the data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">Phi</span></code>: Compose the <span class="math notranslate nohighlight">\(L_2\)</span> norm with <span class="math notranslate nohighlight">\(\Phi\)</span>, the operator modeling the acquisition process.</p></li>
 </ul>
 <p><strong>Defining the Smooth Part of the Posterior</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Posterior</span>
@@ -657,7 +676,7 @@ setup, the MAP estimate is defined as:</p>
 <p>where <span class="math notranslate nohighlight">\(\mathcal{F}\)</span> is <em>convex</em> and <em>smooth</em> and <span class="math notranslate nohighlight">\(\mathcal{G}\)</span> is nonsmooth but admits a simple proximity operator. For our particular setup, we choose <span class="math notranslate nohighlight">\(F(f)=\frac{1}{2\sigma^2}\|g - \Phi(f)\|_2^2 + \lambda\|\nabla f\|_{H}\)</span> and <span class="math notranslate nohighlight">\(G(f)= \mu \|f\|_1 + \iota(f\geq 0)\)</span>. (<span class="math notranslate nohighlight">\(\lambda\|\nabla f\|_{H}\)</span> denotes the smoothed TV prior.)</p>
 <p>In Pyxu, this is achieved as follows. (Note that we do not set the solver’s step size: it is automatically computed by Pyxu):</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.opt.solver</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/opt.solver.html#pyxu.opt.solver.PGD" title="pyxu.opt.solver.pgd.PGD"><span class="n">PGD</span></a>
@@ -666,8 +685,8 @@ setup, the MAP estimate is defined as:</p>
 <a class="sphinx-codeautolink-a" href="../api/opt.solver.html#pyxu.opt.solver.PGD" title="pyxu.opt.solver.pgd.PGD"><span class="n">solver</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/opt.solver.html#pyxu.opt.solver.PGD" title="pyxu.opt.solver.pgd.PGD"><span class="n">PGD</span></a><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">smooth_posterior</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="n">posL1</span><span class="p">,</span> <span class="n">show_progress</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
 
 <span class="c1"># Call fit to trigger the solver</span>
-<span class="n">solver</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="mi">0</span><span class="o">*</span><span class="n">pinv_solution</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">acceleration</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stop_crit</span><span class="o">=</span><span class="n">stop_crit</span><span class="p">)</span>
-<span class="n">recon_tv</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solution</span><span class="p">()</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="mi">0</span><span class="o">*</span><span class="n">pinv_solution</span><span class="p">,</span> <span class="n">acceleration</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stop_crit</span><span class="o">=</span><span class="n">stop_crit</span><span class="p">)</span>
+<span class="n">recon_tv</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solution</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -676,19 +695,22 @@ setup, the MAP estimate is defined as:</p>
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-INFO:/tmp/pyxu_q7cm72ey:[2023-09-05 08:30:20.184187] Iteration 0
+INFO:/tmp/pyxu_44fpysyu:[2024-11-25 10:20:44.048137] Iteration 0
         iteration: 0
-        RelError[x]: 0.0
+        RelError[x]_min: 0.0
+        RelError[x]_max: 0.0
         N_iter: 1.0
-INFO:/tmp/pyxu_q7cm72ey:[2023-09-05 08:30:52.498540] Iteration 250
+INFO:/tmp/pyxu_44fpysyu:[2024-11-25 10:21:07.361769] Iteration 250
         iteration: 250
-        RelError[x]: 0.0015169258712506043
+        RelError[x]_min: 0.0
+        RelError[x]_max: 0.2699201212019408
         N_iter: 251.0
-INFO:/tmp/pyxu_q7cm72ey:[2023-09-05 08:31:01.392924] Iteration 320
-        iteration: 320
-        RelError[x]: 0.000996747495385029
-        N_iter: 321.0
-INFO:/tmp/pyxu_q7cm72ey:[2023-09-05 08:31:01.393996] Stopping Criterion satisfied -&gt; END
+INFO:/tmp/pyxu_44fpysyu:[2024-11-25 10:21:33.425355] Iteration 500
+        iteration: 500
+        RelError[x]_min: 0.0
+        RelError[x]_max: 0.02228662056306769
+        N_iter: 501.0
+INFO:/tmp/pyxu_44fpysyu:[2024-11-25 10:21:33.426040] Stopping Criterion satisfied -&gt; END
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -757,19 +779,20 @@ the data, which might not be easily expressed in mathematical terms.</p>
 <p>By understanding and applying these principles, one can utilize PnP schemes to achieve high-quality image reconstructions that are both data-consistent and regularized, all while benefiting from the computational and modeling advantages that come with implicit priors.</p>
 <p>In Pyxu, implicit PnP priors can be implemented in both forms via the <code class="docutils literal notranslate"><span class="pre">ProxDiffFunc()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.ProxDiffFunc">🔗</a> base class. Here is a simple example with a median filter denoiser.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/ndimage.html#module-scipy.ndimage" title="scipy.ndimage"><span class="nn">scipy.ndimage</span></a> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.median_filter.html#scipy.ndimage.median_filter" title="scipy.ndimage.median_filter"><span class="n">median_filter</span></a>
 
-<span class="k">def</span> <span class="nf">denoiser</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">arg_shape</span><span class="p">,</span> <span class="n">wsize</span><span class="p">):</span>
-    <span class="n">arr</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">arg_shape</span><span class="p">)</span>
-    <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.median_filter.html#scipy.ndimage.median_filter" title="scipy.ndimage.median_filter"><span class="n">median_filter</span></a><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">wsize</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">denoiser</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">wsize</span><span class="p">):</span>
+    <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.median_filter.html#scipy.ndimage.median_filter" title="scipy.ndimage.median_filter"><span class="n">median_filter</span></a><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">wsize</span><span class="p">)</span>
 
 <span class="k">class</span> <span class="nc">MedianFilterPnP</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.ProxDiffFunc" title="pyxu.abc.operator.ProxDiffFunc"><span class="n">pxa</span><span class="o">.</span><span class="n">ProxDiffFunc</span></a><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg_shape</span><span class="p">,</span> <span class="n">wsize</span><span class="p">):</span>
-        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">arg_shape</span><span class="p">)))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_arg_shape</span> <span class="o">=</span> <span class="n">arg_shape</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim_shape</span><span class="p">,</span> <span class="n">wsize</span><span class="p">):</span>
+        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">,</span>
+            <span class="n">codim_shape</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wsize</span><span class="o">=</span> <span class="n">wsize</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">diff_lipschitz</span> <span class="o">=</span> <span class="mi">1</span>
 
@@ -777,10 +800,10 @@ the data, which might not be easily expressed in mathematical terms.</p>
         <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/constants.html#NotImplemented" title="NotImplemented"><span class="bp">NotImplemented</span></a>  <span class="c1"># PnP priors are implicit: they do not have an apply method!</span>
 
     <span class="k">def</span> <span class="nf">grad</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">arr</span> <span class="o">-</span> <span class="n">denoiser</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arg_shape</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">wsize</span><span class="p">)</span>  <span class="c1"># Differential form</span>
+        <span class="k">return</span> <span class="n">arr</span> <span class="o">-</span> <span class="n">denoiser</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">wsize</span><span class="p">)</span>  <span class="c1"># Differential form</span>
 
     <span class="k">def</span> <span class="nf">prox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">tau</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1"># `tau`` is not used since this is not a proper proximal operator.</span>
-        <span class="k">return</span> <span class="n">denoiser</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_arg_shape</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">wsize</span><span class="p">)</span>  <span class="c1"># Proximal form</span>
+        <span class="k">return</span> <span class="n">denoiser</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">wsize</span><span class="p">)</span>  <span class="c1"># Proximal form</span>
 </pre></div>
 </div>
 </div>
@@ -789,7 +812,7 @@ the data, which might not be easily expressed in mathematical terms.</p>
 </div></blockquote>
 <p>We can now initialize the PnP prior:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medpnp</span> <span class="o">=</span> <span class="n">MedianFilterPnP</span><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
@@ -797,25 +820,11 @@ the data, which might not be easily expressed in mathematical terms.</p>
 </div>
 </div>
 <p>For the data consistency term, we simply use the least-squares loss from before. To allow for PGD to tune its gradient step automatically, we need to compute the Lipschtiz constant of the derivative of the loss:</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss</span><span class="o">.</span><span class="n">diff_lipschitz</span> <span class="o">=</span> <span class="n">loss</span><span class="o">.</span><span class="n">estimate_diff_lipschitz</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">"svd"</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<p>To use the PnP prior in proximal form, we feed it to the nonsmooth proximal term <code class="docutils literal notranslate"><span class="pre">g</span></code> of PGD:</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the solver</span>
-<a class="sphinx-codeautolink-a" href="../api/opt.solver.html#pyxu.opt.solver.PGD" title="pyxu.opt.solver.pgd.PGD"><span class="n">solver</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/opt.solver.html#pyxu.opt.solver.PGD" title="pyxu.opt.solver.pgd.PGD"><span class="n">PGD</span></a><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">loss</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="n">medpnp</span><span class="p">,</span> <span class="n">show_progress</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">75</span><span class="p">)</span>
-
-<span class="c1"># Call fit to trigger the solver</span>
-<span class="n">solver</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="n">pinv_solution</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">acceleration</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stop_crit</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/opt.stop.html#pyxu.opt.stop.MaxIter" title="pyxu.opt.stop.MaxIter"><span class="n">pxst</span><span class="o">.</span><span class="n">MaxIter</span></a><span class="p">(</span><span class="mi">250</span><span class="p">))</span>
-<span class="n">recon_pnp_prox</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solution</span><span class="p">()</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -824,30 +833,44 @@ the data, which might not be easily expressed in mathematical terms.</p>
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-INFO:/tmp/pyxu_b8d_bmhj:[2023-09-05 08:41:25.913682] Iteration 0
+INFO:/tmp/pyxu_0chj7bze:[2024-11-25 10:27:14.810328] Iteration 0
         iteration: 0
-        N_iter: 1.0
-INFO:/tmp/pyxu_b8d_bmhj:[2023-09-05 08:41:35.225395] Iteration 75
+        N_iter: 1
+INFO:/tmp/pyxu_0chj7bze:[2024-11-25 10:27:21.421731] Iteration 75
         iteration: 75
-        N_iter: 76.0
-INFO:/tmp/pyxu_b8d_bmhj:[2023-09-05 08:41:44.234359] Iteration 150
+        N_iter: 76
+INFO:/tmp/pyxu_0chj7bze:[2024-11-25 10:27:28.072868] Iteration 150
         iteration: 150
-        N_iter: 151.0
-INFO:/tmp/pyxu_b8d_bmhj:[2023-09-05 08:41:53.308468] Iteration 225
+        N_iter: 151
+INFO:/tmp/pyxu_0chj7bze:[2024-11-25 10:27:35.033664] Iteration 225
         iteration: 225
-        N_iter: 226.0
-INFO:/tmp/pyxu_b8d_bmhj:[2023-09-05 08:41:56.387729] Iteration 250
+        N_iter: 226
+INFO:/tmp/pyxu_0chj7bze:[2024-11-25 10:27:37.385100] Iteration 250
         iteration: 250
-        N_iter: 251.0
-INFO:/tmp/pyxu_b8d_bmhj:[2023-09-05 08:41:56.388316] Stopping Criterion satisfied -&gt; END
+        N_iter: 251
+INFO:/tmp/pyxu_0chj7bze:[2024-11-25 10:27:37.385766] Stopping Criterion satisfied -&gt; END
 </pre></div></div>
+</div>
+<p>To use the PnP prior in proximal form, we feed it to the nonsmooth proximal term <code class="docutils literal notranslate"><span class="pre">g</span></code> of PGD:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the solver</span>
+<a class="sphinx-codeautolink-a" href="../api/opt.solver.html#pyxu.opt.solver.PGD" title="pyxu.opt.solver.pgd.PGD"><span class="n">solver</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/opt.solver.html#pyxu.opt.solver.PGD" title="pyxu.opt.solver.pgd.PGD"><span class="n">PGD</span></a><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">loss</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="n">medpnp</span><span class="p">,</span> <span class="n">show_progress</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">75</span><span class="p">)</span>
+
+<span class="c1"># Call fit to trigger the solver</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="n">pinv_solution</span><span class="p">,</span> <span class="n">acceleration</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stop_crit</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/opt.stop.html#pyxu.opt.stop.MaxIter" title="pyxu.opt.stop.MaxIter"><span class="n">pxst</span><span class="o">.</span><span class="n">MaxIter</span></a><span class="p">(</span><span class="mi">250</span><span class="p">))</span>
+<span class="n">recon_pnp_prox</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solution</span><span class="p">()</span>
+</pre></div>
+</div>
 </div>
 <blockquote>
 <div><p>Note that we changed the stopping criterion to a maximum number of iterations, since the fixed-point convergence of PnP methods is not guaranteed in general.</p>
 </div></blockquote>
 <p>To use the PnP prior in differential form, we first sum it with the loss and feed the sum to the smooth term <code class="docutils literal notranslate"><span class="pre">f</span></code> of PGD, leaving the nonsmooth term empty:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define new composite smooth term (sum of the loss and weighted implicit prior)</span>
@@ -857,8 +880,8 @@ INFO:/tmp/pyxu_b8d_bmhj:[2023-09-05 08:41:56.388316] Stopping Criterion satisfie
 <a class="sphinx-codeautolink-a" href="../api/opt.solver.html#pyxu.opt.solver.PGD" title="pyxu.opt.solver.pgd.PGD"><span class="n">solver</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/opt.solver.html#pyxu.opt.solver.PGD" title="pyxu.opt.solver.pgd.PGD"><span class="n">PGD</span></a><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">composite_smooth</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_progress</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">75</span><span class="p">)</span>
 
 <span class="c1"># Call fit to trigger the solver</span>
-<span class="n">solver</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="n">pinv_solution</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">acceleration</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stop_crit</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/opt.stop.html#pyxu.opt.stop.MaxIter" title="pyxu.opt.stop.MaxIter"><span class="n">pxst</span><span class="o">.</span><span class="n">MaxIter</span></a><span class="p">(</span><span class="mi">250</span><span class="p">))</span>
-<span class="n">recon_pnp_smooth</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solution</span><span class="p">()</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="n">pinv_solution</span><span class="p">,</span> <span class="n">acceleration</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stop_crit</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/opt.stop.html#pyxu.opt.stop.MaxIter" title="pyxu.opt.stop.MaxIter"><span class="n">pxst</span><span class="o">.</span><span class="n">MaxIter</span></a><span class="p">(</span><span class="mi">250</span><span class="p">))</span>
+<span class="n">recon_pnp_smooth</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solution</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -867,46 +890,46 @@ INFO:/tmp/pyxu_b8d_bmhj:[2023-09-05 08:41:56.388316] Stopping Criterion satisfie
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-INFO:/tmp/pyxu_ifaau7xq:[2023-09-05 08:42:12.851823] Iteration 0
+INFO:/tmp/pyxu_n4ls69gq:[2024-11-25 10:27:46.647839] Iteration 0
         iteration: 0
-        N_iter: 1.0
-INFO:/tmp/pyxu_ifaau7xq:[2023-09-05 08:42:22.290988] Iteration 75
+        N_iter: 1
+INFO:/tmp/pyxu_n4ls69gq:[2024-11-25 10:27:53.570766] Iteration 75
         iteration: 75
-        N_iter: 76.0
-INFO:/tmp/pyxu_ifaau7xq:[2023-09-05 08:42:31.598315] Iteration 150
+        N_iter: 76
+INFO:/tmp/pyxu_n4ls69gq:[2024-11-25 10:28:00.639481] Iteration 150
         iteration: 150
-        N_iter: 151.0
-INFO:/tmp/pyxu_ifaau7xq:[2023-09-05 08:42:41.080073] Iteration 225
+        N_iter: 151
+INFO:/tmp/pyxu_n4ls69gq:[2024-11-25 10:28:07.479120] Iteration 225
         iteration: 225
-        N_iter: 226.0
-INFO:/tmp/pyxu_ifaau7xq:[2023-09-05 08:42:44.258842] Iteration 250
+        N_iter: 226
+INFO:/tmp/pyxu_n4ls69gq:[2024-11-25 10:28:09.741233] Iteration 250
         iteration: 250
-        N_iter: 251.0
-INFO:/tmp/pyxu_ifaau7xq:[2023-09-05 08:42:44.259926] Stopping Criterion satisfied -&gt; END
+        N_iter: 251
+INFO:/tmp/pyxu_n4ls69gq:[2024-11-25 10:28:09.741840] Stopping Criterion satisfied -&gt; END
 </pre></div></div>
 </div>
 <p>The results are given below:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">pinv_solution</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">pinv_solution</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Pseudoinverse Solution'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">recon_tv</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">recon_tv</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'MAP Solution (TV+)'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">recon_pnp_prox</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">recon_pnp_prox</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'PnP (Prox)'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">recon_pnp_smooth</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">recon_pnp_smooth</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'PnP (Diff)'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">);</span>
 </pre></div>
@@ -922,7 +945,7 @@ INFO:/tmp/pyxu_ifaau7xq:[2023-09-05 08:42:44.259926] Stopping Criterion satisfie
 <p>Not bad! Despite using a very simple PnP prior, we managed to significantly improve the reconstruction quality w.r.t. the pseudoinverse solution. With respect to the MAP solution, we observe a slight improvement in terms of sharpness and contrast. There is however not much difference between the PnP priors in differential or proximal form.</p>
 <p>Note however that PnP priors are harder to fine-tune than Bayesian methods. In particular, the size of the median filter used above is arbitrary, and changing it can significantly change the estimate:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medpnp</span> <span class="o">=</span> <span class="n">MedianFilterPnP</span><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
@@ -930,15 +953,15 @@ INFO:/tmp/pyxu_ifaau7xq:[2023-09-05 08:42:44.259926] Stopping Criterion satisfie
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the solver</span>
 <a class="sphinx-codeautolink-a" href="../api/opt.solver.html#pyxu.opt.solver.PGD" title="pyxu.opt.solver.pgd.PGD"><span class="n">solver</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/opt.solver.html#pyxu.opt.solver.PGD" title="pyxu.opt.solver.pgd.PGD"><span class="n">PGD</span></a><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">loss</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="n">medpnp</span><span class="p">,</span> <span class="n">show_progress</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">75</span><span class="p">)</span>
 
 <span class="c1"># Call fit to trigger the solver</span>
-<span class="n">solver</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="n">pinv_solution</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">acceleration</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stop_crit</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/opt.stop.html#pyxu.opt.stop.MaxIter" title="pyxu.opt.stop.MaxIter"><span class="n">pxst</span><span class="o">.</span><span class="n">MaxIter</span></a><span class="p">(</span><span class="mi">250</span><span class="p">))</span>
-<span class="n">recon_pnp_prox</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solution</span><span class="p">()</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="n">pinv_solution</span><span class="p">,</span> <span class="n">acceleration</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stop_crit</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="../api/opt.stop.html#pyxu.opt.stop.MaxIter" title="pyxu.opt.stop.MaxIter"><span class="n">pxst</span><span class="o">.</span><span class="n">MaxIter</span></a><span class="p">(</span><span class="mi">250</span><span class="p">))</span>
+<span class="n">recon_pnp_prox</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solution</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -947,40 +970,40 @@ INFO:/tmp/pyxu_ifaau7xq:[2023-09-05 08:42:44.259926] Stopping Criterion satisfie
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-INFO:/tmp/pyxu_h7p7jo96:[2023-09-05 08:43:42.681462] Iteration 0
+INFO:/tmp/pyxu_zgci4q0m:[2024-11-25 10:28:52.038559] Iteration 0
         iteration: 0
-        N_iter: 1.0
-INFO:/tmp/pyxu_h7p7jo96:[2023-09-05 08:43:52.902673] Iteration 75
+        N_iter: 1
+INFO:/tmp/pyxu_zgci4q0m:[2024-11-25 10:28:59.546877] Iteration 75
         iteration: 75
-        N_iter: 76.0
-INFO:/tmp/pyxu_h7p7jo96:[2023-09-05 08:44:02.596786] Iteration 150
+        N_iter: 76
+INFO:/tmp/pyxu_zgci4q0m:[2024-11-25 10:29:07.537463] Iteration 150
         iteration: 150
-        N_iter: 151.0
-INFO:/tmp/pyxu_h7p7jo96:[2023-09-05 08:44:12.418049] Iteration 225
+        N_iter: 151
+INFO:/tmp/pyxu_zgci4q0m:[2024-11-25 10:29:15.112930] Iteration 225
         iteration: 225
-        N_iter: 226.0
-INFO:/tmp/pyxu_h7p7jo96:[2023-09-05 08:44:15.650613] Iteration 250
+        N_iter: 226
+INFO:/tmp/pyxu_zgci4q0m:[2024-11-25 10:29:18.097266] Iteration 250
         iteration: 250
-        N_iter: 251.0
-INFO:/tmp/pyxu_h7p7jo96:[2023-09-05 08:44:15.651198] Stopping Criterion satisfied -&gt; END
+        N_iter: 251
+INFO:/tmp/pyxu_zgci4q0m:[2024-11-25 10:29:18.098034] Stopping Criterion satisfied -&gt; END
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">pinv_solution</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">pinv_solution</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Pseudoinverse Solution'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">recon_tv</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">recon_tv</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'MAP Solution (TV+)'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">recon_pnp_prox</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">phantom</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">recon_pnp_prox</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'PnP (Prox)'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">);</span>
 </pre></div>
