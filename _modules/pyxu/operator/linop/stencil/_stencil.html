@@ -43,7 +43,7 @@
   <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../../../_static/documentation_options.js?v=bfe059fb"></script>
+    <script src="../../../../../_static/documentation_options.js?v=7cde7c65"></script>
     <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -206,7 +206,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v2.0.1 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v2.0.2 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -355,7 +355,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v2.0.1 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v2.0.2 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -778,7 +778,7 @@ document.write(`
 <span class="linenos">302</span>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">template_file</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 <span class="linenos">303</span>            <span class="n">template</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">Template</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 <span class="linenos">304</span>        <span class="n">code</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span>
-<span class="linenos">305</span>            <span class="n">kernel_center</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_center</span><span class="p">)),</span>
+<span class="linenos">305</span>            <span class="n">kernel_center</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_center</span><span class="o">.</span><span class="n">tolist</span><span class="p">())),</span>
 <span class="linenos">306</span>            <span class="n">kernel_width</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_kernel</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span>
 <span class="linenos">307</span>            <span class="n">signature</span><span class="o">=</span><span class="n">signature</span><span class="p">,</span>
 <span class="linenos">308</span>            <span class="n">stencil_spec</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__stencil_spec</span><span class="p">(),</span>
