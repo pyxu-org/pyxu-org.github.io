@@ -1,9 +1,12 @@
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/plugins_preview/index.rst:1118: WARNING: toctree contains reference to nonexisting document 'fair/plugins_preview/TokemakRec'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/score.rst:29: WARNING: Bullet list ends without a blank line; unexpected unindent.
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/xray.ipynb:11: WARNING: File not found: 'intro/tomo.html'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/howto.rst:2: WARNING: Duplicate explicit target name: "catalogue website".
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/howto.rst:33: WARNING: invalid syntax (<unknown>, line 2) in document 'fair/howto'
 Parsed source in `python` block:
 concatenations: from pyxu.opt.solver import GradientDescent
 block source:   ModuleNotFoundError: No module named 'pyxu.opt.solver.GradientDescent'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/plugins/index.rst:232: ERROR: Content block expected for the "grid" directive; none found.
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:292: WARNING: File not found: 'api/abc.html#pyxu.abc.Operator.expr'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:459: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.pinv'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:459: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
@@ -14,8 +17,6 @@ block source:   ModuleNotFoundError: No module named 'pyxu.opt.solver.GradientDe
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:710: WARNING: File not found: 'api/abc.html#pyxu.abc.Operator.argshift'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:722: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.estimate_diff_lipschitz'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:946: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxDiffFunc'
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/plugins_preview/index.rst:1118: WARNING: toctree contains reference to nonexisting document 'fair/plugins_preview/TokemakRec'
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/score.rst:29: WARNING: Bullet list ends without a blank line; unexpected unindent.
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.jacobian'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc.grad'
