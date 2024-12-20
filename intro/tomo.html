@@ -393,8 +393,8 @@ document.write(`
 </section>
 <section id="Pyxu's-Modularity-to-the-Rescue">
 <h2>Pyxu’s Modularity to the Rescue<a class="headerlink" href="#Pyxu's-Modularity-to-the-Rescue" title="Link to this heading">#</a></h2>
-<p>We now turn our attention to how Pyxu addresses the limitations encountered when using <code class="docutils literal notranslate"><span class="pre">iradon()</span></code><a class="reference external" href="https://scikit-image.org/docs/stable/api/skimage.transform.html#skimage.transform.iradon">🔗</a> for reconstruction in non-ideal conditions. Unlike monolithic approaches, Pyxu’s microservice architecture thrives on modularity, allowing us to decompose the data model into a sequence of simple linear operators: the Radon transform (<span class="math notranslate nohighlight">\(R\)</span>), followed by filtering (<span class="math notranslate nohighlight">\(F\)</span>), masking (<span class="math notranslate nohighlight">\(M\)</span>),
-and finally tapering (<span class="math notranslate nohighlight">\(T\)</span>).</p>
+<p>We now turn our attention to how Pyxu addresses the limitations encountered when using <code class="docutils literal notranslate"><span class="pre">iradon()</span></code><a class="reference external" href="https://scikit-image.org/docs/stable/api/skimage.transform.html#skimage.transform.iradon">🔗</a> for reconstruction in non-ideal conditions. Unlike monolithic approaches, Pyxu’s microservice architecture thrives on modularity, allowing us to decompose the data model into a sequence of simple linear operators: the Radon transform (<span class="math notranslate nohighlight">\(R\)</span>), followed by filtering (<span class="math notranslate nohighlight">\(F\)</span>), masking
+(<span class="math notranslate nohighlight">\(M\)</span>), and finally tapering (<span class="math notranslate nohighlight">\(T\)</span>).</p>
 <div class="math notranslate nohighlight">
 \[\Phi= T \circ M \circ F \circ R\]</div>
 <p>Here is a code snippet detailing the construction of such an operator with Pyxu:</p>
@@ -658,7 +658,7 @@ setup, the MAP estimate is defined as:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">SquaredL2Norm()</span></code><a class="reference external" href="../api/operator/func.html#pyxu.operator.SquaredL2Norm">🔗</a>: Represents the squared L2 norm of the residual between the observed and modeled data, scaled by the noise level <code class="docutils literal notranslate"><span class="pre">sigma</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.argshift(-sino)</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Operator.argshift">🔗</a>: Sets the observed sinogram as the data.</p></li>
-<li><p>`* Phi`: Compose the <span class="math notranslate nohighlight">\(L_2\)</span> norm with <span class="math notranslate nohighlight">\(\Phi\)</span>, the operator modeling the acquisition process.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">Phi</span></code>: Compose the <span class="math notranslate nohighlight">\(L_2\)</span> norm with <span class="math notranslate nohighlight">\(\Phi\)</span>, the operator modeling the acquisition process.</p></li>
 </ul>
 <p><strong>Defining the Smooth Part of the Posterior</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Posterior</span>
