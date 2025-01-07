@@ -27,7 +27,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
@@ -465,16 +465,16 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <h1>Source code for pyxu.util.operator</h1><div class="highlight"><pre>
-<span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">collections.abc</span> <span class="k">as</span> <span class="nn">cabc</span>
-<span class="linenos">  2</span><span class="kn">import</span> <span class="nn">concurrent.futures</span> <span class="k">as</span> <span class="nn">cf</span>
-<span class="linenos">  3</span><span class="kn">import</span> <span class="nn">copy</span>
-<span class="linenos">  4</span><span class="kn">import</span> <span class="nn">functools</span>
-<span class="linenos">  5</span><span class="kn">import</span> <span class="nn">inspect</span>
-<span class="linenos">  6</span><span class="kn">import</span> <span class="nn">itertools</span>
+<span></span><span class="linenos">  1</span><span class="kn">import</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cabc</span>
+<span class="linenos">  2</span><span class="kn">import</span><span class="w"> </span><span class="nn">concurrent.futures</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cf</span>
+<span class="linenos">  3</span><span class="kn">import</span><span class="w"> </span><span class="nn">copy</span>
+<span class="linenos">  4</span><span class="kn">import</span><span class="w"> </span><span class="nn">functools</span>
+<span class="linenos">  5</span><span class="kn">import</span><span class="w"> </span><span class="nn">inspect</span>
+<span class="linenos">  6</span><span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
 <span class="linenos">  7</span>
-<span class="linenos">  8</span><span class="kn">import</span> <span class="nn">pyxu.info.deps</span> <span class="k">as</span> <span class="nn">pxd</span>
-<span class="linenos">  9</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
-<span class="linenos"> 10</span><span class="kn">import</span> <span class="nn">pyxu.util.misc</span> <span class="k">as</span> <span class="nn">pxm</span>
+<span class="linenos">  8</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.deps</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxd</span>
+<span class="linenos">  9</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.ptype</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxt</span>
+<span class="linenos"> 10</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.util.misc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxm</span>
 <span class="linenos"> 11</span>
 <span class="linenos"> 12</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
 <span class="linenos"> 13</span>    <span class="s2">&quot;as_canonical_axes&quot;</span><span class="p">,</span>
@@ -485,7 +485,7 @@ document.write(`
 <span class="linenos"> 18</span>
 <div class="viewcode-block" id="as_canonical_shape">
 <a class="viewcode-back" href="../../../api/util.html#pyxu.util.as_canonical_shape">[docs]</a>
-<span class="linenos"> 19</span><span class="k">def</span> <span class="nf">as_canonical_shape</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">:</span>
+<span class="linenos"> 19</span><span class="k">def</span><span class="w"> </span><span class="nf">as_canonical_shape</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">:</span>
 <span class="linenos"> 20</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 21</span><span class="sd">    Transform a lone integer into a valid tuple-based shape specifier.</span>
 <span class="linenos"> 22</span><span class="sd">    &quot;&quot;&quot;</span>
@@ -502,7 +502,7 @@ document.write(`
 <span class="linenos"> 32</span>
 <div class="viewcode-block" id="as_canonical_axes">
 <a class="viewcode-back" href="../../../api/util.html#pyxu.util.as_canonical_axes">[docs]</a>
-<span class="linenos"> 33</span><span class="k">def</span> <span class="nf">as_canonical_axes</span><span class="p">(</span>
+<span class="linenos"> 33</span><span class="k">def</span><span class="w"> </span><span class="nf">as_canonical_axes</span><span class="p">(</span>
 <span class="linenos"> 34</span>    <span class="n">axes</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayAxis</span><span class="p">,</span>
 <span class="linenos"> 35</span>    <span class="n">rank</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span>
 <span class="linenos"> 36</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayAxis</span><span class="p">:</span>
@@ -525,7 +525,7 @@ document.write(`
 <span class="linenos"> 52</span>
 <div class="viewcode-block" id="vectorize">
 <a class="viewcode-back" href="../../../api/util.html#pyxu.util.vectorize">[docs]</a>
-<span class="linenos"> 53</span><span class="k">def</span> <span class="nf">vectorize</span><span class="p">(</span>
+<span class="linenos"> 53</span><span class="k">def</span><span class="w"> </span><span class="nf">vectorize</span><span class="p">(</span>
 <span class="linenos"> 54</span>    <span class="n">i</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">VarName</span><span class="p">,</span>
 <span class="linenos"> 55</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 56</span>    <span class="n">codim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
@@ -579,14 +579,14 @@ document.write(`
 <span class="linenos">104</span>    <span class="n">dim_rank</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dim_shape</span><span class="p">)</span>
 <span class="linenos">105</span>    <span class="n">codim_shape</span> <span class="o">=</span> <span class="n">as_canonical_shape</span><span class="p">(</span><span class="n">codim_shape</span><span class="p">)</span>
 <span class="linenos">106</span>
-<span class="linenos">107</span>    <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">:</span>
+<span class="linenos">107</span>    <span class="k">def</span><span class="w"> </span><span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">:</span>
 <span class="linenos">108</span>        <span class="n">sig</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">Signature</span><span class="o">.</span><span class="n">from_callable</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
 <span class="linenos">109</span>        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sig</span><span class="o">.</span><span class="n">parameters</span><span class="p">:</span>
 <span class="linenos">110</span>            <span class="n">error_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Parameter[</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">] not part of </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__qualname__</span><span class="si">}</span><span class="s2">() parameter list.&quot;</span>
 <span class="linenos">111</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">error_msg</span><span class="p">)</span>
 <span class="linenos">112</span>
 <span class="linenos">113</span>        <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="linenos">114</span>        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">ARGS</span><span class="p">,</span> <span class="o">**</span><span class="n">KWARGS</span><span class="p">):</span>
+<span class="linenos">114</span>        <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">ARGS</span><span class="p">,</span> <span class="o">**</span><span class="n">KWARGS</span><span class="p">):</span>
 <span class="linenos">115</span>            <span class="n">func_args</span> <span class="o">=</span> <span class="n">pxm</span><span class="o">.</span><span class="n">parse_params</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">ARGS</span><span class="p">,</span> <span class="o">**</span><span class="n">KWARGS</span><span class="p">)</span>
 <span class="linenos">116</span>
 <span class="linenos">117</span>            <span class="n">x</span> <span class="o">=</span> <span class="n">func_args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>

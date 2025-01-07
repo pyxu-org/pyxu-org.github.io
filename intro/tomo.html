@@ -18,7 +18,7 @@
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
-<link href="../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css?v=03e43079" rel="stylesheet" type="text/css"/>
 <link href="../_static/plot_directive.css" rel="stylesheet" type="text/css"/>
 <link href="../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
 <link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
@@ -402,10 +402,10 @@ document.write(`
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyxu.abc</span> <span class="k">as</span> <span class="nn">pxa</span>
-<span class="kn">import</span> <span class="nn">pyxu.operator</span> <span class="k">as</span> <span class="nn">pxo</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator.interop</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/operator.interop.html#pyxu.operator.interop.from_source" title="pyxu.operator.interop.from_source"><span class="n">from_source</span></a>
-<span class="kn">import</span> <span class="nn">skimage.transform</span> <span class="k">as</span> <span class="nn">skt</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.abc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxa</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxo</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator.interop</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/operator.interop.html#pyxu.operator.interop.from_source" title="pyxu.operator.interop.from_source"><span class="n">from_source</span></a>
+<span class="kn">import</span><span class="w"> </span><span class="nn">skimage.transform</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">skt</span>
 
 <span class="c1"># Radon Operator (imported from `skt` since Pyxu did not ship with a Radon transform at the time of this writing.)</span>
 <span class="n">Radon</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator.interop.html#pyxu.operator.interop.from_source" title="pyxu.operator.interop.from_source"><span class="n">from_source</span></a><span class="p">(</span>
@@ -523,7 +523,7 @@ libraries when available. Pyxu is designed to stitch these disparate elements to
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyxu.opt.stop</span> <span class="k">as</span> <span class="nn">pxst</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.opt.stop</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxst</span>
 
 <span class="n">stop_crit</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/opt.stop.html#pyxu.opt.stop.RelError" title="pyxu.opt.stop.RelError"><span class="n">pxst</span><span class="o">.</span><span class="n">RelError</span></a><span class="p">(</span><span class="n">eps</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">var</span><span class="o">=</span><span class="s2">"x"</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">satisfy_all</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">|</span> <a class="sphinx-codeautolink-a" href="../api/opt.stop.html#pyxu.opt.stop.MaxIter" title="pyxu.opt.stop.MaxIter"><span class="n">pxst</span><span class="o">.</span><span class="n">MaxIter</span></a><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
 <span class="n">pinv_solution</span> <span class="o">=</span> <span class="n">Phi</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">sino</span><span class="p">,</span>
@@ -600,7 +600,7 @@ setup, the MAP estimate is defined as:</p>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><span class="n">Gradient</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">SquaredL2Norm</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.L1Norm" title="pyxu.operator.func.norm.L1Norm"><span class="n">L1Norm</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.PositiveL1Norm" title="pyxu.operator.func.norm.PositiveL1Norm"><span class="n">PositiveL1Norm</span></a>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><span class="n">Gradient</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">SquaredL2Norm</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.L1Norm" title="pyxu.operator.func.norm.L1Norm"><span class="n">L1Norm</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.PositiveL1Norm" title="pyxu.operator.func.norm.PositiveL1Norm"><span class="n">PositiveL1Norm</span></a>
 
 <span class="c1"># TV prior</span>
 <span class="n">grad</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><span class="n">Gradient</span></a><span class="p">(</span>
@@ -679,7 +679,7 @@ setup, the MAP estimate is defined as:</p>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.opt.solver</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/opt.solver.html#pyxu.opt.solver.PGD" title="pyxu.opt.solver.pgd.PGD"><span class="n">PGD</span></a>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.opt.solver</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/opt.solver.html#pyxu.opt.solver.PGD" title="pyxu.opt.solver.pgd.PGD"><span class="n">PGD</span></a>
 
 <span class="c1"># Define the solver</span>
 <a class="sphinx-codeautolink-a" href="../api/opt.solver.html#pyxu.opt.solver.PGD" title="pyxu.opt.solver.pgd.PGD"><span class="n">solver</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/opt.solver.html#pyxu.opt.solver.PGD" title="pyxu.opt.solver.pgd.PGD"><span class="n">PGD</span></a><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">smooth_posterior</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="n">posL1</span><span class="p">,</span> <span class="n">show_progress</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
@@ -782,13 +782,13 @@ the data, which might not be easily expressed in mathematical terms.</p>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/ndimage.html#module-scipy.ndimage" title="scipy.ndimage"><span class="nn">scipy.ndimage</span></a> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.median_filter.html#scipy.ndimage.median_filter" title="scipy.ndimage.median_filter"><span class="n">median_filter</span></a>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.ndimage</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.median_filter.html#scipy.ndimage.median_filter" title="scipy.ndimage.median_filter"><span class="n">median_filter</span></a>
 
-<span class="k">def</span> <span class="nf">denoiser</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">wsize</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">denoiser</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">wsize</span><span class="p">):</span>
     <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.median_filter.html#scipy.ndimage.median_filter" title="scipy.ndimage.median_filter"><span class="n">median_filter</span></a><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">wsize</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">MedianFilterPnP</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.ProxDiffFunc" title="pyxu.abc.operator.ProxDiffFunc"><span class="n">pxa</span><span class="o">.</span><span class="n">ProxDiffFunc</span></a><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim_shape</span><span class="p">,</span> <span class="n">wsize</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MedianFilterPnP</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.ProxDiffFunc" title="pyxu.abc.operator.ProxDiffFunc"><span class="n">pxa</span><span class="o">.</span><span class="n">ProxDiffFunc</span></a><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim_shape</span><span class="p">,</span> <span class="n">wsize</span><span class="p">):</span>
         <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">,</span>
             <span class="n">codim_shape</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
@@ -796,13 +796,13 @@ the data, which might not be easily expressed in mathematical terms.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">wsize</span><span class="o">=</span> <span class="n">wsize</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">diff_lipschitz</span> <span class="o">=</span> <span class="mi">1</span>
 
-    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
         <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/constants.html#NotImplemented" title="NotImplemented"><span class="bp">NotImplemented</span></a>  <span class="c1"># PnP priors are implicit: they do not have an apply method!</span>
 
-    <span class="k">def</span> <span class="nf">grad</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">grad</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">arr</span> <span class="o">-</span> <span class="n">denoiser</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">wsize</span><span class="p">)</span>  <span class="c1"># Differential form</span>
 
-    <span class="k">def</span> <span class="nf">prox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">tau</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1"># `tau`` is not used since this is not a proper proximal operator.</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">prox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">tau</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1"># `tau`` is not used since this is not a proper proximal operator.</span>
         <span class="k">return</span> <span class="n">denoiser</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">wsize</span><span class="p">)</span>  <span class="c1"># Proximal form</span>
 </pre></div>
 </div>

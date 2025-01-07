@@ -27,7 +27,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
@@ -465,18 +465,18 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <h1>Source code for pyxu.info.ptype</h1><div class="highlight"><pre>
-<span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">collections.abc</span> <span class="k">as</span> <span class="nn">cabc</span>
-<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">numbers</span> <span class="k">as</span> <span class="nn">nb</span>
-<span class="linenos"> 3</span><span class="kn">import</span> <span class="nn">pathlib</span> <span class="k">as</span> <span class="nn">plib</span>
-<span class="linenos"> 4</span><span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">typ</span>
+<span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cabc</span>
+<span class="linenos"> 2</span><span class="kn">import</span><span class="w"> </span><span class="nn">numbers</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nb</span>
+<span class="linenos"> 3</span><span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plib</span>
+<span class="linenos"> 4</span><span class="kn">import</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">typ</span>
 <span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="kn">import</span> <span class="nn">numpy.typing</span> <span class="k">as</span> <span class="nn">npt</span>
+<span class="linenos"> 6</span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy.typing</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">npt</span>
 <span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="kn">import</span> <span class="nn">pyxu.info.deps</span> <span class="k">as</span> <span class="nn">pxd</span>
+<span class="linenos"> 8</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.deps</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxd</span>
 <span class="linenos"> 9</span>
 <span class="linenos">10</span><span class="k">if</span> <span class="n">typ</span><span class="o">.</span><span class="n">TYPE_CHECKING</span><span class="p">:</span>
-<span class="linenos">11</span>    <span class="kn">import</span> <span class="nn">pyxu.abc.operator</span> <span class="k">as</span> <span class="nn">pxo</span>
-<span class="linenos">12</span>    <span class="kn">import</span> <span class="nn">pyxu.abc.solver</span> <span class="k">as</span> <span class="nn">pxs</span>
+<span class="linenos">11</span>    <span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.abc.operator</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxo</span>
+<span class="linenos">12</span>    <span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.abc.solver</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxs</span>
 <span class="linenos">13</span>
 <span class="linenos">14</span><span class="c1">#: Supported dense array types.</span>
 <span class="linenos">15</span><span class="n">NDArray</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;NDArray&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">pxd</span><span class="o">.</span><span class="n">supported_array_types</span><span class="p">())</span>

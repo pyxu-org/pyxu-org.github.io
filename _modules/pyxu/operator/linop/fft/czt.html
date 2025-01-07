@@ -27,7 +27,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
@@ -465,17 +465,17 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <h1>Source code for pyxu.operator.linop.fft.czt</h1><div class="highlight"><pre>
-<span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">collections.abc</span> <span class="k">as</span> <span class="nn">cabc</span>
-<span class="linenos">  2</span><span class="kn">import</span> <span class="nn">functools</span>
+<span></span><span class="linenos">  1</span><span class="kn">import</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cabc</span>
+<span class="linenos">  2</span><span class="kn">import</span><span class="w"> </span><span class="nn">functools</span>
 <span class="linenos">  3</span>
-<span class="linenos">  4</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos">  5</span><span class="kn">import</span> <span class="nn">scipy.special</span> <span class="k">as</span> <span class="nn">sps</span>
+<span class="linenos">  4</span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="linenos">  5</span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy.special</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sps</span>
 <span class="linenos">  6</span>
-<span class="linenos">  7</span><span class="kn">import</span> <span class="nn">pyxu.abc</span> <span class="k">as</span> <span class="nn">pxa</span>
-<span class="linenos">  8</span><span class="kn">import</span> <span class="nn">pyxu.info.deps</span> <span class="k">as</span> <span class="nn">pxd</span>
-<span class="linenos">  9</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
-<span class="linenos"> 10</span><span class="kn">import</span> <span class="nn">pyxu.runtime</span> <span class="k">as</span> <span class="nn">pxrt</span>
-<span class="linenos"> 11</span><span class="kn">import</span> <span class="nn">pyxu.util</span> <span class="k">as</span> <span class="nn">pxu</span>
+<span class="linenos">  7</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.abc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxa</span>
+<span class="linenos">  8</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.deps</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxd</span>
+<span class="linenos">  9</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.ptype</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxt</span>
+<span class="linenos"> 10</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.runtime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxrt</span>
+<span class="linenos"> 11</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.util</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxu</span>
 <span class="linenos"> 12</span>
 <span class="linenos"> 13</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
 <span class="linenos"> 14</span>    <span class="s2">&quot;CZT&quot;</span><span class="p">,</span>
@@ -484,7 +484,7 @@ document.write(`
 <span class="linenos"> 17</span>
 <div class="viewcode-block" id="CZT">
 <a class="viewcode-back" href="../../../../../api/operator/linop.html#pyxu.operator.CZT">[docs]</a>
-<span class="linenos"> 18</span><span class="k">class</span> <span class="nc">CZT</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span><span class="p">):</span>
+<span class="linenos"> 18</span><span class="k">class</span><span class="w"> </span><span class="nc">CZT</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span><span class="p">):</span>
 <span class="linenos"> 19</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 20</span><span class="sd">    Multi-dimensional Chirp Z-Transform (CZT) :math:`C: \mathbb{C}^{N_{1} \times\cdots\times N_{D}} \to</span>
 <span class="linenos"> 21</span><span class="sd">    \mathbb{C}^{M_{1} \times\cdots\times M_{D}}`.</span>
@@ -512,7 +512,7 @@ document.write(`
 <span class="linenos"> 43</span>
 <div class="viewcode-block" id="CZT.__init__">
 <a class="viewcode-back" href="../../../../../api/operator/linop.html#pyxu.operator.CZT.__init__">[docs]</a>
-<span class="linenos"> 44</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="linenos"> 44</span>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 <span class="linenos"> 45</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos"> 46</span>        <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 47</span>        <span class="n">axes</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayAxis</span><span class="p">,</span>
@@ -559,7 +559,7 @@ document.write(`
 <span class="linenos"> 87</span>
 <div class="viewcode-block" id="CZT.apply">
 <a class="viewcode-back" href="../../../../../api/operator/linop.html#pyxu.operator.CZT.apply">[docs]</a>
-<span class="linenos"> 88</span>    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos"> 88</span>    <span class="k">def</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos"> 89</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 90</span><span class="sd">        Parameters</span>
 <span class="linenos"> 91</span><span class="sd">        ----------</span>
@@ -579,7 +579,7 @@ document.write(`
 <span class="linenos">105</span>        <span class="k">return</span> <span class="n">out</span></div>
 
 <span class="linenos">106</span>
-<span class="linenos">107</span>    <span class="k">def</span> <span class="nf">capply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">107</span>    <span class="k">def</span><span class="w"> </span><span class="nf">capply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">108</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">109</span><span class="sd">        Parameters</span>
 <span class="linenos">110</span><span class="sd">        ----------</span>
@@ -605,7 +605,7 @@ document.write(`
 <span class="linenos">130</span>
 <div class="viewcode-block" id="CZT.adjoint">
 <a class="viewcode-back" href="../../../../../api/operator/linop.html#pyxu.operator.CZT.adjoint">[docs]</a>
-<span class="linenos">131</span>    <span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">131</span>    <span class="k">def</span><span class="w"> </span><span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">132</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">133</span><span class="sd">        Parameters</span>
 <span class="linenos">134</span><span class="sd">        ----------</span>
@@ -625,7 +625,7 @@ document.write(`
 <span class="linenos">148</span>        <span class="k">return</span> <span class="n">out</span></div>
 
 <span class="linenos">149</span>
-<span class="linenos">150</span>    <span class="k">def</span> <span class="nf">cadjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">150</span>    <span class="k">def</span><span class="w"> </span><span class="nf">cadjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">151</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">152</span><span class="sd">        Parameters</span>
 <span class="linenos">153</span><span class="sd">        ----------</span>
@@ -660,7 +660,7 @@ document.write(`
 <span class="linenos">182</span>            <span class="n">out</span> <span class="o">*=</span> <span class="n">An</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">cdtype</span><span class="p">)</span>
 <span class="linenos">183</span>        <span class="k">return</span> <span class="n">out</span>
 <span class="linenos">184</span>
-<span class="linenos">185</span>    <span class="k">def</span> <span class="nf">estimate_lipschitz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">:</span>
+<span class="linenos">185</span>    <span class="k">def</span><span class="w"> </span><span class="nf">estimate_lipschitz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">:</span>
 <span class="linenos">186</span>        <span class="n">no_eval</span> <span class="o">=</span> <span class="s2">&quot;__rule&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span>
 <span class="linenos">187</span>        <span class="k">if</span> <span class="n">no_eval</span><span class="p">:</span>
 <span class="linenos">188</span>            <span class="c1"># We know that</span>
@@ -691,7 +691,7 @@ document.write(`
 <span class="linenos">213</span>            <span class="n">L</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">estimate_lipschitz</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="linenos">214</span>        <span class="k">return</span> <span class="n">L</span>
 <span class="linenos">215</span>
-<span class="linenos">216</span>    <span class="k">def</span> <span class="nf">asarray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">216</span>    <span class="k">def</span><span class="w"> </span><span class="nf">asarray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">217</span>        <span class="c1"># We compute 1D transforms per axis, then Kronecker product them.</span>
 <span class="linenos">218</span>
 <span class="linenos">219</span>        <span class="c1"># Since non-NP backends may be faulty, we do everything in NUMPY ...</span>
@@ -729,14 +729,14 @@ document.write(`
 <span class="linenos">251</span>
 <span class="linenos">252</span>    <span class="c1"># Helper routines (internal) ----------------------------------------------</span>
 <span class="linenos">253</span>    <span class="nd">@staticmethod</span>
-<span class="linenos">254</span>    <span class="k">def</span> <span class="nf">_canonical_repr</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">W</span><span class="p">):</span>
+<span class="linenos">254</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_canonical_repr</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">W</span><span class="p">):</span>
 <span class="linenos">255</span>        <span class="c1"># Create canonical representations</span>
 <span class="linenos">256</span>        <span class="c1">#   * `_M`: tuple(int)</span>
 <span class="linenos">257</span>        <span class="c1">#   * `_A`: tuple(complex)</span>
 <span class="linenos">258</span>        <span class="c1">#   * `_W`: tuple(complex)</span>
 <span class="linenos">259</span>        <span class="c1">#</span>
 <span class="linenos">260</span>        <span class="c1"># `axes` is already assumed in tuple-form.</span>
-<span class="linenos">261</span>        <span class="k">def</span> <span class="nf">as_seq</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">_type</span><span class="p">):</span>
+<span class="linenos">261</span>        <span class="k">def</span><span class="w"> </span><span class="nf">as_seq</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">_type</span><span class="p">):</span>
 <span class="linenos">262</span>            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">):</span>
 <span class="linenos">263</span>                <span class="n">_x</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="linenos">264</span>            <span class="k">else</span><span class="p">:</span>
@@ -755,7 +755,7 @@ document.write(`
 <span class="linenos">277</span>        <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">_W</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
 <span class="linenos">278</span>        <span class="k">return</span> <span class="n">_M</span><span class="p">,</span> <span class="n">_A</span><span class="p">,</span> <span class="n">_W</span>
 <span class="linenos">279</span>
-<span class="linenos">280</span>    <span class="k">def</span> <span class="nf">_get_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">):</span>
+<span class="linenos">280</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_get_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">):</span>
 <span class="linenos">281</span>        <span class="c1"># x: (..., M1,...,MD) [complex]</span>
 <span class="linenos">282</span>        <span class="c1">#</span>
 <span class="linenos">283</span>        <span class="c1"># Computes/Initializes (per axis):</span>
@@ -764,7 +764,7 @@ document.write(`
 <span class="linenos">286</span>        <span class="c1"># * `Wk2`: list[NDArray] post-FFT modulation vectors.</span>
 <span class="linenos">287</span>        <span class="c1"># * `extract`: tuple[slice] FFT interval to extract.</span>
 <span class="linenos">288</span>        <span class="c1"># * `fft`: FFT object to transform the input.</span>
-<span class="linenos">289</span>        <span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">FFT</span>
+<span class="linenos">289</span>        <span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">FFT</span>
 <span class="linenos">290</span>
 <span class="linenos">291</span>        <span class="n">ndi</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="linenos">292</span>        <span class="k">if</span> <span class="n">ndi</span> <span class="o">==</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">DASK</span><span class="p">:</span>

@@ -27,7 +27,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
@@ -465,13 +465,13 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <h1>Source code for pyxu.util.misc</h1><div class="highlight"><pre>
-<span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">collections.abc</span> <span class="k">as</span> <span class="nn">cabc</span>
-<span class="linenos">  2</span><span class="kn">import</span> <span class="nn">importlib</span>
-<span class="linenos">  3</span><span class="kn">import</span> <span class="nn">inspect</span>
-<span class="linenos">  4</span><span class="kn">import</span> <span class="nn">types</span>
+<span></span><span class="linenos">  1</span><span class="kn">import</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cabc</span>
+<span class="linenos">  2</span><span class="kn">import</span><span class="w"> </span><span class="nn">importlib</span>
+<span class="linenos">  3</span><span class="kn">import</span><span class="w"> </span><span class="nn">inspect</span>
+<span class="linenos">  4</span><span class="kn">import</span><span class="w"> </span><span class="nn">types</span>
 <span class="linenos">  5</span>
-<span class="linenos">  6</span><span class="kn">import</span> <span class="nn">pyxu.info.deps</span> <span class="k">as</span> <span class="nn">pxd</span>
-<span class="linenos">  7</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
+<span class="linenos">  6</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.deps</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxd</span>
+<span class="linenos">  7</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.ptype</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxt</span>
 <span class="linenos">  8</span>
 <span class="linenos">  9</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
 <span class="linenos"> 10</span>    <span class="s2">&quot;copy_if_unsafe&quot;</span><span class="p">,</span>
@@ -483,7 +483,7 @@ document.write(`
 <span class="linenos"> 16</span>
 <div class="viewcode-block" id="peaks">
 <a class="viewcode-back" href="../../../api/util.html#pyxu.util.peaks">[docs]</a>
-<span class="linenos"> 17</span><span class="k">def</span> <span class="nf">peaks</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos"> 17</span><span class="k">def</span><span class="w"> </span><span class="nf">peaks</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos"> 18</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 19</span><span class="sd">    Matlab 2D peaks function.</span>
 <span class="linenos"> 20</span>
@@ -532,7 +532,7 @@ document.write(`
 <span class="linenos"> 62</span>
 <div class="viewcode-block" id="star_like_sample">
 <a class="viewcode-back" href="../../../api/util.html#pyxu.util.star_like_sample">[docs]</a>
-<span class="linenos"> 63</span><span class="k">def</span> <span class="nf">star_like_sample</span><span class="p">(</span>
+<span class="linenos"> 63</span><span class="k">def</span><span class="w"> </span><span class="nf">star_like_sample</span><span class="p">(</span>
 <span class="linenos"> 64</span>    <span class="n">N</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span>
 <span class="linenos"> 65</span>    <span class="n">w</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span>
 <span class="linenos"> 66</span>    <span class="n">s</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span>
@@ -597,7 +597,7 @@ document.write(`
 <span class="linenos">124</span>
 <div class="viewcode-block" id="parse_params">
 <a class="viewcode-back" href="../../../api/util.html#pyxu.util.parse_params">[docs]</a>
-<span class="linenos">125</span><span class="k">def</span> <span class="nf">parse_params</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">:</span>
+<span class="linenos">125</span><span class="k">def</span><span class="w"> </span><span class="nf">parse_params</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">:</span>
 <span class="linenos">126</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">127</span><span class="sd">    Get function parameterization.</span>
 <span class="linenos">128</span>
@@ -620,7 +620,7 @@ document.write(`
 <span class="linenos">144</span>
 <div class="viewcode-block" id="import_module">
 <a class="viewcode-back" href="../../../api/util.html#pyxu.util.import_module">[docs]</a>
-<span class="linenos">145</span><span class="k">def</span> <span class="nf">import_module</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">fail_on_error</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">:</span>
+<span class="linenos">145</span><span class="k">def</span><span class="w"> </span><span class="nf">import_module</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">fail_on_error</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">:</span>
 <span class="linenos">146</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">147</span><span class="sd">    Load a Python module dynamically.</span>
 <span class="linenos">148</span><span class="sd">    &quot;&quot;&quot;</span>
@@ -637,7 +637,7 @@ document.write(`
 <span class="linenos">158</span>
 <div class="viewcode-block" id="copy_if_unsafe">
 <a class="viewcode-back" href="../../../api/util.html#pyxu.util.copy_if_unsafe">[docs]</a>
-<span class="linenos">159</span><span class="k">def</span> <span class="nf">copy_if_unsafe</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">159</span><span class="k">def</span><span class="w"> </span><span class="nf">copy_if_unsafe</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">160</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">161</span><span class="sd">    Copy array if it is unsafe to do in-place updates on it.</span>
 <span class="linenos">162</span>
@@ -676,7 +676,7 @@ document.write(`
 <span class="linenos">194</span>
 <div class="viewcode-block" id="read_only">
 <a class="viewcode-back" href="../../../api/util.html#pyxu.util.read_only">[docs]</a>
-<span class="linenos">195</span><span class="k">def</span> <span class="nf">read_only</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">195</span><span class="k">def</span><span class="w"> </span><span class="nf">read_only</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">196</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">197</span><span class="sd">    Make an array read-only.</span>
 <span class="linenos">198</span>

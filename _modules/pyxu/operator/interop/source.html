@@ -27,7 +27,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
@@ -465,12 +465,12 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <h1>Source code for pyxu.operator.interop.source</h1><div class="highlight"><pre>
-<span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">collections.abc</span> <span class="k">as</span> <span class="nn">cabc</span>
-<span class="linenos">  2</span><span class="kn">import</span> <span class="nn">types</span>
+<span></span><span class="linenos">  1</span><span class="kn">import</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cabc</span>
+<span class="linenos">  2</span><span class="kn">import</span><span class="w"> </span><span class="nn">types</span>
 <span class="linenos">  3</span>
-<span class="linenos">  4</span><span class="kn">import</span> <span class="nn">pyxu.abc</span> <span class="k">as</span> <span class="nn">pxa</span>
-<span class="linenos">  5</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
-<span class="linenos">  6</span><span class="kn">import</span> <span class="nn">pyxu.util</span> <span class="k">as</span> <span class="nn">pxu</span>
+<span class="linenos">  4</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.abc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxa</span>
+<span class="linenos">  5</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.ptype</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxt</span>
+<span class="linenos">  6</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.util</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxu</span>
 <span class="linenos">  7</span>
 <span class="linenos">  8</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
 <span class="linenos">  9</span>    <span class="s2">&quot;from_source&quot;</span><span class="p">,</span>
@@ -479,7 +479,7 @@ document.write(`
 <span class="linenos"> 12</span>
 <div class="viewcode-block" id="from_source">
 <a class="viewcode-back" href="../../../../api/operator.interop.html#pyxu.operator.interop.from_source">[docs]</a>
-<span class="linenos"> 13</span><span class="k">def</span> <span class="nf">from_source</span><span class="p">(</span>
+<span class="linenos"> 13</span><span class="k">def</span><span class="w"> </span><span class="nf">from_source</span><span class="p">(</span>
 <span class="linenos"> 14</span>    <span class="bp">cls</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpC</span><span class="p">,</span>
 <span class="linenos"> 15</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 16</span>    <span class="n">codim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
@@ -598,8 +598,8 @@ document.write(`
 
 <span class="linenos">129</span>
 <span class="linenos">130</span>
-<span class="linenos">131</span><span class="k">class</span> <span class="nc">_FromSource</span><span class="p">:</span>  <span class="c1"># See from_source() for a detailed description.</span>
-<span class="linenos">132</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="linenos">131</span><span class="k">class</span><span class="w"> </span><span class="nc">_FromSource</span><span class="p">:</span>  <span class="c1"># See from_source() for a detailed description.</span>
+<span class="linenos">132</span>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 <span class="linenos">133</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">134</span>        <span class="bp">cls</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpC</span><span class="p">,</span>
 <span class="linenos">135</span>        <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
@@ -608,7 +608,7 @@ document.write(`
 <span class="linenos">138</span>        <span class="n">vectorize</span><span class="p">:</span> <span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
 <span class="linenos">139</span>        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="linenos">140</span>    <span class="p">):</span>
-<span class="linenos">141</span>        <span class="kn">from</span> <span class="nn">pyxu.abc.operator</span> <span class="kn">import</span> <span class="n">_core_operators</span>
+<span class="linenos">141</span>        <span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.abc.operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">_core_operators</span>
 <span class="linenos">142</span>
 <span class="linenos">143</span>        <span class="k">assert</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="n">_core_operators</span><span class="p">(),</span> <span class="sa">f</span><span class="s2">&quot;Unknown Operator type: </span><span class="si">{</span><span class="bp">cls</span><span class="si">}</span><span class="s2">.&quot;</span>
 <span class="linenos">144</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_op</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span>  <span class="c1"># ensure shape well-formed</span>
@@ -633,7 +633,7 @@ document.write(`
 <span class="linenos">163</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_vkwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_vectorize</span><span class="p">(</span><span class="n">vectorize</span><span class="p">)</span>
 <span class="linenos">164</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_vectorize</span> <span class="o">=</span> <span class="n">vectorize</span>
 <span class="linenos">165</span>
-<span class="linenos">166</span>    <span class="k">def</span> <span class="nf">op</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
+<span class="linenos">166</span>    <span class="k">def</span><span class="w"> </span><span class="nf">op</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
 <span class="linenos">167</span>        <span class="n">_op</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_op</span>  <span class="c1"># shorthand</span>
 <span class="linenos">168</span>        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">_op</span><span class="o">.</span><span class="n">properties</span><span class="p">():</span>
 <span class="linenos">169</span>            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">arithmetic_methods</span><span class="p">():</span>
@@ -653,7 +653,7 @@ document.write(`
 <span class="linenos">183</span>
 <span class="linenos">184</span>        <span class="k">return</span> <span class="n">_op</span>
 <span class="linenos">185</span>
-<span class="linenos">186</span>    <span class="k">def</span> <span class="nf">_parse_vectorize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vectorize</span><span class="p">:</span> <span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span>
+<span class="linenos">186</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_parse_vectorize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vectorize</span><span class="p">:</span> <span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span>
 <span class="linenos">187</span>        <span class="n">vkwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>  <span class="c1"># Parameter hints for vectorize()</span>
 <span class="linenos">188</span>            <span class="n">apply</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
 <span class="linenos">189</span>                <span class="n">i</span><span class="o">=</span><span class="s2">&quot;arr&quot;</span><span class="p">,</span>  <span class="c1"># Pyxu arithmetic methods broadcast along parameter `arr`.</span>

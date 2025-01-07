@@ -27,7 +27,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
@@ -465,14 +465,14 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <h1>Source code for pyxu.operator.linop.pad</h1><div class="highlight"><pre>
-<span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">collections.abc</span> <span class="k">as</span> <span class="nn">cabc</span>
-<span class="linenos">  2</span><span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">typ</span>
+<span></span><span class="linenos">  1</span><span class="kn">import</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cabc</span>
+<span class="linenos">  2</span><span class="kn">import</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">typ</span>
 <span class="linenos">  3</span>
-<span class="linenos">  4</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos">  4</span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="linenos">  5</span>
-<span class="linenos">  6</span><span class="kn">import</span> <span class="nn">pyxu.abc</span> <span class="k">as</span> <span class="nn">pxa</span>
-<span class="linenos">  7</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
-<span class="linenos">  8</span><span class="kn">import</span> <span class="nn">pyxu.util</span> <span class="k">as</span> <span class="nn">pxu</span>
+<span class="linenos">  6</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.abc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxa</span>
+<span class="linenos">  7</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.ptype</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxt</span>
+<span class="linenos">  8</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.util</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxu</span>
 <span class="linenos">  9</span>
 <span class="linenos"> 10</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
 <span class="linenos"> 11</span>    <span class="s2">&quot;Pad&quot;</span><span class="p">,</span>
@@ -481,7 +481,7 @@ document.write(`
 <span class="linenos"> 14</span>
 <div class="viewcode-block" id="Pad">
 <a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.Pad">[docs]</a>
-<span class="linenos"> 15</span><span class="k">class</span> <span class="nc">Pad</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span><span class="p">):</span>
+<span class="linenos"> 15</span><span class="k">class</span><span class="w"> </span><span class="nc">Pad</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">LinOp</span><span class="p">):</span>
 <span class="linenos"> 16</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 17</span><span class="sd">    Multi-dimensional padding operator.</span>
 <span class="linenos"> 18</span>
@@ -606,7 +606,7 @@ document.write(`
 <span class="linenos">137</span>
 <div class="viewcode-block" id="Pad.__init__">
 <a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.Pad.__init__">[docs]</a>
-<span class="linenos">138</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="linenos">138</span>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 <span class="linenos">139</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">140</span>        <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos">141</span>        <span class="n">pad_width</span><span class="p">:</span> <span class="n">WidthSpec</span><span class="p">,</span>
@@ -703,7 +703,7 @@ document.write(`
 <span class="linenos">232</span>        <span class="bp">self</span><span class="o">.</span><span class="n">lipschitz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimate_lipschitz</span><span class="p">(</span><span class="n">__rule</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
 
 <span class="linenos">233</span>
-<span class="linenos">234</span>    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">234</span>    <span class="k">def</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">235</span>        <span class="n">sh</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_rank</span><span class="p">]</span>
 <span class="linenos">236</span>
 <span class="linenos">237</span>        <span class="c1"># Part 1: extend the core</span>
@@ -771,7 +771,7 @@ document.write(`
 <span class="linenos">299</span>
 <span class="linenos">300</span>        <span class="k">return</span> <span class="n">out</span>
 <span class="linenos">301</span>
-<span class="linenos">302</span>    <span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">302</span>    <span class="k">def</span><span class="w"> </span><span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">303</span>        <span class="n">sh</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">codim_rank</span><span class="p">]</span>
 <span class="linenos">304</span>
 <span class="linenos">305</span>        <span class="c1"># Part 1: apply correction terms (if any)</span>
@@ -837,7 +837,7 @@ document.write(`
 <span class="linenos">365</span>
 <span class="linenos">366</span>        <span class="k">return</span> <span class="n">out</span>
 <span class="linenos">367</span>
-<span class="linenos">368</span>    <span class="k">def</span> <span class="nf">estimate_lipschitz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">:</span>
+<span class="linenos">368</span>    <span class="k">def</span><span class="w"> </span><span class="nf">estimate_lipschitz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">:</span>
 <span class="linenos">369</span>        <span class="n">no_eval</span> <span class="o">=</span> <span class="s2">&quot;__rule&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span>
 <span class="linenos">370</span>        <span class="k">if</span> <span class="n">no_eval</span><span class="p">:</span>
 <span class="linenos">371</span>            <span class="n">L</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># 1D pad-op Lipschitz constants</span>
@@ -856,18 +856,18 @@ document.write(`
 <span class="linenos">384</span>            <span class="n">L</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">estimate_lipschitz</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="linenos">385</span>        <span class="k">return</span> <span class="n">L</span>
 <span class="linenos">386</span>
-<span class="linenos">387</span>    <span class="k">def</span> <span class="nf">gram</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
+<span class="linenos">387</span>    <span class="k">def</span><span class="w"> </span><span class="nf">gram</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
 <span class="linenos">388</span>        <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">m</span> <span class="o">==</span> <span class="s2">&quot;constant&quot;</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span><span class="p">):</span>
-<span class="linenos">389</span>            <span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">IdentityOp</span>
+<span class="linenos">389</span>            <span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">IdentityOp</span>
 <span class="linenos">390</span>
 <span class="linenos">391</span>            <span class="n">op</span> <span class="o">=</span> <span class="n">IdentityOp</span><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">)</span>
 <span class="linenos">392</span>        <span class="k">else</span><span class="p">:</span>
 <span class="linenos">393</span>            <span class="n">op</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">gram</span><span class="p">()</span>
 <span class="linenos">394</span>        <span class="k">return</span> <span class="n">op</span>
 <span class="linenos">395</span>
-<span class="linenos">396</span>    <span class="k">def</span> <span class="nf">cogram</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
+<span class="linenos">396</span>    <span class="k">def</span><span class="w"> </span><span class="nf">cogram</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
 <span class="linenos">397</span>        <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">m</span> <span class="o">==</span> <span class="s2">&quot;constant&quot;</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span><span class="p">):</span>
-<span class="linenos">398</span>            <span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">Trim</span>
+<span class="linenos">398</span>            <span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">Trim</span>
 <span class="linenos">399</span>
 <span class="linenos">400</span>            <span class="c1"># Orthogonal projection</span>
 <span class="linenos">401</span>            <span class="n">op</span> <span class="o">=</span> <span class="n">Trim</span><span class="p">(</span>

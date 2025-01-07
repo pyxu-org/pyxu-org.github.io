@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -520,15 +520,15 @@ already familiar with the library’s basics and wish to dive deeper into its fu
 <li><p><code class="docutils literal notranslate"><span class="pre">pyxu.util</span></code>: utility functions.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pyxu.experimental</span></code>: experimental packages. These may change in the future without warning. Each sub-module under
 <code class="docutils literal notranslate"><span class="pre">experimental</span></code> must be imported individually:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.experimental.sampler</span> <span class="kn">import</span> <span class="n">ULA</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.experimental.sampler</span><span class="w"> </span><span class="kn">import</span> <span class="n">ULA</span>
 </pre></div>
 </div>
 </li>
 </ul>
 <p>Individual Pyxu components should be imported from these top-level modules. Some low-level routines are not exposed from
 the former and must be imported explicitly:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">Sum</span>  <span class="c1"># top-level import</span>
-<span class="kn">from</span> <span class="nn">pyxu.util.misc</span> <span class="kn">import</span> <span class="n">peaks</span>  <span class="c1"># low-level import</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">Sum</span>  <span class="c1"># top-level import</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.util.misc</span><span class="w"> </span><span class="kn">import</span> <span class="n">peaks</span>  <span class="c1"># low-level import</span>
 </pre></div>
 </div>
 <p>The import path of each object can be inferred by looking at its canonical path in the alphabetical listings below.</p>
@@ -873,7 +873,7 @@ the former and must be imported explicitly:</p>
 <table class="autosummary longtable table autosummary">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="operator.interop.html#pyxu.operator.interop.from_sciop" title="pyxu.operator.interop.from_sciop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_sciop</span></code></a>(cls, sp_op)</p></td>
-<td><p>Wrap a <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.LinearOperator.html#scipy.sparse.linalg.LinearOperator" title="(in SciPy v1.14.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinearOperator</span></code></a> as a 2D <a class="reference internal" href="abc.html#pyxu.abc.LinOp" title="pyxu.abc.LinOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinOp</span></code></a> (or sub-class thereof).</p></td>
+<td><p>Wrap a <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.LinearOperator.html#scipy.sparse.linalg.LinearOperator" title="(in SciPy v1.15.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinearOperator</span></code></a> as a 2D <a class="reference internal" href="abc.html#pyxu.abc.LinOp" title="pyxu.abc.LinOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinOp</span></code></a> (or sub-class thereof).</p></td>
 </tr>
 </tbody>
 </table>

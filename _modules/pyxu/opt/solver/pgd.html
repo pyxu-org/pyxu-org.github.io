@@ -27,7 +27,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
@@ -465,17 +465,17 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <h1>Source code for pyxu.opt.solver.pgd</h1><div class="highlight"><pre>
-<span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">itertools</span>
-<span class="linenos">  2</span><span class="kn">import</span> <span class="nn">math</span>
-<span class="linenos">  3</span><span class="kn">import</span> <span class="nn">warnings</span>
+<span></span><span class="linenos">  1</span><span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
+<span class="linenos">  2</span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="linenos">  3</span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="linenos">  4</span>
-<span class="linenos">  5</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos">  5</span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="linenos">  6</span>
-<span class="linenos">  7</span><span class="kn">import</span> <span class="nn">pyxu.abc</span> <span class="k">as</span> <span class="nn">pxa</span>
-<span class="linenos">  8</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
-<span class="linenos">  9</span><span class="kn">import</span> <span class="nn">pyxu.info.warning</span> <span class="k">as</span> <span class="nn">pxw</span>
-<span class="linenos"> 10</span><span class="kn">import</span> <span class="nn">pyxu.operator</span> <span class="k">as</span> <span class="nn">pxo</span>
-<span class="linenos"> 11</span><span class="kn">import</span> <span class="nn">pyxu.util</span> <span class="k">as</span> <span class="nn">pxu</span>
+<span class="linenos">  7</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.abc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxa</span>
+<span class="linenos">  8</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.ptype</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxt</span>
+<span class="linenos">  9</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.warning</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxw</span>
+<span class="linenos"> 10</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxo</span>
+<span class="linenos"> 11</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.util</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxu</span>
 <span class="linenos"> 12</span>
 <span class="linenos"> 13</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
 <span class="linenos"> 14</span>    <span class="s2">&quot;PGD&quot;</span><span class="p">,</span>
@@ -484,7 +484,7 @@ document.write(`
 <span class="linenos"> 17</span>
 <div class="viewcode-block" id="PGD">
 <a class="viewcode-back" href="../../../../api/opt.solver.html#pyxu.opt.solver.PGD">[docs]</a>
-<span class="linenos"> 18</span><span class="k">class</span> <span class="nc">PGD</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">Solver</span><span class="p">):</span>
+<span class="linenos"> 18</span><span class="k">class</span><span class="w"> </span><span class="nc">PGD</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">Solver</span><span class="p">):</span>
 <span class="linenos"> 19</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 20</span><span class="sd">    Proximal Gradient Descent (PGD) solver.</span>
 <span class="linenos"> 21</span>
@@ -561,7 +561,7 @@ document.write(`
 <span class="linenos"> 92</span><span class="sd">      Other keyword parameters passed on to :py:meth:`pyxu.abc.Solver.fit`.</span>
 <span class="linenos"> 93</span><span class="sd">    &quot;&quot;&quot;</span>
 <span class="linenos"> 94</span>
-<span class="linenos"> 95</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="linenos"> 95</span>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 <span class="linenos"> 96</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos"> 97</span>        <span class="n">f</span><span class="p">:</span> <span class="n">pxa</span><span class="o">.</span><span class="n">DiffFunc</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="linenos"> 98</span>        <span class="n">g</span><span class="p">:</span> <span class="n">pxa</span><span class="o">.</span><span class="n">ProxFunc</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -590,7 +590,7 @@ document.write(`
 <span class="linenos">121</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_f</span> <span class="o">=</span> <span class="n">f</span>
 <span class="linenos">122</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_g</span> <span class="o">=</span> <span class="n">g</span>
 <span class="linenos">123</span>
-<span class="linenos">124</span>    <span class="k">def</span> <span class="nf">m_init</span><span class="p">(</span>
+<span class="linenos">124</span>    <span class="k">def</span><span class="w"> </span><span class="nf">m_init</span><span class="p">(</span>
 <span class="linenos">125</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">126</span>        <span class="n">x0</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span>
 <span class="linenos">127</span>        <span class="n">tau</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -638,7 +638,7 @@ document.write(`
 <span class="linenos">169</span>        <span class="k">else</span><span class="p">:</span>
 <span class="linenos">170</span>            <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
 <span class="linenos">171</span>
-<span class="linenos">172</span>    <span class="k">def</span> <span class="nf">m_step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">172</span>    <span class="k">def</span><span class="w"> </span><span class="nf">m_step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="linenos">173</span>        <span class="n">mst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mstate</span>  <span class="c1"># shorthand</span>
 <span class="linenos">174</span>        <span class="n">a</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">mst</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">])</span>
 <span class="linenos">175</span>
@@ -658,8 +658,8 @@ document.write(`
 <span class="linenos">189</span>
 <span class="linenos">190</span>        <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;x_prev&quot;</span><span class="p">],</span> <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">_g</span><span class="o">.</span><span class="n">prox</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;tau&quot;</span><span class="p">])</span>
 <span class="linenos">191</span>
-<span class="linenos">192</span>    <span class="k">def</span> <span class="nf">default_stop_crit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxa</span><span class="o">.</span><span class="n">StoppingCriterion</span><span class="p">:</span>
-<span class="linenos">193</span>        <span class="kn">from</span> <span class="nn">pyxu.opt.stop</span> <span class="kn">import</span> <span class="n">RelError</span>
+<span class="linenos">192</span>    <span class="k">def</span><span class="w"> </span><span class="nf">default_stop_crit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxa</span><span class="o">.</span><span class="n">StoppingCriterion</span><span class="p">:</span>
+<span class="linenos">193</span>        <span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.opt.stop</span><span class="w"> </span><span class="kn">import</span> <span class="n">RelError</span>
 <span class="linenos">194</span>
 <span class="linenos">195</span>        <span class="n">stop_crit</span> <span class="o">=</span> <span class="n">RelError</span><span class="p">(</span>
 <span class="linenos">196</span>            <span class="n">eps</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span>
@@ -671,13 +671,13 @@ document.write(`
 <span class="linenos">202</span>        <span class="p">)</span>
 <span class="linenos">203</span>        <span class="k">return</span> <span class="n">stop_crit</span>
 <span class="linenos">204</span>
-<span class="linenos">205</span>    <span class="k">def</span> <span class="nf">objective_func</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">205</span>    <span class="k">def</span><span class="w"> </span><span class="nf">objective_func</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">206</span>        <span class="n">func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_f</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_g</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="linenos">207</span>
 <span class="linenos">208</span>        <span class="n">y</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mstate</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">])</span>
 <span class="linenos">209</span>        <span class="k">return</span> <span class="n">y</span>
 <span class="linenos">210</span>
-<span class="linenos">211</span>    <span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">211</span>    <span class="k">def</span><span class="w"> </span><span class="nf">solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">212</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">213</span><span class="sd">        Returns</span>
 <span class="linenos">214</span><span class="sd">        -------</span>

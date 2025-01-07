@@ -27,7 +27,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
@@ -468,22 +468,22 @@ document.write(`
 <span></span><span class="linenos">  1</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">  2</span><span class="sd">Low-level functions used to define user-facing stencils.</span>
 <span class="linenos">  3</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">  4</span><span class="kn">import</span> <span class="nn">collections.abc</span> <span class="k">as</span> <span class="nn">cabc</span>
-<span class="linenos">  5</span><span class="kn">import</span> <span class="nn">itertools</span>
-<span class="linenos">  6</span><span class="kn">import</span> <span class="nn">pathlib</span> <span class="k">as</span> <span class="nn">plib</span>
-<span class="linenos">  7</span><span class="kn">import</span> <span class="nn">string</span>
-<span class="linenos">  8</span><span class="kn">import</span> <span class="nn">types</span>
+<span class="linenos">  4</span><span class="kn">import</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cabc</span>
+<span class="linenos">  5</span><span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
+<span class="linenos">  6</span><span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plib</span>
+<span class="linenos">  7</span><span class="kn">import</span><span class="w"> </span><span class="nn">string</span>
+<span class="linenos">  8</span><span class="kn">import</span><span class="w"> </span><span class="nn">types</span>
 <span class="linenos">  9</span>
-<span class="linenos"> 10</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos"> 10</span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="linenos"> 11</span>
-<span class="linenos"> 12</span><span class="kn">import</span> <span class="nn">pyxu.info.config</span> <span class="k">as</span> <span class="nn">pxcfg</span>
-<span class="linenos"> 13</span><span class="kn">import</span> <span class="nn">pyxu.info.deps</span> <span class="k">as</span> <span class="nn">pxd</span>
-<span class="linenos"> 14</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
-<span class="linenos"> 15</span><span class="kn">import</span> <span class="nn">pyxu.runtime</span> <span class="k">as</span> <span class="nn">pxrt</span>
-<span class="linenos"> 16</span><span class="kn">import</span> <span class="nn">pyxu.util</span> <span class="k">as</span> <span class="nn">pxu</span>
+<span class="linenos"> 12</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.config</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxcfg</span>
+<span class="linenos"> 13</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.deps</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxd</span>
+<span class="linenos"> 14</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.ptype</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxt</span>
+<span class="linenos"> 15</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.runtime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxrt</span>
+<span class="linenos"> 16</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.util</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxu</span>
 <span class="linenos"> 17</span>
 <span class="linenos"> 18</span>
-<span class="linenos"> 19</span><span class="k">def</span> <span class="nf">_signature</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">returns</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="linenos"> 19</span><span class="k">def</span><span class="w"> </span><span class="nf">_signature</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">returns</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="linenos"> 20</span>    <span class="c1"># Translate a signature of the form</span>
 <span class="linenos"> 21</span>    <span class="c1">#     [in_1_spec, ..., in_N_spec] -&gt; out_spec</span>
 <span class="linenos"> 22</span>    <span class="c1"># to Numba&#39;s string representation.</span>
@@ -501,7 +501,7 @@ document.write(`
 <span class="linenos"> 34</span>    <span class="c1"># -----</span>
 <span class="linenos"> 35</span>    <span class="c1"># A parameter spec is characterized by the triplet</span>
 <span class="linenos"> 36</span>    <span class="c1">#     (dtype[single/double], ndim[int], c_contiguous[bool])</span>
-<span class="linenos"> 37</span>    <span class="k">def</span> <span class="nf">fmt</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="linenos"> 37</span>    <span class="k">def</span><span class="w"> </span><span class="nf">fmt</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="linenos"> 38</span>        <span class="n">dtype</span><span class="p">,</span> <span class="n">ndim</span><span class="p">,</span> <span class="n">c_contiguous</span> <span class="o">=</span> <span class="n">spec</span>
 <span class="linenos"> 39</span>
 <span class="linenos"> 40</span>        <span class="n">_dtype_spec</span> <span class="o">=</span> <span class="p">{</span>
@@ -532,7 +532,7 @@ document.write(`
 <span class="linenos"> 65</span>
 <div class="viewcode-block" id="_Stencil">
 <a class="viewcode-back" href="../../../../../api/operator/linop.html#pyxu.operator._Stencil">[docs]</a>
-<span class="linenos"> 66</span><span class="k">class</span> <span class="nc">_Stencil</span><span class="p">:</span>
+<span class="linenos"> 66</span><span class="k">class</span><span class="w"> </span><span class="nc">_Stencil</span><span class="p">:</span>
 <span class="linenos"> 67</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 68</span><span class="sd">    Multi-dimensional JIT-compiled stencil. (Low-level function.)</span>
 <span class="linenos"> 69</span>
@@ -573,7 +573,7 @@ document.write(`
 <div class="viewcode-block" id="_Stencil.init">
 <a class="viewcode-back" href="../../../../../api/operator/linop.html#pyxu.operator._Stencil.init">[docs]</a>
 <span class="linenos">104</span>    <span class="nd">@staticmethod</span>
-<span class="linenos">105</span>    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span>
+<span class="linenos">105</span>    <span class="k">def</span><span class="w"> </span><span class="nf">init</span><span class="p">(</span>
 <span class="linenos">106</span>        <span class="n">kernel</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span>
 <span class="linenos">107</span>        <span class="n">center</span><span class="p">:</span> <span class="n">IndexSpec</span><span class="p">,</span>
 <span class="linenos">108</span>    <span class="p">):</span>
@@ -615,7 +615,7 @@ document.write(`
 <span class="linenos">143</span>
 <div class="viewcode-block" id="_Stencil.apply">
 <a class="viewcode-back" href="../../../../../api/operator/linop.html#pyxu.operator._Stencil.apply">[docs]</a>
-<span class="linenos">144</span>    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span>
+<span class="linenos">144</span>    <span class="k">def</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span>
 <span class="linenos">145</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">146</span>        <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span>
 <span class="linenos">147</span>        <span class="n">out</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span>
@@ -674,7 +674,7 @@ document.write(`
 <span class="linenos">200</span>        <span class="k">return</span> <span class="n">out</span></div>
 
 <span class="linenos">201</span>
-<span class="linenos">202</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="linenos">202</span>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 <span class="linenos">203</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">204</span>        <span class="n">kernel</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span>
 <span class="linenos">205</span>        <span class="n">center</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span>
@@ -685,7 +685,7 @@ document.write(`
 <span class="linenos">210</span>        <span class="n">cached_module</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gen_code</span><span class="p">()</span>
 <span class="linenos">211</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_dispatch</span> <span class="o">=</span> <span class="n">cached_module</span><span class="o">.</span><span class="n">f_jit</span>
 <span class="linenos">212</span>
-<span class="linenos">213</span>    <span class="k">def</span> <span class="nf">_gen_code</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">:</span>
+<span class="linenos">213</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_gen_code</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">:</span>
 <span class="linenos">214</span>        <span class="c1"># Compile Numba kernel `void f_jit(arr, out)`.</span>
 <span class="linenos">215</span>        <span class="c1">#</span>
 <span class="linenos">216</span>        <span class="c1"># The code is compiled only if unavailable beforehand.</span>
@@ -696,7 +696,7 @@ document.write(`
 <span class="linenos">221</span>        <span class="c1">#     A (loaded) python package containing method f_jit().</span>
 <span class="linenos">222</span>        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 <span class="linenos">223</span>
-<span class="linenos">224</span>    <span class="k">def</span> <span class="nf">_configure_dispatcher</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pb_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">:</span>
+<span class="linenos">224</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_configure_dispatcher</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pb_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">:</span>
 <span class="linenos">225</span>        <span class="c1"># Configure `f_jit()`, the Numba Dispatcher instance.</span>
 <span class="linenos">226</span>        <span class="c1">#</span>
 <span class="linenos">227</span>        <span class="c1"># Parameters</span>
@@ -713,8 +713,8 @@ document.write(`
 
 <span class="linenos">238</span>
 <span class="linenos">239</span>
-<span class="linenos">240</span><span class="k">class</span> <span class="nc">_Stencil_NP</span><span class="p">(</span><span class="n">_Stencil</span><span class="p">):</span>
-<span class="linenos">241</span>    <span class="k">def</span> <span class="nf">_gen_code</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">:</span>
+<span class="linenos">240</span><span class="k">class</span><span class="w"> </span><span class="nc">_Stencil_NP</span><span class="p">(</span><span class="n">_Stencil</span><span class="p">):</span>
+<span class="linenos">241</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_gen_code</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">:</span>
 <span class="linenos">242</span>        <span class="c1"># Generate the code which should be compiled --------------------------</span>
 <span class="linenos">243</span>        <span class="n">sig_spec</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_kernel</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kernel</span><span class="o">.</span><span class="n">ndim</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 <span class="linenos">244</span>        <span class="n">signature</span> <span class="o">=</span> <span class="n">_signature</span><span class="p">((</span><span class="n">sig_spec</span><span class="p">,)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
@@ -734,11 +734,11 @@ document.write(`
 <span class="linenos">258</span>        <span class="n">jit_module</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">module_name</span><span class="p">)</span>
 <span class="linenos">259</span>        <span class="k">return</span> <span class="n">jit_module</span>
 <span class="linenos">260</span>
-<span class="linenos">261</span>    <span class="k">def</span> <span class="nf">_configure_dispatcher</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pb_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">:</span>
+<span class="linenos">261</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_configure_dispatcher</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pb_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">:</span>
 <span class="linenos">262</span>        <span class="c1"># Nothing to do for CPU targets.</span>
 <span class="linenos">263</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dispatch</span>
 <span class="linenos">264</span>
-<span class="linenos">265</span>    <span class="k">def</span> <span class="nf">__stencil_spec</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="linenos">265</span>    <span class="k">def</span><span class="w"> </span><span class="nf">__stencil_spec</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="linenos">266</span>        <span class="n">f_fmt</span> <span class="o">=</span> <span class="p">{</span>  <span class="c1"># coef float-formatter</span>
 <span class="linenos">267</span>            <span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="o">.</span><span class="n">SINGLE</span><span class="p">:</span> <span class="s2">&quot;1.8e&quot;</span><span class="p">,</span>
 <span class="linenos">268</span>            <span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="o">.</span><span class="n">DOUBLE</span><span class="p">:</span> <span class="s2">&quot;1.16e&quot;</span><span class="p">,</span>
@@ -768,8 +768,8 @@ document.write(`
 <span class="linenos">292</span>        <span class="k">return</span> <span class="n">spec</span>
 <span class="linenos">293</span>
 <span class="linenos">294</span>
-<span class="linenos">295</span><span class="k">class</span> <span class="nc">_Stencil_CP</span><span class="p">(</span><span class="n">_Stencil</span><span class="p">):</span>
-<span class="linenos">296</span>    <span class="k">def</span> <span class="nf">_gen_code</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">:</span>
+<span class="linenos">295</span><span class="k">class</span><span class="w"> </span><span class="nc">_Stencil_CP</span><span class="p">(</span><span class="n">_Stencil</span><span class="p">):</span>
+<span class="linenos">296</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_gen_code</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">:</span>
 <span class="linenos">297</span>        <span class="c1"># Generate the code which should be compiled --------------------------</span>
 <span class="linenos">298</span>        <span class="n">sig_spec</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_kernel</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kernel</span><span class="o">.</span><span class="n">ndim</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 <span class="linenos">299</span>        <span class="n">signature</span> <span class="o">=</span> <span class="n">_signature</span><span class="p">((</span><span class="n">sig_spec</span><span class="p">,)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
@@ -792,7 +792,7 @@ document.write(`
 <span class="linenos">316</span>        <span class="n">jit_module</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">module_name</span><span class="p">)</span>
 <span class="linenos">317</span>        <span class="k">return</span> <span class="n">jit_module</span>
 <span class="linenos">318</span>
-<span class="linenos">319</span>    <span class="k">def</span> <span class="nf">_configure_dispatcher</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pb_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">:</span>
+<span class="linenos">319</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_configure_dispatcher</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pb_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">:</span>
 <span class="linenos">320</span>        <span class="c1"># Set (`threadsperblock`, `blockspergrid`)</span>
 <span class="linenos">321</span>        <span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">&lt;=</span> <span class="p">{</span>
 <span class="linenos">322</span>            <span class="s2">&quot;threadsperblock&quot;</span><span class="p">,</span>
@@ -804,7 +804,7 @@ document.write(`
 <span class="linenos">328</span>        <span class="n">bpg</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;blockspergrid&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">pb_size</span> <span class="o">//</span> <span class="n">tpb</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 <span class="linenos">329</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dispatch</span><span class="p">[</span><span class="n">bpg</span><span class="p">,</span> <span class="n">tpb</span><span class="p">]</span>
 <span class="linenos">330</span>
-<span class="linenos">331</span>    <span class="k">def</span> <span class="nf">__stencil_spec</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="linenos">331</span>    <span class="k">def</span><span class="w"> </span><span class="nf">__stencil_spec</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="linenos">332</span>        <span class="n">f_fmt</span> <span class="o">=</span> <span class="p">{</span>  <span class="c1"># coef float-formatter</span>
 <span class="linenos">333</span>            <span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="o">.</span><span class="n">SINGLE</span><span class="p">:</span> <span class="s2">&quot;1.8e&quot;</span><span class="p">,</span>
 <span class="linenos">334</span>            <span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="o">.</span><span class="n">DOUBLE</span><span class="p">:</span> <span class="s2">&quot;1.16e&quot;</span><span class="p">,</span>
@@ -835,7 +835,7 @@ document.write(`
 <span class="linenos">359</span>        <span class="n">spec</span> <span class="o">=</span> <span class="s2">&quot; + &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
 <span class="linenos">360</span>        <span class="k">return</span> <span class="n">spec</span>
 <span class="linenos">361</span>
-<span class="linenos">362</span>    <span class="k">def</span> <span class="nf">__unravel_spec</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="linenos">362</span>    <span class="k">def</span><span class="w"> </span><span class="nf">__unravel_spec</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="linenos">363</span>        <span class="n">N</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kernel</span><span class="o">.</span><span class="n">ndim</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># 1 stack-dim</span>
 <span class="linenos">364</span>        <span class="n">entry</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="linenos">365</span>

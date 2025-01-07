@@ -27,7 +27,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
@@ -465,30 +465,30 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <h1>Source code for pyxu.operator.linop.diff</h1><div class="highlight"><pre>
-<span></span><span class="linenos">   1</span><span class="kn">import</span> <span class="nn">collections</span>
-<span class="linenos">   2</span><span class="kn">import</span> <span class="nn">collections.abc</span> <span class="k">as</span> <span class="nn">cabc</span>
-<span class="linenos">   3</span><span class="kn">import</span> <span class="nn">itertools</span>
-<span class="linenos">   4</span><span class="kn">import</span> <span class="nn">math</span>
-<span class="linenos">   5</span><span class="kn">import</span> <span class="nn">types</span>
-<span class="linenos">   6</span><span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">typ</span>
+<span></span><span class="linenos">   1</span><span class="kn">import</span><span class="w"> </span><span class="nn">collections</span>
+<span class="linenos">   2</span><span class="kn">import</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cabc</span>
+<span class="linenos">   3</span><span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
+<span class="linenos">   4</span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="linenos">   5</span><span class="kn">import</span><span class="w"> </span><span class="nn">types</span>
+<span class="linenos">   6</span><span class="kn">import</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">typ</span>
 <span class="linenos">   7</span>
-<span class="linenos">   8</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos">   8</span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="linenos">   9</span>
-<span class="linenos">  10</span><span class="kn">import</span> <span class="nn">pyxu.info.deps</span> <span class="k">as</span> <span class="nn">pxd</span>
-<span class="linenos">  11</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
-<span class="linenos">  12</span><span class="kn">import</span> <span class="nn">pyxu.operator.blocks</span> <span class="k">as</span> <span class="nn">pxb</span>
-<span class="linenos">  13</span><span class="kn">import</span> <span class="nn">pyxu.operator.linop.base</span> <span class="k">as</span> <span class="nn">pxlb</span>
-<span class="linenos">  14</span><span class="kn">import</span> <span class="nn">pyxu.operator.linop.pad</span> <span class="k">as</span> <span class="nn">pxlp</span>
-<span class="linenos">  15</span><span class="kn">import</span> <span class="nn">pyxu.operator.linop.reduce</span> <span class="k">as</span> <span class="nn">pxlr</span>
-<span class="linenos">  16</span><span class="kn">import</span> <span class="nn">pyxu.operator.linop.stencil.stencil</span> <span class="k">as</span> <span class="nn">pxls</span>
-<span class="linenos">  17</span><span class="kn">import</span> <span class="nn">pyxu.operator.misc</span> <span class="k">as</span> <span class="nn">pxm</span>
-<span class="linenos">  18</span><span class="kn">import</span> <span class="nn">pyxu.runtime</span> <span class="k">as</span> <span class="nn">pxrt</span>
-<span class="linenos">  19</span><span class="kn">import</span> <span class="nn">pyxu.util</span> <span class="k">as</span> <span class="nn">pxu</span>
+<span class="linenos">  10</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.deps</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxd</span>
+<span class="linenos">  11</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.ptype</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxt</span>
+<span class="linenos">  12</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.operator.blocks</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxb</span>
+<span class="linenos">  13</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.operator.linop.base</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxlb</span>
+<span class="linenos">  14</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.operator.linop.pad</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxlp</span>
+<span class="linenos">  15</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.operator.linop.reduce</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxlr</span>
+<span class="linenos">  16</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.operator.linop.stencil.stencil</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxls</span>
+<span class="linenos">  17</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.operator.misc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxm</span>
+<span class="linenos">  18</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.runtime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxrt</span>
+<span class="linenos">  19</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.util</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxu</span>
 <span class="linenos">  20</span>
 <span class="linenos">  21</span><span class="k">try</span><span class="p">:</span>
-<span class="linenos">  22</span>    <span class="kn">import</span> <span class="nn">scipy.ndimage._filters</span> <span class="k">as</span> <span class="nn">scif</span>
+<span class="linenos">  22</span>    <span class="kn">import</span><span class="w"> </span><span class="nn">scipy.ndimage._filters</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">scif</span>
 <span class="linenos">  23</span><span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-<span class="linenos">  24</span>    <span class="kn">import</span> <span class="nn">scipy.ndimage.filters</span> <span class="k">as</span> <span class="nn">scif</span>
+<span class="linenos">  24</span>    <span class="kn">import</span><span class="w"> </span><span class="nn">scipy.ndimage.filters</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">scif</span>
 <span class="linenos">  25</span>
 <span class="linenos">  26</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
 <span class="linenos">  27</span>    <span class="s2">&quot;PartialDerivative&quot;</span><span class="p">,</span>
@@ -509,7 +509,7 @@ document.write(`
 <span class="linenos">  42</span><span class="n">PDMetaGD</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;GaussianDerivativeMeta&quot;</span><span class="p">,</span> <span class="s2">&quot;sampling sigma truncate&quot;</span><span class="p">)</span>
 <span class="linenos">  43</span>
 <span class="linenos">  44</span>
-<span class="linenos">  45</span><span class="k">def</span> <span class="nf">_sanitize_init_kwargs</span><span class="p">(</span>
+<span class="linenos">  45</span><span class="k">def</span><span class="w"> </span><span class="nf">_sanitize_init_kwargs</span><span class="p">(</span>
 <span class="linenos">  46</span>    <span class="n">order</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="o">...</span><span class="p">]],</span>
 <span class="linenos">  47</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos">  48</span>    <span class="n">sampling</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="o">...</span><span class="p">]],</span>
@@ -529,7 +529,7 @@ document.write(`
 <span class="linenos">  62</span>
 <span class="linenos">  63</span>    <span class="n">dim_shape</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">as_canonical_shape</span><span class="p">(</span><span class="n">dim_shape</span><span class="p">)</span>
 <span class="linenos">  64</span>
-<span class="linenos">  65</span>    <span class="k">def</span> <span class="nf">_ensure_tuple</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">param_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]]:</span>
+<span class="linenos">  65</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_ensure_tuple</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">param_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]]:</span>
 <span class="linenos">  66</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">  67</span><span class="sd">        Enforces the input parameters to be tuples of the same size as `dim_shape`.</span>
 <span class="linenos">  68</span><span class="sd">        &quot;&quot;&quot;</span>
@@ -605,7 +605,7 @@ document.write(`
 <span class="linenos"> 138</span>    <span class="p">)</span>
 <span class="linenos"> 139</span>
 <span class="linenos"> 140</span>
-<span class="linenos"> 141</span><span class="k">def</span> <span class="nf">_create_kernel</span><span class="p">(</span>
+<span class="linenos"> 141</span><span class="k">def</span><span class="w"> </span><span class="nf">_create_kernel</span><span class="p">(</span>
 <span class="linenos"> 142</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 143</span>    <span class="n">axes</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayAxis</span><span class="p">,</span>
 <span class="linenos"> 144</span>    <span class="n">_fill_coefs</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Callable</span><span class="p">,</span>
@@ -624,7 +624,7 @@ document.write(`
 <span class="linenos"> 157</span>    <span class="k">return</span> <span class="n">stencil_coefs</span><span class="p">,</span> <span class="n">center</span>
 <span class="linenos"> 158</span>
 <span class="linenos"> 159</span>
-<span class="linenos"> 160</span><span class="k">def</span> <span class="nf">_FiniteDifference</span><span class="p">(</span>
+<span class="linenos"> 160</span><span class="k">def</span><span class="w"> </span><span class="nf">_FiniteDifference</span><span class="p">(</span>
 <span class="linenos"> 161</span>    <span class="n">order</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="o">...</span><span class="p">]],</span>
 <span class="linenos"> 162</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 163</span>    <span class="n">scheme</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]]</span> <span class="o">=</span> <span class="s2">&quot;forward&quot;</span><span class="p">,</span>
@@ -682,7 +682,7 @@ document.write(`
 <span class="linenos"> 215</span>        <span class="n">sampling</span><span class="o">=</span><span class="n">sampling</span><span class="p">,</span>
 <span class="linenos"> 216</span>    <span class="p">)</span>
 <span class="linenos"> 217</span>
-<span class="linenos"> 218</span>    <span class="k">def</span> <span class="nf">_compute_ids</span><span class="p">(</span><span class="n">order</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">scheme</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">accuracy</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="linenos"> 218</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_compute_ids</span><span class="p">(</span><span class="n">order</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">scheme</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">accuracy</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
 <span class="linenos"> 219</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 220</span><span class="sd">        Computes the Finite difference indices according to the order, type and accuracy.</span>
 <span class="linenos"> 221</span><span class="sd">        &quot;&quot;&quot;</span>
@@ -702,7 +702,7 @@ document.write(`
 <span class="linenos"> 235</span>                <span class="p">)</span>
 <span class="linenos"> 236</span>        <span class="k">return</span> <span class="n">ids</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 <span class="linenos"> 237</span>
-<span class="linenos"> 238</span>    <span class="k">def</span> <span class="nf">_compute_coefficients</span><span class="p">(</span><span class="n">stencil_ids</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">,</span> <span class="n">order</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">sampling</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos"> 238</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_compute_coefficients</span><span class="p">(</span><span class="n">stencil_ids</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">,</span> <span class="n">order</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">sampling</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos"> 239</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 240</span><span class="sd">        Computes the finite difference coefficients based on the order and indices.</span>
 <span class="linenos"> 241</span><span class="sd">        &quot;&quot;&quot;</span>
@@ -718,7 +718,7 @@ document.write(`
 <span class="linenos"> 251</span>        <span class="k">return</span> <span class="n">coefs</span>
 <span class="linenos"> 252</span>
 <span class="linenos"> 253</span>    <span class="c1"># FILL COEFFICIENTS</span>
-<span class="linenos"> 254</span>    <span class="k">def</span> <span class="nf">_fill_coefs</span><span class="p">(</span><span class="n">i</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">],</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">]:</span>
+<span class="linenos"> 254</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_fill_coefs</span><span class="p">(</span><span class="n">i</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">],</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">]:</span>
 <span class="linenos"> 255</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 256</span><span class="sd">        Defines kernel elements.</span>
 <span class="linenos"> 257</span><span class="sd">        &quot;&quot;&quot;</span>
@@ -731,7 +731,7 @@ document.write(`
 <span class="linenos"> 264</span>    <span class="k">return</span> <span class="n">kernel</span><span class="p">,</span> <span class="n">center</span>
 <span class="linenos"> 265</span>
 <span class="linenos"> 266</span>
-<span class="linenos"> 267</span><span class="k">def</span> <span class="nf">_GaussianDerivative</span><span class="p">(</span>
+<span class="linenos"> 267</span><span class="k">def</span><span class="w"> </span><span class="nf">_GaussianDerivative</span><span class="p">(</span>
 <span class="linenos"> 268</span>    <span class="n">order</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="o">...</span><span class="p">]],</span>
 <span class="linenos"> 269</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 270</span>    <span class="n">sigma</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="o">...</span><span class="p">]],</span>
@@ -788,7 +788,7 @@ document.write(`
 <span class="linenos"> 321</span>        <span class="n">sampling</span><span class="o">=</span><span class="n">sampling</span><span class="p">,</span>
 <span class="linenos"> 322</span>    <span class="p">)</span>
 <span class="linenos"> 323</span>
-<span class="linenos"> 324</span>    <span class="k">def</span> <span class="nf">_fill_coefs</span><span class="p">(</span><span class="n">i</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">],</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">]:</span>
+<span class="linenos"> 324</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_fill_coefs</span><span class="p">(</span><span class="n">i</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">],</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">]:</span>
 <span class="linenos"> 325</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 326</span><span class="sd">        Defines kernel elements.</span>
 <span class="linenos"> 327</span><span class="sd">        &quot;&quot;&quot;</span>
@@ -799,7 +799,7 @@ document.write(`
 <span class="linenos"> 332</span>        <span class="n">stencil_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">radius</span><span class="p">,</span> <span class="n">radius</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
 <span class="linenos"> 333</span>        <span class="k">return</span> <span class="n">stencil_ids</span><span class="p">,</span> <span class="n">stencil_coefs</span><span class="p">,</span> <span class="n">radius</span>
 <span class="linenos"> 334</span>
-<span class="linenos"> 335</span>    <span class="k">def</span> <span class="nf">_gaussian_kernel1d</span><span class="p">(</span>
+<span class="linenos"> 335</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_gaussian_kernel1d</span><span class="p">(</span>
 <span class="linenos"> 336</span>        <span class="n">sigma</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span>
 <span class="linenos"> 337</span>        <span class="n">order</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span>
 <span class="linenos"> 338</span>        <span class="n">sampling</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span>
@@ -818,7 +818,7 @@ document.write(`
 <span class="linenos"> 351</span>    <span class="k">return</span> <span class="n">kernel</span><span class="p">,</span> <span class="n">center</span>
 <span class="linenos"> 352</span>
 <span class="linenos"> 353</span>
-<span class="linenos"> 354</span><span class="k">def</span> <span class="nf">_PartialDerivative</span><span class="p">(</span>
+<span class="linenos"> 354</span><span class="k">def</span><span class="w"> </span><span class="nf">_PartialDerivative</span><span class="p">(</span>
 <span class="linenos"> 355</span>    <span class="n">kernel</span><span class="p">:</span> <span class="n">KernelSpec</span><span class="p">,</span>
 <span class="linenos"> 356</span>    <span class="n">center</span><span class="p">:</span> <span class="n">KernelSpec</span><span class="p">,</span>
 <span class="linenos"> 357</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
@@ -896,9 +896,9 @@ document.write(`
 <span class="linenos"> 429</span>
 <span class="linenos"> 430</span>    <span class="k">if</span> <span class="n">gpu</span><span class="p">:</span>
 <span class="linenos"> 431</span>        <span class="k">assert</span> <span class="n">pxd</span><span class="o">.</span><span class="n">CUPY_ENABLED</span>
-<span class="linenos"> 432</span>        <span class="kn">import</span> <span class="nn">cupy</span> <span class="k">as</span> <span class="nn">xp</span>
+<span class="linenos"> 432</span>        <span class="kn">import</span><span class="w"> </span><span class="nn">cupy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xp</span>
 <span class="linenos"> 433</span>    <span class="k">else</span><span class="p">:</span>
-<span class="linenos"> 434</span>        <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">xp</span>
+<span class="linenos"> 434</span>        <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xp</span>
 <span class="linenos"> 435</span>
 <span class="linenos"> 436</span>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">kernel</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">MutableSequence</span><span class="p">):</span>
 <span class="linenos"> 437</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">kernel</span><span class="p">)):</span>
@@ -914,7 +914,7 @@ document.write(`
 <span class="linenos"> 447</span>
 <div class="viewcode-block" id="PartialDerivative">
 <a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.PartialDerivative">[docs]</a>
-<span class="linenos"> 448</span><span class="k">class</span> <span class="nc">PartialDerivative</span><span class="p">:</span>
+<span class="linenos"> 448</span><span class="k">class</span><span class="w"> </span><span class="nc">PartialDerivative</span><span class="p">:</span>
 <span class="linenos"> 449</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 450</span><span class="sd">    Partial derivative operator based on `Numba stencils</span>
 <span class="linenos"> 451</span><span class="sd">    &lt;https://numba.pydata.org/numba-doc/latest/user/stencil.html&gt;`_.</span>
@@ -972,7 +972,7 @@ document.write(`
 <div class="viewcode-block" id="PartialDerivative.finite_difference">
 <a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.PartialDerivative.finite_difference">[docs]</a>
 <span class="linenos"> 503</span>    <span class="nd">@staticmethod</span>
-<span class="linenos"> 504</span>    <span class="k">def</span> <span class="nf">finite_difference</span><span class="p">(</span>
+<span class="linenos"> 504</span>    <span class="k">def</span><span class="w"> </span><span class="nf">finite_difference</span><span class="p">(</span>
 <span class="linenos"> 505</span>        <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 506</span>        <span class="n">order</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
 <span class="linenos"> 507</span>        <span class="n">scheme</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]]</span> <span class="o">=</span> <span class="s2">&quot;forward&quot;</span><span class="p">,</span>
@@ -1217,7 +1217,7 @@ document.write(`
 <div class="viewcode-block" id="PartialDerivative.gaussian_derivative">
 <a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.PartialDerivative.gaussian_derivative">[docs]</a>
 <span class="linenos"> 745</span>    <span class="nd">@staticmethod</span>
-<span class="linenos"> 746</span>    <span class="k">def</span> <span class="nf">gaussian_derivative</span><span class="p">(</span>
+<span class="linenos"> 746</span>    <span class="k">def</span><span class="w"> </span><span class="nf">gaussian_derivative</span><span class="p">(</span>
 <span class="linenos"> 747</span>        <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 748</span>        <span class="n">order</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
 <span class="linenos"> 749</span>        <span class="n">sigma</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="o">...</span><span class="p">]]</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
@@ -1401,7 +1401,7 @@ document.write(`
 
 <span class="linenos"> 926</span>
 <span class="linenos"> 927</span>
-<span class="linenos"> 928</span><span class="k">class</span> <span class="nc">_StackDiffHelper</span><span class="p">:</span>
+<span class="linenos"> 928</span><span class="k">class</span><span class="w"> </span><span class="nc">_StackDiffHelper</span><span class="p">:</span>
 <span class="linenos"> 929</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 930</span><span class="sd">    Helper class for Gradient and Hessian.</span>
 <span class="linenos"> 931</span>
@@ -1415,7 +1415,7 @@ document.write(`
 <span class="linenos"> 939</span><span class="sd">    &quot;&quot;&quot;</span>
 <span class="linenos"> 940</span>
 <span class="linenos"> 941</span>    <span class="nd">@staticmethod</span>
-<span class="linenos"> 942</span>    <span class="k">def</span> <span class="nf">_stack_diff_ops</span><span class="p">(</span>
+<span class="linenos"> 942</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_stack_diff_ops</span><span class="p">(</span>
 <span class="linenos"> 943</span>        <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 944</span>        <span class="n">directions</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayAxis</span><span class="p">,</span>
 <span class="linenos"> 945</span>        <span class="n">diff_method</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -1470,7 +1470,7 @@ document.write(`
 <span class="linenos"> 994</span>                    <span class="p">)</span>
 <span class="linenos"> 995</span>                <span class="p">)</span>
 <span class="linenos"> 996</span>
-<span class="linenos"> 997</span>        <span class="k">def</span> <span class="nf">visualize</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="linenos"> 997</span>        <span class="k">def</span><span class="w"> </span><span class="nf">visualize</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="linenos"> 998</span><span class="w">            </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 999</span><span class="sd">            Show the :math:`D`-dimensional stacked partial derivative kernels.</span>
 <span class="linenos">1000</span>
@@ -1521,7 +1521,7 @@ document.write(`
 <span class="linenos">1045</span>        <span class="k">return</span> <span class="n">op</span>
 <span class="linenos">1046</span>
 <span class="linenos">1047</span>    <span class="nd">@staticmethod</span>
-<span class="linenos">1048</span>    <span class="k">def</span> <span class="nf">_check_directions_and_order</span><span class="p">(</span>
+<span class="linenos">1048</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_check_directions_and_order</span><span class="p">(</span>
 <span class="linenos">1049</span>        <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos">1050</span>        <span class="n">directions</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span>
 <span class="linenos">1051</span>            <span class="nb">str</span><span class="p">,</span>
@@ -1530,7 +1530,7 @@ document.write(`
 <span class="linenos">1054</span>        <span class="p">],</span>
 <span class="linenos">1055</span>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayAxis</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayAxis</span><span class="p">]:</span>
 <span class="linenos">1056</span>        <span class="c1"># Convert directions to canonical form</span>
-<span class="linenos">1057</span>        <span class="k">def</span> <span class="nf">_check_directions</span><span class="p">(</span><span class="n">_directions</span><span class="p">):</span>
+<span class="linenos">1057</span>        <span class="k">def</span><span class="w"> </span><span class="nf">_check_directions</span><span class="p">(</span><span class="n">_directions</span><span class="p">):</span>
 <span class="linenos">1058</span>            <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">_</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dim_shape</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">_directions</span><span class="p">),</span> <span class="p">(</span>
 <span class="linenos">1059</span>                <span class="s2">&quot;Direction values must be between 0 and &quot;</span> <span class="s2">&quot;the number of dimensions in `dim_shape`.&quot;</span>
 <span class="linenos">1060</span>            <span class="p">)</span>
@@ -1577,7 +1577,7 @@ document.write(`
 <span class="linenos">1101</span>
 <div class="viewcode-block" id="Gradient">
 <a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.Gradient">[docs]</a>
-<span class="linenos">1102</span><span class="k">def</span> <span class="nf">Gradient</span><span class="p">(</span>
+<span class="linenos">1102</span><span class="k">def</span><span class="w"> </span><span class="nf">Gradient</span><span class="p">(</span>
 <span class="linenos">1103</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos">1104</span>    <span class="n">directions</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayAxis</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="linenos">1105</span>    <span class="n">diff_method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;fd&quot;</span><span class="p">,</span>
@@ -1728,7 +1728,7 @@ document.write(`
 <span class="linenos">1249</span>
 <div class="viewcode-block" id="Jacobian">
 <a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.Jacobian">[docs]</a>
-<span class="linenos">1250</span><span class="k">def</span> <span class="nf">Jacobian</span><span class="p">(</span>
+<span class="linenos">1250</span><span class="k">def</span><span class="w"> </span><span class="nf">Jacobian</span><span class="p">(</span>
 <span class="linenos">1251</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos">1252</span>    <span class="n">directions</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayAxis</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="linenos">1253</span>    <span class="n">diff_method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;fd&quot;</span><span class="p">,</span>
@@ -1843,7 +1843,7 @@ document.write(`
 <span class="linenos">1362</span><span class="sd">    :py:func:`~pyxu.operator.PartialDerivative`.</span>
 <span class="linenos">1363</span><span class="sd">    &quot;&quot;&quot;</span>
 <span class="linenos">1364</span>
-<span class="linenos">1365</span>    <span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Iterable</span>
+<span class="linenos">1365</span>    <span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterable</span>
 <span class="linenos">1366</span>
 <span class="linenos">1367</span>    <span class="k">if</span> <span class="n">directions</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 <span class="linenos">1368</span>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">directions</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">):</span>
@@ -1884,7 +1884,7 @@ document.write(`
 <span class="linenos">1402</span>
 <div class="viewcode-block" id="Divergence">
 <a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.Divergence">[docs]</a>
-<span class="linenos">1403</span><span class="k">def</span> <span class="nf">Divergence</span><span class="p">(</span>
+<span class="linenos">1403</span><span class="k">def</span><span class="w"> </span><span class="nf">Divergence</span><span class="p">(</span>
 <span class="linenos">1404</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos">1405</span>    <span class="n">directions</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayAxis</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="linenos">1406</span>    <span class="n">diff_method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;fd&quot;</span><span class="p">,</span>
@@ -2057,7 +2057,7 @@ document.write(`
 <span class="linenos">1572</span>
 <div class="viewcode-block" id="Hessian">
 <a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.Hessian">[docs]</a>
-<span class="linenos">1573</span><span class="k">def</span> <span class="nf">Hessian</span><span class="p">(</span>
+<span class="linenos">1573</span><span class="k">def</span><span class="w"> </span><span class="nf">Hessian</span><span class="p">(</span>
 <span class="linenos">1574</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos">1575</span>    <span class="n">directions</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span>
 <span class="linenos">1576</span>        <span class="nb">str</span><span class="p">,</span>
@@ -2262,7 +2262,7 @@ document.write(`
 <span class="linenos">1774</span>
 <div class="viewcode-block" id="Laplacian">
 <a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.Laplacian">[docs]</a>
-<span class="linenos">1775</span><span class="k">def</span> <span class="nf">Laplacian</span><span class="p">(</span>
+<span class="linenos">1775</span><span class="k">def</span><span class="w"> </span><span class="nf">Laplacian</span><span class="p">(</span>
 <span class="linenos">1776</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos">1777</span>    <span class="n">directions</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayAxis</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="linenos">1778</span>    <span class="n">diff_method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;fd&quot;</span><span class="p">,</span>
@@ -2398,7 +2398,7 @@ document.write(`
 <span class="linenos">1907</span>
 <div class="viewcode-block" id="DirectionalDerivative">
 <a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.DirectionalDerivative">[docs]</a>
-<span class="linenos">1908</span><span class="k">def</span> <span class="nf">DirectionalDerivative</span><span class="p">(</span>
+<span class="linenos">1908</span><span class="k">def</span><span class="w"> </span><span class="nf">DirectionalDerivative</span><span class="p">(</span>
 <span class="linenos">1909</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos">1910</span>    <span class="n">order</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span>
 <span class="linenos">1911</span>    <span class="n">directions</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">typ</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">]],</span>
@@ -2631,7 +2631,7 @@ document.write(`
 <span class="linenos">2138</span>    <span class="n">dop_compute</span> <span class="o">=</span> <span class="n">pxlb</span><span class="o">.</span><span class="n">DiagonalOp</span><span class="p">(</span><span class="n">pxu</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="n">diag</span><span class="p">))</span>
 <span class="linenos">2139</span>    <span class="n">op_compute</span> <span class="o">=</span> <span class="n">sqop</span> <span class="o">*</span> <span class="n">sop</span> <span class="o">*</span> <span class="n">dop_compute</span> <span class="o">*</span> <span class="n">diff</span>
 <span class="linenos">2140</span>
-<span class="linenos">2141</span>    <span class="k">def</span> <span class="nf">op_svdvals</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">2141</span>    <span class="k">def</span><span class="w"> </span><span class="nf">op_svdvals</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">2142</span>        <span class="k">return</span> <span class="n">op_compute</span><span class="o">.</span><span class="n">svdvals</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="linenos">2143</span>
 <span class="linenos">2144</span>    <span class="nb">setattr</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="s2">&quot;svdvals&quot;</span><span class="p">,</span> <span class="n">types</span><span class="o">.</span><span class="n">MethodType</span><span class="p">(</span><span class="n">op_svdvals</span><span class="p">,</span> <span class="n">op</span><span class="p">))</span>
@@ -2642,7 +2642,7 @@ document.write(`
 <span class="linenos">2148</span>
 <div class="viewcode-block" id="DirectionalGradient">
 <a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.DirectionalGradient">[docs]</a>
-<span class="linenos">2149</span><span class="k">def</span> <span class="nf">DirectionalGradient</span><span class="p">(</span>
+<span class="linenos">2149</span><span class="k">def</span><span class="w"> </span><span class="nf">DirectionalGradient</span><span class="p">(</span>
 <span class="linenos">2150</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos">2151</span>    <span class="n">directions</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">],</span>
 <span class="linenos">2152</span>    <span class="n">diff_method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;fd&quot;</span><span class="p">,</span>
@@ -2800,7 +2800,7 @@ document.write(`
 <span class="linenos">2304</span>    <span class="n">op</span> <span class="o">=</span> <span class="n">sqop</span> <span class="o">*</span> <span class="n">sop</span> <span class="o">*</span> <span class="n">dop</span> <span class="o">*</span> <span class="n">grad</span>
 <span class="linenos">2305</span>    <span class="n">op_compute</span> <span class="o">=</span> <span class="n">sqop</span> <span class="o">*</span> <span class="n">sop</span> <span class="o">*</span> <span class="n">dop_compute</span> <span class="o">*</span> <span class="n">grad</span>
 <span class="linenos">2306</span>
-<span class="linenos">2307</span>    <span class="k">def</span> <span class="nf">op_svdvals</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">2307</span>    <span class="k">def</span><span class="w"> </span><span class="nf">op_svdvals</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">2308</span>        <span class="k">return</span> <span class="n">op_compute</span><span class="o">.</span><span class="n">svdvals</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="linenos">2309</span>
 <span class="linenos">2310</span>    <span class="nb">setattr</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="s2">&quot;svdvals&quot;</span><span class="p">,</span> <span class="n">types</span><span class="o">.</span><span class="n">MethodType</span><span class="p">(</span><span class="n">op_svdvals</span><span class="p">,</span> <span class="n">op</span><span class="p">))</span>
@@ -2812,7 +2812,7 @@ document.write(`
 <span class="linenos">2315</span>
 <div class="viewcode-block" id="DirectionalLaplacian">
 <a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.DirectionalLaplacian">[docs]</a>
-<span class="linenos">2316</span><span class="k">def</span> <span class="nf">DirectionalLaplacian</span><span class="p">(</span>
+<span class="linenos">2316</span><span class="k">def</span><span class="w"> </span><span class="nf">DirectionalLaplacian</span><span class="p">(</span>
 <span class="linenos">2317</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos">2318</span>    <span class="n">directions</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">],</span>
 <span class="linenos">2319</span>    <span class="n">weights</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Iterable</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -2989,7 +2989,7 @@ document.write(`
 <span class="linenos">2490</span>    <span class="n">op</span> <span class="o">=</span> <span class="n">sqop</span> <span class="o">*</span> <span class="n">sop</span> <span class="o">*</span> <span class="n">dop</span> <span class="o">*</span> <span class="n">hess</span>
 <span class="linenos">2491</span>    <span class="n">op_compute</span> <span class="o">=</span> <span class="n">sqop</span> <span class="o">*</span> <span class="n">sop</span> <span class="o">*</span> <span class="n">dop_compute</span> <span class="o">*</span> <span class="n">hess</span>
 <span class="linenos">2492</span>
-<span class="linenos">2493</span>    <span class="k">def</span> <span class="nf">op_svdvals</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">2493</span>    <span class="k">def</span><span class="w"> </span><span class="nf">op_svdvals</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">2494</span>        <span class="k">return</span> <span class="n">op_compute</span><span class="o">.</span><span class="n">svdvals</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="linenos">2495</span>
 <span class="linenos">2496</span>    <span class="nb">setattr</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="s2">&quot;svdvals&quot;</span><span class="p">,</span> <span class="n">types</span><span class="o">.</span><span class="n">MethodType</span><span class="p">(</span><span class="n">op_svdvals</span><span class="p">,</span> <span class="n">op</span><span class="p">))</span>
@@ -3001,7 +3001,7 @@ document.write(`
 <span class="linenos">2501</span>
 <div class="viewcode-block" id="DirectionalHessian">
 <a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.DirectionalHessian">[docs]</a>
-<span class="linenos">2502</span><span class="k">def</span> <span class="nf">DirectionalHessian</span><span class="p">(</span>
+<span class="linenos">2502</span><span class="k">def</span><span class="w"> </span><span class="nf">DirectionalHessian</span><span class="p">(</span>
 <span class="linenos">2503</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos">2504</span>    <span class="n">directions</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">],</span>
 <span class="linenos">2505</span>    <span class="n">diff_method</span><span class="o">=</span><span class="s2">&quot;gd&quot;</span><span class="p">,</span>
@@ -3190,7 +3190,7 @@ document.write(`
 <span class="linenos">2688</span>    <span class="n">op</span> <span class="o">=</span> <span class="n">sqop</span> <span class="o">*</span> <span class="n">sop</span> <span class="o">*</span> <span class="n">dop</span> <span class="o">*</span> <span class="n">hess</span>
 <span class="linenos">2689</span>    <span class="n">op_compute</span> <span class="o">=</span> <span class="n">sqop</span> <span class="o">*</span> <span class="n">sop</span> <span class="o">*</span> <span class="n">dop_compute</span> <span class="o">*</span> <span class="n">hess</span>
 <span class="linenos">2690</span>
-<span class="linenos">2691</span>    <span class="k">def</span> <span class="nf">op_svdvals</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">2691</span>    <span class="k">def</span><span class="w"> </span><span class="nf">op_svdvals</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">2692</span>        <span class="k">return</span> <span class="n">op_compute</span><span class="o">.</span><span class="n">svdvals</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="linenos">2693</span>
 <span class="linenos">2694</span>    <span class="nb">setattr</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="s2">&quot;svdvals&quot;</span><span class="p">,</span> <span class="n">types</span><span class="o">.</span><span class="n">MethodType</span><span class="p">(</span><span class="n">op_svdvals</span><span class="p">,</span> <span class="n">op</span><span class="p">))</span>

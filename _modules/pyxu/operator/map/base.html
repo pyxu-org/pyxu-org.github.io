@@ -27,7 +27,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
@@ -465,13 +465,13 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <h1>Source code for pyxu.operator.map.base</h1><div class="highlight"><pre>
-<span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span></span><span class="linenos">  1</span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="linenos">  2</span>
-<span class="linenos">  3</span><span class="kn">import</span> <span class="nn">pyxu.abc</span> <span class="k">as</span> <span class="nn">pxa</span>
-<span class="linenos">  4</span><span class="kn">import</span> <span class="nn">pyxu.info.deps</span> <span class="k">as</span> <span class="nn">pxd</span>
-<span class="linenos">  5</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
-<span class="linenos">  6</span><span class="kn">import</span> <span class="nn">pyxu.operator.interop.source</span> <span class="k">as</span> <span class="nn">px_src</span>
-<span class="linenos">  7</span><span class="kn">import</span> <span class="nn">pyxu.util</span> <span class="k">as</span> <span class="nn">pxu</span>
+<span class="linenos">  3</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.abc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxa</span>
+<span class="linenos">  4</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.deps</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxd</span>
+<span class="linenos">  5</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.ptype</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxt</span>
+<span class="linenos">  6</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.operator.interop.source</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px_src</span>
+<span class="linenos">  7</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.util</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxu</span>
 <span class="linenos">  8</span>
 <span class="linenos">  9</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
 <span class="linenos"> 10</span>    <span class="s2">&quot;ConstantValued&quot;</span><span class="p">,</span>
@@ -480,7 +480,7 @@ document.write(`
 <span class="linenos"> 13</span>
 <div class="viewcode-block" id="ConstantValued">
 <a class="viewcode-back" href="../../../../api/operator/map.html#pyxu.operator.ConstantValued">[docs]</a>
-<span class="linenos"> 14</span><span class="k">def</span> <span class="nf">ConstantValued</span><span class="p">(</span>
+<span class="linenos"> 14</span><span class="k">def</span><span class="w"> </span><span class="nf">ConstantValued</span><span class="p">(</span>
 <span class="linenos"> 15</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 16</span>    <span class="n">codim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 17</span>    <span class="n">cst</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span>
@@ -494,11 +494,11 @@ document.write(`
 <span class="linenos"> 25</span>    <span class="n">cst</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">cst</span><span class="p">)</span>
 <span class="linenos"> 26</span>    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">cst</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
 <span class="linenos"> 27</span>        <span class="k">if</span> <span class="n">codim_shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">1</span><span class="p">,):</span>
-<span class="linenos"> 28</span>            <span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">NullFunc</span>
+<span class="linenos"> 28</span>            <span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">NullFunc</span>
 <span class="linenos"> 29</span>
 <span class="linenos"> 30</span>            <span class="n">op</span> <span class="o">=</span> <span class="n">NullFunc</span><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">)</span>
 <span class="linenos"> 31</span>        <span class="k">else</span><span class="p">:</span>
-<span class="linenos"> 32</span>            <span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">NullOp</span>
+<span class="linenos"> 32</span>            <span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">NullOp</span>
 <span class="linenos"> 33</span>
 <span class="linenos"> 34</span>            <span class="n">op</span> <span class="o">=</span> <span class="n">NullOp</span><span class="p">(</span>
 <span class="linenos"> 35</span>                <span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">,</span>
@@ -506,7 +506,7 @@ document.write(`
 <span class="linenos"> 37</span>            <span class="p">)</span>
 <span class="linenos"> 38</span>    <span class="k">else</span><span class="p">:</span>
 <span class="linenos"> 39</span>
-<span class="linenos"> 40</span>        <span class="k">def</span> <span class="nf">op_apply</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos"> 40</span>        <span class="k">def</span><span class="w"> </span><span class="nf">op_apply</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos"> 41</span>            <span class="n">ndi</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 <span class="linenos"> 42</span>            <span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 <span class="linenos"> 43</span>            <span class="k">if</span> <span class="n">ndi</span> <span class="o">==</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">DASK</span><span class="p">:</span>
@@ -523,15 +523,15 @@ document.write(`
 <span class="linenos"> 54</span>            <span class="p">)</span>
 <span class="linenos"> 55</span>            <span class="k">return</span> <span class="n">out</span>
 <span class="linenos"> 56</span>
-<span class="linenos"> 57</span>        <span class="k">def</span> <span class="nf">op_jacobian</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
-<span class="linenos"> 58</span>            <span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">NullOp</span>
+<span class="linenos"> 57</span>        <span class="k">def</span><span class="w"> </span><span class="nf">op_jacobian</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
+<span class="linenos"> 58</span>            <span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">NullOp</span>
 <span class="linenos"> 59</span>
 <span class="linenos"> 60</span>            <span class="k">return</span> <span class="n">NullOp</span><span class="p">(</span>
 <span class="linenos"> 61</span>                <span class="n">dim_shape</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">,</span>
 <span class="linenos"> 62</span>                <span class="n">codim_shape</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="n">codim_shape</span><span class="p">,</span>
 <span class="linenos"> 63</span>            <span class="p">)</span>
 <span class="linenos"> 64</span>
-<span class="linenos"> 65</span>        <span class="k">def</span> <span class="nf">op_grad</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos"> 65</span>        <span class="k">def</span><span class="w"> </span><span class="nf">op_grad</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos"> 66</span>            <span class="n">ndi</span> <span class="o">=</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 <span class="linenos"> 67</span>            <span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 <span class="linenos"> 68</span>            <span class="k">if</span> <span class="n">ndi</span> <span class="o">==</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">DASK</span><span class="p">:</span>
@@ -545,7 +545,7 @@ document.write(`
 <span class="linenos"> 76</span>            <span class="p">)</span>
 <span class="linenos"> 77</span>            <span class="k">return</span> <span class="n">out</span>
 <span class="linenos"> 78</span>
-<span class="linenos"> 79</span>        <span class="k">def</span> <span class="nf">op_prox</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">tau</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos"> 79</span>        <span class="k">def</span><span class="w"> </span><span class="nf">op_prox</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">tau</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos"> 80</span>            <span class="k">return</span> <span class="n">pxu</span><span class="o">.</span><span class="n">read_only</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 <span class="linenos"> 81</span>
 <span class="linenos"> 82</span>        <span class="k">if</span> <span class="n">codim_shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">1</span><span class="p">,):</span>

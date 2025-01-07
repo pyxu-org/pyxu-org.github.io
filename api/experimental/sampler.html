@@ -18,7 +18,7 @@
 <link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
-<link href="../../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../../_static/pygments.css?v=03e43079" rel="stylesheet" type="text/css"/>
 <link href="../../_static/plot_directive.css" rel="stylesheet" type="text/css"/>
 <link href="../../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
 <link href="../../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
@@ -541,11 +541,11 @@ approximation of <span class="math notranslate nohighlight">\(p(x)\)</span>.  To
 of the empirical distributions to the stationary distributions of ULA <span class="math notranslate nohighlight">\(p_{\gamma_1}(x)\)</span> and
 <span class="math notranslate nohighlight">\(p_{\gamma_2}(x)\)</span>.  We observe that the larger step <span class="math notranslate nohighlight">\(\gamma_1\)</span> leads to a better fit (lower Cramér-von
 Mises criterion), which illustrates the aforementioned bias-variance tradeoff for the choice of the step size.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/experimental/sampler.html#module-pyxu.experimental.sampler" title="pyxu.experimental.sampler"><span class="nn">pyxu.experimental.sampler</span></a> <span class="k">as</span> <span class="nn">pxe_sampler</span>
-<span class="kn">import</span> <span class="nn">pyxu.operator</span> <span class="k">as</span> <span class="nn">pxo</span>
-<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/index.html#module-scipy" title="scipy"><span class="nn">scipy</span></a> <span class="k">as</span> <span class="nn">sp</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.experimental.sampler</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxe_sampler</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxo</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
 
 <span class="n">f</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../../api/operator/func.html#pyxu.operator.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">pxo</span><span class="o">.</span><span class="n">SquaredL2Norm</span></a><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>  <span class="c1"># To sample 1D normal distribution (mean 0, variance 1)</span>
 <a class="sphinx-codeautolink-a" href="../../api/experimental/sampler.html#pyxu.experimental.sampler.ULA" title="pyxu.experimental.sampler._sampler.ULA"><span class="n">ula</span></a> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../../api/experimental/sampler.html#pyxu.experimental.sampler.ULA" title="pyxu.experimental.sampler._sampler.ULA"><span class="n">pxe_sampler</span><span class="o">.</span><span class="n">ULA</span></a><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>  <span class="c1"># Sampler with maximum step size</span>

@@ -27,7 +27,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
@@ -465,15 +465,15 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <h1>Source code for pyxu.opt.solver.pds</h1><div class="highlight"><pre>
-<span></span><span class="linenos">   1</span><span class="kn">import</span> <span class="nn">math</span>
-<span class="linenos">   2</span><span class="kn">import</span> <span class="nn">types</span>
-<span class="linenos">   3</span><span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">typ</span>
-<span class="linenos">   4</span><span class="kn">import</span> <span class="nn">warnings</span>
+<span></span><span class="linenos">   1</span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="linenos">   2</span><span class="kn">import</span><span class="w"> </span><span class="nn">types</span>
+<span class="linenos">   3</span><span class="kn">import</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">typ</span>
+<span class="linenos">   4</span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="linenos">   5</span>
-<span class="linenos">   6</span><span class="kn">import</span> <span class="nn">pyxu.abc</span> <span class="k">as</span> <span class="nn">pxa</span>
-<span class="linenos">   7</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
-<span class="linenos">   8</span><span class="kn">import</span> <span class="nn">pyxu.operator</span> <span class="k">as</span> <span class="nn">pxo</span>
-<span class="linenos">   9</span><span class="kn">import</span> <span class="nn">pyxu.opt.stop</span> <span class="k">as</span> <span class="nn">pxst</span>
+<span class="linenos">   6</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.abc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxa</span>
+<span class="linenos">   7</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.ptype</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxt</span>
+<span class="linenos">   8</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxo</span>
+<span class="linenos">   9</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.opt.stop</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxst</span>
 <span class="linenos">  10</span>
 <span class="linenos">  11</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
 <span class="linenos">  12</span>    <span class="o">*</span><span class="p">(</span><span class="s2">&quot;CondatVu&quot;</span><span class="p">,</span> <span class="s2">&quot;CV&quot;</span><span class="p">),</span>
@@ -488,13 +488,13 @@ document.write(`
 <span class="linenos">  21</span><span class="p">]</span>
 <span class="linenos">  22</span>
 <span class="linenos">  23</span>
-<span class="linenos">  24</span><span class="k">class</span> <span class="nc">_PrimalDualSplitting</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">Solver</span><span class="p">):</span>
+<span class="linenos">  24</span><span class="k">class</span><span class="w"> </span><span class="nc">_PrimalDualSplitting</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">Solver</span><span class="p">):</span>
 <span class="linenos">  25</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">  26</span><span class="sd">    Base class for Primal-Dual Splitting (PDS) solvers.</span>
 <span class="linenos">  27</span><span class="sd">    &quot;&quot;&quot;</span>
 <span class="linenos">  28</span>    <span class="n">TuningSpec</span> <span class="o">=</span> <span class="n">typ</span><span class="o">.</span><span class="n">Literal</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  <span class="c1">#: valid tuning_parameter values</span>
 <span class="linenos">  29</span>
-<span class="linenos">  30</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="linenos">  30</span>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 <span class="linenos">  31</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">  32</span>        <span class="n">f</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxa</span><span class="o">.</span><span class="n">DiffFunc</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="linenos">  33</span>        <span class="n">g</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxa</span><span class="o">.</span><span class="n">ProxFunc</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -540,7 +540,7 @@ document.write(`
 <span class="linenos">  73</span>                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Optional argument ``h`` mut be specified if ``K`` is not None.&quot;</span><span class="p">)</span>
 <span class="linenos">  74</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_objective_func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_f</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_g</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_h</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_K</span><span class="p">)</span>
 <span class="linenos">  75</span>
-<span class="linenos">  76</span>    <span class="k">def</span> <span class="nf">m_init</span><span class="p">(</span>
+<span class="linenos">  76</span>    <span class="k">def</span><span class="w"> </span><span class="nf">m_init</span><span class="p">(</span>
 <span class="linenos">  77</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">  78</span>        <span class="n">x0</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span>
 <span class="linenos">  79</span>        <span class="n">z0</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -559,10 +559,10 @@ document.write(`
 <span class="linenos">  92</span>        <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;tau&quot;</span><span class="p">],</span> <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;sigma&quot;</span><span class="p">],</span> <span class="n">delta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set_step_sizes</span><span class="p">(</span><span class="n">tau</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">gamma</span><span class="p">)</span>
 <span class="linenos">  93</span>        <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;rho&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set_momentum_term</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">delta</span><span class="p">)</span>
 <span class="linenos">  94</span>
-<span class="linenos">  95</span>    <span class="k">def</span> <span class="nf">m_step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">  95</span>    <span class="k">def</span><span class="w"> </span><span class="nf">m_step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="linenos">  96</span>        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 <span class="linenos">  97</span>
-<span class="linenos">  98</span>    <span class="k">def</span> <span class="nf">default_stop_crit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxa</span><span class="o">.</span><span class="n">StoppingCriterion</span><span class="p">:</span>
+<span class="linenos">  98</span>    <span class="k">def</span><span class="w"> </span><span class="nf">default_stop_crit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxa</span><span class="o">.</span><span class="n">StoppingCriterion</span><span class="p">:</span>
 <span class="linenos">  99</span>        <span class="n">stop_crit_x</span> <span class="o">=</span> <span class="n">pxst</span><span class="o">.</span><span class="n">RelError</span><span class="p">(</span>
 <span class="linenos"> 100</span>            <span class="n">eps</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span>
 <span class="linenos"> 101</span>            <span class="n">var</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
@@ -579,7 +579,7 @@ document.write(`
 <span class="linenos"> 112</span>        <span class="p">)</span>
 <span class="linenos"> 113</span>        <span class="k">return</span> <span class="n">stop_crit_x</span> <span class="o">&amp;</span> <span class="n">stop_crit_z</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_h</span><span class="o">.</span><span class="n">_name</span> <span class="o">!=</span> <span class="s2">&quot;NullFunc&quot;</span> <span class="k">else</span> <span class="n">stop_crit_x</span>
 <span class="linenos"> 114</span>
-<span class="linenos"> 115</span>    <span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;primal&quot;</span><span class="p">,</span> <span class="s2">&quot;dual&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;primal&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos"> 115</span>    <span class="k">def</span><span class="w"> </span><span class="nf">solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;primal&quot;</span><span class="p">,</span> <span class="s2">&quot;dual&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;primal&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos"> 116</span>        <span class="n">data</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">()</span>
 <span class="linenos"> 117</span>        <span class="k">if</span> <span class="n">which</span> <span class="o">==</span> <span class="s2">&quot;primal&quot;</span><span class="p">:</span>
 <span class="linenos"> 118</span>            <span class="k">assert</span> <span class="s2">&quot;x&quot;</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="s2">&quot;Primal variable x was not logged (declare it in log_var to log it).&quot;</span>
@@ -589,10 +589,10 @@ document.write(`
 <span class="linenos"> 122</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Parameter which must be one of [&#39;primal&#39;, &#39;dual&#39;] got: </span><span class="si">{</span><span class="n">which</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 <span class="linenos"> 123</span>        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">which</span> <span class="o">==</span> <span class="s2">&quot;primal&quot;</span> <span class="k">else</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;z&quot;</span><span class="p">)</span>
 <span class="linenos"> 124</span>
-<span class="linenos"> 125</span>    <span class="k">def</span> <span class="nf">objective_func</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos"> 125</span>    <span class="k">def</span><span class="w"> </span><span class="nf">objective_func</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos"> 126</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_objective_func</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mstate</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">])</span>
 <span class="linenos"> 127</span>
-<span class="linenos"> 128</span>    <span class="k">def</span> <span class="nf">_set_beta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">beta</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">:</span>
+<span class="linenos"> 128</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_set_beta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">beta</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">:</span>
 <span class="linenos"> 129</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 130</span><span class="sd">        Sets the Lipschitz constant.</span>
 <span class="linenos"> 131</span>
@@ -610,7 +610,7 @@ document.write(`
 <span class="linenos"> 143</span>        <span class="k">else</span><span class="p">:</span>
 <span class="linenos"> 144</span>            <span class="k">return</span> <span class="n">beta</span>
 <span class="linenos"> 145</span>
-<span class="linenos"> 146</span>    <span class="k">def</span> <span class="nf">_set_dual_variable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos"> 146</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_set_dual_variable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos"> 147</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 148</span><span class="sd">        Initialize the dual variable if it is :py:obj:`None` by mapping the primal variable through the operator K.</span>
 <span class="linenos"> 149</span>
@@ -624,7 +624,7 @@ document.write(`
 <span class="linenos"> 157</span>        <span class="k">else</span><span class="p">:</span>
 <span class="linenos"> 158</span>            <span class="k">return</span> <span class="n">z</span>
 <span class="linenos"> 159</span>
-<span class="linenos"> 160</span>    <span class="k">def</span> <span class="nf">_set_gamma</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tuning_strategy</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Literal</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">:</span>
+<span class="linenos"> 160</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_set_gamma</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tuning_strategy</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Literal</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">:</span>
 <span class="linenos"> 161</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 162</span><span class="sd">        Sets the gamma parameter according to the tuning strategy.</span>
 <span class="linenos"> 163</span>
@@ -635,7 +635,7 @@ document.write(`
 <span class="linenos"> 168</span><span class="sd">        &quot;&quot;&quot;</span>
 <span class="linenos"> 169</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_beta</span> <span class="k">if</span> <span class="n">tuning_strategy</span> <span class="o">!=</span> <span class="mi">2</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_beta</span> <span class="o">/</span> <span class="mf">1.9</span>
 <span class="linenos"> 170</span>
-<span class="linenos"> 171</span>    <span class="k">def</span> <span class="nf">_set_step_sizes</span><span class="p">(</span>
+<span class="linenos"> 171</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_set_step_sizes</span><span class="p">(</span>
 <span class="linenos"> 172</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos"> 173</span>        <span class="n">tau</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">],</span>
 <span class="linenos"> 174</span>        <span class="n">sigma</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">],</span>
@@ -643,7 +643,7 @@ document.write(`
 <span class="linenos"> 176</span>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">]:</span>
 <span class="linenos"> 177</span>        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 <span class="linenos"> 178</span>
-<span class="linenos"> 179</span>    <span class="k">def</span> <span class="nf">_set_momentum_term</span><span class="p">(</span>
+<span class="linenos"> 179</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_set_momentum_term</span><span class="p">(</span>
 <span class="linenos"> 180</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos"> 181</span>        <span class="n">rho</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">],</span>
 <span class="linenos"> 182</span>        <span class="n">delta</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span>
@@ -672,7 +672,7 @@ document.write(`
 <span class="linenos"> 205</span>
 <div class="viewcode-block" id="CondatVu">
 <a class="viewcode-back" href="../../../../api/opt.solver.html#pyxu.opt.solver.CondatVu">[docs]</a>
-<span class="linenos"> 206</span><span class="k">class</span> <span class="nc">CondatVu</span><span class="p">(</span><span class="n">_PrimalDualSplitting</span><span class="p">):</span>
+<span class="linenos"> 206</span><span class="k">class</span><span class="w"> </span><span class="nc">CondatVu</span><span class="p">(</span><span class="n">_PrimalDualSplitting</span><span class="p">):</span>
 <span class="linenos"> 207</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 208</span><span class="sd">    Condat-Vu primal-dual splitting algorithm.</span>
 <span class="linenos"> 209</span>
@@ -898,7 +898,7 @@ document.write(`
 <span class="linenos"> 429</span><span class="sd">    :py:class:`~pyxu.opt.solver.DouglasRachford`</span>
 <span class="linenos"> 430</span><span class="sd">    &quot;&quot;&quot;</span>
 <span class="linenos"> 431</span>
-<span class="linenos"> 432</span>    <span class="k">def</span> <span class="nf">m_step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 432</span>    <span class="k">def</span><span class="w"> </span><span class="nf">m_step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="linenos"> 433</span>        <span class="n">mst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mstate</span>
 <span class="linenos"> 434</span>        <span class="n">x_temp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_g</span><span class="o">.</span><span class="n">prox</span><span class="p">(</span>
 <span class="linenos"> 435</span>            <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;tau&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_f</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">mst</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">])</span> <span class="o">-</span> <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;tau&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_K</span><span class="o">.</span><span class="n">jacobian</span><span class="p">(</span><span class="n">mst</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">adjoint</span><span class="p">(</span><span class="n">mst</span><span class="p">[</span><span class="s2">&quot;z&quot;</span><span class="p">]),</span>
@@ -913,7 +913,7 @@ document.write(`
 <span class="linenos"> 444</span>            <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;z&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;rho&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">z_temp</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;rho&quot;</span><span class="p">])</span> <span class="o">*</span> <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;z&quot;</span><span class="p">]</span>
 <span class="linenos"> 445</span>        <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;rho&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">x_temp</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;rho&quot;</span><span class="p">])</span> <span class="o">*</span> <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span>
 <span class="linenos"> 446</span>
-<span class="linenos"> 447</span>    <span class="k">def</span> <span class="nf">_set_step_sizes</span><span class="p">(</span>
+<span class="linenos"> 447</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_set_step_sizes</span><span class="p">(</span>
 <span class="linenos"> 448</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos"> 449</span>        <span class="n">tau</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">],</span>
 <span class="linenos"> 450</span>        <span class="n">sigma</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">],</span>
@@ -995,7 +995,7 @@ document.write(`
 <span class="linenos"> 525</span>
 <div class="viewcode-block" id="PD3O">
 <a class="viewcode-back" href="../../../../api/opt.solver.html#pyxu.opt.solver.PD3O">[docs]</a>
-<span class="linenos"> 526</span><span class="k">class</span> <span class="nc">PD3O</span><span class="p">(</span><span class="n">_PrimalDualSplitting</span><span class="p">):</span>
+<span class="linenos"> 526</span><span class="k">class</span><span class="w"> </span><span class="nc">PD3O</span><span class="p">(</span><span class="n">_PrimalDualSplitting</span><span class="p">):</span>
 <span class="linenos"> 527</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 528</span><span class="sd">    Primal-Dual Three-Operator Splitting (PD3O) algorithm.</span>
 <span class="linenos"> 529</span>
@@ -1204,7 +1204,7 @@ document.write(`
 <span class="linenos"> 732</span><span class="sd">       plt.show()</span>
 <span class="linenos"> 733</span><span class="sd">    &quot;&quot;&quot;</span>
 <span class="linenos"> 734</span>
-<span class="linenos"> 735</span>    <span class="k">def</span> <span class="nf">m_init</span><span class="p">(</span>
+<span class="linenos"> 735</span>    <span class="k">def</span><span class="w"> </span><span class="nf">m_init</span><span class="p">(</span>
 <span class="linenos"> 736</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos"> 737</span>        <span class="n">x0</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span>
 <span class="linenos"> 738</span>        <span class="n">z0</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1228,7 +1228,7 @@ document.write(`
 <span class="linenos"> 756</span>        <span class="k">else</span><span class="p">:</span>
 <span class="linenos"> 757</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_mstate</span><span class="p">[</span><span class="s2">&quot;u&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">x0</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="linenos"> 758</span>
-<span class="linenos"> 759</span>    <span class="k">def</span> <span class="nf">m_step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 759</span>    <span class="k">def</span><span class="w"> </span><span class="nf">m_step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="linenos"> 760</span>        <span class="c1"># Slightly more efficient rewriting of iterations (216) of [PSA] with M=1. Faster than (185) since only one call to the adjoint and the gradient per iteration.</span>
 <span class="linenos"> 761</span>        <span class="n">mst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mstate</span>
 <span class="linenos"> 762</span>        <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_g</span><span class="o">.</span><span class="n">prox</span><span class="p">(</span>
@@ -1244,7 +1244,7 @@ document.write(`
 <span class="linenos"> 772</span>            <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;z&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;rho&quot;</span><span class="p">])</span> <span class="o">*</span> <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;z&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;rho&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">z_temp</span>
 <span class="linenos"> 773</span>        <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;u&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;rho&quot;</span><span class="p">])</span> <span class="o">*</span> <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;u&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;rho&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">u_temp</span>
 <span class="linenos"> 774</span>
-<span class="linenos"> 775</span>    <span class="k">def</span> <span class="nf">_set_step_sizes</span><span class="p">(</span>
+<span class="linenos"> 775</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_set_step_sizes</span><span class="p">(</span>
 <span class="linenos"> 776</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos"> 777</span>        <span class="n">tau</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">],</span>
 <span class="linenos"> 778</span>        <span class="n">sigma</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">],</span>
@@ -1312,7 +1312,7 @@ document.write(`
 <span class="linenos"> 840</span>        <span class="n">delta</span> <span class="o">=</span> <span class="mi">2</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_beta</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">2</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_beta</span> <span class="o">*</span> <span class="n">tau</span> <span class="o">/</span> <span class="mi">2</span>
 <span class="linenos"> 841</span>        <span class="k">return</span> <span class="n">tau</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">delta</span>
 <span class="linenos"> 842</span>
-<span class="linenos"> 843</span>    <span class="k">def</span> <span class="nf">_optimize_step_sizes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gamma</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">:</span>
+<span class="linenos"> 843</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_optimize_step_sizes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gamma</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">:</span>
 <span class="linenos"> 844</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 845</span><span class="sd">        Optimize the primal/dual step sizes.</span>
 <span class="linenos"> 846</span>
@@ -1326,8 +1326,8 @@ document.write(`
 <span class="linenos"> 854</span><span class="sd">        Tuple[Real, Real]</span>
 <span class="linenos"> 855</span><span class="sd">            Sensible primal/dual step sizes.</span>
 <span class="linenos"> 856</span><span class="sd">        &quot;&quot;&quot;</span>
-<span class="linenos"> 857</span>        <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 858</span>        <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">linprog</span>
+<span class="linenos"> 857</span>        <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="linenos"> 858</span>        <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">linprog</span>
 <span class="linenos"> 859</span>
 <span class="linenos"> 860</span>        <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 <span class="linenos"> 861</span>        <span class="n">A_ub</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
@@ -1350,7 +1350,7 @@ document.write(`
 <span class="linenos"> 877</span>
 <div class="viewcode-block" id="ChambollePock">
 <a class="viewcode-back" href="../../../../api/opt.solver.html#pyxu.opt.solver.ChambollePock">[docs]</a>
-<span class="linenos"> 878</span><span class="k">def</span> <span class="nf">ChambollePock</span><span class="p">(</span>
+<span class="linenos"> 878</span><span class="k">def</span><span class="w"> </span><span class="nf">ChambollePock</span><span class="p">(</span>
 <span class="linenos"> 879</span>    <span class="n">g</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxa</span><span class="o">.</span><span class="n">ProxFunc</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="linenos"> 880</span>    <span class="n">h</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxa</span><span class="o">.</span><span class="n">ProxFunc</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="linenos"> 881</span>    <span class="n">K</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxa</span><span class="o">.</span><span class="n">DiffMap</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1458,7 +1458,7 @@ document.write(`
 <span class="linenos"> 982</span>
 <div class="viewcode-block" id="LorisVerhoeven">
 <a class="viewcode-back" href="../../../../api/opt.solver.html#pyxu.opt.solver.LorisVerhoeven">[docs]</a>
-<span class="linenos"> 983</span><span class="k">class</span> <span class="nc">LorisVerhoeven</span><span class="p">(</span><span class="n">PD3O</span><span class="p">):</span>
+<span class="linenos"> 983</span><span class="k">class</span><span class="w"> </span><span class="nc">LorisVerhoeven</span><span class="p">(</span><span class="n">PD3O</span><span class="p">):</span>
 <span class="linenos"> 984</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 985</span><span class="sd">    Loris-Verhoeven splitting algorithm.</span>
 <span class="linenos"> 986</span>
@@ -1553,7 +1553,7 @@ document.write(`
 <span class="linenos">1075</span><span class="sd">    :py:func:`~pyxu.opt.solver.DouglasRachford`</span>
 <span class="linenos">1076</span><span class="sd">    &quot;&quot;&quot;</span>
 <span class="linenos">1077</span>
-<span class="linenos">1078</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="linenos">1078</span>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 <span class="linenos">1079</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">1080</span>        <span class="n">f</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxa</span><span class="o">.</span><span class="n">DiffFunc</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="linenos">1081</span>        <span class="n">h</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxa</span><span class="o">.</span><span class="n">ProxFunc</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1569,7 +1569,7 @@ document.write(`
 <span class="linenos">1091</span>            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="linenos">1092</span>        <span class="p">)</span>
 <span class="linenos">1093</span>
-<span class="linenos">1094</span>    <span class="k">def</span> <span class="nf">_set_step_sizes</span><span class="p">(</span>
+<span class="linenos">1094</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_set_step_sizes</span><span class="p">(</span>
 <span class="linenos">1095</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">1096</span>        <span class="n">tau</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">],</span>
 <span class="linenos">1097</span>        <span class="n">sigma</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">],</span>
@@ -1594,7 +1594,7 @@ document.write(`
 <span class="linenos">1115</span>
 <div class="viewcode-block" id="DavisYin">
 <a class="viewcode-back" href="../../../../api/opt.solver.html#pyxu.opt.solver.DavisYin">[docs]</a>
-<span class="linenos">1116</span><span class="k">class</span> <span class="nc">DavisYin</span><span class="p">(</span><span class="n">PD3O</span><span class="p">):</span>
+<span class="linenos">1116</span><span class="k">class</span><span class="w"> </span><span class="nc">DavisYin</span><span class="p">(</span><span class="n">PD3O</span><span class="p">):</span>
 <span class="linenos">1117</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">1118</span><span class="sd">    Davis-Yin primal-dual splitting method.</span>
 <span class="linenos">1119</span>
@@ -1678,7 +1678,7 @@ document.write(`
 <span class="linenos">1197</span><span class="sd">    :py:func:`~pyxu.opt.solver.DouglasRachford`</span>
 <span class="linenos">1198</span><span class="sd">    &quot;&quot;&quot;</span>
 <span class="linenos">1199</span>
-<span class="linenos">1200</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="linenos">1200</span>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 <span class="linenos">1201</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">1202</span>        <span class="n">f</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxa</span><span class="o">.</span><span class="n">DiffFunc</span><span class="p">],</span>
 <span class="linenos">1203</span>        <span class="n">g</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxa</span><span class="o">.</span><span class="n">ProxFunc</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1694,7 +1694,7 @@ document.write(`
 <span class="linenos">1213</span>            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="linenos">1214</span>        <span class="p">)</span>
 <span class="linenos">1215</span>
-<span class="linenos">1216</span>    <span class="k">def</span> <span class="nf">_set_step_sizes</span><span class="p">(</span>
+<span class="linenos">1216</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_set_step_sizes</span><span class="p">(</span>
 <span class="linenos">1217</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">1218</span>        <span class="n">tau</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">],</span>
 <span class="linenos">1219</span>        <span class="n">sigma</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">],</span>
@@ -1724,7 +1724,7 @@ document.write(`
 <span class="linenos">1242</span>
 <div class="viewcode-block" id="DouglasRachford">
 <a class="viewcode-back" href="../../../../api/opt.solver.html#pyxu.opt.solver.DouglasRachford">[docs]</a>
-<span class="linenos">1243</span><span class="k">def</span> <span class="nf">DouglasRachford</span><span class="p">(</span>
+<span class="linenos">1243</span><span class="k">def</span><span class="w"> </span><span class="nf">DouglasRachford</span><span class="p">(</span>
 <span class="linenos">1244</span>    <span class="n">g</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxa</span><span class="o">.</span><span class="n">ProxFunc</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="linenos">1245</span>    <span class="n">h</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxa</span><span class="o">.</span><span class="n">ProxFunc</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="linenos">1246</span>    <span class="n">base</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Type</span><span class="p">[</span><span class="n">_PrimalDualSplitting</span><span class="p">]</span> <span class="o">=</span> <span class="n">CondatVu</span><span class="p">,</span>
@@ -1796,7 +1796,7 @@ document.write(`
 <span class="linenos">1312</span>    <span class="n">obj</span> <span class="o">=</span> <span class="n">base</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="n">g</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="n">h</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="linenos">1313</span>    <span class="n">obj</span><span class="o">.</span><span class="fm">__repr__</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">_</span><span class="p">:</span> <span class="s2">&quot;DouglasRachford&quot;</span>
 <span class="linenos">1314</span>
-<span class="linenos">1315</span>    <span class="k">def</span> <span class="nf">_set_step_sizes_custom</span><span class="p">(</span>
+<span class="linenos">1315</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_set_step_sizes_custom</span><span class="p">(</span>
 <span class="linenos">1316</span>        <span class="n">obj</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Type</span><span class="p">[</span><span class="n">_PrimalDualSplitting</span><span class="p">],</span>
 <span class="linenos">1317</span>        <span class="n">tau</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">],</span>
 <span class="linenos">1318</span>        <span class="n">sigma</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">],</span>
@@ -1816,7 +1816,7 @@ document.write(`
 <span class="linenos">1331</span>
 <div class="viewcode-block" id="ADMM">
 <a class="viewcode-back" href="../../../../api/opt.solver.html#pyxu.opt.solver.ADMM">[docs]</a>
-<span class="linenos">1332</span><span class="k">class</span> <span class="nc">ADMM</span><span class="p">(</span><span class="n">_PDS</span><span class="p">):</span>
+<span class="linenos">1332</span><span class="k">class</span><span class="w"> </span><span class="nc">ADMM</span><span class="p">(</span><span class="n">_PDS</span><span class="p">):</span>
 <span class="linenos">1333</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">1334</span><span class="sd">    Alternating Direction Method of Multipliers.</span>
 <span class="linenos">1335</span>
@@ -2042,7 +2042,7 @@ document.write(`
 <span class="linenos">1555</span><span class="sd">    :py:func:`~pyxu.opt.solver.DouglasRachford`</span>
 <span class="linenos">1556</span><span class="sd">    &quot;&quot;&quot;</span>
 <span class="linenos">1557</span>
-<span class="linenos">1558</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="linenos">1558</span>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 <span class="linenos">1559</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">1560</span>        <span class="n">f</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxa</span><span class="o">.</span><span class="n">Func</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="linenos">1561</span>        <span class="n">h</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxa</span><span class="o">.</span><span class="n">ProxFunc</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -2112,7 +2112,7 @@ document.write(`
 <span class="linenos">1625</span>            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="linenos">1626</span>        <span class="p">)</span>
 <span class="linenos">1627</span>
-<span class="linenos">1628</span>    <span class="k">def</span> <span class="nf">m_init</span><span class="p">(</span>
+<span class="linenos">1628</span>    <span class="k">def</span><span class="w"> </span><span class="nf">m_init</span><span class="p">(</span>
 <span class="linenos">1629</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">1630</span>        <span class="n">x0</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span>
 <span class="linenos">1631</span>        <span class="n">z0</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -2138,7 +2138,7 @@ document.write(`
 <span class="linenos">1651</span>            <span class="n">solver_kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 <span class="linenos">1652</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_fit_kwargs</span> <span class="o">=</span> <span class="n">solver_kwargs</span>
 <span class="linenos">1653</span>
-<span class="linenos">1654</span>    <span class="k">def</span> <span class="nf">m_step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">1654</span>    <span class="k">def</span><span class="w"> </span><span class="nf">m_step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="linenos">1655</span>        <span class="c1"># Algorithm (145) in [PSA]. Paper -&gt; code correspondence: L -&gt; K, K -&gt; -Id, c -&gt; 0, y -&gt; u, v -&gt; z, g -&gt; h</span>
 <span class="linenos">1656</span>        <span class="n">mst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mstate</span>
 <span class="linenos">1657</span>        <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_x_update</span><span class="p">(</span><span class="n">mst</span><span class="p">[</span><span class="s2">&quot;u&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;z&quot;</span><span class="p">],</span> <span class="n">tau</span><span class="o">=</span><span class="n">mst</span><span class="p">[</span><span class="s2">&quot;tau&quot;</span><span class="p">])</span>
@@ -2147,13 +2147,13 @@ document.write(`
 <span class="linenos">1660</span>            <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;u&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_h</span><span class="o">.</span><span class="n">prox</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_K</span><span class="p">(</span><span class="n">mst</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">])</span> <span class="o">+</span> <span class="n">z_temp</span><span class="p">,</span> <span class="n">tau</span><span class="o">=</span><span class="n">mst</span><span class="p">[</span><span class="s2">&quot;tau&quot;</span><span class="p">])</span>
 <span class="linenos">1661</span>        <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;z&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">z_temp</span> <span class="o">+</span> <span class="p">(</span><span class="n">mst</span><span class="p">[</span><span class="s2">&quot;rho&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_K</span><span class="p">(</span><span class="n">mst</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">])</span> <span class="o">-</span> <span class="n">mst</span><span class="p">[</span><span class="s2">&quot;u&quot;</span><span class="p">])</span>
 <span class="linenos">1662</span>
-<span class="linenos">1663</span>    <span class="k">def</span> <span class="nf">_x_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">tau</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">1663</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_x_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">tau</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">1664</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_x_update_solver</span> <span class="o">==</span> <span class="s2">&quot;custom&quot;</span><span class="p">:</span>
 <span class="linenos">1665</span>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_solver</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">tau</span><span class="p">)</span>
 <span class="linenos">1666</span>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_x_update_solver</span> <span class="o">==</span> <span class="s2">&quot;prox&quot;</span><span class="p">:</span>
 <span class="linenos">1667</span>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_g</span><span class="o">.</span><span class="n">prox</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">tau</span><span class="o">=</span><span class="n">tau</span><span class="p">)</span>
 <span class="linenos">1668</span>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_x_update_solver</span> <span class="o">==</span> <span class="s2">&quot;cg&quot;</span><span class="p">:</span>
-<span class="linenos">1669</span>            <span class="kn">from</span> <span class="nn">pyxu.opt.solver</span> <span class="kn">import</span> <span class="n">CG</span>
+<span class="linenos">1669</span>            <span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.opt.solver</span><span class="w"> </span><span class="kn">import</span> <span class="n">CG</span>
 <span class="linenos">1670</span>
 <span class="linenos">1671</span>            <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">tau</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_K</span><span class="o">.</span><span class="n">adjoint</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_f</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 <span class="linenos">1672</span>            <span class="n">A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_f</span><span class="o">.</span><span class="n">_Q</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">tau</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_K_gram</span>
@@ -2161,7 +2161,7 @@ document.write(`
 <span class="linenos">1674</span>            <span class="n">slvr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="n">b</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_mstate</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_fit_kwargs</span><span class="p">)</span>  <span class="c1"># Initialize CG with previous iterate</span>
 <span class="linenos">1675</span>            <span class="k">return</span> <span class="n">slvr</span><span class="o">.</span><span class="n">solution</span><span class="p">()</span>
 <span class="linenos">1676</span>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_x_update_solver</span> <span class="o">==</span> <span class="s2">&quot;nlcg&quot;</span><span class="p">:</span>
-<span class="linenos">1677</span>            <span class="kn">from</span> <span class="nn">pyxu.opt.solver</span> <span class="kn">import</span> <span class="n">NLCG</span>
+<span class="linenos">1677</span>            <span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.opt.solver</span><span class="w"> </span><span class="kn">import</span> <span class="n">NLCG</span>
 <span class="linenos">1678</span>
 <span class="linenos">1679</span>            <span class="n">c</span> <span class="o">=</span> <span class="n">pxa</span><span class="o">.</span><span class="n">LinFunc</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">_K</span><span class="o">.</span><span class="n">adjoint</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
 <span class="linenos">1680</span>            <span class="n">quad_func</span> <span class="o">=</span> <span class="n">pxa</span><span class="o">.</span><span class="n">QuadraticFunc</span><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_f</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">,</span> <span class="n">codim_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,),</span> <span class="n">Q</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_K_gram</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
@@ -2169,7 +2169,7 @@ document.write(`
 <span class="linenos">1682</span>            <span class="n">slvr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_mstate</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_fit_kwargs</span><span class="p">)</span>  <span class="c1"># Initialize NLCG with previous iterate</span>
 <span class="linenos">1683</span>            <span class="k">return</span> <span class="n">slvr</span><span class="o">.</span><span class="n">solution</span><span class="p">()</span>
 <span class="linenos">1684</span>
-<span class="linenos">1685</span>    <span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;primal&quot;</span><span class="p">,</span> <span class="s2">&quot;primal_h&quot;</span><span class="p">,</span> <span class="s2">&quot;dual&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;primal&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">1685</span>    <span class="k">def</span><span class="w"> </span><span class="nf">solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;primal&quot;</span><span class="p">,</span> <span class="s2">&quot;primal_h&quot;</span><span class="p">,</span> <span class="s2">&quot;dual&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;primal&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">1686</span>        <span class="n">data</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">()</span>
 <span class="linenos">1687</span>        <span class="k">if</span> <span class="n">which</span> <span class="o">==</span> <span class="s2">&quot;primal&quot;</span><span class="p">:</span>
 <span class="linenos">1688</span>            <span class="k">assert</span> <span class="s2">&quot;x&quot;</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="s2">&quot;Primal variable x in dom(g) was not logged (declare it in log_var to log it).&quot;</span>
@@ -2183,7 +2183,7 @@ document.write(`
 <span class="linenos">1696</span>        <span class="k">else</span><span class="p">:</span>
 <span class="linenos">1697</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Parameter which must be one of [&#39;primal&#39;, &#39;primal_h&#39;, &#39;dual&#39;] got: </span><span class="si">{</span><span class="n">which</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 <span class="linenos">1698</span>
-<span class="linenos">1699</span>    <span class="k">def</span> <span class="nf">_set_step_sizes</span><span class="p">(</span>
+<span class="linenos">1699</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_set_step_sizes</span><span class="p">(</span>
 <span class="linenos">1700</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">1701</span>        <span class="n">tau</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">],</span>
 <span class="linenos">1702</span>        <span class="n">sigma</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">],</span>
@@ -2200,7 +2200,7 @@ document.write(`
 <span class="linenos">1712</span>
 <div class="viewcode-block" id="ForwardBackward">
 <a class="viewcode-back" href="../../../../api/opt.solver.html#pyxu.opt.solver.ForwardBackward">[docs]</a>
-<span class="linenos">1713</span><span class="k">class</span> <span class="nc">ForwardBackward</span><span class="p">(</span><span class="n">CondatVu</span><span class="p">):</span>
+<span class="linenos">1713</span><span class="k">class</span><span class="w"> </span><span class="nc">ForwardBackward</span><span class="p">(</span><span class="n">CondatVu</span><span class="p">):</span>
 <span class="linenos">1714</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">1715</span><span class="sd">    Forward-backward splitting algorithm.</span>
 <span class="linenos">1716</span>
@@ -2279,7 +2279,7 @@ document.write(`
 <span class="linenos">1789</span><span class="sd">    :py:func:`~pyxu.opt.solver.DouglasRachford`</span>
 <span class="linenos">1790</span><span class="sd">    &quot;&quot;&quot;</span>
 <span class="linenos">1791</span>
-<span class="linenos">1792</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="linenos">1792</span>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 <span class="linenos">1793</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">1794</span>        <span class="n">f</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxa</span><span class="o">.</span><span class="n">DiffFunc</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="linenos">1795</span>        <span class="n">g</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxa</span><span class="o">.</span><span class="n">ProxFunc</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -2301,7 +2301,7 @@ document.write(`
 <span class="linenos">1810</span>
 <div class="viewcode-block" id="ProximalPoint">
 <a class="viewcode-back" href="../../../../api/opt.solver.html#pyxu.opt.solver.ProximalPoint">[docs]</a>
-<span class="linenos">1811</span><span class="k">def</span> <span class="nf">ProximalPoint</span><span class="p">(</span>
+<span class="linenos">1811</span><span class="k">def</span><span class="w"> </span><span class="nf">ProximalPoint</span><span class="p">(</span>
 <span class="linenos">1812</span>    <span class="n">g</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxa</span><span class="o">.</span><span class="n">ProxFunc</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="linenos">1813</span>    <span class="n">base</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">_PrimalDualSplitting</span><span class="p">]</span> <span class="o">=</span> <span class="n">CondatVu</span><span class="p">,</span>
 <span class="linenos">1814</span>    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>

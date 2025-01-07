@@ -18,7 +18,7 @@
 <link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
-<link href="../../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../../_static/pygments.css?v=03e43079" rel="stylesheet" type="text/css"/>
 <link href="../../_static/plot_directive.css" rel="stylesheet" type="text/css"/>
 <link href="../../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
 <link href="../../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
@@ -314,7 +314,7 @@ document.write(`
 Its Lipschitz constant is 1.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Extract even samples of a 1D signal.</span>
-<span class="kn">import</span> <span class="nn">pyxu.operator</span> <span class="k">as</span> <span class="nn">pxo</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxo</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">S</span> <span class="o">=</span> <span class="n">pxo</span><span class="o">.</span><span class="n">SubSample</span><span class="p">(</span>
       <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
@@ -324,7 +324,7 @@ Its Lipschitz constant is 1.</p>
 </pre></div>
 </div>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Extract columns[1, 3, -1] from a 2D matrix</span>
-<span class="kn">import</span> <span class="nn">pyxu.operator</span> <span class="k">as</span> <span class="nn">pxo</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxo</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">40</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>  <span class="c1"># the input</span>
 <span class="n">S</span> <span class="o">=</span> <span class="n">pxo</span><span class="o">.</span><span class="n">SubSample</span><span class="p">(</span>
       <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
@@ -337,7 +337,7 @@ Its Lipschitz constant is 1.</p>
 </pre></div>
 </div>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Extract all red rows of an (D,H,W) RGB image matching a boolean mask.</span>
-<span class="kn">import</span> <span class="nn">pyxu.operator</span> <span class="k">as</span> <span class="nn">pxo</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxo</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span>
 <span class="n">S</span> <span class="o">=</span> <span class="n">pxo</span><span class="o">.</span><span class="n">SubSample</span><span class="p">(</span>
@@ -863,8 +863,8 @@ non-chunked NUMPY version (assuming it fits in memory).</p>
 <p class="rubric">Examples</p>
 <ul>
 <li><p>1D DFT of a cosine pulse.</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">FFT</span>
-<span class="kn">import</span> <span class="nn">pyxu.util</span> <span class="k">as</span> <span class="nn">pxu</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">FFT</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.util</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxu</span>
 
 <span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">op</span> <span class="o">=</span> <span class="n">FFT</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
@@ -883,8 +883,8 @@ non-chunked NUMPY version (assuming it fits in memory).</p>
 </div>
 </li>
 <li><p>1D DFT of a complex exponential pulse.</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">FFT</span>
-<span class="kn">import</span> <span class="nn">pyxu.util</span> <span class="k">as</span> <span class="nn">pxu</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">FFT</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.util</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxu</span>
 
 <span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">op</span> <span class="o">=</span> <span class="n">FFT</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
@@ -903,8 +903,8 @@ non-chunked NUMPY version (assuming it fits in memory).</p>
 </div>
 </li>
 <li><p>2D DFT of an image</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">FFT</span>
-<span class="kn">import</span> <span class="nn">pyxu.util</span> <span class="k">as</span> <span class="nn">pxu</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">FFT</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.util</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxu</span>
 
 <span class="n">N_h</span><span class="p">,</span> <span class="n">N_w</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">8</span>
 <span class="n">op</span> <span class="o">=</span> <span class="n">FFT</span><span class="p">((</span><span class="n">N_h</span><span class="p">,</span> <span class="n">N_w</span><span class="p">))</span>
@@ -941,8 +941,8 @@ non-chunked NUMPY version (assuming it fits in memory).</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dim_shape</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArrayShape" title="pyxu.info.ptype.NDArrayShape"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArrayShape</span></code></a>) – (M1,…,MD) dimensions of the input <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{C}^{M_{1} \times\cdots\times M_{D}}\)</span>.</p></li>
 <li><p><strong>axes</strong> (<a class="reference internal" href="../info.ptype.html#pyxu.info.ptype.NDArrayAxis" title="pyxu.info.ptype.NDArrayAxis"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArrayAxis</span></code></a>) – Axes over which to compute the FFT. If not given, all axes are used.</p></li>
-<li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – <p>Extra kwargs passed to <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.fftn.html#scipy.fft.fftn" title="(in SciPy v1.14.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.fftn()</span></code></a> or <a class="reference external" href="https://docs.cupy.dev/en/latest/reference/generated/cupyx.scipy.fft.fftn.html#cupyx.scipy.fft.fftn" title="(in CuPy v14.0.0a1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">cupyx.scipy.fft.fftn()</span></code></a>.</p>
-<p>Supported parameters for <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.fftn.html#scipy.fft.fftn" title="(in SciPy v1.14.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.fftn()</span></code></a> are:</p>
+<li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – <p>Extra kwargs passed to <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.fftn.html#scipy.fft.fftn" title="(in SciPy v1.15.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.fftn()</span></code></a> or <a class="reference external" href="https://docs.cupy.dev/en/latest/reference/generated/cupyx.scipy.fft.fftn.html#cupyx.scipy.fft.fftn" title="(in CuPy v14.0.0a1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">cupyx.scipy.fft.fftn()</span></code></a>.</p>
+<p>Supported parameters for <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.fftn.html#scipy.fft.fftn" title="(in SciPy v1.15.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.fftn()</span></code></a> are:</p>
 <blockquote>
 <div><ul>
 <li><p>workers: int = None</p></li>
@@ -1088,8 +1088,8 @@ Only NUMPY/CUPY arrays are accepted.</p>
 <p>Correlate a stack of images <code class="code docutils literal notranslate"><span class="pre">A</span></code> with a (3, 3) kernel such that:</p>
 <div class="math notranslate nohighlight">
 \[B[n, m] = A[n-1, m] + A[n, m-1] + A[n, m+1] + A[n+1, m]\]</div>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">_Stencil</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">_Stencil</span>
 
 <span class="c1"># create the stencil</span>
 <span class="n">kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
@@ -1319,8 +1319,8 @@ one side.)</p>
 <div class="math notranslate nohighlight">
 \[y[n] = x[n-2] + 2 x[n-1] + 3 x[n]\]</div>
 <p>can be viewed as the output of the 3-point stencil of kernel <span class="math notranslate nohighlight">\(k = [1, 2, 3]\)</span>.</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">Stencil</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">Stencil</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># [0  1  2  3  4  5  6  7  8  9]</span>
 
@@ -1348,8 +1348,8 @@ one side.)</p>
    4 &amp; 0 &amp; 5
 \end{array}
 \right].\end{split}\]</div>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">Stencil</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">Stencil</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>  <span class="c1"># square image</span>
 <span class="c1"># [[ 0   1   2   3   4   5   6   7]</span>
@@ -1416,8 +1416,8 @@ cascade of two 3-point stencils:</p>
 \end{array}
 \right].\end{split}\]</div>
 <p>Seperable stencils are supported and should be preferred when applicable.</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">Stencil</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">Stencil</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>  <span class="c1"># square image</span>
 <span class="c1"># [[ 0   1   2   3   4   5   6   7]</span>
@@ -1536,8 +1536,8 @@ Must be one of:</p>
 <p>Configure stencil Dispatcher.</p>
 <p>See <a class="reference internal" href="#pyxu.operator._Stencil.apply" title="pyxu.operator._Stencil.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply()</span></code></a> for accepted options.</p>
 <p class="rubric">Example</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cupy</span> <span class="k">as</span> <span class="nn">cp</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">Stencil</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cupy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">Stencil</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 
@@ -1652,9 +1652,9 @@ However, the performance improvement varies, so we recommend evaluating this alt
 environment.</p>
 </div>
 <p class="rubric">Examples</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.ndimage</span> <span class="kn">import</span> <span class="n">convolve</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">Convolve</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.ndimage</span><span class="w"> </span><span class="kn">import</span> <span class="n">convolve</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">Convolve</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
      <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
@@ -1800,8 +1800,8 @@ Must be one of:</p>
 <p>Configure stencil Dispatcher.</p>
 <p>See <a class="reference internal" href="#pyxu.operator._Stencil.apply" title="pyxu.operator._Stencil.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply()</span></code></a> for accepted options.</p>
 <p class="rubric">Example</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cupy</span> <span class="k">as</span> <span class="nn">cp</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">Stencil</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cupy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">Stencil</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 
@@ -1920,9 +1920,9 @@ Must be one of:</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.MovingAverage" title="pyxu.operator.MovingAverage"><span class="n">MovingAverage</span></a>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.MovingAverage" title="pyxu.operator.MovingAverage"><span class="n">MovingAverage</span></a>
 
 <span class="n">dim_shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
 <span class="n">image</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.zeros.html#numpy.zeros" title="numpy.zeros"><span class="n">np</span><span class="o">.</span><span class="n">zeros</span></a><span class="p">(</span><span class="n">dim_shape</span><span class="p">)</span>
@@ -2040,9 +2040,9 @@ Defaults to 1.</p></li>
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.DoG" title="pyxu.operator.DoG"><span class="n">DoG</span></a>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.DoG" title="pyxu.operator.DoG"><span class="n">DoG</span></a>
 
 <span class="n">dim_shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
 <span class="n">image</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.zeros.html#numpy.zeros" title="numpy.zeros"><span class="n">np</span><span class="o">.</span><span class="n">zeros</span></a><span class="p">(</span><span class="n">dim_shape</span><span class="p">)</span>
@@ -2129,9 +2129,9 @@ Defaults to 1.</p></li>
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.Laplace" title="pyxu.operator.Laplace"><span class="n">Laplace</span></a>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.Laplace" title="pyxu.operator.Laplace"><span class="n">Laplace</span></a>
 
 <span class="n">dim_shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
 <span class="n">image</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.zeros.html#numpy.zeros" title="numpy.zeros"><span class="n">np</span><span class="o">.</span><span class="n">zeros</span></a><span class="p">(</span><span class="n">dim_shape</span><span class="p">)</span>
@@ -2206,9 +2206,9 @@ Defaults to 1.</p></li>
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.Sobel" title="pyxu.operator.Sobel"><span class="n">Sobel</span></a>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.Sobel" title="pyxu.operator.Sobel"><span class="n">Sobel</span></a>
 
 <span class="n">dim_shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
 <span class="n">image</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.zeros.html#numpy.zeros" title="numpy.zeros"><span class="n">np</span><span class="o">.</span><span class="n">zeros</span></a><span class="p">(</span><span class="n">dim_shape</span><span class="p">)</span>
@@ -2283,9 +2283,9 @@ Defaults to 1.</p></li>
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.Prewitt" title="pyxu.operator.Prewitt"><span class="n">Prewitt</span></a>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.Prewitt" title="pyxu.operator.Prewitt"><span class="n">Prewitt</span></a>
 
 <span class="n">dim_shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
 <span class="n">image</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.zeros.html#numpy.zeros" title="numpy.zeros"><span class="n">np</span><span class="o">.</span><span class="n">zeros</span></a><span class="p">(</span><span class="n">dim_shape</span><span class="p">)</span>
@@ -2360,9 +2360,9 @@ Defaults to 1.</p></li>
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.Scharr" title="pyxu.operator.Scharr"><span class="n">Scharr</span></a>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.Scharr" title="pyxu.operator.Scharr"><span class="n">Scharr</span></a>
 
 <span class="n">dim_shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
 <span class="n">image</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.zeros.html#numpy.zeros" title="numpy.zeros"><span class="n">np</span><span class="o">.</span><span class="n">zeros</span></a><span class="p">(</span><span class="n">dim_shape</span><span class="p">)</span>
@@ -2435,10 +2435,10 @@ with standard variation <span class="math notranslate nohighlight">\(\sigma\)</s
 <p>In case of using the finite differences (<code class="code docutils literal notranslate"><span class="pre">diff_type="fd"</span></code>), the finite difference scheme defaults to <code class="code docutils literal notranslate"><span class="pre">central</span></code> (see
 <a class="reference internal" href="#pyxu.operator.PartialDerivative" title="pyxu.operator.PartialDerivative"><code class="xref py py-class docutils literal notranslate"><span class="pre">PartialDerivative</span></code></a>).</p>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.StructureTensor" title="pyxu.operator.linop.filter.StructureTensor"><span class="n">StructureTensor</span></a>
-<span class="kn">from</span> <span class="nn">pyxu.util.misc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.StructureTensor" title="pyxu.operator.linop.filter.StructureTensor"><span class="n">StructureTensor</span></a>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.util.misc</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
 
 <span class="c1"># Define input image</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span>
@@ -2715,10 +2715,10 @@ d_{N_s}
 </div>
 <p>This class inherits its methods from <a class="reference internal" href="#pyxu.operator.Stencil" title="pyxu.operator.Stencil"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stencil</span></code></a>.</p>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.PartialDerivative" title="pyxu.operator.linop.diff.PartialDerivative"><span class="n">PartialDerivative</span></a>
-<span class="kn">from</span> <span class="nn">pyxu.util.misc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.PartialDerivative" title="pyxu.operator.linop.diff.PartialDerivative"><span class="n">PartialDerivative</span></a>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.util.misc</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
 
 <span class="n">x</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html#numpy.linspace" title="numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
 <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.meshgrid.html#numpy.meshgrid" title="numpy.meshgrid"><span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span></a><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
@@ -2852,10 +2852,10 @@ derivatives in the continuous domain, since Gaussians can be differentiated anal
 This derivative is then sampled in order to perform a discrete convolution.</p>
 <p>This class inherits its methods from <a class="reference internal" href="#pyxu.operator.Stencil" title="pyxu.operator.Stencil"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stencil</span></code></a>.</p>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.PartialDerivative" title="pyxu.operator.linop.diff.PartialDerivative"><span class="n">PartialDerivative</span></a>
-<span class="kn">from</span> <span class="nn">pyxu.util.misc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.PartialDerivative" title="pyxu.operator.linop.diff.PartialDerivative"><span class="n">PartialDerivative</span></a>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.util.misc</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
 
 <span class="n">x</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html#numpy.linspace" title="numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
 <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.meshgrid.html#numpy.meshgrid" title="numpy.meshgrid"><span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span></a><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
@@ -2972,10 +2972,10 @@ Defaults to <code class="code docutils literal notranslate"><span class="pre">Fa
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><span class="n">Gradient</span></a>
-<span class="kn">from</span> <span class="nn">pyxu.util.misc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><span class="n">Gradient</span></a>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.util.misc</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
 
 <span class="c1"># Define input image</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
@@ -3086,10 +3086,10 @@ Defaults to <code class="code docutils literal notranslate"><span class="pre">Fa
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.Jacobian" title="pyxu.operator.Jacobian"><span class="n">Jacobian</span></a>
-<span class="kn">from</span> <span class="nn">pyxu.util.misc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.Jacobian" title="pyxu.operator.Jacobian"><span class="n">Jacobian</span></a>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.util.misc</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
 
 <span class="n">x</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html#numpy.linspace" title="numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
 <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.meshgrid.html#numpy.meshgrid" title="numpy.meshgrid"><span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span></a><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
@@ -3186,10 +3186,10 @@ Defaults to <code class="code docutils literal notranslate"><span class="pre">Fa
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><span class="n">Gradient</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.Divergence" title="pyxu.operator.Divergence"><span class="n">Divergence</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.Laplacian" title="pyxu.operator.Laplacian"><span class="n">Laplacian</span></a>
-<span class="kn">from</span> <span class="nn">pyxu.util.misc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><span class="n">Gradient</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.Divergence" title="pyxu.operator.Divergence"><span class="n">Divergence</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.Laplacian" title="pyxu.operator.Laplacian"><span class="n">Laplacian</span></a>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.util.misc</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
 
 <span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">x</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html#numpy.linspace" title="numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
@@ -3309,10 +3309,10 @@ Defaults to <code class="code docutils literal notranslate"><span class="pre">Fa
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.Hessian" title="pyxu.operator.Hessian"><span class="n">Hessian</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.PartialDerivative" title="pyxu.operator.linop.diff.PartialDerivative"><span class="n">PartialDerivative</span></a>
-<span class="kn">from</span> <span class="nn">pyxu.util.misc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.Hessian" title="pyxu.operator.Hessian"><span class="n">Hessian</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.PartialDerivative" title="pyxu.operator.linop.diff.PartialDerivative"><span class="n">PartialDerivative</span></a>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.util.misc</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
 
 <span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">x</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html#numpy.linspace" title="numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
@@ -3418,10 +3418,10 @@ Defaults to <code class="code docutils literal notranslate"><span class="pre">Fa
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.Laplacian" title="pyxu.operator.Laplacian"><span class="n">Laplacian</span></a>
-<span class="kn">from</span> <span class="nn">pyxu.util.misc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.Laplacian" title="pyxu.operator.Laplacian"><span class="n">Laplacian</span></a>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.util.misc</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
 
 <span class="c1"># Define input image</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
@@ -3558,10 +3558,10 @@ Must be one of:</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.DirectionalDerivative" title="pyxu.operator.DirectionalDerivative"><span class="n">DirectionalDerivative</span></a>
-<span class="kn">from</span> <span class="nn">pyxu.util.misc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.DirectionalDerivative" title="pyxu.operator.DirectionalDerivative"><span class="n">DirectionalDerivative</span></a>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.util.misc</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
 
 <span class="n">x</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html#numpy.linspace" title="numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
 <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.meshgrid.html#numpy.meshgrid" title="numpy.meshgrid"><span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span></a><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
@@ -3660,10 +3660,10 @@ Must be one of:</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.DirectionalGradient" title="pyxu.operator.DirectionalGradient"><span class="n">DirectionalGradient</span></a>
-<span class="kn">from</span> <span class="nn">pyxu.util.misc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.DirectionalGradient" title="pyxu.operator.DirectionalGradient"><span class="n">DirectionalGradient</span></a>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.util.misc</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
 
 <span class="n">x</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html#numpy.linspace" title="numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
 <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.meshgrid.html#numpy.meshgrid" title="numpy.meshgrid"><span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span></a><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
@@ -3777,10 +3777,10 @@ Must be one of:</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.DirectionalLaplacian" title="pyxu.operator.DirectionalLaplacian"><span class="n">DirectionalLaplacian</span></a>
-<span class="kn">from</span> <span class="nn">pyxu.util.misc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.DirectionalLaplacian" title="pyxu.operator.DirectionalLaplacian"><span class="n">DirectionalLaplacian</span></a>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.util.misc</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
 
 <span class="n">x</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html#numpy.linspace" title="numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
 <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.meshgrid.html#numpy.meshgrid" title="numpy.meshgrid"><span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span></a><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
@@ -3892,10 +3892,10 @@ Must be one of:</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.DirectionalHessian" title="pyxu.operator.DirectionalHessian"><span class="n">DirectionalHessian</span></a>
-<span class="kn">from</span> <span class="nn">pyxu.util.misc</span> <span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/operator/linop.html#pyxu.operator.DirectionalHessian" title="pyxu.operator.DirectionalHessian"><span class="n">DirectionalHessian</span></a>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.util.misc</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../../api/util.html#pyxu.util.misc.peaks" title="pyxu.util.misc.peaks"><span class="n">peaks</span></a>
 
 <span class="n">x</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html#numpy.linspace" title="numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
 <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.meshgrid.html#numpy.meshgrid" title="numpy.meshgrid"><span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span></a><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>

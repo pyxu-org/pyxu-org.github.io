@@ -27,7 +27,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
@@ -465,23 +465,23 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <h1>Source code for pyxu.info.deps</h1><div class="highlight"><pre>
-<span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">collections.abc</span> <span class="k">as</span> <span class="nn">cabc</span>
-<span class="linenos">  2</span><span class="kn">import</span> <span class="nn">enum</span>
-<span class="linenos">  3</span><span class="kn">import</span> <span class="nn">importlib.util</span>
-<span class="linenos">  4</span><span class="kn">import</span> <span class="nn">types</span>
+<span></span><span class="linenos">  1</span><span class="kn">import</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cabc</span>
+<span class="linenos">  2</span><span class="kn">import</span><span class="w"> </span><span class="nn">enum</span>
+<span class="linenos">  3</span><span class="kn">import</span><span class="w"> </span><span class="nn">importlib.util</span>
+<span class="linenos">  4</span><span class="kn">import</span><span class="w"> </span><span class="nn">types</span>
 <span class="linenos">  5</span>
-<span class="linenos">  6</span><span class="kn">import</span> <span class="nn">dask.array</span>
-<span class="linenos">  7</span><span class="kn">import</span> <span class="nn">numpy</span>
-<span class="linenos">  8</span><span class="kn">import</span> <span class="nn">packaging.version</span> <span class="k">as</span> <span class="nn">pkgv</span>
-<span class="linenos">  9</span><span class="kn">import</span> <span class="nn">scipy.sparse</span>
+<span class="linenos">  6</span><span class="kn">import</span><span class="w"> </span><span class="nn">dask.array</span>
+<span class="linenos">  7</span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
+<span class="linenos">  8</span><span class="kn">import</span><span class="w"> </span><span class="nn">packaging.version</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pkgv</span>
+<span class="linenos">  9</span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy.sparse</span>
 <span class="linenos"> 10</span>
 <span class="linenos"> 11</span><span class="c1">#: Show if CuPy-based backends are available.</span>
 <span class="linenos"> 12</span><span class="n">CUPY_ENABLED</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">find_spec</span><span class="p">(</span><span class="s2">&quot;cupy&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
 <span class="linenos"> 13</span><span class="k">if</span> <span class="n">CUPY_ENABLED</span><span class="p">:</span>
 <span class="linenos"> 14</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos"> 15</span>        <span class="kn">import</span> <span class="nn">cupy</span>
-<span class="linenos"> 16</span>        <span class="kn">import</span> <span class="nn">cupyx.scipy.sparse</span>
-<span class="linenos"> 17</span>        <span class="kn">import</span> <span class="nn">cupyx.scipy.sparse.linalg</span>
+<span class="linenos"> 15</span>        <span class="kn">import</span><span class="w"> </span><span class="nn">cupy</span>
+<span class="linenos"> 16</span>        <span class="kn">import</span><span class="w"> </span><span class="nn">cupyx.scipy.sparse</span>
+<span class="linenos"> 17</span>        <span class="kn">import</span><span class="w"> </span><span class="nn">cupyx.scipy.sparse.linalg</span>
 <span class="linenos"> 18</span>
 <span class="linenos"> 19</span>        <span class="n">cupy</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span>  <span class="c1"># will fail if hardware/drivers/runtime missing</span>
 <span class="linenos"> 20</span>    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
@@ -491,7 +491,7 @@ document.write(`
 <div class="viewcode-block" id="NDArrayInfo">
 <a class="viewcode-back" href="../../../api/info.deps.html#pyxu.info.deps.NDArrayInfo">[docs]</a>
 <span class="linenos"> 24</span><span class="nd">@enum</span><span class="o">.</span><span class="n">unique</span>
-<span class="linenos"> 25</span><span class="k">class</span> <span class="nc">NDArrayInfo</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">Enum</span><span class="p">):</span>
+<span class="linenos"> 25</span><span class="k">class</span><span class="w"> </span><span class="nc">NDArrayInfo</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">Enum</span><span class="p">):</span>
 <span class="linenos"> 26</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 27</span><span class="sd">    Supported dense array backends.</span>
 <span class="linenos"> 28</span><span class="sd">    &quot;&quot;&quot;</span>
@@ -503,14 +503,14 @@ document.write(`
 <div class="viewcode-block" id="NDArrayInfo.default">
 <a class="viewcode-back" href="../../../api/info.deps.html#pyxu.info.deps.NDArrayInfo.default">[docs]</a>
 <span class="linenos"> 34</span>    <span class="nd">@classmethod</span>
-<span class="linenos"> 35</span>    <span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;NDArrayInfo&quot;</span><span class="p">:</span>
+<span class="linenos"> 35</span>    <span class="k">def</span><span class="w"> </span><span class="nf">default</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;NDArrayInfo&quot;</span><span class="p">:</span>
 <span class="linenos"> 36</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Default array backend to use.&quot;&quot;&quot;</span>
 <span class="linenos"> 37</span>        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">NUMPY</span></div>
 
 <span class="linenos"> 38</span>
 <div class="viewcode-block" id="NDArrayInfo.type">
 <a class="viewcode-back" href="../../../api/info.deps.html#pyxu.info.deps.NDArrayInfo.type">[docs]</a>
-<span class="linenos"> 39</span>    <span class="k">def</span> <span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">type</span><span class="p">:</span>
+<span class="linenos"> 39</span>    <span class="k">def</span><span class="w"> </span><span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">type</span><span class="p">:</span>
 <span class="linenos"> 40</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Array type associated to a backend.&quot;&quot;&quot;</span>
 <span class="linenos"> 41</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;NUMPY&quot;</span><span class="p">:</span>
 <span class="linenos"> 42</span>            <span class="k">return</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span>
@@ -525,7 +525,7 @@ document.write(`
 <div class="viewcode-block" id="NDArrayInfo.from_obj">
 <a class="viewcode-back" href="../../../api/info.deps.html#pyxu.info.deps.NDArrayInfo.from_obj">[docs]</a>
 <span class="linenos"> 50</span>    <span class="nd">@classmethod</span>
-<span class="linenos"> 51</span>    <span class="k">def</span> <span class="nf">from_obj</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;NDArrayInfo&quot;</span><span class="p">:</span>
+<span class="linenos"> 51</span>    <span class="k">def</span><span class="w"> </span><span class="nf">from_obj</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;NDArrayInfo&quot;</span><span class="p">:</span>
 <span class="linenos"> 52</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Find array backend associated to `obj`.&quot;&quot;&quot;</span>
 <span class="linenos"> 53</span>        <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 <span class="linenos"> 54</span>            <span class="k">for</span> <span class="n">ndi</span> <span class="ow">in</span> <span class="bp">cls</span><span class="p">:</span>
@@ -537,7 +537,7 @@ document.write(`
 <div class="viewcode-block" id="NDArrayInfo.from_flag">
 <a class="viewcode-back" href="../../../api/info.deps.html#pyxu.info.deps.NDArrayInfo.from_flag">[docs]</a>
 <span class="linenos"> 59</span>    <span class="nd">@classmethod</span>
-<span class="linenos"> 60</span>    <span class="k">def</span> <span class="nf">from_flag</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">gpu</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;NDArrayInfo&quot;</span><span class="p">:</span>
+<span class="linenos"> 60</span>    <span class="k">def</span><span class="w"> </span><span class="nf">from_flag</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">gpu</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;NDArrayInfo&quot;</span><span class="p">:</span>
 <span class="linenos"> 61</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Find array backend suitable for in-memory CPU/GPU computing.&quot;&quot;&quot;</span>
 <span class="linenos"> 62</span>        <span class="k">if</span> <span class="n">gpu</span><span class="p">:</span>
 <span class="linenos"> 63</span>            <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">CUPY</span>
@@ -547,7 +547,7 @@ document.write(`
 <span class="linenos"> 66</span>
 <div class="viewcode-block" id="NDArrayInfo.module">
 <a class="viewcode-back" href="../../../api/info.deps.html#pyxu.info.deps.NDArrayInfo.module">[docs]</a>
-<span class="linenos"> 67</span>    <span class="k">def</span> <span class="nf">module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">linalg</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">:</span>
+<span class="linenos"> 67</span>    <span class="k">def</span><span class="w"> </span><span class="nf">module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">linalg</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">:</span>
 <span class="linenos"> 68</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 69</span><span class="sd">        Python module associated to an array backend.</span>
 <span class="linenos"> 70</span>
@@ -575,7 +575,7 @@ document.write(`
 <div class="viewcode-block" id="SparseArrayInfo">
 <a class="viewcode-back" href="../../../api/info.deps.html#pyxu.info.deps.SparseArrayInfo">[docs]</a>
 <span class="linenos"> 90</span><span class="nd">@enum</span><span class="o">.</span><span class="n">unique</span>
-<span class="linenos"> 91</span><span class="k">class</span> <span class="nc">SparseArrayInfo</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">Enum</span><span class="p">):</span>
+<span class="linenos"> 91</span><span class="k">class</span><span class="w"> </span><span class="nc">SparseArrayInfo</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">Enum</span><span class="p">):</span>
 <span class="linenos"> 92</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 93</span><span class="sd">    Supported sparse array backends.</span>
 <span class="linenos"> 94</span><span class="sd">    &quot;&quot;&quot;</span>
@@ -586,14 +586,14 @@ document.write(`
 <div class="viewcode-block" id="SparseArrayInfo.default">
 <a class="viewcode-back" href="../../../api/info.deps.html#pyxu.info.deps.SparseArrayInfo.default">[docs]</a>
 <span class="linenos"> 99</span>    <span class="nd">@classmethod</span>
-<span class="linenos">100</span>    <span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;SparseArrayInfo&quot;</span><span class="p">:</span>
+<span class="linenos">100</span>    <span class="k">def</span><span class="w"> </span><span class="nf">default</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;SparseArrayInfo&quot;</span><span class="p">:</span>
 <span class="linenos">101</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Default array backend to use.&quot;&quot;&quot;</span>
 <span class="linenos">102</span>        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">SCIPY_SPARSE</span></div>
 
 <span class="linenos">103</span>
 <div class="viewcode-block" id="SparseArrayInfo.type">
 <a class="viewcode-back" href="../../../api/info.deps.html#pyxu.info.deps.SparseArrayInfo.type">[docs]</a>
-<span class="linenos">104</span>    <span class="k">def</span> <span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">type</span><span class="p">:</span>
+<span class="linenos">104</span>    <span class="k">def</span><span class="w"> </span><span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">type</span><span class="p">:</span>
 <span class="linenos">105</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Array type associated to a backend.&quot;&quot;&quot;</span>
 <span class="linenos">106</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;SCIPY_SPARSE&quot;</span><span class="p">:</span>
 <span class="linenos">107</span>            <span class="c1"># All `*matrix` classes descend from `spmatrix`.</span>
@@ -607,7 +607,7 @@ document.write(`
 <div class="viewcode-block" id="SparseArrayInfo.from_obj">
 <a class="viewcode-back" href="../../../api/info.deps.html#pyxu.info.deps.SparseArrayInfo.from_obj">[docs]</a>
 <span class="linenos">114</span>    <span class="nd">@classmethod</span>
-<span class="linenos">115</span>    <span class="k">def</span> <span class="nf">from_obj</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;SparseArrayInfo&quot;</span><span class="p">:</span>
+<span class="linenos">115</span>    <span class="k">def</span><span class="w"> </span><span class="nf">from_obj</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;SparseArrayInfo&quot;</span><span class="p">:</span>
 <span class="linenos">116</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Find array backend associated to `obj`.&quot;&quot;&quot;</span>
 <span class="linenos">117</span>        <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 <span class="linenos">118</span>            <span class="k">for</span> <span class="n">sai</span> <span class="ow">in</span> <span class="bp">cls</span><span class="p">:</span>
@@ -618,7 +618,7 @@ document.write(`
 <span class="linenos">122</span>
 <div class="viewcode-block" id="SparseArrayInfo.module">
 <a class="viewcode-back" href="../../../api/info.deps.html#pyxu.info.deps.SparseArrayInfo.module">[docs]</a>
-<span class="linenos">123</span>    <span class="k">def</span> <span class="nf">module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">linalg</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">:</span>
+<span class="linenos">123</span>    <span class="k">def</span><span class="w"> </span><span class="nf">module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">linalg</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">:</span>
 <span class="linenos">124</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">125</span><span class="sd">        Python module associated to an array backend.</span>
 <span class="linenos">126</span>
@@ -642,7 +642,7 @@ document.write(`
 <span class="linenos">142</span>
 <div class="viewcode-block" id="supported_array_types">
 <a class="viewcode-back" href="../../../api/info.deps.html#pyxu.info.deps.supported_array_types">[docs]</a>
-<span class="linenos">143</span><span class="k">def</span> <span class="nf">supported_array_types</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Collection</span><span class="p">[</span><span class="nb">type</span><span class="p">]:</span>
+<span class="linenos">143</span><span class="k">def</span><span class="w"> </span><span class="nf">supported_array_types</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Collection</span><span class="p">[</span><span class="nb">type</span><span class="p">]:</span>
 <span class="linenos">144</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;List of all supported dense array types in current Pyxu install.&quot;&quot;&quot;</span>
 <span class="linenos">145</span>    <span class="n">data</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 <span class="linenos">146</span>    <span class="k">for</span> <span class="n">ndi</span> <span class="ow">in</span> <span class="n">NDArrayInfo</span><span class="p">:</span>
@@ -654,7 +654,7 @@ document.write(`
 <span class="linenos">151</span>
 <div class="viewcode-block" id="supported_array_modules">
 <a class="viewcode-back" href="../../../api/info.deps.html#pyxu.info.deps.supported_array_modules">[docs]</a>
-<span class="linenos">152</span><span class="k">def</span> <span class="nf">supported_array_modules</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Collection</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">]:</span>
+<span class="linenos">152</span><span class="k">def</span><span class="w"> </span><span class="nf">supported_array_modules</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Collection</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">]:</span>
 <span class="linenos">153</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;List of all supported dense array modules in current Pyxu install.&quot;&quot;&quot;</span>
 <span class="linenos">154</span>    <span class="n">data</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 <span class="linenos">155</span>    <span class="k">for</span> <span class="n">ndi</span> <span class="ow">in</span> <span class="n">NDArrayInfo</span><span class="p">:</span>
@@ -666,7 +666,7 @@ document.write(`
 <span class="linenos">160</span>
 <div class="viewcode-block" id="supported_sparse_types">
 <a class="viewcode-back" href="../../../api/info.deps.html#pyxu.info.deps.supported_sparse_types">[docs]</a>
-<span class="linenos">161</span><span class="k">def</span> <span class="nf">supported_sparse_types</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Collection</span><span class="p">[</span><span class="nb">type</span><span class="p">]:</span>
+<span class="linenos">161</span><span class="k">def</span><span class="w"> </span><span class="nf">supported_sparse_types</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Collection</span><span class="p">[</span><span class="nb">type</span><span class="p">]:</span>
 <span class="linenos">162</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;List of all supported sparse array types in current Pyxu install.&quot;&quot;&quot;</span>
 <span class="linenos">163</span>    <span class="n">data</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 <span class="linenos">164</span>    <span class="k">for</span> <span class="n">sai</span> <span class="ow">in</span> <span class="n">SparseArrayInfo</span><span class="p">:</span>
@@ -678,7 +678,7 @@ document.write(`
 <span class="linenos">169</span>
 <div class="viewcode-block" id="supported_sparse_modules">
 <a class="viewcode-back" href="../../../api/info.deps.html#pyxu.info.deps.supported_sparse_modules">[docs]</a>
-<span class="linenos">170</span><span class="k">def</span> <span class="nf">supported_sparse_modules</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Collection</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">]:</span>
+<span class="linenos">170</span><span class="k">def</span><span class="w"> </span><span class="nf">supported_sparse_modules</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Collection</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">]:</span>
 <span class="linenos">171</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;List of all supported sparse array modules in current Pyxu install.&quot;&quot;&quot;</span>
 <span class="linenos">172</span>    <span class="n">data</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 <span class="linenos">173</span>    <span class="k">for</span> <span class="n">sai</span> <span class="ow">in</span> <span class="n">SparseArrayInfo</span><span class="p">:</span>

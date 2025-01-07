@@ -18,7 +18,7 @@
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
-<link href="../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css?v=03e43079" rel="stylesheet" type="text/css"/>
 <link href="../_static/plot_directive.css" rel="stylesheet" type="text/css"/>
 <link href="../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
 <link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
@@ -290,25 +290,25 @@ document.write(`
 <h2>The Importance of Matrix-Free Operators<a class="headerlink" href="#The-Importance-of-Matrix-Free-Operators" title="Link to this heading">#</a></h2>
 <p>Computational imaging often involves working with (very) large datasets which poses challenges in terms of scalability. In Pyxu, the strategy for addressing such problems is to employ <strong>matrix-free operators</strong>. These operators are defined implicitly via <em>methods</em> rather than explicitly via <em>matrices</em>. This strategy saves memory and improves computational efficiency.</p>
 <p>For example, the following code snippet implements a matrix-free sum operator operating over 1D inputs:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Sum</span><span class="p">(</span><span class="n">LinOp</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Sum</span><span class="p">(</span><span class="n">LinOp</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">arr</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This code snippet demonstrates how to define a simple matrix-free linear operator that computes the sum of elements in an array. Let’s break down the components:</p>
 <ul>
 <li><p><strong>Class Definition:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Sum</span><span class="p">(</span><span class="n">LinOp</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Sum</span><span class="p">(</span><span class="n">LinOp</span><span class="p">):</span>
     <span class="k">pass</span>
 </pre></div>
 </div>
 <p>Here, a new class called <code class="docutils literal notranslate"><span class="pre">Sum()</span></code> is defined, inheriting from Pyxu’s <code class="docutils literal notranslate"><span class="pre">LinOp()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.LinOp">🔗</a> base class, the primary abstraction for designing real-valued linear operators. This inheritance means that <code class="docutils literal notranslate"><span class="pre">Sum()</span></code> is expected to implement certain core methods, namely <code class="docutils literal notranslate"><span class="pre">apply()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Map.apply">🔗</a> and <code class="docutils literal notranslate"><span class="pre">adjoint()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.LinOp.adjoint">🔗</a>.</p>
 </li>
 <li><p><strong>The</strong> <code class="docutils literal notranslate"><span class="pre">apply()</span></code> <strong>Method:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -318,7 +318,7 @@ document.write(`
 </div></blockquote>
 </li>
 <li><p><strong>The</strong> <code class="docutils literal notranslate"><span class="pre">adjoint()</span></code> <strong>Method:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">arr</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>

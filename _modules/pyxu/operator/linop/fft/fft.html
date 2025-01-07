@@ -27,7 +27,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
@@ -465,16 +465,16 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <h1>Source code for pyxu.operator.linop.fft.fft</h1><div class="highlight"><pre>
-<span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">functools</span>
-<span class="linenos">  2</span><span class="kn">import</span> <span class="nn">inspect</span>
+<span></span><span class="linenos">  1</span><span class="kn">import</span><span class="w"> </span><span class="nn">functools</span>
+<span class="linenos">  2</span><span class="kn">import</span><span class="w"> </span><span class="nn">inspect</span>
 <span class="linenos">  3</span>
-<span class="linenos">  4</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos">  4</span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="linenos">  5</span>
-<span class="linenos">  6</span><span class="kn">import</span> <span class="nn">pyxu.abc</span> <span class="k">as</span> <span class="nn">pxa</span>
-<span class="linenos">  7</span><span class="kn">import</span> <span class="nn">pyxu.info.deps</span> <span class="k">as</span> <span class="nn">pxd</span>
-<span class="linenos">  8</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
-<span class="linenos">  9</span><span class="kn">import</span> <span class="nn">pyxu.runtime</span> <span class="k">as</span> <span class="nn">pxrt</span>
-<span class="linenos"> 10</span><span class="kn">import</span> <span class="nn">pyxu.util</span> <span class="k">as</span> <span class="nn">pxu</span>
+<span class="linenos">  6</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.abc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxa</span>
+<span class="linenos">  7</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.deps</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxd</span>
+<span class="linenos">  8</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.ptype</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxt</span>
+<span class="linenos">  9</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.runtime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxrt</span>
+<span class="linenos"> 10</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.util</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxu</span>
 <span class="linenos"> 11</span>
 <span class="linenos"> 12</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
 <span class="linenos"> 13</span>    <span class="s2">&quot;FFT&quot;</span><span class="p">,</span>
@@ -483,7 +483,7 @@ document.write(`
 <span class="linenos"> 16</span>
 <div class="viewcode-block" id="FFT">
 <a class="viewcode-back" href="../../../../../api/operator/linop.html#pyxu.operator.FFT">[docs]</a>
-<span class="linenos"> 17</span><span class="k">class</span> <span class="nc">FFT</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">NormalOp</span><span class="p">):</span>
+<span class="linenos"> 17</span><span class="k">class</span><span class="w"> </span><span class="nc">FFT</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">NormalOp</span><span class="p">):</span>
 <span class="linenos"> 18</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 19</span><span class="sd">    Multi-dimensional Discrete Fourier Transform (DFT) :math:`A: \mathbb{C}^{M_{1} \times\cdots\times M_{D}} \to</span>
 <span class="linenos"> 20</span><span class="sd">    \mathbb{C}^{M_{1} \times\cdots\times M_{D}}`.</span>
@@ -596,7 +596,7 @@ document.write(`
 <span class="linenos">127</span>
 <div class="viewcode-block" id="FFT.__init__">
 <a class="viewcode-back" href="../../../../../api/operator/linop.html#pyxu.operator.FFT.__init__">[docs]</a>
-<span class="linenos">128</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="linenos">128</span>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 <span class="linenos">129</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos">130</span>        <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos">131</span>        <span class="n">axes</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayAxis</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -643,13 +643,13 @@ document.write(`
 <span class="linenos">172</span>        <span class="bp">self</span><span class="o">.</span><span class="n">lipschitz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimate_lipschitz</span><span class="p">()</span></div>
 
 <span class="linenos">173</span>
-<span class="linenos">174</span>    <span class="k">def</span> <span class="nf">estimate_lipschitz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">:</span>
+<span class="linenos">174</span>    <span class="k">def</span><span class="w"> </span><span class="nf">estimate_lipschitz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">:</span>
 <span class="linenos">175</span>        <span class="n">M</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">codim_shape</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span> <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_axes</span><span class="p">]</span>
 <span class="linenos">176</span>        <span class="n">L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">M</span><span class="p">))</span>
 <span class="linenos">177</span>        <span class="k">return</span> <span class="n">L</span>
 <span class="linenos">178</span>
-<span class="linenos">179</span>    <span class="k">def</span> <span class="nf">gram</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
-<span class="linenos">180</span>        <span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">HomothetyOp</span>
+<span class="linenos">179</span>    <span class="k">def</span><span class="w"> </span><span class="nf">gram</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
+<span class="linenos">180</span>        <span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">HomothetyOp</span>
 <span class="linenos">181</span>
 <span class="linenos">182</span>        <span class="n">G</span> <span class="o">=</span> <span class="n">HomothetyOp</span><span class="p">(</span>
 <span class="linenos">183</span>            <span class="n">dim_shape</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_shape</span><span class="p">,</span>
@@ -657,12 +657,12 @@ document.write(`
 <span class="linenos">185</span>        <span class="p">)</span>
 <span class="linenos">186</span>        <span class="k">return</span> <span class="n">G</span>
 <span class="linenos">187</span>
-<span class="linenos">188</span>    <span class="k">def</span> <span class="nf">pinv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">damp</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">188</span>    <span class="k">def</span><span class="w"> </span><span class="nf">pinv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">damp</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">189</span>        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjoint</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 <span class="linenos">190</span>        <span class="n">out</span> <span class="o">/=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lipschitz</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">damp</span>
 <span class="linenos">191</span>        <span class="k">return</span> <span class="n">out</span>
 <span class="linenos">192</span>
-<span class="linenos">193</span>    <span class="k">def</span> <span class="nf">cpinv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">damp</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">193</span>    <span class="k">def</span><span class="w"> </span><span class="nf">cpinv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">damp</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">194</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">195</span><span class="sd">        Parameters</span>
 <span class="linenos">196</span><span class="sd">        ----------</span>
@@ -678,15 +678,15 @@ document.write(`
 <span class="linenos">206</span>        <span class="n">out</span> <span class="o">/=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lipschitz</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">damp</span>
 <span class="linenos">207</span>        <span class="k">return</span> <span class="n">out</span>
 <span class="linenos">208</span>
-<span class="linenos">209</span>    <span class="k">def</span> <span class="nf">dagger</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">damp</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
+<span class="linenos">209</span>    <span class="k">def</span><span class="w"> </span><span class="nf">dagger</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">damp</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">OpT</span><span class="p">:</span>
 <span class="linenos">210</span>        <span class="n">op</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">T</span> <span class="o">/</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">lipschitz</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">damp</span><span class="p">)</span>
 <span class="linenos">211</span>        <span class="k">return</span> <span class="n">op</span>
 <span class="linenos">212</span>
-<span class="linenos">213</span>    <span class="k">def</span> <span class="nf">svdvals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">213</span>    <span class="k">def</span><span class="w"> </span><span class="nf">svdvals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">214</span>        <span class="n">D</span> <span class="o">=</span> <span class="n">pxa</span><span class="o">.</span><span class="n">UnitOp</span><span class="o">.</span><span class="n">svdvals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">lipschitz</span>
 <span class="linenos">215</span>        <span class="k">return</span> <span class="n">D</span>
 <span class="linenos">216</span>
-<span class="linenos">217</span>    <span class="k">def</span> <span class="nf">asarray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">217</span>    <span class="k">def</span><span class="w"> </span><span class="nf">asarray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">218</span>        <span class="c1"># We compute 1D transforms per axis, then Kronecker product them.</span>
 <span class="linenos">219</span>
 <span class="linenos">220</span>        <span class="c1"># Since non-NP backends may be faulty, we do everything in NUMPY ...</span>
@@ -719,7 +719,7 @@ document.write(`
 <span class="linenos">247</span>
 <div class="viewcode-block" id="FFT.apply">
 <a class="viewcode-back" href="../../../../../api/operator/linop.html#pyxu.operator.FFT.apply">[docs]</a>
-<span class="linenos">248</span>    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">248</span>    <span class="k">def</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">249</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">250</span><span class="sd">        Parameters</span>
 <span class="linenos">251</span><span class="sd">        ----------</span>
@@ -739,7 +739,7 @@ document.write(`
 <span class="linenos">265</span>        <span class="k">return</span> <span class="n">out</span></div>
 
 <span class="linenos">266</span>
-<span class="linenos">267</span>    <span class="k">def</span> <span class="nf">capply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">267</span>    <span class="k">def</span><span class="w"> </span><span class="nf">capply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">268</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">269</span><span class="sd">        Parameters</span>
 <span class="linenos">270</span><span class="sd">        ----------</span>
@@ -756,7 +756,7 @@ document.write(`
 <span class="linenos">281</span>
 <div class="viewcode-block" id="FFT.adjoint">
 <a class="viewcode-back" href="../../../../../api/operator/linop.html#pyxu.operator.FFT.adjoint">[docs]</a>
-<span class="linenos">282</span>    <span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">282</span>    <span class="k">def</span><span class="w"> </span><span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">283</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">284</span><span class="sd">        Parameters</span>
 <span class="linenos">285</span><span class="sd">        ----------</span>
@@ -776,7 +776,7 @@ document.write(`
 <span class="linenos">299</span>        <span class="k">return</span> <span class="n">out</span></div>
 
 <span class="linenos">300</span>
-<span class="linenos">301</span>    <span class="k">def</span> <span class="nf">cadjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">301</span>    <span class="k">def</span><span class="w"> </span><span class="nf">cadjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">302</span><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">303</span><span class="sd">        Parameters</span>
 <span class="linenos">304</span><span class="sd">        ----------</span>
@@ -793,7 +793,7 @@ document.write(`
 <span class="linenos">315</span>
 <span class="linenos">316</span>    <span class="c1"># Helpers (public) --------------------------------------------------------</span>
 <span class="linenos">317</span>    <span class="nd">@classmethod</span>
-<span class="linenos">318</span>    <span class="k">def</span> <span class="nf">fft_backend</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">xp</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">ArrayModule</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="linenos">318</span>    <span class="k">def</span><span class="w"> </span><span class="nf">fft_backend</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">xp</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">ArrayModule</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
 <span class="linenos">319</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">320</span><span class="sd">        Retrieve the namespace containing [i]fftn().</span>
 <span class="linenos">321</span>
@@ -820,7 +820,7 @@ document.write(`
 <span class="linenos">342</span>        <span class="k">return</span> <span class="n">xpf</span>
 <span class="linenos">343</span>
 <span class="linenos">344</span>    <span class="nd">@classmethod</span>
-<span class="linenos">345</span>    <span class="k">def</span> <span class="nf">next_fast_len</span><span class="p">(</span>
+<span class="linenos">345</span>    <span class="k">def</span><span class="w"> </span><span class="nf">next_fast_len</span><span class="p">(</span>
 <span class="linenos">346</span>        <span class="bp">cls</span><span class="p">,</span>
 <span class="linenos">347</span>        <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos">348</span>        <span class="n">axes</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayAxis</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -856,7 +856,7 @@ document.write(`
 <span class="linenos">378</span>        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">opt_shape</span><span class="p">)</span>
 <span class="linenos">379</span>
 <span class="linenos">380</span>    <span class="c1"># Helpers (internal) ------------------------------------------------------</span>
-<span class="linenos">381</span>    <span class="k">def</span> <span class="nf">_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">381</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">382</span>        <span class="c1"># Parameters</span>
 <span class="linenos">383</span>        <span class="c1"># ----------</span>
 <span class="linenos">384</span>        <span class="c1"># x: NDArray [real/complex]</span>
@@ -910,12 +910,12 @@ document.write(`
 <span class="linenos">432</span>        <span class="k">return</span> <span class="n">y</span>
 <span class="linenos">433</span>
 <span class="linenos">434</span>    <span class="nd">@staticmethod</span>
-<span class="linenos">435</span>    <span class="k">def</span> <span class="nf">_chunked_transform1D</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">axis</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">435</span>    <span class="k">def</span><span class="w"> </span><span class="nf">_chunked_transform1D</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">axis</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">436</span>        <span class="c1"># Same signature as _transform(), but:</span>
 <span class="linenos">437</span>        <span class="c1"># * limited to DASK inputs;</span>
 <span class="linenos">438</span>        <span class="c1"># * performs 1D transform along chosen axis.</span>
 <span class="linenos">439</span>
-<span class="linenos">440</span>        <span class="k">def</span> <span class="nf">_mod_czt</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">W</span><span class="p">,</span> <span class="n">n0</span><span class="p">,</span> <span class="n">k0</span><span class="p">,</span> <span class="n">axis</span><span class="p">):</span>
+<span class="linenos">440</span>        <span class="k">def</span><span class="w"> </span><span class="nf">_mod_czt</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">W</span><span class="p">,</span> <span class="n">n0</span><span class="p">,</span> <span class="n">k0</span><span class="p">,</span> <span class="n">axis</span><span class="p">):</span>
 <span class="linenos">441</span>            <span class="c1"># 1D Chirp Z-Transform, followed by modulation with W**(k0 * [n0:n0+M]).</span>
 <span class="linenos">442</span>            <span class="c1">#</span>
 <span class="linenos">443</span>            <span class="c1"># This is a stripped-down version for performing chunked FFTs: don&#39;t use for other purposes.</span>
@@ -974,7 +974,7 @@ document.write(`
 <span class="linenos">496</span>            <span class="n">z</span> <span class="o">*=</span> <span class="n">W</span> <span class="o">**</span> <span class="p">(</span><span class="n">xp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n0</span><span class="p">,</span> <span class="n">n0</span> <span class="o">+</span> <span class="n">M</span><span class="p">)</span> <span class="o">*</span> <span class="n">k0</span><span class="p">)</span>
 <span class="linenos">497</span>            <span class="k">return</span> <span class="n">z</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="o">*</span><span class="n">swap</span><span class="p">)</span>
 <span class="linenos">498</span>
-<span class="linenos">499</span>        <span class="k">def</span> <span class="nf">block_ip</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">],</span> <span class="n">k</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">sign</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">axis</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">499</span>        <span class="k">def</span><span class="w"> </span><span class="nf">block_ip</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">],</span> <span class="n">k</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">sign</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">axis</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">500</span>            <span class="c1"># Block-defined inner-product.</span>
 <span class="linenos">501</span>            <span class="c1">#</span>
 <span class="linenos">502</span>            <span class="c1"># y[:,...,:,k,:,...,:] = \sum_{n} x[:,...,:,n,:,...,:] W^{nk}</span>

@@ -27,7 +27,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
@@ -465,9 +465,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <h1>Source code for pyxu.util.complex</h1><div class="highlight"><pre>
-<span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">pyxu.info.deps</span> <span class="k">as</span> <span class="nn">pxd</span>
-<span class="linenos">  2</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
-<span class="linenos">  3</span><span class="kn">import</span> <span class="nn">pyxu.runtime</span> <span class="k">as</span> <span class="nn">pxrt</span>
+<span></span><span class="linenos">  1</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.deps</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxd</span>
+<span class="linenos">  2</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.ptype</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxt</span>
+<span class="linenos">  3</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.runtime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxrt</span>
 <span class="linenos">  4</span>
 <span class="linenos">  5</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
 <span class="linenos">  6</span>    <span class="s2">&quot;as_real_op&quot;</span><span class="p">,</span>
@@ -479,7 +479,7 @@ document.write(`
 <span class="linenos"> 12</span>
 <div class="viewcode-block" id="require_viewable">
 <a class="viewcode-back" href="../../../api/util.html#pyxu.util.require_viewable">[docs]</a>
-<span class="linenos"> 13</span><span class="k">def</span> <span class="nf">require_viewable</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos"> 13</span><span class="k">def</span><span class="w"> </span><span class="nf">require_viewable</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos"> 14</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 15</span><span class="sd">    Copy array if required to do real/complex view manipulations.</span>
 <span class="linenos"> 16</span>
@@ -512,7 +512,7 @@ document.write(`
 <span class="linenos"> 42</span>
 <div class="viewcode-block" id="view_as_complex">
 <a class="viewcode-back" href="../../../api/util.html#pyxu.util.view_as_complex">[docs]</a>
-<span class="linenos"> 43</span><span class="k">def</span> <span class="nf">view_as_complex</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos"> 43</span><span class="k">def</span><span class="w"> </span><span class="nf">view_as_complex</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos"> 44</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 45</span><span class="sd">    View real-valued array as its complex-valued bijection.  (Inverse of :py:func:`~pyxu.util.view_as_real`.)</span>
 <span class="linenos"> 46</span>
@@ -567,7 +567,7 @@ document.write(`
 <span class="linenos"> 94</span>
 <div class="viewcode-block" id="view_as_real">
 <a class="viewcode-back" href="../../../api/util.html#pyxu.util.view_as_real">[docs]</a>
-<span class="linenos"> 95</span><span class="k">def</span> <span class="nf">view_as_real</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos"> 95</span><span class="k">def</span><span class="w"> </span><span class="nf">view_as_real</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos"> 96</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 97</span><span class="sd">    View complex-valued array as its real-valued bijection.  (Inverse of :py:func:`~pyxu.util.view_as_complex`.)</span>
 <span class="linenos"> 98</span>
@@ -635,7 +635,7 @@ document.write(`
 <span class="linenos">159</span>
 <div class="viewcode-block" id="as_real_op">
 <a class="viewcode-back" href="../../../api/util.html#pyxu.util.as_real_op">[docs]</a>
-<span class="linenos">160</span><span class="k">def</span> <span class="nf">as_real_op</span><span class="p">(</span><span class="n">A</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">dim_rank</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">160</span><span class="k">def</span><span class="w"> </span><span class="nf">as_real_op</span><span class="p">(</span><span class="n">A</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">,</span> <span class="n">dim_rank</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">161</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">162</span><span class="sd">    View complex-valued linear operator as its real-valued equivalent.</span>
 <span class="linenos">163</span>
@@ -731,14 +731,14 @@ document.write(`
 
 <span class="linenos">253</span>
 <span class="linenos">254</span>
-<span class="linenos">255</span><span class="k">def</span> <span class="nf">_is_real</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="linenos">255</span><span class="k">def</span><span class="w"> </span><span class="nf">_is_real</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="linenos">256</span>    <span class="k">try</span><span class="p">:</span>
 <span class="linenos">257</span>        <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">pxrt</span><span class="o">.</span><span class="n">Width</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">))</span>
 <span class="linenos">258</span>    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
 <span class="linenos">259</span>        <span class="k">return</span> <span class="kc">False</span>
 <span class="linenos">260</span>
 <span class="linenos">261</span>
-<span class="linenos">262</span><span class="k">def</span> <span class="nf">_is_complex</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="linenos">262</span><span class="k">def</span><span class="w"> </span><span class="nf">_is_complex</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="linenos">263</span>    <span class="k">try</span><span class="p">:</span>
 <span class="linenos">264</span>        <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">pxrt</span><span class="o">.</span><span class="n">CWidth</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">))</span>
 <span class="linenos">265</span>    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>

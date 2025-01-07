@@ -27,7 +27,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
@@ -465,14 +465,14 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <h1>Source code for pyxu.util.array_module</h1><div class="highlight"><pre>
-<span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">collections.abc</span> <span class="k">as</span> <span class="nn">cabc</span>
-<span class="linenos">  2</span><span class="kn">import</span> <span class="nn">functools</span>
+<span></span><span class="linenos">  1</span><span class="kn">import</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cabc</span>
+<span class="linenos">  2</span><span class="kn">import</span><span class="w"> </span><span class="nn">functools</span>
 <span class="linenos">  3</span>
-<span class="linenos">  4</span><span class="kn">import</span> <span class="nn">dask</span>
+<span class="linenos">  4</span><span class="kn">import</span><span class="w"> </span><span class="nn">dask</span>
 <span class="linenos">  5</span>
-<span class="linenos">  6</span><span class="kn">import</span> <span class="nn">pyxu.info.deps</span> <span class="k">as</span> <span class="nn">pxd</span>
-<span class="linenos">  7</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
-<span class="linenos">  8</span><span class="kn">import</span> <span class="nn">pyxu.util.misc</span> <span class="k">as</span> <span class="nn">pxm</span>
+<span class="linenos">  6</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.deps</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxd</span>
+<span class="linenos">  7</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.ptype</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxt</span>
+<span class="linenos">  8</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.util.misc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxm</span>
 <span class="linenos">  9</span>
 <span class="linenos"> 10</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
 <span class="linenos"> 11</span>    <span class="s2">&quot;compute&quot;</span><span class="p">,</span>
@@ -484,7 +484,7 @@ document.write(`
 <span class="linenos"> 17</span>
 <div class="viewcode-block" id="get_array_module">
 <a class="viewcode-back" href="../../../api/util.html#pyxu.util.get_array_module">[docs]</a>
-<span class="linenos"> 18</span><span class="k">def</span> <span class="nf">get_array_module</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fallback</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">ArrayModule</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">ArrayModule</span><span class="p">:</span>
+<span class="linenos"> 18</span><span class="k">def</span><span class="w"> </span><span class="nf">get_array_module</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fallback</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">ArrayModule</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">ArrayModule</span><span class="p">:</span>
 <span class="linenos"> 19</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 20</span><span class="sd">    Get the array namespace corresponding to a given object.</span>
 <span class="linenos"> 21</span>
@@ -501,7 +501,7 @@ document.write(`
 <span class="linenos"> 32</span><span class="sd">        The namespace to use to manipulate `x`, or `fallback` if provided.</span>
 <span class="linenos"> 33</span><span class="sd">    &quot;&quot;&quot;</span>
 <span class="linenos"> 34</span>
-<span class="linenos"> 35</span>    <span class="k">def</span> <span class="nf">infer_api</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+<span class="linenos"> 35</span>    <span class="k">def</span><span class="w"> </span><span class="nf">infer_api</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
 <span class="linenos"> 36</span>        <span class="k">try</span><span class="p">:</span>
 <span class="linenos"> 37</span>            <span class="k">return</span> <span class="n">pxd</span><span class="o">.</span><span class="n">NDArrayInfo</span><span class="o">.</span><span class="n">from_obj</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">module</span><span class="p">()</span>
 <span class="linenos"> 38</span>        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
@@ -518,7 +518,7 @@ document.write(`
 <span class="linenos"> 48</span>
 <div class="viewcode-block" id="redirect">
 <a class="viewcode-back" href="../../../api/util.html#pyxu.util.redirect">[docs]</a>
-<span class="linenos"> 49</span><span class="k">def</span> <span class="nf">redirect</span><span class="p">(</span>
+<span class="linenos"> 49</span><span class="k">def</span><span class="w"> </span><span class="nf">redirect</span><span class="p">(</span>
 <span class="linenos"> 50</span>    <span class="n">i</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">VarName</span><span class="p">,</span>
 <span class="linenos"> 51</span>    <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">],</span>
 <span class="linenos"> 52</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">:</span>
@@ -566,14 +566,14 @@ document.write(`
 <span class="linenos"> 94</span><span class="sd">       g(x1, y), g(x2, y)  # &#39;f&#39;, &#39;g&#39;</span>
 <span class="linenos"> 95</span><span class="sd">    &quot;&quot;&quot;</span>
 <span class="linenos"> 96</span>
-<span class="linenos"> 97</span>    <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">:</span>
+<span class="linenos"> 97</span>    <span class="k">def</span><span class="w"> </span><span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Callable</span><span class="p">:</span>
 <span class="linenos"> 98</span>        <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="linenos"> 99</span>        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">ARGS</span><span class="p">,</span> <span class="o">**</span><span class="n">KWARGS</span><span class="p">):</span>
+<span class="linenos"> 99</span>        <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">ARGS</span><span class="p">,</span> <span class="o">**</span><span class="n">KWARGS</span><span class="p">):</span>
 <span class="linenos">100</span>            <span class="k">try</span><span class="p">:</span>
 <span class="linenos">101</span>                <span class="n">func_args</span> <span class="o">=</span> <span class="n">pxm</span><span class="o">.</span><span class="n">parse_params</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">ARGS</span><span class="p">,</span> <span class="o">**</span><span class="n">KWARGS</span><span class="p">)</span>
 <span class="linenos">102</span>            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 <span class="linenos">103</span>                <span class="n">error_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Could not parameterize </span><span class="si">{</span><span class="n">func</span><span class="si">}</span><span class="s2">().&quot;</span>
-<span class="linenos">104</span>                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">error_msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+<span class="linenos">104</span>                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">error_msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
 <span class="linenos">105</span>
 <span class="linenos">106</span>            <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">func_args</span><span class="p">:</span>
 <span class="linenos">107</span>                <span class="n">error_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Parameter[</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">] not part of </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__qualname__</span><span class="si">}</span><span class="s2">() parameter list.&quot;</span>
@@ -595,7 +595,7 @@ document.write(`
 <span class="linenos">122</span>
 <div class="viewcode-block" id="compute">
 <a class="viewcode-back" href="../../../api/util.html#pyxu.util.compute">[docs]</a>
-<span class="linenos">123</span><span class="k">def</span> <span class="nf">compute</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;compute&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="linenos">123</span><span class="k">def</span><span class="w"> </span><span class="nf">compute</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;compute&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="linenos">124</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">125</span><span class="sd">    Force computation of Dask collections.</span>
 <span class="linenos">126</span>
@@ -630,7 +630,7 @@ document.write(`
 <span class="linenos">154</span>
 <div class="viewcode-block" id="to_NUMPY">
 <a class="viewcode-back" href="../../../api/util.html#pyxu.util.to_NUMPY">[docs]</a>
-<span class="linenos">155</span><span class="k">def</span> <span class="nf">to_NUMPY</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
+<span class="linenos">155</span><span class="k">def</span><span class="w"> </span><span class="nf">to_NUMPY</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">:</span>
 <span class="linenos">156</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">157</span><span class="sd">    Convert an array from a specific backend to NUMPY.</span>
 <span class="linenos">158</span>

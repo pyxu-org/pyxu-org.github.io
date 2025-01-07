@@ -27,7 +27,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-codeautolink.css?v=125d5c1c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
@@ -465,28 +465,28 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <h1>Source code for pyxu.operator.linop.filter</h1><div class="highlight"><pre>
-<span></span><span class="linenos">   1</span><span class="kn">import</span> <span class="nn">collections.abc</span> <span class="k">as</span> <span class="nn">cabc</span>
-<span class="linenos">   2</span><span class="kn">import</span> <span class="nn">itertools</span>
+<span></span><span class="linenos">   1</span><span class="kn">import</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cabc</span>
+<span class="linenos">   2</span><span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
 <span class="linenos">   3</span>
-<span class="linenos">   4</span><span class="kn">import</span> <span class="nn">pyxu.abc</span> <span class="k">as</span> <span class="nn">pxa</span>
-<span class="linenos">   5</span><span class="kn">import</span> <span class="nn">pyxu.info.deps</span> <span class="k">as</span> <span class="nn">pxd</span>
-<span class="linenos">   6</span><span class="kn">import</span> <span class="nn">pyxu.info.ptype</span> <span class="k">as</span> <span class="nn">pxt</span>
-<span class="linenos">   7</span><span class="kn">import</span> <span class="nn">pyxu.operator.linop.base</span> <span class="k">as</span> <span class="nn">pxlb</span>
-<span class="linenos">   8</span><span class="kn">import</span> <span class="nn">pyxu.operator.linop.diff</span> <span class="k">as</span> <span class="nn">pxld</span>
-<span class="linenos">   9</span><span class="kn">import</span> <span class="nn">pyxu.operator.linop.pad</span> <span class="k">as</span> <span class="nn">pxlp</span>
-<span class="linenos">  10</span><span class="kn">import</span> <span class="nn">pyxu.operator.linop.stencil.stencil</span> <span class="k">as</span> <span class="nn">pxls</span>
-<span class="linenos">  11</span><span class="kn">import</span> <span class="nn">pyxu.runtime</span> <span class="k">as</span> <span class="nn">pxrt</span>
-<span class="linenos">  12</span><span class="kn">import</span> <span class="nn">pyxu.util</span> <span class="k">as</span> <span class="nn">pxu</span>
+<span class="linenos">   4</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.abc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxa</span>
+<span class="linenos">   5</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.deps</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxd</span>
+<span class="linenos">   6</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.ptype</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxt</span>
+<span class="linenos">   7</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.operator.linop.base</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxlb</span>
+<span class="linenos">   8</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.operator.linop.diff</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxld</span>
+<span class="linenos">   9</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.operator.linop.pad</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxlp</span>
+<span class="linenos">  10</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.operator.linop.stencil.stencil</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxls</span>
+<span class="linenos">  11</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.runtime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxrt</span>
+<span class="linenos">  12</span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.util</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxu</span>
 <span class="linenos">  13</span>
 <span class="linenos">  14</span><span class="k">try</span><span class="p">:</span>
-<span class="linenos">  15</span>    <span class="kn">import</span> <span class="nn">scipy.ndimage._filters</span> <span class="k">as</span> <span class="nn">scif</span>
+<span class="linenos">  15</span>    <span class="kn">import</span><span class="w"> </span><span class="nn">scipy.ndimage._filters</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">scif</span>
 <span class="linenos">  16</span><span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-<span class="linenos">  17</span>    <span class="kn">import</span> <span class="nn">scipy.ndimage.filters</span> <span class="k">as</span> <span class="nn">scif</span>
+<span class="linenos">  17</span>    <span class="kn">import</span><span class="w"> </span><span class="nn">scipy.ndimage.filters</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">scif</span>
 <span class="linenos">  18</span>
-<span class="linenos">  19</span><span class="kn">import</span> <span class="nn">functools</span>
-<span class="linenos">  20</span><span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">typ</span>
+<span class="linenos">  19</span><span class="kn">import</span><span class="w"> </span><span class="nn">functools</span>
+<span class="linenos">  20</span><span class="kn">import</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">typ</span>
 <span class="linenos">  21</span>
-<span class="linenos">  22</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos">  22</span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="linenos">  23</span>
 <span class="linenos">  24</span><span class="n">IndexSpec</span> <span class="o">=</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">]</span>
 <span class="linenos">  25</span><span class="n">KernelSpec</span> <span class="o">=</span> <span class="n">pxls</span><span class="o">.</span><span class="n">Stencil</span><span class="o">.</span><span class="n">KernelSpec</span>
@@ -506,7 +506,7 @@ document.write(`
 <span class="linenos">  39</span><span class="p">]</span>
 <span class="linenos">  40</span>
 <span class="linenos">  41</span>
-<span class="linenos">  42</span><span class="k">def</span> <span class="nf">_to_canonical_form</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">dim_shape</span><span class="p">):</span>
+<span class="linenos">  42</span><span class="k">def</span><span class="w"> </span><span class="nf">_to_canonical_form</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">dim_shape</span><span class="p">):</span>
 <span class="linenos">  43</span>    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">):</span>
 <span class="linenos">  44</span>        <span class="n">_</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span><span class="p">,)</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">dim_shape</span><span class="p">)</span>
 <span class="linenos">  45</span>    <span class="k">else</span><span class="p">:</span>
@@ -514,7 +514,7 @@ document.write(`
 <span class="linenos">  47</span>    <span class="k">return</span> <span class="n">_</span>
 <span class="linenos">  48</span>
 <span class="linenos">  49</span>
-<span class="linenos">  50</span><span class="k">def</span> <span class="nf">_get_axes</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">ndim</span><span class="p">):</span>
+<span class="linenos">  50</span><span class="k">def</span><span class="w"> </span><span class="nf">_get_axes</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">ndim</span><span class="p">):</span>
 <span class="linenos">  51</span>    <span class="k">if</span> <span class="n">axis</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 <span class="linenos">  52</span>        <span class="n">axes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">ndim</span><span class="p">))</span>
 <span class="linenos">  53</span>    <span class="k">elif</span> <span class="n">np</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">axis</span><span class="p">):</span>
@@ -524,7 +524,7 @@ document.write(`
 <span class="linenos">  57</span>    <span class="k">return</span> <span class="n">axes</span>
 <span class="linenos">  58</span>
 <span class="linenos">  59</span>
-<span class="linenos">  60</span><span class="k">def</span> <span class="nf">_sanitize_inputs</span><span class="p">(</span><span class="n">dim_shape</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">gpu</span><span class="p">):</span>
+<span class="linenos">  60</span><span class="k">def</span><span class="w"> </span><span class="nf">_sanitize_inputs</span><span class="p">(</span><span class="n">dim_shape</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">gpu</span><span class="p">):</span>
 <span class="linenos">  61</span>    <span class="n">ndim</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dim_shape</span><span class="p">)</span>
 <span class="linenos">  62</span>
 <span class="linenos">  63</span>    <span class="k">if</span> <span class="n">dtype</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -532,15 +532,15 @@ document.write(`
 <span class="linenos">  65</span>
 <span class="linenos">  66</span>    <span class="k">if</span> <span class="n">gpu</span><span class="p">:</span>
 <span class="linenos">  67</span>        <span class="k">assert</span> <span class="n">pxd</span><span class="o">.</span><span class="n">CUPY_ENABLED</span>
-<span class="linenos">  68</span>        <span class="kn">import</span> <span class="nn">cupy</span> <span class="k">as</span> <span class="nn">xp</span>
+<span class="linenos">  68</span>        <span class="kn">import</span><span class="w"> </span><span class="nn">cupy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xp</span>
 <span class="linenos">  69</span>    <span class="k">else</span><span class="p">:</span>
-<span class="linenos">  70</span>        <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">xp</span>
+<span class="linenos">  70</span>        <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xp</span>
 <span class="linenos">  71</span>    <span class="k">return</span> <span class="n">ndim</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">xp</span>
 <span class="linenos">  72</span>
 <span class="linenos">  73</span>
 <div class="viewcode-block" id="MovingAverage">
 <a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.MovingAverage">[docs]</a>
-<span class="linenos">  74</span><span class="k">def</span> <span class="nf">MovingAverage</span><span class="p">(</span>
+<span class="linenos">  74</span><span class="k">def</span><span class="w"> </span><span class="nf">MovingAverage</span><span class="p">(</span>
 <span class="linenos">  75</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos">  76</span>    <span class="n">size</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">typ</span><span class="o">.</span><span class="n">Tuple</span><span class="p">,</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Integer</span><span class="p">],</span>
 <span class="linenos">  77</span>    <span class="n">center</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">IndexSpec</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -654,7 +654,7 @@ document.write(`
 
 <span class="linenos"> 185</span>
 <span class="linenos"> 186</span>
-<span class="linenos"> 187</span><span class="k">def</span> <span class="nf">GaussianFilter</span><span class="p">(</span>
+<span class="linenos"> 187</span><span class="k">def</span><span class="w"> </span><span class="nf">GaussianFilter</span><span class="p">(</span>
 <span class="linenos"> 188</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 189</span>    <span class="n">sigma</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">typ</span><span class="o">.</span><span class="n">Tuple</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">],</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
 <span class="linenos"> 190</span>    <span class="n">truncate</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">typ</span><span class="o">.</span><span class="n">Tuple</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">],</span> <span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">]</span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">,</span>
@@ -784,7 +784,7 @@ document.write(`
 <span class="linenos"> 314</span>
 <div class="viewcode-block" id="DifferenceOfGaussians">
 <a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.DifferenceOfGaussians">[docs]</a>
-<span class="linenos"> 315</span><span class="k">def</span> <span class="nf">DifferenceOfGaussians</span><span class="p">(</span>
+<span class="linenos"> 315</span><span class="k">def</span><span class="w"> </span><span class="nf">DifferenceOfGaussians</span><span class="p">(</span>
 <span class="linenos"> 316</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 317</span>    <span class="n">low_sigma</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
 <span class="linenos"> 318</span>    <span class="n">high_sigma</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -917,7 +917,7 @@ document.write(`
 <span class="linenos"> 444</span>
 <div class="viewcode-block" id="Laplace">
 <a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.Laplace">[docs]</a>
-<span class="linenos"> 445</span><span class="k">def</span> <span class="nf">Laplace</span><span class="p">(</span>
+<span class="linenos"> 445</span><span class="k">def</span><span class="w"> </span><span class="nf">Laplace</span><span class="p">(</span>
 <span class="linenos"> 446</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 447</span>    <span class="n">mode</span><span class="p">:</span> <span class="n">ModeSpec</span> <span class="o">=</span> <span class="s2">&quot;constant&quot;</span><span class="p">,</span>
 <span class="linenos"> 448</span>    <span class="n">sampling</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="n">cabc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span> <span class="o">...</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
@@ -1014,7 +1014,7 @@ document.write(`
 <span class="linenos"> 538</span>
 <div class="viewcode-block" id="Sobel">
 <a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.Sobel">[docs]</a>
-<span class="linenos"> 539</span><span class="k">def</span> <span class="nf">Sobel</span><span class="p">(</span>
+<span class="linenos"> 539</span><span class="k">def</span><span class="w"> </span><span class="nf">Sobel</span><span class="p">(</span>
 <span class="linenos"> 540</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 541</span>    <span class="n">axis</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typ</span><span class="o">.</span><span class="n">Tuple</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="linenos"> 542</span>    <span class="n">mode</span><span class="p">:</span> <span class="n">ModeSpec</span> <span class="o">=</span> <span class="s2">&quot;constant&quot;</span><span class="p">,</span>
@@ -1116,7 +1116,7 @@ document.write(`
 <span class="linenos"> 637</span>
 <div class="viewcode-block" id="Prewitt">
 <a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.Prewitt">[docs]</a>
-<span class="linenos"> 638</span><span class="k">def</span> <span class="nf">Prewitt</span><span class="p">(</span>
+<span class="linenos"> 638</span><span class="k">def</span><span class="w"> </span><span class="nf">Prewitt</span><span class="p">(</span>
 <span class="linenos"> 639</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 640</span>    <span class="n">axis</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typ</span><span class="o">.</span><span class="n">Tuple</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="linenos"> 641</span>    <span class="n">mode</span><span class="p">:</span> <span class="n">ModeSpec</span> <span class="o">=</span> <span class="s2">&quot;constant&quot;</span><span class="p">,</span>
@@ -1218,7 +1218,7 @@ document.write(`
 <span class="linenos"> 736</span>
 <div class="viewcode-block" id="Scharr">
 <a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.Scharr">[docs]</a>
-<span class="linenos"> 737</span><span class="k">def</span> <span class="nf">Scharr</span><span class="p">(</span>
+<span class="linenos"> 737</span><span class="k">def</span><span class="w"> </span><span class="nf">Scharr</span><span class="p">(</span>
 <span class="linenos"> 738</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 739</span>    <span class="n">axis</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">typ</span><span class="o">.</span><span class="n">Tuple</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="linenos"> 740</span>    <span class="n">mode</span><span class="p">:</span> <span class="n">ModeSpec</span> <span class="o">=</span> <span class="s2">&quot;constant&quot;</span><span class="p">,</span>
@@ -1317,7 +1317,7 @@ document.write(`
 
 <span class="linenos"> 833</span>
 <span class="linenos"> 834</span>
-<span class="linenos"> 835</span><span class="k">def</span> <span class="nf">_EdgeFilter</span><span class="p">(</span>
+<span class="linenos"> 835</span><span class="k">def</span><span class="w"> </span><span class="nf">_EdgeFilter</span><span class="p">(</span>
 <span class="linenos"> 836</span>    <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 837</span>    <span class="n">smooth_kernel</span><span class="p">:</span> <span class="n">KernelSpec</span><span class="p">,</span>
 <span class="linenos"> 838</span>    <span class="n">filter_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -1327,7 +1327,7 @@ document.write(`
 <span class="linenos"> 842</span>    <span class="n">gpu</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
 <span class="linenos"> 843</span>    <span class="n">dtype</span><span class="p">:</span> <span class="n">typ</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">pxt</span><span class="o">.</span><span class="n">DType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="linenos"> 844</span><span class="p">):</span>
-<span class="linenos"> 845</span>    <span class="kn">from</span> <span class="nn">pyxu.operator</span> <span class="kn">import</span> <span class="n">Sqrt</span><span class="p">,</span> <span class="n">Square</span>
+<span class="linenos"> 845</span>    <span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">Sqrt</span><span class="p">,</span> <span class="n">Square</span>
 <span class="linenos"> 846</span>
 <span class="linenos"> 847</span>    <span class="n">square</span> <span class="o">=</span> <span class="n">Square</span><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">)</span>
 <span class="linenos"> 848</span>    <span class="n">sqrt</span> <span class="o">=</span> <span class="n">Sqrt</span><span class="p">(</span><span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">)</span>
@@ -1364,7 +1364,7 @@ document.write(`
 <span class="linenos"> 879</span>
 <div class="viewcode-block" id="StructureTensor">
 <a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.StructureTensor">[docs]</a>
-<span class="linenos"> 880</span><span class="k">class</span> <span class="nc">StructureTensor</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">DiffMap</span><span class="p">):</span>
+<span class="linenos"> 880</span><span class="k">class</span><span class="w"> </span><span class="nc">StructureTensor</span><span class="p">(</span><span class="n">pxa</span><span class="o">.</span><span class="n">DiffMap</span><span class="p">):</span>
 <span class="linenos"> 881</span><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 882</span><span class="sd">    Structure tensor operator.</span>
 <span class="linenos"> 883</span>
@@ -1460,7 +1460,7 @@ document.write(`
 <span class="linenos"> 973</span><span class="sd">    :py:class:`~pyxu.operator.Hessian`</span>
 <span class="linenos"> 974</span><span class="sd">    &quot;&quot;&quot;</span>
 <span class="linenos"> 975</span>
-<span class="linenos"> 976</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="linenos"> 976</span>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 <span class="linenos"> 977</span>        <span class="bp">self</span><span class="p">,</span>
 <span class="linenos"> 978</span>        <span class="n">dim_shape</span><span class="p">:</span> <span class="n">pxt</span><span class="o">.</span><span class="n">NDArrayShape</span><span class="p">,</span>
 <span class="linenos"> 979</span>        <span class="n">diff_method</span><span class="o">=</span><span class="s2">&quot;fd&quot;</span><span class="p">,</span>
@@ -1511,12 +1511,12 @@ document.write(`
 <span class="linenos">1024</span>
 <div class="viewcode-block" id="StructureTensor.apply">
 <a class="viewcode-back" href="../../../../api/operator/linop.html#pyxu.operator.StructureTensor.apply">[docs]</a>
-<span class="linenos">1025</span>    <span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
+<span class="linenos">1025</span>    <span class="k">def</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
 <span class="linenos">1026</span>        <span class="n">xp</span> <span class="o">=</span> <span class="n">pxu</span><span class="o">.</span><span class="n">get_array_module</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 <span class="linenos">1027</span>        <span class="n">sh</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">dim_rank</span><span class="p">]</span>
 <span class="linenos">1028</span>        <span class="n">grad</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 <span class="linenos">1029</span>
-<span class="linenos">1030</span>        <span class="k">def</span> <span class="nf">slice_</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
+<span class="linenos">1030</span>        <span class="k">def</span><span class="w"> </span><span class="nf">slice_</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
 <span class="linenos">1031</span>            <span class="k">return</span> <span class="p">(</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">),)</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">sh</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="nb">slice</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">ax</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),)</span>
 <span class="linenos">1032</span>
 <span class="linenos">1033</span>        <span class="k">return</span> <span class="n">xp</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
