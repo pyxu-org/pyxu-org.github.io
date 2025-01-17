@@ -20,7 +20,7 @@
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
 <link href="../_static/pygments.css?v=03e43079" rel="stylesheet" type="text/css"/>
 <link href="../_static/plot_directive.css" rel="stylesheet" type="text/css"/>
-<link href="../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-codeautolink.css" rel="stylesheet" type="text/css"/>
 <link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
 <link href="../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
 <link href="../_static/sg_gallery.css?v=d2d258e8" rel="stylesheet" type="text/css"/>
@@ -410,8 +410,8 @@ coefficients <span class="math notranslate nohighlight">\(\mathbf{D}\mathbf{x}\)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing necessary libraries and modules</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.L21Norm" title="pyxu.operator.func.norm.L21Norm"><span class="n">L21Norm</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><span class="n">Gradient</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.SquaredL2Norm" title="pyxu.operator.func.norm.SquaredL2Norm"><span class="n">SquaredL2Norm</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/func.html#pyxu.operator.PositiveOrthant" title="pyxu.operator.func.indicator.PositiveOrthant"><span class="n">PositiveOrthant</span></a><span class="p">,</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.IdentityOp" title="pyxu.operator.linop.base.IdentityOp"><span class="n">IdentityOp</span></a>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.opt.solver</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/opt.solver.html#pyxu.opt.solver.PD3O" title="pyxu.opt.solver.pds.PD3O"><span class="n">PD3O</span></a>

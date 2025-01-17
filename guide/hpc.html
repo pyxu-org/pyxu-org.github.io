@@ -20,7 +20,7 @@
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
 <link href="../_static/pygments.css?v=03e43079" rel="stylesheet" type="text/css"/>
 <link href="../_static/plot_directive.css" rel="stylesheet" type="text/css"/>
-<link href="../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-codeautolink.css" rel="stylesheet" type="text/css"/>
 <link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
 <link href="../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
 <link href="../_static/sg_gallery.css?v=d2d258e8" rel="stylesheet" type="text/css"/>
@@ -353,7 +353,7 @@ with pxrt.Precision(pxrt.Width.SINGLE):
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.abc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxa</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.util</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxu</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.runtime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxrt</span>
+<span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../api/runtime.html#module-pyxu.runtime" title="pyxu.runtime"><span class="nn">pyxu.runtime</span></a><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxrt</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">Median</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.Func" title="pyxu.abc.operator.Func"><span class="n">pxa</span><span class="o">.</span><span class="n">Func</span></a><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim_shape</span><span class="p">):</span>
@@ -376,9 +376,9 @@ with pxrt.Precision(pxrt.Width.SINGLE):
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">t</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pyxu.info.deps</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxd</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#module-time" title="time"><span class="nn">time</span></a><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">t</span>
+<span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="../api/info.deps.html#module-pyxu.info.deps" title="pyxu.info.deps"><span class="nn">pyxu.info.deps</span></a><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pxd</span>
 
 <span class="n">timings</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#dict" title="dict"><span class="nb">dict</span></a><span class="p">()</span>
 <span class="n">dim_shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">)</span>

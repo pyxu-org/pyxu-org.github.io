@@ -20,7 +20,7 @@
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
 <link href="../_static/pygments.css?v=03e43079" rel="stylesheet" type="text/css"/>
 <link href="../_static/plot_directive.css" rel="stylesheet" type="text/css"/>
-<link href="../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-codeautolink.css" rel="stylesheet" type="text/css"/>
 <link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
 <link href="../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
 <link href="../_static/sg_gallery.css?v=d2d258e8" rel="stylesheet" type="text/css"/>
@@ -261,8 +261,8 @@ document.write(`
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot" title="matplotlib.pyplot"><span class="nn">matplotlib.pyplot</span></a><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">skimage</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Convolve" title="pyxu.operator.linop.stencil.stencil.Convolve"><span class="n">Convolve</span></a>
 </pre></div>
@@ -354,7 +354,7 @@ document.write(`
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.signal</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.convolve.html#scipy.signal.convolve" title="scipy.signal.convolve"><span class="n">convolve</span></a> <span class="k">as</span> <span class="n">conv_scipy</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/signal.html#module-scipy.signal" title="scipy.signal"><span class="nn">scipy.signal</span></a><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.convolve.html#scipy.signal.convolve" title="scipy.signal.convolve"><span class="n">convolve</span></a> <span class="k">as</span> <span class="n">conv_scipy</span>
 
 <span class="c1"># Direct 2D convolution</span>
 <span class="n">y</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.convolve.html#scipy.signal.convolve" title="scipy.signal.convolve"><span class="n">conv_scipy</span></a><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">kernel_2d</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"same"</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"direct"</span><span class="p">)</span>
@@ -589,7 +589,7 @@ Successfully installed absl-py-2.1.0 chex-0.1.85 etils-1.6.0 flax-0.7.5 importli
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scico.linop</span><span class="w"> </span><span class="kn">import</span> <span class="n">Convolve</span> <span class="k">as</span> <span class="n">Conv_scico</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">jax</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://jax.readthedocs.io/en/latest/_autosummary/jax.config.html#jax.config" title="jax.config"><span class="n">config</span></a>
-<span class="kn">import</span><span class="w"> </span><span class="nn">jax.numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">jnp</span>
+<span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://jax.readthedocs.io/en/latest/jax.numpy.html#module-jax.numpy" title="jax.numpy"><span class="nn">jax.numpy</span></a><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">jnp</span>
 
 <span class="c1"># Convert data and kernel from Numpy to Jax</span>
 <span class="n">data_jax</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://jax.readthedocs.io/en/latest/_autosummary/jax.numpy.asarray.html#jax.numpy.asarray" title="jax.numpy.asarray"><span class="n">jnp</span><span class="o">.</span><span class="n">asarray</span></a><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -665,7 +665,7 @@ Successfully installed tqdm-4.66.1
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/time.html#module-time" title="time"><span class="nn">time</span></a>
 <span class="kn">import</span><span class="w"> </span><span class="nn">tqdm</span>
 
 <span class="n">npixs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#range" title="range"><span class="nb">range</span></a><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span>

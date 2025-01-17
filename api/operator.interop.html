@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-codeautolink.css?v=125d5c1c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-codeautolink.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=d2d258e8" />
@@ -604,11 +604,11 @@ too when instantiating via <code class="docutils literal notranslate"><span clas
 <dl class="py function">
 <dt class="sig sig-object py" id="pyxu.operator.interop.from_sciop">
 <span class="sig-name descname"><span class="pre">from_sciop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sp_op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/operator/interop/sciop.html#from_sciop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.operator.interop.from_sciop" title="Link to this definition">#</a></dt>
-<dd><p>Wrap a <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.LinearOperator.html#scipy.sparse.linalg.LinearOperator" title="(in SciPy v1.15.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinearOperator</span></code></a> as a 2D <a class="reference internal" href="abc.html#pyxu.abc.LinOp" title="pyxu.abc.LinOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinOp</span></code></a> (or sub-class thereof).</p>
+<dd><p>Wrap a <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.LinearOperator.html#scipy.sparse.linalg.LinearOperator" title="(in SciPy v1.15.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinearOperator</span></code></a> as a 2D <a class="reference internal" href="abc.html#pyxu.abc.LinOp" title="pyxu.abc.LinOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinOp</span></code></a> (or sub-class thereof).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>sp_op</strong> (<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.LinearOperator.html#scipy.sparse.linalg.LinearOperator" title="(in SciPy v1.15.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinearOperator</span></code></a>) – (N, M) Linear CPU/GPU operator compliant with SciPy’s interface.</p></li>
+<li><p><strong>sp_op</strong> (<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.LinearOperator.html#scipy.sparse.linalg.LinearOperator" title="(in SciPy v1.15.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinearOperator</span></code></a>) – (N, M) Linear CPU/GPU operator compliant with SciPy’s interface.</p></li>
 <li><p><strong>cls</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.13)"><em>Type</em></a><em>[</em><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a><em>]</em>)</p></li>
 </ul>
 </dd>

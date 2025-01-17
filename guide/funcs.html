@@ -20,7 +20,7 @@
 <link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
 <link href="../_static/pygments.css?v=03e43079" rel="stylesheet" type="text/css"/>
 <link href="../_static/plot_directive.css" rel="stylesheet" type="text/css"/>
-<link href="../_static/sphinx-codeautolink.css?v=125d5c1c" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-codeautolink.css" rel="stylesheet" type="text/css"/>
 <link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
 <link href="../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
 <link href="../_static/sg_gallery.css?v=d2d258e8" rel="stylesheet" type="text/css"/>
@@ -297,7 +297,7 @@ document.write(`
 <h3><code class="docutils literal notranslate"><span class="pre">Func</span></code>: The Foundation Stone 🧱<a class="headerlink" href="#Func:-The-Foundation-Stone-🧱" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">Func</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Func">🔗</a> class is the base class in the functional hierarchy. Its core method is <code class="docutils literal notranslate"><span class="pre">apply()</span></code><a class="reference external" href="../api/abc.html#pyxu.abc.Map.apply">🔗</a>, which computes the value of the functional at a given input.</p>
 <p>Here’s a simplified example, implementing the squared <span class="math notranslate nohighlight">\(L_2\)</span> norm:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/index.html#module-numpy" title="numpy"><span class="nn">numpy</span></a><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.abc</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.Func" title="pyxu.abc.operator.Func"><span class="n">Func</span></a>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">SquaredL2</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.Func" title="pyxu.abc.operator.Func"><span class="n">Func</span></a><span class="p">):</span>
@@ -387,7 +387,7 @@ document.write(`
 <h3>Implicit Functionals: The Undercover Agents 🕵️‍♀️<a class="headerlink" href="#Implicit-Functionals:-The-Undercover-Agents-🕵️‍♀️" title="Link to this heading">#</a></h3>
 <p>In some cases, you may not know the functional itself, but you might know its proximal operator or gradient (e.g. for plug-and-play or score-based priors). Pyxu lets you define such “implicit functionals” as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.abc</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><span class="n">ProxFunc</span></a>
-<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.ndimage</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.median_filter.html#scipy.ndimage.median_filter" title="scipy.ndimage.median_filter"><span class="n">median_filter</span></a>
+<span class="kn">from</span><span class="w"> </span><a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/ndimage.html#module-scipy.ndimage" title="scipy.ndimage"><span class="nn">scipy.ndimage</span></a><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.median_filter.html#scipy.ndimage.median_filter" title="scipy.ndimage.median_filter"><span class="n">median_filter</span></a>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">MedianFilterPrior</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.ProxFunc" title="pyxu.abc.operator.ProxFunc"><span class="n">ProxFunc</span></a><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim_shape</span><span class="p">):</span>
