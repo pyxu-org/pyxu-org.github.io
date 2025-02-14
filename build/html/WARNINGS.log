@@ -17,10 +17,10 @@ block source:   ModuleNotFoundError: No module named 'pyxu.opt.solver.GradientDe
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:710: WARNING: File not found: 'api/abc.html#pyxu.abc.Operator.argshift'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:722: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.estimate_diff_lipschitz'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:946: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxDiffFunc'
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ADMM:152: WARNING: Exception occurred in plotting opt-solver-3
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ADMM:152: WARNING: Exception occurred in plotting opt-solver-3
  from /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/opt.solver.rst:
 Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/matplotlib/sphinxext/plot_directive.py", line 552, in _run_code
+  File "/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/matplotlib/sphinxext/plot_directive.py", line 552, in _run_code
     exec(code, ns)
   File "<string>", line 29, in <module>
 TypeError: SquaredL2Norm.__init__() got an unexpected keyword argument 'dim'
@@ -132,22 +132,22 @@ Implicit Functionals: The Undercover Agents 🕵️‍♀️
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/lipschitz.ipynb:285: WARNING: File not found: 'api/index.html'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/lipschitz.ipynb:285: WARNING: File not found: 'api/abc/arithmetic.html'
 WARNING: missing attribute to_sciop in object pyxu.abc.LinOp
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.asarray:8: WARNING: Inline emphasis start-string without end-string.
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.asarray:8: WARNING: Inline emphasis start-string without end-string.
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.from_array:3: WARNING: Inline emphasis start-string without end-string.
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.from_array:3: WARNING: Inline emphasis start-string without end-string.
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:29: WARNING: Inline interpreted text or phrase reference start-string without end-string.
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.asarray:8: WARNING: Inline emphasis start-string without end-string.
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.asarray:8: WARNING: Inline emphasis start-string without end-string.
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.from_array:3: WARNING: Inline emphasis start-string without end-string.
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.from_array:3: WARNING: Inline emphasis start-string without end-string.
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:29: WARNING: Inline interpreted text or phrase reference start-string without end-string.
 WARNING: missing attribute relative_indices in object pyxu.operator.Stencil
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Divergence:77: WARNING: Exception occurred in plotting linop-12
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Divergence:77: WARNING: Exception occurred in plotting linop-12
  from /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:
 Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/matplotlib/sphinxext/plot_directive.py", line 552, in _run_code
+  File "/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/matplotlib/sphinxext/plot_directive.py", line 552, in _run_code
     exec(code, ns)
   File "<string>", line 14, in <module>
-  File "/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/abc/operator.py", line 337, in __mul__
+  File "/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py", line 337, in __mul__
     return arithmetic.ChainRule(lhs=self, rhs=other).op()
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/abc/arithmetic.py", line 991, in __init__
+  File "/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/arithmetic.py", line 991, in __init__
     assert lhs.dim_shape == rhs.codim_shape, "Operator dimensions are not compatible."
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AssertionError: Operator dimensions are not compatible.
@@ -169,30 +169,30 @@ AssertionError: Operator dimensions are not compatible.
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/references.rst:23: WARNING: Citation [cuFINUFFT] is not referenced.
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/references.rst:25: WARNING: Citation [PoCS_Dykstra] is not referenced.
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/references.rst:29: WARNING: Citation [UQ_MCMC] is not referenced.
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/interop/jax.py:docstring of pyxu.operator.interop.jax._from_jax:: WARNING: py:class reference target not found: pyxu.operator.interop.jax.JaxArray
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/interop/jax.py:docstring of pyxu.operator.interop.jax._to_jax:: WARNING: py:class reference target not found: pyxu.operator.interop.jax.JaxArray
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:33: WARNING: py:class reference target not found: -----
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:34: WARNING: py:class reference target not found: * If provided
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:34: WARNING: py:class reference target not found: arithmetic methods must abide exactly
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:34: WARNING: py:class reference target not found: the interface below
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:46: WARNING: py:class reference target not found: * Auto-vectorization consists in decorating `kwargs
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:48: WARNING: py:class reference target not found: * Arithmetic methods are **not currently JIT-ed** even if `jit
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:48: WARNING: py:class reference target not found: the
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:50: WARNING: py:class reference target not found: * For :py:class:`~pyxu.abc.DiffMap
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:50: WARNING: py:class reference target not found: the methods :py:meth:`~pyxu.abc.DiffMap.jacobian
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:57: WARNING: py:class reference target not found: . Warning::
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/linop/pad.py:docstring of pyxu.operator.linop.pad.Pad.__init__:10: WARNING: py:class reference target not found: pyxu.operator.linop.pad.Pad.WidthSpec
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/linop/fft/czt.py:docstring of pyxu.operator.linop.fft.czt.CZT.__init__:6: WARNING: py:class reference target not found: list(int)
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/linop/fft/czt.py:docstring of pyxu.operator.linop.fft.czt.CZT.__init__:8: WARNING: py:class reference target not found: list(complex)
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/linop/fft/czt.py:docstring of pyxu.operator.linop.fft.czt.CZT.__init__:10: WARNING: py:class reference target not found: list(complex)
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.MovingAverage:30: WARNING: py:class reference target not found: pyxu.operator.linop.filter.IndexSpec
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.MovingAverage:76: WARNING: py:class reference target not found: pyxu.operator.GaussianFilter
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: (Integer
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: Integer)
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: ((Integer
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: Integer)
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: (Integer
-/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: Integer))
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/interop/jax.py:docstring of pyxu.operator.interop.jax._from_jax:: WARNING: py:class reference target not found: pyxu.operator.interop.jax.JaxArray
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/interop/jax.py:docstring of pyxu.operator.interop.jax._to_jax:: WARNING: py:class reference target not found: pyxu.operator.interop.jax.JaxArray
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:33: WARNING: py:class reference target not found: -----
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:34: WARNING: py:class reference target not found: * If provided
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:34: WARNING: py:class reference target not found: arithmetic methods must abide exactly
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:34: WARNING: py:class reference target not found: the interface below
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:46: WARNING: py:class reference target not found: * Auto-vectorization consists in decorating `kwargs
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:48: WARNING: py:class reference target not found: * Arithmetic methods are **not currently JIT-ed** even if `jit
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:48: WARNING: py:class reference target not found: the
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:50: WARNING: py:class reference target not found: * For :py:class:`~pyxu.abc.DiffMap
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:50: WARNING: py:class reference target not found: the methods :py:meth:`~pyxu.abc.DiffMap.jacobian
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:57: WARNING: py:class reference target not found: . Warning::
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/pad.py:docstring of pyxu.operator.linop.pad.Pad.__init__:10: WARNING: py:class reference target not found: pyxu.operator.linop.pad.Pad.WidthSpec
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/fft/czt.py:docstring of pyxu.operator.linop.fft.czt.CZT.__init__:6: WARNING: py:class reference target not found: list(int)
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/fft/czt.py:docstring of pyxu.operator.linop.fft.czt.CZT.__init__:8: WARNING: py:class reference target not found: list(complex)
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/fft/czt.py:docstring of pyxu.operator.linop.fft.czt.CZT.__init__:10: WARNING: py:class reference target not found: list(complex)
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.MovingAverage:30: WARNING: py:class reference target not found: pyxu.operator.linop.filter.IndexSpec
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.MovingAverage:76: WARNING: py:class reference target not found: pyxu.operator.GaussianFilter
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: (Integer
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: Integer)
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: ((Integer
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: Integer)
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: (Integer
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: Integer))
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/contributing.ipynb:42: WARNING: Lexing literal_block '!pip install pyxu-gradient-descent' as "python" resulted in an error at token: '!'. Retrying in relaxed mode.
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/index.rst:46: WARNING: toctree contains reference to document 'examples/images/index' that doesn't have a title: no link will be generated
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/index.rst:46: WARNING: toctree contains reference to document 'examples/images/index' that doesn't have a title: no link will be generated
