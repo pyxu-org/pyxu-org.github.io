@@ -6,6 +6,7 @@
 Parsed source in `python` block:
 concatenations: from pyxu.opt.solver import GradientDescent
 block source:   ModuleNotFoundError: No module named 'pyxu.opt.solver.GradientDescent'
+
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/plugins/index.rst:232: ERROR: Content block expected for the "grid" directive; none found.
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:292: WARNING: File not found: 'api/abc.html#pyxu.abc.Operator.expr'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:459: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp.pinv'
@@ -17,6 +18,22 @@ block source:   ModuleNotFoundError: No module named 'pyxu.opt.solver.GradientDe
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:710: WARNING: File not found: 'api/abc.html#pyxu.abc.Operator.argshift'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:722: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.estimate_diff_lipschitz'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:946: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxDiffFunc'
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ADMM:152: WARNING: Exception occurred in plotting opt-solver-3
+ from /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/opt.solver.rst:
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/matplotlib/sphinxext/plot_directive.py", line 552, in _run_code
+    exec(code, ns)
+  File "<string>", line 29, in <module>
+TypeError: SquaredL2Norm.__init__() got an unexpected keyword argument 'dim'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/contributing.ipynb:42: WARNING: invalid syntax (<unknown>, line 5) in document 'examples/contributing'
+Parsed source in `python` block:
+concatenations: try:
+    from pyxu.opt.solver import GradientDescent
+except ImportError as e:
+    print(e)
+block source:   !pip install pyxu-gradient-descent
+
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/deblur.ipynb:278: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.PD3O'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.jacobian'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc.grad'
@@ -116,21 +133,6 @@ Implicit Functionals: The Undercover Agents 🕵️‍♀️
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/lipschitz.ipynb:51: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/lipschitz.ipynb:285: WARNING: File not found: 'api/index.html'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/lipschitz.ipynb:285: WARNING: File not found: 'api/abc/arithmetic.html'
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ADMM:152: WARNING: Exception occurred in plotting opt-solver-3
- from /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/opt.solver.rst:
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/matplotlib/sphinxext/plot_directive.py", line 552, in _run_code
-    exec(code, ns)
-  File "<string>", line 29, in <module>
-TypeError: SquaredL2Norm.__init__() got an unexpected keyword argument 'dim'
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/contributing.ipynb:42: WARNING: invalid syntax (<unknown>, line 5) in document 'examples/contributing'
-Parsed source in `python` block:
-concatenations: try:
-    from pyxu.opt.solver import GradientDescent
-except ImportError as e:
-    print(e)
-block source:   !pip install pyxu-gradient-descent
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/deblur.ipynb:278: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.PD3O'
 WARNING: missing attribute to_sciop in object pyxu.abc.LinOp
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.asarray:8: WARNING: Inline emphasis start-string without end-string.
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.asarray:8: WARNING: Inline emphasis start-string without end-string.
@@ -235,6 +237,7 @@ block source:   slvr = Solver()
                 ...     # Do something with the logged variables after each iteration.
                 ...     pass  # solver has stopped after the loop.
                 >>> data, hist = slvr.stats()  # final output of solver.
+
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:29: WARNING: Inline interpreted text or phrase reference start-string without end-string.
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/interop/source.py:docstring of pyxu.operator.interop.source.from_source:35: WARNING: expected ':' (<unknown>, line 1) in document 'api/operator.interop'
 Parsed source in `python3` block:
@@ -243,6 +246,7 @@ block source: def apply(self, arr: pxt.NDArray) -> pxt.NDArray                  
               def adjoint(self, arr: pxt.NDArray) -> pxt.NDArray                 # (..., N1,...,NK) -> (..., M1,...,MD)
               def prox(self, arr: pxt.NDArray, tau: pxt.Real) -> pxt.NDArray     # (..., M1,...,MD) -> (..., M1,...,MD)
               def pinv(self, arr: pxt.NDArray, damp: pxt.Real) -> pxt.NDArray    # (..., N1,...,NK) -> (..., M1,...,MD)
+
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/interop/jax.py:docstring of pyxu.operator.interop.jax.from_jax:36: WARNING: expected ':' (<unknown>, line 26) in document 'api/operator.interop'
 Parsed source in `python3` block:
 concatenations: N = 5
@@ -275,6 +279,7 @@ block source:   def apply(arr: jax.Array) -> jax.Array                  # (..., 
                 def adjoint(arr: jax.Array) -> jax.Array                # (..., N1,...,NK) -> (..., M1,...,MD)
                 def prox(arr: jax.Array, tau: pxt.Real) -> jax.Array    # (..., M1,...,MD) -> (..., M1,...,MD)
                 def pinv(arr: jax.Array, damp: pxt.Real) -> jax.Array   # (..., N1,...,NK) -> (..., M1,...,MD)
+
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:36: WARNING: expected ':' (<unknown>, line 62) in document 'api/operator.interop'
 Parsed source in `python3` block:
 concatenations: N = 5
@@ -343,6 +348,7 @@ block source:   def apply(arr: torch.Tensor) -> torch.Tensor                  # 
                 def adjoint(arr: torch.Tensor) -> torch.Tensor                # (..., N1,...,NK) -> (..., M1,...,MD)
                 def prox(arr: torch.Tensor, tau: pxt.Real) -> torch.Tensor    # (..., M1,...,MD) -> (..., M1,...,MD)
                 def pinv(arr: torch.Tensor, damp: pxt.Real) -> torch.Tensor   # (..., N1,...,NK) -> (..., M1,...,MD)
+
 WARNING: missing attribute relative_indices in object pyxu.operator.Stencil
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Divergence:77: WARNING: Exception occurred in plotting linop-12
  from /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:
