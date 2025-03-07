@@ -306,7 +306,7 @@ on the value of another criteria, you can AND <a class="reference internal" href
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>n</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.13)"><em>Integral</em></a>)</p>
+<dd class="field-odd"><p><strong>n</strong> (<em>Integral</em>)</p>
 </dd>
 </dl>
 <dl class="py method">
@@ -342,7 +342,7 @@ decision to an explicit call by the user, i.e.:</p>
 <p>Stop iterative solver after a specified duration has elapsed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>t</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.timedelta" title="(in Python v3.13)"><em>timedelta</em></a>)</p>
+<dd class="field-odd"><p><strong>t</strong> (<em>timedelta</em>)</p>
 </dd>
 </dl>
 <dl class="py method">
@@ -350,7 +350,7 @@ decision to an explicit call by the user, i.e.:</p>
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyxu/opt/stop.html#MaxDuration.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyxu.opt.stop.MaxDuration.__init__" title="Link to this definition">#</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>t</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.timedelta" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">timedelta</span></code></a>) – Max runtime allowed.</p>
+<dd class="field-odd"><p><strong>t</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">timedelta</span></code>) – Max runtime allowed.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -363,7 +363,7 @@ decision to an explicit call by the user, i.e.:</p>
 functions in <a class="reference internal" href="abc.html#pyxu.abc.Solver" title="pyxu.abc.Solver"><code class="xref py py-class docutils literal notranslate"><span class="pre">Solver</span></code></a>.)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>var</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Collection" title="(in Python v3.13)"><em>Collection</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>]</em>)</p>
+<dd class="field-odd"><p><strong>var</strong> (<em>str</em><em> | </em><em>Collection</em><em>[</em><em>str</em><em>]</em>)</p>
 </dd>
 </dl>
 <dl class="py method">
@@ -384,12 +384,12 @@ functions in <a class="reference internal" href="abc.html#pyxu.abc.Solver" title
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>eps</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.13)"><em>Real</em></a>)</p></li>
-<li><p><strong>var</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Collection" title="(in Python v3.13)"><em>Collection</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>]</em>)</p></li>
-<li><p><strong>rank</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.13)"><em>Integral</em></a>)</p></li>
-<li><p><strong>f</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.13)"><em>Callable</em></a><em>[</em><em>[</em><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a><em>]</em><em>, </em><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a><em>]</em>)</p></li>
-<li><p><strong>norm</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.13)"><em>Real</em></a>)</p></li>
-<li><p><strong>satisfy_all</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a>)</p></li>
+<li><p><strong>eps</strong> (<em>Real</em>)</p></li>
+<li><p><strong>var</strong> (<em>str</em><em> | </em><em>Collection</em><em>[</em><em>str</em><em>]</em>)</p></li>
+<li><p><strong>rank</strong> (<em>Integral</em>)</p></li>
+<li><p><strong>f</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a><em>]</em><em>, </em><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a><em>]</em>)</p></li>
+<li><p><strong>norm</strong> (<em>Real</em>)</p></li>
+<li><p><strong>satisfy_all</strong> (<em>bool</em>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -403,14 +403,14 @@ functions in <a class="reference internal" href="abc.html#pyxu.abc.Solver" title
 <li><p><strong>var</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.VarName" title="pyxu.info.ptype.VarName"><code class="xref py py-class docutils literal notranslate"><span class="pre">VarName</span></code></a>) – Variable in <a class="reference internal" href="abc.html#pyxu.abc.Solver._mstate" title="pyxu.abc.Solver._mstate"><code class="xref py py-attr docutils literal notranslate"><span class="pre">pyxu.abc.Solver._mstate</span></code></a> to query.
 Must hold an NDArray.</p></li>
 <li><p><strong>rank</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Integer" title="pyxu.info.ptype.Integer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integer</span></code></a>) – Array rank K of monitored variable <strong>after</strong> applying <code class="code docutils literal notranslate"><span class="pre">f</span></code>. (See below.)</p></li>
-<li><p><strong>f</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Callable</span></code></a>) – <p>Optional function to pre-apply to <code class="docutils literal notranslate"><span class="pre">_mstate[var]</span></code> before applying the norm.  Defaults to the identity
+<li><p><strong>f</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Callable</span></code>) – <p>Optional function to pre-apply to <code class="docutils literal notranslate"><span class="pre">_mstate[var]</span></code> before applying the norm.  Defaults to the identity
 function. The callable should have the same semantics as <a class="reference internal" href="abc.html#pyxu.abc.Map.apply" title="pyxu.abc.Map.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply()</span></code></a>:</p>
 <blockquote>
 <div><p>(…, M1,…,MD) -&gt; (…, N1,…,NK)</p>
 </div></blockquote>
 </p></li>
 <li><p><strong>norm</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Integer" title="pyxu.info.ptype.Integer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integer</span></code></a>, <a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Ln norm to use &gt;= 0. (Default: L2.)</p></li>
-<li><p><strong>satisfy_all</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If True (default) and <code class="docutils literal notranslate"><span class="pre">_mstate[var]</span></code> is multi-dimensional, stop if all evaluation points lie below
+<li><p><strong>satisfy_all</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – If True (default) and <code class="docutils literal notranslate"><span class="pre">_mstate[var]</span></code> is multi-dimensional, stop if all evaluation points lie below
 threshold.</p></li>
 </ul>
 </dd>
@@ -425,12 +425,12 @@ threshold.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>eps</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.13)"><em>Real</em></a>)</p></li>
-<li><p><strong>var</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Collection" title="(in Python v3.13)"><em>Collection</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>]</em>)</p></li>
-<li><p><strong>rank</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Integral" title="(in Python v3.13)"><em>Integral</em></a>)</p></li>
-<li><p><strong>f</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.13)"><em>Callable</em></a><em>[</em><em>[</em><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a><em>]</em><em>, </em><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a><em>]</em>)</p></li>
-<li><p><strong>norm</strong> (<a class="reference external" href="https://docs.python.org/3/library/numbers.html#numbers.Real" title="(in Python v3.13)"><em>Real</em></a>)</p></li>
-<li><p><strong>satisfy_all</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a>)</p></li>
+<li><p><strong>eps</strong> (<em>Real</em>)</p></li>
+<li><p><strong>var</strong> (<em>str</em><em> | </em><em>Collection</em><em>[</em><em>str</em><em>]</em>)</p></li>
+<li><p><strong>rank</strong> (<em>Integral</em>)</p></li>
+<li><p><strong>f</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a><em>]</em><em>, </em><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a><em>]</em>)</p></li>
+<li><p><strong>norm</strong> (<em>Real</em>)</p></li>
+<li><p><strong>satisfy_all</strong> (<em>bool</em>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -444,14 +444,14 @@ threshold.</p></li>
 <li><p><strong>var</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.VarName" title="pyxu.info.ptype.VarName"><code class="xref py py-class docutils literal notranslate"><span class="pre">VarName</span></code></a>) – Variable in <a class="reference internal" href="abc.html#pyxu.abc.Solver._mstate" title="pyxu.abc.Solver._mstate"><code class="xref py py-attr docutils literal notranslate"><span class="pre">pyxu.abc.Solver._mstate</span></code></a> to query.
 Must hold an NDArray</p></li>
 <li><p><strong>rank</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Integer" title="pyxu.info.ptype.Integer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integer</span></code></a>) – Array rank K of monitored variable <strong>after</strong> applying <code class="code docutils literal notranslate"><span class="pre">f</span></code>. (See below.)</p></li>
-<li><p><strong>f</strong> (<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Callable</span></code></a>) – <p>Optional function to pre-apply to <code class="docutils literal notranslate"><span class="pre">_mstate[var]</span></code> before applying the norm.  Defaults to the identity
+<li><p><strong>f</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Callable</span></code>) – <p>Optional function to pre-apply to <code class="docutils literal notranslate"><span class="pre">_mstate[var]</span></code> before applying the norm.  Defaults to the identity
 function. The callable should have the same semantics as <a class="reference internal" href="abc.html#pyxu.abc.Map.apply" title="pyxu.abc.Map.apply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">apply()</span></code></a>:</p>
 <blockquote>
 <div><p>(…, M1,…,MD) -&gt; (…, N1,…,NK)</p>
 </div></blockquote>
 </p></li>
 <li><p><strong>norm</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Integer" title="pyxu.info.ptype.Integer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integer</span></code></a>, <a class="reference internal" href="info.ptype.html#pyxu.info.ptype.Real" title="pyxu.info.ptype.Real"><code class="xref py py-class docutils literal notranslate"><span class="pre">Real</span></code></a>) – Ln norm to use &gt;= 0. (Default: L2.)</p></li>
-<li><p><strong>satisfy_all</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If True (default) and <code class="docutils literal notranslate"><span class="pre">_mstate[var]</span></code> is multi-dimensional, stop if all evaluation points lie below
+<li><p><strong>satisfy_all</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – If True (default) and <code class="docutils literal notranslate"><span class="pre">_mstate[var]</span></code> is multi-dimensional, stop if all evaluation points lie below
 threshold.</p></li>
 </ul>
 </dd>

@@ -453,7 +453,7 @@ libraries when available. Pyxu is designed to stitch these disparate elements to
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#print" title="print"><span class="nb">print</span></a><span class="p">(</span><span class="n">Phi</span><span class="o">.</span><span class="n">expr</span><span class="p">())</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Phi</span><span class="o">.</span><span class="n">expr</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -528,8 +528,8 @@ libraries when available. Pyxu is designed to stitch these disparate elements to
 <span class="n">stop_crit</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/opt.stop.html#pyxu.opt.stop.RelError" title="pyxu.opt.stop.RelError"><span class="n">pxst</span><span class="o">.</span><span class="n">RelError</span></a><span class="p">(</span><span class="n">eps</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">var</span><span class="o">=</span><span class="s2">"x"</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">satisfy_all</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">|</span> <a class="sphinx-codeautolink-a" href="../api/opt.stop.html#pyxu.opt.stop.MaxIter" title="pyxu.opt.stop.MaxIter"><span class="n">pxst</span><span class="o">.</span><span class="n">MaxIter</span></a><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
 <span class="n">pinv_solution</span> <span class="o">=</span> <span class="n">Phi</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">sino</span><span class="p">,</span>
                          <span class="n">damp</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
-                         <span class="n">kwargs_init</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#dict" title="dict"><span class="nb">dict</span></a><span class="p">(</span><span class="n">show_progress</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">50</span><span class="p">),</span>
-                         <span class="n">kwargs_fit</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#dict" title="dict"><span class="nb">dict</span></a><span class="p">(</span><span class="n">stop_crit</span><span class="o">=</span><span class="n">stop_crit</span><span class="p">))</span>
+                         <span class="n">kwargs_init</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">show_progress</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">50</span><span class="p">),</span>
+                         <span class="n">kwargs_fit</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">stop_crit</span><span class="o">=</span><span class="n">stop_crit</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -789,7 +789,7 @@ the data, which might not be easily expressed in mathematical terms.</p>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">MedianFilterPnP</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="../api/abc.html#pyxu.abc.ProxDiffFunc" title="pyxu.abc.operator.ProxDiffFunc"><span class="n">pxa</span><span class="o">.</span><span class="n">ProxDiffFunc</span></a><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim_shape</span><span class="p">,</span> <span class="n">wsize</span><span class="p">):</span>
-        <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#super" title="super"><span class="nb">super</span></a><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">dim_shape</span><span class="o">=</span><span class="n">dim_shape</span><span class="p">,</span>
             <span class="n">codim_shape</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
         <span class="p">)</span>
@@ -797,7 +797,7 @@ the data, which might not be easily expressed in mathematical terms.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">diff_lipschitz</span> <span class="o">=</span> <span class="mi">1</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
-        <span class="k">return</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/constants.html#NotImplemented" title="NotImplemented"><span class="bp">NotImplemented</span></a>  <span class="c1"># PnP priors are implicit: they do not have an apply method!</span>
+        <span class="k">return</span> <span class="bp">NotImplemented</span>  <span class="c1"># PnP priors are implicit: they do not have an apply method!</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">grad</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">arr</span> <span class="o">-</span> <span class="n">denoiser</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">wsize</span><span class="p">)</span>  <span class="c1"># Differential form</span>

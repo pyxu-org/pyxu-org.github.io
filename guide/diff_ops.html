@@ -292,7 +292,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\mathbf{D} f [n] = f[n+1] - f[n]\]</div>
 <p>As we will see below, this is the forward finite difference approximation. This could be implemented in <strong>matrix-form</strong>, in which case it would look like this:</p>
-<center><p><img alt="601fc0725f4f47c19f0f2df82f0cf5dd" class="no-scaled-link" src="../_images/matrix-form.png" style="width: 400px;"/></p>
+<center><p><img alt="a062a60dc5864316b3d1fc78191484e8" class="no-scaled-link" src="../_images/matrix-form.png" style="width: 400px;"/></p>
 </center><p>Or, it could be instead implemented via a for loop, in which the case of large input signals, would not require storing a large matrix:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -316,7 +316,7 @@ document.write(`
 <span class="sd">    """</span>
 
     <span class="n">y</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.zeros_like.html#numpy.zeros_like" title="numpy.zeros_like"><span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span></a><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#range" title="range"><span class="nb">range</span></a><span class="p">(</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#len" title="len"><span class="nb">len</span></a><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
         <span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">f</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">y</span>
 </pre></div>
@@ -649,7 +649,7 @@ fig.savefig("data/images/matrix-form.png", dpi=200)
 <span class="kn">from</span><span class="w"> </span><span class="nn">pyxu.operator</span><span class="w"> </span><span class="kn">import</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><span class="n">Gradient</span></a>
 
 <span class="n">toucan</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="numpy.array"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"../_static/favicon.png"</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s2">"L"</span><span class="p">))</span>
-<span class="n">toucan</span> <span class="o">=</span> <span class="n">toucan</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/functions.html#float" title="float"><span class="nb">float</span></a><span class="p">)</span>
+<span class="n">toucan</span> <span class="o">=</span> <span class="n">toucan</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
 <span class="n">toucan</span> <span class="o">/=</span> <span class="n">toucan</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 
 <span class="n">grad</span> <span class="o">=</span> <a class="sphinx-codeautolink-a" href="../api/operator/linop.html#pyxu.operator.Gradient" title="pyxu.operator.Gradient"><span class="n">Gradient</span></a><span class="p">(</span>

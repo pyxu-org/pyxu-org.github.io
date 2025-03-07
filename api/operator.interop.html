@@ -312,11 +312,11 @@ document.write(`
 <li><p><strong>cls</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.OpC" title="pyxu.info.ptype.OpC"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpC</span></code></a>) – Operator sub-class to instantiate.</p></li>
 <li><p><strong>dim_shape</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArrayShape" title="pyxu.info.ptype.NDArrayShape"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArrayShape</span></code></a>) – Operator domain shape (M1,…,MD).</p></li>
 <li><p><strong>codim_shape</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArrayShape" title="pyxu.info.ptype.NDArrayShape"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArrayShape</span></code></a>) – Operator co-domain shape (N1,…,NK).</p></li>
-<li><p><strong>embed</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – <p>(k[str], v[value]) pairs to embed into the created operator.</p>
+<li><p><strong>embed</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>) – <p>(k[str], v[value]) pairs to embed into the created operator.</p>
 <p><code class="code docutils literal notranslate"><span class="pre">embed</span></code> is useful to attach extra information to synthesized <a class="reference internal" href="abc.html#pyxu.abc.Operator" title="pyxu.abc.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> used by arithmetic
 methods.</p>
 </p></li>
-<li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – <p>(k[str], v[callable]) pairs to use as arithmetic methods.</p>
+<li><p><strong>kwargs</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>) – <p>(k[str], v[callable]) pairs to use as arithmetic methods.</p>
 <p>Keys must be entries from <a class="reference internal" href="abc.html#pyxu.abc.Property.arithmetic_methods" title="pyxu.abc.Property.arithmetic_methods"><code class="xref py py-meth docutils literal notranslate"><span class="pre">arithmetic_methods()</span></code></a>.</p>
 <p>Omitted arithmetic attributes/methods default to those provided by <code class="code docutils literal notranslate"><span class="pre">cls</span></code>.</p>
 </p></li>
@@ -373,7 +373,7 @@ too when instantiating via <code class="docutils literal notranslate"><span clas
     <span class="bp">cls</span><span class="o">=</span><span class="n">pyxu</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">DiffMap</span><span class="p">,</span>
     <span class="n">dim_shape</span><span class="o">=</span><span class="n">N</span><span class="p">,</span>
     <span class="n">codim_shape</span><span class="o">=</span><span class="n">N</span><span class="p">,</span>
-    <span class="n">embed</span><span class="o">=</span><a class="sphinx-codeautolink-a" href="https://docs.python.org/3/library/stdtypes.html#dict" title="dict"><span class="nb">dict</span></a><span class="p">(</span>
+    <span class="n">embed</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
         <span class="c1"># special form to set (diff-)Lipschitz attributes via from_source()</span>
         <span class="n">_diff_lipschitz</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
     <span class="p">),</span>
@@ -396,7 +396,7 @@ too when instantiating via <code class="docutils literal notranslate"><span clas
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>sp_op</strong> (<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.LinearOperator.html#scipy.sparse.linalg.LinearOperator" title="(in SciPy v1.15.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinearOperator</span></code></a>) – (N, M) Linear CPU/GPU operator compliant with SciPy’s interface.</p></li>
-<li><p><strong>cls</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.13)"><em>Type</em></a><em>[</em><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a><em>]</em>)</p></li>
+<li><p><strong>cls</strong> (<em>Type</em><em>[</em><a class="reference internal" href="info.ptype.html#pyxu.info.ptype.OpT" title="pyxu.info.ptype.OpT"><em>OpT</em></a><em>]</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -425,7 +425,7 @@ too when instantiating via <code class="docutils literal notranslate"><span clas
 <li><p><strong>cls</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.OpC" title="pyxu.info.ptype.OpC"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpC</span></code></a>) – Operator sub-class to instantiate.</p></li>
 <li><p><strong>dim_shape</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArrayShape" title="pyxu.info.ptype.NDArrayShape"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArrayShape</span></code></a>) – Operator domain shape (M1,…,MD).</p></li>
 <li><p><strong>codim_shape</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArrayShape" title="pyxu.info.ptype.NDArrayShape"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArrayShape</span></code></a>) – Operator co-domain shape (N1,…,NK).</p></li>
-<li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – <p>(k[str], v[callable]) pairs to use as arithmetic methods.</p>
+<li><p><strong>kwargs</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>) – <p>(k[str], v[callable]) pairs to use as arithmetic methods.</p>
 <p>Keys are restricted to the following arithmetic methods:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">apply</span><span class="p">(),</span> <span class="n">grad</span><span class="p">(),</span> <span class="n">prox</span><span class="p">(),</span> <span class="n">pinv</span><span class="p">(),</span> <span class="n">adjoint</span><span class="p">()</span>
 </pre></div>
@@ -435,8 +435,8 @@ too when instantiating via <code class="docutils literal notranslate"><span clas
 <li><p><strong>vectorize</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.VarName" title="pyxu.info.ptype.VarName"><code class="xref py py-class docutils literal notranslate"><span class="pre">VarName</span></code></a>) – <p>Arithmetic methods to vectorize.</p>
 <p><code class="code docutils literal notranslate"><span class="pre">vectorize</span></code> is useful if an arithmetic method provided to <code class="code docutils literal notranslate"><span class="pre">kwargs</span></code> does not support stacking dimensions.</p>
 </p></li>
-<li><p><strong>jit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, JIT-compile JAX-backed arithmetic methods for better performance.</p></li>
-<li><p><strong>enable_warnings</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, emit warnings in case of precision/zero-copy issues.</p></li>
+<li><p><strong>jit</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, JIT-compile JAX-backed arithmetic methods for better performance.</p></li>
+<li><p><strong>enable_warnings</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, emit warnings in case of precision/zero-copy issues.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -545,7 +545,7 @@ views, etc.) and backends (NUMPY, CUPY).</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><em>NDArray</em></a>)</p></li>
-<li><p><strong>enable_warnings</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a>)</p></li>
+<li><p><strong>enable_warnings</strong> (<em>bool</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
@@ -566,7 +566,7 @@ views, etc.) and backends (NUMPY, CUPY).</p>
 <li><p><strong>cls</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.OpC" title="pyxu.info.ptype.OpC"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpC</span></code></a>) – Operator sub-class to instantiate.</p></li>
 <li><p><strong>dim_shape</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArrayShape" title="pyxu.info.ptype.NDArrayShape"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArrayShape</span></code></a>) – Operator domain shape (M1,…,MD).</p></li>
 <li><p><strong>codim_shape</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArrayShape" title="pyxu.info.ptype.NDArrayShape"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArrayShape</span></code></a>) – Operator co-domain shape (N1,…,NK).</p></li>
-<li><p><strong>kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>) – <p>(k[str], v[callable]) pairs to use as arithmetic methods.</p>
+<li><p><strong>kwargs</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>) – <p>(k[str], v[callable]) pairs to use as arithmetic methods.</p>
 <p>Keys are restricted to the following arithmetic methods:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">apply</span><span class="p">(),</span> <span class="n">grad</span><span class="p">(),</span> <span class="n">prox</span><span class="p">(),</span> <span class="n">pinv</span><span class="p">(),</span> <span class="n">adjoint</span><span class="p">()</span>
 </pre></div>
@@ -576,9 +576,9 @@ views, etc.) and backends (NUMPY, CUPY).</p>
 <li><p><strong>vectorize</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.VarName" title="pyxu.info.ptype.VarName"><code class="xref py py-class docutils literal notranslate"><span class="pre">VarName</span></code></a>) – <p>Arithmetic methods to vectorize.</p>
 <p><code class="code docutils literal notranslate"><span class="pre">vectorize</span></code> is useful if an arithmetic method provided to <code class="code docutils literal notranslate"><span class="pre">kwargs</span></code> does not support stacking dimensions.</p>
 </p></li>
-<li><p><strong>jit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Currently has no effect (for future-compatibility only). In the future, if <code class="docutils literal notranslate"><span class="pre">True</span></code>, then Torch-backed
+<li><p><strong>jit</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Currently has no effect (for future-compatibility only). In the future, if <code class="docutils literal notranslate"><span class="pre">True</span></code>, then Torch-backed
 arithmetic methods will be JIT-compiled for better performance.</p></li>
-<li><p><strong>enable_warnings</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, emit warnings in case of precision/zero-copy issues.</p></li>
+<li><p><strong>enable_warnings</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, emit warnings in case of precision/zero-copy issues.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -648,7 +648,7 @@ ndarray and vice versa.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>arr</strong> (<a class="reference internal" href="info.ptype.html#pyxu.info.ptype.NDArray" title="pyxu.info.ptype.NDArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArray</span></code></a>) – Input array.</p></li>
-<li><p><strong>requires_grad</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If autograd should record operations on the returned tensor.</p></li>
+<li><p><strong>requires_grad</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – If autograd should record operations on the returned tensor.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
