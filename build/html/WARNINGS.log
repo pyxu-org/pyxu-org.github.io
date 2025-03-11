@@ -1,5 +1,3 @@
-WARNING: failed to reach any of the inventories with the following issues:
-intersphinx inventory 'https://docs.python.org/3/objects.inv' not fetchable due to <class 'requests.exceptions.HTTPError'>: 503 Server Error: certificate has expired for url: https://docs.python.org/3/objects.inv
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/plugins_preview/index.rst:1118: WARNING: toctree contains reference to nonexisting document 'fair/plugins_preview/TokemakRec'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/fair/score.rst:29: WARNING: Bullet list ends without a blank line; unexpected unindent.
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/xray.ipynb:11: WARNING: File not found: 'intro/tomo.html'
@@ -20,6 +18,22 @@ block source:   ModuleNotFoundError: No module named 'pyxu.opt.solver.GradientDe
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:710: WARNING: File not found: 'api/abc.html#pyxu.abc.Operator.argshift'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:722: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.estimate_diff_lipschitz'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/intro/tomo.ipynb:946: WARNING: File not found: 'api/abc.html#pyxu.abc.ProxDiffFunc'
+/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ADMM:152: WARNING: Exception occurred in plotting opt-solver-3
+ from /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/opt.solver.rst:
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/matplotlib/sphinxext/plot_directive.py", line 552, in _run_code
+    exec(code, ns)
+  File "<string>", line 29, in <module>
+TypeError: SquaredL2Norm.__init__() got an unexpected keyword argument 'dim'
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/contributing.ipynb:42: WARNING: invalid syntax (<unknown>, line 5) in document 'examples/contributing'
+Parsed source in `python` block:
+concatenations: try:
+    from pyxu.opt.solver import GradientDescent
+except ImportError as e:
+    print(e)
+block source:   !pip install pyxu-gradient-descent
+
+/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/deblur.ipynb:278: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.PD3O'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.Map.apply'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffMap.jacobian'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/algebra.ipynb:32: WARNING: File not found: 'api/abc.html#pyxu.abc.DiffFunc.grad'
@@ -119,22 +133,6 @@ Implicit Functionals: The Undercover Agents 🕵️‍♀️
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/lipschitz.ipynb:51: WARNING: File not found: 'api/abc.html#pyxu.abc.LinOp'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/lipschitz.ipynb:285: WARNING: File not found: 'api/index.html'
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/guide/lipschitz.ipynb:285: WARNING: File not found: 'api/abc/arithmetic.html'
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ADMM:152: WARNING: Exception occurred in plotting opt-solver-3
- from /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/opt.solver.rst:
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/matplotlib/sphinxext/plot_directive.py", line 552, in _run_code
-    exec(code, ns)
-  File "<string>", line 29, in <module>
-TypeError: SquaredL2Norm.__init__() got an unexpected keyword argument 'dim'
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/contributing.ipynb:42: WARNING: invalid syntax (<unknown>, line 5) in document 'examples/contributing'
-Parsed source in `python` block:
-concatenations: try:
-    from pyxu.opt.solver import GradientDescent
-except ImportError as e:
-    print(e)
-block source:   !pip install pyxu-gradient-descent
-
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/deblur.ipynb:278: WARNING: File not found: 'api/opt.solver.html#pyxu.opt.solver.PD3O'
 WARNING: missing attribute to_sciop in object pyxu.abc.LinOp
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.asarray:8: WARNING: Inline emphasis start-string without end-string.
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.asarray:8: WARNING: Inline emphasis start-string without end-string.
@@ -383,158 +381,6 @@ AssertionError: Operator dimensions are not compatible.
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/references.rst:23: WARNING: Citation [cuFINUFFT] is not referenced.
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/references.rst:25: WARNING: Citation [PoCS_Dykstra] is not referenced.
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/references.rst:29: WARNING: Citation [UQ_MCMC] is not referenced.
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/arithmetic.py:docstring of pyxu.abc.arithmetic.ScaleRule:: WARNING: py:class reference target not found: numbers.Real
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/arithmetic.py:docstring of pyxu.abc.arithmetic.ArgScaleRule:: WARNING: py:class reference target not found: numbers.Real
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.Property:1: WARNING: py:class reference target not found: enum.Enum
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.Property.arithmetic_methods:: WARNING: py:class reference target not found: collections.abc.Set
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.Operator.dim_shape:1: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.Operator.dim_shape:1: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.Operator.dim_size:1: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.Operator.dim_rank:1: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.Operator.codim_shape:1: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.Operator.codim_shape:1: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.Operator.codim_size:1: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.Operator.codim_rank:1: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.Operator.properties:: WARNING: py:class reference target not found: collections.abc.Set
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.Operator.has:: WARNING: py:class reference target not found: collections.abc.Collection
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.Map.properties:: WARNING: py:class reference target not found: collections.abc.Set
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.Map.lipschitz:1: WARNING: py:class reference target not found: numbers.Real
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.Map.estimate_lipschitz:4: WARNING: py:class reference target not found: collections.abc.Mapping
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Real
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.Func:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.Func:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.Func:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.Func:: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.DiffMap.diff_lipschitz:1: WARNING: py:class reference target not found: numbers.Real
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.DiffMap.estimate_diff_lipschitz:4: WARNING: py:class reference target not found: collections.abc.Mapping
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Real
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.ProxFunc.moreau_envelope:78: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.ProxFunc.moreau_envelope:78: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.ProxFunc.moreau_envelope:78: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.ProxFunc.moreau_envelope:78: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.ProxDiffFunc:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.ProxDiffFunc:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.ProxDiffFunc:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.ProxDiffFunc:: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Real
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Real
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.svdvals:10: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.pinv:8: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.pinv:10: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.dagger:6: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinOp.dagger:8: WARNING: py:class reference target not found: collections.abc.Mapping
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:34: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.SquareOp.trace:11: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.NormalOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.NormalOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.NormalOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.NormalOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.SelfAdjointOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.SelfAdjointOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.SelfAdjointOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.SelfAdjointOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.UnitOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.UnitOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.UnitOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.UnitOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.ProjOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.ProjOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.ProjOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.ProjOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.OrthProjOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.OrthProjOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.OrthProjOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.OrthProjOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.PosDefOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.PosDefOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.PosDefOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.PosDefOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinFunc:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinFunc:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinFunc:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/operator.py:docstring of pyxu.abc.operator.LinFunc:: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:98: WARNING: py:class reference target not found: pathlib.Path
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:98: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:98: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:98: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:98: WARNING: py:class reference target not found: collections.abc.Collection
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/solver.py:docstring of pyxu.abc.solver.Solver.steps:3: WARNING: py:func reference target not found: next
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/solver.py:docstring of pyxu.abc.solver.Solver.steps:12: WARNING: py:func reference target not found: next
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/solver.py:docstring of pyxu.abc.solver.Solver.steps:15: WARNING: py:func reference target not found: next
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/abc.rst:98: WARNING: py:class reference target not found: collections.abc.Generator
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/solver.py:docstring of pyxu.abc.solver.Solver.stats:3: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/solver.py:docstring of pyxu.abc.solver.Solver.stats:: WARNING: py:class reference target not found: numbers.Real
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/solver.py:docstring of pyxu.abc.Solver.workdir:1: WARNING: py:class reference target not found: pathlib.Path
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/solver.py:docstring of pyxu.abc.Solver.logfile:1: WARNING: py:class reference target not found: pathlib.Path
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/solver.py:docstring of pyxu.abc.Solver.datafile:1: WARNING: py:class reference target not found: pathlib.Path
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/solver.py:docstring of pyxu.abc.solver.SolverMode:1: WARNING: py:class reference target not found: enum.Enum
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/solver.py:docstring of pyxu.abc.solver.StoppingCriterion.stop:6: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/abc/solver.py:docstring of pyxu.abc.solver.StoppingCriterion.info:4: WARNING: py:class reference target not found: collections.abc.Mapping
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/experimental/sampler.rst:2: WARNING: py:class reference target not found: numbers.Real
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/experimental/sampler.rst:2: WARNING: py:class reference target not found: numbers.Real
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/experimental/sampler.rst:2: WARNING: py:class reference target not found: numbers.Real
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/experimental/sampler.rst:2: WARNING: py:class reference target not found: numbers.Real
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/experimental/sampler/_sampler.py:docstring of pyxu.experimental.sampler._sampler.ULA.objective_func:: WARNING: py:class reference target not found: numbers.Real
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/experimental/sampler/_sampler.py:docstring of pyxu.experimental.sampler._sampler.ULA.objective_func:7: WARNING: py:class reference target not found: numbers.Real
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/index.rst:151:<autosummary>:1: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/info/deps.py:docstring of pyxu.info.deps.NDArrayInfo:1: WARNING: py:class reference target not found: enum.Enum
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/info.deps.rst:2: WARNING: py:class reference target not found: types.ModuleType
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/info/deps.py:docstring of pyxu.info.deps.SparseArrayInfo:1: WARNING: py:class reference target not found: enum.Enum
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/info.deps.rst:2: WARNING: py:class reference target not found: types.ModuleType
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/info/deps.py:docstring of pyxu.info.deps.supported_array_types:: WARNING: py:class reference target not found: collections.abc.Collection
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/info/deps.py:docstring of pyxu.info.deps.supported_array_modules:: WARNING: py:class reference target not found: collections.abc.Collection
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/info/deps.py:docstring of pyxu.info.deps.supported_array_modules:: WARNING: py:class reference target not found: types.ModuleType
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/info/deps.py:docstring of pyxu.info.deps.supported_sparse_types:: WARNING: py:class reference target not found: collections.abc.Collection
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/info/deps.py:docstring of pyxu.info.deps.supported_sparse_modules:: WARNING: py:class reference target not found: collections.abc.Collection
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/info/deps.py:docstring of pyxu.info.deps.supported_sparse_modules:: WARNING: py:class reference target not found: types.ModuleType
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/info.ptype.rst:48: WARNING: py:class reference target not found: numbers.Real
-<unknown>:1: WARNING: py:class reference target not found: numbers.Integral
-<unknown>:1: WARNING: py:class reference target not found: numbers.Integral
-<unknown>:1: WARNING: py:class reference target not found: numbers.Integral
-<unknown>:1: WARNING: py:class reference target not found: numbers.Integral
-<unknown>:1: WARNING: py:class reference target not found: numbers.Integral
-<unknown>:1: WARNING: py:class reference target not found: pathlib.Path
-<unknown>:1: WARNING: py:class reference target not found: collections.abc.Collection
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/interop/jax.py:docstring of pyxu.operator.interop.jax._from_jax:: WARNING: py:class reference target not found: pyxu.operator.interop.jax.JaxArray
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/interop/jax.py:docstring of pyxu.operator.interop.jax._to_jax:: WARNING: py:class reference target not found: pyxu.operator.interop.jax.JaxArray
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:33: WARNING: py:class reference target not found: -----
@@ -547,309 +393,18 @@ AssertionError: Operator dimensions are not compatible.
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:50: WARNING: py:class reference target not found: * For :py:class:`~pyxu.abc.DiffMap
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:50: WARNING: py:class reference target not found: the methods :py:meth:`~pyxu.abc.DiffMap.jacobian
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/interop/torch.py:docstring of pyxu.operator.interop.torch.from_torch:57: WARNING: py:class reference target not found: . Warning::
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/blocks.py:docstring of pyxu.operator.blocks.stack:23: WARNING: py:class reference target not found: collections.abc.Sequence
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/blocks.py:docstring of pyxu.operator.blocks.block_diag:23: WARNING: py:class reference target not found: collections.abc.Sequence
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/func/norm.py:docstring of pyxu.operator.func.norm.L1Norm:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/func/norm.py:docstring of pyxu.operator.func.norm.L1Norm:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/func/norm.py:docstring of pyxu.operator.func.norm.L2Norm:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/func/norm.py:docstring of pyxu.operator.func.norm.L2Norm:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/func/norm.py:docstring of pyxu.operator.func.norm.SquaredL2Norm:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/func/norm.py:docstring of pyxu.operator.func.norm.SquaredL2Norm:: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/func.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/func.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/func.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/func.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/func.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/func.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/func.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/func.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/func.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/func.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/func.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/func.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/func.rst:40: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/func.rst:40: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/func.rst:40: WARNING: py:class reference target not found: numbers.Real
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/func.rst:40: WARNING: py:class reference target not found: numbers.Real
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:9: WARNING: py:class reference target not found: collections.abc.Sequence
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:9: WARNING: py:class reference target not found: collections.abc.Sequence
-<unknown>:1: WARNING: py:class reference target not found: numbers.Integral
-<unknown>:1: WARNING: py:class reference target not found: collections.abc.Sequence
-<unknown>:1: WARNING: py:class reference target not found: numbers.Integral
-<unknown>:1: WARNING: py:class reference target not found: collections.abc.Sequence
-<unknown>:1: WARNING: py:class reference target not found: numbers.Integral
-<unknown>:1: WARNING: py:class reference target not found: collections.abc.Sequence
-<unknown>:1: WARNING: py:class reference target not found: numbers.Integral
-<unknown>:1: WARNING: py:class reference target not found: collections.abc.Sequence
-<unknown>:1: WARNING: py:class reference target not found: numbers.Integral
-<unknown>:1: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:9: WARNING: py:class reference target not found: numbers.Real
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/base.py:docstring of pyxu.operator.linop.base.IdentityOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/base.py:docstring of pyxu.operator.linop.base.IdentityOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/base.py:docstring of pyxu.operator.linop.base.NullOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/base.py:docstring of pyxu.operator.linop.base.NullOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/base.py:docstring of pyxu.operator.linop.base.NullOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/base.py:docstring of pyxu.operator.linop.base.NullOp:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/base.py:docstring of pyxu.operator.linop.base.NullFunc:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/base.py:docstring of pyxu.operator.linop.base.NullFunc:: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:9: WARNING: py:class reference target not found: collections.abc.Sequence
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:9: WARNING: py:class reference target not found: collections.abc.Sequence
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:9: WARNING: py:class reference target not found: collections.abc.Sequence
-<unknown>:1: WARNING: py:class reference target not found: numbers.Integral
-<unknown>:1: WARNING: py:class reference target not found: collections.abc.Sequence
-<unknown>:1: WARNING: py:class reference target not found: numbers.Integral
-<unknown>:1: WARNING: py:class reference target not found: collections.abc.Sequence
-<unknown>:1: WARNING: py:class reference target not found: numbers.Integral
-<unknown>:1: WARNING: py:class reference target not found: numbers.Integral
-<unknown>:1: WARNING: py:class reference target not found: collections.abc.Sequence
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/pad.py:docstring of pyxu.operator.linop.pad.Pad.__init__:10: WARNING: py:class reference target not found: pyxu.operator.linop.pad.Pad.WidthSpec
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:38: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:38: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:38: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:38: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:38: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:38: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:38: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:38: WARNING: py:class reference target not found: numbers.Integral
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/fft/czt.py:docstring of pyxu.operator.linop.fft.czt.CZT.__init__:6: WARNING: py:class reference target not found: list(int)
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/fft/czt.py:docstring of pyxu.operator.linop.fft.czt.CZT.__init__:8: WARNING: py:class reference target not found: list(complex)
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/fft/czt.py:docstring of pyxu.operator.linop.fft.czt.CZT.__init__:10: WARNING: py:class reference target not found: list(complex)
-<unknown>:1: WARNING: py:class reference target not found: collections.abc.Sequence
-<unknown>:1: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:51: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:51: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:51: WARNING: py:class reference target not found: collections.abc.Sequence
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:51: WARNING: py:class reference target not found: collections.abc.Sequence
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:51: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:51: WARNING: py:class reference target not found: collections.abc.Sequence
-<unknown>:1: WARNING: py:class reference target not found: collections.abc.Sequence
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/stencil/stencil.py:docstring of pyxu.operator.Stencil.kernel:1: WARNING: py:class reference target not found: collections.abc.Sequence
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/stencil/stencil.py:docstring of pyxu.operator.Stencil.center:1: WARNING: py:class reference target not found: collections.abc.Sequence
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/stencil/stencil.py:docstring of pyxu.operator.Stencil.center:1: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:51: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:51: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:51: WARNING: py:class reference target not found: collections.abc.Sequence
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:51: WARNING: py:class reference target not found: collections.abc.Sequence
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:51: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:51: WARNING: py:class reference target not found: collections.abc.Sequence
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/stencil/stencil.py:docstring of pyxu.operator.linop.stencil.stencil.Convolve.__init__:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/stencil/stencil.py:docstring of pyxu.operator.linop.stencil.stencil.Convolve.__init__:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/stencil/stencil.py:docstring of pyxu.operator.linop.stencil.stencil.Convolve.__init__:: WARNING: py:class reference target not found: collections.abc.Sequence
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/stencil/stencil.py:docstring of pyxu.operator.linop.stencil.stencil.Convolve.__init__:: WARNING: py:class reference target not found: collections.abc.Sequence
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/stencil/stencil.py:docstring of pyxu.operator.linop.stencil.stencil.Convolve.__init__:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/stencil/stencil.py:docstring of pyxu.operator.linop.stencil.stencil.Convolve.__init__:: WARNING: py:class reference target not found: collections.abc.Sequence
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:51: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:51: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:51: WARNING: py:class reference target not found: collections.abc.Sequence
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:51: WARNING: py:class reference target not found: collections.abc.Sequence
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:51: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:51: WARNING: py:class reference target not found: collections.abc.Sequence
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:51: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:51: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:51: WARNING: py:class reference target not found: collections.abc.Sequence
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:51: WARNING: py:class reference target not found: collections.abc.Sequence
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:51: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:51: WARNING: py:class reference target not found: collections.abc.Sequence
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/fft/filter.py:docstring of pyxu.operator.linop.fft.filter.FFTConvolve.__init__:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/fft/filter.py:docstring of pyxu.operator.linop.fft.filter.FFTConvolve.__init__:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/fft/filter.py:docstring of pyxu.operator.linop.fft.filter.FFTConvolve.__init__:: WARNING: py:class reference target not found: collections.abc.Sequence
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/fft/filter.py:docstring of pyxu.operator.linop.fft.filter.FFTConvolve.__init__:: WARNING: py:class reference target not found: collections.abc.Sequence
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/fft/filter.py:docstring of pyxu.operator.linop.fft.filter.FFTConvolve.__init__:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/fft/filter.py:docstring of pyxu.operator.linop.fft.filter.FFTConvolve.__init__:: WARNING: py:class reference target not found: collections.abc.Sequence
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.MovingAverage:30: WARNING: py:class reference target not found: pyxu.operator.linop.filter.IndexSpec
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.MovingAverage:76: WARNING: py:class reference target not found: pyxu.operator.GaussianFilter
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:71: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/linop.rst:71: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.DifferenceOfGaussians:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.DifferenceOfGaussians:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.DifferenceOfGaussians:: WARNING: py:class reference target not found: collections.abc.Sequence
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.DifferenceOfGaussians:: WARNING: py:class reference target not found: numbers.Real
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.DifferenceOfGaussians:: WARNING: py:class reference target not found: collections.abc.Sequence
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.DifferenceOfGaussians:: WARNING: py:class reference target not found: numbers.Real
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.DifferenceOfGaussians:: WARNING: py:class reference target not found: collections.abc.Sequence
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.StructureTensor.apply:8: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.StructureTensor.apply:8: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.StructureTensor.apply:8: WARNING: py:class reference target not found: numbers.Real
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.StructureTensor.apply:8: WARNING: py:class reference target not found: numbers.Real
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.StructureTensor.apply:8: WARNING: py:class reference target not found: numbers.Real
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.StructureTensor.apply:8: WARNING: py:class reference target not found: numbers.Real
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.StructureTensor.apply:8: WARNING: py:class reference target not found: collections.abc.Sequence
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.StructureTensor.apply:8: WARNING: py:class reference target not found: numbers.Real
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.StructureTensor.apply:8: WARNING: py:class reference target not found: numbers.Real
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/filter.py:docstring of pyxu.operator.linop.filter.StructureTensor.apply:8: WARNING: py:class reference target not found: collections.abc.Sequence
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: (Integer
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: Integer)
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: ((Integer
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: Integer)
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:obj reference target not found: Ellipsis
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: (Integer
 /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/linop/diff.py:docstring of pyxu.operator.linop.diff.Hessian:62: WARNING: py:class reference target not found: Integer))
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Real
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Real
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Real
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Real
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Real
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:9: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/map/base.py:docstring of pyxu.operator.map.base.ConstantValued:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/map/base.py:docstring of pyxu.operator.map.base.ConstantValued:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/map/base.py:docstring of pyxu.operator.map.base.ConstantValued:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/map/base.py:docstring of pyxu.operator.map.base.ConstantValued:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/map/base.py:docstring of pyxu.operator.map.base.ConstantValued:: WARNING: py:class reference target not found: numbers.Real
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:64: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:64: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:64: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:64: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:64: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:64: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:64: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:64: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:64: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:64: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:64: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:64: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:64: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:64: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:64: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:64: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:64: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:64: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:64: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:64: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/operator/map.rst:64: WARNING: py:class reference target not found: numbers.Real
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/misc.py:docstring of pyxu.operator.misc.BroadcastAxes.svdvals:10: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/misc.py:docstring of pyxu.operator.misc.BroadcastAxes.pinv:8: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/misc.py:docstring of pyxu.operator.misc.BroadcastAxes.pinv:10: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/misc.py:docstring of pyxu.operator.misc.BroadcastAxes.dagger:6: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/operator/misc.py:docstring of pyxu.operator.misc.BroadcastAxes.dagger:8: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pgd.py:docstring of pyxu.opt.solver.pgd.PGD:52: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pgd.py:docstring of pyxu.opt.solver.pgd.PGD:71: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/cg.py:docstring of pyxu.opt.solver.cg.CG:25: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/cg.py:docstring of pyxu.opt.solver.cg.CG:46: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/nlcg.py:docstring of pyxu.opt.solver.nlcg.NLCG:53: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/nlcg.py:docstring of pyxu.opt.solver.nlcg.NLCG:73: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/adam.py:docstring of pyxu.opt.solver.adam.Adam:97: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/adam.py:docstring of pyxu.opt.solver.adam.Adam:135: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.CondatVu:81: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.CondatVu:111: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.PD3O:77: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.PD3O:107: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ChambollePock:13: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ChambollePock:69: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.LorisVerhoeven:55: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.LorisVerhoeven:81: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.DavisYin:44: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.DavisYin:70: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.DouglasRachford:11: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.DouglasRachford:48: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ForwardBackward:42: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ForwardBackward:65: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ProximalPoint:9: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ProximalPoint:39: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ADMM:88: WARNING: py:class reference target not found: collections.abc.Callable
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ADMM:94: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ADMM:100: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ADMM:123: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/solver/pds.py:docstring of pyxu.opt.solver.pds.ADMM:129: WARNING: py:class reference target not found: collections.abc.Mapping
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/opt.stop.rst:2: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/opt.stop.rst:2: WARNING: py:class reference target not found: datetime.timedelta
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/stop.py:docstring of pyxu.opt.stop.MaxDuration.__init__:2: WARNING: py:class reference target not found: datetime.timedelta
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/opt.stop.rst:2: WARNING: py:class reference target not found: collections.abc.Collection
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/opt.stop.rst:2: WARNING: py:class reference target not found: numbers.Real
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/opt.stop.rst:2: WARNING: py:class reference target not found: collections.abc.Collection
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/opt.stop.rst:2: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/opt.stop.rst:2: WARNING: py:class reference target not found: collections.abc.Callable
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/opt.stop.rst:2: WARNING: py:class reference target not found: numbers.Real
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/stop.py:docstring of pyxu.opt.stop.AbsError.__init__:12: WARNING: py:class reference target not found: collections.abc.Callable
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/opt.stop.rst:2: WARNING: py:class reference target not found: numbers.Real
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/opt.stop.rst:2: WARNING: py:class reference target not found: collections.abc.Collection
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/opt.stop.rst:2: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/opt.stop.rst:2: WARNING: py:class reference target not found: collections.abc.Callable
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/opt.stop.rst:2: WARNING: py:class reference target not found: numbers.Real
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/opt/stop.py:docstring of pyxu.opt.stop.RelError.__init__:12: WARNING: py:class reference target not found: collections.abc.Callable
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/runtime.py:docstring of pyxu.runtime.Width:1: WARNING: py:class reference target not found: enum.Enum
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/runtime.py:docstring of pyxu.runtime.Width.eps:: WARNING: py:class reference target not found: numbers.Real
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/runtime.py:docstring of pyxu.runtime.CWidth:1: WARNING: py:class reference target not found: enum.Enum
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/util/array_module.py:docstring of pyxu.util.array_module.redirect:15: WARNING: py:class reference target not found: collections.abc.Mapping
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/util/array_module.py:docstring of pyxu.util.array_module.redirect:14: WARNING: py:class reference target not found: collections.abc.Callable
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/util.rst:9: WARNING: py:class reference target not found: collections.abc.Callable
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/util/misc.py:docstring of pyxu.util.misc.import_module:: WARNING: py:class reference target not found: types.ModuleType
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/util/misc.py:docstring of pyxu.util.misc.parse_params:4: WARNING: py:class reference target not found: collections.abc.Mapping
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/util.rst:46: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/util.rst:46: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/util.rst:46: WARNING: py:class reference target not found: numbers.Integral
-/home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/api/util.rst:46: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/util/operator.py:docstring of pyxu.util.operator.as_canonical_shape:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/util/operator.py:docstring of pyxu.util.operator.as_canonical_shape:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/util/operator.py:docstring of pyxu.util.operator.as_canonical_shape:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/util/operator.py:docstring of pyxu.util.operator.as_canonical_shape:: WARNING: py:class reference target not found: numbers.Integral
-/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pyxu/util/operator.py:docstring of pyxu.util.operator.vectorize:12: WARNING: py:class reference target not found: collections.abc.Callable
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/contributing.ipynb:42: WARNING: Lexing literal_block '!pip install pyxu-gradient-descent' as "python" resulted in an error at token: '!'. Retrying in relaxed mode.
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/index.rst:46: WARNING: toctree contains reference to document 'examples/images/index' that doesn't have a title: no link will be generated
 /home/runner/work/pyxu-org.github.io/pyxu-org.github.io/pyxu/doc/examples/index.rst:46: WARNING: toctree contains reference to document 'examples/images/index' that doesn't have a title: no link will be generated
