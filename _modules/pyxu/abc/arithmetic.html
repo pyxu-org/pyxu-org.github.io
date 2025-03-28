@@ -43,7 +43,7 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../../_static/documentation_options.js?v=7cde7c65"></script>
+    <script src="../../../_static/documentation_options.js?v=8b1b62d0"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -206,7 +206,7 @@ document.write(`
         </div>
       
       
-        <div class="navbar-item"><strong> Pyxu v2.0.2 </strong></div>
+        <div class="navbar-item"><strong> Pyxu v2.0.3 </strong></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -355,7 +355,7 @@ document.write(`
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item"><strong> Pyxu v2.0.2 </strong></div>
+          <div class="navbar-item"><strong> Pyxu v2.0.3 </strong></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -999,7 +999,7 @@ document.write(`
 <span class="linenos"> 518</span>            <span class="n">no_op</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="linenos"> 519</span>        <span class="k">else</span><span class="p">:</span>  <span class="c1"># NUMPY/CUPY</span>
 <span class="linenos"> 520</span>            <span class="n">xp</span> <span class="o">=</span> <span class="n">ndi</span><span class="o">.</span><span class="n">module</span><span class="p">()</span>
-<span class="linenos"> 521</span>            <span class="n">norm</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cst</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="linenos"> 521</span>            <span class="n">norm</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cst</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 <span class="linenos"> 522</span>            <span class="n">no_op</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">norm</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="linenos"> 523</span>
 <span class="linenos"> 524</span>        <span class="k">if</span> <span class="n">no_op</span><span class="p">:</span>
